@@ -49,16 +49,14 @@ Our goal is to have the Adafruit Feather show up as a CIRCUITPY directory for pl
 [(reference here)](https://learn.adafruit.com/circuit-playground-lesson-number-0/reset-button-bootloader)
    * The Feather should automatically remount and show up as FTHRCANBOOT
    * This allows you to copy a Microsoft standard flash format uf2 file onto the device
-* Copy the ``amiga-dev-kit/feather_m4_can/uf2s/adafruit-circuitpython-feather_m4_can-en_US-7.3.2.uf2`` onto the drive by 
-   * drag and drop using you're computers graphical interface, or 
-   * command line.  
-* The feather should reboot with the newly loaded firmware and now show up as CICCUITPY
+* For each OS, see below how to copy (flash) the ``amiga-dev-kit/feather_m4_can/uf2s/adafruit-circuitpython-feather_m4_can-en_US-7.3.2.uf2`` file onto the Feather
+* After the above, feather should reboot with the newly loaded firmware and now show up as CIRCUITPY
 
 Below are instructions for flashing under different operating systems.
 
 
 ##### On subsequent plug in
-When attaching a previously flashed Feather M4 device, it should automatically mount as CICUITPY. 
+When attaching a previously flashed Feather M4 device, it should automatically mount as CIRCUITPY. 
 
 #### WSL uf2 flashing
 
@@ -91,25 +89,33 @@ cp feather_m4_can/uf2s/adafruit-circuitpython-feather_m4_can-en_US-7.3.2.uf2 /Vo
 
 
 
-# Loading some code on the Feather
+# Loading code on the Feather
 
-Now that you have a flashed Feather time to load some code.
+Now that you have a flashed Feather, time to load some code:
 
-Copy the lib folder to the root of the Feather.  This gets added automatically to your python path.
+1. Copy the lib folder to the root of the Feather.  This gets added automatically to your python path.
 
-Attach a serial terminal to the feather, so you can see std out.
+2. Attach a serial terminal to the feather, so you can see std out.
 
-On mac:
+* On mac (use autocomplete to get the correct usb modem) ``.../tty.usb<tab_for_autocomplete>``:
+
 ```
-screen /dev/tty.usbmodemfdkjf
+screen /dev/tty./dev/tty.usbmodem14201
 ```
 
-On ubuntu:
+* On ubuntu:
+
 ```
 screen /dev/ttyACM0
 ```
 
+3. Now add a code.py file to the root of the Feather drive. Try copying the ``examples/hello_main_loop/code.py``
 
-Now add a code.py file to the root of the Feather drive. Try copying the ``examples/hello_main_loop/code.py``
+The feather will automatically reload. You run this command on the screen terminal which is now running on the Feather
 
-The feather will automatically reload.
+# Feather M4 references
+
+* The CircuitPython programming guide from Adafruit is [here: programming docs](https://learn.adafruit.com/circuitpython-essentials/circuitpython-essentials)
+* The microcontroller is described [here: microcontroller](https://learn.adafruit.com/adafruit-feather-m4-can-express)
+* The background on Circuitpy (that we showed you how to flash above) is [here: background](https://learn.adafruit.com/adafruit-feather-m4-can-express/circuitpython-on-feather-m4-can)
+

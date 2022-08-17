@@ -1,0 +1,9 @@
+{
+    "python.analysis.extraPaths": [
+        "./regression",
+        "./lib",
+        "~/.local/lib/python3.8/site-packages"
+    ],
+    "python.analysis.autoImportCompletions": false,
+    "python.formatting.provider": "black"
+}
