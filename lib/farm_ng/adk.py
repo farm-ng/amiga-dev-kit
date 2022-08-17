@@ -13,22 +13,25 @@ import supervisor
 import random
 from gc import mem_free, mem_alloc
 
+
 class BoardType:
-    AMIGA_DISPV0=1
-    FEATHER_M4_CAN=2
-    LINUX=3
-    UNKNOWN=0
+    AMIGA_DISPV0 = 1
+    FEATHER_M4_CAN = 2
+    LINUX = 3
+    UNKNOWN = 0
+
 
 def get_board_type():
     uname = os.uname()
     print(uname)
-    if 'Amiga_DispV0' in uname.machine:
+    if "Amiga_DispV0" in uname.machine:
         return BoardType.AMIGA_DISPV0
-    if 'Adafruit Feather M4 CAN' in uname.machine:
+    if "Adafruit Feather M4 CAN" in uname.machine:
         return BoardType.FEATHER_M4_CAN
-    if 'x86_64' in uname.machine:
+    if "x86_64" in uname.machine:
         return BoardType.LINUX
     return BoardType.UNKNOWN
+
 
 def setup_can(rx, tx, baudrate, auto_restart):
     # Use this line if your board has dedicated CAN pins. (Feather M4 CAN and Feather STM32F405)
@@ -52,12 +55,14 @@ def setup_can(rx, tx, baudrate, auto_restart):
 
     return can
 
-CanBusStateDict={
-    str(canio.BusState.ERROR_PASSIVE):'PASSIVE',
-    str(canio.BusState.ERROR_WARNING):'WARNING',
-    str(canio.BusState.ERROR_ACTIVE):'ACTIVE',
-    str(canio.BusState.BUS_OFF):'OFF',
+
+CanBusStateDict = {
+    str(canio.BusState.ERROR_PASSIVE): "PASSIVE",
+    str(canio.BusState.ERROR_WARNING): "WARNING",
+    str(canio.BusState.ERROR_ACTIVE): "ACTIVE",
+    str(canio.BusState.BUS_OFF): "OFF",
 }
+
 
 def setup_can_default():
     board_type = get_board_type()
@@ -87,7 +92,6 @@ def setup_can_default():
         assert False, "BoardType not supported"
 
 
-
 DASHBOARD_NODE_ID = 0xE
 PENDANT_NODE_ID = 0xF
 
@@ -96,8 +100,10 @@ class ReqRepIds:
     NA = 0
     SUPERVISOR = 1
 
+
 class SupervisorReqRepIds:
     NOP = 0
+
 
 class PendantButtons:
     PAUSE = 0x01
@@ -108,6 +114,7 @@ class PendantButtons:
     UP = 0x20
     RIGHT = 0x40
     DOWN = 0x80
+
 
 class Packet:
     @classmethod
@@ -238,6 +245,7 @@ class SupervisorRep(Packet):
             self.payload,
         )
 
+
 class NodeState:
     BOOTUP = 0x00  # Boot up / Initializing
     STOPPED = 0x04  # Stopped
@@ -251,7 +259,7 @@ class FarmngHeartbeat(Packet):
 
     def __init__(self, node_state: int = 0, seconds: int = 0, serial_number=bytes()):
         self.node_state = node_state
-        self.seconds = seconds # machine time in seconds (over life of machine)
+        self.seconds = seconds  # machine time in seconds (over life of machine)
         # assert len(data) <= 5
         self.serial_number = serial_number
 
@@ -269,7 +277,6 @@ class FarmngHeartbeat(Packet):
         return f"node_state: {self.node_state} seconds: {self.seconds} serial_number: {self.serial_number}"
 
 
-    
 class NvmValueStore:
     _next_address = 0
 
@@ -281,12 +288,13 @@ class NvmValueStore:
 
 
 def clear_nvm_storage():
-    microcontroller.nvm[:] = [0x00]*len(microcontroller.nvm)    
+    microcontroller.nvm[:] = [0x00] * len(microcontroller.nvm)
+
 
 class NvmValue:
     def __init__(self, name, format: str, *default) -> None:
         self.name = name
-        self.name_format = f'<{len(name)}sH'
+        self.name_format = f"<{len(name)}sH"
         self.name_size = struct.calcsize(self.name_format)
         self.name_address = NvmValueStore.get_next_address(self.name_size)
         self.default = default
@@ -296,8 +304,11 @@ class NvmValue:
         self.write_default()
 
     def read_name(self):
-        name, val_addr = struct.unpack(self.name_format,microcontroller.nvm[self.name_address:self.name_address+self.name_size])
-        return name.decode('ascii'), val_addr
+        name, val_addr = struct.unpack(
+            self.name_format,
+            microcontroller.nvm[self.name_address : self.name_address + self.name_size],
+        )
+        return name.decode("ascii"), val_addr
 
     def write_default(self):
         try:
@@ -308,16 +319,26 @@ class NvmValue:
         except Exception as e:
             print(e)
 
-        microcontroller.nvm[self.name_address:self.name_address+self.name_size] = struct.pack(self.name_format, self.name, self.value_address)
+        microcontroller.nvm[
+            self.name_address : self.name_address + self.name_size
+        ] = struct.pack(self.name_format, self.name, self.value_address)
         self.write(*self.default)
 
     def write(self, argv):
         if type(argv) not in (list, tuple):
             argv = (argv,)
-        microcontroller.nvm[self.value_address:self.value_address+self.value_size] = struct.pack(self.value_format, *argv)
-    
+        microcontroller.nvm[
+            self.value_address : self.value_address + self.value_size
+        ] = struct.pack(self.value_format, *argv)
+
     def read(self):
-        return struct.unpack(self.value_format, microcontroller.nvm[self.value_address:self.value_address+self.value_size])
+        return struct.unpack(
+            self.value_format,
+            microcontroller.nvm[
+                self.value_address : self.value_address + self.value_size
+            ],
+        )
+
 
 def random_string(length):
     chars = [
@@ -361,11 +382,17 @@ def random_string(length):
     random.seed(supervisor.ticks_ms())
     return "".join(random.choice(chars) for i in range(length))
 
+
 def random_wifi_password():
     return random_string(32)
 
-nvm_serial_number = NvmValue('sn', '<100s', random_string(100)) # up to a 100 character string
-nvm_seconds = NvmValue('seconds','<I', 0) # Total uptime in minutes, unsigned integer is enough for 133 years...
+
+nvm_serial_number = NvmValue(
+    "sn", "<100s", random_string(100)
+)  # up to a 100 character string
+nvm_seconds = NvmValue(
+    "seconds", "<I", 0
+)  # Total uptime in minutes, unsigned integer is enough for 133 years...
 
 _TICKS_PERIOD = 1 << 29
 _TICKS_MAX = _TICKS_PERIOD - 1
@@ -391,6 +418,7 @@ def ticks_less(ticks1, ticks2):
 
 class DtTracker:
     _g_trackers = dict()
+
     def __init__(self, name):
         self.last_tick_ms = supervisor.ticks_ms()
         self.last_dt_ms = 0
@@ -424,11 +452,12 @@ class DtTracker:
         self.start(ticks_ms=ticks_ms)
 
     def mean_dt(self):
-        return sum(self.dt_history)/len(self.dt_history)
+        return sum(self.dt_history) / len(self.dt_history)
 
     def minmeanmax(self):
         h = self.dt_history
         return "%4.1f %4.1f %4.1f" % (min(h), self.mean_dt(), max(h))
+
 
 class TickRepeater:
     def __init__(self, ticks_period_ms):
@@ -455,8 +484,6 @@ class TickRepeater:
         return self.updated
 
 
-
-
 def get_node_id():
     try:
         with open("/node_id.txt", "rt") as node_id_file:
@@ -466,6 +493,7 @@ def get_node_id():
 
     print(f"node_id = 0x{node_id:0x}")
     return node_id
+
 
 class MainLoop:
     def __init__(self, AppClass, has_display=True, has_wifi=True) -> None:
@@ -518,11 +546,9 @@ class MainLoop:
 
     def can_debug_str(self):
         if self.show_can:
-            return f'can {self.can_bus_state} tec: {self.can_tec} rec: {self.can_rec}\n'
+            return f"can {self.can_bus_state} tec: {self.can_tec} rec: {self.can_rec}\n"
         else:
-            return ''
-
-
+            return ""
 
     def update_mem(self):
         if self.mem_repeater.check() and self.show_mem:
@@ -536,7 +562,7 @@ class MainLoop:
         req = SupervisorReq.from_can_data(message.data)
         rep = Packet.make_mesage(self.node_id, SupervisorRep(req.id, req.payload))
         # for now echo back the request
-        print(req,'->', rep)
+        print(req, "->", rep)
         self.can.send(rep)
 
     def handle_message(self, message):
@@ -552,49 +578,51 @@ class MainLoop:
 
     def update_can_stats(self):
         can = self.can
-        bus_state = CanBusStateDict.get(str(can.state),'NA')
+        bus_state = CanBusStateDict.get(str(can.state), "NA")
         if bus_state != self.can_bus_state:
             print(f"Bus state changed to {bus_state}")
         self.can_bus_state = bus_state
         self.can_tec = can.transmit_error_count
         self.can_rec = can.receive_error_count
 
-        
     def debug_str(self):
         if not self.show_debug:
             return
 
-        debug=StringIO()
+        debug = StringIO()
         if self.show_can:
             debug.write(f"{self.can_debug_str()}\n")
 
         if self.show_time:
             ticks_now_ms = supervisor.ticks_ms()
             debug.write(f"up:{time.monotonic()-self.t0:.1f}\n")
-            for key,value in sorted(DtTracker._g_trackers.items()):
-                debug.write(f"{key: <20}: {int(value.mean_dt()): <5d} age: {value.age(ticks_now_ms)} \n")
+            for key, value in sorted(DtTracker._g_trackers.items()):
+                debug.write(
+                    f"{key: <20}: {int(value.mean_dt()): <5d} age: {value.age(ticks_now_ms)} \n"
+                )
         if self.show_mem:
             debug.write(f"mf: {self.mem_free} ma: {self.mem_alloc}\n")
 
         return debug.getvalue()
-        
 
     def _send_heartbeat(self):
         # HEARTBEAT at 0x700 no longer follows CANopen standard 1 byte payload
         heart_msg = canio.Message(
-            id= FarmngHeartbeat.cob_id | self.node_id,
-            data=FarmngHeartbeat(self.node_state, self.seconds, self.serial_number[:3]).encode(),
+            id=FarmngHeartbeat.cob_id | self.node_id,
+            data=FarmngHeartbeat(
+                self.node_state, self.seconds, self.serial_number[:3]
+            ).encode(),
         )
         self.can.send(heart_msg)
 
     def update_heartbeat(self):
         if not self.heart_beat_repeater.check():
             return
-        
-        self.seconds = nvm_seconds.read()[0]+1
+
+        self.seconds = nvm_seconds.read()[0] + 1
         nvm_seconds.write(self.seconds)
 
-        if self.node_state ==  NodeState.BOOTUP:
+        if self.node_state == NodeState.BOOTUP:
             self.node_state = NodeState.PRE_OPERATIONAL
         elif self.node_state == NodeState.PRE_OPERATIONAL:
             self.init_app()
@@ -614,7 +642,6 @@ class MainLoop:
             messages.append(message)
             self.handle_message(message)
 
-
         if self.node_state == NodeState.OPERATIONAL:
             if self.app is not None:
                 self.app.iter(messages)
@@ -622,7 +649,7 @@ class MainLoop:
                 self.display.update(self)
 
         if self.wifi is not None:
-            self.wifi.update(self)       
+            self.wifi.update(self)
 
     def _loop(self):
         while True:
