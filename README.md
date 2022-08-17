@@ -17,20 +17,23 @@ In Pycharm, you can
 
 ## Feather M4 Can device setup
 
-The Feather M4 Can can be used for rapid prototyping of applications with farm-ng's Amiga platform.
+This device can be used for rapid prototyping of applications with farm-ng's Amiga platform.
+
 
 The Feather M4 board front and back, where to solder the connector, and the resistor that must be cut:
-
-<img width="773" alt="Screen Shot 2022-08-16 at 7 34 34 PM" src="https://user-images.githubusercontent.com/810997/185022043-bf6f20b6-f332-4e63-a050-be5f4248462c.png">
+<p align="center">
+<img width="773" title="Feather M4 board front and back" alt="Screen Shot 2022-08-16 at 7 34 34 PM" src="https://user-images.githubusercontent.com/810997/185022043-bf6f20b6-f332-4e63-a050-be5f4248462c.png">
+</p>
 
 The connected Feather M4 and which wire to screw into high and low sides and where the reset button is:
+<p align="center">
+  <img width="702" title="Connected Feather M4" alt="Screen Shot 2022-08-16 at 7 24 54 PM" src="https://user-images.githubusercontent.com/810997/185021388-b290fd2b-f721-4e59-843b-c30ee245c51b.png">
+</p>
 
-<img width="702" alt="Screen Shot 2022-08-16 at 7 24 54 PM" src="https://user-images.githubusercontent.com/810997/185021388-b290fd2b-f721-4e59-843b-c30ee245c51b.png">
-
-The male M12 CAN bus connector whose white (high) and blue (low) connectors are screwed into the Feather M4 and the male CAN bus connector is attached to the CAN bus.
-
-<img width="650" alt="Screen Shot 2022-08-16 at 7 41 38 PM" src="https://user-images.githubusercontent.com/810997/185022824-593e543f-7899-4a65-93b0-9f07e97f8572.png">
-
+The male M12 CAN bus connector whose white (high) and blue (low) connectors are screwed into the Feather M4 and the male CAN bus connector is attached to the CAN bus:
+<p align="center">
+<img width="650" title="Male M12 CAN bus connector" alt="Screen Shot 2022-08-16 at 7 41 38 PM" src="https://user-images.githubusercontent.com/810997/185022824-593e543f-7899-4a65-93b0-9f07e97f8572.png">
+</p>
 
 
 ### Flashing the UF2 firmware on the M4 device
