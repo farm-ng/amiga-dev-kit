@@ -105,6 +105,16 @@ class SupervisorReqRepIds:
     NOP = 0
 
 
+class AmigaControlState:
+    STATE_BOOT = 0
+    STATE_MANUAL_READY = 1
+    STATE_MANUAL_ACTIVE = 2
+    STATE_CC_ACTIVE = 3
+    STATE_AUTO_READY = 4
+    STATE_AUTO_ACTIVE = 5
+    STATE_ESTOPPED = 6
+
+
 class PendantButtons:
     PAUSE = 0x01
     BRAKE = 0x02
@@ -114,6 +124,23 @@ class PendantButtons:
     UP = 0x20
     RIGHT = 0x40
     DOWN = 0x80
+
+
+class CanOpenObject:
+    NMT = 0x00
+    SYNC = 0x80  # Send with node id == 0
+    EMCY = 0x80  # Non-zero node id
+    TPDO1 = 0x180
+    RPDO1 = 0x200
+    TPDO2 = 0x280
+    RPDO2 = 0x300
+    TPDO3 = 0x380
+    RPDO3 = 0x400
+    TPDO4 = 0x480
+    RPDO4 = 0x500
+    SDO_REPLY = 0x580
+    SDO_CMD = 0x600
+    HEARTBEAT = 0x700
 
 
 class Packet:
@@ -130,6 +157,11 @@ class Packet:
             id=(cls.cob_id | node_id),
             data=packet.encode(),
         )
+
+    @classmethod
+    def check_id(cls, message, node_id):
+        if message.id == cls.cob_id | node_id:
+            return True
 
     def stamp(self):
         self.ticks_ms = supervisor.ticks_ms()
@@ -198,6 +230,75 @@ class PendantLEDs(Packet):
             self.leds,
             self.backlight,
             self.rgb,
+        )
+
+
+class AmigaRpdo1(Packet):
+    def __init__(
+        self,
+        state_req: AmigaControlState = AmigaControlState.STATE_ESTOPPED,
+        cmd_speed: float = 0.0,
+        cmd_ang_rate: float = 0.0,
+    ):
+        self.format = "<Bhh"
+        self.state_req = state_req
+        self.cmd_speed = cmd_speed
+        self.cmd_ang_rate = cmd_ang_rate
+
+        self.stamp()
+
+    def encode(self):
+        return struct.pack(
+            self.format,
+            self.state_req,
+            int(self.cmd_speed * 1000.0),
+            int(self.cmd_ang_rate * 1000.0),
+        )
+
+    def decode(self, data):
+        (self.state_req, cmd_speed, cmd_ang_rate) = struct.unpack(self.format, data)
+        self.cmd_speed = cmd_speed / 1000.0
+        self.cmd_ang_rate = cmd_ang_rate / 1000.0
+
+    def __str__(self):
+        return "AMIGA RPDO1 Request state {} Command speed {:0.3f} Command angular rate {:0.3f}".format(
+            self.state_req, self.cmd_speed, self.cmd_ang_rate
+        )
+
+
+class AmigaTpdo1(Packet):
+    cob_id = CanOpenObject.TPDO1
+    format = "<Bhh"
+
+    def __init__(
+        self,
+        state: AmigaControlState = AmigaControlState.STATE_ESTOPPED,
+        meas_speed: float = 0.0,
+        meas_ang_rate: float = 0.0,
+    ):
+
+        self.state = state
+        self.meas_speed = meas_speed
+        self.meas_ang_rate = meas_ang_rate
+
+        self.stamp()
+
+    def encode(self):
+        return struct.pack(
+            self.format,
+            self.state,
+            int(self.meas_speed * 1000.0),
+            int(self.meas_ang_rate * 1000.0),
+        )
+
+    def decode(self, data):
+        (self.state, meas_speed, meas_ang_rate) = struct.unpack(self.format, data)
+        self.meas_speed = meas_speed / 1000.0
+        self.meas_ang_rate = meas_ang_rate / 1000.0
+
+    def __str__(self):
+        return "AMIGA TPDO1 Amiga state {} Measured speed {:0.3f} Measured angular rate {:0.3f}".format(
+            self.state, self.meas_speed, self.meas_ang_rate
         )
 
 
