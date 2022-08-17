@@ -90,4 +90,26 @@ cp feather_m4_can/uf2s/adafruit-circuitpython-feather_m4_can-en_US-7.3.2.uf2 /Vo
 ```
 
 
- 
+
+# Loading some code on the Feather
+
+Now that you have a flashed Feather time to load some code.
+
+Copy the lib folder to the root of the Feather.  This gets added automatically to your python path.
+
+Attach a serial terminal to the feather, so you can see std out.
+
+On mac:
+```
+screen /dev/tty.usbmodemfdkjf
+```
+
+On ubuntu:
+```
+screen /dev/ttyACM0
+```
+
+
+Now add a code.py file to the root of the Feather drive. Try copying the ``examples/hello_main_loop/code.py``
+
+The feather will automatically reload.
