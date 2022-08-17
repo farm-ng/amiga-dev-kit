@@ -117,5 +117,5 @@ The feather will automatically reload. You run this command on the screen termin
 
 * The CircuitPython programming guide from Adafruit is [here: programming docs](https://learn.adafruit.com/circuitpython-essentials/circuitpython-essentials)
 * The microcontroller is described [here: microcontroller](https://learn.adafruit.com/adafruit-feather-m4-can-express)
-* The background on Circuitpy (that we show you how to flash below) is [here: background](https://learn.adafruit.com/adafruit-feather-m4-can-express/circuitpython-on-feather-m4-can)
+* The background on Circuitpy (that we showed you how to flash above) is [here: background](https://learn.adafruit.com/adafruit-feather-m4-can-express/circuitpython-on-feather-m4-can)
 
