@@ -30,7 +30,8 @@ Our goal is to have the Adafruit Feather show up as a CIRCUITPY directory for pl
 
 * Plug in your feather to your computer probably using a Type-C (feather) to Type-C (computer connector).
    * You'll get randomly varying LED colors
-* Look for the little reset switch on the Feather board. Double click the reset button to enter bootloader mode
+* Look for the little reset switch on the Feather board. Double click the reset button to enter bootloader mode 
+[(reference here)](https://learn.adafruit.com/circuit-playground-lesson-number-0/reset-button-bootloader)
    * The Feather should automatically remount and show up as FTHRCANBOOT
    * This allows you to copy a Microsoft standard flash format uf2 file onto the device
 * Copy the ``amiga-dev-kit/feather_m4_can/uf2s/adafruit-circuitpython-feather_m4_can-en_US-7.3.2.uf2`` onto the drive by 
