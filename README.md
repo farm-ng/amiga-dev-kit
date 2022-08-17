@@ -19,11 +19,23 @@ In Pycharm, you can
 
 The Feather M4 Can can be used for rapid prototyping of applications with farm-ng's Amiga platform.
 
-TODO Add photos of the M4 can, with the M12 mail canbus connector.  Add photo of the cut resitor.
+The Feather M4 board front and back, where to solder the connector, and the resistor that must be cut:
+
+<img width="773" alt="Screen Shot 2022-08-16 at 7 34 34 PM" src="https://user-images.githubusercontent.com/810997/185022043-bf6f20b6-f332-4e63-a050-be5f4248462c.png">
+
+The connected Feather M4 and which wire to screw into high and low sides and where the reset button is:
+
+<img width="702" alt="Screen Shot 2022-08-16 at 7 24 54 PM" src="https://user-images.githubusercontent.com/810997/185021388-b290fd2b-f721-4e59-843b-c30ee245c51b.png">
+
+The male M12 CAN bus connector whose white (high) and blue (low) connectors are screwed into the Feather M4 and the male CAN bus connector is attached to the CAN bus.
+
+<img width="650" alt="Screen Shot 2022-08-16 at 7 41 38 PM" src="https://user-images.githubusercontent.com/810997/185022824-593e543f-7899-4a65-93b0-9f07e97f8572.png">
+
+
 
 ### Flashing the UF2 firmware on the M4 device
 
-#### On initial plug in
+##### On initial plug in
 
 Our goal is to have the Adafruit Feather show up as a CIRCUITPY directory for plugging it in, see 
 [this reference](https://learn.adafruit.com/circuit-playground-lesson-number-0/usb-connection).
@@ -39,8 +51,11 @@ Our goal is to have the Adafruit Feather show up as a CIRCUITPY directory for pl
    * command line.  
 * The feather should reboot with the newly loaded firmware and now show up as CICCUITPY
 
-On subsequent times when attaching the Feather device, it should automatically mount as CICUITPY. Below are instructions for
-different operating systems.
+Below are instructions for flashing under different operating systems.
+
+
+##### On subsequent plug in
+When attaching a previously flashed Feather M4 device, it should automatically mount as CICUITPY. 
 
 #### WSL uf2 flashing
 
