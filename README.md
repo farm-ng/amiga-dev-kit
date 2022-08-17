@@ -87,6 +87,7 @@ cd ~/<to_your_base_directory>/amiga-dev-kit
 cp feather_m4_can/uf2s/adafruit-circuitpython-feather_m4_can-en_US-7.3.2.uf2 /Volumes/FTHRCANBOOT 
 ```
 
+You can also drag and drop the file onto the volume in Finder, and it will automatically install the uf2.  The volume will dismount, and then remount showing up as CIRCUITPY.  
 
 
 # Loading code on the Feather
