@@ -7,6 +7,7 @@ from farm_ng.adk import (
     DASHBOARD_NODE_ID,
     CanOpenObject,
     AmigaControlState,
+    clip
 )
 import supervisor
 import usb_cdc

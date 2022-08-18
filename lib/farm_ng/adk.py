@@ -761,3 +761,23 @@ class MainLoop:
             self.display.exception_handler(self._loop)
         else:
             self._loop()
+
+
+def clip(x, min_value, max_value):
+    return max(min(x, max_value), min_value)
+
+class Axis:
+    def __init__(self, min_value, deadzone_m1, deadzone_p1, max_value):
+        """min, -deadzone, +deadzone, max"""
+        self.v0 = min_value
+        self.v1 = deadzone_m1
+        self.v2 = deadzone_p1
+        self.v3 = max_value
+
+    def map(self, v):
+        """returns -1 .. +1"""
+        if v < self.v1:
+            return -1 + (v - self.v0) / (self.v1 - self.v0)
+        elif v > self.v2:
+            return (v - self.v2) / (self.v3 - self.v2)
+        return 0
