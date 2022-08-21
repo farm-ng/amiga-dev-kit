@@ -12,5 +12,31 @@ Parts required:
   - Note that this transmitter/receiver requires an RCA capable monitor on the receiver side.
 
 
+# SBUS
 
+SBUS is "inverted" UART.  So we cracked open the x8r receiver, and soldered the yellow wire directly to the output pin before it gets inverted, and connected this wire to UART RX pin on the Feather.
+
+ Found this link useful https://oscarliang.com/uninverted-sbus-smart-port-frsky-receivers/
+ 
+![PXL_20220818_181456142](https://user-images.githubusercontent.com/153678/185775798-3c4334fb-3c1c-4c21-8e6c-c21fb21c9f8d.jpg)
+
+
+The SBUS protocol is fairly simple.  A 25 byte packet, start byte of 0x0F, end byte of 0x00, second to last byte is a parity byte, and then 16 11bit integers packed into the rest.  This is a usefull resource for decoding the packets -     # https://github.com/robotmaker/Real-time-graphical-representation-of-16-channel-S-BUS-protocol/blob/master/ProcessingSketch_SBUS_16_Channel_Simulation/ProcessingSketch_SBUS_16_Channel_Simulation.pde
+
+The UART needs to be configured with:
+
+```
+busio.UART(None, board.RX, baudrate=100000, bits=8, parity=0, stop=2, timeout=0.002, receiver_buffer_size=256)
+```
+
+TODO support TX over the x8r smart bus.
+
+# Wiring
+TODO
+1. Step 1
+2. Step 2
+
+# Code
+
+This code builds on top of the hello_main_loop example, but replaces the keyboard input with radio control.  Wire up the SBUS, connect the microcontroller to the Amiga's canbus, enable Auto mode on the Amiga's dashboard and enjoy driving the Amiga remotely.
 
