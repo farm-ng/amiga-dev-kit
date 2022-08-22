@@ -16,8 +16,9 @@ Parts required:
 
 SBUS is "inverted" UART.  So we cracked open the x8r receiver, and soldered the yellow wire directly to the output pin before it gets inverted, and connected this wire to UART RX pin on the Feather.
 
- Found this link useful https://oscarliang.com/uninverted-sbus-smart-port-frsky-receivers/
- 
+Found this link useful https://oscarliang.com/uninverted-sbus-smart-port-frsky-receivers/
+Here is a great video overview on SBUS, visually explaining inverted vs. non-inverted uart and packet structure https://youtu.be/IqLUHj7nJhI?t=398 
+
 ![PXL_20220818_181456142](https://user-images.githubusercontent.com/153678/185775798-3c4334fb-3c1c-4c21-8e6c-c21fb21c9f8d.jpg)
 
 
