@@ -28,7 +28,7 @@ dependencies = []
 [project.optional-dependencies]
 dev = [
     "pytest==7.1.2",
-    "black==22.6.",
+    "pre-commit==2.20.0",
 ]
 
 [project.urls]
@@ -44,3 +44,12 @@ where = ["lib"]
 
 [tool.setuptools.dynamic]
 version = {attr = "farm_ng.__version__"}
+
+[tool.black]
+line-length = 120
+include = '\.pyi?$'
+skip-string-normalization = true
+skip-magic-trailing-comma = true
+
+[tool.isort]
+profile = "black"
