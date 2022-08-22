@@ -1,6 +1,6 @@
 # farm-ng Dash
 
-<img src="resources/Dash_Iso.png" alt="Dash_Iso" width="600;" />
+<img src="./assets/Dash_Iso.png" alt="Dash_Iso" width="600;" />
 
 
 
@@ -39,13 +39,13 @@ The Dashboard comes with a Wifi modem and CANbus transceiver on board, and is po
 
 ## Connections
 
-<img src="resources/Dash_Connectors.png" alt="Dash_Connectors" width="600;" />
+<img src="./assets/Dash_Connectors.png" alt="Dash_Connectors" width="600;" />
 
 
 
 ### Pinouts 
 
-<img src="resources/Dash_Pinout.png" alt="Dash_Pinout" width="600;" />
+<img src="./assets/Dash_Pinout.png" alt="Dash_Pinout" width="600;" />
 
 
 
