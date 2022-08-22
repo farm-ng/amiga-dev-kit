@@ -1,17 +1,16 @@
+import gc
 import os
-import microcontroller
+import random
+import struct
+import time
+from gc import mem_alloc, mem_free
+from io import StringIO
+
 import board
 import canio
 import digitalio
+import microcontroller
 import supervisor
-import gc
-from io import StringIO
-import struct
-import time
-import canio
-import supervisor
-import random
-from gc import mem_free, mem_alloc
 
 
 class BoardType:
@@ -37,7 +36,8 @@ def setup_can(rx, tx, baudrate, auto_restart):
     # Use this line if your board has dedicated CAN pins. (Feather M4 CAN and Feather STM32F405)
     #    can = setup_can(rx=board.CAN_RX, tx=board.CAN_TX, baudrate=parm.can_baud, auto_restart=True)
     # Use this line for dashboard:
-    #    can = setup_can(rx=microcontroller.pin.PB13, tx=microcontroller.pin.PB14, baudrate=parm.can_baud, auto_restart=True)
+    #    can = setup_can(
+    # rx=microcontroller.pin.PB13, tx=microcontroller.pin.PB14, baudrate=parm.can_baud, auto_restart=True)
 
     # If the CAN transceiver has a standby pin, bring it out of standby mode
     if hasattr(board, "CAN_STANDBY"):
@@ -69,25 +69,12 @@ def setup_can_default():
     baud_rate = 250_000
     if board_type == BoardType.AMIGA_DISPV0:
         return setup_can(
-            rx=microcontroller.pin.PB13,
-            tx=microcontroller.pin.PB14,
-            baudrate=baud_rate,
-            auto_restart=True,
+            rx=microcontroller.pin.PB13, tx=microcontroller.pin.PB14, baudrate=baud_rate, auto_restart=True
         )
     elif board_type == BoardType.FEATHER_M4_CAN:
-        return setup_can(
-            rx=board.CAN_RX,
-            tx=board.CAN_TX,
-            baudrate=baud_rate,
-            auto_restart=True,
-        )
+        return setup_can(rx=board.CAN_RX, tx=board.CAN_TX, baudrate=baud_rate, auto_restart=True)
     elif board_type == BoardType.LINUX:
-        return setup_can(
-            rx=board.CAN_RX,
-            tx=board.CAN_TX,
-            baudrate=baud_rate,
-            auto_restart=True,
-        )
+        return setup_can(rx=board.CAN_RX, tx=board.CAN_TX, baudrate=baud_rate, auto_restart=True)
     else:
         assert False, "BoardType not supported"
 
@@ -153,10 +140,7 @@ class Packet:
 
     @classmethod
     def make_mesage(cls, node_id, packet):
-        return canio.Message(
-            id=(cls.cob_id | node_id),
-            data=packet.encode(),
-        )
+        return canio.Message(id=(cls.cob_id | node_id), data=packet.encode())
 
     @classmethod
     def check_id(cls, message, node_id):
@@ -183,12 +167,7 @@ class PendantState(Packet):
         self.stamp()
 
     def encode(self):
-        return struct.pack(
-            self.format,
-            int(self.x * 32767),
-            int(self.y * 32767),
-            self.buttons,
-        )
+        return struct.pack(self.format, int(self.x * 32767), int(self.y * 32767), self.buttons)
 
     def decode(self, data):
         (xi, yi, self.buttons) = struct.unpack(self.format, data)
@@ -196,11 +175,7 @@ class PendantState(Packet):
         self.y = yi / 32767
 
     def __str__(self):
-        return "x {:0.3f} y {:0.3f} buttons {}".format(
-            self.x,
-            self.y,
-            self.buttons,
-        )
+        return "x {:0.3f} y {:0.3f} buttons {}".format(self.x, self.y, self.buttons)
 
 
 class PendantLEDs(Packet):
@@ -212,25 +187,14 @@ class PendantLEDs(Packet):
         self.stamp()
 
     def encode(self):
-        return struct.pack(
-            self.format,
-            self.leds,
-            self.backlight,
-            self.rgb[0],
-            self.rgb[1],
-            self.rgb[2],
-        )
+        return struct.pack(self.format, self.leds, self.backlight, self.rgb[0], self.rgb[1], self.rgb[2])
 
     def decode(self, data):
         (self.leds, self.backlight, r, g, b) = struct.unpack(self.format, data)
         self.rgb = (r, g, b)
 
     def __str__(self):
-        return "LEDs {} backlight {} rgb {}".format(
-            self.leds,
-            self.backlight,
-            self.rgb,
-        )
+        return "LEDs {} backlight {} rgb {}".format(self.leds, self.backlight, self.rgb)
 
 
 class AmigaRpdo1(Packet):
@@ -248,12 +212,7 @@ class AmigaRpdo1(Packet):
         self.stamp()
 
     def encode(self):
-        return struct.pack(
-            self.format,
-            self.state_req,
-            int(self.cmd_speed * 1000.0),
-            int(self.cmd_ang_rate * 1000.0),
-        )
+        return struct.pack(self.format, self.state_req, int(self.cmd_speed * 1000.0), int(self.cmd_ang_rate * 1000.0))
 
     def decode(self, data):
         (self.state_req, cmd_speed, cmd_ang_rate) = struct.unpack(self.format, data)
@@ -284,12 +243,7 @@ class AmigaTpdo1(Packet):
         self.stamp()
 
     def encode(self):
-        return struct.pack(
-            self.format,
-            self.state,
-            int(self.meas_speed * 1000.0),
-            int(self.meas_ang_rate * 1000.0),
-        )
+        return struct.pack(self.format, self.state, int(self.meas_speed * 1000.0), int(self.meas_ang_rate * 1000.0))
 
     def decode(self, data):
         (self.state, meas_speed, meas_ang_rate) = struct.unpack(self.format, data)
@@ -319,10 +273,7 @@ class SupervisorReq(Packet):
         assert id == ReqRepIds.SUPERVISOR
 
     def __str__(self):
-        return "superviser req {} payload {}".format(
-            self.id,
-            self.payload,
-        )
+        return "superviser req {} payload {}".format(self.id, self.payload)
 
 
 class SupervisorRep(Packet):
@@ -341,10 +292,7 @@ class SupervisorRep(Packet):
         assert id == ReqRepIds.SUPERVISOR
 
     def __str__(self):
-        return "supervisor rep  id {} payload {} ".format(
-            self.id,
-            self.payload,
-        )
+        return "supervisor rep  id {} payload {} ".format(self.id, self.payload)
 
 
 class NodeState:
@@ -365,14 +313,10 @@ class FarmngHeartbeat(Packet):
         self.serial_number = serial_number
 
     def encode(self):
-        return struct.pack(
-            self.format, self.node_state, self.seconds, self.serial_number[:3]
-        )
+        return struct.pack(self.format, self.node_state, self.seconds, self.serial_number[:3])
 
     def decode(self, data):
-        (self.node_state, self.secods, self.serial_number) = struct.unpack(
-            self.format, data
-        )
+        (self.node_state, self.secods, self.serial_number) = struct.unpack(self.format, data)
 
     def __str__(self):
         return f"node_state: {self.node_state} seconds: {self.seconds} serial_number: {self.serial_number}"
@@ -406,8 +350,7 @@ class NvmValue:
 
     def read_name(self):
         name, val_addr = struct.unpack(
-            self.name_format,
-            microcontroller.nvm[self.name_address : self.name_address + self.name_size],
+            self.name_format, microcontroller.nvm[self.name_address : self.name_address + self.name_size]
         )
         return name.decode("ascii"), val_addr
 
@@ -420,24 +363,21 @@ class NvmValue:
         except Exception as e:
             print(e)
 
-        microcontroller.nvm[
-            self.name_address : self.name_address + self.name_size
-        ] = struct.pack(self.name_format, self.name, self.value_address)
+        microcontroller.nvm[self.name_address : self.name_address + self.name_size] = struct.pack(
+            self.name_format, self.name, self.value_address
+        )
         self.write(*self.default)
 
     def write(self, argv):
         if type(argv) not in (list, tuple):
             argv = (argv,)
-        microcontroller.nvm[
-            self.value_address : self.value_address + self.value_size
-        ] = struct.pack(self.value_format, *argv)
+        microcontroller.nvm[self.value_address : self.value_address + self.value_size] = struct.pack(
+            self.value_format, *argv
+        )
 
     def read(self):
         return struct.unpack(
-            self.value_format,
-            microcontroller.nvm[
-                self.value_address : self.value_address + self.value_size
-            ],
+            self.value_format, microcontroller.nvm[self.value_address : self.value_address + self.value_size]
         )
 
 
@@ -488,12 +428,8 @@ def random_wifi_password():
     return random_string(32)
 
 
-nvm_serial_number = NvmValue(
-    "sn", "<100s", random_string(100)
-)  # up to a 100 character string
-nvm_seconds = NvmValue(
-    "seconds", "<I", 0
-)  # Total uptime in minutes, unsigned integer is enough for 133 years...
+nvm_serial_number = NvmValue("sn", "<100s", random_string(100))  # up to a 100 character string
+nvm_seconds = NvmValue("seconds", "<I", 0)  # Total uptime in minutes, unsigned integer is enough for 133 years...
 
 _TICKS_PERIOD = 1 << 29
 _TICKS_MAX = _TICKS_PERIOD - 1
@@ -589,7 +525,7 @@ def get_node_id():
     try:
         with open("/node_id.txt", "rt") as node_id_file:
             node_id = int(node_id_file.read(), 0)
-    except:
+    except Exception:
         node_id = 0x42
 
     print(f"node_id = 0x{node_id:0x}")
@@ -603,12 +539,12 @@ class MainLoop:
         self.node_id = get_node_id()
         if has_display:
             assert False, "Future Support: Display"
-            self.display = Display()
+            # self.display = Display()
         else:
             self.display = None
         if has_wifi:
             assert False, "Future Support: WIFI"
-            self.wifi = WIFI()
+            # self.wifi = WIFI()
         else:
             self.wifi = None
 
@@ -635,9 +571,7 @@ class MainLoop:
 
         self.can_id_dts = dict()
 
-        self.command_handlers = {
-            int(SupervisorReq.cob_id | self.node_id): self.handle_supervisor_req
-        }
+        self.command_handlers = {int(SupervisorReq.cob_id | self.node_id): self.handle_supervisor_req}
 
         self.AppClass = AppClass
         self.app = None
@@ -698,9 +632,7 @@ class MainLoop:
             ticks_now_ms = supervisor.ticks_ms()
             debug.write(f"up:{time.monotonic()-self.t0:.1f}\n")
             for key, value in sorted(DtTracker._g_trackers.items()):
-                debug.write(
-                    f"{key: <20}: {int(value.mean_dt()): <5d} age: {value.age(ticks_now_ms)} \n"
-                )
+                debug.write(f"{key: <20}: {int(value.mean_dt()): <5d} age: {value.age(ticks_now_ms)} \n")
         if self.show_mem:
             debug.write(f"mf: {self.mem_free} ma: {self.mem_alloc}\n")
 
@@ -710,9 +642,7 @@ class MainLoop:
         # HEARTBEAT at 0x700 no longer follows CANopen standard 1 byte payload
         heart_msg = canio.Message(
             id=FarmngHeartbeat.cob_id | self.node_id,
-            data=FarmngHeartbeat(
-                self.node_state, self.seconds, self.serial_number[:3]
-            ).encode(),
+            data=FarmngHeartbeat(self.node_state, self.seconds, self.serial_number[:3]).encode(),
         )
         self.can.send(heart_msg)
 
@@ -765,6 +695,7 @@ class MainLoop:
 
 def clip(x, min_value, max_value):
     return max(min(x, max_value), min_value)
+
 
 class Axis:
     def __init__(self, min_value, deadzone_m1, deadzone_p1, max_value):
