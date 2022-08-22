@@ -1,0 +1,46 @@
+[project]
+name = "farm_ng"
+dynamic = ["version"]
+description = "Amiga development kit for third party hardware or software extensions."
+authors = [
+    {name = "Farm-ng Inc."},
+    {email = "info@farm-ng.com" }
+]
+license = {file = "LICENCE"}
+readme = "README.md"
+requires-python = ">=3.6"
+
+keywords = ["robotics"]
+
+# https://gist.github.com/nazrulworld/3800c84e28dc464b2b30cec8bc1287fc
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development",
+    "Framework :: Robot Framework",
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest==7.1.2",
+    "black==22.6.",
+]
+
+[project.urls]
+homepage = "https://github.com/farm-ng/amiga-dev-kit"
+documentation = "https://github.com/farm-ng/amiga-dev-kit"
+repository = "https://github.com/farm-ng/amiga-dev-kit"
+
+[tool.setuptools]
+package-dir = {"" = "lib"}
+
+[tool.setuptools.packages.find]
+where = ["lib"]
+
+[tool.setuptools.dynamic]
+version = {attr = "farm_ng.__version__"}
