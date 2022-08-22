@@ -6,7 +6,7 @@ authors = [
     {name = "Farm-ng Inc."},
     {email = "info@farm-ng.com" }
 ]
-license = {file = "LICENCE"}
+license = {file = "LICENSE"}
 readme = "README.md"
 requires-python = ">=3.6"
 
