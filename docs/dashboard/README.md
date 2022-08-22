@@ -1,6 +1,6 @@
 # farm-ng Dash
 
-<img src="resources/Dash_Iso.png" alt="Dash_Iso" style="zoom:50%;" />
+<img src="resources/Dash_Iso.png" alt="Dash_Iso" width="600;" />
 
 
 
@@ -11,33 +11,41 @@ Under the hood is a simple yet powerful embedded microcontroller based on Adafru
 
 The Dashboard comes with a Wifi modem and CANbus transceiver on board, and is powered over an industrial M12 connector compatible with the Amiga.  Includes debug cable.
 
-## Feature overview
+## Features overview
 
-*The farm-ng Dash display is an early release product, specification and rating are subject to change*
+**The farm-ng Dash display is an Beta early release product, specification and rating are subject to change**
+
+
 
 | Specifications       |                                                              |
 | -------------------- | ------------------------------------------------------------ |
 | Input Power          | 12/24 volts (9-28vdc)                                        |
 | Power consumption    | ~2.5 watts, <5watts (depending usage, wifi, and brightness)  |
-| Screen               | 4.3" High brightness optically bonded IPS display            |
+| Screen               | 4.3" High brightness (850cd/m2) optically bonded IPS display, 480x272 resolution |
 | Touch                | Industrial capacitive touch screen controller, tunable for gloves and wet environment (Tuning requires customization) |
 | Microcontroller      | Microchip SAM ATSAME51 32-Bit Arm Cortex M4 running at 120MHz |
 | Ecosystem            | Circuitpython based development, compatible with Adafruit Feather M4 CAN |
 | Environmental rating | IP65 (Validation pending)                                    |
 | Temp rating          | -20c to -70c ambient                                         |
 | Vibration and Shock  | TBD                                                          |
+| Basic dimensions     | xxx (Not including shroud)                                   |
+| Weight               | TBD                                                          |
+
+
+
+## Mechanical
 
 
 
 ## Connections
 
-<img src="resources/Dash_Connectors.png" alt="Dash_Connectors" style="zoom:50%;" />
+<img src="resources/Dash_Connectors.png" alt="Dash_Connectors" width="600;" />
 
 
 
 ### Pinouts 
 
-<img src="resources/Dash_Pinout.png" alt="Dash_Pinout" style="zoom:50%;" />
+<img src="resources/Dash_Pinout.png" alt="Dash_Pinout" width="600;" />
 
 
 
