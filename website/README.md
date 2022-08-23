@@ -2,9 +2,20 @@
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
 ## Installation
-In order to use docusaurus you'll need to install a couple libraries.
+In order to use docusaurus you'll need to install a couple libraries:
+- Node.js version 16.14 or above (which can be checked by running `node -v`)
+- Yarn >= 1.22.19 
 
-### For MacOS: 
+#### For Linux: 
+```
+$ sudo apt install nodejs
+```
+Then
+```
+$ sudo npm install -g yarn
+```
+
+#### For MacOS: 
 ```
 $ brew install npm
 ```
