@@ -14,13 +14,16 @@ import supervisor
 
 
 class BoardType:
+    """Enum representing the Amiga Board type."""
+
+    UNKNOWN = 0
     AMIGA_DISPV0 = 1
     FEATHER_M4_CAN = 2
     LINUX = 3
-    UNKNOWN = 0
 
 
-def get_board_type():
+def get_board_type() -> BoardType:
+    """Return the Board type based on the operating system."""
     uname = os.uname()
     print(uname)
     if "Amiga_DispV0" in uname.machine:
