@@ -19,7 +19,7 @@ jobs:
           # cache: yarn
 
       - name: Install adk dependencies
-        run: pip3 install -e .[dev]
+        run: pip3 install .[dev]
       - name: Install docusaurus dependencies
         working-directory: website
         run: yarn install --frozen-lockfile
