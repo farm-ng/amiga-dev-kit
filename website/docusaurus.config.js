@@ -37,14 +37,16 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            //'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/farm-ng/amiga-dev-kit/tree/main/website/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            //'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/farm-ng/amiga-dev-kit/tree/main/website/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -60,16 +62,32 @@ const config = {
         title: 'Amiga SDK',
         logo: {
           alt: 'Amiga Logo',
-          src: 'img/amiga_logo.png',
+          src: 'img/farm-ng_favicon.png',
         },
         items: [
           {
+            label: 'Docs',
             type: 'doc',
-            docId: 'intro',
+            docId: 'what-is-adk',
             position: 'left',
-            label: 'Tutorial',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          //{
+          //  label: 'API',
+          //  type: 'doc',
+          //  position: 'left',
+          //  docId: 'api',
+          //},
+          {
+            to: '/blog',
+            label: 'Blog',
+            position: 'left'
+          },
+          {
+            label: 'Contribute',
+            type: 'doc',
+            docId: 'contribute',
+            position: 'left',
+          },
           {
             href: 'https://www.youtube.com/channel/UCczyy8tyLbqxjtLE1_8YW3w',
             label: 'YouTube',
@@ -90,8 +108,16 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Getting Started',
+                to: 'docs/getting-started',
+              },
+              {
+                label: 'API Reference',
+                to: '/docs/api',
+              },
+              {
+                label: 'Contribute',
+                to: '/docs/contribute',
               },
             ],
           },
