@@ -1,13 +1,12 @@
-name: ci
+name: Continuous Integration
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
-    types: [open, reopened, synchronize, review_requested, ready_for_review]
-  schedule:
-    - cron: "0 4 * * *"
+    branches:
+      - main
 
 jobs:
   tests-cpu:
