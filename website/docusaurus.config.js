@@ -111,10 +111,10 @@ const config = {
                 label: 'Getting Started',
                 to: 'docs/getting-started',
               },
-              {
-                label: 'API Reference',
-                to: '/docs/api',
-              },
+              //{
+              //  label: 'API Reference',
+              //  to: '/docs/api',
+              //},
               {
                 label: 'Contribute',
                 to: '/docs/contribute',
