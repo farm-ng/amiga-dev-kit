@@ -2,9 +2,9 @@ name: ci
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
     types: [open, reopened, synchronize, review_requested, ready_for_review]
   schedule:
     - cron: "0 4 * * *"
