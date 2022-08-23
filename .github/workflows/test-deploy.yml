@@ -11,9 +11,6 @@ jobs:
   docs-test-deploy:
     name: Test deployment
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: website
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
@@ -21,11 +18,14 @@ jobs:
           node-version: 18
           # cache: yarn
 
-      - name: Install docusaurus dependencies
-        run: yarn install --frozen-lockfile
       - name: Install adk dependencies
         run: pip3 install -e .[dev]
+      - name: Install docusaurus dependencies
+        working-directory: website
+        run: yarn install --frozen-lockfile
       - name: Create Markdown
+        working-directory: website
         run: pydoc-markdown
       - name: Test build website
+        working-directory: website
         run: yarn build
