@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Farm-ng Developers',
   tagline: 'Robots are cool',
-  url: 'https://farm-ng.com/pages/for-developers',
+  url: 'https://farm-ng.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -111,10 +111,10 @@ const config = {
                 label: 'Getting Started',
                 to: 'docs/getting-started',
               },
-              {
-                label: 'API Reference',
-                to: '/docs/api',
-              },
+              //{
+              //  label: 'API Reference',
+              //  to: '/docs/api',
+              //},
               {
                 label: 'Contribute',
                 to: '/docs/contribute',
