@@ -1,4 +1,5 @@
 # amiga-dev-kit FPV example
+![fpv-in-truck-16x9-reduced](https://user-images.githubusercontent.com/11846963/185976329-c65208e1-a42a-436f-a191-9dcc57ecb354.jpg)
 
 This example shows how to connect off the shelf FPV equipment to your Amiga to enble realtime video see through remote control.  This is makes the Amiga remotely operable from the comfort of your office (or cab of your truck) and we're pretty psyched by how low cost and practical FPV control of the Amiga is.
 
@@ -12,14 +13,12 @@ Parts required:
   - Note that this transmitter/receiver requires an RCA capable monitor on the receiver side.
 
 
-# SBUS
+## SBUS
 
 SBUS is "inverted" UART.  So we cracked open the x8r receiver, and soldered the yellow wire directly to the output pin before it gets inverted, and connected this wire to UART RX pin on the Feather.
 
- Found this link useful https://oscarliang.com/uninverted-sbus-smart-port-frsky-receivers/
- 
-![PXL_20220818_181456142](https://user-images.githubusercontent.com/153678/185775798-3c4334fb-3c1c-4c21-8e6c-c21fb21c9f8d.jpg)
-
+Found this link useful https://oscarliang.com/uninverted-sbus-smart-port-frsky-receivers/
+Here is a great video overview on SBUS, visually explaining inverted vs. non-inverted uart and packet structure https://youtu.be/IqLUHj7nJhI?t=398 
 
 The SBUS protocol is fairly simple.  A 25 byte packet, start byte of 0x0F, end byte of 0x00, second to last byte is a parity byte, and then 16 11bit integers packed into the rest.  This is a usefull resource for decoding the packets -     # https://github.com/robotmaker/Real-time-graphical-representation-of-16-channel-S-BUS-protocol/blob/master/ProcessingSketch_SBUS_16_Channel_Simulation/ProcessingSketch_SBUS_16_Channel_Simulation.pde
 
@@ -31,12 +30,21 @@ busio.UART(None, board.RX, baudrate=100000, bits=8, parity=0, stop=2, timeout=0.
 
 TODO support TX over the x8r smart bus.
 
-# Wiring
-TODO
-1. Step 1
-2. Step 2
+## Wiring
+![fpv wiring example](https://user-images.githubusercontent.com/11846963/185976402-ff8c4c77-5a08-42b0-865f-d2840fc0b960.jpg)
+Shown above, is the entire receiver rover side of the FPV setup, correctly wired and unpacked.
 
-# Code
+## TODO / WIP
+1. Step 1
+Wiring the receiver to access the un-inverted signal 
+
+![x8r-receiver-solder-point-reduced](https://user-images.githubusercontent.com/11846963/185978326-a21598e7-fe93-4c99-9ff3-f3b047d586e6.jpg)
+
+
+2. 
+
+
+## Code
 
 This code builds on top of the hello_main_loop example, but replaces the keyboard input with radio control.  Wire up the SBUS, connect the microcontroller to the Amiga's canbus, enable Auto mode on the Amiga's dashboard and enjoy driving the Amiga remotely.
 
