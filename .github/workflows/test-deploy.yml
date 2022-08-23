@@ -19,9 +19,13 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-          #cache: yarn
+          # cache: yarn
 
-      - name: Install dependencies
+      - name: Install docusaurus dependencies
         run: yarn install --frozen-lockfile
+      - name: Install adk dependencies
+        run: pip3 install -e .[dev]
+      - name: Create Markdown
+        run: pydoc-markdown
       - name: Test build website
         run: yarn build
