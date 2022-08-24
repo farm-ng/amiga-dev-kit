@@ -13,7 +13,7 @@ The Dashboard comes with a Wifi modem and CANbus transceiver on board, and is po
 
 ## Features overview
 
-**The farm-ng Dash display is an Beta early release product, specification and rating are subject to change**
+**The farm-ng Dash display is a Beta early release product, specification and rating are subject to change**
 
 
 
@@ -53,8 +53,6 @@ The Dashboard comes with a Wifi modem and CANbus transceiver on board, and is po
 
 Mating connector M12-5 A code female
 
-
-
 | PIN  | Description   | Typical Wire Color | Notes                                                        |
 | ---- | ------------- | ------------------ | ------------------------------------------------------------ |
 | 1    | Shield        | Bare/Green         | Should only be grounded at one end                           |
@@ -68,8 +66,6 @@ Mating connector M12-5 A code female
 ### CAN/Power output (accessories)
 
 Mating connector M12-5 A code male
-
-
 
 | PIN  | Description   | Typical Wire Color | Notes                                                        |
 | ---- | ------------- | ------------------ | ------------------------------------------------------------ |
