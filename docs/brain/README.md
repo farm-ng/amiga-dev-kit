@@ -48,6 +48,14 @@
 
 
 
+Xavier provides the following connectors and button for IO
+
+- Power button is used for powering up and down the embedded computer
+- Debug is for interacting and updating with the OS (See information on debug connector)
+- CAN / Power connector provides 12/24 volts and CAN interface
+- ACC USBs are two accessory USBs (as of the early version of the display are USB 2.0 Micro USB connectors) that allow attaching USB devices
+- Ethernet X coded M12 ethernet connection
+
 
 
 ### Pinouts
@@ -65,6 +73,8 @@ Mating connector M12-5 A code female
 | 5    | CAN_Low       | Blue               | Needs at least one termination, and two devices to function. |
 
 ### Debug
+
+**SEE INFORMATION ON DEBUG CABLE**
 
 Mating connector M12-8 A code female
 
