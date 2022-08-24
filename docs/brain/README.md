@@ -38,3 +38,42 @@
 | WiFi           | Integrated WiFi with OS drivers          |      |
 |                |                                          |      |
 
+
+
+
+
+## Connections
+
+
+
+### Pinouts
+
+### CAN/Power Input
+
+Mating connector M12-5 A code female
+
+| PIN  | Description   | Typical Wire Color | Notes                                                        |
+| ---- | ------------- | ------------------ | ------------------------------------------------------------ |
+| 1    | Shield        | Bare/Green         | Should only be grounded at one end                           |
+| 2    | Supply +24vdc | Red                | farm-ng uses 24v                                             |
+| 3    | GND           | Black              |                                                              |
+| 4    | CAN_High      | White              | Needs at least one termination, and two devices to function. |
+| 5    | CAN_Low       | Blue               | Needs at least one termination, and two devices to function. |
+
+### Debug
+
+Mating connector M12-8 A code female
+
+Debug wire colors based on common cable with flying leads used on farm-ng built debug kits. 
+
+| PIN  | Description   | Typical Wire Color | Notes                      |
+| ---- | ------------- | ------------------ | -------------------------- |
+| 1    | RESET         | White              |                            |
+| 2    | TTL RX (3.3v) | Brown              | Connect to TX of interface |
+| 3    | TTL TX (3.3v) | Green              | Connect to RX of interface |
+| 4    | USB D-        | Yellow             |                            |
+| 5    | UDB D+        | Gray               |                            |
+| 6    | USB VBUS      | Pink               |                            |
+| 7    | NC            | Blue               |                            |
+| 8    | GND           | Black              |                            |
+

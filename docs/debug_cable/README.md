@@ -45,7 +45,7 @@ Debug wire colors based on common cable with flying leads used on farm-ng built 
 | 5    | UDB D+        | Gray               |                            |
 | 6    | USB VBUS      | Pink               |                            |
 | 7    | NC            | Blue               |                            |
-| 8    | GND           |                    |                            |
+| 8    | GND           | Black              |                            |
 
 
 
