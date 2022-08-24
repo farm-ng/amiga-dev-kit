@@ -4,15 +4,13 @@
 
 
 
-<img src="./assets/debug_cable.jpeg" alt="Dash_Iso" width="600;" />
-
-
+<img src="./assets/debug_cable.jpeg" alt="debug_cable" width="600;" />
 
 ## Overview
 
 Cable used to update and debug farm-ng products. It includes rest functionality along with USB and serial communication. 
 
-<img src="./assets/debug_notes.jpeg" alt="Dash_Iso" width="500;" />
+<img src="./assets/debug_notes.jpeg" alt="debug_notes" width="600;" />
 
 ### Product specific uses
 
@@ -34,7 +32,7 @@ Cable used to update and debug farm-ng products. It includes rest functionality 
 
 ## Pinout
 
-Connector M12-8 A code female used to connect to farm-ng products
+Connector M12-8 A code female used to connect to farm-ng products. The debug cable connects the IO to two MicroUSB connectors and a reset button. 
 
 Debug wire colors based on common cable with flying leads used on farm-ng built debug kits. 
 
@@ -48,4 +46,6 @@ Debug wire colors based on common cable with flying leads used on farm-ng built 
 | 6    | USB VBUS      | Pink               |                            |
 | 7    | NC            | Blue               |                            |
 | 8    | GND           |                    |                            |
+
+
 
