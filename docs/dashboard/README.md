@@ -1,6 +1,6 @@
 # farm-ng Dash
 
-<img src="./assets/Dash_Iso.png" alt="Dash_Iso" width="600;" />
+<img src="./assets/DSCF6570-2-16x9-aspect-reduced.jpg" alt="Dash_Iso" width="600;" />
 
 
 
