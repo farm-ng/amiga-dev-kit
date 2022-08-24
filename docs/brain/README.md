@@ -4,7 +4,7 @@
 
 
 
-
+<img src="./assets/brain_render_iso.png" alt="Dash_Iso" width="600;" />
 
 ## Features overview
 
@@ -43,6 +43,10 @@
 
 
 ## Connections
+
+<img src="./assets/brain_connect.jpg" alt="Dash_Iso" width="600;" />
+
+
 
 
 
