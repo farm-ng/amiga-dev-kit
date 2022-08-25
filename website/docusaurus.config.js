@@ -9,7 +9,7 @@ const config = {
   title: 'Farm-ng Developers',
   tagline: 'Robots are cool',
   url: 'https://farm-ng.com',
-  baseUrl: '/amiga-dev-kit',
+  baseUrl: '/amiga-dev-kit/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/farm-ng_favicon.png',
