@@ -80,9 +80,10 @@ To upgrade your dashboard with the latest farm-ng firmware, grab your dashboard 
 9.  Select all files in the mounted CIRCUITPY drive and delete them
 10. This will freeze the dash on the screen it was displaying.
 11. Drag and drop all extracted files from the downloaded firmware update.
-12. Make sure the `node_id.txt`, `main.py`, `boot.py`, & `app/` files land in the root of the CIRCUITPY drive (as below) and are not nested in a subfolder!
-13. Power cycle your dashboard (disconnect & reconnect power) and check the basic functionality.
-14. If all is as expected, you're good to go. Just power down the dashboard, disconnect the debug cable, and enjoy your new features!
+12. Make sure to drop the `node_id.txt`, `main.py`, `boot.py`, & `app/` files directly into the root of the `CIRCUITPY` drive (as below).
+13. The firmware will **NOT** load if the files are nested in a subfolder.
+14. Power cycle your dashboard (disconnect & reconnect power) and check the basic functionality.
+15. If all is as expected, you're good to go. Just power down the dashboard, disconnect the debug cable, and enjoy your new features!
 
 **CIRCUITPY updated**
 
@@ -133,9 +134,10 @@ is a great place to start!
 
 10. With the dashboard connected to your PC, double click the reset button on the USB / debug breakout.
 11. This should remount the dashboard under the name `AMIGA` and resemble the example below.
-12. Drag and drop the newly downloaded UF2 file onto the mounted drive.
-13. This will immediately cause the bootloader firmware to update, and the dashboard will reboot as `CIRCUITPY` once complete.
-14. Your farm-ng firmware should remain untouched, so order is not important if you are updating both types of firmware.
+12. The timing of the double click can be a little tricky, so if it mounts as `CIRCUITPY`, just try again until it mounts as `AMIGA`.
+13. Drag and drop the newly downloaded UF2 file onto the mounted drive.
+14. This will immediately cause the bootloader firmware to update, and the dashboard will automatically reboot as `CIRCUITPY` once complete.
+15. Your farm-ng firmware should remain untouched, so the update order is not important if you are updating both types of firmware.
 
 **AMIGA mounted**
 
