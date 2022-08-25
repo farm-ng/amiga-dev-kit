@@ -5,7 +5,7 @@ title: Introduction
 
 # farm-ng Dash
 
-<img src="./assets/DSCF6570-2-16x9-aspect-reduced.jpg" alt="Dash_Iso" width="600;" />
+![DSCF6570-2-16x9-aspect-reduced](https://user-images.githubusercontent.com/11846963/186734463-aa149b3a-7510-4d5a-99ea-f9a8a96775d2.jpg)
 
 
 
