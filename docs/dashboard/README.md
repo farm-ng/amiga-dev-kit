@@ -59,17 +59,16 @@ To upgrade your dashboard with the latest farm-ng firmware, grab your dashboard 
 **Access the files:**
 
 1. Navigate to the [firmware](/firmware/) directory of the [amiga-dev-kit](https://github.com/farm-ng/amiga-dev-kit) (this) repository.
-2. Select the desired (`[recommended]` latest) firmware `.zip` folder.
+2. Select the desired `.zip` folder (not the `.uf2` file). Most likely you'll want the latest version.
 3. Download the folder (`~0.1 MB`) with the `Download` button on the right.
 4. Unzip the downloaded file and open the extracted folder.
 
 **Connect to your dashboard:**
 
 4. Power down your dashboard.
-5. Connect the debug cable into the back of the dashboard.
-6. See [debug cable](/docs/debug_cable/) for details.
-7. Connect your Windows or Mac PC to the USB / debug breakout micro-USB port.
-8. Reconnect your dashboard to power so a folder automatically pops up under the name `CIRCUITPY` and resemble the example below.
+5. Connect the debug cable into the back of the dashboard. See [debug cable](/docs/debug_cable/) for details.
+7. Connect your Windows or Mac PC to the USB / debug breakout micro-USB port (not the smaller, serial breakout).
+8. Reconnect your dashboard to power so a folder automatically pops up under the name `CIRCUITPY` and resembles the example below.
 
 **CIRCUITPY mounted**
 
@@ -82,8 +81,10 @@ To upgrade your dashboard with the latest farm-ng firmware, grab your dashboard 
 11. Drag and drop all extracted files from the downloaded firmware update.
 12. Make sure to drop the `node_id.txt`, `main.py`, `boot.py`, & `app/` files directly into the root of the `CIRCUITPY` drive (as below).
 13. The firmware will **NOT** load if the files are nested in a subfolder.
-14. Power cycle your dashboard (disconnect & reconnect power) and check the basic functionality.
+14. Once the file transfer is complete, power cycle your dashboard (disconnect & reconnect power) and check the basic functionality.
 15. If all is as expected, you're good to go. Just power down the dashboard, disconnect the debug cable, and enjoy your new features!
+16. `[Recommended]` Navigate to the configuration tab (gear icon) on the dashboard, and select the pendant icon to calibrate your pendant and confirm functionality.
+17. `[Recommended]` Also check the settings and ensure your desired wheel track and turning speed values remain.
 
 **CIRCUITPY updated**
 
@@ -118,16 +119,16 @@ is a great place to start!
 **Access the files:**
 
 1. Navigate to the [firmware](/firmware/) directory of the [amiga-dev-kit](https://github.com/farm-ng/amiga-dev-kit) (this) repository.
-2. Select the desired (`[recommended]` latest) firmware UF2 (`.uf2`) file
+2. Select the desired (`[recommended]` latest) firmware UF2 (`.uf2`) file.
+2. Select the desired UF2 firmware file (`.uf2`, not the `.zip` folder). Most likely you'll want the latest version.
 3. Download the file (`~1.0 MB`) with the `Download` button on the right.
 
 **Connect to your dashboard:**
 
 4. Power down your dashboard.
-5. Connect the debug cable into the back of the dashboard.
-6. See [debug cable](/docs/debug_cable/) for details.
-7. Connect your Windows or Mac PC to the USB / debug breakout micro-USB port.
-8. Reconnect your dashboard tp power so a folder automatically pops up under the name `CIRCUITPY`, as with the farm-ng firmware update example above.
+5. Connect the debug cable into the back of the dashboard. See [debug cable](/docs/debug_cable/) for details.
+7. Connect your Windows or Mac PC to the USB / debug breakout micro-USB port (not the smaller, serial breakout).
+8. Reconnect your dashboard to power so a folder automatically pops up under the name `CIRCUITPY`, as with the farm-ng firmware update example above.
 
 **Load into BOOTLOADER mode**
 
@@ -136,7 +137,9 @@ is a great place to start!
 12. The timing of the double click can be a little tricky, so if it mounts as `CIRCUITPY`, just try again until it mounts as `AMIGA`.
 13. Drag and drop the newly downloaded UF2 file onto the mounted drive.
 14. This will immediately cause the bootloader firmware to update, and the dashboard will automatically reboot as `CIRCUITPY` once complete.
-15. Your farm-ng firmware should remain untouched, so the update order is not important if you are updating both types of firmware.
+
+
+> **_NOTE:_** The farm-ng firmware you may have just updated should remain untouched, so the order is not important if you are updating both types of firmware.
 
 **AMIGA mounted**
 
