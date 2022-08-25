@@ -3,7 +3,15 @@
 
 This example shows how to connect off the shelf FPV equipment to your Amiga to enble realtime video see through remote control.  This is makes the Amiga remotely operable from the comfort of your office (or cab of your truck) and we're pretty psyched by how low cost and practical FPV control of the Amiga is.
 
-Parts required:
+## Resources 
+- Video demonstration of our first test : https://youtu.be/tN20_CspsyU
+- Link to wiring diagram in LucidChart : https://lucid.app/lucidchart/7255e46a-d128-421e-9bc1-2329d3f280fa/edit?viewport_loc=285%2C-61%2C1837%2C2040%2C0_0&invitationId=inv_f69a2688-850c-4d8f-bfdb-c38752df5303#
+- Blog post about the project : 
+- Adafruit Feather Documentation (microcontroller we commonly use for sending/receiving CANbus messages : https://learn.adafruit.com/adafruit-feather-m4-can-express
+- Setting up the Feather with our recommended firmware : 
+
+
+### Parts required:
 - A radio control receiver, such as the frsky x8r  https://www.frsky-rc.com/product/x8r/ - On amazon $40 - https://www.amazon.com/dp/B00RCAHHFM
   - We chose this one, because it supports SBUS (which is compatible with UART ports on the Amiga Dev Kit microcontroller) and also sending telemetry for two way communication
 - A radio controller, such as the frysky Taranis X9D Plus SE 2019 -https://www.amazon.com/dp/B07VYRGB5Q - $300
@@ -13,7 +21,7 @@ Parts required:
   - Note that this transmitter/receiver requires an RCA capable monitor on the receiver side.
 
 
-## SBUS
+## About SBUS
 
 SBUS is "inverted" UART.  So we cracked open the x8r receiver, and soldered the yellow wire directly to the output pin before it gets inverted, and connected this wire to UART RX pin on the Feather.
 
@@ -33,6 +41,8 @@ TODO support TX over the x8r smart bus.
 ## Wiring
 ![fpv wiring example](https://user-images.githubusercontent.com/11846963/185976402-ff8c4c77-5a08-42b0-865f-d2840fc0b960.jpg)
 Shown above, is the entire receiver rover side of the FPV setup, correctly wired and unpacked.
+
+
 
 ## TODO / WIP
 1. Step 1
