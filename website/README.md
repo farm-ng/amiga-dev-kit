@@ -1,6 +1,8 @@
 # Website
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
+The resulting amiga-dev-kit [documentation is here](https://farm-ng.github.io/amiga-dev-kit/).
+
 ## Installation
 In order to use docusaurus you'll need to install a couple libraries:
 - Node.js version 16.14 or above (which can be checked by running `node -v`)
