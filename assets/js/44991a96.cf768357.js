@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[264],{2130:e=>{e.exports=JSON.parse('{"label":"release","permalink":"/amiga-dev-kit/blog/tags/release","allTagsPath":"/amiga-dev-kit/blog/tags","count":1}')}}]);

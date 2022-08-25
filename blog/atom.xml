@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://farm-ng.com/blog</id>
+    <id>https://farm-ng.com/amiga-dev-kit/blog</id>
     <title>Farm-ng Developers Blog</title>
     <updated>2022-07-08T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://farm-ng.com/blog"/>
+    <link rel="alternate" href="https://farm-ng.com/amiga-dev-kit/blog"/>
     <subtitle>Farm-ng Developers Blog</subtitle>
-    <icon>https://farm-ng.com/img/farm-ng_favicon.png</icon>
+    <icon>https://farm-ng.com/amiga-dev-kit/img/farm-ng_favicon.png</icon>
     <entry>
         <title type="html"><![CDATA[Release Amiga Development Kit]]></title>
         <id>/2022/07/08/version-001</id>
-        <link href="https://farm-ng.com/blog/2022/07/08/version-001"/>
+        <link href="https://farm-ng.com/amiga-dev-kit/blog/2022/07/08/version-001"/>
         <updated>2022-07-08T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[We are excited to release the first version of the Amiga Development Kit !]]></summary>
         <content type="html"><![CDATA[<p>We are excited to release the first version of the Amiga Development Kit !</p>]]></content>
