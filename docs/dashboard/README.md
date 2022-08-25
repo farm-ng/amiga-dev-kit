@@ -60,16 +60,16 @@ To upgrade your dashboard with the latest farm-ng firmware, grab your dashboard 
 
 1. Navigate to the [firmware](/firmware/) directory of the [amiga-dev-kit](https://github.com/farm-ng/amiga-dev-kit) (this) repository.
 2. Select the desired (`[recommended]` latest) firmware `.zip` folder.
-3. Download the folder (`~0.1 MB`) with the `Download` button on the right and unzip the files.
+3. Download the folder (`~0.1 MB`) with the `Download` button on the right.
+4. Unzip the downloaded file and open the extracted folder.
 
 **Connect to your dashboard:**
 
 4. Power down your dashboard.
 5. Connect the debug cable into the back of the dashboard.
-6. Connect your Windows or Mac PC to the USB / debug breakout micro-USB port.
-7. See [debug cable](/docs/debug_cable/) for details.
-8. Power your dashboard back on.
-9. A folder should automatically pop up under the name `CIRCUITPY` and resemble the example below.
+6. See [debug cable](/docs/debug_cable/) for details.
+7. Connect your Windows or Mac PC to the USB / debug breakout micro-USB port.
+8. Reconnect your dashboard to power so a folder automatically pops up under the name `CIRCUITPY` and resemble the example below.
 
 **CIRCUITPY mounted**
 
@@ -78,7 +78,7 @@ To upgrade your dashboard with the latest farm-ng firmware, grab your dashboard 
 **Update the firmware:**
 
 9.  Select all files in the mounted CIRCUITPY drive and delete them
-10. This will freeze the dash on the screen it was displaying.
+10. This *may* freeze the dash on the screen it was displaying.
 11. Drag and drop all extracted files from the downloaded firmware update.
 12. Make sure to drop the `node_id.txt`, `main.py`, `boot.py`, & `app/` files directly into the root of the `CIRCUITPY` drive (as below).
 13. The firmware will **NOT** load if the files are nested in a subfolder.
@@ -125,10 +125,9 @@ is a great place to start!
 
 4. Power down your dashboard.
 5. Connect the debug cable into the back of the dashboard.
-6. Connect your Windows or Mac PC to the USB / debug breakout micro-USB port.
-7. See [debug cable](/docs/debug_cable/) for details.
-8. Power your dashboard back on.
-9. A folder should automatically pop up under the name `CIRCUITPY`, as with the farm-ng firmware update example above.
+6. See [debug cable](/docs/debug_cable/) for details.
+7. Connect your Windows or Mac PC to the USB / debug breakout micro-USB port.
+8. Reconnect your dashboard tp power so a folder automatically pops up under the name `CIRCUITPY`, as with the farm-ng firmware update example above.
 
 **Load into BOOTLOADER mode**
 
