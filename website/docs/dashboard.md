@@ -123,10 +123,8 @@ is a great place to start!
 
 **Access the files:**
 
-1. Navigate to the [firmware](/firmware/) directory of the [amiga-dev-kit](https://github.com/farm-ng/amiga-dev-kit) (this) repository.
-2. Select the desired (`[recommended]` latest) firmware UF2 (`.uf2`) file.
-2. Select the desired UF2 firmware file (`.uf2`, not the `.zip` folder). Most likely you'll want the latest version.
-3. Download the file (`~1.0 MB`) with the `Download` button on the right.
+1. Download the latest [UF2 file](https://github.com/farm-ng/amiga-dev-kit/releases/download/fw-dash-v1.0.0/fw-dash-v1.0.0.uf2)
+2. For more details on the UF2 file release see the release page here: [https://github.com/farm-ng/amiga-dev-kit/releases/tag/fw-dash-v1.0.0](https://github.com/farm-ng/amiga-dev-kit/releases/tag/fw-dash-v1.0.0)
 
 **Connect to your dashboard:**
 
