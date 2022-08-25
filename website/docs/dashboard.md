@@ -131,7 +131,7 @@ is a great place to start!
 **Connect to your dashboard:**
 
 4. Power down your dashboard.
-5. Connect the debug cable into the back of the dashboard. See [debug cable](/docs/debug_cable/) for details.
+5. Connect the debug cable into the back of the dashboard. See [debug cable](./debug_cable/) for details.
 7. Connect your Windows or Mac PC to the USB / debug breakout micro-USB port (not the smaller, serial breakout).
 8. Reconnect your dashboard to power so a folder automatically pops up under the name `CIRCUITPY`, as with the farm-ng firmware update example above.
 
@@ -148,7 +148,7 @@ is a great place to start!
 
 **AMIGA mounted**
 
-![AMIGA](/docs/dashboard/assets/AMIGA_mounted_windows.png)
+![AMIGA](./assets/AMIGA_mounted_windows.png)
 
 > **Troubleshooting**
 >
