@@ -1,5 +1,5 @@
 # Website
-The amiga-dev-kit [documentation website is here](https://farm-ng.github.io/amiga-dev-kit/). **[\*](https://github.com/farm-ng/amiga-dev-kit/edit/main/website/README.md#-the-documentation-website-is-built-using-docusaurus-2)**
+The amiga-dev-kit [documentation website is here](https://farm-ng.github.io/amiga-dev-kit/). **[\*](https://github.com/farm-ng/amiga-dev-kit/tree/main/website#-the-documentation-website-is-built-using-docusaurus-2)**
 
 
 
