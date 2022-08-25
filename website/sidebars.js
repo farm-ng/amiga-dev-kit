@@ -37,8 +37,8 @@ const sidebars = {
     "Dashboard": [
       "dashboard",
     ],
-    "MCU Kit": [
-      "mcu-kit",
+    "Microcontroller Kit": [
+      "microcontroller-kit",
     ],
     "API Documentation": [
       require("./docs/reference/sidebar.json")

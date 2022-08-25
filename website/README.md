@@ -9,8 +9,13 @@ In order to use docusaurus you'll need to install a couple libraries:
 - Yarn >= 1.22.19 
 
 #### For Linux: 
+TODO fixme, this installs a very outdated version of nodejs on ubuntu 20.04
 ```
 $ sudo apt install nodejs
+```
+install python dependencies
+```
+$ pip3 install .[dev] 
 ```
 Then
 ```
@@ -41,6 +46,7 @@ This command starts a local development server and opens up a browser window. Mo
 
 ### Build
 ```
+$ pydoc-markdown
 $ yarn build
 ```
 
