@@ -1,7 +1,7 @@
 # Website
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+The amiga-dev-kit [documentation website is here](https://farm-ng.github.io/amiga-dev-kit/). **[\*](https://github.com/farm-ng/amiga-dev-kit/edit/main/website/README.md#-the-documentation-website-is-built-using-docusaurus-2)**
 
-The resulting amiga-dev-kit [documentation is here](https://farm-ng.github.io/amiga-dev-kit/).
+
 
 ## Installation
 In order to use docusaurus you'll need to install a couple libraries:
@@ -59,3 +59,5 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+###### **\*** The documentation website is built using [Docusaurus 2](https://docusaurus.io/).
