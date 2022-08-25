@@ -3,9 +3,29 @@ Welcome to the Amiga Development Kit, a toolset of hardware and software built b
 
 We are actively creating this page and will be updating it eminently (written 2022.08.24 - 5:15pm)  - Thanks for your patience as we begin untangling the past two years of our work into a human-legible text and images, to share these tools and ecosystem with you.  
 
-Best - Matthew Bitterman, Co-founder, farm-ng
+Warm Regards, - Matthew Bitterman, Co-founder, farm-ng
+
+#
+
+## What is the Amiga?  
+(Components Overview)
+
 
 ~
+## How the Amiga Works - 
+(Communication Overview)
+
+
+~ 
+## Why CANBus?
+
+
+~ 
+## What do I need to start sending commands to the Amiga?
+
+
+~
+#
 
 
 
