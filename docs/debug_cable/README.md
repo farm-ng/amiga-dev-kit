@@ -10,6 +10,8 @@
 
 Cable used to update and debug farm-ng products. It includes rest functionality along with USB and serial communication. 
 
+The larger circuit board on the left is the USB / debug breakout, and the smaller board on the right is the serial interface.
+
 <img src="./assets/debug_notes.jpeg" alt="debug_notes" width="600;" />
 
 ### Product specific uses
@@ -36,16 +38,16 @@ Connector M12-8 A code female used to connect to farm-ng products. The debug cab
 
 Debug wire colors based on common cable with flying leads used on farm-ng built debug kits. 
 
-| PIN  | Description   | Typical Wire Color | Notes                      |
-| ---- | ------------- | ------------------ | -------------------------- |
-| 1    | RESET         | White              |                            |
-| 2    | TTL RX (3.3v) | Brown              | Connect to TX of interface |
-| 3    | TTL TX (3.3v) | Green              | Connect to RX of interface |
-| 4    | USB D-        | Yellow             |                            |
-| 5    | UDB D+        | Gray               |                            |
-| 6    | USB VBUS      | Pink               |                            |
-| 7    | NC            | Blue               |                            |
-| 8    | GND           | Black              |                            |
+| PIN | Description   | Typical Wire Color | Notes                      |
+| --- | ------------- | ------------------ | -------------------------- |
+| 1   | RESET         | White              |                            |
+| 2   | TTL RX (3.3v) | Brown              | Connect to TX of interface |
+| 3   | TTL TX (3.3v) | Green              | Connect to RX of interface |
+| 4   | USB D-        | Yellow             |                            |
+| 5   | UDB D+        | Gray               |                            |
+| 6   | USB VBUS      | Pink               |                            |
+| 7   | NC            | Blue               |                            |
+| 8   | GND           | Black              |                            |
 
 
 
