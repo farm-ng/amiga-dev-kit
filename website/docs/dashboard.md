@@ -55,18 +55,16 @@ And we want to enable you to easily upgrade your dashboard with these improvemen
 
 
 
-### farm-ng firmware update
+### farm-ng Amiga application update
 
-To upgrade your dashboard with the latest farm-ng firmware, grab your dashboard and your debug cable and take the following steps:
+To upgrade your Dashboard with the latest Amiga application, grab your Dashboard and your debug cable and take the following steps:
 
 > **_NOTE:_** This process is currently only supported on Windows and Mac.
 
 **Access the files:**
 
-1. Navigate to the [firmware](/firmware/) directory of the [amiga-dev-kit](https://github.com/farm-ng/amiga-dev-kit) (this) repository.
-2. Select the desired `.zip` folder (not the `.uf2` file). Most likely you'll want the latest version.
-3. Download the folder (`~0.1 MB`) with the `Download` button on the right.
-4. Unzip the downloaded file and open the extracted folder.
+1. Download the application zip file [amiga-dash-v0.0.3.zip](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.0.3/amiga-dash-v0.0.3.zip)
+2. For more details on the release navigate to the release page (https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.0.3)[https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.0.3]
 
 **Connect to your dashboard:**
 
