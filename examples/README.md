@@ -3,8 +3,8 @@
 
 ## Cansniffer
 
-This example covers a simple tool for listening to all CAN Id's streaming on the bus
-and measure simple statistics about the streamed messages.
+Our most basic example covers a simple tool for listening to all CAN Id's streaming on the bus
+and measuring simple statistics about the streamed messages.
 The example is inspired by the
 [cansniffer command line tool from can-utils](https://manpages.debian.org/testing/can-utils/cansniffer.1.en.html).
 
@@ -16,7 +16,7 @@ Topics:
 
 ## Hello World Auto-mode
 
-A simple introduction to interacting with the amiga and
+This is example covers simple introduction to interacting with the amiga and
 using auto-control mode to drive your Amiga from a computer
 using the [farm-ng microcontroller Kit](https://farm-ng.com/products/microcontroller-kit).
 
