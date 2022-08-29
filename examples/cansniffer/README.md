@@ -5,10 +5,7 @@ and measure simple statistics about the streamed messages.
 The example is inspired by the
 [cansniffer command line tool from can-utils](https://manpages.debian.org/testing/can-utils/cansniffer.1.en.html).
 
-You should read through the [hello MainLoop](/examples/hello_main_loop/README.md) example before this.
-
-Last Update: 2022-08-26
-
+You should read through the [hello MainLoop](/examples/hello_main_loop/README.md) example first, as some required concepts are explained there.
 
 ## Parts required:
 
@@ -40,15 +37,15 @@ as well as all CAN Id's received by the microcontroller's CAN interface, with st
 
 ## CAN Introduction
 
-We *mostly* follow the CANopen standards.
+In general, we *mostly* follow the CANopen standards.
 A recommended reading is the [CSS Electronics CANopen tutorial](https://www.csselectronics.com/pages/canopen-tutorial-simple-intro).
 
 > *NOTE:* Some of the third-party, auxiliary components we have integrated into the system do not allow for strict adherence to the CANopen standards.
+> For our core system, we adhere closely to the standards.
 
-In this standard, messages are passed using different function codes based on their use.
+In this standard, messages are passed using function codes based on their use.
 Each component has a node ID identifier used to identify either the intended recipient or the source component of each message sent on the CAN bus.
-In this way, the CAN Id (cobid) contains both the type of message and either the intended recipient or the source of each message.
-
+In this way, the CAN Id (cobid) encodes both the type of message and either the intended recipient or the source of each message.
 
 > If you are unfamiliar with CAN bus,
 > but are familiar with publisher/subscriber frameworks,
@@ -68,15 +65,18 @@ For example, key examples of our PDO sets include:
 | Dashboard       | Motor Controller (x4) | Motor Controller ID | Status, rpm                | Status, voltage, rpm, current |
 | Auto controller | Dashboard             | Dashboard           | State, speed, angular rate | State, speed, angular rate    |
 
-The [Hello World Auto-mode (hello_main_loop)](/examples/hello_main_loop/README.md) provides the ability to interact directly with the Auto controller / dashboard PDO set of RPDO request & TPDO response.
 
+When possible, the RPDO requests are followed and the values measured when following these requests are sent as a TPDO response.
+When the requests cannot be followed, the reason should be inferrable from the TPDO response.
+The [Hello World Auto-mode (hello_main_loop)](/examples/hello_main_loop/README.md) provides the ability to interact directly with the Auto controller / dashboard PDO set of RPDO request & TPDO response.
+To test this, try requesting control of the robot when it is *NOT* in an `AUTO READY` state.
 
 ## Instructions
 
-> *NOTE:* Steps 1 - 3 are explained in greater detail in the [hello MainLoop](/examples/hello_main_loop/README.md) introductory example.
+> *NOTE:* Steps 1 - 3 are explained in greater detail in the [Hello Auto Mode](/examples/hello_main_loop/README.md) introductory example.
 
-1. Connect your microcontroller as in the following diagram:
-2. Drop the `code.py` file and the `lib/` folder directly into the root of the mounted CIRCUITPY drive.
+1. Connect your [farm-ng microcontroller kit](https://farm-ng.com/products/microcontroller-kit) to your PC.
+2. Drop the `code.py` file and the `lib/` folder directly into the root of the mounted `CIRCUITPY` drive.
 3. Open the serial console.
 4. You should now see the can statistics printed and updated every 1000 ms.
 > If the serial console is blank, click into the serial console and soft reboot the microcontroller with `ctrl+D` .
