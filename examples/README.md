@@ -1,30 +1,31 @@
 # Amiga SDK Examples
 
 
+
+## Hello World Auto-mode
+
+This introductory example covers getting set up, interacting with the Amiga, and
+using auto-control mode to drive your Amiga from a computer
+using the [farm-ng microcontroller Kit](https://farm-ng.com/products/microcontroller-kit).
+
+This example enables driving the Amiga by entering simple fwd / rev / left / right keyboard commands the serial port, which the app sends over the CAN bus.
+
+Topics:
+
+- Serial port 101
+- Auto-mode control
+
+
 ## Cansniffer
 
-Our most basic example covers a simple tool for listening to all CAN Id's streaming on the bus
+This basic example covers a simple tool for listening to all CAN Id's streaming on the bus
 and measuring simple statistics about the streamed messages.
 The example is inspired by the
 [cansniffer command line tool from can-utils](https://manpages.debian.org/testing/can-utils/cansniffer.1.en.html).
 
 Topics:
 
-- Serial port 101
 - CAN introduction
-
-
-## Hello World Auto-mode
-
-This is example covers simple introduction to interacting with the amiga and
-using auto-control mode to drive your Amiga from a computer
-using the [farm-ng microcontroller Kit](https://farm-ng.com/products/microcontroller-kit).
-
-Topics:
-
-- Serial port interaction
-- Auto-mode control
-
 
 ## FPV
 
