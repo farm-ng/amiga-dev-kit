@@ -74,7 +74,7 @@ class FpvApp:
                         cmd_speed=cmd_speed,
                         cmd_ang_rate=cmd_ang_rate)
 
-        print('state', self.amiga_tpdo1, 'cmd', rpdo1, end='\r')
+        #print('state', self.amiga_tpdo1, 'cmd', rpdo1, end='\r')
         self.can.send(
                 canio.Message(
                     id=CanOpenObject.RPDO1 | DASHBOARD_NODE_ID,

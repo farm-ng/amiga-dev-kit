@@ -654,7 +654,8 @@ class MainLoop:
             return
 
         self.seconds = nvm_seconds.read()[0] + 1
-        nvm_seconds.write(self.seconds)
+        if self.seconds % 60 == 0:
+            nvm_seconds.write(self.seconds)
 
         if self.node_state == NodeState.BOOTUP:
             self.node_state = NodeState.PRE_OPERATIONAL
