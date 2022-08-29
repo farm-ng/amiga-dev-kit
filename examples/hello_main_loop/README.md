@@ -46,6 +46,39 @@ As you can infer, there's no reason to use one of these catch-up repeaters if th
 > for more details about `ticks_ms`.
 
 
+#### AmigaRpdo1
+
+Wrapper for CAN packet used for auto mode controls of the Amiga.
+Provide the`AmigaRpdo1` object with a requested `AmigaControlState`, speed, and angular rate.
+Then pack this into a [`canio.Message`](https://docs.circuitpython.org/en/latest/shared-bindings/canio/index.html#canio.Message) and send this message over the bus.
+
+> *NOTE:* This is a request for a specific `AmigaControlState`, angular rate, and linear velocity sent to the dashboard.
+> The dashboard, operating as the vehicle control unit (VCU), has built-in logic to prevent unsafe speeds, accelerations, control state transitions, etc.
+
+#### AmigaTpdo1
+
+Wrapper for CAN packet used for sending state of the Amiga, including `AmigaControlState`.
+Unpack the message to see the current `AmigaControlState`, speed, and angular rate of the robot.
+
+There is a convenient util function `from_can_data` that unpacks the message directly into an `AmigaTpdo1` object.
+
+#### AmigaControlState
+
+Control state of the Amiga.
+
+#### CanOpenObject / DASHBOARD_NODE_ID
+
+We *mostly* follow the CANopen standards.
+A recommended reading is the [CSS Electronics CANopen tutorial](https://www.csselectronics.com/pages/canopen-tutorial-simple-intro).
+
+> *NOTE:* Some of the third-party, auxiliary components we have integrated into the system do not allow for strict adherence to the CANopen standards.
+
+In this standard, messages are passed using different function codes based on their use.
+In this example, we send requested commands to the Amiga on the `RPDO1` channel,
+and receive responses streamed from the Amiga on the `TPDO1` channel.
+Each component has a node ID identifier used to identify either the intended recipient or the source component of each message sent on the CAN bus.
+
+
 ### code.py
 
 > code.py (or main.py) is the default name for the executable Python file on microcontrollers flashed with CircuitPython.
@@ -55,14 +88,12 @@ As you can infer, there's no reason to use one of these catch-up repeaters if th
 
 Here we create `HelloMainLoopApp` as a simple example of the types of `AppClass` you can create.
 
-In our app, we create a `TickRepeater` that will cause ...
+In our `HelloMainLoopApp` constructor, we create a `TickRepeater` that will stream the automatic control command to the dashboard every 50 ms (at a 20hz rate).
 
-
-
-
-
-
-
+In our `iter()` call, we:
+1. Check for control keys entered into the serial console [`<space bar>` for toggling auto mode, & `w` / `a` / `s` / `d` [fwd / left / rev / right] for adjusting velocities].
+2. Parse through all received CAN messages, sorting only for the `AmigaTpdo1` responses coming from the dashboard.
+3. Send the most up-to-date auto control commands, based on serial console entries.
 
 
 ## Instructions
@@ -90,4 +121,13 @@ In our app, we create a `TickRepeater` that will cause ...
 > - [Linux serial console](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-linux)
 > - [Mac serial console](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-mac-and-linux)
 
-4. ...
+You should see an output of the current state of the robot, similar to the screenshot below, and you should see the values update as the robot drives around.
+
+<p align="center">
+<img src="./assets/hello_main_loop_console.png" alt="drawing" width="500"/>
+</p>
+
+4. Navigate to the Auto mode tab on your dashboard, and click the `[AUTO CONTROL]` button. The `[AUTO READY]` icon should turn yellow, indicating the dashboard is ready for another component to take `Auto Control`.
+5. Hit the space bar in your serial console to request auto control, and you should see the `[AUTO READY]` and `[AUTO ACTIVE]` icons should turn green, indicating the dashboard is in `Auto Control` mode.
+6. In the serial console, increase / decrease the robot forward/reverse speed with the `w` & `s` keys, and increase / decrease the robot angular rate with the `a` & `d` keys.
+7. Hit the space bar in the serial console to release auto control. Or hit the E-stop on your Amiga!

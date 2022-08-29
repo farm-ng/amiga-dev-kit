@@ -6,10 +6,8 @@ from farm_ng.adk import (
     AmigaControlState,
     DASHBOARD_NODE_ID,
     CanOpenObject,
-    AmigaControlState,
-    clip
 )
-import supervisor
+
 import usb_cdc
 import canio
 
@@ -63,9 +61,7 @@ class HelloMainLoopApp:
                 canio.Message(
                     id=CanOpenObject.RPDO1 | DASHBOARD_NODE_ID,
                     data=AmigaRpdo1(
-                        state_req=self.request_state,
-                        cmd_speed=self.cmd_speed,
-                        cmd_ang_rate=self.cmd_ang_rate,
+                        state_req=self.request_state, cmd_speed=self.cmd_speed, cmd_ang_rate=self.cmd_ang_rate
                     ).encode(),
                 )
             )
