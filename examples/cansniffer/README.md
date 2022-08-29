@@ -80,4 +80,28 @@ as well as all CAN Id's received by the microcontroller's CAN interface, with st
 
 ## Instructions
 
-Connect your microcontroller...
+1. Connect your microcontroller as in the following diagram:
+![](/examples/hello_main_loop/assets/hello_main_loop_diagram.png)
+
+2. Drop the `code.py` file and the `lib/` folder directly into the root of the mounted CIRCUITPY drive, as seen below.
+
+![](/examples/hello_main_loop/assets/hello_main_loop_filesystem.png)
+
+
+3. Open the serial console.
+
+> Mu is the recommended serial console program by adafruit on their [CircuitPython serial console page](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console).
+> Mu has a built in plotter for tuples printed to the serial console (print statements on your microcontroller).
+>
+> We've found that Mu can be a little unstable and freezes occasionally,
+> so we'd recommend checking out their links for the "advanced" serial console:
+>
+> - [Windows serial console](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-windows)
+> - [Linux serial console](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-linux)
+> - [Mac serial console](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-mac-and-linux)
+
+
+4. You should now see the can statistics printed and updated every 1000 ms.
+> If the serial console is blank, click into the serial console and soft reboot the microcontroller with `ctrl+D` .
+
+[](/examples/cansniffer/assets/cansniffer_demo.png)
