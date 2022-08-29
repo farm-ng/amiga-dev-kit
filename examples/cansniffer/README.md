@@ -38,6 +38,39 @@ as well as all CAN Id's received by the microcontroller's CAN interface, with st
 > self.main_loop.show_mem = True
 > ```
 
+## CAN Introduction
+
+We *mostly* follow the CANopen standards.
+A recommended reading is the [CSS Electronics CANopen tutorial](https://www.csselectronics.com/pages/canopen-tutorial-simple-intro).
+
+> *NOTE:* Some of the third-party, auxiliary components we have integrated into the system do not allow for strict adherence to the CANopen standards.
+
+In this standard, messages are passed using different function codes based on their use.
+Each component has a node ID identifier used to identify either the intended recipient or the source component of each message sent on the CAN bus.
+In this way, the CAN Id (cobid) contains both the type of message and either the intended recipient or the source of each message.
+
+
+> If you are unfamiliar with CAN bus,
+> but are familiar with publisher/subscriber frameworks,
+> one way to think about this is that every component is publishing to the CAN bus.
+> Every other component on the CAN bus can subscribe to those messages, or ignore them.
+
+The first CANopen standard to familiarize yourself with before interacting with the Amiga dev kit is the [PDO Service](https://www.csselectronics.com/pages/canopen-tutorial-simple-intro#pdo-process-data-object) used for sharing realtime information.
+Our dashboard is in constant communication with the pendant and all motor controllers.
+
+We stream requests on the `RPDO1` channel, and respond on the `TPDO1` channel.
+
+For example, key examples of our PDO sets include:
+
+| Source          | Destination           | node id             | RPDO Request               | TPDO response                 |
+| --------------- | --------------------- | ------------------- | -------------------------- | ----------------------------- |
+| Pendant         | Dashboard             | Pendant             | Joystick, buttons          | LEDs, backlight               |
+| Dashboard       | Motor Controller (x4) | Motor Controller ID | Status, rpm                | Status, voltage, rpm, current |
+| Auto controller | Dashboard             | Dashboard           | State, speed, angular rate | State, speed, angular rate    |
+
+The [Hello World Auto-mode (hello_main_loop)](/examples/hello_main_loop/README.md) provides the ability to interact directly with the Auto controller / dashboard PDO set of RPDO request & TPDO response.
+
+
 ## Instructions
 
 > *NOTE:* Steps 1 - 3 are explained in greater detail in the [hello MainLoop](/examples/hello_main_loop/README.md) introductory example.
