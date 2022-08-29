@@ -81,12 +81,13 @@ as well as all CAN Id's received by the microcontroller's CAN interface, with st
 ## Instructions
 
 1. Connect your microcontroller as in the following diagram:
-![](/examples/hello_main_loop/assets/hello_main_loop_diagram.png)
+<!-- ![](/examples/hello_main_loop/assets/hello_main_loop_diagram.png) -->
+<center><img src="./../hello_main_loop/assets/hello_main_loop_diagram.png" alt="drawing" width="350"/> </center>
 
 2. Drop the `code.py` file and the `lib/` folder directly into the root of the mounted CIRCUITPY drive, as seen below.
 
-![](/examples/hello_main_loop/assets/hello_main_loop_filesystem.png)
-
+<!-- ![](/examples/hello_main_loop/assets/hello_main_loop_filesystem.png) -->
+<center><img src="./../hello_main_loop/assets/hello_main_loop_filesystem.png" alt="drawing" width="250"/> </center>
 
 3. Open the serial console.
 
@@ -104,4 +105,5 @@ as well as all CAN Id's received by the microcontroller's CAN interface, with st
 4. You should now see the can statistics printed and updated every 1000 ms.
 > If the serial console is blank, click into the serial console and soft reboot the microcontroller with `ctrl+D` .
 
-[](/examples/cansniffer/assets/cansniffer_demo.png)
+<!-- ![](/examples/cansniffer/assets/cansniffer_demo.png) -->
+<center><img src="./assets/cansniffer_demo.png" alt="drawing" width="250"/> </center>
