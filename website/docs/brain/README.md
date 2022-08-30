@@ -1,6 +1,6 @@
 ---
 id: brain
-title: Introduction
+title: Brain Introduction
 ---
 
 # farm-ng Brain
@@ -9,7 +9,8 @@ title: Introduction
 
 
 
-<img src="./assets/brain_render_iso.png" alt="Dash_Iso" width="600;" />
+<!-- <img src="./assets/brain_render_iso.png" alt="Dash_Iso" width="600;" /> -->
+![](./assets/brain_render_iso.png)
 
 ## Features overview
 
@@ -48,8 +49,8 @@ title: Introduction
 
 ## Connections
 
-<img src="./assets/brain_connect.jpg" alt="Dash_Iso" width="600;" />
-
+<!-- <img src="./assets/brain_connect.jpg" alt="Dash_Iso" width="600;" /> -->
+![](./assets/brain_connect.jpg)
 
 
 Xavier provides the following connectors and button for IO

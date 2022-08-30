@@ -1,6 +1,6 @@
 ---
 id: microcontroller-kit
-title: Microntroller Kit
+title: Microntroller Kit Introduction
 ---
 
 ## Feather M4 Can device setup

@@ -33,11 +33,9 @@ const sidebars = {
     "ADK Overview": [
       "adk/what-is-adk",
     ],
-    "Brain": [
-      "brain/brain",
-    ],
     "Dashboard": [
       "dashboard/dashboard",
+      "dashboard/dashboard-fw",
     ],
     "Debug Cable": [
       "debug_cable/debug-cable",
@@ -45,9 +43,12 @@ const sidebars = {
     "Microcontroller Kit": [
       "mcu_kit/microcontroller-kit",
     ],
-    "Pendant": [
-      "pendant/pendant",
+    "Brain": [
+      "brain/brain",
     ],
+    // "Pendant": [
+    //   "pendant/pendant",
+    // ],
     "API Documentation": [
       require("./docs/reference/sidebar.json")
     ],
