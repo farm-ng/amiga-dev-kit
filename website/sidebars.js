@@ -30,9 +30,6 @@ const sidebars = {
     "Introduction": [
       "getting-started",
     ],
-    "ADK Overview": [
-      "adk/what-is-adk",
-    ],
     "Dashboard": [
       "dashboard/dashboard",
       "dashboard/dashboard-fw",

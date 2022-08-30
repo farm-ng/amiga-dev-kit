@@ -1,6 +1,6 @@
 ---
 id: debug-cable
-title: Debug Cable Introduction
+title: Debug Cable Overview
 ---
 
 # farm-ng Debug Cable

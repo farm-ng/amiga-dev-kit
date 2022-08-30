@@ -1,23 +1,27 @@
 ---
 id: brain
-title: Brain Introduction
+title: Brain Overview
 ---
 
 # farm-ng Brain
 
-** Alpha level product subject to change and not all features are fully tested and validated **
-
-
-
 <!-- <img src="./assets/brain_render_iso.png" alt="Dash_Iso" width="600;" /> -->
 ![](./assets/brain_render_iso.png)
 
+### [Brain product page](https://farm-ng.com/products/brain)
+
+***Alpha level product subject to change. Not all features are fully tested and validated.**
+
+
 ## Features overview
 
+The farm-ng Brain brings supercomputer performance to the edge, in a ruggedized packaged designed for the harshest environments.
+The Brain contains a NVIDIA Xavier NX which has up to 21 TOPS of hardware accelerated computing power for machine learning and AI applications, and paired it with a touch-screen display designed to be outdoor-visible, creating both a user-interface and sensor hub in a single, waterproof package.
+This provides quick entry into the world of artificial intelligence, and a single packaged solution for developing tools and interfaces for outdoor autonomy.
+
+Includes CAN bus, USB, and GIGe ethernet bus options.
 
 ### Brain assembly
-
-
 
 | Specifications       |                                                                                                                                           |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |

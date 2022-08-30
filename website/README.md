@@ -49,8 +49,25 @@ brew install yarn
 # yes, use a package manager to install a package manager... ;)
 ```
 
-## Local Development
+## Adding images to the website
 
+> *NOTE:* If you are already working in an active branch, this process works for branched versions of markdown files.
+> If you are not, you will be prompted to create a new branch with your edits (to open a pull request) or commit the edits directly.
+
+We want to keep this repository as lightweight as possible.
+For this reason, please do not add any images to the filesystem of this repository.
+If you'd like to add an image, you should edit the README
+online through Github by:
+
+1. Press the edit button in the top right corner of the markdown file
+2. Drag & drop an image into the markdown file you are editing.
+3. A link to the image should be automatically generated and formattedin the markdown file.
+
+The generated link should look something like: https://user-images.githubusercontent.com/11846963/185976402-ff8c4c77-5a08-42b0-865f-d2840fc0b960.jpg
+
+> *farm-ng employees:* Please back up the images you add to the website in the `Website/Assets/` directory of our shared drive.
+
+## Local Development
 
 ### Build
 ```bash
@@ -71,18 +88,5 @@ yarn start
 > This command starts a local development server and opens up a browser window.
 > Most changes are reflected live without having to restart the server.
 
-<!-- ### Deployment
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch. -->
 
 ###### **\*** The documentation website is built using [Docusaurus 2](https://docusaurus.io/).
