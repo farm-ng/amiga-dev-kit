@@ -22,6 +22,7 @@ The attachments we've already hardened and listed as products on the [amiga-atta
 
 We have additional products to help hackers get started available on our [`For Developers`](https://farm-ng.com/collections/for-developers) page.
 
+![amiga](https://user-images.githubusercontent.com/53625197/187559379-b7b8fcf3-5fe7-4e14-aa47-fa0022f3801b.JPG)
 
 ## The Amiga Development Kit
 
