@@ -135,9 +135,18 @@ is a great place to start!
 
 10. With the dashboard connected to your PC, double click the reset button on the USB / debug breakout.
 11. This should remount the dashboard under the name `AMIGA` and resemble the example below.
-12. The timing of the double click can be a little tricky, so if it mounts as `CIRCUITPY`, just try again until it mounts as `AMIGA`.
-13. Drag and drop the newly downloaded UF2 file onto the mounted drive.
-14. This will immediately cause the bootloader firmware to update, and the dashboard will automatically reboot as `CIRCUITPY` once complete.
+> *NOTE:* The timing of the double click can be a little tricky, so if it mounts as `CIRCUITPY`, just try again until it mounts as `AMIGA`.
+> If you cannot get the double click timing correct, you can enter BOOTLOADER mode with the following advanced user steps:
+> 1. Open a serial console connected to the dashboard (see: [Adafruit connecting to the serial console](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console))
+> 2. Pause the program with `ctrl+C`
+> 3. Enter the following commands in the REPL
+>```
+> import microcontroller
+> microcontroller.on_next_reset(microcontroller.RunMode.BOOTLOADER)
+> microcontroller.reset()
+>```
+12. Drag and drop the newly downloaded UF2 file onto the mounted drive.
+13. This will immediately cause the bootloader firmware to update, and the dashboard will automatically reboot as `CIRCUITPY` once complete.
 
 
 > **_NOTE:_** The farm-ng firmware you may have just updated should remain untouched, so the order is not important if you are updating both types of firmware.
