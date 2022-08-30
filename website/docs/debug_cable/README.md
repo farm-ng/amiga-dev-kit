@@ -1,3 +1,8 @@
+---
+id: debug-cable
+title: Introduction
+---
+
 # farm-ng Debug Cable
 
 

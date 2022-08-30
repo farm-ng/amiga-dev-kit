@@ -28,17 +28,25 @@ const sidebars = {
    */
   "docs": {
     "Introduction": [
-      "what-is-adk",
       "getting-started",
     ],
+    "ADK Overview": [
+      "adk/what-is-adk",
+    ],
     "Brain": [
-      "brain",
+      "brain/brain",
     ],
     "Dashboard": [
-      "dashboard",
+      "dashboard/dashboard",
+    ],
+    "Debug Cable": [
+      "debug_cable/debug-cable",
     ],
     "Microcontroller Kit": [
-      "microcontroller-kit",
+      "mcu_kit/microcontroller-kit",
+    ],
+    "Pendant": [
+      "pendant/pendant",
     ],
     "API Documentation": [
       require("./docs/reference/sidebar.json")

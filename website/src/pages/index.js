@@ -43,5 +43,5 @@ function HomepageHeader() {
 import { Redirect } from 'react-router-dom';
 
 export default function Home() {
-  return <Redirect to='/amiga-dev-kit/docs/what-is-adk' />;
+  return <Redirect to='/amiga-dev-kit/docs/getting-started' />;
 }

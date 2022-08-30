@@ -50,7 +50,7 @@ And we want to enable you to easily upgrade your dashboard with these improvemen
 > Once we've stabilized the wifi interface on the dashboard and ensured the
 > OTA updater is robust, we'll make this available to you.
 >
-> In the meantime, make sure you have your [debug cable](debug_cable/) handy before proceeding with any firmware or UF2 updates.
+> In the meantime, make sure you have your [debug cable](./../debug_cable/) handy before proceeding with any firmware or UF2 updates.
 > If you don't have one, check out the options on our [For Developers](https://farm-ng.com/pages/for-developers) page.
 
 
@@ -69,7 +69,7 @@ To upgrade your Dashboard with the latest Amiga application, grab your Dashboard
 **Connect to your dashboard:**
 
 4. Power down your dashboard.
-5. Connect the debug cable into the back of the dashboard. See [debug cable](debug_cable/) for details.
+5. Connect the debug cable into the back of the dashboard. See [debug cable](./../debug_cable/) for details.
 7. Connect your Windows or Mac PC to the USB / debug breakout micro-USB port (not the smaller, serial breakout).
 8. Reconnect your dashboard to power so a folder automatically pops up under the name `CIRCUITPY` and resembles the example below.
 
@@ -127,7 +127,7 @@ is a great place to start!
 **Connect to your dashboard:**
 
 4. Power down your dashboard.
-5. Connect the debug cable into the back of the dashboard. See [debug cable](./debug_cable/) for details.
+5. Connect the debug cable into the back of the dashboard. See [debug cable](./../debug_cable/) for details.
 7. Connect your Windows or Mac PC to the USB / debug breakout micro-USB port (not the smaller, serial breakout).
 8. Reconnect your dashboard to power so a folder automatically pops up under the name `CIRCUITPY`, as with the farm-ng firmware update example above.
 

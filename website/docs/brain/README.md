@@ -1,3 +1,8 @@
+---
+id: brain
+title: Introduction
+---
+
 # farm-ng Brain
 
 ** Alpha level product subject to change and not all features are fully tested and validated **
@@ -9,20 +14,19 @@
 ## Features overview
 
 
-
 ### Brain assembly
 
 
 
-| Specifications       |                                                              |
-| -------------------- | ------------------------------------------------------------ |
-| Input power          | 12/24 volts (9-28vdc)                                        |
-| Power consumption    |                                                              |
-| Screen               | 10.1" High brightness (850cd/m2) optically bonded IPS display, 1280x800 resolution |
+| Specifications       |                                                                                                                                           |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Input power          | 12/24 volts (9-28vdc)                                                                                                                     |
+| Power consumption    |                                                                                                                                           |
+| Screen               | 10.1" High brightness (850cd/m2) optically bonded IPS display, 1280x800 resolution                                                        |
 | Touch                | Industrial capacitive touch screen controller, tunable for gloves and wet environment (Tuning requires customization). Multitouch capable |
-| Environmental rating | IP64 (As of this design iteration)                           |
-| USB                  | 2x USB 3.0 (Limited by MicroUSB connectors), Debug connector contains USB for firmware and serial terminal. |
-| Network              | 1 x M12-8 with 1Gb ethernet capability. Built in WiFi.       |
+| Environmental rating | IP64 (As of this design iteration)                                                                                                        |
+| USB                  | 2x USB 3.0 (Limited by MicroUSB connectors), Debug connector contains USB for firmware and serial terminal.                               |
+| Network              | 1 x M12-8 with 1Gb ethernet capability. Built in WiFi.                                                                                    |
 
 
 
@@ -30,13 +34,13 @@
 
 
 
-| Specifications |                                          |      |
-| -------------- | ---------------------------------------- | ---- |
-| CPU            | 6-core 64-bit CPU, NVIDIA Carmel ARMv8.2 |      |
-| GPU            | 384-core NVIDIA Volta GPU                |      |
-| Memory         | 8 GB 128-bit LPDDR4x 59.7GB/s            |      |
-| WiFi           | Integrated WiFi with OS drivers          |      |
-|                |                                          |      |
+| Specifications |                                          |     |
+| -------------- | ---------------------------------------- | --- |
+| CPU            | 6-core 64-bit CPU, NVIDIA Carmel ARMv8.2 |     |
+| GPU            | 384-core NVIDIA Volta GPU                |     |
+| Memory         | 8 GB 128-bit LPDDR4x 59.7GB/s            |     |
+| WiFi           | Integrated WiFi with OS drivers          |     |
+|                |                                          |     |
 
 
 
@@ -64,13 +68,13 @@ Xavier provides the following connectors and button for IO
 
 Mating connector M12-5 A code female
 
-| PIN  | Description   | Typical Wire Color | Notes                                                        |
-| ---- | ------------- | ------------------ | ------------------------------------------------------------ |
-| 1    | Shield        | Bare/Green         | Should only be grounded at one end                           |
-| 2    | Supply +24vdc | Red                | farm-ng uses 24v                                             |
-| 3    | GND           | Black              |                                                              |
-| 4    | CAN_High      | White              | Needs at least one termination, and two devices to function. |
-| 5    | CAN_Low       | Blue               | Needs at least one termination, and two devices to function. |
+| PIN | Description   | Typical Wire Color | Notes                                                        |
+| --- | ------------- | ------------------ | ------------------------------------------------------------ |
+| 1   | Shield        | Bare/Green         | Should only be grounded at one end                           |
+| 2   | Supply +24vdc | Red                | farm-ng uses 24v                                             |
+| 3   | GND           | Black              |                                                              |
+| 4   | CAN_High      | White              | Needs at least one termination, and two devices to function. |
+| 5   | CAN_Low       | Blue               | Needs at least one termination, and two devices to function. |
 
 ### Debug
 
@@ -80,14 +84,14 @@ Mating connector M12-8 A code female
 
 Debug wire colors based on common cable with flying leads used on farm-ng built debug kits. 
 
-| PIN  | Description   | Typical Wire Color | Notes                      |
-| ---- | ------------- | ------------------ | -------------------------- |
-| 1    | RESET         | White              |                            |
-| 2    | TTL RX (3.3v) | Brown              | Connect to TX of interface |
-| 3    | TTL TX (3.3v) | Green              | Connect to RX of interface |
-| 4    | USB D-        | Yellow             |                            |
-| 5    | UDB D+        | Gray               |                            |
-| 6    | USB VBUS      | Pink               |                            |
-| 7    | NC            | Blue               |                            |
-| 8    | GND           | Black              |                            |
+| PIN | Description   | Typical Wire Color | Notes                      |
+| --- | ------------- | ------------------ | -------------------------- |
+| 1   | RESET         | White              |                            |
+| 2   | TTL RX (3.3v) | Brown              | Connect to TX of interface |
+| 3   | TTL TX (3.3v) | Green              | Connect to RX of interface |
+| 4   | USB D-        | Yellow             |                            |
+| 5   | UDB D+        | Gray               |                            |
+| 6   | USB VBUS      | Pink               |                            |
+| 7   | NC            | Blue               |                            |
+| 8   | GND           | Black              |                            |
 

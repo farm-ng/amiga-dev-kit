@@ -68,7 +68,7 @@ const config = {
           {
             label: 'Docs',
             type: 'doc',
-            docId: 'what-is-adk',
+            docId: 'getting-started',
             position: 'left',
           },
           //{
