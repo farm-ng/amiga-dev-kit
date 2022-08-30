@@ -13,8 +13,7 @@ to provide guidance and inspiration for your next project!
 
 The code for these examples lives at the [farm-ng/amiga-dev-kit Github](https://github.com/farm-ng/amiga-dev-kit).
 
-![fpv wiring example](https://user-images.githubusercontent.com/11846963/185976402-ff8c4c77-5a08-42b0-865f-d2840fc0b960.jpg)
-
+![microcontroller-kit-16x9-reduced](https://user-images.githubusercontent.com/53625197/187550507-c52d2666-846c-47d5-a4c2-8685d184c3a6.jpg)
 
 <!-- ## What is the Amiga?
 (Components Overview)
