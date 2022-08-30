@@ -86,8 +86,7 @@ To test this, try requesting control of the robot when it is *NOT* in an `AUTO R
 4. You should now see the can statistics printed and updated every 1000 ms.
 > If the serial console is blank, click into the serial console and soft reboot the microcontroller with `ctrl+D` .
 
-<!-- ![](/examples/cansniffer/assets/cansniffer_demo.png) -->
 <!-- <p align="center">
 <img src="./assets/cansniffer_demo.png" alt="drawing" width="300"/>
 </p> -->
-![](./assets/cansniffer_demo.png)
+![cansniffer_demo](https://user-images.githubusercontent.com/53625197/187537132-e89ea79b-2ae1-4ccb-9d9a-8f3ffd899565.png)
