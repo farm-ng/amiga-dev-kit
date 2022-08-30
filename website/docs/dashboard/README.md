@@ -1,13 +1,11 @@
 ---
 id: dashboard
-title: Dashboard Introduction
+title: Dashboard Overview
 ---
-
-# farm-ng Dash
 
 ![DSCF6570-2-16x9-aspect-reduced](https://user-images.githubusercontent.com/11846963/186734463-aa149b3a-7510-4d5a-99ea-f9a8a96775d2.jpg)
 
-
+### [Dashboard product page](https://farm-ng.com/products/dashboard)
 
 ## Description
 Farm-ng's Dashboard is a ruggedized, waterproof, outdoor-visible touch-screen display and machine controller - customizable through our ADK (Amiga-Dev-Kit) toolset!

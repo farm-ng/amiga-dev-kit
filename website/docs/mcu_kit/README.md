@@ -1,7 +1,12 @@
 ---
 id: microcontroller-kit
-title: Microntroller Kit Introduction
+title: Microcontroller Kit Overview
 ---
+
+We sell a complete kit containing all necessary components on the Amiga shop website:
+
+#### [farm-ng micro-controller kit](https://farm-ng.com/products/microcontroller-kit)
+
 
 ## Feather M4 Can device setup
 

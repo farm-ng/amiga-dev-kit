@@ -1,4 +1,4 @@
 ---
 id: pendant
-title: Pendant Introduction
+title: Pendant Overview
 ---

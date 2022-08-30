@@ -3,12 +3,7 @@ id: dashboard-fw
 title: Dashboard Firmware Updates
 ---
 
-# farm-ng Dashboard
-
-![DSCF6570-2-16x9-aspect-reduced](https://user-images.githubusercontent.com/11846963/186734463-aa149b3a-7510-4d5a-99ea-f9a8a96775d2.jpg)
-
-
-## Firmware updates
+## Dashboard firmware updates
 
 At farm-ng, we are regularly updating and improving our firmware as we continue to develop the Amiga platform.
 We want to get every new feature, performance improvement, and reliability increase out to you as soon as we can.
