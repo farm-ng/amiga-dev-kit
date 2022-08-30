@@ -3,17 +3,21 @@ id: fpv
 title: FPV Example
 ---
 # amiga-dev-kit FPV example
+
+### [Link to `FPV/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/examples/FPV/code.py)
+
+
 ![fpv-in-truck-16x9-reduced](https://user-images.githubusercontent.com/11846963/185976329-c65208e1-a42a-436f-a191-9dcc57ecb354.jpg)
 
-This example shows how to connect off the shelf FPV equipment to your Amiga to enable realtime video streaming and teleoperation through remote control. 
+This example shows how to connect off the shelf FPV equipment to your Amiga to enable realtime video streaming and teleoperation through remote control.
 This makes the Amiga remotely operable from the comfort of your office (or cab of your truck) and we're pretty psyched by how low cost and practical FPV control of the Amiga is.
 
-## Resources 
+## Resources
 - Video demonstration of our first test : https://youtu.be/tN20_CspsyU
 - Link to wiring diagram in LucidChart : https://lucid.app/lucidchart/7255e46a-d128-421e-9bc1-2329d3f280fa/edit?viewport_loc=285%2C-61%2C1837%2C2040%2C0_0&invitationId=inv_f69a2688-850c-4d8f-bfdb-c38752df5303#
-- Blog post about the project : 
+- Blog post about the project :
 - Adafruit Feather Documentation (microcontroller we commonly use for sending/receiving CANbus messages : https://learn.adafruit.com/adafruit-feather-m4-can-express
-- Setting up the Feather with our recommended firmware : 
+- Setting up the Feather with our recommended firmware :
 
 
 ### Parts required:
@@ -51,12 +55,9 @@ Shown above, is the entire receiver rover side of the FPV setup, correctly wired
 
 ## TODO / WIP
 1. Step 1
-Wiring the receiver to access the un-inverted signal 
+Wiring the receiver to access the un-inverted signal
 
 ![x8r-receiver-solder-point-reduced](https://user-images.githubusercontent.com/11846963/185978326-a21598e7-fe93-4c99-9ff3-f3b047d586e6.jpg)
-
-
-2. 
 
 
 ## Code

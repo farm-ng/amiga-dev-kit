@@ -12,7 +12,7 @@ applications for their Amiga robot.
 We have a contantly exapanding library of thorough examples, covering software and hardware,
 to provide guidance and inspiration for your next project!
 
-![An image from the static](../../static/img/fpv_wiring_example.jpg)
+![fpv wiring example](https://user-images.githubusercontent.com/11846963/185976402-ff8c4c77-5a08-42b0-865f-d2840fc0b960.jpg)
 
 
 #### Check out the  [farm-ng/amiga-dev-kit Github](https://github.com/farm-ng/amiga-dev-kit)

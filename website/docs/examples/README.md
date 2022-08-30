@@ -5,7 +5,10 @@ title: Examples Index
 
 # Amiga SDK Examples
 
-## [Hello World Auto-mode (hello_main_loop)](/examples/hello_main_loop/README.md)
+## [Hello World Auto-mode (hello_main_loop)](./hello_main_loop/)
+
+[Link to `hello_main_loop/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/examples/hello_main_loop/code.py)
+
 
 This introductory example covers getting set up, interacting with the Amiga, and
 using auto-control mode to drive your Amiga from a computer
@@ -19,7 +22,9 @@ Topics:
 - Auto-mode control
 
 
-## [Cansniffer](/examples/cansniffer/README.md)
+## [Cansniffer](./cansniffer/)
+
+[Link to `cansniffer/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/examples/cansniffer/code.py)
 
 This basic example covers a simple tool for listening to all CAN Id's streaming on the bus
 and measuring simple statistics about the streamed messages.
@@ -30,7 +35,9 @@ Topics:
 
 - CAN introduction
 
-## [FPV](/examples/FPV/README.md)
+## [FPV](./FPV/)
+
+[Link to `FPV/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/examples/FPV/code.py)
 
 This example shows how to connect off the shelf FPV equipment to your Amiga to enable realtime video streaming and teleoperation through remote control.  This makes the Amiga remotely operable from the comfort of your office (or cab of your truck) and we're pretty psyched by how low cost and practical FPV control of the Amiga is.
 

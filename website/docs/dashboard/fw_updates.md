@@ -3,7 +3,7 @@ id: dashboard-fw
 title: Dashboard Firmware Updates
 ---
 
-# farm-ng Dash
+# farm-ng Dashboard
 
 ![DSCF6570-2-16x9-aspect-reduced](https://user-images.githubusercontent.com/11846963/186734463-aa149b3a-7510-4d5a-99ea-f9a8a96775d2.jpg)
 
@@ -44,7 +44,7 @@ To upgrade your Dashboard with the latest Amiga application, grab your Dashboard
 
 **CIRCUITPY mounted**
 
-![CIRCUITPY](./assets/CIRCUITPY_mounted_windows.png)
+![CIRCUITPY](https://user-images.githubusercontent.com/53625197/187532222-eabfa798-9c01-43c8-8c1e-4ecaa0b673e6.png)
 
 **Update the firmware:**
 
@@ -60,7 +60,7 @@ To upgrade your Dashboard with the latest Amiga application, grab your Dashboard
 
 **CIRCUITPY updated**
 
-![CIRCUITPY updated](./assets/CIRCUITPY_updated_windows.png)
+![CIRCUITPY updated](https://user-images.githubusercontent.com/53625197/187532633-c87803a3-9fb9-4ba6-be39-a2f6bed27613.png)
 
 > **Troubleshooting**
 > - If the file transfer process fails, just delete all files in CIRCUITPY and try it again.
@@ -122,7 +122,7 @@ is a great place to start!
 
 **AMIGA mounted**
 
-![AMIGA](./assets/AMIGA_mounted_windows.png)
+![AMIGA](https://user-images.githubusercontent.com/53625197/187532028-6c93c1fe-4196-4b33-8d8e-dfa145a83001.png)
 
 > **Troubleshooting**
 >
