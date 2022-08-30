@@ -4,6 +4,8 @@ title: Hello Main Loop Example
 ---
 # Hello Main Loop Example
 
+### [Link to `hello_main_loop/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/examples/hello_main_loop/code.py)
+
 This introductory example covers getting set up, interacting with the Amiga, and
 using auto-control mode to drive your Amiga from a computer
 using the [farm-ng microcontroller Kit](https://farm-ng.com/products/microcontroller-kit).
