@@ -1,3 +1,8 @@
+---
+id: cansniffer
+title: Cansniffer Example
+---
+
 # Cansniffer
 
 This example covers a simple tool for listening to all CAN Id's streaming on the bus
@@ -82,6 +87,7 @@ To test this, try requesting control of the robot when it is *NOT* in an `AUTO R
 > If the serial console is blank, click into the serial console and soft reboot the microcontroller with `ctrl+D` .
 
 <!-- ![](/examples/cansniffer/assets/cansniffer_demo.png) -->
-<p align="center">
+<!-- <p align="center">
 <img src="./assets/cansniffer_demo.png" alt="drawing" width="300"/>
-</p>
+</p> -->
+![](./assets/cansniffer_demo.png)

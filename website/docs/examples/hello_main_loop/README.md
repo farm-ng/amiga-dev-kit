@@ -1,3 +1,7 @@
+---
+id: hello-world
+title: Hello Main Loop Example
+---
 # Hello Main Loop Example
 
 This introductory example covers getting set up, interacting with the Amiga, and
@@ -99,15 +103,17 @@ In our `iter()` call, we:
 ## Instructions
 
 1. Connect your microcontroller as in the following diagram:
-<p align="center">
+<!-- <p align="center">
 <img src="./assets/hello_main_loop_diagram.png" alt="drawing" width="600"/>
-</p>
+</p> -->
+![](./assets/hello_main_loop_diagram.png)
 
 2. Drop the `code.py` file and the `lib/` folder directly into the root of the mounted `CIRCUITPY` drive, as seen below.
 
-<p align="center">
+<!-- <p align="center">
 <img src="./assets/hello_main_loop_filesystem.png" alt="drawing" width="500"/>
-</p>
+</p> -->
+![](./assets/hello_main_loop_filesystem.png)
 
 3. Open the serial console.
 
@@ -123,9 +129,10 @@ In our `iter()` call, we:
 
 You should see an output of the current state of the robot, similar to the screenshot below, and you should see the values update as the robot drives around.
 
-<p align="center">
+<!-- <p align="center">
 <img src="./assets/hello_main_loop_console.png" alt="drawing" width="650"/>
-</p>
+</p> -->
+![](./assets/hello_main_loop_console.png)
 
 4. Navigate to the Auto mode tab on your dashboard, and click the `[AUTO CONTROL]` button. The `[AUTO READY]` icon should turn yellow, indicating the dashboard is ready for a component to take `Auto Control`.
 5. Hit the space bar in your serial console to request auto control, and you should see the `[AUTO READY]` and `[AUTO ACTIVE]` icons should turn green, indicating the dashboard is in `Auto Control` mode.

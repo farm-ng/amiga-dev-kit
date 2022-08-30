@@ -46,12 +46,18 @@ const sidebars = {
     "Brain": [
       "brain/brain",
     ],
+    "Examples": [
+      "examples/examples",
+      "examples/hello_main_loop/hello-world",
+      "examples/cansniffer/cansniffer",
+      "examples/FPV/fpv",
+    ],
     // "Pendant": [
     //   "pendant/pendant",
     // ],
-    "API Documentation": [
-      require("./docs/reference/sidebar.json")
-    ],
+    // "API Documentation": [
+    //   require("./docs/reference/sidebar.json")
+    // ],
   }
 };
 
