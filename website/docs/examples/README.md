@@ -1,3 +1,8 @@
+---
+id: examples
+title: Examples Index
+---
+
 # Amiga SDK Examples
 
 ## [Hello World Auto-mode (hello_main_loop)](/examples/hello_main_loop/README.md)
