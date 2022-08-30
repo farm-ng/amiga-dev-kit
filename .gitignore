@@ -152,3 +152,7 @@ src/tape_out.txt
 !src/pendant/farm_ng/**/*.mpy
 !src/pendant/lib/**/*.mpy
 
+
+# protos
+*_pb2.py
+*_pb2_grpc.py

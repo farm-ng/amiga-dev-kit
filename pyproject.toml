@@ -1,6 +1,4 @@
 [project]
-name = "farm_ng"
-dynamic = ["version"]
 description = "Amiga development kit for third party hardware or software extensions."
 authors = [
     {name = "Farm-ng Inc."},
@@ -23,7 +21,10 @@ classifiers = [
     "Framework :: Robot Framework",
 ]
 
-dependencies = []
+dependencies = [
+    "protobuf==3.20.1",
+    "grpcio==1.47.0",
+]
 
 [project.optional-dependencies]
 dev = [
