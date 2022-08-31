@@ -19,7 +19,7 @@ class BuildProtosCommand(Command):
     def run(self):
         from grpc_tools import command
 
-        command.build_package_protos(self.distribution.package_dir[""])
+        command.build_package_protos(".")
 
 
 class CleanFilesCommand(Command):
@@ -32,7 +32,7 @@ class CleanFilesCommand(Command):
         pass
 
     def run(self):
-        proto_files_root = Path(self.distribution.package_dir[""]) / "farm_ng"
+        proto_files_root = Path("farm_ng")
         for proto_file in proto_files_root.rglob("*_pb2*.py"):
             assert proto_file.unlink() is None
 
