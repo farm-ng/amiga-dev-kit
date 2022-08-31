@@ -4,7 +4,7 @@ from dataclasses import dataclass
 import grpc
 from farm_ng.oak import oak_pb2, oak_pb2_grpc
 
-__all__ = ["OakCameraClientConfig", "OakCameraClient"]
+__all__ = ["OakCameraClientConfig", "OakCameraClient", "OakCameraServiceState"]
 
 
 logging.basicConfig(level=logging.DEBUG)
