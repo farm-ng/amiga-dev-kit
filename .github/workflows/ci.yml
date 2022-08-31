@@ -30,4 +30,4 @@ jobs:
         pip3 install .[dev]
 
     - name: Run Tests
-      run: pytest -v tests/
+      run: cd brain/ && pytest -v tests/
