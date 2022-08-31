@@ -20,21 +20,17 @@ cd <to_your_base_directory>
 git clone git@github.com:farm-ng/amiga-dev-kit.git
 ```
 
-Create and install the `farm_ng` Python package
+### Directory structure
 
-```bash
-# install to system
-pip3 install .
+#### Brain
 
-# or for development mode
-pip3 install -e .[dev]
-```
+See [brain](/brain/) for instructions on building the `farm_ng` lib for the brain.
 
-Verify that you have installed the package
+#### Circuitpy
 
-```bash
-python3 -c "import farm_ng; print(farm_ng.__version__)"
-```
+See 
+
+
 
 ## Develop using PyCharm
 

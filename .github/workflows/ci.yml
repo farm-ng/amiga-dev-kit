@@ -11,6 +11,9 @@ on:
 jobs:
   tests-cpu:
     runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: brain
     strategy:
       fail-fast: false
       matrix:

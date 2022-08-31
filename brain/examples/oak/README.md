@@ -3,6 +3,7 @@
 1. Install the dependencies
 
 ```bash
+cd brain/examples/oak/
 pip3 install -r requirements.txt
 ```
 
