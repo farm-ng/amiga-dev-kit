@@ -25,9 +25,8 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
-      run:
-        cd brain/ &&
-        pip3 install .[dev]
-
+      working-directory: brain
+      run: pip3 install .[dev]
     - name: Run Tests
+      working-directory: brain
       run: cd brain/ && pytest -v tests/
