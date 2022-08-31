@@ -1,4 +1,0 @@
-# Amiga Emulator
-
-
-## PLACEHOLDER DIRECTORY

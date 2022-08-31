@@ -10,6 +10,17 @@ If you're just now learning about farm-ng and the Amiga robot, check out our web
 
 The Amiga, and accompanying development kit, is a [toolset](https://farm-ng.com/collections/amiga-attachments) of hardware and software built by farm-ng to enable farmers, hackers, engineers, roboticists, or anyone with a vision of creating ruggedized, waterproof, outdoor robotic rover applications.
 
+## Directory structure
+
+### Brain
+
+See [brain/](/brain/) for instructions on building the `farm_ng` lib for the brain and example applications for interacting with the [farm-ng brain](https://farm-ng.github.io/amiga-dev-kit/docs/brain/).
+
+### Circuitpy
+
+See [circuitpy/](/circuitpy/) for microcontroller applications of the farm-ng ADK.
+Instructions are documented on the [Amiga Development Kit](https://farm-ng.github.io/amiga-dev-kit) website.
+
 
 ## Cloning the Amiga Development Kit
 
@@ -20,19 +31,7 @@ cd <to_your_base_directory>
 git clone git@github.com:farm-ng/amiga-dev-kit.git
 ```
 
-### Directory structure
-
-#### Brain
-
-See [brain](/brain/) for instructions on building the `farm_ng` lib for the brain.
-
-#### Circuitpy
-
-See 
-
-
-
-## Develop using PyCharm
+### Develop using PyCharm
 
 In Pycharm, you can:
 * Create a new project

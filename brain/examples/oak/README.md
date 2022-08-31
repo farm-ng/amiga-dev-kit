@@ -18,13 +18,11 @@ pip3 install -r examples/oak/requirements.txt
 ```
 
 3. Execute the Python script
-
 ```bash
 python3 examples/oak/main.py --port 50051
 ```
 
 4. Customize the run
-
 ```bash
 python3 examples/oak/main.py --help
 
