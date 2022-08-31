@@ -3,6 +3,7 @@ from pathlib import Path
 
 from setuptools import Command, setup
 from setuptools.command.develop import develop
+from setuptools.command.egg_info import egg_info
 from setuptools.command.install import install
 
 
@@ -54,11 +55,20 @@ class BuildProtosDevelop(develop):
         develop.run(self)
 
 
+class BuildProtosEggInfo(egg_info):
+    def run(self):
+        # 1. Build the protobufs
+        BuildProtosCommand.run(self)
+        # 2. Run the installation
+        egg_info.run(self)
+
+
 setup(
     cmdclass={
         "build_package_protos": BuildProtosCommand,
         "install": BuildProtosInstall,
         "develop": BuildProtosDevelop,
+        "egg_info": BuildProtosEggInfo,
         "clean": CleanFilesCommand,
     }
 )
