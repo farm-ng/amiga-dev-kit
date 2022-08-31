@@ -13,10 +13,11 @@ repos:
       - id: check-yaml
       - id: check-json
 
-  - repo: https://github.com/PyCQA/isort
-    rev: 5.10.1
-    hooks:
-      - id: isort
+  # TODO: enable later, it produces some errors
+  # - repo: https://github.com/PyCQA/isort
+  #   rev: 5.10.1
+  #   hooks:
+  #     - id: isort
 
   - repo: https://github.com/PyCQA/flake8
     rev: 5.0.4

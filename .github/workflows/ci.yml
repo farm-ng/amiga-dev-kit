@@ -11,6 +11,9 @@ on:
 jobs:
   tests-cpu:
     runs-on: ${{ matrix.os }}
+    # defaults:
+    #   run:
+    #     working-directory: brain
     strategy:
       fail-fast: false
       matrix:
@@ -22,6 +25,8 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
+      working-directory: brain
       run: pip3 install .[dev]
     - name: Run Tests
+      working-directory: brain
       run: pytest -v tests/
