@@ -1,7 +1,7 @@
 from farm_ng.adk import MainLoop, TickRepeater
 
 
-class HelloMainLoopApp:
+class CansnifferApp:
     def __init__(self, main_loop: MainLoop, can, node_id) -> None:
         self.can = can
         self.node_id = node_id
@@ -16,7 +16,7 @@ class HelloMainLoopApp:
 
 
 def main():
-    MainLoop(AppClass=HelloMainLoopApp, has_display=False, has_wifi=False).loop()
+    MainLoop(AppClass=CansnifferApp, has_display=False, has_wifi=False).loop()
 
 
 main()

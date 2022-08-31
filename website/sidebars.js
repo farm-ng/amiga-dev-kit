@@ -28,21 +28,33 @@ const sidebars = {
    */
   "docs": {
     "Introduction": [
-      "what-is-adk",
       "getting-started",
     ],
-    "Brain": [
-      "brain",
-    ],
     "Dashboard": [
-      "dashboard",
+      "dashboard/dashboard",
+      "dashboard/dashboard-fw",
     ],
-    "MCU Kit": [
-      "mcu-kit",
+    "Debug Cable": [
+      "debug_cable/debug-cable",
     ],
-    "API Documentation": [
-      require("./docs/reference/sidebar.json")
+    "Microcontroller Kit": [
+      "mcu_kit/microcontroller-kit",
     ],
+    "Brain": [
+      "brain/brain",
+    ],
+    "Examples": [
+      "examples/examples",
+      "examples/hello_main_loop/hello-world",
+      "examples/cansniffer/cansniffer",
+      "examples/FPV/fpv",
+    ],
+    // "Pendant": [
+    //   "pendant/pendant",
+    // ],
+    // "API Documentation": [
+    //   require("./docs/reference/sidebar.json")
+    // ],
   }
 };
 
