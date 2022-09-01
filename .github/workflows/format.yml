@@ -9,6 +9,16 @@ on:
       - main
 
 jobs:
+  mypy:
+    runs-on: [ubuntu-latest]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install dependencies
+      working-directory: brain
+      run: pip3 install -e .[dev]
+    - name: Run mypy
+      working-directory: brain
+      run: mypy
   pre-commit-check:
     runs-on: ubuntu-latest
     steps:

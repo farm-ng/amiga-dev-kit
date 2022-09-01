@@ -1,5 +1,9 @@
 # amiga-dev-kit
 
+[![Continuous Integration](https://github.com/farm-ng/amiga-dev-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/farm-ng/amiga-dev-kit/actions/workflows/ci.yml)
+[![docs](https://github.com/farm-ng/amiga-dev-kit/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/farm-ng/amiga-dev-kit/actions/workflows/pages/pages-build-deployment)
+
+
 Welcome to the Amiga Development Kit!
 
 Please check out the [Amiga Development Kit documentation](https://farm-ng.github.io/amiga-dev-kit/) for full context on this repository, where you'll find documentation, tutorials, & the API.
