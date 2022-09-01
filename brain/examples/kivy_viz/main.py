@@ -88,7 +88,7 @@ class CameraApp(App):
             state: oak_pb2.OakServiceState = await client.get_state()
 
             if state.value != oak_pb2.OakServiceState.RUNNING:
-                print("Camera is not streaming!")
+                await asyncio.sleep(0.01)
                 continue
 
             response: oak_pb2.StreamFramesReply = await response_stream.read()
