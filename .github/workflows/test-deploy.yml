@@ -26,7 +26,7 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Create Markdown
         working-directory: website
-        run: ./run_pydoc-markdown
+        run: ./run_pydoc-markdown.sh
       - name: Test build website
         working-directory: website
         run: yarn build
