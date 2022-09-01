@@ -4,7 +4,7 @@ title: FPV Example
 ---
 # amiga-dev-kit FPV example
 
-### [Link to `FPV/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/examples/FPV/code.py)
+### [Link to `FPV/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/FPV/code.py)
 
 
 ![fpv-in-truck-16x9-reduced](https://user-images.githubusercontent.com/11846963/185976329-c65208e1-a42a-436f-a191-9dcc57ecb354.jpg)

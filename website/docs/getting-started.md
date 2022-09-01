@@ -8,19 +8,18 @@ title: Getting Started
 In this website you will find full context on our
 [ADK repository](https://github.com/farm-ng/amiga-dev-kit), including documentation, tutorials, & the development kit API.
 
-If you're just now learning about farm-ng and the Amiga robot, you should start by checking out [the farm-ng website](https://farm-ng.com/) to get an introduction to the Amiga robot and our [`For Developers`](https://farm-ng.com/collections/for-developers).
-
-
 ## The Amiga
 
 The [Amiga](https://farm-ng.com/products/la-maquina-amiga) is a toolset of hardware and software built by farm-ng to enable farmers, hackers, engineers, roboticists, or anyone with a vision of creating ruggedized, waterproof, outdoor robotic rover applications.
 
-> We love making tools, and built the Amiga robot to empower and inspire farmers, engineers, hackers, communities, or anyone with a vision to make it their own.
-> The Amiga is a platform, community, and an ecosystem of components built to customize the Amiga, extend it, and maintain forever.
+:::info
+We love making tools, and built the Amiga robot to empower and inspire farmers, engineers, hackers, communities, or anyone with a vision to make it their own.
+The Amiga is a platform, community, and ecosystem of components built to customize the Amiga, extend it, and maintain it forever.
 
-The attachments we've already hardened and listed as products on the [amiga-attachments page](https://farm-ng.com/collections/amiga-attachments) all started out as hacking projects with the Amiga development kit!
+If you're just now learning about farm-ng and the Amiga robot, you should start by checking out the [**farm-ng website**](https://farm-ng.com/) to get an introduction to the [**Amiga**](https://farm-ng.com/products/la-maquina-amiga) robot.
+:::
 
-We have additional products to help hackers get started available on our [`For Developers`](https://farm-ng.com/collections/for-developers) page.
+Some of our Amiga development kit hacking projects have been hardened and listed as products on the [amiga-attachments page](https://farm-ng.com/collections/amiga-attachments). And we have additional products to help hackers get started available on our [`For Developers`](https://farm-ng.com/collections/for-developers) page.
 
 ![amiga](https://user-images.githubusercontent.com/53625197/187559379-b7b8fcf3-5fe7-4e14-aa47-fa0022f3801b.JPG)
 

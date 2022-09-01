@@ -4,7 +4,7 @@ title: Hello Main Loop Example
 ---
 # Hello Main Loop Example
 
-### [Link to `hello_main_loop/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/examples/hello_main_loop/code.py)
+### [Link to `hello_main_loop/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/hello_main_loop/code.py)
 
 This introductory example covers getting set up, interacting with the Amiga, and
 using auto-control mode to drive your Amiga from a computer
@@ -38,19 +38,18 @@ The `TickRepeater` is what we call a "catch-up" repeater, in which the the next 
 As you can infer, there's no reason to use one of these catch-up repeaters if the `check()` will be called less frequently than the `ticks_period_ms` used in the constructor.
 
 
-> `ticks_ms` _NOTE_:
->
-> We use `ticks_ms`
-> which wraps every `2^29` ms (~6.2 days).
-> Our logic handles a single wrap, but we do not detect two wraps
-> as we use this in periods more on the `100 ms` timescale.
-> If you are creating a long duration application,
-> just make sure your period is less than 6 days and that the check
-> is called at least that often.
->
-> See the [`supervisor.ticks_ms()` docs](https://docs.circuitpython.org/en/latest/shared-bindings/supervisor/#supervisor.ticks_ms)
-> for more details about `ticks_ms`.
+:::info `ticks_ms`
+We use `ticks_ms`
+which wraps every `2^29` ms (~6.2 days).
+Our logic handles a single wrap, but we do not detect two wraps
+as we use this in periods more on the `100 ms` timescale.
+If you are creating a long duration application,
+just make sure your period is less than 6 days and that the check
+is called at least that often.
 
+See the [`supervisor.ticks_ms()` docs](https://docs.circuitpython.org/en/latest/shared-bindings/supervisor/#supervisor.ticks_ms)
+for more details about `ticks_ms`.
+:::
 
 #### AmigaRpdo1
 
@@ -58,8 +57,10 @@ Wrapper for CAN packet used for auto mode controls of the Amiga.
 Provide the`AmigaRpdo1` object with a requested `AmigaControlState`, speed, and angular rate.
 Then pack this into a [`canio.Message`](https://docs.circuitpython.org/en/latest/shared-bindings/canio/index.html#canio.Message) and send this message over the bus.
 
-> *NOTE:* This is a request for a specific `AmigaControlState`, angular rate, and linear velocity sent to the dashboard.
-> The dashboard, operating as the vehicle control unit (VCU), has built-in logic to prevent unsafe speeds, accelerations, control state transitions, etc.
+:::info
+This is a ***request*** for a specific `AmigaControlState`, angular rate, and linear velocity sent to the dashboard.
+The dashboard, operating as the vehicle control unit (VCU), has built-in logic to prevent unsafe speeds, accelerations, control state transitions, etc.
+:::
 
 #### AmigaTpdo1
 
@@ -77,8 +78,10 @@ Control state of the Amiga.
 We *mostly* follow the CANopen standards.
 A recommended reading is the [CSS Electronics CANopen tutorial](https://www.csselectronics.com/pages/canopen-tutorial-simple-intro).
 
-> *NOTE:* Some of the third-party, auxiliary components we have integrated into the system do not allow for strict adherence to the CANopen standards.
-> For our core system, we adhere closely to the standards.
+:::note
+Some of the third-party, auxiliary components we have integrated into the system do not allow for strict adherence to the CANopen standards.
+For our core system, we adhere closely to the standards.
+:::
 
 In this standard, messages are passed using function codes based on their use.
 Each component has a node ID identifier used to identify either the intended recipient or the source component of each message sent on the CAN bus.
@@ -87,8 +90,10 @@ These are differentiated from pendant or motor controller RPDO/TPDO command sets
 
 ### code.py
 
-> code.py (or main.py) is the default name for the executable Python file on microcontrollers flashed with CircuitPython.
-> You'll see we stick to the code.py convention with our files.
+:::tip
+code.py (or main.py) is the default name for the executable Python file on microcontrollers flashed with CircuitPython.
+You'll see we stick to the code.py convention with our files.
+:::
 
 #### HelloMainLoopApp
 
@@ -97,9 +102,9 @@ Here we create `HelloMainLoopApp` as a simple example of the types of `AppClass`
 In our `HelloMainLoopApp` constructor, we create a `TickRepeater` that will stream the automatic control command to the dashboard every 50 ms (at a 20hz rate).
 
 In our `iter()` call, we:
-1. Check for control keys entered into the serial console [`<space bar>` for toggling auto mode, & `w` / `a` / `s` / `d` [fwd / left / rev / right] for adjusting velocities].
-2. Parse through all received CAN messages, sorting only for the `AmigaTpdo1` responses coming from the dashboard.
-3. Send the most up-to-date auto control commands, based on serial console entries, in an `AmigaRpdo1` formatted packet.
+- Check for control keys entered into the serial console [`<space bar>` for toggling auto mode, & `w` / `a` / `s` / `d` [fwd / left / rev / right] for adjusting velocities].
+- Parse through all received CAN messages, sorting only for the `AmigaTpdo1` responses coming from the dashboard.
+- Send the most up-to-date auto control commands, based on serial console entries, in an `AmigaRpdo1` formatted packet.
 
 
 ## Instructions
@@ -121,19 +126,19 @@ In our `iter()` call, we:
 ![hello_main_loop_filesystem](https://user-images.githubusercontent.com/53625197/187538475-9d301b0f-f303-4ead-a1e7-b55c6b449b9f.png)
 
 3. Open the serial console.
+   :::tip
+   Mu is the recommended serial console program by adafruit on their [CircuitPython serial console page](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console).
+   Mu has a built in plotter for tuples printed to the serial console (print statements in the python code on your microcontroller).
 
-> Mu is the recommended serial console program by adafruit on their [CircuitPython serial console page](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console).
-> Mu has a built in plotter for tuples printed to the serial console (print statements on your microcontroller).
->
-> We've found that Mu can be a little unstable and freezes occasionally,
-> so we'd recommend checking out their links for the "advanced" serial console:
->
-> - [Windows serial console](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-windows)
-> - [Linux serial console](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-linux)
-> - [Mac serial console](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-mac-and-linux)
+   We've found that Mu can be a little unstable and freezes occasionally,
+   so we'd recommend checking out their links for the "advanced" serial console:
+
+   - [Windows serial console](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-windows)
+   - [Linux serial console](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-linux)
+   - [Mac serial console](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-mac-and-linux)
+   :::
 
 You should see an output of the current state of the robot, similar to the screenshot below, and you should see the values update as the robot drives around.
-
 <!-- <p align="center">
 <img src="./assets/hello_main_loop_console.png" alt="drawing" width="650"/>
 </p> -->
