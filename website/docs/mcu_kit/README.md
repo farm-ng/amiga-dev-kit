@@ -32,12 +32,12 @@ The male M12 CAN bus connector whose white (high) and blue (low) connectors are 
 ### Flashing the UF2 firmware on the M4 device
 ##### On initial plug in
 
-Our goal is to have the Adafruit Feather show up as a CIRCUITPY directory for plugging it in, see 
+Our goal is to have the Adafruit Feather show up as a CIRCUITPY directory for plugging it in, see
 [this reference](https://learn.adafruit.com/circuit-playground-lesson-number-0/usb-connection).
 
 * Plug in your feather to your computer probably using a Type-C (feather) to Type-C (computer connector).
    * You'll get randomly varying LED colors
-* Look for the little reset switch on the Feather board. Double click the reset button to enter bootloader mode 
+* Look for the little reset switch on the Feather board. Double click the reset button to enter bootloader mode
 [(reference here)](https://learn.adafruit.com/circuit-playground-lesson-number-0/reset-button-bootloader)
    * The Feather should automatically remount and show up as FTHRCANBOOT
    * This allows you to copy a Microsoft standard flash format uf2 file onto the device
@@ -48,7 +48,7 @@ Below are instructions for flashing under different operating systems.
 
 
 ##### On subsequent plug in
-When attaching a previously flashed Feather M4 device, it should automatically mount as CIRCUITPY. 
+When attaching a previously flashed Feather M4 device, it should automatically mount as CIRCUITPY.
 
 #### WSL uf2 flashing
 
@@ -76,10 +76,10 @@ In your PyCharm terminal or system terminal, use the command line:
 
 ```bash
 cd ~/<to_your_base_directory>/amiga-dev-kit
-cp feather_m4_can/uf2s/adafruit-circuitpython-feather_m4_can-en_US-7.3.2.uf2 /Volumes/FTHRCANBOOT 
+cp feather_m4_can/uf2s/adafruit-circuitpython-feather_m4_can-en_US-7.3.2.uf2 /Volumes/FTHRCANBOOT
 ```
 
-You can also drag and drop the file onto the volume in Finder, and it will automatically install the uf2.  The volume will dismount, and then remount showing up as CIRCUITPY.  
+You can also drag and drop the file onto the volume in Finder, and it will automatically install the uf2.  The volume will dismount, and then remount showing up as CIRCUITPY.
 
 
 # Loading code on the Feather
@@ -111,4 +111,3 @@ The feather will automatically reload. You run this command on the screen termin
 * The CircuitPython programming guide from Adafruit is [here: programming docs](https://learn.adafruit.com/circuitpython-essentials/circuitpython-essentials)
 * The microcontroller is described [here: microcontroller](https://learn.adafruit.com/adafruit-feather-m4-can-express)
 * The background on Circuitpy (that we showed you how to flash above) is [here: background](https://learn.adafruit.com/adafruit-feather-m4-can-express/circuitpython-on-feather-m4-can)
-

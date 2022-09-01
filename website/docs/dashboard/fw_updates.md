@@ -126,4 +126,3 @@ is a great place to start!
 > This will be characterized by no display on the dash and no response.
 > You can double check this occurred by opening the file named `code.py` (or `main.py`) and seeing that there is only a single line of code `print('hello world')`.
 > In this case, you should go through both the UF2 and farm-ng firmware update steps.
-
