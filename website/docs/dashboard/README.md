@@ -44,7 +44,7 @@ The Dashboard comes with a Wifi modem and CANbus transceiver on board, and is po
 
 ![Dash_Connectors](https://user-images.githubusercontent.com/53625197/187535995-d4ad8c7c-05a0-482b-8be9-6b6fb6b87ac3.png)
 
-### Pinouts 
+### Pinouts
 
 ![Dash_Pinout](https://user-images.githubusercontent.com/53625197/187536079-a3c71c29-d13d-4c54-a343-5960ef98c793.png)
 
@@ -81,7 +81,7 @@ Mating connector M12-5 A code male
 
 Mating connector M12-8 A code female
 
-Debug wire colors based on common cable with flying leads used on farm-ng built debug kits. 
+Debug wire colors based on common cable with flying leads used on farm-ng built debug kits.
 
 | PIN | Description   | Typical Wire Color | Notes                      |
 | --- | ------------- | ------------------ | -------------------------- |
@@ -93,4 +93,3 @@ Debug wire colors based on common cable with flying leads used on farm-ng built 
 | 6   | USB VBUS      | Pink               |                            |
 | 7   | NC            | Blue               |                            |
 | 8   | GND           | Black              |                            |
-
