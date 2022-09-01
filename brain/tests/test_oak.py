@@ -1,5 +1,5 @@
 import pytest
-from farm_ng.oak import OakCameraClient, OakCameraClientConfig, OakCameraServiceState, oak_pb2
+from farm_ng.oak.client import OakCameraClient, OakCameraClientConfig, OakCameraServiceState, oak_pb2
 
 
 @pytest.fixture
