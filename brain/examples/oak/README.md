@@ -9,7 +9,9 @@ This example assumes you have a [farm-ng brain](https://farm-ng.github.io/amiga-
 
 2. Install the example's dependencies
 
-> It is recommended to also install these dependencies and run the example in the brain ADK virtual environment.
+::tip
+It is recommended to also install these dependencies and run the example in the brain ADK virtual environment.
+::
 
 ```bash
 # assuming you're already in the amiga-dev-kit/ directory

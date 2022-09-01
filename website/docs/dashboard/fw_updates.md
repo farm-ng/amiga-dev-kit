@@ -9,21 +9,22 @@ At farm-ng, we are regularly updating and improving our firmware as we continue 
 We want to get every new feature, performance improvement, and reliability increase out to you as soon as we can.
 And we want to enable you to easily upgrade your dashboard with these improvements at your convenience.
 
-
-> We're actively working on over-the-air (OTA) firmware updates for our dashboard.
-> Once we've stabilized the wifi interface on the dashboard and ensured the
-> OTA updater is robust, we'll make this available to you.
->
-> In the meantime, make sure you have your [debug cable](./../debug_cable/) handy before proceeding with any firmware or UF2 updates.
-> If you don't have one, check out the options on our [For Developers](https://farm-ng.com/pages/for-developers) page.
-
+:::note
+We're actively working on over-the-air (OTA) firmware updates for our dashboard.
+Once we've stabilized the wifi interface on the dashboard and ensured the
+OTA updater is robust, we'll make this available to you.
+In the meantime, make sure you have your [**debug cable**](./../debug_cable/) handy before proceeding with any firmware or UF2 updates.
+If you don't have one, check out the options on our [**For Developers**](https://farm-ng.com/pages/for-developers) page.
+:::
 
 
 ### farm-ng Amiga application update
 
 To upgrade your Dashboard with the latest Amiga application, grab your Dashboard and your debug cable and take the following steps:
 
-> **_NOTE:_** This process is currently only supported on Windows and Mac.
+:::info
+This process is currently only supported on Windows and Mac.
+:::
 
 **Access the files:**
 
@@ -57,11 +58,11 @@ To upgrade your Dashboard with the latest Amiga application, grab your Dashboard
 
 ![CIRCUITPY updated](https://user-images.githubusercontent.com/53625197/187532633-c87803a3-9fb9-4ba6-be39-a2f6bed27613.png)
 
-> **Troubleshooting**
-> - If the file transfer process fails, just delete all files in CIRCUITPY and try it again.
-> - Repeated hot plugging / unplugging of the dashboard can cause the filesystem to go into an irregular state. Try connecting / disconnecting between dashboard and your PC with the dashboard powered down.
-> - When in doubt, turn it off and back on again.
-
+:::caution Troubleshooting
+- If the file transfer process fails, just delete all files in CIRCUITPY and try it again.
+- Repeated hot plugging / unplugging of the dashboard can cause the filesystem to go into an irregular state. Try connecting / disconnecting between dashboard and your PC with the dashboard powered down.
+- When in doubt, turn it off and back on again.
+:::
 
 ### UF2 bootloader update
 
@@ -81,7 +82,9 @@ is a great place to start!
 
 #### Bootloader update instructions
 
-> **_NOTE:_** This process is currently only supported on Windows and Mac.
+:::info
+This process is currently only supported on Windows and Mac.
+:::
 
 **Access the files:**
 
@@ -99,31 +102,35 @@ is a great place to start!
 
 10. With the dashboard connected to your PC, double click the reset button on the USB / debug breakout.
 11. This should remount the dashboard under the name `AMIGA` and resemble the example below.
-> *NOTE:* The timing of the double click can be a little tricky, so if it mounts as `CIRCUITPY`, just try again until it mounts as `AMIGA`.
-> If you cannot get the double click timing correct, you can enter BOOTLOADER mode with the following advanced user steps:
-> 1. Open a serial console connected to the dashboard (see: [Adafruit connecting to the serial console](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console))
-> 2. Pause the program with `ctrl+C`
-> 3. Enter the following commands in the REPL
->```
-> import microcontroller
-> microcontroller.on_next_reset(microcontroller.RunMode.BOOTLOADER)
-> microcontroller.reset()
->```
+    :::tip
+    The timing of the double click can be a little tricky, so if it mounts as `CIRCUITPY`, just try again until it mounts as `AMIGA`.
+    If you cannot get the double click timing correct, you can enter BOOTLOADER mode with the following advanced user steps:
+
+    - Open a serial console connected to the dashboard (see: [Adafruit connecting to the serial console](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console))
+    - Pause the program with `ctrl+C`
+    - Enter the following commands in the REPL
+
+    ```
+    import microcontroller
+    microcontroller.on_next_reset(microcontroller.RunMode.BOOTLOADER)
+    microcontroller.reset()
+    ```
+    :::
 12. Drag and drop the newly downloaded UF2 file onto the mounted drive.
 13. This will immediately cause the bootloader firmware to update, and the dashboard will automatically reboot as `CIRCUITPY` once complete.
-
-
-> **_NOTE:_** The farm-ng firmware you may have just updated should remain untouched, so the order is not important if you are updating both types of firmware.
+:::note
+The farm-ng firmware you may have just updated should remain untouched, so the order is not important if you are updating both types of firmware.
+:::
 
 **AMIGA mounted**
 
 ![AMIGA](https://user-images.githubusercontent.com/53625197/187532028-6c93c1fe-4196-4b33-8d8e-dfa145a83001.png)
 
-> **Troubleshooting**
->
-> In rare cases, the board could go into an update failure mode.
-> In this case, the microcontroller inside the dashboard is restored to factory default `Hello world` example.
-> This will be characterized by no display on the dash and no response.
-> You can double check this occurred by opening the file named `code.py` (or `main.py`) and seeing that there is only a single line of code `print('hello world')`.
-> In this case, you should go through both the UF2 and farm-ng firmware update steps.
+:::caution Troubleshooting
+In rare cases, the board could go into an update failure mode.
 
+In this case, the microcontroller inside the dashboard is restored to the factory default `Hello world` example.
+This will be characterized by no display on the dash and no response.
+You can double check this occurred by opening the file named `code.py` (or `main.py`) and seeing that there is only a single line of code `print('hello world')`.
+In this case, you should go through both the [UF2 firmware](#uf2-bootloader-update) and [farm-ng application layer](#farm-ng-amiga-application-update) update steps.
+:::
