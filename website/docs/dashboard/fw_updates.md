@@ -28,7 +28,7 @@ To upgrade your Dashboard with the latest Amiga application, grab your Dashboard
 **Access the files:**
 
 1. Download the application zip file [amiga-dash-v0.0.3.zip](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.0.3/amiga-dash-v0.0.3.zip)
-2. For more details on the release navigate to the release page (https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.0.3)[https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.0.3]
+2. For more details on the release navigate to [Release: amiga-dash-v0.0.3](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.0.3)
 
 **Connect to your dashboard:**
 
@@ -86,7 +86,7 @@ is a great place to start!
 **Access the files:**
 
 1. Download the latest [UF2 file](https://github.com/farm-ng/amiga-dev-kit/releases/download/fw-dash-v1.0.0/fw-dash-v1.0.0.uf2)
-2. For more details on the UF2 file release see the release page here: [https://github.com/farm-ng/amiga-dev-kit/releases/tag/fw-dash-v1.0.0](https://github.com/farm-ng/amiga-dev-kit/releases/tag/fw-dash-v1.0.0)
+2. For more details on the UF2 file release see the release page here: [Release: fw-dash-v1.0.0](https://github.com/farm-ng/amiga-dev-kit/releases/tag/fw-dash-v1.0.0)
 
 **Connect to your dashboard:**
 

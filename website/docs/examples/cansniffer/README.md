@@ -5,7 +5,7 @@ title: Cansniffer Example
 
 # Cansniffer
 
-### [Link to `cansniffer/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/examples/cansniffer/code.py)
+### [Link to `cansniffer/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/cansniffer/code.py)
 
 This example covers a simple tool for listening to all CAN Id's streaming on the bus
 and measure simple statistics about the streamed messages.

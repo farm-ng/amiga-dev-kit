@@ -10,10 +10,9 @@ title: Brain Overview
 
 ### [Brain product page](https://farm-ng.com/products/brain)
 
-***Alpha level product subject to change. Not all features are fully tested and validated.**
-
-
 ## Features overview
+
+**The farm-ng Brain is an Alpha level product subject to change. Not all features are fully tested and validated.**
 
 The farm-ng Brain brings supercomputer performance to the edge, in a ruggedized packaged designed for the harshest environments.
 The Brain contains a NVIDIA Xavier NX which has up to 21 TOPS of hardware accelerated computing power for machine learning and AI applications, and paired it with a touch-screen display designed to be outdoor-visible, creating both a user-interface and sensor hub in a single, waterproof package.
