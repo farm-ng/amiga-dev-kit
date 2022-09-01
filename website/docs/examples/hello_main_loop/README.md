@@ -123,7 +123,7 @@ In our `iter()` call, we:
 3. Open the serial console.
 
 > Mu is the recommended serial console program by adafruit on their [CircuitPython serial console page](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console).
-> Mu has a built in plotter for tuples printed to the serial console (print statements on your microcontroller).
+> Mu has a built in plotter for tuples printed to the serial console (print statements in the python code on your microcontroller).
 >
 > We've found that Mu can be a little unstable and freezes occasionally,
 > so we'd recommend checking out their links for the "advanced" serial console:

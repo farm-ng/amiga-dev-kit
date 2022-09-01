@@ -9,7 +9,7 @@ title: Debug Cable Overview
 
 ## Overview
 
-Cable used to update and debug farm-ng products. It includes rest functionality along with USB and serial communication. 
+Cable used to update and debug farm-ng products. It includes rest functionality along with USB and serial communication.
 
 The larger circuit board on the left is the USB / debug breakout, and the smaller board on the right is the serial interface.
 
@@ -21,7 +21,7 @@ The larger circuit board on the left is the USB / debug breakout, and the smalle
 
 - USB interface is for REPL, fileystem access as well as updating firmware and applications,
 - Serial interface is not used at the moment
-- Reset is connected to the Microcontroller reset and used for hard reset. It also can be double pressed to force bootloader mode. 
+- Reset is connected to the Microcontroller reset and used for hard reset. It also can be double pressed to force bootloader mode.
 
 **See update process documentation for more information**
 
@@ -35,9 +35,9 @@ The larger circuit board on the left is the USB / debug breakout, and the smalle
 
 ## Pinout
 
-Connector M12-8 A code female used to connect to farm-ng products. The debug cable connects the IO to two MicroUSB connectors and a reset button. 
+Connector M12-8 A code female used to connect to farm-ng products. The debug cable connects the IO to two MicroUSB connectors and a reset button.
 
-Debug wire colors based on common cable with flying leads used on farm-ng built debug kits. 
+Debug wire colors based on common cable with flying leads used on farm-ng built debug kits.
 
 | PIN | Description   | Typical Wire Color | Notes                      |
 | --- | ------------- | ------------------ | -------------------------- |
