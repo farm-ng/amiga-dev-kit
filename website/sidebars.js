@@ -43,22 +43,33 @@ const sidebars = {
     "Brain": [
       "brain/brain",
     ],
-    "Examples": [
-      "examples/examples",
-      "examples/hello_main_loop/hello-world",
-      "examples/cansniffer/cansniffer",
-      "examples/FPV/fpv",
-    ],
     // "Pendant": [
     //   "pendant/pendant",
     // ],
-    "CircuitPython API": [
-      require("./docs/reference/circuitpy/sidebar.json")
-    ],
-    "Brain API": [
-      require("./docs/reference/brain/sidebar.json")
-    ],
-  }
+  },
+  "api": [
+    "api",
+    {
+      "Circuit Python": [
+        require("./docs/reference/circuitpy/sidebar.json")
+      ],
+    },
+    {
+      "Brain ADK": [
+        "brain/brain-install",
+        require("./docs/reference/brain/sidebar.json")
+      ],
+    }
+  ],
+  "examples": [
+    "examples/examples-index",
+    "examples/hello_main_loop/hello-world",
+    "examples/cansniffer/cansniffer",
+    "examples/FPV/fpv",
+  ],
+  "contribute": [
+    "contribute/contribute-website"
+  ]
 };
 
 module.exports = sidebars;
