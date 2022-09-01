@@ -20,13 +20,13 @@ jobs:
 
       - name: Install adk dependencies
         working-directory: brain
-        run: pip3 install .[dev]
+        run: pip3 install -e .[dev]
+      - name: Create Markdown
+        working-directory: website
+        run: ./run_pydoc-markdown.sh
       - name: Install docusaurus dependencies
         working-directory: website
         run: yarn install --frozen-lockfile
-      - name: Create Markdown
-        working-directory: website
-        run: pydoc-markdown
       - name: Test build website
         working-directory: website
         run: yarn build

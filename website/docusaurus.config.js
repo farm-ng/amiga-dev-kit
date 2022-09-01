@@ -71,22 +71,28 @@ const config = {
             docId: 'getting-started',
             position: 'left',
           },
-          //{
-          //  label: 'API',
-          //  type: 'doc',
-          //  position: 'left',
-          //  docId: 'api',
-          //},
           {
-            to: '/blog',
-            label: 'Blog',
-            position: 'left'
+            label: 'API',
+            type: 'doc',
+            docId: 'api',
+            position: 'left',
+          },
+          {
+            label: 'Examples',
+            type: 'doc',
+            docId: 'examples/examples-index',
+            position: 'left',
           },
           {
             label: 'Contribute',
             type: 'doc',
-            docId: 'contribute',
+            docId: 'contribute/contribute-website',
             position: 'left',
+          },
+          {
+            to: '/blog',
+            label: 'Blog',
+            position: 'left'
           },
           {
             href: 'https://www.youtube.com/channel/UCczyy8tyLbqxjtLE1_8YW3w',
@@ -117,7 +123,7 @@ const config = {
               //},
               {
                 label: 'Contribute',
-                to: '/docs/contribute',
+                to: '/docs/contribute/contribute-website',
               },
             ],
           },

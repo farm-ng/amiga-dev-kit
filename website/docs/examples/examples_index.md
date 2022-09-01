@@ -1,5 +1,5 @@
 ---
-id: examples
+id: examples-index
 title: Examples Index
 ---
 
