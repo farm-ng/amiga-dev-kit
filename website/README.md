@@ -73,7 +73,7 @@ The generated link should look something like: https://user-images.githubusercon
 ```bash
 cd website/
 yarn
-pydoc-markdown
+./run_pydoc-markdown
 yarn build
 ```
 
