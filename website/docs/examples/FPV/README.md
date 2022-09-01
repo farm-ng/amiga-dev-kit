@@ -12,10 +12,24 @@ title: FPV Example
 This example shows how to connect off the shelf FPV equipment to your Amiga to enable realtime video streaming and teleoperation through remote control.
 This makes the Amiga remotely operable from the comfort of your office (or cab of your truck) and we're pretty psyched by how low cost and practical FPV control of the Amiga is.
 
+If you have not gone through any of our examples yet, you should start with the [Hello MainLoop](./../hello_main_loop/) example.
+
 ## Resources
-- Video demonstration of our first test : https://youtu.be/tN20_CspsyU
-- Link to wiring diagram in LucidChart : https://lucid.app/lucidchart/7255e46a-d128-421e-9bc1-2329d3f280fa/edit?viewport_loc=285%2C-61%2C1837%2C2040%2C0_0&invitationId=inv_f69a2688-850c-4d8f-bfdb-c38752df5303#
-- Blog post about the project :
+
+:::warning
+Add plug-in for embedding youtube
+[Video demonstration of our first test](https://youtu.be/tN20_CspsyU)
+:::
+
+:::warning
+drop fpv wiring image here
+[Wiring diagram](https://lucid.app/lucidchart/7255e46a-d128-421e-9bc1-2329d3f280fa/edit?viewport_loc=285%2C-61%2C1837%2C2040%2C0_0&invitationId=inv_f69a2688-850c-4d8f-bfdb-c38752df5303#)
+:::
+
+
+<!-- - Blog post about the project : -->
+
+
 - Adafruit Feather Documentation (microcontroller we commonly use for sending/receiving CANbus messages : https://learn.adafruit.com/adafruit-feather-m4-can-express
 - Setting up the Feather with our recommended firmware :
 
@@ -28,6 +42,9 @@ This makes the Amiga remotely operable from the comfort of your office (or cab o
 - An FPV video camera - https://www.amazon.com/dp/B06XPX18VY?psc=1&ref=ppx_yo2ov_dt_b_product_details&pldnSite=1 - $25
 - An FPV video transmitter/receiver - https://www.amazon.com/dp/B01FXGQ2KC?psc=1&ref=ppx_yo2ov_dt_b_product_details&pldnSite=1 - $30
   - Note that this transmitter/receiver requires an RCA capable monitor on the receiver side.
+- TODO : Add buck converters required to order
+- TODO : Add enclosure recommended
+- 
 
 
 ## About SBUS
@@ -50,7 +67,6 @@ TODO support TX over the x8r smart bus.
 ## Wiring
 ![fpv wiring example](https://user-images.githubusercontent.com/11846963/185976402-ff8c4c77-5a08-42b0-865f-d2840fc0b960.jpg)
 Shown above, is the entire receiver rover side of the FPV setup, correctly wired and unpacked.
-
 
 
 ## TODO / WIP
