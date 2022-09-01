@@ -52,9 +52,12 @@ const sidebars = {
     // "Pendant": [
     //   "pendant/pendant",
     // ],
-    // "API Documentation": [
-    //   require("./docs/reference/sidebar.json")
-    // ],
+    "CircuitPython API": [
+      require("./docs/reference/circuitpy/sidebar.json")
+    ],
+    "Brain API": [
+      require("./docs/reference/brain/sidebar.json")
+    ],
   }
 };
 
