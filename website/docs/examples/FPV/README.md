@@ -12,7 +12,9 @@ title: FPV Example
 This example shows how to connect off the shelf FPV equipment to your Amiga to enable realtime video streaming and teleoperation through remote control.
 This makes the Amiga remotely operable from the comfort of your office (or cab of your truck) and we're pretty psyched by how low cost and practical FPV control of the Amiga is.
 
-If you have not gone through any of our examples yet, you should start with the [Hello MainLoop](./../hello_main_loop/) example.
+:::tip
+If you have not gone through any of our examples yet, you should start with the [**Hello MainLoop**](./../hello_main_loop/) example.
+:::
 
 ## Resources
 
@@ -29,32 +31,50 @@ drop fpv wiring image here
 
 <!-- - Blog post about the project : -->
 
-
-- Adafruit Feather Documentation (microcontroller we commonly use for sending/receiving CANbus messages : https://learn.adafruit.com/adafruit-feather-m4-can-express
 - Setting up the Feather with our recommended firmware :
 
 
 ### Parts required:
-- A radio control receiver, such as the FrSky x8r  https://www.frsky-rc.com/product/x8r/ - On amazon $40 - https://www.amazon.com/dp/B00RCAHHFM
-  - We chose this one, because it supports SBUS (which is compatible with UART ports on the Amiga Dev Kit microcontroller) and also sending telemetry for two way communication
-- A radio controller, such as the FrSky Taranis X9D Plus SE 2019 -https://www.amazon.com/dp/B07VYRGB5Q - $300
-  - don't forget to also purchase a battery - https://www.amazon.com/Upgrade-3000mAh-Rechargeable-Radiolink-Transmitter/dp/B08FC4LWCG - $20
-- An FPV video camera - https://www.amazon.com/dp/B06XPX18VY?psc=1&ref=ppx_yo2ov_dt_b_product_details&pldnSite=1 - $25
-- An FPV video transmitter/receiver - https://www.amazon.com/dp/B01FXGQ2KC?psc=1&ref=ppx_yo2ov_dt_b_product_details&pldnSite=1 - $30
-  - Note that this transmitter/receiver requires an RCA capable monitor on the receiver side.
+| Description                    | Recommendation                                     | Purchase Link                                                                                          | Price |
+| ------------------------------ | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ----- |
+| microcontroller kit            | [farm-ng microcontroller kit](./../../mcu_kit/)    | [farm-ng store link](https://farm-ng.com/products/microcontroller-kit)                                 | $100  |
+| Radio control receiver         | [FrSky x8r](https://www.frsky-rc.com/product/x8r/) | [Amazon link](https://www.amazon.com/dp/B00RCAHHFM)                                                    | $40   |
+| Radio remote control           | FrSky Taranis X9D Plus SE 2019                     | [Amazon link](https://www.amazon.com/dp/B07VYRGB5Q)                                                    | $300  |
+| Remote control battery         | 7.4V 3000mAh 8C 2S LiPo Battery                    | [Amazon link](https://www.amazon.com/Upgrade-3000mAh-Rechargeable-Radiolink-Transmitter/dp/B08FC4LWCG) | $20   |
+| FPV video camera               |                                                    | [Amazon link](https://www.amazon.com/dp/B06XPX18VY)                                                    | $25   |
+| FPV video transmitter/receiver |                                                    | [Amazon link](https://www.amazon.com/dp/B01FXGQ2KC)                                                    | $30   |
+
+
+:::warning
 - TODO : Add buck converters required to order
 - TODO : Add enclosure recommended
-- 
+- TODO : Add portable screen
+- TODO : Add ???
+:::
 
+:::info
+- We chose the [FrSky x8r](https://www.frsky-rc.com/product/x8r/) radio receiver because it supports:
+  - SBUS (which is compatible with UART ports on the [`Amiga Dev Kit microcontroller`](./../../mcu_kit/))
+  - Sending telemetry for two way communication
+- The recommended transmitter/receiver requires an RCA capable monitor on the receiver side.
+:::
 
 ## About SBUS
 
-SBUS is "inverted" UART.  So we cracked open the x8r receiver, and soldered the yellow wire directly to the output pin before it gets inverted, and connected this wire to UART RX pin on the Feather.
+:::tip SBUS references
+This topic is explained more thoroughly on: [Uninverted SBUS and Smart Port on Frsky Receivers](https://oscarliang.com/uninverted-sbus-smart-port-frsky-receivers/)
 
-Found this link useful https://oscarliang.com/uninverted-sbus-smart-port-frsky-receivers/
-Here is a great video overview on SBUS, visually explaining inverted vs. non-inverted uart and packet structure https://youtu.be/IqLUHj7nJhI?t=398
+We also recommend watching this [video overview on SBUS](https://youtu.be/IqLUHj7nJhI?t=398), that visually explains inverted vs. non-inverted uart and packet structure.
+:::
 
-The SBUS protocol is fairly simple.  A 25 byte packet, start byte of 0x0F, end byte of 0x00, second to last byte is a parity byte, and then 16 11bit integers packed into the rest.  This is a useful resource for decoding the packets -     # https://github.com/robotmaker/Real-time-graphical-representation-of-16-channel-S-BUS-protocol/blob/master/ProcessingSketch_SBUS_16_Channel_Simulation/ProcessingSketch_SBUS_16_Channel_Simulation.pde
+The SBUS protocol is fairly simple.
+- A 25 byte packet
+  - start byte of 0x0F
+  - 16x 11-bit integers packed into the rest
+  - second to last byte is a parity byte
+  - end byte of 0x00
+
+[This is a useful resource for decoding the packets](https://github.com/robotmaker/Real-time-graphical-representation-of-16-channel-S-BUS-protocol/blob/master/ProcessingSketch_SBUS_16_Channel_Simulation/ProcessingSketch_SBUS_16_Channel_Simulation.pde)
 
 The UART needs to be configured with:
 
@@ -71,6 +91,9 @@ Shown above, is the entire receiver rover side of the FPV setup, correctly wired
 
 ## TODO / WIP
 1. Step 1
+
+SBUS is "inverted" UART.  So we cracked open the x8r receiver, and soldered the yellow wire directly to the output pin before it gets inverted, and connected this wire to UART RX pin on the Feather.
+
 Wiring the receiver to access the un-inverted signal
 
 ![x8r-receiver-solder-point-reduced](https://user-images.githubusercontent.com/11846963/185978326-a21598e7-fe93-4c99-9ff3-f3b047d586e6.jpg)
