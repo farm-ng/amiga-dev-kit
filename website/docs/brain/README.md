@@ -86,7 +86,7 @@ Mating connector M12-5 A code female
 
 Mating connector M12-8 A code female
 
-Debug wire colors based on common cable with flying leads used on farm-ng built debug kits. 
+Debug wire colors based on common cable with flying leads used on farm-ng built debug kits.
 
 | PIN | Description   | Typical Wire Color | Notes                      |
 | --- | ------------- | ------------------ | -------------------------- |
@@ -98,4 +98,3 @@ Debug wire colors based on common cable with flying leads used on farm-ng built 
 | 6   | USB VBUS      | Pink               |                            |
 | 7   | NC            | Blue               |                            |
 | 8   | GND           | Black              |                            |
-

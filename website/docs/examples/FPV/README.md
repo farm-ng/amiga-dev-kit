@@ -35,7 +35,7 @@ This makes the Amiga remotely operable from the comfort of your office (or cab o
 SBUS is "inverted" UART.  So we cracked open the x8r receiver, and soldered the yellow wire directly to the output pin before it gets inverted, and connected this wire to UART RX pin on the Feather.
 
 Found this link useful https://oscarliang.com/uninverted-sbus-smart-port-frsky-receivers/
-Here is a great video overview on SBUS, visually explaining inverted vs. non-inverted uart and packet structure https://youtu.be/IqLUHj7nJhI?t=398 
+Here is a great video overview on SBUS, visually explaining inverted vs. non-inverted uart and packet structure https://youtu.be/IqLUHj7nJhI?t=398
 
 The SBUS protocol is fairly simple.  A 25 byte packet, start byte of 0x0F, end byte of 0x00, second to last byte is a parity byte, and then 16 11bit integers packed into the rest.  This is a useful resource for decoding the packets -     # https://github.com/robotmaker/Real-time-graphical-representation-of-16-channel-S-BUS-protocol/blob/master/ProcessingSketch_SBUS_16_Channel_Simulation/ProcessingSketch_SBUS_16_Channel_Simulation.pde
 
@@ -63,4 +63,3 @@ Wiring the receiver to access the un-inverted signal
 ## Code
 
 This code builds on top of the hello_main_loop example, but replaces the keyboard input with radio control.  Wire up the SBUS, connect the microcontroller to the Amiga's canbus, enable Auto mode on the Amiga's dashboard and enjoy driving the Amiga remotely.
-
