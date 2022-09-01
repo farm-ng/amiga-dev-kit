@@ -123,7 +123,7 @@ const config = {
               //},
               {
                 label: 'Contribute',
-                to: '/docs/contribute',
+                to: '/docs/contribute/contribute-website',
               },
             ],
           },
