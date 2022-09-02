@@ -187,10 +187,6 @@ class wifi_AP:
 
     @property
     def ssid(self):
-        """
-        TODO: Replace temp sn value, pending:
-        https://github.com/farm-ng/amiga-fw/issues/99
-        """
         return self._ssid
 
     @property

@@ -60,7 +60,7 @@ def path_basename(p: str):
 
 
 def makedirs(name, exist_ok=False):
-    """makedirs(name [, mode=0o777][, exist_ok=False])
+    """Wraps makedirs(name [, mode=0o777][, exist_ok=False]).
 
     Super-mkdir; create a leaf directory and all intermediate ones.  Works like mkdir, except that any intermediate path
     segment (not just the rightmost) will be created if it does not exist. If the target directory already exists, raise
@@ -210,11 +210,10 @@ class DtTracker:
 # TODO_STABLE2 not sure how much overhead this ticks repeater is
 class TickRepeater:
     """Used as a timer, with the check() method returning true every `ticks_period_ms` Uses `ticks_ms`, which wraps
-    every 2^29 ms (~6.2 days). The logic handles a single wrap, but does not detect two wraps.
+    every 2^29 ms (~6.2 days). The logic handles a single wrap between checks, but does not handle two wraps
+    between checks.
 
-    See
-    [supervisor.ticks_ms()`](https://docs.circuitpython.org/en/latest/shared-bindings/supervisor/#supervisor.ticks_ms)
-    docs for more details about `ticks_ms`.
+    See CircuitPython `supervisor.ticks_ms()` docs for more details.
     """
 
     def __init__(self, ticks_period_ms):

@@ -29,7 +29,7 @@ def setup_can_default():
 
 
 def setup_can(rx, tx, baudrate, auto_restart):
-    """Sets up the canio.CAN connection. Essentially just wraps.
+    """Sets up the canio.CAN connection. Essentially just wraps:
 
     [canio.CAN()](https://docs.circuitpython.org/en/latest/shared-bindings/canio/index.html#canio.CAN)
     """
