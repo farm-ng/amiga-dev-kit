@@ -19,6 +19,7 @@ jobs:
     - name: Run mypy
       working-directory: brain
       run: mypy
+
   pre-commit-check:
     runs-on: ubuntu-latest
     steps:

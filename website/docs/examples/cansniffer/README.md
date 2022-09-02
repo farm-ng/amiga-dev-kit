@@ -78,7 +78,7 @@ For example, key examples of our PDO sets include:
 
 
 When possible, the RPDO requests are followed and the values measured when following these requests are sent as a TPDO response.
-When the requests cannot be followed, the reason should be inferrable from the TPDO response.
+When the requests cannot be followed, the reason should be inferable from the TPDO response.
 The [Hello World Auto-mode (hello_main_loop)](/examples/hello_main_loop/README.md) provides the ability to interact directly with the Auto controller / dashboard PDO set of RPDO request & TPDO response.
 To test this, try requesting control of the robot when it is *NOT* in an `AUTO READY` state.
 

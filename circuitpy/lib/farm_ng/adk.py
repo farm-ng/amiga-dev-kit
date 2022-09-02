@@ -38,10 +38,10 @@ def get_board_type() -> BoardType:
 
 def setup_can(rx, tx, baudrate, auto_restart):
     # Use this line if your board has dedicated CAN pins. (Feather M4 CAN and Feather STM32F405)
-    #    can = setup_can(rx=board.CAN_RX, tx=board.CAN_TX, baudrate=parm.can_baud, auto_restart=True)
+    #    can = setup_can(rx=board.CAN_RX, tx=board.CAN_TX, baudrate=param.can_baud, auto_restart=True)
     # Use this line for dashboard:
     #    can = setup_can(
-    # rx=microcontroller.pin.PB13, tx=microcontroller.pin.PB14, baudrate=parm.can_baud, auto_restart=True)
+    # rx=microcontroller.pin.PB13, tx=microcontroller.pin.PB14, baudrate=param.can_baud, auto_restart=True)
 
     # If the CAN transceiver has a standby pin, bring it out of standby mode
     if hasattr(board, "CAN_STANDBY"):
