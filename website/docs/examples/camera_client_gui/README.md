@@ -3,19 +3,17 @@ id: camera-client-gui
 title: Camera Client GUI
 ---
 
-## Amiga Brain Camera GUI example
-
 ### [Link to `camera_client_gui/main.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/brain/examples/camera_client/main.py)
+
+![Peek 2022-09-02 12-46](https://user-images.githubusercontent.com/5157099/188124779-41f4d519-78d4-453e-9b90-b3d730762b81.gif)
 
 This example implements the [OakCameraClient](/docs/reference/brain/farm_ng/oak/client#oakcameraclient-objects) in a GUI application using [Kivy](https://kivy.org/).
 
 The requirements to run this example are to have a [farm-ng brain](/docs/brain/) running Oak cameras and that your PC is on the same local network as the brain.
 
-## Instructions
+### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
-1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
-
-2. Install the example's dependencies
+### 2. Install the example's dependencies
 
 :::tip
 
@@ -31,7 +29,7 @@ cd brain/examples/camera_client_gui
 pip3 install -r requirements.txt
 ```
 
-3. Execute the Python script
+### 3. Execute the Python script
 
 ```bash
 python3 main.py --port 50051
@@ -41,7 +39,7 @@ python3 main.py --port 50051
 By default, the camera address is assumed top be `localhost`.
 :::
 
-4. Customize the run
+### 4. Customize the run
 
 Let's have some fun and stream the camera to your laptop over the Wifi.
 
@@ -66,7 +64,3 @@ Usage example:
 ```bash
 python3 main.py --address 192.168.1.93 --port 50051
 ```
-
-You should get something like
-
-![Peek 2022-09-02 12-46](https://user-images.githubusercontent.com/5157099/188124779-41f4d519-78d4-453e-9b90-b3d730762b81.gif)
