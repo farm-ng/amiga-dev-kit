@@ -296,3 +296,22 @@ class CatchupRepeater:
 
     def check(self):
         return self.tick_repeater.check()
+
+
+class Axis:
+    """Used for mapping joysticks"""
+
+    def __init__(self, min, dz_neg, dz_pos, max):
+        """min, -deadzone, +deadzone, max"""
+        self.v0 = min
+        self.v1 = dz_neg
+        self.v2 = dz_pos
+        self.v3 = max
+
+    def map(self, v):
+        """returns -1 .. +1"""
+        if v < self.v1:
+            return -1 + (v - self.v0) / (self.v1 - self.v0)
+        elif v > self.v2:
+            return (v - self.v2) / (self.v3 - self.v2)
+        return 0

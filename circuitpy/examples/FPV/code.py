@@ -3,9 +3,9 @@ import busio
 import canio
 
 from farm_ng.utils.main_loop import MainLoop
-from farm_ng.utils.general import TickRepeater
-from farm_ng.utils.packet import AmigaRpdo1, AmigaTpdo1, AmigaControlState, CanOpenObject, DASHBOARD_NODE_ID
-from farm_ng.utils.general import Axis
+from farm_ng.utils.general import Axis, TickRepeater
+from farm_ng.utils.packet import AmigaRpdo1, AmigaTpdo1, AmigaControlState, DASHBOARD_NODE_ID
+from farm_ng.utils.cobid import CanOpenObject
 
 
 def parse_packet(packet):
@@ -34,12 +34,18 @@ class FpvApp:
         self.cmd_repeater = TickRepeater(ticks_period_ms=20)
 
         # TODO calibrate these values
-        self.axis2 = Axis(min_value=172, deadzone_m1=950, deadzone_p1=1050, max_value=1811)
+        self.axis2 = Axis(min=172, dz_neg=950, dz_pos=1050, max=1811)
 
-        self.axis3 = Axis(min_value=172, deadzone_m1=950, deadzone_p1=1050, max_value=1811)
+        self.axis3 = Axis(min=172, dz_neg=950, dz_pos=1050, max=1811)
 
         self.max_speed = 2.5  # meters per second
         self.max_angular_rate = 3.14  # radians per second
+
+    def _register_message_handlers(self):
+        self.main_loop.command_handlers[CanOpenObject.TPDO1 | DASHBOARD_NODE_ID] = self._handle_amiga_tpdo1
+
+    def _handle_amiga_tpdo1(self, message):
+        self.amiga_tpdo1 = AmigaTpdo1.from_can_data(message.data)
 
     def send_command(self, channels):
         # don't send commands too frequently to Amiga
@@ -60,11 +66,7 @@ class FpvApp:
         # print('state', self.amiga_tpdo1, 'cmd', rpdo1, end='\r')
         self.can.send(canio.Message(id=CanOpenObject.RPDO1 | DASHBOARD_NODE_ID, data=rpdo1.encode()))
 
-    def iter(self, messages):
-        for message in messages:
-            if AmigaTpdo1.check_id(message, DASHBOARD_NODE_ID):
-                self.amiga_tpdo1 = AmigaTpdo1.from_can_data(message.data)
-
+    def iter(self):
         if self.uart.in_waiting >= 25:
             packet = bytearray(self.uart.read(25))
             if packet[0] == 0x0F and packet[24] == 0x00:
