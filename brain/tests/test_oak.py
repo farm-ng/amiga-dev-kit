@@ -12,7 +12,6 @@ class TestOakClient:
     def test_smoke_config(self, config: OakCameraClientConfig) -> None:
         assert config.port == 50051
         assert config.address == "localhost"
-        assert config.update_state_frequency == 2
 
     def test_smoke(self, config: OakCameraClientConfig) -> None:
         client = OakCameraClient(config)
