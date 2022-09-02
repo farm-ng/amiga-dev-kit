@@ -1,4 +1,5 @@
-from farm_ng.adk import MainLoop, TickRepeater
+from farm_ng.utils.main_loop import MainLoop
+from farm_ng.utils.general import TickRepeater
 
 
 class CansnifferApp:
