@@ -11,24 +11,13 @@ from supervisor import ticks_ms
 # Local imports
 from .can import setup_can_default
 from .general import DtTracker, TickRepeater
-from .packet import (
-    SupervisorReq,
-    NodeState,
-    FarmngHeartbeat,
-    FarmngDebugTimer,
-    FarmngDebugMemory,
-)
+from .packet import SupervisorReq, NodeState, FarmngHeartbeat, FarmngDebugTimer, FarmngDebugMemory
 from .nvm import nvm_serial_number
 
 # from farm_ng.utils.wifi import WIFI
 
 try:
-    from farm_ng.display import (
-        Display,
-        amiga_graphics,
-        TAG_DEBUG,
-        TAG_CUSTOM_START,
-    )
+    from farm_ng.display import Display, amiga_graphics, TAG_DEBUG, TAG_CUSTOM_START
     from bteve import RECTS, OPT_RIGHTX
 except ImportError as e:
     print("No Display:", e)
@@ -94,8 +83,9 @@ class MainLoop:
         self.show_time = True
         self.show_mem = False
         self.show_can = True
-        if self.show_mem:
-            self.mem_repeater = TickRepeater(ticks_period_ms=100)
+        self.show_can_dts = False
+
+        self.mem_repeater = TickRepeater(ticks_period_ms=100)
 
         self.can_id_dts = dict()
         self.debug_str = None
@@ -106,21 +96,34 @@ class MainLoop:
         self.repl_debug_mem = False
         self.debug_rx_queue = False
 
-        if self.repl_debug_dt:
-            self.dt_list = []
-            self.dt_repl_time = DtTracker("debug_mainloop")
-        if self.repl_debug_mem:
-            self.mem_list = []
+        self.mem_list = []
+        self.dt_list = []
+        self.dt_repl_time = DtTracker("debug_mainloop")
 
-        self.command_handlers = {
-            int(SupervisorReq.cob_id | self.node_id): self.handle_supervisor_req
-        }
+        self.command_handlers = {int(SupervisorReq.cob_id | self.node_id): self.handle_supervisor_req}
 
         self.AppClass = AppClass
         self.app = None
 
         # Send first heartbeat
         self._send_heartbeat()
+
+    def io_debug_str(self):
+        """Returns debug string for serial console"""
+        debug = StringIO()
+        if self.show_can:
+            debug.write(f"{self.can_debug_str()}\n")
+
+        if self.show_time:
+            ticks_now_ms = ticks_ms()
+            debug.write(f"up:{monotonic()-self.t0:.1f}\n")
+        if self.show_can_dts:
+            for key, value in sorted(DtTracker._g_trackers.items()):
+                debug.write(f"{key: <20}: {int(value.mean_dt()): <5d} age: {value.age(ticks_now_ms)} \n")
+        if self.show_mem:
+            debug.write(f"mf: {self.mem_free} ma: {self.mem_alloc}\n")
+
+        return debug.getvalue()
 
     def can_debug_str(self):
         """Returns string with details on CAN bus status"""
@@ -147,11 +150,12 @@ class MainLoop:
 
     def handle_message(self, message):
         """Process each received CAN message"""
-        # dt = self.can_id_dts.get(message.id)
-        # if dt is None:
-        #     dt = DtTracker(f"can/0x{message.id:03x}")
-        #     self.can_id_dts[message.id] = dt
-        # dt.update()
+        if self.show_can_dts:
+            dt = self.can_id_dts.get(message.id)
+            if dt is None:
+                dt = DtTracker(f"can/0x{message.id:03x}")
+                self.can_id_dts[message.id] = dt
+            dt.update()
 
         # If message does not exist call dummy function, reduce overhead
         try:
@@ -220,14 +224,7 @@ class MainLoop:
 
         debug_str = DtTracker._g_trackers["display/draw"].minmeanmax()
         gd.TagMask(0)
-        display.draw_text(
-            display.width - 2,
-            1,
-            debug_str,
-            color=(0, 0, 0),
-            font=26,
-            options=OPT_RIGHTX,
-        )
+        display.draw_text(display.width - 2, 1, debug_str, color=(0, 0, 0), font=26, options=OPT_RIGHTX)
         gd.TagMask(1)
         clicked = display.icon_button(
             amiga_graphics.debug,
@@ -258,9 +255,7 @@ class MainLoop:
             for key, value in DtTracker._g_trackers.items():
                 if key.startswith("can/"):
                     continue
-                debug.write(
-                    f"{key: <20}: {int(value.mean_dt()): <5d} age: {value.age(ticks_now_ms)} \n"
-                )
+                debug.write(f"{key: <20}: {int(value.mean_dt()): <5d} age: {value.age(ticks_now_ms)} \n")
         if self.show_mem:
             debug.write(f"mf: {self.mem_free} ma: {self.mem_alloc}\n")
 
@@ -270,9 +265,7 @@ class MainLoop:
         # HEARTBEAT at 0x700 no longer follows CANopen standard 1 byte payload
         heart_msg = Message(
             id=FarmngHeartbeat.cob_id | self.node_id,
-            data=FarmngHeartbeat(
-                self.node_state, ticks_ms(), self.serial_number
-            ).encode(),
+            data=FarmngHeartbeat(self.node_state, ticks_ms(), self.serial_number).encode(),
         )
         self.can.send(heart_msg)
 
@@ -338,22 +331,12 @@ class MainLoop:
         if self.repl_debug_dt:
             self.dt_list.append(self.dt_repl_time.ticks_age_cumul())  # 5
             dt_debug_msg = FarmngDebugTimer(dt_list=self.dt_list)
-            self.can.send(
-                Message(
-                    id=FarmngDebugTimer.cob_id | 0x5A,
-                    data=dt_debug_msg.encode(),
-                )
-            )
+            self.can.send(Message(id=FarmngDebugTimer.cob_id | 0x5A, data=dt_debug_msg.encode()))
             print((dt_debug_msg))
         if self.repl_debug_mem:
             self.mem_list.append(mem_free())  # 4
             mem_debug_msg = FarmngDebugMemory(mem_list=self.mem_list)
-            self.can.send(
-                Message(
-                    id=FarmngDebugMemory.cob_id | 0x5A,
-                    data=mem_debug_msg.encode(),
-                )
-            )
+            self.can.send(Message(id=FarmngDebugMemory.cob_id | 0x5A, data=mem_debug_msg.encode()))
             print((mem_debug_msg))
 
     def _loop(self):
