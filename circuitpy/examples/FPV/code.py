@@ -2,17 +2,14 @@
 import board
 import busio
 import canio
-
-from farm_ng.adk import (
-    MainLoop,
-    TickRepeater,
-    AmigaRpdo1,
-    AmigaTpdo1,
-    AmigaControlState,
-    DASHBOARD_NODE_ID,
-    CanOpenObject,
-    Axis,
-)
+from farm_ng.adk import AmigaControlState
+from farm_ng.adk import AmigaRpdo1
+from farm_ng.adk import AmigaTpdo1
+from farm_ng.adk import Axis
+from farm_ng.adk import CanOpenObject
+from farm_ng.adk import DASHBOARD_NODE_ID
+from farm_ng.adk import MainLoop
+from farm_ng.adk import TickRepeater
 
 
 def parse_packet(packet):
@@ -53,7 +50,7 @@ class FpvApp:
         if not self.cmd_repeater.check():
             return
         if channels[1] > 1500:
-            # here, we're actively sending commmands from the RC joystick
+            # here, we're actively sending commands from the RC joystick
             request_state = AmigaControlState.STATE_AUTO_ACTIVE
         else:
             # In READY state the amiga won't move and will brake smoothly

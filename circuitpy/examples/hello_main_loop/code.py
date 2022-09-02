@@ -1,15 +1,12 @@
-from farm_ng.adk import (
-    MainLoop,
-    TickRepeater,
-    AmigaRpdo1,
-    AmigaTpdo1,
-    AmigaControlState,
-    DASHBOARD_NODE_ID,
-    CanOpenObject,
-)
-
-import usb_cdc
 import canio
+import usb_cdc
+from farm_ng.adk import AmigaControlState
+from farm_ng.adk import AmigaRpdo1
+from farm_ng.adk import AmigaTpdo1
+from farm_ng.adk import CanOpenObject
+from farm_ng.adk import DASHBOARD_NODE_ID
+from farm_ng.adk import MainLoop
+from farm_ng.adk import TickRepeater
 
 
 class HelloMainLoopApp:

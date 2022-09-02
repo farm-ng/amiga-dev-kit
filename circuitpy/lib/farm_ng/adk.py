@@ -3,7 +3,8 @@ import os
 import random
 import struct
 import time
-from gc import mem_alloc, mem_free
+from gc import mem_alloc
+from gc import mem_free
 from io import StringIO
 
 import board
@@ -37,10 +38,10 @@ def get_board_type() -> BoardType:
 
 def setup_can(rx, tx, baudrate, auto_restart):
     # Use this line if your board has dedicated CAN pins. (Feather M4 CAN and Feather STM32F405)
-    #    can = setup_can(rx=board.CAN_RX, tx=board.CAN_TX, baudrate=parm.can_baud, auto_restart=True)
+    #    can = setup_can(rx=board.CAN_RX, tx=board.CAN_TX, baudrate=param.can_baud, auto_restart=True)
     # Use this line for dashboard:
     #    can = setup_can(
-    # rx=microcontroller.pin.PB13, tx=microcontroller.pin.PB14, baudrate=parm.can_baud, auto_restart=True)
+    # rx=microcontroller.pin.PB13, tx=microcontroller.pin.PB14, baudrate=param.can_baud, auto_restart=True)
 
     # If the CAN transceiver has a standby pin, bring it out of standby mode
     if hasattr(board, "CAN_STANDBY"):
@@ -703,14 +704,17 @@ def clip(x, min_value, max_value):
 
 class Axis:
     def __init__(self, min_value, deadzone_m1, deadzone_p1, max_value):
-        """min, -deadzone, +deadzone, max"""
+        """min, -deadzone, +deadzone, max."""
         self.v0 = min_value
         self.v1 = deadzone_m1
         self.v2 = deadzone_p1
         self.v3 = max_value
 
     def map(self, v):
-        """returns -1 .. +1"""
+        """returns -1 ..
+
+        +1
+        """
         if v < self.v1:
             return -1 + (v - self.v0) / (self.v1 - self.v0)
         elif v > self.v2:
