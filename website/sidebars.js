@@ -67,6 +67,7 @@ const sidebars = {
     "examples/cansniffer/cansniffer",
     "examples/FPV/fpv",
     "examples/camera_client/camera-client",
+    "examples/camera_client_gui/camera-client-gui",
   ],
   "contribute": [
     "contribute/contribute-website"
