@@ -5,4 +5,4 @@ ignore =
     E203  # Ignore "whitespace before ':'"
 exclude = .git,__pycache__,node_modules
 per-file-ignores =
-    brain/examples/kivy_viz/main.py: E402
+    brain/examples/kivy_camera_client/main.py: E402
