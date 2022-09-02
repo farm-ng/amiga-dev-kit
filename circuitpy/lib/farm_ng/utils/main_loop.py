@@ -45,7 +45,7 @@ def get_node_id():
     try:
         with open("/node_id.txt", "rt") as node_id_file:
             node_id = int(node_id_file.read(), 0)
-    except FileNotFoundError:
+    except OSError:
         node_id = 0x42
 
     print(f"node_id = 0x{node_id:0x}")
