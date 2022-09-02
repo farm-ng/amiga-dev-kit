@@ -21,7 +21,6 @@ async def main(address: str, port: int, stream_every_n: int) -> None:
 
     while True:
         # query the service state
-        # TODO: explain states
         state: oak_pb2.OakServiceState = await client.get_state()
 
         if state.value != oak_pb2.OakServiceState.RUNNING:
