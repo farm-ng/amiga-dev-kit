@@ -1,10 +1,14 @@
 # Python imports
-from struct import calcsize, pack, unpack
-from random import seed, choice
+from random import choice
+from random import seed
+from struct import calcsize
+from struct import pack
+from struct import unpack
 
-# CircuitPython modules
 from microcontroller import nvm as mc_nvm
 from supervisor import ticks_ms
+
+# CircuitPython modules
 
 
 class ValueStore:
@@ -30,10 +34,7 @@ class Value:
         self.write_default()
 
     def read_name(self):
-        name, val_addr = unpack(
-            self.name_format,
-            mc_nvm[self.name_address : self.name_address + self.name_size],
-        )
+        name, val_addr = unpack(self.name_format, mc_nvm[self.name_address : self.name_address + self.name_size])
         return name.decode("ascii"), val_addr
 
     def write_default(self):
@@ -53,15 +54,10 @@ class Value:
     def write(self, argv):
         if type(argv) not in (list, tuple):
             argv = (argv,)
-        mc_nvm[self.value_address : self.value_address + self.value_size] = pack(
-            self.value_format, *argv
-        )
+        mc_nvm[self.value_address : self.value_address + self.value_size] = pack(self.value_format, *argv)
 
     def read(self):
-        return unpack(
-            self.value_format,
-            mc_nvm[self.value_address : self.value_address + self.value_size],
-        )
+        return unpack(self.value_format, mc_nvm[self.value_address : self.value_address + self.value_size])
 
 
 def random_string(length):
@@ -122,6 +118,4 @@ nvm_joystick_calib = Value("joystick_calib", "<2h", (0, 0))
 
 # Unstable -- not actually in use
 _n_battery_samples = 121
-nvm_battery_history = Value(
-    "battery_history", "<" + "H" * _n_battery_samples, [0] * _n_battery_samples
-)
+nvm_battery_history = Value("battery_history", "<" + "H" * _n_battery_samples, [0] * _n_battery_samples)

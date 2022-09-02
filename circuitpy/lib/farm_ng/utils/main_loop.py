@@ -1,20 +1,27 @@
 # Python imports
+from gc import collect as gc_collect
+from gc import mem_alloc
+from gc import mem_free
 from io import StringIO
 from time import monotonic
-from gc import mem_free, mem_alloc
-from gc import collect as gc_collect
 
-# CircuitPython modules
-from canio import BusState, Message
+from canio import BusState
+from canio import Message
+from farm_ng.utils.wifi import WIFI
 from supervisor import ticks_ms
 
-# Local imports
 from .can import setup_can_default
-from .general import DtTracker, TickRepeater
-from .packet import SupervisorReq, NodeState, FarmngHeartbeat, FarmngDebugTimer, FarmngDebugMemory
+from .general import DtTracker
+from .general import TickRepeater
 from .nvm import nvm_serial_number
+from .packet import FarmngDebugMemory
+from .packet import FarmngDebugTimer
+from .packet import FarmngHeartbeat
+from .packet import NodeState
+from .packet import SupervisorReq
 
-# from farm_ng.utils.wifi import WIFI
+# CircuitPython modules
+# Local imports
 
 try:
     from farm_ng.display import Display, amiga_graphics, TAG_DEBUG, TAG_CUSTOM_START
@@ -33,13 +40,12 @@ CanBusStateDict = {
 
 
 def get_node_id():
-    """Returns the value from the node_id.txt file in root of CIRCUITPY drive, if exists
-    Else returns an arbitrary default node id
-    """
+    """Returns the value from the node_id.txt file in root of CIRCUITPY drive, if exists Else returns an arbitrary
+    default node id."""
     try:
         with open("/node_id.txt", "rt") as node_id_file:
             node_id = int(node_id_file.read(), 0)
-    except:
+    except FileNotFoundError:
         node_id = 0x42
 
     print(f"node_id = 0x{node_id:0x}")
@@ -47,9 +53,7 @@ def get_node_id():
 
 
 class MainLoop:
-    """
-    Main driver for all farm-ng apps run on microcontrollers
-    """
+    """Main driver for all farm-ng apps run on microcontrollers."""
 
     def __init__(self, AppClass, has_display=True, has_wifi=True) -> None:
         self.t0 = monotonic()
@@ -109,7 +113,7 @@ class MainLoop:
         self._send_heartbeat()
 
     def io_debug_str(self):
-        """Returns debug string for serial console"""
+        """Returns debug string for serial console."""
         debug = StringIO()
         if self.show_can:
             debug.write(f"{self.can_debug_str()}\n")
@@ -126,30 +130,30 @@ class MainLoop:
         return debug.getvalue()
 
     def can_debug_str(self):
-        """Returns string with details on CAN bus status"""
+        """Returns string with details on CAN bus status."""
         if self.show_can:
             return f"can {self.can_bus_state} tec: {self.can_tec} rec: {self.can_rec}\n"
         else:
             return ""
 
     def update_mem(self):
-        """Check RAM stats on mcu"""
+        """Check RAM stats on mcu."""
         if self.show_mem and self.mem_repeater.check():
             self.mem_free = mem_free()
             self.mem_alloc = mem_alloc()
 
     def init_app(self):
-        """Initialize the app loaded on the mcu"""
+        """Initialize the app loaded on the mcu."""
         gc_collect()
         self.app = self.AppClass(main_loop=self, can=self.can, node_id=self.node_id)
 
     def handle_supervisor_req(self, message):
-        """Handle supervisor request CAN message"""
+        """Handle supervisor request CAN message."""
         req = SupervisorReq.from_can_data(message.data)
         print(req)
 
     def handle_message(self, message):
-        """Process each received CAN message"""
+        """Process each received CAN message."""
         if self.show_can_dts:
             dt = self.can_id_dts.get(message.id)
             if dt is None:
@@ -160,17 +164,17 @@ class MainLoop:
         # If message does not exist call dummy function, reduce overhead
         try:
             self.command_handlers.get(message.id, self.can_dummy)(message)
-        except:
+        except KeyError:
             # print("Unable to parse: %x" % (message.id,), message.data)
             pass
 
     def can_dummy(self, message):
-        """Dummy function that is called when message does not meet filter"""
+        """Dummy function that is called when message does not meet filter."""
         pass
         # print("CAN - Ignored ID %x" % (message.id,), message.data)
 
     def poll_can(self):
-        """Checks for can messages to parse"""
+        """Checks for can messages to parse."""
         if self.debug_rx_queue:
             print((self.listener.in_waiting(),))
             if self.listener.in_waiting() >= 64:
@@ -181,7 +185,7 @@ class MainLoop:
             self.handle_message(self.listener.receive())
 
     def update_can_stats(self):
-        """Query CAN bus status"""
+        """Query CAN bus status."""
         # can = self.can
         # bus_state = CanBusStateDict.get(str(can.state), "NA")
         # if bus_state != self.can_bus_state:
@@ -194,7 +198,7 @@ class MainLoop:
         self.can_rec = self.can.receive_error_count
 
     def update_display(self, display: Display):
-        """Called by __init__ delta tracker object"""
+        """Called by __init__ delta tracker object."""
         display.gd.SaveContext()
 
         if self.app is not None:
@@ -202,12 +206,9 @@ class MainLoop:
         display.gd.RestoreContext()
         # self.draw_wifi(display=display)
 
-        # TODO_STABLE2 draw debug needs to be optimzed before turning back on. Use CAN debuging
-        # self.draw_debug(display=display)
-
     # TODO_STABLE2 this needs to be optimized before turned back on
     def draw_debug(self, display: Display):
-        """Show debug stats on the dashboard display"""
+        """Show debug stats on the dashboard display."""
         gd = display.gd
         if self.show_debug:
             # draw a transparent white background for debug text, draw before button so it shows up on top.
@@ -270,10 +271,7 @@ class MainLoop:
         self.can.send(heart_msg)
 
     def iter(self):
-        """
-        Method called every loop of the main while loop
-        driving the app on the microcontroller
-        """
+        """Method called every loop of the main while loop driving the app on the microcontroller."""
         if self.repl_debug_dt:
             self.dt_list = []
             self.dt_repl_time.update()
@@ -344,10 +342,8 @@ class MainLoop:
             self.iter()
 
     def loop(self):
-        """
-        Initializes the main while loop,
-        with an exception handler for dashboard that displays exceptions on the screen
-        """
+        """Initializes the main while loop, with an exception handler for dashboard that displays exceptions on the
+        screen."""
         if self.display is not None:
             self.display.exception_handler(self._loop)
         else:

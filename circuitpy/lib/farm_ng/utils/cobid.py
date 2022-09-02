@@ -1,6 +1,6 @@
 class CanOpenObject:
-    """
-    CANopen function codes.
+    """CANopen function codes.
+
     Add to node_id (for most functions) for CAN id
     """
 

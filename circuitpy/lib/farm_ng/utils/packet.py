@@ -1,11 +1,14 @@
 # Python imports
-from struct import pack, unpack
+from struct import pack
+from struct import unpack
 
-# CircuitPython modules
 from supervisor import ticks_ms
 
+from .general import clip
+from .general import ticks_diff
+
+# CircuitPython modules
 # Local imports
-from .general import ticks_diff, clip
 
 DASHBOARD_NODE_ID = 0xE
 PENDANT_NODE_ID = 0xF
@@ -25,7 +28,7 @@ class SupervisorReqRepIds:
 
 
 class PendantButtons:
-    """Bit field for pendant buttons"""
+    """Bit field for pendant buttons."""
 
     PAUSE = 0x01
     BRAKE = 0x02
@@ -50,7 +53,7 @@ class AmigaControlState:
 
 
 class NodeState:
-    """State of the MainLoop"""
+    """State of the MainLoop."""
 
     BOOTUP = 0x00  # Boot up / Initializing
     STOPPED = 0x04  # Stopped
@@ -59,18 +62,18 @@ class NodeState:
 
 
 class Packet:
-    """Base class inherited by all CAN message data structures"""
+    """Base class inherited by all CAN message data structures."""
 
     @classmethod
     def from_can_data(cls, data):
-        """Unpack CAN data directly into CAN message data structure"""
+        """Unpack CAN data directly into CAN message data structure."""
         obj = cls()  # Does not call __init__
         obj.decode(data)
         obj.stamp()
         return obj
 
     def stamp(self):
-        """Time most recent message was received"""
+        """Time most recent message was received."""
         self.ticks_ms = ticks_ms()
 
     def fresh(self, thresh_ms=500):
@@ -78,7 +81,7 @@ class Packet:
         return self.age() < thresh_ms
 
     def age(self):
-        """Age of the most recent message"""
+        """Age of the most recent message."""
         return ticks_diff(ticks_ms(), self.ticks_ms)
 
 
@@ -93,31 +96,22 @@ class PendantState(Packet):
         self.stamp()
 
     def encode(self):
-        """Returns the data contained by the class encoded as CAN message data"""
-        return pack(
-            self.format,
-            int(self.x * 32767),
-            int(self.y * 32767),
-            self.buttons,
-        )
+        """Returns the data contained by the class encoded as CAN message data."""
+        return pack(self.format, int(self.x * 32767), int(self.y * 32767), self.buttons)
 
     def decode(self, data):
-        """Decodes CAN message data and populates the values of the class"""
+        """Decodes CAN message data and populates the values of the class."""
 
         (xi, yi, self.buttons) = unpack(self.format, data)
         self.x = xi / 32767
         self.y = yi / 32767
 
     def __str__(self):
-        return "x {:0.3f} y {:0.3f} buttons {}".format(
-            self.x,
-            self.y,
-            self.buttons,
-        )
+        return "x {:0.3f} y {:0.3f} buttons {}".format(self.x, self.y, self.buttons)
 
 
 class PendantLEDs(Packet):
-    """Command to the pendant on LEDs / backlight to illuminate"""
+    """Command to the pendant on LEDs / backlight to illuminate."""
 
     def __init__(self, leds=0, backlight=0, rgb=(0, 0, 0)):
         self.format = "<5B"
@@ -127,27 +121,16 @@ class PendantLEDs(Packet):
         self.stamp()
 
     def encode(self):
-        """Returns the data contained by the class encoded as CAN message data"""
-        return pack(
-            self.format,
-            self.leds,
-            self.backlight,
-            self.rgb[0],
-            self.rgb[1],
-            self.rgb[2],
-        )
+        """Returns the data contained by the class encoded as CAN message data."""
+        return pack(self.format, self.leds, self.backlight, self.rgb[0], self.rgb[1], self.rgb[2])
 
     def decode(self, data):
-        """Decodes CAN message data and populates the values of the class"""
+        """Decodes CAN message data and populates the values of the class."""
         (self.leds, self.backlight, r, g, b) = unpack(self.format, data)
         self.rgb = (r, g, b)
 
     def __str__(self):
-        return "LEDs {} backlight {} rgb {}".format(
-            self.leds,
-            self.backlight,
-            self.rgb,
-        )
+        return "LEDs {} backlight {} rgb {}".format(self.leds, self.backlight, self.rgb)
 
 
 class AmigaRpdo1(Packet):
@@ -167,16 +150,11 @@ class AmigaRpdo1(Packet):
         self.stamp()
 
     def encode(self):
-        """Returns the data contained by the class encoded as CAN message data"""
-        return pack(
-            self.format,
-            self.state_req,
-            int(self.cmd_speed * 1000.0),
-            int(self.cmd_ang_rate * 1000.0),
-        )
+        """Returns the data contained by the class encoded as CAN message data."""
+        return pack(self.format, self.state_req, int(self.cmd_speed * 1000.0), int(self.cmd_ang_rate * 1000.0))
 
     def decode(self, data):
-        """Decodes CAN message data and populates the values of the class"""
+        """Decodes CAN message data and populates the values of the class."""
         (self.state_req, cmd_speed, cmd_ang_rate) = unpack(self.format, data)
         self.cmd_speed = cmd_speed / 1000.0
         self.cmd_ang_rate = cmd_ang_rate / 1000.0
@@ -204,16 +182,11 @@ class AmigaTpdo1(Packet):
         self.stamp()
 
     def encode(self):
-        """Returns the data contained by the class encoded as CAN message data"""
-        return pack(
-            self.format,
-            self.state,
-            int(self.meas_speed * 1000.0),
-            int(self.meas_ang_rate * 1000.0),
-        )
+        """Returns the data contained by the class encoded as CAN message data."""
+        return pack(self.format, self.state, int(self.meas_speed * 1000.0), int(self.meas_ang_rate * 1000.0))
 
     def decode(self, data):
-        """Decodes CAN message data and populates the values of the class"""
+        """Decodes CAN message data and populates the values of the class."""
         (self.state, meas_speed, meas_ang_rate) = unpack(self.format, data)
         self.meas_speed = meas_speed / 1000.0
         self.meas_ang_rate = meas_ang_rate / 1000.0
@@ -225,7 +198,7 @@ class AmigaTpdo1(Packet):
 
 
 class SupervisorReq(Packet):
-    """Supervisor request"""
+    """Supervisor request."""
 
     cob_id = 0x600  # SDO command
 
@@ -236,11 +209,11 @@ class SupervisorReq(Packet):
         self.payload = payload
 
     def encode(self):
-        """Returns the data contained by the class encoded as CAN message data"""
+        """Returns the data contained by the class encoded as CAN message data."""
         return pack(self.format, ReqRepIds.SUPERVISOR, self.id, self.payload)
 
     def decode(self, data):
-        """Decodes CAN message data and populates the values of the class"""
+        """Decodes CAN message data and populates the values of the class."""
         (id, self.id, self.payload) = unpack(self.format, data)
         assert id == ReqRepIds.SUPERVISOR
 
@@ -248,20 +221,14 @@ class SupervisorReq(Packet):
     def make_mesage(cls, node_id, id, payload=bytes(6)):
         from canio import Message
 
-        return Message(
-            id=(cls.cob_id | node_id),
-            data=SupervisorReq(id=id, payload=payload).encode(),
-        )
+        return Message(id=(cls.cob_id | node_id), data=SupervisorReq(id=id, payload=payload).encode())
 
     def __str__(self):
-        return "superviser req {} payload {}".format(
-            self.id,
-            self.payload,
-        )
+        return "superviser req {} payload {}".format(self.id, self.payload)
 
 
 class SupervisorRep(Packet):
-    """Supervisor response"""
+    """Supervisor response."""
 
     cob_id = 0x580  # SDO reply
     format = "<BB6s"
@@ -271,23 +238,20 @@ class SupervisorRep(Packet):
         self.payload = payload
 
     def encode(self):
-        """Returns the data contained by the class encoded as CAN message data"""
+        """Returns the data contained by the class encoded as CAN message data."""
         return pack(self.format, ReqRepIds.SUPERVISOR, self.id, self.payload)
 
     def decode(self, data):
-        """Decodes CAN message data and populates the values of the class"""
+        """Decodes CAN message data and populates the values of the class."""
         (id, self.id, self.payload) = unpack(self.format, data)
         assert id == ReqRepIds.SUPERVISOR
 
     def __str__(self):
-        return "supervisor rep  id {} payload {} ".format(
-            self.id,
-            self.payload,
-        )
+        return "supervisor rep  id {} payload {} ".format(self.id, self.payload)
 
 
 class FirmwareVersion(Packet):
-    """Firmware version running on device"""
+    """Firmware version running on device."""
 
     def __init__(self, version_tuple):
         assert len(version_tuple) == 4
@@ -299,11 +263,11 @@ class FirmwareVersion(Packet):
         self.format = "<HHHB"
 
     def encode(self):
-        """Returns the data contained by the class encoded as CAN message data"""
+        """Returns the data contained by the class encoded as CAN message data."""
         return pack(self.format, self.major, self.minor, self.patch, self.dev_bool)
 
     def decode(self, data):
-        """Decodes CAN message data and populates the values of the class"""
+        """Decodes CAN message data and populates the values of the class."""
         (self.major, self.minor, self.patch, self.dev_bool) = unpack(self.format, data)
         self.dev_bool = bool(self.dev_bool)
 
@@ -315,10 +279,10 @@ class FirmwareVersion(Packet):
 
 
 class CanTapeTransferTPDO(Packet):
-    """Iterative response for file transfers over CAN"""
+    """Iterative response for file transfers over CAN."""
 
     class State:
-        """Current state of file transfer over CAN"""
+        """Current state of file transfer over CAN."""
 
         IDLE = 1
         TRANSFERRING = 2
@@ -334,20 +298,18 @@ class CanTapeTransferTPDO(Packet):
     format = "<BHBL"
     cob_id = 0x480
 
-    def __init__(
-        self, page: int = 0, block: int = 0, state: int = State.NA, crc32: int = 0
-    ):
+    def __init__(self, page: int = 0, block: int = 0, state: int = State.NA, crc32: int = 0):
         self.page = page
         self.block = block
         self.state = state
         self.crc32 = crc32
 
     def encode(self):
-        """Returns the data contained by the class encoded as CAN message data"""
+        """Returns the data contained by the class encoded as CAN message data."""
         return pack(self.format, self.page, self.block, self.state, self.crc32)
 
     def decode(self, data):
-        """Decodes CAN message data and populates the values of the class"""
+        """Decodes CAN message data and populates the values of the class."""
         (self.page, self.block, self.state, self.crc32) = unpack(self.format, data)
 
     def __str__(self):
@@ -355,7 +317,7 @@ class CanTapeTransferTPDO(Packet):
 
 
 class CanTapeTransferRPDO(Packet):
-    """Packet containing 5 bytes of file for file transfers over CAN"""
+    """Packet containing 5 bytes of file for file transfers over CAN."""
 
     format = "<BH5s"
     cob_id = 0x500
@@ -371,11 +333,11 @@ class CanTapeTransferRPDO(Packet):
         self.data = data
 
     def encode(self):
-        """Returns the data contained by the class encoded as CAN message data"""
+        """Returns the data contained by the class encoded as CAN message data."""
         return pack(self.format, self.page, self.block, self.data)
 
     def decode(self, data):
-        """Decodes CAN message data and populates the values of the class"""
+        """Decodes CAN message data and populates the values of the class."""
         (self.page, self.block, self.data) = unpack(self.format, data)
 
     def __str__(self):
@@ -395,11 +357,11 @@ class FarmngHeartbeat(Packet):
         self.serial_number = serial_number
 
     def encode(self):
-        """Returns the data contained by the class encoded as CAN message data"""
+        """Returns the data contained by the class encoded as CAN message data."""
         return pack(self.format, self.node_state, self.ticks_ms, self.serial_number[:3])
 
     def decode(self, data):
-        """Decodes CAN message data and populates the values of the class"""
+        """Decodes CAN message data and populates the values of the class."""
         (self.node_state, self.ticks_ms, self.serial_number) = unpack(self.format, data)
 
     def __str__(self):
@@ -416,11 +378,11 @@ class RmdSpeedCommand(Packet):
         self.rpm = rpm
 
     def encode(self):
-        """Returns the data contained by the class encoded as CAN message data"""
+        """Returns the data contained by the class encoded as CAN message data."""
         return pack(self.format, self.cmd_byte, 0x0, 0x0, 0x0, int(self.rpm * 6000))
 
     def decode(self, data):
-        """Decodes CAN message data and populates the values of the class"""
+        """Decodes CAN message data and populates the values of the class."""
         assert data[0] == self.cmd_byte
         (_, _, _, _, dphs) = unpack(self.format, data)
         self.rpm = dphs / 6000
@@ -435,9 +397,7 @@ class RmdSpeedResponse(Packet):
     format = "<2b3h"
     cmd_byte = 0xA2
 
-    def __init__(
-        self, temp: int = 0, current: int = 0, rpm: int = 0, encoder_pos: int = 0
-    ):
+    def __init__(self, temp: int = 0, current: int = 0, rpm: int = 0, encoder_pos: int = 0):
         self.temp = temp
         self.current = current
         self.rpm = rpm
@@ -445,29 +405,26 @@ class RmdSpeedResponse(Packet):
         self.ticks_ms = ticks_ms()
 
     def encode(self):
-        """Returns the data contained by the class encoded as CAN message data"""
+        """Returns the data contained by the class encoded as CAN message data."""
         return pack(
-            self.format,
-            self.cmd_byte,
-            self.temp,
-            int(self.current * 2048 / 33),
-            int(self.rpm * 60),
-            self.encoder_pos,
+            self.format, self.cmd_byte, self.temp, int(self.current * 2048 / 33), int(self.rpm * 60), self.encoder_pos
         )
 
     def decode(self, data):
-        """Decodes CAN message data and populates the values of the class"""
+        """Decodes CAN message data and populates the values of the class."""
         assert data[0] == self.cmd_byte
         (_, self.temp, amps, dps, self.encoder_pos) = unpack(self.format, data)
         self.current = amps * 33 / 2048
         self.rpm = dps / 60
 
     def __str__(self):
-        return f"RmdSpeedResponse temp: {self.temp} current: {self.current} rpm: {self.rpm} encoder_pos: {self.encoder_pos}"
+        s = f"RmdSpeedResponse temp: {self.temp} current: {self.current}"
+        s += f"rpm: {self.rpm} encoder_pos: {self.encoder_pos}"
+        return s
 
 
 class FarmngDebugTimer(Packet):
-    """To be used for tracking the time of up to 8 dt time steps"""
+    """To be used for tracking the time of up to 8 dt time steps."""
 
     format = "<8b"
     cob_id = 0x480  # TPDO4
@@ -476,7 +433,7 @@ class FarmngDebugTimer(Packet):
         self.dt_list = dt_list
 
     def encode(self):
-        """Returns the data contained by the class encoded as CAN message data"""
+        """Returns the data contained by the class encoded as CAN message data."""
         # self.dt_list = [clip(int(x), 0, 255) for x in self.dt_list[:8]]
         self.dt_list = [clip(int(x), -127, 127) for x in self.dt_list[:8]]
 
@@ -485,7 +442,7 @@ class FarmngDebugTimer(Packet):
         return pack(self.format, *self.dt_list)
 
     def decode(self, data):
-        """Decodes CAN message data and populates the values of the class"""
+        """Decodes CAN message data and populates the values of the class."""
         self.dt_list = list(unpack(self.format, data))
 
     def __str__(self):
@@ -498,7 +455,7 @@ class FarmngDebugTimer(Packet):
 
 
 class FarmngDebugMemory(Packet):
-    """To be used for tracking the memory of up to 4 spots in the iter loop"""
+    """To be used for tracking the memory of up to 4 spots in the iter loop."""
 
     format = "<4H"
     cob_id = 0x500  # RPDO4
@@ -507,7 +464,7 @@ class FarmngDebugMemory(Packet):
         self.mem_list = mem_list
 
     def encode(self):
-        """Returns the data contained by the class encoded as CAN message data"""
+        """Returns the data contained by the class encoded as CAN message data."""
         self.mem_list = [clip(int(x), 0, 65536) for x in self.mem_list[:4]]
 
         while len(self.mem_list) < 4:
@@ -515,7 +472,7 @@ class FarmngDebugMemory(Packet):
         return pack(self.format, *self.mem_list)
 
     def decode(self, data):
-        """Decodes CAN message data and populates the values of the class"""
+        """Decodes CAN message data and populates the values of the class."""
         self.mem_list = list(unpack(self.format, data))
 
     def __str__(self):

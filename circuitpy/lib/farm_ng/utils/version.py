@@ -1,18 +1,17 @@
+"""Update values following semantic versioning convention.
+
+- MAJOR: Major version
+- MINOR: Minor version
+- PATCH: Patch version
+- DEV: Boolean indicating it is a development release
 """
-Update values following semantic versioning convention
-    - MAJOR: Major version
-    - MINOR: Minor version
-    - PATCH: Patch version
-    - DEV: Boolean indicating it is a development release
-"""
+from os import uname as os_uname
 
 # 0.0.3 == Aug 24, 2022
 MAJOR = 0
 MINOR = 0
 PATCH = 4
 DEV = False
-
-from os import uname as os_uname
 
 
 def asserts():
@@ -23,13 +22,13 @@ def asserts():
 
 
 def version_tuple():
-    """Returns tuple containing firmware version"""
+    """Returns tuple containing firmware version."""
     asserts()
     return (MAJOR, MINOR, PATCH, DEV)
 
 
 def version_string():
-    """Returns string containing firmware version"""
+    """Returns string containing firmware version."""
     asserts()
     s = f"v{MAJOR}.{MINOR}.{PATCH}"
     if DEV:
@@ -38,7 +37,7 @@ def version_string():
 
 
 class BoardType:
-    """Types of boards Amiga application layer firmware is run on"""
+    """Types of boards Amiga application layer firmware is run on."""
 
     AMIGA_DISPV0 = 1
     FEATHER_M4_CAN = 2
@@ -47,7 +46,7 @@ class BoardType:
 
 
 def get_board_type():
-    """Returns detected board type"""
+    """Returns detected board type."""
     uname = os_uname()
     print(uname)
     if "Amiga_DispV0" in uname.machine:

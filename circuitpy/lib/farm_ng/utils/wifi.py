@@ -1,18 +1,18 @@
-# Python imports
 from time import sleep
 
-# CircuitPython modules
 from busio import UART
-from microcontroller import nvm, pin
-from digitalio import DigitalInOut, Direction
+from digitalio import DigitalInOut
+from digitalio import Direction
+from microcontroller import pin
 
-# Local imports
 from .general import Repeater
-from .nvm import random_wifi_password, nvm_wifi_password, nvm_serial_number
+from .nvm import nvm_serial_number
+from .nvm import nvm_wifi_password
+from .nvm import random_wifi_password
 
 
 class WIFI:
-    """Interact with ESP8266 wifi module on dashboard"""
+    """Interact with ESP8266 wifi module on dashboard."""
 
     # Some other unused AT commands:
     # - AT                            # basic check
@@ -27,19 +27,13 @@ class WIFI:
     # - AT+CWJAP="SSID","password"    # Connect to a router
 
     class State:
-        """Wifi state"""
+        """Wifi state."""
 
         BOOT = 0
         OPERATIONAL = 1
 
     def __init__(self):
-        self.uart = UART(
-            pin.PA17,
-            pin.PA16,
-            baudrate=115200,
-            receiver_buffer_size=2048,
-            timeout=0.5,
-        )
+        self.uart = UART(pin.PA17, pin.PA16, baudrate=115200, receiver_buffer_size=2048, timeout=0.5)
 
         # Access point details
         self.AP_creds = wifi_AP()
@@ -62,7 +56,7 @@ class WIFI:
         self.messages = []
 
     def startup(self):
-        """Creates a UDP socket in access point (AP) mode"""
+        """Creates a UDP socket in access point (AP) mode."""
         self.uart.reset_input_buffer()  # flush it
 
         # Set to access point (AP) mode
@@ -77,23 +71,23 @@ class WIFI:
         self.send(f'AT+CIPSTART={self._socket},"UDP","0.0.0.0",0,1112,2')
 
     def new_password(self):
-        """Sets a new password for ESP8266 access point"""
+        """Sets a new password for ESP8266 access point."""
         self.AP_creds.new_random_password()
         self.send(f"AT+CWSAP_DEF={self.AP_creds}")
 
     def send(self, msg):
-        """Send message over UDP"""
+        """Send message over UDP."""
         _encoding = "ascii"
         # _encoding = "utf-8"
         self.uart.write(bytes("{}\r\n".format(msg), _encoding))
 
     def read_buffer(self):
-        """Read received messages on UDP buffer"""
+        """Read received messages on UDP buffer."""
         while self.uart.in_waiting > 0:
             yield self.uart.readline()
 
     def loop_iter(self):
-        """To run every loop of MainLoop"""
+        """To run every loop of MainLoop."""
         if self.state == self.State.OPERATIONAL:
             for x in self.read_buffer():
                 print(x)
@@ -107,7 +101,7 @@ class WIFI:
             self.state = self.State.OPERATIONAL
 
     def stream_can_msg(self, msg, ip=None, port=None):
-        """Send CAN message over UDP"""
+        """Send CAN message over UDP."""
         id = hex(msg.id)[2:]
         data = msg.data
         while len(data) < 8:
@@ -131,7 +125,7 @@ class WIFI:
         self.uart.write(payload)
 
     def scan_aps(self, secs=5):
-        """Query available networks"""
+        """Query available networks."""
         self.send("AT+CWLAP")
 
         for _ in range(secs):
@@ -151,14 +145,12 @@ class WIFI:
         # self.esp.connect(secrets)
 
     def update(self, main_loop):
-        """Call loop_iter"""
+        """Call loop_iter."""
         self.loop_iter()
 
 
 class wifi_AP:
-    """
-    ESP8266 access point login credentials
-    """
+    """ESP8266 access point login credentials."""
 
     def __init__(self):
         self.chl = 1
@@ -171,12 +163,12 @@ class wifi_AP:
         self._ssid = f"farm-ng-{self._serial_number}"
 
     def _read_password(self):
-        """Get password from non-volatile memory"""
+        """Get password from non-volatile memory."""
         self._password = nvm_wifi_password.read()[0][: self.pass_len].decode("ascii")
         print(f"Wifi password: {self._password}")
 
     def new_random_password(self):
-        """Create a new random password"""
+        """Create a new random password."""
         nvm_wifi_password.write(random_wifi_password())
         self._read_password()
         # print(f"Generated new wifi password: {self._password}")
@@ -186,7 +178,7 @@ class wifi_AP:
 
     @property
     def ecn(self):
-        """ESP8266 ECN"""
+        """ESP8266 ECN."""
         # ecn = 0  # OPEN
         # ecn = 2  # WPA_PSK
         # ecn = 3  # WPA2_PSK
@@ -203,5 +195,5 @@ class wifi_AP:
 
     @property
     def password(self):
-        """Access point password"""
+        """Access point password."""
         return self._password
