@@ -4,8 +4,9 @@ import asyncio
 
 import cv2
 import numpy as np
-from farm_ng.oak.client import OakCameraClient, OakCameraClientConfig
 from farm_ng.oak import oak_pb2
+from farm_ng.oak.client import OakCameraClient
+from farm_ng.oak.client import OakCameraClientConfig
 
 
 async def main(address: str, port: int, stream_every_n: int) -> None:
@@ -21,7 +22,6 @@ async def main(address: str, port: int, stream_every_n: int) -> None:
 
     while True:
         # query the service state
-        # TODO: explain states
         state: oak_pb2.OakServiceState = await client.get_state()
 
         if state.value != oak_pb2.OakServiceState.RUNNING:

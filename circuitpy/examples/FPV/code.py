@@ -52,7 +52,7 @@ class FpvApp:
         if not self.cmd_repeater.check():
             return
         if channels[1] > 1500:
-            # here, we're actively sending commmands from the RC joystick
+            # here, we're actively sending commands from the RC joystick
             request_state = AmigaControlState.STATE_AUTO_ACTIVE
         else:
             # In READY state the amiga won't move and will brake smoothly
