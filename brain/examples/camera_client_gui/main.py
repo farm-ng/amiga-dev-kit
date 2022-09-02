@@ -1,24 +1,22 @@
 # Copyright (c) farm-ng, inc. All rights reserved.
-from typing import List
 import argparse
 import asyncio
-import os
-
 import io
+import os
+from typing import List
 
 os.environ["KIVY_NO_ARGS"] = "1"
 
-from kivy.config import Config
+from farm_ng.oak.client import OakCameraClient, OakCameraClientConfig
+from farm_ng.oak import oak_pb2
+
+from kivy.config import Config  # noreorder
 
 Config.set("graphics", "fullscreen", "false")
 
 from kivy.app import App
 from kivy.lang.builder import Builder
 from kivy.core.image import Image as CoreImage
-
-from farm_ng.oak.client import OakCameraClient, OakCameraClientConfig
-from farm_ng.oak import oak_pb2
-
 
 kv = """
 TabbedPanel:

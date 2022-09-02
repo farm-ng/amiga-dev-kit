@@ -3,7 +3,8 @@ import os
 import random
 import struct
 import time
-from gc import mem_alloc, mem_free
+from gc import mem_alloc
+from gc import mem_free
 from io import StringIO
 
 import board
