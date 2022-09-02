@@ -69,4 +69,4 @@ python3 main.py --address 192.168.1.93 --port 50051
 
 You should get something like
 
-![Screenshot from 2022-09-02 11-43-43](https://user-images.githubusercontent.com/5157099/188118039-af464e15-3c85-4f6c-869b-68a177c96d94.png)
+![Peek 2022-09-02 12-46](https://user-images.githubusercontent.com/5157099/188124779-41f4d519-78d4-453e-9b90-b3d730762b81.gif)
