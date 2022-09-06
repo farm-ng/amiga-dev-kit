@@ -129,19 +129,19 @@ def ticks_add(ticks, delta):
 
 
 def ticks_diff(ticks1, ticks2):
-    "Compute the signed difference between two ticks values, assuming that they are within 2**28 ticks"
+    "Compute the signed difference between two ticks values, assuming that they are within 2**29 ticks"
     diff = (ticks1 - ticks2) & _TICKS_MAX
     diff = ((diff + _TICKS_HALFPERIOD) & _TICKS_MAX) - _TICKS_HALFPERIOD
     return diff
 
 
 def ticks_less(ticks1, ticks2):
-    "Return true iff ticks1 is less than ticks2, assuming that they are within 2**28 ticks"
+    "Return true iff ticks1 is less than ticks2, assuming that they are within 2**29 ticks"
     return ticks_diff(ticks1, ticks2) < 0
 
 
 def ticks_fresh(ticks, thresh_ms=1000):
-    "Returns true if age of ticks is less than thresh_ms, assuming within 2**28 ticks of current ticks_ms()"
+    "Returns true if age of ticks is less than thresh_ms, assuming within 2**29 ticks of current ticks_ms()"
     return ticks_diff(ticks_ms(), ticks) < thresh_ms
 
 
@@ -282,10 +282,7 @@ class Axis:
         self.v3 = max
 
     def map(self, v):
-        """returns -1 ..
-
-        +1
-        """
+        """returns value mapped to range [-1, +1]"""
         if v < self.v1:
             return -1 + (v - self.v0) / (self.v1 - self.v0)
         elif v > self.v2:

@@ -37,7 +37,7 @@ def version_string():
 
 
 class BoardType:
-    """Types of boards Amiga application layer firmware is run on."""
+    """Enum representing the Amiga Board type (where Amiga application layer is running)."""
 
     AMIGA_DISPV0 = 1
     FEATHER_M4_CAN = 2
@@ -46,7 +46,7 @@ class BoardType:
 
 
 def get_board_type():
-    """Returns detected board type."""
+    """Return the Board type based on the operating system."""
     uname = os_uname()
     print(uname)
     if "Amiga_DispV0" in uname.machine:
