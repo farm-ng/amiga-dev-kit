@@ -108,6 +108,12 @@ def clip(x, min_value, max_value):
     return max(min(x, max_value), min_value)
 
 
+def rescale(x, x0, x1, y0, y1):
+    """Rescale x from (x0, x1) to (y0, y1), with clipping."""
+    t = clip((x - x0) / (x1 - x0), 0, 1)
+    return y0 + (y1 - y0) * t
+
+
 def trigger_soft_reset():
     """Equivalent of CTRL+D."""
     reload()
