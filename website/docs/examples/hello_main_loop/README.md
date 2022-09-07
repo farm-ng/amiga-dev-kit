@@ -27,6 +27,34 @@ The `MainLoop` class is used throughout the application layer of the farm-ng fir
 The `MainLoop` takes an `AppClass` in the constructor, and the `AppClass` is expected to contain a method called `iter` that is called every in every iteration (also called `iter`) of the `MainLoop`.
 
 
+The `_register_message_handlers()` method is an important feature to note.
+This method adds parsing directly into the MainLoop so the App only receives the desired CAN messages.
+Because messages sent on the CAN bus are seen by all other components
+it is important to efficiently filter out irrelevant messages
+on the resource constrained microcontrollers.
+
+:::info Take it further:
+Try to add an additional message parser for one of the other messages on the CAN bus.
+For instance, if you have a pendant connected to your CAN bus you could add something like:
+
+```Python
+from farm_ng.utils.packet import  PENDANT_NODE_ID, PendantState
+
+def _register_message_handlers(self):
+   self.main_loop.command_handlers[CanOpenObject.TPDO1 | DASHBOARD_NODE_ID] = self._handle_amiga_tpdo1
+   self.main_loop.command_handlers[CanOpenObject.TPDO1 | PENDANT_NODE_ID] = self._handle_pendant_state
+
+def _handle_pendant_state(self, message):
+   pendant_state = PendantState.from_can_data(message.data)
+   print(pendant_state)
+```
+
+All messages on the bus can be found by using the [cansniffer example app](./../cansniffer/).
+You can compare the detected CAN ID's to those in `CanOpenObject`. But keep in mind, node id is added
+to the function code for the full CAN Id, as you'll see below in
+[**CanOpenObject / DASHBOARD_NODE_ID**](#canopenobject--dashboard_node_id).
+:::
+
 #### `TickRepeater`
 
 The `TickRepeater` class is a useful utility that we recommend taking advantage of throughout your custom implementations.
