@@ -19,7 +19,7 @@ class CansnifferApp:
 
 
 def main():
-    MainLoop(AppClass=CansnifferApp, has_display=False, has_wifi=False).loop()
+    MainLoop(AppClass=CansnifferApp, has_display=False).loop()
 
 
 main()

@@ -7,7 +7,6 @@ from time import monotonic
 
 from canio import BusState
 from canio import Message
-from farm_ng.utils.wifi import WIFI
 from supervisor import ticks_ms
 
 from .can import setup_can_default
@@ -55,7 +54,7 @@ def get_node_id():
 class MainLoop:
     """Main driver for all farm-ng apps run on microcontrollers."""
 
-    def __init__(self, AppClass, has_display=True, has_wifi=True) -> None:
+    def __init__(self, AppClass, has_display=True) -> None:
         self.t0 = monotonic()
 
         self.node_id = get_node_id()
@@ -63,10 +62,6 @@ class MainLoop:
             self.display = Display()
         else:
             self.display = None
-        if has_wifi:
-            self.wifi = WIFI()
-        else:
-            self.wifi = None
 
         self.serial_number = nvm_serial_number.read()[0][:3]
         self.can = setup_can_default()
@@ -83,7 +78,6 @@ class MainLoop:
 
         # On dash debug tools
         self.show_debug = False
-        self.show_wifi = False
         self.show_time = True
         self.show_mem = False
         self.show_can = True
@@ -178,7 +172,6 @@ class MainLoop:
         if self.debug_rx_queue:
             print((self.listener.in_waiting(),))
             if self.listener.in_waiting() >= 64:
-                # TODO: Make this an e-stop condition
                 print("Warning: Queue limit of 64 hit")
 
         while self.listener.in_waiting() > 0:
@@ -186,13 +179,6 @@ class MainLoop:
 
     def update_can_stats(self):
         """Query CAN bus status."""
-        # can = self.can
-        # bus_state = CanBusStateDict.get(str(can.state), "NA")
-        # if bus_state != self.can_bus_state:
-        #     pass  # this is spammy
-        #     # print(f"Bus state changed to {bus_state}")
-        # self.can_bus_state = bus_state
-
         self.can_bus_state = CanBusStateDict.get(str(self.can.state), "NA")
         self.can_tec = self.can.transmit_error_count
         self.can_rec = self.can.receive_error_count
@@ -204,9 +190,7 @@ class MainLoop:
         if self.app is not None:
             self.app.update_display(display)
         display.gd.RestoreContext()
-        # self.draw_wifi(display=display)
 
-    # TODO_STABLE2 this needs to be optimized before turned back on
     def draw_debug(self, display: Display):
         """Show debug stats on the dashboard display."""
         gd = display.gd
@@ -323,9 +307,6 @@ class MainLoop:
             if self.display is not None:
                 self.display.update(self)
 
-        if self.wifi is not None:
-            self.wifi.update(self)
-
         if self.repl_debug_dt:
             self.dt_list.append(self.dt_repl_time.ticks_age_cumul())  # 5
             dt_debug_msg = FarmngDebugTimer(dt_list=self.dt_list)
@@ -342,8 +323,8 @@ class MainLoop:
             self.iter()
 
     def loop(self):
-        """Initializes the main while loop, with an exception handler for dashboard that displays exceptions on the
-        screen."""
+        """Initializes the main while loop, with an exception handler
+        for dashboard that displays exceptions on the screen."""
         if self.display is not None:
             self.display.exception_handler(self._loop)
         else:

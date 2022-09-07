@@ -7,7 +7,6 @@
 """
 from os import uname as os_uname
 
-# 0.0.3 == Aug 24, 2022
 MAJOR = 0
 MINOR = 0
 PATCH = 4

@@ -1,4 +1,3 @@
-# Python imports
 from struct import pack
 from struct import unpack
 
@@ -7,8 +6,6 @@ from supervisor import ticks_ms
 from .general import clip
 from .general import ticks_diff
 
-# CircuitPython modules
-# Local imports
 
 DASHBOARD_NODE_ID = 0xE
 PENDANT_NODE_ID = 0xF
@@ -369,8 +366,8 @@ class FarmngHeartbeat(Packet):
 
 
 class RmdSpeedCommand(Packet):
-    # NOTE: actual shaft RPM on the on the compost spreader is 1.6x commanded/reported
     """Speed command to RMD servo motor (controlled with PTO)"""
+
     format = "<4Bi"
     cmd_byte = 0xA2
 
@@ -392,8 +389,8 @@ class RmdSpeedCommand(Packet):
 
 
 class RmdSpeedResponse(Packet):
-    # NOTE: actual shaft RPM on the compost spreader is 1.6x commanded/reported
     """Response from RMD servo motor to speed command (controlled with PTO)"""
+
     format = "<2b3h"
     cmd_byte = 0xA2
 

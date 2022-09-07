@@ -1,4 +1,3 @@
-# Python imports
 from errno import EISDIR
 from errno import ENOENT
 from os import listdir
@@ -11,8 +10,6 @@ from os import stat
 from microcontroller import reset
 from supervisor import reload
 from supervisor import ticks_ms
-
-# CircuitPython modules
 
 
 def path_dirname(p: str):
@@ -213,7 +210,6 @@ class DtTracker:
         return "%4.1f %4.1f %4.1f" % (min(h), self.mean_dt(), max(h))
 
 
-# TODO_STABLE2 not sure how much overhead this ticks repeater is
 class TickRepeater:
     """Used as a timer, with the check() method returning true every `ticks_period_ms` Uses `ticks_ms`, which wraps
     every 2^29 ms (~6.2 days). The logic handles a single wrap between checks, but does not handle two wraps

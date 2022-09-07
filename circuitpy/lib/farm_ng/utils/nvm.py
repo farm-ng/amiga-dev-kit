@@ -1,4 +1,3 @@
-# Python imports
 from random import choice
 from random import seed
 from struct import calcsize
@@ -7,8 +6,6 @@ from struct import unpack
 
 from microcontroller import nvm as mc_nvm
 from supervisor import ticks_ms
-
-# CircuitPython modules
 
 
 class ValueStore:
@@ -103,16 +100,11 @@ def random_string(length):
     return "".join(choice(chars) for i in range(length))
 
 
-def random_wifi_password():
-    return random_string(32)
-
-
 # up to a 100 character string
 nvm_serial_number = Value("sn", "<100s", random_string(100))
 nvm_node_id = Value("canid", "<I", 0x42)  # Canbus id
 # Total uptime in minutes, unsigned integer is enough for 7990 years...
 nvm_minutes = Value("minutes", "<I", 0)
-nvm_wifi_password = Value("wifi_pass", "<32s", random_wifi_password())
 # Calibration of the joystick (x,y) on [-1, 1]
 nvm_joystick_calib = Value("joystick_calib", "<2h", (0, 0))
 

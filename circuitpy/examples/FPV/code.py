@@ -81,7 +81,7 @@ class FpvApp:
 
 
 def main():
-    MainLoop(AppClass=FpvApp, has_display=False, has_wifi=False).loop()
+    MainLoop(AppClass=FpvApp, has_display=False).loop()
 
 
 main()

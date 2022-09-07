@@ -69,7 +69,7 @@ class HelloMainLoopApp:
 
 
 def main():
-    MainLoop(AppClass=HelloMainLoopApp, has_display=False, has_wifi=False).loop()
+    MainLoop(AppClass=HelloMainLoopApp, has_display=False).loop()
 
 
 main()

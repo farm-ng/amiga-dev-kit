@@ -1,4 +1,3 @@
-# Python imports
 from sys import stderr
 
 import board
@@ -8,9 +7,6 @@ from microcontroller import pin
 
 from .version import BoardType
 from .version import get_board_type
-
-# CircuitPython modules
-# Local imports
 
 
 def setup_can_default():
