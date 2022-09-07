@@ -323,8 +323,8 @@ class MainLoop:
             self.iter()
 
     def loop(self):
-        """Initializes the main while loop, with an exception handler
-        for dashboard that displays exceptions on the screen."""
+        """Initializes the main while loop, with an exception handler for dashboard that displays exceptions on the
+        screen."""
         if self.display is not None:
             self.display.exception_handler(self._loop)
         else:
