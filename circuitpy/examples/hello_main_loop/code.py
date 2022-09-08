@@ -1,15 +1,12 @@
-from farm_ng.adk import (
-    MainLoop,
-    TickRepeater,
-    AmigaRpdo1,
-    AmigaTpdo1,
-    AmigaControlState,
-    DASHBOARD_NODE_ID,
-    CanOpenObject,
-)
-
-import usb_cdc
-import canio
+from canio import Message
+from farm_ng.utils.cobid import CanOpenObject
+from farm_ng.utils.general import TickRepeater
+from farm_ng.utils.main_loop import MainLoop
+from farm_ng.utils.packet import AmigaControlState
+from farm_ng.utils.packet import AmigaRpdo1
+from farm_ng.utils.packet import AmigaTpdo1
+from farm_ng.utils.packet import DASHBOARD_NODE_ID
+from usb_cdc import console
 
 
 class HelloMainLoopApp:
@@ -24,6 +21,19 @@ class HelloMainLoopApp:
         self.cmd_ang_rate = 0.0
         self.request_state = AmigaControlState.STATE_AUTO_READY
         self.inc = 0.1
+
+        self._register_message_handlers()
+
+    def _register_message_handlers(self):
+        self.main_loop.command_handlers[CanOpenObject.TPDO1 | DASHBOARD_NODE_ID] = self._handle_amiga_tpdo1
+
+    def _handle_amiga_tpdo1(self, message):
+        self.amiga_tpdo1 = AmigaTpdo1.from_can_data(message.data)
+        if self.amiga_tpdo1.state != AmigaControlState.STATE_AUTO_ACTIVE:
+            self.cmd_speed = 0.0
+            self.cmd_ang_rate = 0.0
+            self.request_state = AmigaControlState.STATE_AUTO_READY
+        print(self.amiga_tpdo1, end="\r")
 
     def parse_wasd_cmd(self, char):
         if char == " ":
@@ -41,24 +51,15 @@ class HelloMainLoopApp:
             self.cmd_ang_rate -= self.inc
 
     def serial_read(self):
-        while usb_cdc.console.in_waiting > 0:
-            self.parse_wasd_cmd((usb_cdc.console.read().decode("ascii")))
+        while console.in_waiting > 0:
+            self.parse_wasd_cmd((console.read().decode("ascii")))
 
-    def iter(self, messages):
+    def iter(self):
         self.serial_read()
-
-        for message in messages:
-            if AmigaTpdo1.check_id(message, DASHBOARD_NODE_ID):
-                self.amiga_tpdo1 = AmigaTpdo1.from_can_data(message.data)
-                if self.amiga_tpdo1.state != AmigaControlState.STATE_AUTO_ACTIVE:
-                    self.cmd_speed = 0.0
-                    self.cmd_ang_rate = 0.0
-                    self.request_state = AmigaControlState.STATE_AUTO_READY
-                print(self.amiga_tpdo1, end="\r")
 
         if self.cmd_repeater.check():
             self.can.send(
-                canio.Message(
+                Message(
                     id=CanOpenObject.RPDO1 | DASHBOARD_NODE_ID,
                     data=AmigaRpdo1(
                         state_req=self.request_state, cmd_speed=self.cmd_speed, cmd_ang_rate=self.cmd_ang_rate
@@ -68,7 +69,7 @@ class HelloMainLoopApp:
 
 
 def main():
-    MainLoop(AppClass=HelloMainLoopApp, has_display=False, has_wifi=False).loop()
+    MainLoop(AppClass=HelloMainLoopApp, has_display=False).loop()
 
 
 main()

@@ -2,7 +2,7 @@
 
 [![Continuous Integration](https://github.com/farm-ng/amiga-dev-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/farm-ng/amiga-dev-kit/actions/workflows/ci.yml)
 [![docs](https://github.com/farm-ng/amiga-dev-kit/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/farm-ng/amiga-dev-kit/actions/workflows/pages/pages-build-deployment)
-
+[![Code Format](https://github.com/farm-ng/amiga-dev-kit/actions/workflows/format.yml/badge.svg)](https://github.com/farm-ng/amiga-dev-kit/actions/workflows/format.yml)
 
 Welcome to the Amiga Development Kit!
 

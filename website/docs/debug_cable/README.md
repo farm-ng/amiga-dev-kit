@@ -19,7 +19,7 @@ The larger circuit board on the left is the USB / debug breakout, and the smalle
 
 #### Dash
 
-- USB interface is for REPL, fileystem access as well as updating firmware and applications,
+- USB interface is for REPL, filesystem access as well as updating firmware and applications,
 - Serial interface is not used at the moment
 - Reset is connected to the Microcontroller reset and used for hard reset. It also can be double pressed to force bootloader mode.
 

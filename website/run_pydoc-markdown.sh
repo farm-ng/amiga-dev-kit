@@ -5,7 +5,7 @@ pydoc-markdown '{
     loaders: [
         {
             type: python,
-            search_path: [../circuitpy/lib]
+            search_path: [../circuitpy/lib/farm_ng]
         }
     ],
     processors: [
