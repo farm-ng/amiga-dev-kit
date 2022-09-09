@@ -111,7 +111,7 @@ Wiring the receiver to access the un-inverted signal
 ![PXL_20220818_204942366](https://user-images.githubusercontent.com/11846963/189423987-959061a7-e64f-4df4-a1ac-faf78f344d7c.jpg)
 ![PXL_20220818_204956620](https://user-images.githubusercontent.com/11846963/189424014-1df454db-47b3-4b6a-91e1-1086146aac36.jpg)
 ![PXL_20220818_205352767 MP](https://user-images.githubusercontent.com/11846963/189424121-08097680-0b4f-4d71-b3e4-7da41642a83c.jpg)
-![PXL_20220818_214950616](https://user-images.githubusercontent.com/11846963/189424236-800a4f62-b4cb-4fba-ad85-78ce4d09a013.jpg)
+![PXL_20220818_214950616](https://user-images.githubusercontent.com/11846963/189424474-78269f8e-f0f0-421d-b0b6-20d15e67e7b1.jpg)
 
 ## Code
 
