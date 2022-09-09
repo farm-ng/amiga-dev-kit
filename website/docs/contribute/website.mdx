@@ -3,11 +3,17 @@ id: contribute-website
 title: Documentation
 ---
 
-# Build website
+# Building these Docs
+In order to work locally on your machine and contribute to these docs, you will need to install the build infrastructure.
+
+:::caution
+You can edit the documentation directly on github and do not need to fuss with things here!  
+Follow instructions below for adding images to the website, it's the same for text.
+:::
 
 ## Installation
 
-In order to use docusaurus you'll need to install a couple libraries:
+In order to use docusaurus locally you'll need to install a couple libraries:
 - Node.js version 16.14 or above (which can be checked by running `node -v`)
 - Yarn >= 1.22.19
 
@@ -45,6 +51,7 @@ sudo npm install -g yarn
 # Check version
 yarn --version
 ```
+
 </TabItem>
 <TabItem value="macos" label="MacOs">
 Install npm
@@ -61,6 +68,8 @@ brew install yarn
 ```
 </TabItem>
 </Tabs>
+
+
 
 ## Adding images to the website
 
@@ -85,16 +94,21 @@ Please back up the images you add to the website in the `Website/Assets/` direct
 :::
 
 ## Local Development
+After successful installation and working in the amiga-dev-kit github repo, you'll be able to pull down the latest, create a branch, and send pull requests just as you would editing any repo.  
 
-### Build
+After making your edits, you will build the docs locally in order to preview them before committing and pushing.  Following the steps below, 
+you would be able to start a local development server that opens a browser window and gives you a live preview of the page you are editing!  It will automatically update every time you save. 
+
+
+### Building the docs
 ```bash
-cd website/
+cd website/  # /farm-ng/amiga-dev-kit/website
 yarn
 ./run_pydoc-markdown.sh
 yarn build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+This command generates static content into the `build` directory and can be served using any static contents hosting service.  
 
 ### Start yarn
 
@@ -106,5 +120,12 @@ yarn start
 This command starts a local development server and opens up a browser window.
 Most changes are reflected live without having to restart the server.
 :::
+
+## Gussy up your Markdown
+:::tip 
+You can make your work more legible using [admonitions](https://docusaurus.io/docs/markdown-features/admonitions) like this TIP box!
+:::
+More markdown features can be found in the docusaurus documentation [here](https://docusaurus.io/docs/markdown-features).
+
 
 ###### **\*** The documentation website is built using [Docusaurus 2](https://docusaurus.io/).
