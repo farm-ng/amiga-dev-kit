@@ -13,7 +13,7 @@ def setup_can_default():
     """Sets up the default canio.CAN connection, for your board type Uses baud_rate of 250K (default bus speed for
     the Amiga)"""
     board_type = get_board_type()
-    baud_rate = 250_000
+    baud_rate = 1_000_000
     if board_type == BoardType.AMIGA_DISPV0:
         return setup_can(rx=pin.PB13, tx=pin.PB14, baudrate=baud_rate, auto_restart=True)
     elif board_type == BoardType.FEATHER_M4_CAN:

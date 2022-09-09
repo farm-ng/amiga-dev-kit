@@ -365,61 +365,6 @@ class FarmngHeartbeat(Packet):
         return f"node_state: {self.node_state} ticks_ms: {self.ticks_ms} serial_number: {self.serial_number}"
 
 
-class RmdSpeedCommand(Packet):
-    """Speed command to RMD servo motor (controlled with PTO)"""
-
-    format = "<4Bi"
-    cmd_byte = 0xA2
-
-    def __init__(self, rpm: int = 0):
-        self.rpm = rpm
-
-    def encode(self):
-        """Returns the data contained by the class encoded as CAN message data."""
-        return pack(self.format, self.cmd_byte, 0x0, 0x0, 0x0, int(self.rpm * 6000))
-
-    def decode(self, data):
-        """Decodes CAN message data and populates the values of the class."""
-        assert data[0] == self.cmd_byte
-        (_, _, _, _, dphs) = unpack(self.format, data)
-        self.rpm = dphs / 6000
-
-    def __str__(self):
-        return f"RmdSpeedCommand rpm: {self.rpm}"
-
-
-class RmdSpeedResponse(Packet):
-    """Response from RMD servo motor to speed command (controlled with PTO)"""
-
-    format = "<2b3h"
-    cmd_byte = 0xA2
-
-    def __init__(self, temp: int = 0, current: int = 0, rpm: int = 0, encoder_pos: int = 0):
-        self.temp = temp
-        self.current = current
-        self.rpm = rpm
-        self.encoder_pos = encoder_pos
-        self.ticks_ms = ticks_ms()
-
-    def encode(self):
-        """Returns the data contained by the class encoded as CAN message data."""
-        return pack(
-            self.format, self.cmd_byte, self.temp, int(self.current * 2048 / 33), int(self.rpm * 60), self.encoder_pos
-        )
-
-    def decode(self, data):
-        """Decodes CAN message data and populates the values of the class."""
-        assert data[0] == self.cmd_byte
-        (_, self.temp, amps, dps, self.encoder_pos) = unpack(self.format, data)
-        self.current = amps * 33 / 2048
-        self.rpm = dps / 60
-
-    def __str__(self):
-        s = f"RmdSpeedResponse temp: {self.temp} current: {self.current}"
-        s += f"rpm: {self.rpm} encoder_pos: {self.encoder_pos}"
-        return s
-
-
 class FarmngDebugTimer(Packet):
     """To be used for tracking the time of up to 8 dt time steps."""
 
