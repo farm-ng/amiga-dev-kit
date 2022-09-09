@@ -22,11 +22,11 @@ If you have not gone through any of our examples yet, you should start with the 
 Add plug-in for embedding youtube
 [Video demonstration of our first test](https://youtu.be/tN20_CspsyU)
 :::
+![fpv_wiring_diagram](https://user-images.githubusercontent.com/11846963/189413919-56a2f380-289e-4205-bcb4-e31cba84bda4.png)
 
-:::warning
-drop fpv wiring image here
+[fpv_wiring_diagram.pdf](https://github.com/farm-ng/amiga-dev-kit/files/9537718/fpv_wiring_diagram.pdf)
 [Wiring diagram](https://lucid.app/lucidchart/7255e46a-d128-421e-9bc1-2329d3f280fa/edit?viewport_loc=285%2C-61%2C1837%2C2040%2C0_0&invitationId=inv_f69a2688-850c-4d8f-bfdb-c38752df5303#)
-:::
+
 
 
 <!-- - Blog post about the project : -->
