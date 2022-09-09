@@ -54,6 +54,7 @@ If you have not gone through any of our examples yet, you should start with the 
 | DC/DC Buck converter - 24v to 5v            | *This comes with our microcontroller kit | [Amazon Link](https://smile.amazon.com/DROK-090581-Converter-Step-down-Transformer/dp/B00CE75K0W/ref=sr_1_3?crid=1X1SSEWY1TEG6&keywords=24v+to+5v+converter+5a&qid=1662748102&sprefix=24v+to+5v+converter+5a%2Caps%2C96&sr=8-3)| $11 |
 | Alternate step down, cheaper/smaller option | Will required a voltmeter to adjust output |  [Amazon link](https://smile.amazon.com/Maxmoral-Converter-Adjustable-Step-Down-Regulator/dp/B07MKQXNWG/ref=sr_1_6?crid=1ZJ4Z4GBUV64E&keywords=24v+to+5v+adjustable+step+down&qid=1662748233&sprefix=24v+to+5v+adjustable+step+down%2Caps%2C87&sr=8-6)| $8 |
 | Enclosure                                   | [Hammond 1554 JGY (abs, gray, solid lid)](https://www.hammfg.com/part/1554JGY)| [Mouser Link](https://www.mouser.com/ProductDetail/Hammond-Manufacturing/1554JGY?qs=FmjOKN4Os87trO9vnjsZvg%3D%3D)  | $14 |
+| Cord grip kit | We used a single PG-13.5 | [Amazon Link](https://smile.amazon.com/MAKERELE-Electrical-NPT-Waterproof-Connector/dp/B08R86BHBC/ref=sr_1_5?crid=2SYJ7I6BJ0HZT&keywords=cord+grip+kit&qid=1662750051&sprefix=cord+grip+kit%2Caps%2C142&sr=8-5)| $22 |
 | VHB Double-stick tape for mounting stuff    |  Our favorite | [Amazon Link](https://smile.amazon.com/Width-Length-Black-Multipurpose-Double/dp/B07K4PQG8P/ref=sxts_rp_s_1_0?content-id=amzn1.sym.14b5a3ec-ddf3-42f1-bf1e-8515f8d25a34%3Aamzn1.sym.14b5a3ec-ddf3-42f1-bf1e-8515f8d25a34&crid=QLFBHDQ2W1UQ&cv_ct_cx=vhb&keywords=vhb&pd_rd_i=B07K4PQG8P&pd_rd_r=b76fadc2-12af-4732-8736-b46b4aa63cac&pd_rd_w=WnaiQ&pd_rd_wg=USSdg&pf_rd_p=14b5a3ec-ddf3-42f1-bf1e-8515f8d25a34&pf_rd_r=WDNTEH07SBH1HZZ0N2AV&psc=1&qid=1662749091&sprefix=vhb%2Caps%2C99&sr=1-1-f0029781-b79b-4b60-9cb0-eeda4dea34d6)|$15|
 | Micro-grip rod (monitor to controller hack)| | [B&H Link](https://www.bhphotovideo.com/c/product/686707-REG/Matthews_350602_5_4_101mm_Rod_for.html)| $8|
 | Micro-grip head (monitor to controller hack)| | [B&H Link](https://www.bhphotovideo.com/c/product/686694-REG/Matthews_350604_MICROgrip_Head.html)| $48 |
@@ -99,6 +100,7 @@ Shown above, is the entire receiver rover side of the FPV setup, correctly wired
 :::caution
 SBUS is "inverted" UART, we want the un-inverted signal.  So need to do a little hardware hacking...  
 ::: 
+
 The only aspect of the wiring that is not obvious in the wiring diagrams, is that in order to get a non-inverted UART signal out of the RC receiver on the rover side, you need to open the enclosure and solder a wire to one of the test points on the PCB as shown below.
 So we cracked open the x8r receiver, and soldered a wire directly to the output pin before it gets inverted, and connected this wire to UART RX pin on the Feather.
 
