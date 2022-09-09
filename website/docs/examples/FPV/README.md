@@ -108,7 +108,7 @@ Wiring the receiver to access the un-inverted signal
 
 ![x8r-receiver-solder-point-reduced](https://user-images.githubusercontent.com/11846963/185978326-a21598e7-fe93-4c99-9ff3-f3b047d586e6.jpg)
 ![PXL_20220818_203916771](https://user-images.githubusercontent.com/11846963/189423705-24bb368b-8c13-45d8-be74-0e669eb1beeb.jpg)
-![PXL_20220818_203934136](https://user-images.githubusercontent.com/11846963/189423768-ca405ea2-b4b6-4c4e-af11-b656662f4497.jpg)
+![Screen Shot 2022-09-09 at 3 05 53 PM](https://user-images.githubusercontent.com/11846963/189425493-3af80193-146f-489d-b39b-0564f36833d5.png)
 ![PXL_20220818_204444320](https://user-images.githubusercontent.com/11846963/189423940-6301bd71-0593-43b9-9538-9274c8a51a91.jpg)
 ![PXL_20220818_204942366](https://user-images.githubusercontent.com/11846963/189423987-959061a7-e64f-4df4-a1ac-faf78f344d7c.jpg)
 ![PXL_20220818_204956620](https://user-images.githubusercontent.com/11846963/189424014-1df454db-47b3-4b6a-91e1-1086146aac36.jpg)
