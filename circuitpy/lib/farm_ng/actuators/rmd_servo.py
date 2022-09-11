@@ -1,12 +1,16 @@
+from struct import pack
+from struct import unpack
+
+from canio import Message
+from farm_ng.utils.general import CatchupRepeater
+from farm_ng.utils.general import ticks_fresh
 from farm_ng.utils.main_loop import MainLoop
 from farm_ng.utils.packet import Packet
-from farm_ng.utils.general import CatchupRepeater, ticks_fresh
-from canio import Message
 from supervisor import ticks_ms
-from struct import pack, unpack
 
 
-RmdReadHomeCommandData = bytes([0x62,0,0,0,0,0,0,0])
+RmdReadHomeCommandData = bytes([0x62, 0, 0, 0, 0, 0, 0, 0])
+
 
 class RmdSpeedCommand(Packet):
     """Speed command to RMD servo motor (controlled with PTO)"""
@@ -16,11 +20,10 @@ class RmdSpeedCommand(Packet):
 
     def __init__(self, rpm: int = 0):
         self.rpm = rpm
-        
 
     def encode(self):
         """Returns the data contained by the class encoded as CAN message data."""
-        speed = self.rpm * 600 # 0.01 degrees per second - 360 deg/60 seconds * 100
+        speed = self.rpm * 600  # 0.01 degrees per second - 360 deg/60 seconds * 100
         return pack(self.format, self.cmd_byte, 0x0, 0x0, 0x0, int(speed))
 
     def decode(self, data):
@@ -63,6 +66,7 @@ class RmdSpeedResponse(Packet):
         s = f"RmdSpeedResponse temp: {self.temp} current: {self.current}"
         s += f" rpm: {self.rpm} encoder_pos: {self.encoder_pos}"
         return s
+
 
 class RmdServoController(object):
     # NOTE: actual shaft RPM on the on the compost spreader is 1.6x commanded/reported
@@ -120,14 +124,11 @@ class RmdServoController(object):
         pass
 
     def _handle_unexpected(self, msg):
-        print(
-            f"Unexpected RMD servo response: {hex(msg.id)} command byte {hex(msg.data[0])} all data: ",
-            msg.data,
-        )
+        print(f"Unexpected RMD servo response: {hex(msg.id)} command byte {hex(msg.data[0])} all data: ", msg.data)
 
     def _handle_rpm_response(self, msg):
         self.rpm_reponse = RmdSpeedResponse.from_can_data(msg.data)
-        #print(self.rpm_reponse)
+        # print(self.rpm_reponse)
 
     def _handle_read_home_position(self, message):
         print("RMD read home position %x" % (message.id,), message.data)
@@ -137,24 +138,15 @@ class RmdServoController(object):
 
     @property
     def unpacked_rpm_response(self):
-        """
-        Returns tuple of measured (rpm, torque current, motor temperature, & encoder position)
-        """
-        return (
-            self.rpm_reponse.rpm,
-            self.rpm_reponse.current,
-            self.rpm_reponse.temp,
-            self.rpm_reponse.encoder_pos,
-        )
+        """Returns tuple of measured (rpm, torque current, motor temperature, & encoder position)"""
+        return (self.rpm_reponse.rpm, self.rpm_reponse.current, self.rpm_reponse.temp, self.rpm_reponse.encoder_pos)
 
     def send_cmd_rpm(self):
         rpm = 0
         if self.active:
             self.last_ticks = ticks_ms()
             rpm = self.cmd_rpm
-        self.main_loop.can.send(
-            Message(id=self.msg_id, data=RmdSpeedCommand(rpm).encode())
-        )
+        self.main_loop.can.send(Message(id=self.msg_id, data=RmdSpeedCommand(rpm).encode()))
 
     def iter(self):
         if self.prev_active != self.active:

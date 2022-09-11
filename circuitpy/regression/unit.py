@@ -1,9 +1,9 @@
-import sys
-import os
-import unittest
-import time
-import struct
 import math
+import os
+import struct
+import sys
+import time
+import unittest
 
 sys.path.append("src")
 sys.path.append("src/dashboard")

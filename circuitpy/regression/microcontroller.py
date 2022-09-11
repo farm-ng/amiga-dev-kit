@@ -1,4 +1,5 @@
-nvm=bytearray([0xff]*8192)
+nvm = bytearray([0xFF] * 8192)
+
 
 def reset():
     print("Should trigger hard reset (<reset> button)")

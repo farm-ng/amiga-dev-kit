@@ -1,8 +1,8 @@
 num_debugs = 0
 num_warnings = 0
 
-class Logger:
 
+class Logger:
     def setLevel(self, n):
         pass
 
@@ -18,11 +18,14 @@ class Logger:
         # print('WARNING', fmt % s)
         num_warnings += 1
 
+
 def getLogger(name):
     return Logger()
 
-class PrintHandler():
+
+class PrintHandler:
     def emit(self, m):
         pass
+
 
 WARNING = 1

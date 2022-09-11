@@ -1,7 +1,8 @@
+from farm_ng.actuators.hbridge import HBridgeController
 from farm_ng.utils.general import TickRepeater
 from farm_ng.utils.main_loop import MainLoop
-from farm_ng.actuators.hbridge import HBridgeController
 from usb_cdc import console
+
 
 class HbridgeApp:
     def __init__(self, main_loop: MainLoop, can, node_id) -> None:
@@ -20,7 +21,7 @@ class HbridgeApp:
         self._register_message_handlers()
 
     def _register_message_handlers(self):
-        #self.main_loop.command_handlers[CanOpenObject.TPDO1 | DASHBOARD_NODE_ID] = self._handle_amiga_tpdo1
+        # self.main_loop.command_handlers[CanOpenObject.TPDO1 | DASHBOARD_NODE_ID] = self._handle_amiga_tpdo1
         pass
 
     def _handle_any_message(self, message):
@@ -28,10 +29,10 @@ class HbridgeApp:
 
     def parse_wasd_cmd(self, char):
         if char == "x":
-            self.auto = True          
+            self.auto = True
             self.hbridge.dir = 1
             self.auto_repeater.reset()
-        if char in ('w','s',' '):
+        if char in ('w', 's', ' '):
             self.auto = False
 
         if char == "w":
@@ -40,8 +41,7 @@ class HbridgeApp:
             self.hbridge.dir = -1
         elif char == " ":
             self.hbridge.dir = 0
-            
-        
+
     def serial_read(self):
         while console.in_waiting > 0:
             self.parse_wasd_cmd((console.read().decode("ascii")))
@@ -53,9 +53,10 @@ class HbridgeApp:
             self.hbridge.dir = -self.hbridge.dir
 
         if self.debug_repeater.check():
-            #print("\033[2J", end="")
-            #print(self.main_loop.io_debug_str())
+            # print("\033[2J", end="")
+            # print(self.main_loop.io_debug_str())
             pass
+
 
 def main():
     MainLoop(AppClass=HbridgeApp, has_display=False).loop()
