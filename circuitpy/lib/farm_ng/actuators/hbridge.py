@@ -15,8 +15,9 @@ class HBridgeController:
         self.status_repeater = TickRepeater(
             ticks_period_ms=500
         )
-        frequency=5000
-        duty_cycle=950
+        
+        frequency=5000 # x 1hz
+        duty_cycle=950 # 0.1 %
         continuous_limit = 190 # 10 amps, x 0.1 amp
         continuous_delay = 10 # 100, x 10 ms
         inrush_limit = 190 # 20 amps, x 0.1 amp
@@ -30,6 +31,7 @@ class HBridgeController:
         self.reset_fault_message = Message(0x18EF7000, data=pack(">8B", 0xa6, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF), extended=True)
 
         self.request_output_status_message = Message(0x18EF7000, data=pack(">8B", 0xd0, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF), extended=True)
+        self.request_output_current_message = Message(0x18EF7000, data=pack(">8B", 0xd3, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF), extended=True)
 
         self.request_fault_message = Message(0x18EF7000, data=pack(">8B", 0xb6, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF), extended=True)
         self.configure_current_message = Message(0x18EF7000, data=pack(">4BBHB", 0xa1, 0x00, continuous_limit,0xff, continuous_delay, inrush_limit, inrush_delay), extended=True)
@@ -65,13 +67,17 @@ class HBridgeController:
             command,_, dir, frequency, duty_cycle, _ =  unpack('>BBBHHB', message.data)
             self.commanded_dir = dir
             print('output status: ', command, dir, frequency, duty_cycle/10)
+        elif message.data[0] == 0x43:
+            command,_, output1_current, output2_current, _, _ =  unpack('>BBHHBB', message.data)
+            print((output1_current/10, output2_current/10))
+            
         elif message.data[0] == 0x26:
             if message.data[2] in self._fault_map.keys():
                 print('Fault:', self._fault_map[message.data[2]])
                 if message.data[2] != 0xFF:
                     self.msg_queue.append(self.reset_fault_message)
         else:
-            print('%02x'%(message.data[0],))
+            print('unhandled command 0x%02x'%(message.data[0],))
                     
 
     def iter(self):
@@ -85,3 +91,4 @@ class HBridgeController:
 
         if self.repeater.check():
             self.main_loop.can.send(self._dir_map[self.dir])
+            self.msg_queue.append(self.request_output_current_message)

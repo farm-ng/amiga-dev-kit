@@ -11,8 +11,9 @@ class HbridgeApp:
         self.main_loop.show_debug = True
         self.main_loop.show_time = True
         self.main_loop.show_can_dts = True
+        self.auto = False
         self.debug_repeater = TickRepeater(ticks_period_ms=1000)
-
+        self.auto_repeater = TickRepeater(ticks_period_ms=5000)
         # can_dummy is called on any canbus message that doesn't have an explicit handler
         self.main_loop.can_dummy = self._handle_any_message
         self.hbridge = HBridgeController(main_loop=main_loop)
@@ -26,12 +27,20 @@ class HbridgeApp:
         print("CAN - Ignored ID %x" % (message.id,), message.data)
 
     def parse_wasd_cmd(self, char):
+        if char == "x":
+            self.auto = True          
+            self.hbridge.dir = 1
+            self.auto_repeater.reset()
+        if char in ('w','s',' '):
+            self.auto = False
+
         if char == "w":
             self.hbridge.dir = 1
         elif char == "s":
             self.hbridge.dir = -1
         elif char == " ":
             self.hbridge.dir = 0
+            
         
     def serial_read(self):
         while console.in_waiting > 0:
@@ -40,6 +49,8 @@ class HbridgeApp:
     def iter(self):
         self.serial_read()
         self.hbridge.iter()
+        if self.auto and self.auto_repeater.check():
+            self.hbridge.dir = -self.hbridge.dir
 
         if self.debug_repeater.check():
             #print("\033[2J", end="")
