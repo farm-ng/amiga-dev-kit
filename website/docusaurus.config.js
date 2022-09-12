@@ -72,15 +72,15 @@ const config = {
             position: 'left',
           },
           {
-            label: 'API',
-            type: 'doc',
-            docId: 'api',
-            position: 'left',
-          },
-          {
             label: 'Examples',
             type: 'doc',
             docId: 'examples/examples-index',
+            position: 'left',
+          },
+          {
+            label: 'API',
+            type: 'doc',
+            docId: 'api',
             position: 'left',
           },
           {
@@ -117,13 +117,13 @@ const config = {
                 label: 'Getting Started',
                 to: 'docs/getting-started',
               },
-              //{
-              //  label: 'API Reference',
-              //  to: '/docs/api',
-              //},
               {
-                label: 'Contribute',
-                to: '/docs/contribute/contribute-website',
+                label: 'Examples',
+                to: '/docs/examples/examples-index',
+              },
+              {
+                label: 'API Reference',
+                to: '/docs/api',
               },
             ],
           },
@@ -139,9 +139,13 @@ const config = {
                 href: 'https://discord.gg/pdpkBaq2dR',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Contribute',
+                to: '/docs/contribute/contribute-website',
               },
+              // {
+              //   label: 'Twitter',
+              //   href: 'https://twitter.com/docusaurus',
+              // },
             ],
           },
           {

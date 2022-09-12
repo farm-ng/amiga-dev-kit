@@ -2,7 +2,12 @@
 id: etools
 title: Basic Electronics Tool Kit
 ---
-# Farm-ng's basic recommended tool kit for hardware hacking
+## Farm-ng's basic recommended tool kit for hardware hacking
+
+:::caution
+We're working on putting together a compact, yet exhaustive, list of
+the tools you'll want to have on hand for hacking on robotics hardware.
+:::
 
 
 ![MVIMG_20180201_100554](https://user-images.githubusercontent.com/11846963/189427734-63e88424-1b6c-46ee-804a-f98d183697b3.jpg)
