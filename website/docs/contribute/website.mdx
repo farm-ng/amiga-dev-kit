@@ -132,5 +132,26 @@ You can make your work more legible using [admonitions](https://docusaurus.io/do
 :::
 More markdown features can be found in the docusaurus documentation [here](https://docusaurus.io/docs/markdown-features).
 
+## Pre-commit formatting workflow
 
-###### **\*** The documentation website is built using [Docusaurus 2](https://docusaurus.io/).
+:::caution
+You may need to install pre-commit, instructions can be found [here](https://pre-commit.com/)
+:::
+
+A typical workflow for committing your code changes may look like this:
+
+```bash
+git add -p # Add the changes I want
+pre-commit run --all-files
+git add -p # Add the formatting changes the check just fixed
+pre-commit run --all-files # double check for any formatting issues not resolved automatically (e.g., spellcheck)
+git commit -m "foo bar baz"
+git push
+```
+&nbsp
+&nbsp
+&nbsp
+
+
+### **Thank you for your help building this community!**
+###### The documentation website is built using [Docusaurus 2](https://docusaurus.io/).
