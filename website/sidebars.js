@@ -46,11 +46,14 @@ const sidebars = {
     // "Pendant": [
     //   "pendant/pendant",
     // ],
+    "Resources": [
+      "hardware-tools/etools",
+    ],
   },
   "api": [
     "api",
     {
-      "Circuit Python": [
+      "CircuitPython ADK": [
         require("./docs/reference/circuitpy/sidebar.json")
       ],
     },

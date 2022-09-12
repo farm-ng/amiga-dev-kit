@@ -9,6 +9,9 @@ title: Examples Index
 
 [Link to `hello_main_loop/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/hello_main_loop/code.py)
 
+:::tip
+It's recommended to start with this example before proceeding to any of the others.
+:::
 
 This introductory example covers getting set up, interacting with the Amiga, and
 using auto-control mode to drive your Amiga from a computer
