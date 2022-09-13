@@ -17,7 +17,7 @@ Start a virtual environment:
 # assuming you're already in the amiga-dev-kit/ directory
 cd brain/
 python3 -m venv venv
-source venv /bin/activate
+source ./venv/bin/activate
 ```
 
 Create and install the `farm_ng` (brain) Python package
