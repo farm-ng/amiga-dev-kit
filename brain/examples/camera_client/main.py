@@ -34,18 +34,17 @@ async def main(address: str, port: int, stream_every_n: int) -> None:
             frame: oak_pb2.OakSyncFrame = response.frame
             print(f"Got frame: {frame.sequence_num}")
             print(f"Device info: {frame.device_info}")
+            print(f"Timestamp: {frame.rgb.meta.timestamp}")
             print("#################################\n")
 
-            # get the image data and decode
-            data: bytes = getattr(frame, "rgb").image_data
-
-            # use imdecode function
-            image = np.frombuffer(data, dtype="uint8")
-            image = cv2.imdecode(image, cv2.IMREAD_COLOR)
+            # cast image data bytes to numpy and decode
+            # NOTE: explore frame.[rgb, disparity, left, right]
+            image = np.frombuffer(frame.rgb.image_data, dtype="uint8")
+            image = cv2.imdecode(image, cv2.IMREAD_UNCHANGED)
 
             # visualize the image
-            cv2.namedWindow("rgb", cv2.WINDOW_NORMAL)
-            cv2.imshow("rgb", image)
+            cv2.namedWindow("image", cv2.WINDOW_NORMAL)
+            cv2.imshow("image", image)
             cv2.waitKey(1)
 
 
