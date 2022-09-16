@@ -21,7 +21,7 @@ class EventsFileWriter:
     def file_name(self) -> Optional[Path]:
         if self._file_stream is None:
             return None
-        return self._file_stream.name
+        return Path(self._file_stream.name)
 
     def is_open(self) -> bool:
         return not self.is_closed()
