@@ -28,7 +28,7 @@ This process is currently only supported on Windows and Mac.
 
 **Access the files:**
 
-1. Download the application zip file [amiga-dash-v0.0.7.zip](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.07/amiga-v0.7.0-9.19.2022.zip)
+1. Download the application zip file [amiga-dash-v0.0.7.zip](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.0.7/amiga-v0.7.0-9.19.2022.zip)
 2. For more details on the release navigate to [Release: amiga-dash-v0.0.7](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.0.7)
 
 **Connect to your dashboard:**
