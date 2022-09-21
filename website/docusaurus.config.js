@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Farm-ng Developers',
   tagline: 'Robots are cool',
-  url: 'https://farm-ng.com',
-  baseUrl: '/amiga-dev-kit/',
+  url: 'https://amiga.farm-ng.com',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/farm-ng_favicon.png',
