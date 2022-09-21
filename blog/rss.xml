@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Farm-ng Developers Blog</title>
-        <link>https://farm-ng.com/amiga-dev-kit/blog</link>
+        <link>https://amiga.farm-ng.com/blog</link>
         <description>Farm-ng Developers Blog</description>
         <lastBuildDate>Fri, 08 Jul 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,7 +10,7 @@
         <language>en</language>
         <item>
             <title><![CDATA[Release Amiga Development Kit]]></title>
-            <link>https://farm-ng.com/amiga-dev-kit/blog/2022/07/08/version-001</link>
+            <link>https://amiga.farm-ng.com/blog/2022/07/08/version-001</link>
             <guid>/2022/07/08/version-001</guid>
             <pubDate>Fri, 08 Jul 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[We are excited to release the first version of the Amiga Development Kit !]]></description>
