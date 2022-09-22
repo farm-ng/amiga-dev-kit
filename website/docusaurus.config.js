@@ -32,25 +32,29 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            //'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-            'https://github.com/farm-ng/amiga-dev-kit/tree/main/website/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            //'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-            'https://github.com/farm-ng/amiga-dev-kit/tree/main/website/',
-        },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
+	docs: {
+	  sidebarPath: require.resolve('./sidebars.js'),
+	  // Please change this to your repo.
+	  // Remove this to remove the "edit this page" links.
+	  editUrl:
+	    //'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+	    'https://github.com/farm-ng/amiga-dev-kit/tree/main/website/',
+	},
+	blog: {
+	  showReadingTime: true,
+	  // Please change this to your repo.
+	  // Remove this to remove the "edit this page" links.
+	  editUrl:
+	    //'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+	    'https://github.com/farm-ng/amiga-dev-kit/tree/main/website/',
+	},
+	theme: {
+	  customCss: require.resolve('./src/css/custom.css'),
+	},
+	googleAnalytics: {
+	  trackingID: 'UA-235819376-1',
+	  anonymizeIP: true,
+	},
       }),
     ],
   ],
@@ -59,114 +63,114 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Amiga SDK',
-        logo: {
-          alt: 'Amiga Logo',
-          src: 'img/farm-ng_favicon.png',
-        },
-        items: [
-          {
-            label: 'Docs',
-            type: 'doc',
-            docId: 'getting-started',
-            position: 'left',
-          },
-          {
-            label: 'Examples',
-            type: 'doc',
-            docId: 'examples/examples-index',
-            position: 'left',
-          },
-          {
-            label: 'API',
-            type: 'doc',
-            docId: 'api',
-            position: 'left',
-          },
-          {
-            label: 'Contribute',
-            type: 'doc',
-            docId: 'contribute/contribute-website',
-            position: 'left',
-          },
-          {
-            to: '/blog',
-            label: 'Blog',
-            position: 'left'
-          },
-          {
-            href: 'https://www.youtube.com/channel/UCczyy8tyLbqxjtLE1_8YW3w',
-            label: 'YouTube',
-            position: 'right',
-          },
-          {
-            href: 'https://github.com/farm-ng/amiga-dev-kit',
-            position: 'right',
-            className: 'header-github-link',
-            'aria-label': 'GitHub repository',
-          },
-        ],
+	title: 'Amiga SDK',
+	logo: {
+	  alt: 'Amiga Logo',
+	  src: 'img/farm-ng_favicon.png',
+	},
+	items: [
+	  {
+	    label: 'Docs',
+	    type: 'doc',
+	    docId: 'getting-started',
+	    position: 'left',
+	  },
+	  {
+	    label: 'Examples',
+	    type: 'doc',
+	    docId: 'examples/examples-index',
+	    position: 'left',
+	  },
+	  {
+	    label: 'API',
+	    type: 'doc',
+	    docId: 'api',
+	    position: 'left',
+	  },
+	  {
+	    label: 'Contribute',
+	    type: 'doc',
+	    docId: 'contribute/contribute-website',
+	    position: 'left',
+	  },
+	  {
+	    to: '/blog',
+	    label: 'Blog',
+	    position: 'left'
+	  },
+	  {
+	    href: 'https://www.youtube.com/channel/UCczyy8tyLbqxjtLE1_8YW3w',
+	    label: 'YouTube',
+	    position: 'right',
+	  },
+	  {
+	    href: 'https://github.com/farm-ng/amiga-dev-kit',
+	    position: 'right',
+	    className: 'header-github-link',
+	    'aria-label': 'GitHub repository',
+	  },
+	],
       },
       footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Getting Started',
-                to: 'docs/getting-started',
-              },
-              {
-                label: 'Examples',
-                to: '/docs/examples/examples-index',
-              },
-              {
-                label: 'API Reference',
-                to: '/docs/api',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              //{
-              //  label: 'Stack Overflow',
-              //  href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              //},
-              {
-                label: 'Discord',
-                href: 'https://discord.gg/pdpkBaq2dR',
-              },
-              {
-                label: 'Contribute',
-                to: '/docs/contribute/contribute-website',
-              },
-              // {
-              //   label: 'Twitter',
-              //   href: 'https://twitter.com/docusaurus',
-              // },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/farm-ng/amiga-dev-kit',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Farm-ng, Inc. Built with Docusaurus.`,
+	style: 'dark',
+	links: [
+	  {
+	    title: 'Docs',
+	    items: [
+	      {
+		label: 'Getting Started',
+		to: 'docs/getting-started',
+	      },
+	      {
+		label: 'Examples',
+		to: '/docs/examples/examples-index',
+	      },
+	      {
+		label: 'API Reference',
+		to: '/docs/api',
+	      },
+	    ],
+	  },
+	  {
+	    title: 'Community',
+	    items: [
+	      //{
+	      //  label: 'Stack Overflow',
+	      //  href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+	      //},
+	      {
+		label: 'Discord',
+		href: 'https://discord.gg/pdpkBaq2dR',
+	      },
+	      {
+		label: 'Contribute',
+		to: '/docs/contribute/contribute-website',
+	      },
+	      // {
+	      //   label: 'Twitter',
+	      //   href: 'https://twitter.com/docusaurus',
+	      // },
+	    ],
+	  },
+	  {
+	    title: 'More',
+	    items: [
+	      {
+		label: 'Blog',
+		to: '/blog',
+	      },
+	      {
+		label: 'GitHub',
+		href: 'https://github.com/farm-ng/amiga-dev-kit',
+	      },
+	    ],
+	  },
+	],
+	copyright: `Copyright © ${new Date().getFullYear()} Farm-ng, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+	theme: lightCodeTheme,
+	darkTheme: darkCodeTheme,
       },
     }),
 };
