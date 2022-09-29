@@ -140,7 +140,7 @@ const config = {
 	      //},
 	      {
 		label: 'Discord',
-		href: 'https://discord.gg/pdpkBaq2dR',
+		href: 'https://discord.gg/YTCyGsEtBU',
 	      },
 	      {
 		label: 'Contribute',
