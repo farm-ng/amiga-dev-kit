@@ -11,28 +11,39 @@ from farm_ng.oak import oak_pb2
 def main(file_name: str) -> None:
     reader = EventsFileReader(Path(file_name))
     assert reader.open()
-    reader.compute_offsets()
 
     # main window to visualize image
-    cv2.namedWindow("image", cv2.WINDOW_NORMAL)
-
     uris = reader.uris()
-    camera_id = 0
+    print(uris)
 
-    for frame_id in range(reader.num_frames(uris[camera_id])):
+    while True:
         # read frame by frame
-        sample = reader.seek_and_read(uris[0], frame_id)
+        event, sample = reader.read()
+        if not event:
+            break
+        if event.name != "OakDataSample":
+            continue
         frame: oak_pb2.OakSyncFrame = sample.frame
         if frame is None:
             break
 
         # cast image data bytes to numpy and decode
         # NOTE: explore frame.[rgb, disparity, left, right]
-        image = np.frombuffer(frame.disparity.image_data, dtype="uint8")
-        image = cv2.imdecode(image, cv2.IMREAD_UNCHANGED)
+        depth = cv2.imdecode(np.frombuffer(frame.disparity.image_data, dtype="uint8"), cv2.IMREAD_GRAYSCALE)
+        rgb = cv2.imdecode(np.frombuffer(frame.rgb.image_data, dtype="uint8"), cv2.IMREAD_UNCHANGED)
 
         # visualize the image
-        cv2.imshow("image", image)
+        #
+        depth_color = cv2.applyColorMap(depth * 2, cv2.COLORMAP_HOT)
+
+        rgb_window_name = "rgb:" + event.uri.query
+        depth_window_name = "depth:" + event.uri.query
+
+        cv2.namedWindow(depth_window_name, cv2.WINDOW_NORMAL)
+        cv2.namedWindow(rgb_window_name, cv2.WINDOW_NORMAL)
+
+        cv2.imshow(depth_window_name, depth_color)
+        cv2.imshow(rgb_window_name, rgb)
         cv2.waitKey(30)
 
     reader.close()

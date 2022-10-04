@@ -54,13 +54,14 @@ class EventsFileReader:
         assert header is not None
 
         current_offset += 1 + header.ByteSize()
+        header_offset = current_offset
 
         while True:
 
             event_len = int.from_bytes(self._file_stream.read(1), sys.byteorder)
             # end file condition
             if event_len == 0:
-                self._file_stream.seek(0)
+                self._file_stream.seek(header_offset)
                 break
 
             event: bytes = self._file_stream.read(event_len)
@@ -95,6 +96,7 @@ class EventsFileReader:
 
     def open(self) -> bool:
         self._file_stream = open(self._file_name, "rb")
+        self.compute_offsets()
         return self.is_open()
 
     def close(self) -> bool:
@@ -122,7 +124,7 @@ class EventsFileReader:
         event_len = int.from_bytes(self._file_stream.read(1), sys.byteorder)
         if event_len == 0:
             self.close()
-            return None
+            return None, None
 
         # Read that number of bytes as the message bytes
         event: bytes = self._file_stream.read(event_len)
@@ -138,7 +140,7 @@ class EventsFileReader:
         message_out = message_cls()
         message_out.ParseFromString(message)
 
-        return message_out
+        return event_proto, message_out
 
     def header(self) -> event_pb2.EventHeader:
         self._file_stream.seek(0)

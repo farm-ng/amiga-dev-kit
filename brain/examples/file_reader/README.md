@@ -13,7 +13,6 @@ Clone the repo
 
 ```bash
 git clone https://github.com/farm-ng/amiga-dev-kit.git
-git checkout demo-lleida-reader
 ```
 
 Go to the brain sdk directory and install
