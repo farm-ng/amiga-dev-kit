@@ -96,7 +96,8 @@ class EventsFileReader:
 
     def open(self) -> bool:
         self._file_stream = open(self._file_name, "rb")
-        self.compute_offsets()
+        # can't always compute offsets?
+        # self.compute_offsets()
         return self.is_open()
 
     def close(self) -> bool:

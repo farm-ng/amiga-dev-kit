@@ -73,12 +73,13 @@ class TestEventsReader:
         # write file
         assert writer.open()
         image_data = bytes([1, 2, 3, 4, 5, 6, 7, 8, 9])
-        uri = event_pb2.Uri()
+        uri = event_pb2.Uri(path='foo')
         frame = oak_pb2.OakFrame(image_data=image_data)
         writer.write(frame, uri)
         assert writer.close()
         # read back the data
         assert reader.open()
-        frame_out = reader.read()
+        event, frame_out = reader.read()
+        assert event.uri.path == 'foo'
         assert reader.close()
         assert frame_out.image_data == frame.image_data

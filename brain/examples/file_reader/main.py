@@ -11,6 +11,7 @@ from farm_ng.oak import oak_pb2
 def main(file_name: str) -> None:
     reader = EventsFileReader(Path(file_name))
     assert reader.open()
+    reader.compute_offsets()
 
     # main window to visualize image
     uris = reader.uris()
