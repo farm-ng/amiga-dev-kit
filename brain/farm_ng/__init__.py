@@ -1,3 +1,4 @@
+from farm_ng import core  # noqa: F401
 from farm_ng import oak  # noqa: F401
 
 # NOTE: Please, maintainers update the `__version__` every time we make a release

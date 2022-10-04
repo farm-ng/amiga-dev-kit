@@ -145,3 +145,17 @@ message OakNNData {
   uint32 width = 4;
   bytes data = 5;
 }
+
+message Pair {
+  string key = 1;
+  string value = 2;
+}
+
+message Metadata {
+  repeated Pair pairs = 1;
+}
+
+message OakDataSample {
+  OakSyncFrame frame = 1;
+  Metadata metadata = 2;
+}
