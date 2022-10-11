@@ -42,6 +42,8 @@ const sidebars = {
     ],
     "Brain": [
       "brain/brain",
+      "brain/brain-install",
+      "brain/brain-apps"
     ],
     // "Pendant": [
     //   "pendant/pendant",
