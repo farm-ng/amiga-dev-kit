@@ -32,12 +32,10 @@ Let’s copy our keys to the robot as well (you may need to do this any time you
 Now you can ssh to the robot with:
 ```bash
     ssh amiga
+    exit
 ```
 
-Next will clone a simple repo to your workstation
-```bash
-    git clone ...update me...
-```
+Open the "Hello World" workspace by ... You may use an alternate editor of your choice. If you do, the sample application for publishing an app is located at amiga-dev-kit/brain/examples/hello 
 
 Using a terminal window, change to the git repository file cloned above. 
 
