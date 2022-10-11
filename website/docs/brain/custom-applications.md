@@ -63,4 +63,8 @@ Finally to view the status:
 
 While the sync process is running, any changes are mirrored to the Amiga Brain.
 
+To test this process out, now that the current directory amiga-dev-kit/brain/examples/hello is being synchronized to your brain, lets trigger a refresh of the currently loaded apps by clicking on the "home" icon near the top right.
 
+Click on the new app labeled "Hello" on the Amiga Brain. After a brief moment (bootstrapping the app) the app wil load and you'll be greeting a a simple UI app. Close the app by clicking "Exit".
+
+On your workstation, open the "main.py" file in an editor and change the value for YOUR_NAME to be your name (i.e. joe dirt). Save the file and relaunch the app from the Amiga Brain. The text will now reflect your changes.

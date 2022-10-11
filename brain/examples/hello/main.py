@@ -20,14 +20,22 @@ KIVY_STRING = """
 <HelloApp>:
     BoxLayout:
         orientation: "vertical"
+        size: 1280, 800
         Label:
-            text: "YOUR_NAME"
+            text: "Hello YOUR_NAME :)"
             font_size: 100
-            size: 1, .8
+            size_hint: (1, .8)
+            color: 1, .5, 0, 1
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: "wheat.png"
         Button:
             id: btnExit
             text: "exit"
-            size: 1, .1
+            size_hint: (.1, .1)
+            pos_hint: {'center_x':.5, 'center_y':.5}
             on_release: app.on_exit_btn()
 """.replace("YOUR_NAME", YOUR_NAME)
 
