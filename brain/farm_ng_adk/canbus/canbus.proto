@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package farm_ng_adk.canbus;
+
+service CanbusService {
+  rpc streamCanbusMessages(StreamCanbusRequest)
+      returns (stream StreamCanbusReply) {}
+  rpc getServiceState(GetServiceStateRequest) returns (GetServiceStateResult) {}
+  rpc startService(StartServiceRequest) returns (StartServiceResult) {}
+  rpc stopService(StopServiceRequest) returns (StopServiceResult) {}
+}
+
+enum ReplyStatus {
+  OK = 0;
+  FAILED = 1;
+}
+
+enum CanbusServiceState {
+  STOPPED = 0;
+  RUNNING = 1;
+}
+
+message StopServiceRequest {
+  string message = 1;
+}
+
+message StopServiceResult {
+  string message = 1;
+  ReplyStatus status = 2;
+}
+
+message StreamCanbusRequest {
+  string message = 1;
+}
+
+message StreamCanbusReply {
+  ReplyStatus status = 1;
+  RawCanbusMessages messages = 2;
+}
+
+message RawCanbusMessage {
+  // The time the message is "sent" on the canbus
+  // in the steady_clock/time.montonic() time domain
+  double stamp = 1;
+  uint32 id = 2;
+  bool error = 3;
+  bool remote_transmission = 4;
+  bytes data = 5;
+}
+
+message RawCanbusMessages {
+  repeated RawCanbusMessage messages = 1;
+}
+
+message StartServiceRequest {
+  string message = 1;
+}
+
+message StartServiceResult {
+  string message = 1;
+  ReplyStatus status = 2;
+}
+
+message GetServiceStateRequest {
+  string message = 1;
+}
+
+message GetServiceStateResult {
+  string state_name = 1;
+  CanbusServiceState state = 2;
+  ReplyStatus status = 3;
+}
