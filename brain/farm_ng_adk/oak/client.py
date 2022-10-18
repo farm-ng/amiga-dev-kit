@@ -2,8 +2,8 @@ import logging
 from dataclasses import dataclass
 
 import grpc
-from farm_ng.oak import oak_pb2
-from farm_ng.oak import oak_pb2_grpc
+from farm_ng_adk.oak import oak_pb2
+from farm_ng_adk.oak import oak_pb2_grpc
 
 __all__ = ["OakCameraClientConfig", "OakCameraClient", "OakCameraServiceState"]
 

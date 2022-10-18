@@ -33,7 +33,7 @@ class CleanFilesCommand(Command):
         pass
 
     def run(self):
-        proto_files_root = Path("farm_ng")
+        proto_files_root = Path("farm_ng_adk")
         for proto_file in proto_files_root.rglob("*_pb2*.py"):
             assert proto_file.unlink() is None
 

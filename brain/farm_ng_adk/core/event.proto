@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package farm_ng.core;
+package farm_ng_adk.core;
 
 enum UriSchemeType {
   UNKNOWN = 0;

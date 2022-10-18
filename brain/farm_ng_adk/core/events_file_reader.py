@@ -8,8 +8,8 @@ from typing import Dict
 from typing import List
 from typing import Optional
 
-from farm_ng.core import event_pb2
-from farm_ng.core.uri import Uri
+from farm_ng_adk.core import event_pb2
+from farm_ng_adk.core.uri import Uri
 
 
 class EventsFileReader:
@@ -134,7 +134,10 @@ class EventsFileReader:
         event_proto.ParseFromString(event)
 
         # parse the message
-        message_cls = getattr(importlib.import_module(event_proto.module), event_proto.name)
+        # HACK: farm_ng -> farm_ng_adk
+        message_cls = getattr(
+            importlib.import_module(event_proto.module.replace("farm_ng", "farm_ng_adk")), event_proto.name
+        )
 
         message: bytes = self._file_stream.read(event_proto.length_next)
 

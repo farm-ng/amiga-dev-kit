@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package farm_ng.oak;
+package farm_ng_adk.oak;
 
 service OakService {
   rpc streamFrames(StreamFramesRequest) returns (stream StreamFramesReply) {}

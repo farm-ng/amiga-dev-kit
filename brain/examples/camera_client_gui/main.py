@@ -7,8 +7,8 @@ from typing import List
 
 os.environ["KIVY_NO_ARGS"] = "1"
 
-from farm_ng.oak.client import OakCameraClient, OakCameraClientConfig
-from farm_ng.oak import oak_pb2
+from farm_ng_adk.oak.client import OakCameraClient, OakCameraClientConfig
+from farm_ng_adk.oak import oak_pb2
 
 from kivy.config import Config  # noreorder
 

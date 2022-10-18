@@ -4,8 +4,8 @@ from pathlib import Path
 
 import cv2
 import numpy as np
-from farm_ng.core.events_file_reader import EventsFileReader
-from farm_ng.oak import oak_pb2
+from farm_ng_adk.core.events_file_reader import EventsFileReader
+from farm_ng_adk.oak import oak_pb2
 
 
 def main(file_name: str) -> None:
