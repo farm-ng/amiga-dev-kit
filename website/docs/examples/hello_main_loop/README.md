@@ -146,8 +146,14 @@ In our `iter()` call, we:
 -->
 ![](https://user-images.githubusercontent.com/53625197/187538323-f70bb5d5-8c9a-40c2-ab75-25fd6c80acfb.png)
 
-2. Drop the `code.py` file and the `lib/` folder directly into the root of the mounted `CIRCUITPY` drive, as seen below.
-
+2. From `amiga-dev-kit/circuitpy/`, drop the `code.py` file and the `lib/` folder directly into the root of the mounted `CIRCUITPY` drive, as seen below.
+:::note
+This assumes you have already cloned the amiga-dev-kit repo.
+```bash
+cd <to_your_base_directory>
+git clone git@github.com:farm-ng/amiga-dev-kit.git
+```
+:::
 <!-- <p align="center">
 <img src="./assets/hello_main_loop_filesystem.png" alt="drawing" width="500"/>
 </p> -->
@@ -173,6 +179,7 @@ You should see an output of the current state of the robot, similar to the scree
 ![hello_main_loop_console](https://user-images.githubusercontent.com/53625197/187538512-90d53da9-8588-4d15-9973-49cca16bff72.png)
 
 4. Navigate to the Auto mode tab on your dashboard, and click the `[AUTO CONTROL]` button. The `[AUTO READY]` icon should turn yellow, indicating the dashboard is ready for a component to take `Auto Control`.
-5. Hit the space bar in your serial console to request auto control, and you should see the `[AUTO READY]` and `[AUTO ACTIVE]` icons should turn green, indicating the dashboard is in `Auto Control` mode.
+5. Hit the space bar in your serial console to request auto control, and you should see the `[AUTO READY]` turn green, indicating the dashboard is in `Auto Control` mode.
+   1. The space bar may not register every press, so use the dash indicators!
 6. In the serial console, increase / decrease the robot forward / reverse speed with the `w` & `s` keys, and increase / decrease the robot angular rate with the `a` & `d` keys.
-7. Hit the space bar in the serial console to release auto control. Or hit the E-stop on your Amiga!
+7. Hit the space bar in the serial console to release auto control and return to the `[AUTO READY]` state. Or hit the E-stop on your Amiga!

@@ -5,6 +5,12 @@ title: Examples Index
 
 # Amiga SDK Examples
 
+To begin any of these examples, start by cloning the `amiga-dev-kit` repository:
+```bash
+cd <to_your_base_directory>
+git clone git@github.com:farm-ng/amiga-dev-kit.git
+```
+
 ## [Hello World Auto-mode (hello_main_loop)](./hello_main_loop/)
 
 [Link to `hello_main_loop/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/hello_main_loop/code.py)

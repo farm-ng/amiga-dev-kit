@@ -89,7 +89,14 @@ Steps 1 - 3 are explained in greater detail in the [Hello Auto Mode](/examples/h
 :::
 
 1. Connect your [farm-ng microcontroller kit](https://farm-ng.com/products/microcontroller-kit) to your PC.
-2. Drop the `code.py` file and the `lib/` folder directly into the root of the mounted `CIRCUITPY` drive.
+2. From `amiga-dev-kit/circuitpy/`, drop the `code.py` file and the `lib/` folder directly into the root of the mounted `CIRCUITPY` drive.
+:::note
+This assumes you have already cloned the amiga-dev-kit repo.
+```bash
+cd <to_your_base_directory>
+git clone git@github.com:farm-ng/amiga-dev-kit.git
+```
+:::
 3. Open the serial console.
 4. You should now see the can statistics printed and updated every 1000 ms.
 :::note
