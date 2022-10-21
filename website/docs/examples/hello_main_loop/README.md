@@ -147,13 +147,13 @@ In our `iter()` call, we:
 ![](https://user-images.githubusercontent.com/53625197/187538323-f70bb5d5-8c9a-40c2-ab75-25fd6c80acfb.png)
 
 2. From `amiga-dev-kit/circuitpy/`, drop the `code.py` file and the `lib/` folder directly into the root of the mounted `CIRCUITPY` drive, as seen below.
-:::note
-This assumes you have already cloned the amiga-dev-kit repo.
-```bash
-cd <to_your_base_directory>
-git clone git@github.com:farm-ng/amiga-dev-kit.git
-```
-:::
+    :::note
+    This assumes you have already cloned the amiga-dev-kit repo.
+    ```bash
+    cd <to_your_base_directory>
+    git clone git@github.com:farm-ng/amiga-dev-kit.git
+    ```
+    :::
 <!-- <p align="center">
 <img src="./assets/hello_main_loop_filesystem.png" alt="drawing" width="500"/>
 </p> -->
