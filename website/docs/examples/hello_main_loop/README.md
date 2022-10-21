@@ -154,6 +154,7 @@ In our `iter()` call, we:
     git clone git@github.com:farm-ng/amiga-dev-kit.git
     ```
     :::
+
 <!-- <p align="center">
 <img src="./assets/hello_main_loop_filesystem.png" alt="drawing" width="500"/>
 </p> -->
