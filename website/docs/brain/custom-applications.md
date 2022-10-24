@@ -35,11 +35,11 @@ Now you can ssh to the robot with:
     exit
 ```
 
-Open the "Hello World" workspace by ... You may use an alternate editor of your choice. If you do, the sample application for publishing an app is located at amiga-dev-kit/brain/examples/hello 
+Open the "Hello World" workspace by ... You may use an alternate editor of your choice. If you do, the sample application for publishing an app is located at amiga-dev-kit/brain/examples/hello
 
-Using a terminal window, change to the git repository file cloned above. 
+Using a terminal window, change to the git repository file cloned above.
 
-#### Live Code Syncing 
+#### Live Code Syncing
 
 Now we'll start a synchronization session that will mirror the code in this directory to an Apps directory (/data/apps) on the Amiga Brain. Note: This directory is persistent across reboots.
 

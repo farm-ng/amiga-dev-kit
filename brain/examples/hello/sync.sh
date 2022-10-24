@@ -14,7 +14,7 @@ SYNC_DIR=$DIR
 shopt -s extglob
 SYNC_DIR=${SYNC_DIR%%+(/)}    # trim however many trailing slashes exist
 SYNC_DIR=${SYNC_DIR##*/}       # remove everything before the last / that still remains
-SYNC_DIR=${SYNC_DIR:-/} 
+SYNC_DIR=${SYNC_DIR:-/}
 
 Help
 

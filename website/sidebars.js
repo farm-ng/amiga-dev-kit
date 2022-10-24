@@ -33,6 +33,7 @@ const sidebars = {
     "Dashboard": [
       "dashboard/dashboard",
       "dashboard/dashboard-fw",
+      "dashboard/control-states",
     ],
     "Debug Cable": [
       "debug_cable/debug-cable",

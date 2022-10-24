@@ -15,7 +15,7 @@ Config.set("kivy", "exit_on_escape", "0")
 
 from kivy.core.window import Window
 
-YOUR_NAME="changeme"
+YOUR_NAME = "changeme"
 
 KIVY_STRING = """
 <HelloApp>:
@@ -39,9 +39,12 @@ KIVY_STRING = """
             size_hint: .1, .1
             pos_hint: {'center_x':.5, 'center_y':.5}
             on_release: app.on_exit_btn()
-""".replace("YOUR_NAME", YOUR_NAME)
+""".replace(
+    "YOUR_NAME", YOUR_NAME
+)
 
 Builder.load_string(KIVY_STRING)
+
 
 class HelloApp(App, BoxLayout):
     def build(self):
@@ -50,6 +53,7 @@ class HelloApp(App, BoxLayout):
     def on_exit_btn(self):
         App.get_running_app().stop()
         Window.close()
+
 
 if __name__ == "__main__":
     HelloApp().run()
