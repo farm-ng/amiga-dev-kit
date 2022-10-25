@@ -49,6 +49,9 @@ class HelloMainLoopApp:
             self.cmd_ang_rate += self.inc
         elif char == "d":
             self.cmd_ang_rate -= self.inc
+        elif char == "x":
+            self.cmd_ang_rate = 0
+            self.cmd_speed = 0
 
     def serial_read(self):
         while console.in_waiting > 0:
