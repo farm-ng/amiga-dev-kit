@@ -4,8 +4,10 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-/** @type {import('@docusaurus/types').Config} */
-const config = {
+async function createConfig() {
+    const mdxMermaid = await import('mdx-mermaid')
+    /** @type {import('@docusaurus/types').Config} */
+    return {
   title: 'Farm-ng Developers',
   tagline: 'Robots are cool',
   url: 'https://amiga.farm-ng.com',
@@ -29,10 +31,11 @@ const config = {
 
   presets: [
     [
-      '@docusaurus/preset-classic',
+      'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
 	docs: {
+      remarkPlugins: [mdxMermaid.default],
 	  sidebarPath: require.resolve('./sidebars.js'),
 	  // Please change this to your repo.
 	  // Remove this to remove the "edit this page" links.
@@ -173,6 +176,6 @@ const config = {
 	darkTheme: darkCodeTheme,
       },
     }),
-};
+}}
 
-module.exports = config;
+module.exports = createConfig();
