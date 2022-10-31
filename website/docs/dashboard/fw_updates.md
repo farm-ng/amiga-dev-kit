@@ -9,14 +9,19 @@ At farm-ng, we are regularly updating and improving our firmware as we continue 
 We want to get every new feature, performance improvement, and reliability increase out to you as soon as we can.
 And we want to enable you to easily upgrade your dashboard with these improvements at your convenience.
 
-:::note
-We're actively working on over-the-air (OTA) firmware updates for our dashboard.
-Once we've stabilized the wifi interface on the dashboard and ensured the
-OTA updater is robust, we'll make this available to you.
-In the meantime, make sure you have your [**debug cable**](./../debug_cable/) handy before proceeding with any firmware or UF2 updates.
-If you don't have one, check out the options on our [**For Developers**](https://farm-ng.com/pages/for-developers) page.
+:::tip Update
+Over-the-air (OTA) firmware updates for the dashboard application layer are now supported!
+This means that going forward you will be able to wirelessly update your amiga dashboard applications from the touchscreen.
+The OTA update method is available starting with release: [amiga-dash-v0.1.1](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.1.1).
+
+For dashboards with earlier versions of the firmware, one additional wired update is required to get to v0.1.1.
+So make sure you have your [**debug cable**](./../debug_cable/) handy before proceeding with the following firmware update steps.
+If you don't have one, reach out to us using one of the options on our [**For Developers**](https://farm-ng.com/pages/for-developers) page.
+
+Note: the OTA update method does not yet support the (infrequent) UF2 bootloader updates, so keep your debug cable somewhere safe.
 :::
 
+### Wired updates
 
 ### farm-ng Amiga application update
 
@@ -28,8 +33,8 @@ This process is currently only supported on Windows and Mac.
 
 **Access the files:**
 
-1. Download the application zip file [amiga-dash-v0.0.7.zip](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.0.7/amiga-v0.7.0-9.19.2022.zip)
-2. For more details on the release navigate to [Release: amiga-dash-v0.0.7](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.0.7)
+1. Download the application zip file [amiga-dash-v0.1.1.zip](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.1.1/amiga-dash-v0.1.1.zip)
+2. For more details on the release navigate to [Release: amiga-dash-v0.1.1](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.1.1)
 
 **Connect to your dashboard:**
 
@@ -47,19 +52,32 @@ This process is currently only supported on Windows and Mac.
 9.  Select all files in the mounted CIRCUITPY drive and delete them
 10. This *may* freeze the dash on the screen it was displaying.
 11. Drag and drop all extracted files from the downloaded firmware update.
-12. Make sure to drop the `node_id.txt`, `main.py`, `boot.py`, & `app/` files directly into the root of the `CIRCUITPY` drive (as below).
+12. Make sure to drop **all files** (`dashboard/`, `updator/`, `node_id.txt`, `code.py`, `boot.py`, etc.) directly into the root of the `CIRCUITPY` drive (as below).
 13. The firmware will **NOT** load if the files are nested in a subfolder.
 14. Once the file transfer is complete, power cycle your dashboard (disconnect & reconnect power) and check the basic functionality.
+    1.  The dashboard will no longer mount as `CIRCUITPY` when connected to a computer. If you have any issues, see the troubleshooting information below.
 15. If all is as expected, you're good to go. Just power down the dashboard, disconnect the debug cable, and enjoy your new features!
 16. `[Recommended]` Navigate to the configuration tab (gear icon) on the dashboard, and select the pendant icon to calibrate your pendant and confirm functionality.
 17. `[Recommended]` Also check the settings and ensure your desired wheel track and turning speed values remain.
 
-**CIRCUITPY updated**
-
-![CIRCUITPY updated](https://user-images.githubusercontent.com/53625197/187532633-c87803a3-9fb9-4ba6-be39-a2f6bed27613.png)
-
 :::caution Troubleshooting
-- If the file transfer process fails, just delete all files in CIRCUITPY and try it again.
+- If the file transfer process fails, or the behavior is not as expected, just delete all files in CIRCUITPY and try it again.
+  - If the dashboard remounts on your computer as `CIRCUITPY`, just select all and delete.
+  - If the dashboard does NOT remount on your computer as `CIRCUITPY`:
+    - Open a serial console connected to the dashboard (see: [Adafruit connecting to the serial console](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console))
+    - Pause the program with `ctrl+C`
+    - Enter the following commands in the REPL
+
+    ```
+    import storage
+    storage.erase_filesystem()
+    # The dashboard should reboot automatically
+    # If it does not, continue with:
+    import microcontroller
+    microcontroller.reset()
+    ```
+    - This will reset the microcontroller to a "hello world" state and it should remount as `CIRCUITPY`.
+    - You can now manually delete all files and try again.
 - Repeated hot plugging / unplugging of the dashboard can cause the filesystem to go into an irregular state. Try connecting / disconnecting between dashboard and your PC with the dashboard powered down.
 - When in doubt, turn it off and back on again.
 :::
