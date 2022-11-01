@@ -2,8 +2,6 @@ from kivy.app import App
 from kivy.config import Config
 from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.button import Button
-from kivy.uix.image import Image
 
 Config.set("graphics", "width", "1280")
 Config.set("graphics", "height", "800")
@@ -13,7 +11,7 @@ Config.set("input", "mouse", "mouse,disable_on_activity")
 Config.set("kivy", "keyboard_mode", "systemanddock")
 Config.set("kivy", "exit_on_escape", "0")
 
-from kivy.core.window import Window
+from kivy.core.window import Window  # noqa: E402
 
 YOUR_NAME = "changeme"
 
