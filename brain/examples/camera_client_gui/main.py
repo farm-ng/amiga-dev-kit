@@ -79,7 +79,7 @@ class CameraApp(App):
         response_stream = client.stream_frames(every_n=self.stream_every_n)
 
         # start the streaming service
-        await client.start_service()
+        await client.connect_to_service()
 
         while True:
             # query the service state
