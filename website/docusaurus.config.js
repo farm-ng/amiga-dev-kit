@@ -112,6 +112,12 @@ async function createConfig() {
 	    className: 'header-github-link',
 	    'aria-label': 'GitHub repository',
 	  },
+	  {
+	    href: 'https://discord.gg/YTCyGsEtBU',
+	    position: 'right',
+	    className: 'header-discord-link',
+	    'aria-label': 'Farm-ng Developers Discord',
+	  },
 	],
       },
       footer: {
