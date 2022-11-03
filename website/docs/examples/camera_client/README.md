@@ -81,7 +81,7 @@ async def main(address: str, port: int, stream_every_n: int) -> None:
     response_stream = client.stream_frames(every_n=stream_every_n)
 
     # start the streaming service
-    await client.start_service()
+    await client.connect_to_service()
 
     while True:
         # query the service state
