@@ -1,0 +1,3 @@
+[submodule "amiga-brain-api"]
+	path = amiga-brain-api
+	url = git@github.com:farm-ng/amiga-brain-api.git

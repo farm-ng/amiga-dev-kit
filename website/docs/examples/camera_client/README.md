@@ -5,7 +5,7 @@ title: Camera Client
 
 ### [Link to `camera_client/main.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/brain/examples/camera_client/main.py)
 
-This example acts as an [OakCameraClient](/docs/reference/brain/farm_ng/oak/client#oakcameraclient-objects) in a standalone Python script.
+This example acts as an `OakCameraClient` in a standalone Python script.
 
 The requirements to run this example are to have a [farm-ng brain](/docs/brain/) running Oak cameras and that your PC is on the same local network as the brain.
 

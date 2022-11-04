@@ -34,13 +34,13 @@ pydoc-markdown '{
     loaders: [
         {
             type: python,
-            search_path: [../brain]
+            search_path: [../amiga-brain-api/py/farm_ng]
         }
     ],
     processors: [
         {
             type: filter,
-            skip_empty_modules: true
+            skip_empty_modules: True,
         },
         {
             type: smart
