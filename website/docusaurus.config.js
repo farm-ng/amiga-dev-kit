@@ -173,7 +173,7 @@ async function createConfig() {
 		href: 'https://github.com/farm-ng/amiga-dev-kit',
 	      },
 	      {
-		label: 'Licence',
+		label: 'License',
 		href: 'https://github.com/farm-ng/amiga-dev-kit/blob/main/LICENSE',
 	      },
 	    ],
