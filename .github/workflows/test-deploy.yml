@@ -19,7 +19,7 @@ jobs:
           # cache: yarn
 
       - name: Install adk dependencies
-        working-directory: amiga-brain-api
+        working-directory: website
         run: pip3 install -r requirements.txt
       - name: Create Markdown
         working-directory: website
