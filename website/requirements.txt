@@ -1,2 +1,2 @@
--e ../amiga-brain-api
+../amiga-brain-api
 pydoc-markdown==4.6.3
