@@ -13,14 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          submodules: recursive
       - uses: actions/setup-node@v3
         with:
           node-version: 18
           # cache: yarn
 
+      - run: ls amiga-brain-api
       - name: Install adk dependencies
-        working-directory: brain
-        run: pip3 install -e .[dev]
+        working-directory: website
+        run: pip3 install -r requirements.txt
       - name: Create Markdown
         working-directory: website
         run: ./run_pydoc-markdown.sh

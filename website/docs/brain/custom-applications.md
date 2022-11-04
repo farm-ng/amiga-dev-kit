@@ -15,7 +15,7 @@ title: Developing Custom Applications
 #### Initial Configuration
 To make ssh easier, we'll add some configuration to our ssh on the workstation.
 
-First add the following to your .ssh/config utilizing the IP addess displayed on the bottom right of the brain display:
+First add the following to your .ssh/config utilizing the IP address displayed on the bottom right of the brain display:
 ```bash
 Host amiga
     HostName <ip address>
@@ -65,6 +65,6 @@ While the sync process is running, any changes are mirrored to the Amiga Brain.
 
 To test this process out, now that the current directory amiga-dev-kit/brain/examples/hello is being synchronized to your brain, lets trigger a refresh of the currently loaded apps by clicking on the "home" icon near the top right.
 
-Click on the new app labeled "Hello" on the Amiga Brain. After a brief moment (bootstrapping the app) the app wil load and you'll be greeting a a simple UI app. Close the app by clicking "Exit".
+Click on the new app labeled "Hello" on the Amiga Brain. After a brief moment (bootstrapping the app) the app will load and you'll be greeting a a simple UI app. Close the app by clicking "Exit".
 
 On your workstation, open the "main.py" file in an editor and change the value for YOUR_NAME to be your name (i.e. joe dirt). Save the file and relaunch the app from the Amiga Brain. The text will now reflect your changes.
