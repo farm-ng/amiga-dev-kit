@@ -7,17 +7,18 @@ title: Virtual Joystick Example
 The purpose of this example application and tutorial is to enable you to develop your own custom apps and deploy them to the Amiga brain.
 
 Here we provide an example application that:
-- Receives an oak camera stream
+- Creates a kivy application
+- Receives and displays an oak camera stream
 - Receives the canbus stream
 - Sends canbus commands to control the robot
-- Creates kivy application
+
 
 We hope that this tutorial is sufficient to get you started on developing your own custom Amiga brain applications.
 If you feel we missed any key details, please let us know so we can help you through it and add it to the tutorial for the next hacker!
 
 ## Necessary Background
 
-The Amiga brain app development meets at the intersection of three key libraries, and some farm-ng base libraries:
+The Amiga brain app development meets at the intersection of three key libraries, and some farm-ng libraries:
 
 1. [gRPC](https://grpc.io/)
 2. [asyncio](https://docs.python.org/3/library/asyncio.html)
@@ -57,9 +58,6 @@ We tend to define our apps in the kv language at the top of the app files using 
 In this example, however, we also demonstrate creating a custom kivy `Widget` in Python!
 
 ### farm-ng libraries
-
-# TODO: Look for other "base" 
-
 
 We have some libraries that are imported by the brain infrastructure and our apps.
 They are:
@@ -132,9 +130,9 @@ Two key components of kivy are [`Layouts`](https://kivy.org/doc/stable/gettingst
 Kivy also has the concept of nesting, so you may notice in our app we have
 3 `Label` widgets in a `BoxLayout`, which is in another `BoxLayout`, which itself is in the base `RelativeLayout`.
 
-#### Base layout
+#### RelativeLayout
 
-The base of our app is a `RelativeLayout`, which contains a `Button` widget and a `BoxLayout`, with multiple nested Widgets and Layouts.
+The root of our app is a `RelativeLayout`, which contains a `Button` widget and a `BoxLayout`, with multiple nested Widgets and Layouts.
 
 - Reference: [Relative Layout](https://kivy.org/doc/stable/api-kivy.uix.relativelayout.html)
 

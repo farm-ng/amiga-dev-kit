@@ -5,13 +5,39 @@ title: Examples Index
 
 # Amiga SDK Examples
 
+## Brain Examples
+
+:::info
+These are the examples for developing applications for the [farm-ng Brain](../brain/).
+:::
+
+### [Virtual Joystick](./virtual_joystick/)
+
+:::caution Coming soon
+link to example in amiga-brain-api
+:::
+
+This example application and tutorial is designed to enable you to develop your own custom applications and deploy them to the Amiga brain.
+
+This example walks you through an application that:
+- Creates a kivy application
+- Receives and displays an oak camera stream
+- Receives the canbus stream
+- Sends canbus commands to control the robot
+
+## CircuitPython Examples
+
+:::info
+These are the examples for developing programs for the [farm-ng Micro-controller Kit](../mcu_kit/).
+:::
+
 To begin any of these examples, start by cloning the `amiga-dev-kit` repository:
 ```bash
 cd <to_your_base_directory>
 git clone git@github.com:farm-ng/amiga-dev-kit.git
 ```
 
-## [Hello World Auto-mode (hello_main_loop)](./hello_main_loop/)
+### [Hello World Auto-mode (hello_main_loop)](./hello_main_loop/)
 
 [Link to `hello_main_loop/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/hello_main_loop/code.py)
 
@@ -31,7 +57,7 @@ Topics:
 - Auto-mode control
 
 
-## [Cansniffer](./cansniffer/)
+### [Cansniffer](./cansniffer/)
 
 [Link to `cansniffer/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/cansniffer/code.py)
 
@@ -44,7 +70,7 @@ Topics:
 
 - CAN introduction
 
-## [FPV](./FPV/)
+### [FPV](./FPV/)
 
 [Link to `FPV/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/FPV/code.py)
 

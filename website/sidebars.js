@@ -67,15 +67,19 @@ const sidebars = {
       ],
     }
   ],
-  "examples": [
-    "examples/examples-index",
-    "examples/hello_main_loop/hello-world",
-    "examples/cansniffer/cansniffer",
-    "examples/FPV/fpv",
-    "examples/camera_client/camera-client",
-    "examples/camera_client_gui/camera-client-gui",
-    "examples/virtual_joystick/virtual-joystick",
-  ],
+  "examples": {
+    "Index": ["examples/examples-index"],
+    "CircuitPython" : [
+        "examples/hello_main_loop/hello-world",
+        "examples/cansniffer/cansniffer",
+        "examples/FPV/fpv",
+    ],
+    "Brain" : [
+        "examples/virtual_joystick/virtual-joystick",
+        "examples/camera_client/camera-client",
+        "examples/camera_client_gui/camera-client-gui",
+    ]
+},
   "contribute": [
     "contribute/contribute-website"
   ]
