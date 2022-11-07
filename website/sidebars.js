@@ -74,6 +74,7 @@ const sidebars = {
     "examples/FPV/fpv",
     "examples/camera_client/camera-client",
     "examples/camera_client_gui/camera-client-gui",
+    "examples/virtual_joystick/virtual-joystick",
   ],
   "contribute": [
     "contribute/contribute-website"
