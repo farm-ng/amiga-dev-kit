@@ -19,11 +19,12 @@ link to example in amiga-brain-api
 
 This example application and tutorial is designed to enable you to develop your own custom applications and deploy them to the Amiga brain.
 
-This example walks you through an application that:
-- Creates a kivy application
-- Receives and displays an oak camera stream
-- Receives the canbus stream
-- Sends canbus commands to control the robot
+The topics covered in this tutorial include:
+- Creating kivy applications
+- GRPC / asyncio application development
+- Streaming an Oak camera with the camera client
+- Streaming Amiga state information with the canbus client
+- Auto control mode of Amiga robot with the canbus client
 
 ## CircuitPython Examples
 

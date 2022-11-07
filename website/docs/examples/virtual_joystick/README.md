@@ -4,17 +4,45 @@ title: Virtual Joystick Example
 ---
 # Virtual Joystick Example
 
-The purpose of this example application and tutorial is to enable you to develop your own custom apps and deploy them to the Amiga brain.
+This example application and tutorial is designed to enable you to develop your own custom applications and deploy them to the Amiga brain.
 
-Here we provide an example application that:
-- Creates a kivy application
-- Receives and displays an oak camera stream
-- Receives the canbus stream
-- Sends canbus commands to control the robot
+On the Brain, there are multiple gRPC services running in the background, including the oak camera service and the canbus service.
+We will teach you how to interact with these two services through the camera client and canbus client, respectively.
+We will also show you how to create a basic kivy application, and use gRPC and asyncio in that application.
 
+The topics covered in this tutorial include:
+- Creating kivy applications
+- GRPC / asyncio application development
+- Streaming an Oak camera with the camera client
+- Streaming Amiga state information with the canbus client
+- Auto control mode of Amiga robot with the canbus client
 
+:::tip
 We hope that this tutorial is sufficient to get you started on developing your own custom Amiga brain applications.
-If you feel we missed any key details, please let us know so we can help you through it and add it to the tutorial for the next hacker!
+If you feel we missed any key details, please let us know so we can help you through it and add it to the tutorial for everyone else to benefit from!
+:::
+
+
+## Infrastructure instructions
+
+:::caution Coming soon
+Link to instructions for setting up amiga-brain-template
+:::
+
+:::caution Coming soon
+Link to instructions for deploying apps to brain
+:::
+
+The following assumes you:
+- Have created a repository based on the template repository
+- Are able to deploy apps from that repository to the Amiga Brain
+
+
+## Block diagram
+
+:::caution Coming soon
+System level block diagram
+:::
 
 ## Necessary Background
 
