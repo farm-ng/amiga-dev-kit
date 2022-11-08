@@ -48,7 +48,7 @@ We are actively working on this support, so please reach out with an issues you 
 #### For Windows
 
 You should run this with windows Subsystem for Linux (WSL).
-This is a well supported and documented environemnt.
+This is a well supported and documented environment.
 
 [**Install WSL**](https://learn.microsoft.com/en-us/windows/wsl/install)
 
