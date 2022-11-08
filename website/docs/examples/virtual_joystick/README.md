@@ -373,6 +373,47 @@ There is infrastructure in place for defining command line args, which you'll li
 The last six lines are a useful pattern for cleanly running your app with `asyncio`.
 
 
+
+### Rename the `TemplateApp`
+
+Now that you understand the template, it's time to rename it for your app.
+In this tutorial, we'll go with `VirtualJoystickApp`.
+
+There's 3 places to change the templated name:
+```Python
+# 1. Rename the class
+class VirtualJoystickApp(App):
+    def __init__(self) -> None:
+        super().__init__()
+
+...
+
+# 2. Rename the program
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(prog="virtual-joystick")
+
+...
+
+# 3. Run with the new class name
+try:
+    loop.run_until_complete(VirtualJoystickApp().app_func())
+except asyncio.CancelledError:
+    pass
+```
+
+
+
+### Run the app
+
+Now sync the app to the brain and launch it!
+
+:::caution Coming soon
+Link to instructions for deploying apps to brain
+:::
+
+You should see a blank kivy app pop up, once loaded, with only a `Back` button.
+Try out the button to exit the app.
+
 ### Canbus Stream
 
 ...
