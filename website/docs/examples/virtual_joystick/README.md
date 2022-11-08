@@ -421,6 +421,11 @@ Try out the button to exit the app.
 ![template](https://user-images.githubusercontent.com/53625197/200450581-7c93eb1f-3aa2-49f5-9c52-51e8b051c76e.png)
 
 
+:::caution Coming soon
+Link to this checkpoint
+:::
+
+
 ### Add a canbus stream
 
 The first thing we'll add to our app is a canbus stream.
@@ -776,12 +781,16 @@ Now sync the app to the brain and launch it!
 
 You should see the `AmigaTpdo1` values update in realtime as you drive the amiga and change between various command states. See [Amiga Control States](../../dashboard/control_states.mdx) and [`AmigaControlState`](https://github.com/farm-ng/amiga-brain-api/blob/main/py/farm_ng/canbus/packet.py) for more information on the `state` parameter.
 
-:::tip
+:::caution
 Make sure all your cables are disconnected from the Amiga before driving around!
 :::
 
 ![canbus_stream](https://user-images.githubusercontent.com/53625197/200458674-f596c306-f10d-48f0-b336-c69dcb774811.png)
 
+
+:::caution Coming soon
+Link to this checkpoint
+:::
 
 
 ### Add a camera stream
@@ -1021,6 +1030,10 @@ Check all four tabs to investigate the different camera streams provided by the 
 
 ![camera_stream](https://user-images.githubusercontent.com/53625197/200481937-5fc317bc-614d-4446-89f5-9df70471c3f6.png)
 
+
+:::caution Coming soon
+Link to this checkpoint
+:::
 
 ### Add the VirtualJoystickWidget
 
@@ -1276,58 +1289,102 @@ Now sync the app to the brain and launch it!
 You should now see the virtual joystick between the camera stream (far right) and the `AmigaTpdo1` values from the canbus (left).
 Try moving the joystick around with your finger and releasing it, but note: It won't drive yet!
 
-:::caution coming soon
-Screen shot of virtual joystick
+![joystick](https://user-images.githubusercontent.com/53625197/200641720-c722fa9f-f6a3-4918-a4f0-d7270b73fd43.png)
+
+
+:::caution Coming soon
+Link to this checkpoint
 :::
 
+### Control the Amiga
 
-## Old code details to pull from
+Finally, we will use this virtual joystick and the canbus client / service connection to control the Amiga to get us to the full Virtual Joystick example.
 
-:::info TODO
-
-Final step -- format tutorial for sending can messages...
-
+:::caution Coming soon
+Link to virtual joystick example
 :::
+
+#### imports
+
+The imports we need to add for this step are:
+
+```Python
+import logging
+from farm_ng.canbus.packet import make_amiga_rpdo1_proto
+```
+
+
+#### Additional args
+
+We'll add two `float` parameters to the `VirtualJoystickApp` in the constructor.
+```Python
+# Parameters
+self.max_speed: float = 1.0
+self.max_angular_rate: float = 1.0
+```
+
 
 #### send_can_msgs
 
-This task ensures the canbus client `sendCanbusMessage` method has the [`pose_generator`](#pose_generator) it will use to send messages on the can bus.
+To control the robot from our app, we will use the canbus client to send can messages to the canbus service.
+The service will then unpack, reformat, and forward the can message onto the CAN bus.
 
 This task uses the [sendCanbusMessage](https://github.com/farm-ng/amiga-brain-api/blob/main/protos/farm_ng/canbus/canbus.proto) RPC, which defines a client stream.
 The client stream can be thought of as the inverse of the server streams we've seen so far.
 In this client stream, the canbus client can sends a stream of requests, of type `SendCanbusMessageRequest`, to the canbus service and receives a single message, of type `SendCanbusMessageReply`,  until the stream is explicitly stopped, or either of the client or service is killed.
 In this app, we never actually stop the stream, so don't expect to receive a `SendCanbusMessageReply`.
 
+The client streaming RPC is started by passing an iterator containing the messages we want to stream.
+We use the [`Generator`](https://book.pythontips.com/en/latest/generators.html) defined in [pose_generator](#pose_generator) for our iterator.
+
 ```Python
-client.stub.sendCanbusMessage(self.pose_generator())
+async def send_can_msgs(self, client: CanbusClient) -> None:
+    """This task ensures the canbus client sendCanbusMessage method has the pose_generator it will use to send
+    messages on the can bus."""
+    while self.root is None:
+        await asyncio.sleep(0.01)
+
+    while True:
+        if client.state.value != canbus_pb2.CanbusServiceState.RUNNING:
+            logging.debug("Controller requires running canbus service")
+            client.stub.sendCanbusMessage(self.pose_generator())
+        await asyncio.sleep(0.25)
 ```
 
-The client streaming RPC is started by passing an iterator containing the messages to stream.
-We use the [`Generator`](https://book.pythontips.com/en/latest/generators.html) defined in [pose_generator](#pose_generator) for our iterator.
+This task ensures the canbus client `sendCanbusMessage` method has the [`pose_generator`](#pose_generator) it will use to send messages on the can bus.
+
+
+
 
 Once the root of the kivy app is created, this task ensures the `sendCanbusMessage` RPC starts and then loops forever.
 While it seems unnecessary to loop forever here, it gives you a placeholder for additional logic you may want to implement!
 
 
+
 #### pose_generator
 
-```Python
-while self.root is None:
-    await asyncio.sleep(0.01)
+We create a [`Generator`](https://book.pythontips.com/en/latest/generators.html) that will run forever as an interator.
+If you're not familiar with the concept, you can think of a `Genrator` as a function that retuns an array one element at a time.
 
-joystick: VirtualJoystickWidget = self.root.ids["joystick"]
+```Python
+async def pose_generator(self, period: float = 0.02):
+    """The pose generator yields an AmigaRpdo1 (auto control command) for the canbus client to send on the bus
+    at the specified period (recommended 50hz) based on the onscreen joystick position."""
+    while self.root is None:
+        await asyncio.sleep(0.01)
+
+    joystick: VirtualJoystickWidget = self.root.ids["joystick"]
+    while True:
+        msg: canbus_pb2.RawCanbusMessage = make_amiga_rpdo1_proto(
+            state_req=AmigaControlState.STATE_AUTO_ACTIVE,
+            cmd_speed=self.max_speed * joystick.joystick_pose.y,
+            cmd_ang_rate=self.max_angular_rate * -joystick.joystick_pose.x,
+        )
+        yield canbus_pb2.SendCanbusMessageRequest(message=msg)
+        await asyncio.sleep(period)
 ```
 Once the root of the kivy app is created, the `VirtualJoystickWidget` is accessed by its `id:`.
 
-```Python
-while True:
-    msg: canbus_pb2.RawCanbusMessage = make_amiga_rpdo1_proto(
-        state_req=AmigaControlState.STATE_AUTO_ACTIVE,
-        cmd_speed=self.max_speed * joystick.joystick_pose.y,
-        cmd_ang_rate=self.max_angular_rate * -joystick.joystick_pose.x,
-    )
-    yield canbus_pb2.SendCanbusMessageRequest(message=msg)
-```
 The pose generator yields an `AmigaRpdo1` (auto control command) for the canbus client to send on the bus at the specified period (recommended 50hz) based on the onscreen joystick position.
 It makes use of the `make_amiga_rpdo1_proto()` method that takes a:
 - requested state (AmigaControlState)
@@ -1337,13 +1394,42 @@ It makes use of the `make_amiga_rpdo1_proto()` method that takes a:
 to construct a [`RawCanbusMessage`](https://github.com/farm-ng/amiga-brain-api/blob/main/protos/farm_ng/canbus/canbus.proto).
 These messages, packed into a `SendCanbusMessageRequest`, are `yield`-ed to the canbus service to send on the CAN bus.
 
-> NOTE: The `AmigaRpdo1` message is only a request. The vehicle control unit (VCU) in the Amiga dashboard has safety critical logic that prevents unsafe auto control.
+:::tip
+The `AmigaRpdo1` message is only a request. The vehicle control unit (VCU) in the Amiga dashboard has safety critical logic that prevents unsafe auto control.
+:::
+
+Each loop we sleep to enforce the ideal rate of streaming `AmigaRpdo1` CAN messages, which is 50 hz. You can modify the period parameter, but go to slow and you lose responsiveness, and go too fast and you risk saturating the CAN bus, which can cause loss of communication between all components on the bus.
+
+
+#### add as an task
+
+Remember to add the `send_can_msgs()` method to the `asyncio.Task` in our list in `app_func()`.
 
 ```Python
-await asyncio.sleep(period)
+self.async_tasks.append(asyncio.ensure_future(self.send_can_msgs(canbus_client)))
 ```
 
-We sleep to enforce the ideal rate of streaming `AmigaRpdo1` CAN messages, which is 50 hz. You can modify the period parameter, but go to slow and you lose responsiveness, and go too fast and you risk saturating the CAN bus, which can cause loss of communication between all components on the bus.
+
+### Run the app - Amiga control
+
+Now sync the app to the brain and launch it!
+
+Everything should look just like the last checkpoint, but now you can drive the Amiga the the virtual joystick!
+
+:::caution
+Make sure all your cables are disconnected from the Amiga and no one is in the way of the Amiga before driving around!
+:::
+
+
+![auto_control](https://user-images.githubusercontent.com/53625197/200641685-a712fb2d-66f7-4ec2-bf92-e6d96c93cadb.png)
+
+:::caution Coming soon
+Link to virtual joystick example
+:::
+
+
+
+### Future additions
 
 :::info Take it further
 Try to add a kivy `Button` widget that toggles the requested `AmigaControlState` so the brain is not constantly trying to take control of the dashboard while running.

@@ -2,6 +2,7 @@
 import argparse
 import asyncio
 import io
+import logging
 import os
 from math import sqrt
 from typing import Generator
@@ -15,6 +16,7 @@ from farm_ng.canbus.canbus_client import CanbusClient
 from farm_ng.canbus.canbus_client import CanbusClientConfig
 from farm_ng.canbus.packet import AmigaControlState
 from farm_ng.canbus.packet import AmigaTpdo1
+from farm_ng.canbus.packet import make_amiga_rpdo1_proto
 from farm_ng.canbus.packet import parse_amiga_tpdo1_proto
 from farm_ng.oak import oak_pb2
 from farm_ng.oak.camera_client import OakCameraClient
@@ -148,6 +150,7 @@ class VirtualJoystickWidget(Widget):
             )
         )
 
+
 class VirtualJoystickApp(App):
     # For kivy labels
     amiga_speed = StringProperty()
@@ -166,6 +169,10 @@ class VirtualJoystickApp(App):
         self.amiga_state: str = "NO CANBUS\nSERVICE DETECTED"
         self.amiga_speed: str = "???"
         self.amiga_rate: str = "???"
+
+        # Parameters
+        self.max_speed: float = 1.0
+        self.max_angular_rate: float = 1.0
 
         self.async_tasks: List[asyncio.Task] = []
 
@@ -260,8 +267,8 @@ class VirtualJoystickApp(App):
 
         # Canbus task(s)
         self.async_tasks.append(asyncio.ensure_future(self.stream_canbus(canbus_client)))
+        self.async_tasks.append(asyncio.ensure_future(self.send_can_msgs(canbus_client)))
         self.async_tasks.append(asyncio.ensure_future(canbus_client.poll_service_state()))
-
 
         # Drawing task(s)
         self.async_tasks.append(asyncio.ensure_future(self.draw()))
@@ -328,6 +335,34 @@ class VirtualJoystickApp(App):
                         io.BytesIO(getattr(frame, view_name).image_data), ext="jpg"
                     ).texture
             await asyncio.sleep(0.01)
+
+    async def send_can_msgs(self, client: CanbusClient) -> None:
+        """This task ensures the canbus client sendCanbusMessage method has the pose_generator it will use to send
+        messages on the can bus."""
+        while self.root is None:
+            await asyncio.sleep(0.01)
+
+        while True:
+            if client.state.value != canbus_pb2.CanbusServiceState.RUNNING:
+                logging.debug("Controller requires running canbus service")
+                client.stub.sendCanbusMessage(self.pose_generator())
+            await asyncio.sleep(0.25)
+
+    async def pose_generator(self, period: float = 0.02):
+        """The pose generator yields an AmigaRpdo1 (auto control command) for the canbus client to send on the bus
+        at the specified period (recommended 50hz) based on the onscreen joystick position."""
+        while self.root is None:
+            await asyncio.sleep(0.01)
+
+        joystick: VirtualJoystickWidget = self.root.ids["joystick"]
+        while True:
+            msg: canbus_pb2.RawCanbusMessage = make_amiga_rpdo1_proto(
+                state_req=AmigaControlState.STATE_AUTO_ACTIVE,
+                cmd_speed=self.max_speed * joystick.joystick_pose.y,
+                cmd_ang_rate=self.max_angular_rate * -joystick.joystick_pose.x,
+            )
+            yield canbus_pb2.SendCanbusMessageRequest(message=msg)
+            await asyncio.sleep(period)
 
     async def draw(self) -> None:
         """Loop over drawing the VirtualJoystickWidget."""
