@@ -3,11 +3,9 @@ import argparse
 import asyncio
 import io
 import os
-from math import sqrt
 from typing import Generator
 from typing import List
 from typing import Optional
-from typing import Tuple
 
 import grpc
 from farm_ng.canbus import canbus_pb2
@@ -32,17 +30,14 @@ Config.set("graphics", "fullscreen", "false")
 Config.set("input", "mouse", "mouse,disable_on_activity")
 Config.set("kivy", "keyboard_mode", "systemanddock")
 
-from kivy.graphics import Color, Ellipse  # noqa: E402
 from kivy.input.providers.mouse import MouseMotionEvent  # noqa: E402
 from kivy.properties import StringProperty  # noqa: E402
 from kivy.app import App  # noqa: E402
 from kivy.lang.builder import Builder  # noqa: E402
-from kivy.uix.widget import Widget  # noqa: E402
 from kivy.core.image import Image as CoreImage  # noqa: E402
 from kivy.core.window import Window  # noqa: E402
 
 kv = """
-<VirtualJoystickWidget@Widget>:
 RelativeLayout:
     Button:
         id: back_btn_layout
@@ -67,8 +62,6 @@ RelativeLayout:
                 text: "speed:\\n" + str(app.amiga_speed) + "  [m/s]"
             Label:
                 text: "angular rate:\\n" + str(app.amiga_rate) + "  [rad/s]"
-        VirtualJoystickWidget:
-            id: joystick
         TabbedPanel:
             do_default_tab: False
             TabbedPanelItem:
@@ -89,64 +82,6 @@ RelativeLayout:
                     id: right
 """
 
-
-def relative_cord_in_widget(
-    widget: Widget, touch: MouseMotionEvent, scale: Tuple[float, float] = (-1.0, 1.0)
-) -> Optional[Tuple[float, float]]:
-    """Returns the coordinates of the touch on the scale IFF it occurs within the bounds of the widget."""
-    x_s: Tuple[int, int] = (widget.pos[0], widget.pos[0] + widget.width)
-    y_s: Tuple[int, int] = (widget.pos[1], widget.pos[1] + widget.height)
-
-    if not (x_s[0] < touch.x < x_s[1]) or not (y_s[0] < touch.y < y_s[1]):
-        return None
-
-    return (
-        scale[0] + (touch.x - x_s[0]) * (scale[1] - scale[0]) / (widget.width),
-        scale[0] + (touch.y - y_s[0]) * (scale[1] - scale[0]) / (widget.height),
-    )
-
-
-class Vec2:
-    """Simple container for keeping joystick coords in x & y terms.
-
-    Defaults to a centered joystick (0,0). Clips values to range [-1.0, 1.0], as with the Amiga joystick.
-    """
-
-    def __init__(self, x: float = 0.0, y: float = 0.0) -> None:
-        self.x: float = min(max(-1.0, x), 1.0)
-        self.y: float = min(max(-1.0, y), 1.0)
-
-
-class VirtualJoystickWidget(Widget):
-    def __init__(self, **kwargs) -> None:
-        super(VirtualJoystickWidget, self).__init__(**kwargs)
-
-        self.joystick_pose: Vec2 = Vec2()
-        self.joystick_rad: int = 100
-
-    def draw(self) -> None:
-        self.canvas.clear()
-
-        # Draw background circle
-        self.canvas.add(Color(0.2, 0.2, 0.2, 1.0, mode="rgba"))
-        self.canvas.add(
-            Ellipse(
-                pos=(self.center_x - self.width // 2, self.center_y - self.height // 2), size=(self.width, self.height)
-            )
-        )
-
-        # Draw joystick at position
-        x_abs, y_abs = (
-            self.center_x + 0.5 * self.joystick_pose.x * (self.width - 2 * self.joystick_rad),
-            self.center_y + 0.5 * self.joystick_pose.y * (self.height - 2 * self.joystick_rad),
-        )
-        self.canvas.add(Color(1.0, 1.0, 0.0, 1.0, mode="rgba"))
-        self.canvas.add(
-            Ellipse(
-                pos=(x_abs - self.joystick_rad, y_abs - self.joystick_rad),
-                size=(self.joystick_rad * 2, self.joystick_rad * 2),
-            )
-        )
 
 class VirtualJoystickApp(App):
     # For kivy labels
@@ -180,13 +115,8 @@ class VirtualJoystickApp(App):
                 if w.dispatch("on_touch_down", touch):
                     return True
 
-            joystick: VirtualJoystickWidget = self.root.ids["joystick"]
+            # Add additional on_touch_down behavior here
 
-            res: Optional[Tuple[float, float]] = relative_cord_in_widget(widget=joystick, touch=touch)
-            if res:
-                # Clip to unit circle
-                div: float = max(1.0, sqrt(res[0] ** 2 + res[1] ** 2))
-                joystick.joystick_pose = Vec2(x=res[0] / div, y=res[1] / div)
             return False
 
         def on_touch_move(window: Window, touch: MouseMotionEvent) -> bool:
@@ -199,13 +129,8 @@ class VirtualJoystickApp(App):
                 if w.dispatch("on_touch_move", touch):
                     return True
 
-            joystick: VirtualJoystickWidget = self.root.ids["joystick"]
+            # Add additional on_touch_move behavior here
 
-            res: Optional[Tuple[float, float]] = relative_cord_in_widget(widget=joystick, touch=touch)
-            if res:
-                # Clip to unit circle
-                div: float = max(1.0, sqrt(res[0] ** 2 + res[1] ** 2))
-                joystick.joystick_pose = Vec2(x=res[0] / div, y=res[1] / div)
             return False
 
         def on_touch_up(window: Window, touch: MouseMotionEvent) -> bool:
@@ -217,9 +142,9 @@ class VirtualJoystickApp(App):
             for w in window.children[:]:
                 if w.dispatch("on_touch_up", touch):
                     return True
-            joystick: VirtualJoystickWidget = self.root.ids["joystick"]
 
-            joystick.joystick_pose = Vec2()
+            # Add additional on_touch_up behavior here
+
             return False
 
         Window.bind(on_touch_down=on_touch_down)
@@ -334,9 +259,7 @@ class VirtualJoystickApp(App):
         while self.root is None:
             await asyncio.sleep(0.01)
 
-        joystick: VirtualJoystickWidget = self.root.ids["joystick"]
         while True:
-            joystick.draw()
             self.update_kivy_strings()
             await asyncio.sleep(0.01)
 
