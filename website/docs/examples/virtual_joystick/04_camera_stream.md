@@ -37,7 +37,7 @@ Here we add another import from our [farm-ng libraries](#farm-ng-libraries).
 #### TabbedPanel of Image widgets
 BoxLayout
 To conveniently package the 4 image streams from the oak camera in the kivy `Window`, we will add the `Image` widgets as a `TabbedPanel`.
-A `BoxLayout` will be convenient to stack the `TabbedPanel` of image streams next to the `Labels` displaying the `AmigaTpdo1` values steramed from the canbus.
+A `BoxLayout` will be convenient to stack the `TabbedPanel` of image streams next to the `Labels` displaying the `AmigaTpdo1` values streamed from the canbus.
 So we push the `BoxLayout` of `Label` widgets one level deeper and add an additional `BoxLayout` level.
 
 So we will have a `BoxLayout` that stacks 2 sub-widgets horizontally (by default) of:

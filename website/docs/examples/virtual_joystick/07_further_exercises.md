@@ -27,4 +27,3 @@ This could require stopping the stream of messages from the generator, signallin
 :::tip possible hint
 sending `grpc.aio.EOF` might do it...
 :::
-

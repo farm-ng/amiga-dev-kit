@@ -68,8 +68,8 @@ While it seems unnecessary to loop forever here, it gives you a placeholder for 
 
 #### pose_generator
 
-We create a [`Generator`](https://book.pythontips.com/en/latest/generators.html) that will run forever as an interator.
-If you're not familiar with the concept, you can think of a `Genrator` as a function that retuns an array one element at a time.
+We create a [`Generator`](https://book.pythontips.com/en/latest/generators.html) that will run forever as an iterator.
+If you're not familiar with the concept, you can think of a `Genrator` as a function that returns an array one element at a time.
 
 ```Python
 async def pose_generator(self, period: float = 0.02):
@@ -145,7 +145,3 @@ Link to dashboard instructions to enter auto mode
 :::caution Coming soon
 Link to virtual joystick example
 :::
-
-
-
-
