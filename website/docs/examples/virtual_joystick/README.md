@@ -1420,6 +1420,14 @@ Everything should look just like the last checkpoint, but now you can drive the 
 Make sure all your cables are disconnected from the Amiga and no one is in the way of the Amiga before driving around!
 :::
 
+Navigate to the auto tab and enter the `Auto Ready` state.
+The Brain should take control and enter the `Auto Active` state right away, allowing you to drive with the screen.
+You should see the state on the dashboard match that displayed on the Brain in your app.
+
+:::caution Coming soon
+Link to dashboard instructions to enter auto mode
+:::
+
 
 ![auto_control](https://user-images.githubusercontent.com/53625197/200641685-a712fb2d-66f7-4ec2-bf92-e6d96c93cadb.png)
 
@@ -1429,22 +1437,28 @@ Link to virtual joystick example
 
 
 
-### Future additions
+### Fun exercises
 
-:::info Take it further
+Optionally, go beyond the tutorial and try to add features to this example.
+Two options are:
+
+#### Adjustable rates
+
+Define two kivy [`Slider`](https://kivy.org/doc/stable/api-kivy.uix.slider.html) widgets that allow changing `max_speed` & `max_angular_rate`!
+Play around with where you can put these and how you can link them directly to the value in the `VirtualJoystickApp`.
+
+Just remember, the actual rates the amiga drives at are limited by the vehicle control unit (VCU), so don't be surprised if the true max speed doesn't reflect the slider.
+
+
+#### Toggle between Auto modes
+
 Try to add a kivy `Button` widget that toggles the requested `AmigaControlState` so the brain is not constantly trying to take control of the dashboard while running.
 
 Or more advanced, add a button that starts/stops the sending of canbus messages.
 This could require stopping the stream of messages from the generator, signalling to the `sendCanbusMessage` to stop, and re-initializing the `sendCanbusMessage` RPC later.
 
-possible hint: sending `grpc.aio.EOF` might do it...
+:::tip possible hint
+sending `grpc.aio.EOF` might do it...
 :::
 
-
-:::info Take it further
-Define two kivy [`Slider`](https://kivy.org/doc/stable/api-kivy.uix.slider.html) widgets that allow changing `max_speed` & `max_angular_rate`!
-Play around with where you can put these and how you can link them directly to the value in the `VirtualJoystickApp`.
-
-Just remember, the actual rates the amiga drives at are limited by the vehicle control unit (VCU), so don't be surprised if the true max speed doesn't reflect the slider.
-:::
 
