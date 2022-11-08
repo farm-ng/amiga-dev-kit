@@ -29,6 +29,34 @@ If you feel we missed any key details, please let us know so we can help you thr
 System level block diagram
 :::
 
+## Your system
+
+This process works best on Ubuntu 20.04, but we also support Mac and Windows systems.
+
+#### For Mac
+
+Everything should work as with Linux, though there may be some unmet dependencies you can install with `brew`.
+E.g.,
+```bash
+brew install wget
+```
+Some of the scripts may fail, and we're working through that.
+For instance, if you come into an `md5sum` issue, you'll need to change `md5sum` to `md5`.
+
+We are actively working on this support, so please reach out with an issues you encounter so we can help you through them and resolve it promptly!
+
+#### For Windows
+
+You should run this with windows Subsystem for Linux (WSL).
+This is a well supported and documented environemnt.
+
+[**Install WSL**](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+You should install **WSL2**, using the **Ubuntu 20.04** distribution.
+
+One option: [Ubuntu 20.04 from Microsoft store](https://apps.microsoft.com/store/detail/ubuntu-2004/9N6SVWS3RX71)
+
+
 ## Necessary background knowledge
 
 The Amiga brain app development meets at the intersection of three key libraries, as well as some farm-ng libraries:

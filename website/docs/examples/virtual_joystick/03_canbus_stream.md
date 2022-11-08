@@ -45,6 +45,46 @@ The imports ending in `*_pb2` are the compiled `*.proto` definitions we use in t
 For example, `from farm_ng.canbus import canbus_pb2` imports the proto messages defined in [canbus.proto](https://github.com/farm-ng/amiga-brain-api/blob/main/protos/farm_ng/canbus/canbus.proto).
 
 
+#### setup.cfg
+
+`setup.cfg` manages the dependencies we install.
+
+Add these two dependencies:
+```
+grpcio
+farm_ng_amiga @ git+https://github.com/farm-ng/amiga-brain-api@main
+```
+
+under both `setup_requires` and `install_requires`.
+
+so `setup.cfg` looks like:
+
+```
+[metadata]
+name = Virtual_Joystick
+
+
+[options]
+install_requires =
+    kivy
+    grpcio
+    wheel==0.37.1
+    farm_ng_amiga @ git+https://github.com/farm-ng/amiga-brain-api@main
+package_dir =
+    = apps
+packages = find:
+python_requires = >=3.6
+setup_requires =
+    kivy
+    grpcio
+    wheel==0.37.1
+    farm_ng_amiga @ git+https://github.com/farm-ng/amiga-brain-api@main
+
+
+[options.packages.find]
+where = apps
+```
+
 #### kivy Labels
 
 Kivy has the concept of nesting, so not only can you add `Widgets` within `Layouts`, but also you can recursively add `Layouts` within `Layouts`.
@@ -351,17 +391,33 @@ These are values used by gRPC to link client to server and are handled by `entry
 #### entry.sh
 
 :::caution coming soon
-Instructions for editing entry.sh to correctly use these args
+Instructions for editing entry.sh to automatically use these args
+:::
+
+For now, just hard code the values in `entry.sh` to match the `launcher_configuration.json`.
+`entry.sh` should become:
+
+```
+#!/bin/bash -ex
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+$DIR/bootstrap.sh $DIR $DIR/venv
+
+$DIR/venv/bin/python $DIR/main.py --canbus-port 50060
+
+exit 0
+```
+:::info
+If you change the canbus port in the `launcher_configuration.json`, hard code the corresponding value.
 :::
 
 ### Run the app - canbus stream
 
-Now sync the app to the brain and launch it!
+Now sync the app to the Brain and launch it with the following instructions!
 
 :::info Deploy Instructions
-[Deploy Instructions](../../brain/custom-applications.md)
+[Deploy Instructions](../../brain/custom-applications.md) for syncing the app onto the Amiga Brain.
 :::
-
 
 You should see the `AmigaTpdo1` values update in realtime as you drive the amiga and change between various command states. See [Amiga Control States](../../dashboard/control_states.mdx) and [`AmigaControlState`](https://github.com/farm-ng/amiga-brain-api/blob/main/py/farm_ng/canbus/packet.py) for more information on the `state` parameter.
 

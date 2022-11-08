@@ -256,10 +256,10 @@ Here we set the `joystick_pose` back to a default `Vec2` pose of `(0,0)` wheneve
 
 ### Run the app - virtual joystick
 
-Now sync the app to the brain and launch it!
+Now sync the app to the Brain and launch it with the following instructions!
 
 :::info Deploy Instructions
-[Deploy Instructions](../../brain/custom-applications.md)
+[Deploy Instructions](../../brain/custom-applications.md) for syncing the app onto the Amiga Brain.
 :::
 
 You should now see the virtual joystick between the camera stream (far right) and the `AmigaTpdo1` values from the canbus (left).

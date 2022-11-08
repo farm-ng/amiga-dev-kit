@@ -117,11 +117,10 @@ self.async_tasks.append(asyncio.ensure_future(self.send_can_msgs(canbus_client))
 
 ### Run the app - Amiga control
 
-Now sync the app to the brain and launch it!
-
+Now sync the app to the Brain and launch it with the following instructions!
 
 :::info Deploy Instructions
-[Deploy Instructions](../../brain/custom-applications.md)
+[Deploy Instructions](../../brain/custom-applications.md) for syncing the app onto the Amiga Brain.
 :::
 
 

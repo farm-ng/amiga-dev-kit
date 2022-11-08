@@ -230,16 +230,33 @@ Lastly, we sleep for our default duration of 10ms before the next iteration.
 #### entry.sh
 
 :::caution coming soon
-Instructions for editing entry.sh to correctly use these args
+Instructions for editing entry.sh to automatically use these args
+:::
+
+For now, just hard code the values in `entry.sh` to match the `launcher_configuration.json`.
+`entry.sh` should become:
+
+```
+#!/bin/bash -ex
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+$DIR/bootstrap.sh $DIR $DIR/venv
+
+$DIR/venv/bin/python $DIR/main.py --canbus-port 50060 --camera-port 50051
+
+exit 0
+```
+:::info
+If you changed the camera port of `Oak0` in the `launcher_configuration.json`, or want to use a different oak device, hard code the corresponding `port` value.
+
 :::
 
 ### Run the app - camera stream
 
-Now sync the app to the brain and launch it!
-
+Now sync the app to the Brain and launch it with the following instructions!
 
 :::info Deploy Instructions
-[Deploy Instructions](../../brain/custom-applications.md)
+[Deploy Instructions](../../brain/custom-applications.md) for syncing the app onto the Amiga Brain.
 :::
 
 
