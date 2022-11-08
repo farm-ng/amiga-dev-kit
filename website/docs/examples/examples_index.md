@@ -11,7 +11,7 @@ title: Examples Index
 These are the examples for developing applications for the [farm-ng Brain](../brain/).
 :::
 
-### [Virtual Joystick](./virtual_joystick/)
+### [Virtual Joystick Tutorial](./virtual_joystick/00_overview.md)
 
 :::caution Coming soon
 link to example in amiga-brain-api
