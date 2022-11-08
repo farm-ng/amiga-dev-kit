@@ -5,10 +5,17 @@ title: Template Starter
 # Template Starter
 
 
+## Set up your Amiga brain template
 
-### Rename the `TemplateApp`
+[amiga-brain-example README](https://github.com/farm-ng/amiga-brain-example#readme)
 
-Now that you understand the template, it's time to rename it for your app.
+:::tip
+Feel free to choose any name, but it's recommended to go with `Virtual Joystick`.
+:::
+
+## Rename the `TemplateApp`
+
+Now that you've created the template, it's time to rename it for your app.
 In this tutorial, we'll go with `VirtualJoystickApp`.
 
 There's 3 places to change the templated name:
@@ -37,8 +44,8 @@ except asyncio.CancelledError:
 
 Now sync the app to the brain and launch it!
 
-:::caution Coming soon
-Link to instructions for deploying apps to brain
+:::info Deploy Instructions
+[Deploy Instructions](../../brain/custom-applications.md)
 :::
 
 You should see a blank kivy app pop up, once loaded, with only a `Back` button.
@@ -50,3 +57,4 @@ Try out the button to exit the app.
 :::caution Coming soon
 Link to this checkpoint
 :::
+

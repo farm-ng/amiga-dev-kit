@@ -23,21 +23,6 @@ If you feel we missed any key details, please let us know so we can help you thr
 :::
 
 
-## Infrastructure instructions
-
-:::caution Coming soon
-Link to instructions for setting up amiga-brain-template
-:::
-
-:::caution Coming soon
-Link to instructions for deploying apps to brain
-:::
-
-The following assumes you:
-- Have created a repository based on the template repository
-- Are able to deploy apps from that repository to the Amiga Brain
-
-
 ## Block diagram
 
 :::caution Coming soon

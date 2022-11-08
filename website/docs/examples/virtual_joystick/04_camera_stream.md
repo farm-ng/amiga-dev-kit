@@ -237,6 +237,12 @@ Instructions for editing entry.sh to correctly use these args
 
 Now sync the app to the brain and launch it!
 
+
+:::info Deploy Instructions
+[Deploy Instructions](../../brain/custom-applications.md)
+:::
+
+
 You should now see camera stream to the right of the `AmigaTpdo1` values from the canbus.
 Check all four tabs to investigate the different camera streams provided by the oak camera.
 

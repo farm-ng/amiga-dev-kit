@@ -358,6 +358,11 @@ Instructions for editing entry.sh to correctly use these args
 
 Now sync the app to the brain and launch it!
 
+:::info Deploy Instructions
+[Deploy Instructions](../../brain/custom-applications.md)
+:::
+
+
 You should see the `AmigaTpdo1` values update in realtime as you drive the amiga and change between various command states. See [Amiga Control States](../../dashboard/control_states.mdx) and [`AmigaControlState`](https://github.com/farm-ng/amiga-brain-api/blob/main/py/farm_ng/canbus/packet.py) for more information on the `state` parameter.
 
 :::caution

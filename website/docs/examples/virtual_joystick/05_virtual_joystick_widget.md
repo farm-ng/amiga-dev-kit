@@ -258,6 +258,10 @@ Here we set the `joystick_pose` back to a default `Vec2` pose of `(0,0)` wheneve
 
 Now sync the app to the brain and launch it!
 
+:::info Deploy Instructions
+[Deploy Instructions](../../brain/custom-applications.md)
+:::
+
 You should now see the virtual joystick between the camera stream (far right) and the `AmigaTpdo1` values from the canbus (left).
 Try moving the joystick around with your finger and releasing it, but note: It won't drive yet!
 

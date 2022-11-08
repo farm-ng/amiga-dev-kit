@@ -9,10 +9,6 @@ title: Auto Control
 
 Finally, we will use this virtual joystick and the canbus client / service connection to control the Amiga to get us to the full Virtual Joystick example.
 
-:::caution Coming soon
-Link to virtual joystick example
-:::
-
 #### imports
 
 The imports we need to add for this step are:
@@ -123,6 +119,12 @@ self.async_tasks.append(asyncio.ensure_future(self.send_can_msgs(canbus_client))
 
 Now sync the app to the brain and launch it!
 
+
+:::info Deploy Instructions
+[Deploy Instructions](../../brain/custom-applications.md)
+:::
+
+
 Everything should look just like the last checkpoint, but now you can drive the Amiga the the virtual joystick!
 
 :::caution
@@ -146,33 +148,4 @@ Link to virtual joystick example
 
 
 
-### Fun exercises
 
-Optionally, go beyond the tutorial and try to add features to this example.
-Two options are:
-
-#### Adjustable rates
-
-Define two kivy [`Slider`](https://kivy.org/doc/stable/api-kivy.uix.slider.html) widgets that allow changing `max_speed` & `max_angular_rate`!
-Play around with where you can put these and how you can link them directly to the value in the `VirtualJoystickApp`.
-
-Just remember, the actual rates the amiga drives at are limited by the vehicle control unit (VCU), so don't be surprised if the true max speed doesn't reflect the slider.
-
-
-#### Toggle between Auto modes
-
-Try to add a kivy `Button` widget that toggles the requested `AmigaControlState` so the brain is not constantly trying to take control of the dashboard while running.
-
-Or more advanced, add a button that starts/stops the sending of canbus messages.
-This could require stopping the stream of messages from the generator, signalling to the `sendCanbusMessage` to stop, and re-initializing the `sendCanbusMessage` RPC later.
-
-:::tip possible hint
-sending `grpc.aio.EOF` might do it...
-:::
-
-
----
-id: virtual-joystick-widget
-title: Virtual Joystick Widget
----
-# Virtual Joystick Widget

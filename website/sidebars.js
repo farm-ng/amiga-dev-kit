@@ -80,12 +80,13 @@ const sidebars = {
     ],
     "Brain Tutorial" :[
         "examples/virtual_joystick/virtual-joystick-overview",
-        "examples/virtual_joystick/template-overview",
         "examples/virtual_joystick/template-starter",
+        "examples/virtual_joystick/template-overview",
         "examples/virtual_joystick/canbus-stream",
         "examples/virtual_joystick/camera-stream",
         "examples/virtual_joystick/virtual-joystick-widget",
         "examples/virtual_joystick/auto-control",
+        "examples/virtual_joystick/further-exercises",
     ]
 },
   "contribute": [
