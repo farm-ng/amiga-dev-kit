@@ -226,7 +226,9 @@ All we add here is a placeholder for the `TemplateApp` class methods that will e
 def build(self):
     def on_touch_down(window: Window, touch: MouseMotionEvent) -> bool:
         """Handles initial press with mouse click or touchscreen."""
-        if isinstance(touch, MouseMotionEvent) and int(os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)):
+        if isinstance(touch, MouseMotionEvent) and int(
+            os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)
+        ):
             return True
         for w in window.children[:]:
             if w.dispatch("on_touch_down", touch):
@@ -238,7 +240,9 @@ def build(self):
 
     def on_touch_move(window: Window, touch: MouseMotionEvent) -> bool:
         """Handles when press is held and dragged with mouse click or touchscreen."""
-        if isinstance(touch, MouseMotionEvent) and int(os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)):
+        if isinstance(touch, MouseMotionEvent) and int(
+            os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)
+        ):
             return True
         for w in window.children[:]:
             if w.dispatch("on_touch_move", touch):
@@ -250,7 +254,9 @@ def build(self):
 
     def on_touch_up(window: Window, touch: MouseMotionEvent) -> bool:
         """Handles release of press with mouse click or touchscreen."""
-        if isinstance(touch, MouseMotionEvent) and int(os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)):
+        if isinstance(touch, MouseMotionEvent) and int(
+            os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)
+        ):
             return True
         for w in window.children[:]:
             if w.dispatch("on_touch_up", touch):
@@ -315,7 +321,7 @@ async def app_func(self):
         for task in self.async_tasks:
             task.cancel()
 
-    # Placeholder task(s)
+    # Placeholder task
     self.async_tasks.append(asyncio.ensure_future(self.template_function()))
 
     return await asyncio.gather(run_wrapper(), *self.async_tasks)
