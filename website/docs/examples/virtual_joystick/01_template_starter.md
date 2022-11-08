@@ -57,4 +57,3 @@ Try out the button to exit the app.
 :::caution Coming soon
 Link to this checkpoint
 :::
-

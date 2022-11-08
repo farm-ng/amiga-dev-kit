@@ -107,9 +107,7 @@ class VirtualJoystickApp(App):
     def build(self):
         def on_touch_down(window: Window, touch: MouseMotionEvent) -> bool:
             """Handles initial press with mouse click or touchscreen."""
-            if isinstance(touch, MouseMotionEvent) and int(
-                os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)
-            ):
+            if isinstance(touch, MouseMotionEvent) and int(os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)):
                 return True
             for w in window.children[:]:
                 if w.dispatch("on_touch_down", touch):
@@ -121,9 +119,7 @@ class VirtualJoystickApp(App):
 
         def on_touch_move(window: Window, touch: MouseMotionEvent) -> bool:
             """Handles when press is held and dragged with mouse click or touchscreen."""
-            if isinstance(touch, MouseMotionEvent) and int(
-                os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)
-            ):
+            if isinstance(touch, MouseMotionEvent) and int(os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)):
                 return True
             for w in window.children[:]:
                 if w.dispatch("on_touch_move", touch):
@@ -135,9 +131,7 @@ class VirtualJoystickApp(App):
 
         def on_touch_up(window: Window, touch: MouseMotionEvent) -> bool:
             """Handles release of press with mouse click or touchscreen."""
-            if isinstance(touch, MouseMotionEvent) and int(
-                os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)
-            ):
+            if isinstance(touch, MouseMotionEvent) and int(os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)):
                 return True
             for w in window.children[:]:
                 if w.dispatch("on_touch_up", touch):
@@ -186,7 +180,6 @@ class VirtualJoystickApp(App):
         # Canbus task(s)
         self.async_tasks.append(asyncio.ensure_future(self.stream_canbus(canbus_client)))
         self.async_tasks.append(asyncio.ensure_future(canbus_client.poll_service_state()))
-
 
         # Drawing task(s)
         self.async_tasks.append(asyncio.ensure_future(self.draw()))
