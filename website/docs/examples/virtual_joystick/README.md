@@ -44,90 +44,84 @@ The following assumes you:
 System level block diagram
 :::
 
-## Necessary Background
+## Necessary background knowledge
 
-The Amiga brain app development meets at the intersection of three key libraries, and some farm-ng libraries:
+The Amiga brain app development meets at the intersection of three key libraries, as well as some farm-ng libraries:
 
 1. [gRPC](https://grpc.io/)
 2. [asyncio](https://docs.python.org/3/library/asyncio.html)
 3. [kivy](https://kivy.org/)
 4. [farm-ng libraries](#farm-ng-libraries)
 
-* Currently we are supporting Python app development, but our infrastructure allows for C++ app development in the near future.
+:::info
+Currently we are only supporting Python app development, but our infrastructure allows for C++ app development support in the near future.
+:::
 
 ### gRPC
 
 The best place to start to gain an understanding of gRPC is the [gRPC introduction](https://grpc.io/docs/what-is-grpc/introduction/), followed by the [gRPC core concepts](https://grpc.io/docs/what-is-grpc/core-concepts/).
 
 gRPC is used as our communication protocol between services (running in the background) and clients (what you link in your app).
-The communication is through Protocol Buffers, defined in `*proto` files in our [farm-ng libraries](#farm-ng-libraries).
+The communication is through Protocol Buffers, defined in `*.proto` files in our [farm-ng libraries](#farm-ng-libraries).
 
 ### asyncio
 
 The best place to start to gain an understanding of asyncio is the [asyncio docs](https://docs.python.org/3/library/asyncio.html).
 
 We use asyncio in order to run multiple concurrent tasks in our applications.
-This allows us to walk and chew bubble gum, rather than take a step, take a chew, take a step, take a chew, and on...
+This is crucial to the system design to prevent high rate robotic control from being blocked by time consuming processes, such as image processing.
 
-In the virtual joystick example, this means we can have multiple, concurrent `while` loops running that:
-- Receives the camera stream (from the camera service)
-- Receives the canbus stream (from the canbus service)
-- Draws the joystick (in [kivy](#kivy))
-- Sends canbus commands (to the canbus service)
+In the virtual joystick example, we have multiple, concurrent `while` loops running that:
+- Receive the camera stream (from the camera service)
+- Receive the canbus stream (from the canbus service)
+- Draw the joystick (in [kivy](#kivy))
+- Send canbus commands (to the canbus service)
 
 ### kivy
 
 The best place to start to gain an understanding of kivy is the [kivy Getting Started >> Introduction](https://kivy.org/doc/stable/gettingstarted/intro.html).
 
 We use kivy to draw our apps and handle touch screen interactions for our interactive apps.
-kivy has its own language -- [the Kv language](https://kivy.org/doc/stable/guide/lang.html), can be coded in Python, or some combination of both!
+kivy can be coded in its own language ([the Kv language](https://kivy.org/doc/stable/guide/lang.html)), in Python, or in some combination of both!
 
 We tend to define our apps in the kv language at the top of the app files using `"""` strings, and may add some interaction in Python code.
 In this example, however, we also demonstrate creating a custom kivy `Widget` in Python!
 
 ### farm-ng libraries
 
-We have some libraries that are imported by the brain infrastructure and our apps.
+We have some libraries that are imported by the brain infrastructure and are used in our apps.
 They are:
 - defined as python packages (installed with `pip` by pointing to the repo)
 - contain the `.proto` definitions used in our gRPC communications
 - contain the gRPC clients you can use to interact with the Amiga brain services
 
-- [farm_ng_core](https://github.com/farm-ng/farm-ng-core)
-- [farm_ng_amiga](https://github.com/farm-ng/amiga-brain-api)
+See: [farm_ng_core](https://github.com/farm-ng/farm-ng-core)
+
+See: [farm_ng_amiga](https://github.com/farm-ng/amiga-brain-api)
 
 
-## Code Breakdown
+## Virtual Joystick tutorial
 
-We recommend opening the [`virtual_joystick/main.py`](https://github.com/farm-ng/amiga-brain-example/blob/main/apps/virtual_joystick/main.py) example on the side as you read through this breakdown.
+The goal of this tutorial is to take you step-by-step from the template repository to the full [`virtual_joystick/main.py`](https://github.com/farm-ng/amiga-brain-api/blob/main/py/examples/virtual_joystick/main.py) example.
+Then you can mirror what you've done here in your own custom app development!
 
-> NOTE: This assumes you have some experience with Python programming.
 
-### imports
+### Template overview
 
-We start with generic Python imports that are used in the app,
-followed by imports from our [farm-ng libraries](#farm-ng-libraries) such as `farm_ng.canbus` and `farm_ng.oak`.
-These are both defined in the [farm_ng_amiga](https://github.com/farm-ng/amiga-brain-api) package.
+This section explains all of the Python code in the template, so you can understand the base before adding anything.
 
-The imports ending in `_pb2` are the compiled `*.proto` definitions we ause in the app.
-For example,
+#### Imports
+
 ```Python
-from farm_ng.canbus import canbus_pb2
-```
-imports the proto messages defined in [canbus.proto](https://github.com/farm-ng/amiga-brain-api/blob/main/protos/farm_ng/canbus/canbus.proto).
+# Copyright (c) farm-ng, inc. Amiga Development Kit License, Version 0.1
+import argparse
+import asyncio
+import os
+from typing import List
 
-
-With the kivy imports, things are slightly more complicated.
-Before any kivy imports, we must define:
-```Python
 # Must come before kivy imports
 os.environ["KIVY_NO_ARGS"] = "1"
-```
-so that the command line args for the app is used, rather than the default kivy command line args.
 
-Next we import kivy `Config` and define the config parameters we recommend for running kivy applications on the brain.
-
-```Python
 from kivy.config import Config  # noreorder # noqa: E402
 
 Config.set("graphics", "resizable", False)
@@ -136,49 +130,281 @@ Config.set("graphics", "height", "800")
 Config.set("graphics", "fullscreen", "false")
 Config.set("input", "mouse", "mouse,disable_on_activity")
 Config.set("kivy", "keyboard_mode", "systemanddock")
+
+from kivy.input.providers.mouse import MouseMotionEvent  # noqa: E402
+from kivy.app import App  # noqa: E402
+from kivy.lang.builder import Builder  # noqa: E402
+from kivy.core.window import Window  # noqa: E402
 ```
 
+The template starts with generic Python imports that are used in the app, followed by the basic kivy imports and configuration.
+Before any kivy imports, we must explicitly state that the command line args for the app are to be used, rather than the default kivy command line args, with `os.environ["KIVY_NO_ARGS"] = "1"`.
+
+
+Next we import kivy `Config` and define the config parameters we recommend for running kivy applications on the brain.
 This should come before importing any other Kivy modules, as stated in [kivy - Configuration object](https://kivy.org/doc/stable/api-kivy.config.html).
 
-Finally we import the remaining kivy modules we use in our app, with the
-```Python
-# noqa: E402
-```
-flag, so any `pre-commit` formatters don't move these imports above the configuration setting.
+Finally we import the remaining kivy modules we use in our app, with the `# noqa: E402` flag, so any `pre-commit` formatters don't move these imports above the kivy configuration setting.
 
-### kivy app definition
+
+#### kivy app definition
+
+```Python
+kv = """
+RelativeLayout:
+    Button:
+        id: back_btn_layout
+        pos_hint: {"x": 0.0, "top": 1.0}
+        background_color: 0, 0, 0, 0
+        size_hint: 0.1, 0.1
+        background_normal: "assets/back_button.png"
+        on_release: app.on_exit_btn()
+        Image:
+            source: "assets/back_button_normal.png" \
+            if self.parent.state == "normal" \
+            else "assets/back_button_down.png"
+            pos: self.parent.pos
+            size: self.parent.size
+"""
+```
 
 Next we define our application in the Kv language.
 This definition can be a string at the top of a `.py` file or can be defined
-in a separate `.kv` file.
+in a separate `.kv` file, and we tend to go for strings at the top of the Python file.
 
-> NOTE: We explain the kivy app that we create in this example, but this is by no means a thorough introduction to the kivy language. Try the [kivy tutorials](https://kivy.org/doc/stable/tutorials-index.html) and use the [kivy API](https://kivy.org/doc/stable/api-index.html) for more information on creating applications with kivy.
+:::tip
+Throughout this tutorial we'll explain the kivy app created in this example, but this is not intended as a thorough introduction to using kivy. Try the [kivy tutorials](https://kivy.org/doc/stable/tutorials-index.html) and use the [kivy API](https://kivy.org/doc/stable/api-index.html) for more information on creating custom applications with kivy.
+:::
 
-Two key components of kivy are [`Layouts`](https://kivy.org/doc/stable/gettingstarted/layouts.html#) and [`Widgets`](https://kivy.org/doc/stable/api-kivy.uix.html).
-Kivy also has the concept of nesting, so you may notice in our app we have
-3 `Label` widgets in a `BoxLayout`, which is in another `BoxLayout`, which itself is in the base `RelativeLayout`.
 
 #### RelativeLayout
 
-The root of our app is a `RelativeLayout`, which contains a `Button` widget and a `BoxLayout`, with multiple nested Widgets and Layouts.
+Two key components of kivy are [`Layouts`](https://kivy.org/doc/stable/gettingstarted/layouts.html#) and [`Widgets`](https://kivy.org/doc/stable/api-kivy.uix.html).
+The root of our template app is a `RelativeLayout`, which contains a `Button` widget.
+The `RelativeLayout` allows us to position the [Back button](#back-button) (and any widgets or nested layouts we may add in the future) in relative coordinates.
 
 - Reference: [Relative Layout](https://kivy.org/doc/stable/api-kivy.uix.relativelayout.html)
 
 #### Back button
 
-The `Button` is used to exit the app when it is pressed, by calling the `VirtualPendantApp.on_exit_btn()` method.
+This `Button` is used to exit the app when it is pressed, by calling the [`TemplateApp.on_exit_btn()`](#on_exit_button) method.
 
-> NOTE: To be precise it's actually when the button is released due to using the `on_release:` keyword).
+:::info
+To be precise it's actually when the button is released due to using the `on_release:` keyword.
+:::
 
-Since the `VirtualPendantApp` inherits from the kivy `App` class, methods and variables of the `VirtualPendantApp` can be linked with the `app.foo_variable` or `app.bar_method()`
+Since the `TemplateApp` inherits from the kivy `App` class, methods and variables of the `TemplateApp` can be linked with the `app.foo_variable` or `app.bar_method()`
 We define the `Button` with two images, one that shows most of the time, and another that shows while the button is pressed down.
-You can also just define a button with a string, if you just want test instead of an image.
+You can also define a button with a string, if you want to quickly add buttons without finding an icon.
 
-> TIP: [Material Icons](https://github.com/google/material-design-icons) is a nice place to find symbols to use for app buttons / UI features.
+:::tip
+[Material Icons](https://github.com/google/material-design-icons) is a nice place to find symbols to use for app buttons / UI features.
+:::
 
-- Reference: Button](https://kivy.org/doc/stable/api-kivy.uix.button.html)
+- Reference: [Button](https://kivy.org/doc/stable/api-kivy.uix.button.html)
+
+
+
+#### TemplateApp
+
+```Python
+class TemplateApp(App):
+    def __init__(self) -> None:
+        super().__init__()
+
+        self.async_tasks: List[asyncio.Task] = []
+```
+
+We define the `TemplateApp` to inherit from the kivy `App` class, so it has all the features of a generic `App`, plus anything we add to it.
+
+All we add here is a placeholder for the `TemplateApp` class methods that will each be added as an `asyncio.Task`.
+
+
+#### build
+
+```Python
+def build(self):
+    def on_touch_down(window: Window, touch: MouseMotionEvent) -> bool:
+        """Handles initial press with mouse click or touchscreen."""
+        if isinstance(touch, MouseMotionEvent) and int(os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)):
+            return True
+        for w in window.children[:]:
+            if w.dispatch("on_touch_down", touch):
+                return True
+
+        # Add additional on_touch_down behavior here
+
+        return False
+
+    def on_touch_move(window: Window, touch: MouseMotionEvent) -> bool:
+        """Handles when press is held and dragged with mouse click or touchscreen."""
+        if isinstance(touch, MouseMotionEvent) and int(os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)):
+            return True
+        for w in window.children[:]:
+            if w.dispatch("on_touch_move", touch):
+                return True
+
+        # Add additional on_touch_move behavior here
+
+        return False
+
+    def on_touch_up(window: Window, touch: MouseMotionEvent) -> bool:
+        """Handles release of press with mouse click or touchscreen."""
+        if isinstance(touch, MouseMotionEvent) and int(os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)):
+            return True
+        for w in window.children[:]:
+            if w.dispatch("on_touch_up", touch):
+                return True
+
+        # Add additional on_touch_up behavior here
+
+        return False
+
+    Window.bind(on_touch_down=on_touch_down)
+    Window.bind(on_touch_move=on_touch_move)
+    Window.bind(on_touch_up=on_touch_up)
+
+    return Builder.load_string(kv)
+```
+
+
+`build` is a default kivy `App` method that we must overwrite with our app's details.
+
+To load the Kv formatted string into our app, we use the built-in method:
+
+```Python
+Builder.load_string(KV_STRING)
+```
+
+But first, we need to override the default touch handling since we are interacting on a touchscreen.
+
+##### touch handling
+
+`on_touch_down`, `on_touch_move`, and `on_touch_up` define the behavior at various stages of a screen press or mouse click.
+Because kivy can mis-register touches on the touchscreen, you will notice the clear pattern that all of these follow to correct for this.
+There is a placeholder after the initial pattern in all of these that allows you to add logic to be performed at these various stages of the press.
+
+We also must bind these touch handling functions to the kivy app `Window`.
+
+:::info Note
+In the future we plan to hide this so it is not needed in your apps.
+:::
+
+
+#### on_exit_button
+
+```Python
+def on_exit_btn(self) -> None:
+    """Kills the running kivy application."""
+    App.get_running_app().stop()
+```
+
+This simple method stops the running kivy app.
+When an app was launched on the Amiga Brain through the Launcher app, this will return the Brain state to the Launcher app.
+
+
+
+#### app_func
+
+```Python
+async def app_func(self):
+    async def run_wrapper() -> None:
+        # we don't actually need to set asyncio as the lib because it is
+        # the default, but it doesn't hurt to be explicit
+        await self.async_run(async_lib="asyncio")
+        for task in self.async_tasks:
+            task.cancel()
+
+    # Placeholder task(s)
+    self.async_tasks.append(asyncio.ensure_future(self.template_function()))
+
+    return await asyncio.gather(run_wrapper(), *self.async_tasks)
+```
+
+We use the `app_func` pattern, with the nested `run_wrapper`, to build, run, and manage the list of long duration, asynchronous tasks required by the app.
+
+Here we build the list of `async` methods that will run simultaneously for the life of our app.
+Currently this list only consists of a placeholder method called [`template_function()`](#template_function) that we will later replace with tasks that actually do something.
+
+Each method is added as an `asyncio.Task` following the pattern used to add `self.template_function()`.
+
+#### template_function
+
+```Python
+async def template_function(self) -> None:
+    """Placeholder forever loop."""
+    while self.root is None:
+        await asyncio.sleep(0.01)
+
+    while True:
+        await asyncio.sleep(0.01)
+```
+
+In each of our `async` functions, we should wait for the root of the kivy App to be initialized before doing anything in the function.
+Often these functions will rely on the kivy app, so this prevents unexpected crashes.
+
+In this placeholder, the `while` loop doesn't do anything besides sleep for 10 ms before the next iteration of the `while` loop.
+We tend to add this 10 ms at the end of each of our loops.
+
+:::tip
+The custom defined async functions must be defined with the `async` decorator and any blocking tasks with the `await` keyword.
+:::
+
+#### Command line args and execution
+
+```Python
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(prog="template-app")
+
+    # Add additional command line arguments here
+
+    args = parser.parse_args()
+
+    loop = asyncio.get_event_loop()
+    try:
+        loop.run_until_complete(TemplateApp().app_func())
+    except asyncio.CancelledError:
+        pass
+    loop.close()
+```
+
+Finally we run the app!
+There is infrastructure in place for defining command line args, which you'll likely want in your apps so you don't have to hard code configurations.
+The last six lines are a useful pattern for cleanly running your app with `asyncio`.
+
+
+### Canbus Stream
+
+...
+
+
+
+
+
+
+## Old code details to pull from
+
+
+### imports
+
+~~We start with generic Python imports that are used in the app,~~
+followed by imports from our [farm-ng libraries](#farm-ng-libraries) such as `farm_ng.canbus` and `farm_ng.oak`.
+These are both defined in the [farm_ng_amiga](https://github.com/farm-ng/amiga-brain-api) package.
+
+The imports ending in `*_pb2` are the compiled `*.proto` definitions we ause in the app.
+For example,
+```Python
+from farm_ng.canbus import canbus_pb2
+```
+imports the proto messages defined in [canbus.proto](https://github.com/farm-ng/amiga-brain-api/blob/main/protos/farm_ng/canbus/canbus.proto).
+
+
+
+
 
 #### BoxLayout
+Kivy has the concept of nesting, so you may notice in our app we have
+3 `Label` widgets in a `BoxLayout`, which is in another `BoxLayout`, which itself is in the base `RelativeLayout`.
 
 We then have a box layout that stacks 3 sub-widgets horizontally (by default):
 1. Another BoxLayout with 3 vertically stacked labels
@@ -288,46 +514,8 @@ class VirtualPendantApp(App):
         ...
 ```
 
-#### build
 
-`build` is a default kivy `App` method that we must overwrite with our app's details.
 
-We use the built-in method:
-
-```Python
-Builder.load_string(KV_STRING)
-```
-
-But first, we need to override the default touch handling since we are interacting on a touchscreen.
-
-##### touch handling
-
-`on_touch_down`, `on_touch_move`, and `on_touch_up` define the behavior of when the screen is pressed (or a mouse is clicked when working on a development station).
-
-Because kivy can mis-register touches on the touchscreen, we have a pattern that all of these follow, for instance:
-
-```Python
-def on_touch_down(window: Window, touch: MouseMotionEvent) -> bool:
-    if isinstance(touch, MouseMotionEvent) and int(
-        os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)
-    ):
-        return True
-    for w in window.children[:]:
-        if w.dispatch("on_touch_down", touch):
-            return True
-    ...
-```
-
-Where `...` represents the additional logic you would like to occur on the touch down, move, or up.
-
-We then bind these functions to the `Window` with e.g.:
-```Python
-Window.bind(on_touch_down=on_touch_down)
-```
-
-### app_func
-
-We use the `app_func` pattern, with the nested `run_wrapper` to build, run, and manage the list of long duration, asynchronous tasks required by the app.
 
 #### gRPC service clients
 
@@ -361,14 +549,7 @@ This task:
 - extracts useful values from `AmigaTpdo1` messages
 
 
-> NOTE: the custom defined async functions need to be defined with the `async` decorator.
 
-
-```Python
-while self.root is None:
-    await asyncio.sleep(0.01)
-```
-This prevents any of the async functions from actually doing anything until the root of the kivy App is initialized.
 
 ```Python
 response_stream: Optional[Generator[canbus_pb2.StreamCanbusReply]] = None
