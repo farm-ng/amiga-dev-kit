@@ -414,6 +414,9 @@ Link to instructions for deploying apps to brain
 You should see a blank kivy app pop up, once loaded, with only a `Back` button.
 Try out the button to exit the app.
 
+![template](https://user-images.githubusercontent.com/53625197/200450581-7c93eb1f-3aa2-49f5-9c52-51e8b051c76e.png)
+
+
 ### Canbus Stream
 
 ...
