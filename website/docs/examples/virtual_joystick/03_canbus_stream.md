@@ -52,7 +52,7 @@ For example, `from farm_ng.canbus import canbus_pb2` imports the proto messages 
 Add these two dependencies:
 ```
 grpcio
-farm_ng_amiga @ git+https://github.com/farm-ng/amiga-brain-api@main
+farm_ng_amiga
 ```
 
 under both `setup_requires` and `install_requires`.
@@ -69,7 +69,7 @@ install_requires =
     kivy
     grpcio
     wheel==0.37.1
-    farm_ng_amiga @ git+https://github.com/farm-ng/amiga-brain-api@main
+    farm_ng_amiga
 package_dir =
     = apps
 packages = find:
@@ -78,7 +78,7 @@ setup_requires =
     kivy
     grpcio
     wheel==0.37.1
-    farm_ng_amiga @ git+https://github.com/farm-ng/amiga-brain-api@main
+    farm_ng_amiga
 
 
 [options.packages.find]
