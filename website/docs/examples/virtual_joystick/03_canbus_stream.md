@@ -1,6 +1,6 @@
 ---
 id: canbus-stream
-title: Canbus Stream
+title: 03 - Canbus Stream
 ---
 # Canbus Stream
 
@@ -43,6 +43,43 @@ Here we see the first imports from our [farm-ng libraries](#farm-ng-libraries).
 
 The imports ending in `*_pb2` are the compiled `*.proto` definitions we use in the app.
 For example, `from farm_ng.canbus import canbus_pb2` imports the proto messages defined in [canbus.proto](https://github.com/farm-ng/amiga-brain-api/blob/main/protos/farm_ng/canbus/canbus.proto).
+
+
+#### setup.cfg
+
+`setup.cfg` manages the dependencies we install for the app, and we'll need to add the following dependency under the `install_requires` header:
+```
+grpcio
+```
+
+Now your `setup.cfg` should look something like:
+
+```
+[metadata]
+name = Virtual_Joystick
+
+
+[options]
+setup_requires =
+    wheel==0.37.1
+install_requires =
+    wheel==0.37.1
+    kivy= >=2.1.0
+    farm_ng_amiga
+    grpcio
+package_dir =
+    = apps
+packages = find:
+python_requires = >=3.6
+
+[options.packages.find]
+where = apps
+```
+
+:::tip
+We may periodically update the `setup.cfg` in the app template, so don't be surprised if yours doesn't match this exactly.
+Just drop `grpcio` under `install_requires` and you should be good to go!
+:::
 
 
 #### kivy Labels
@@ -351,17 +388,33 @@ These are values used by gRPC to link client to server and are handled by `entry
 #### entry.sh
 
 :::caution coming soon
-Instructions for editing entry.sh to correctly use these args
+Instructions for editing entry.sh to automatically use these args
+:::
+
+For now, just hard code the values in `entry.sh` to match the `launcher_configuration.json`.
+`entry.sh` should become:
+
+```
+#!/bin/bash -ex
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+$DIR/bootstrap.sh $DIR $DIR/venv
+
+$DIR/venv/bin/python $DIR/main.py --canbus-port 50060
+
+exit 0
+```
+:::info
+If you change the canbus port in the `launcher_configuration.json`, hard code the corresponding value.
 :::
 
 ### Run the app - canbus stream
 
-Now sync the app to the brain and launch it!
+Now sync the app to the Brain and launch it with the following instructions!
 
 :::info Deploy Instructions
-[Deploy Instructions](../../brain/custom-applications.md)
+[Deploy Instructions](../../brain/custom-applications.md) for syncing the app onto the Amiga Brain.
 :::
-
 
 You should see the `AmigaTpdo1` values update in realtime as you drive the amiga and change between various command states. See [Amiga Control States](../../dashboard/control_states.mdx) and [`AmigaControlState`](https://github.com/farm-ng/amiga-brain-api/blob/main/py/farm_ng/canbus/packet.py) for more information on the `state` parameter.
 

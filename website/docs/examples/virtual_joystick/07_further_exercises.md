@@ -1,6 +1,6 @@
 ---
 id: further-exercises
-title: Further Exercises
+title: 07 - Further Exercises
 ---
 # Further Exercises
 
