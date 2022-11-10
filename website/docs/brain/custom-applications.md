@@ -5,6 +5,13 @@ title: Developing Custom Applications
 
 # Developing Custom Applications
 
+
+:::tip
+We now have a full tutorial that walks you through every step of creating custom applications!
+
+Check it out at [Vurtual Joystick Tutorial](./../examples/virtual_joystick/00_overview.md).
+:::
+
 #### Quick Tips
 * The Amiga user is able to install APT packages. Edit the "entry.sh" script in the sample git repository.
 * We leverage a venv per application. The contents of requirements.txt will be installed by the bootstrap.sh script.
