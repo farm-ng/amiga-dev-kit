@@ -47,17 +47,12 @@ For example, `from farm_ng.canbus import canbus_pb2` imports the proto messages 
 
 #### setup.cfg
 
-`setup.cfg` manages the dependencies we install.
-
-Add these two dependencies:
+`setup.cfg` manages the dependencies we install for the app, and we'll need to add the following dependency under the `install_requires` header:
 ```
 grpcio
-farm_ng_amiga
 ```
 
-under both `setup_requires` and `install_requires`.
-
-so `setup.cfg` looks like:
+Now your `setup.cfg` should look something like:
 
 ```
 [metadata]
@@ -65,25 +60,27 @@ name = Virtual_Joystick
 
 
 [options]
-install_requires =
-    kivy
-    grpcio
+setup_requires =
     wheel==0.37.1
+install_requires =
+    wheel==0.37.1
+    kivy= >=2.1.0
     farm_ng_amiga
+    grpcio
 package_dir =
     = apps
 packages = find:
 python_requires = >=3.6
-setup_requires =
-    kivy
-    grpcio
-    wheel==0.37.1
-    farm_ng_amiga
-
 
 [options.packages.find]
 where = apps
 ```
+
+:::tip
+We may periodically update the `setup.cfg` in the app template, so don't be surprised if yours doesn't match this exactly.
+Just drop `grpcio` under `install_requires` and you should be good to go!
+:::
+
 
 #### kivy Labels
 
