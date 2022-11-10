@@ -28,4 +28,3 @@ https://www.uline.com/Product/Detail/H-1784/Lift-Tables/Uline-Manual-Lift-Table-
 
 
 ![IMG_7757](https://user-images.githubusercontent.com/53625197/201174553-ea75745c-4a0e-47b6-8d62-bf94760e97b5.JPG)
-
