@@ -1,6 +1,6 @@
 ---
 id: template-starter
-title: Template Starter
+title: 01 - Template Starter
 ---
 # Template Starter
 
