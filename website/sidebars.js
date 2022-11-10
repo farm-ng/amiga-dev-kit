@@ -50,7 +50,8 @@ const sidebars = {
     //   "pendant/pendant",
     // ],
     "Resources": [
-      "hardware-tools/etools",
+        "hardware-tools/recommended-tools",
+        "hardware-tools/etools",
     ],
   },
   "api": [
