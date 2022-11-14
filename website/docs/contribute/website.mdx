@@ -39,9 +39,40 @@ Follow instructions below for adding images to the website, it's the same for te
 
 ## Installation
 
+Docusaurus allows you to build the docs locally and inspect how the website will appear, before actually deploying.
+
 In order to use docusaurus locally you'll need to install a couple libraries:
 - Node.js version 16.14 or above (which can be checked by running `node -v`)
 - Yarn >= 1.22.19
+
+We recommend doing so in a virtual environment to avoid conflicts with other packages / versions installed on your system.
+Though this is not a requirement and you are welcome to decide how/where to install.
+
+Install `pip3` & `virtualenv` (system level):
+
+```bash
+sudo apt-get install python3-pip
+sudo pip3 install virtualenv
+```
+Start a virtual environment:
+
+```bash
+cd amiga-dev-kit/ # or anywhere you want your `venv` to exist
+python3 -m venv venv
+source venv/bin/activate
+```
+
+You can exit your virtualenv with:
+
+```bash
+deactivate
+```
+
+And re-enter from the root where the venv was created (e.g., `amiga-dev-kit`) with:
+
+```bash
+source venv/bin/activate
+```
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
