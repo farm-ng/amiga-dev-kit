@@ -13,6 +13,7 @@ To get started:
 1. Clone the [Amiga Development Kit repo](https://github.com/farm-ng/amiga-dev-kit)
 ```bash
 git clone git@github.com:farm-ng/amiga-dev-kit.git
+git submodule update --init
 ```
 2. Create a branch based on `main` and open a pull request with your proposed improvements.
   - Reach out to us on the [farm-ng Discord channel](https://discord.gg/YTCyGsEtBU) if you need help or support on this.
@@ -46,7 +47,7 @@ In order to use docusaurus locally you'll need to install a couple libraries:
 - Yarn >= 1.22.19
 
 We recommend doing so in a virtual environment to avoid conflicts with other packages / versions installed on your system.
-Though this is not a requirement and you are welcome to decide how/where to install.
+Though this is not a requirement and you are welcome to decide how / where to install.
 
 Install `pip3` & `virtualenv` (system level):
 
@@ -57,18 +58,19 @@ sudo pip3 install virtualenv
 Start a virtual environment:
 
 ```bash
-cd amiga-dev-kit/ # or anywhere you want your `venv` to exist
+# assuming you're already in the amiga-dev-kit/ directory
+# or wherever you want your `venv` to exist
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-You can exit your virtualenv with:
+Later, you can exit your virtualenv with:
 
 ```bash
 deactivate
 ```
 
-And re-enter from the root where the venv was created (e.g., `amiga-dev-kit`) with:
+And re-enter from the root where the venv was created (e.g., `amiga-dev-kit/`) with:
 
 ```bash
 source venv/bin/activate
@@ -84,7 +86,7 @@ Install NVM / nodejs
 ```bash
 sudo apt update
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-source ~/.bashrc
+# source ~/.bashrc # if not using a venv
 
 # Verify install
 nvm --version
@@ -169,22 +171,30 @@ This command generates static content into the `build` directory and can be serv
 
 ### Start yarn
 
-```bash
-yarn start
-```
-
 :::info
 This command starts a local development server and opens up a browser window.
 Most changes are reflected live without having to restart the server.
 :::
 
-## Gussy up your Markdown
+```bash
+yarn start
+```
+
+## Best practices / tips
+
+- Add command line instructions where possible, rather than just posting link to an external website
+  - Links can be broken without us knowing!
+- .mdx allows for cool extensions included in the file
+    - like the toggle tab things
+- Test your links!
+- Use `Code Spell Checker` VS Code extension (or similar)
+- Gussy up your Markdown
 :::tip
 You can make your work more legible using [admonitions](https://docusaurus.io/docs/markdown-features/admonitions) like this TIP box!
 :::
 More markdown features can be found in the docusaurus documentation [here](https://docusaurus.io/docs/markdown-features).
 
-## Pre-commit formatting workflow
+### Pre-commit formatting workflow
 
 :::caution
 You may need to install pre-commit, instructions can be found [here](https://pre-commit.com/)
