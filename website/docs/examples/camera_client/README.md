@@ -3,7 +3,7 @@ id: camera-client
 title: Camera Client
 ---
 
-### [Link to `camera_client/main.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/brain/examples/camera_client/main.py)
+### [Link to `camera_client/main.py`](https://github.com/farm-ng/amiga-brain-api/blob/main/py/examples/camera_client/main.py)
 
 This example acts as an `OakCameraClient` in a standalone Python script.
 
