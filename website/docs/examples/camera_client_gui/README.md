@@ -3,7 +3,7 @@ id: camera-client-gui
 title: Camera Client GUI
 ---
 
-### [Link to `camera_client_gui/main.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/brain/examples/camera_client_gui/main.py)
+### [Link to `camera_client_gui/main.py`](https://github.com/farm-ng/amiga-brain-api/blob/main/py/examples/camera_client_gui/main.py)
 
 ![Peek 2022-09-02 12-46](https://user-images.githubusercontent.com/5157099/188124779-41f4d519-78d4-453e-9b90-b3d730762b81.gif)
 
