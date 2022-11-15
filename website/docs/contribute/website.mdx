@@ -64,17 +64,7 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-Later, you can exit your virtualenv with:
 
-```bash
-deactivate
-```
-
-And re-enter from the root where the venv was created (e.g., `amiga-dev-kit/`) with:
-
-```bash
-source venv/bin/activate
-```
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -124,32 +114,7 @@ brew install yarn
 
 
 
-## Adding images to the website
 
-:::info
-If you are already working in an active branch, this process works for branched versions of markdown files.
-If you are not, you will be prompted to create a new branch with your edits (to open a pull request) or commit the edits directly.
-:::
-
-We want to keep this repository as lightweight as possible.
-For this reason, please do not add any images to the filesystem of this repository.
-If you'd like to add an image, you should edit the README
-online through Github by:
-
-1. Press the edit button in the top right corner of the markdown file
-2. Drag & drop an image into the markdown file you are editing.
-3. A link to the image should be automatically generated and formattedin the markdown file.
-
-The generated link should look something like: https://user-images.githubusercontent.com/11846963/185976402-ff8c4c77-5a08-42b0-865f-d2840fc0b960.jpg
-
-:::caution
-If you are also editing the file locally, you should add the image to the branch you are actively editing.
-Recommend committing your changes before adding the image to avoid merge conflicts, and using `git pull` to pull in the changes to your local branch before continuing to edit.
-:::
-
-:::tip farm-ng employees
-Please back up the images you add to the website in the `Website/Assets/` directory of our shared drive.
-:::
 
 ## Local Development
 After successful installation and working in the amiga-dev-kit github repo, you'll be able to pull down the latest, create a branch, and send pull requests just as you would editing any repo.
@@ -180,21 +145,60 @@ Most changes are reflected live without having to restart the server.
 yarn start
 ```
 
+Later, you can exit your virtualenv with:
+
+```bash
+deactivate
+```
+
+
+### Re-enter
+When you come back you can re-enter from the root where the venv was created (e.g., `amiga-dev-kit/`) with:
+
+```bash
+# assuming you're already in the amiga-dev-kit/ directory
+# or wherever your `venv` exists
+source venv/bin/activate
+```
+:::caution
+You may find issues with the node, npm, or yarn version.
+If so, re-install these packages in your venv with:
+```bash
+nvm install node
+sudo apt install npm
+sudo npm install -g yarn
+```
+:::
+
+Then rebuild the yarn server;
+
+```bash
+cd website
+yarn
+yarn start
+```
+
 ## Best practices / tips
 
 - Add command line instructions where possible, rather than just posting link to an external website
   - Links can be broken without us knowing!
 - .mdx allows for cool extensions included in the file
-    - like the toggle tab things
+    - Like the tab for different installation instructions(e.g. Mac, Linux, Windows)
+    - Use .mdx plugins to write JSX within your Markdown files and render them as React components.
+      - [See link here](https://docusaurus.io/docs/markdown-features/react)
+- Run [`pre-commit`](#pre-commit-formatting-workflow) checks before committing / pushing
+  - `pre-commit run --all-files`
 - Test your links!
-- Use `Code Spell Checker` VS Code extension (or similar)
+- Use the following VS Code extensions:
+  - `Code Spell Checker`
+  - `Trailing Spaces`
+  - `Markdown All in One`
 - Gussy up your Markdown
+
 :::tip
 You can make your work more legible using [admonitions](https://docusaurus.io/docs/markdown-features/admonitions) like this TIP box!
 More markdown features can be found in the docusaurus documentation [here](https://docusaurus.io/docs/markdown-features).
 :::
-- Use .mdx plugins to write JSX within your Markdown files and render them as React components. 
-[See link here](https://docusaurus.io/docs/markdown-features/react)
 
 ### Pre-commit formatting workflow
 
@@ -212,6 +216,34 @@ pre-commit run --all-files # double check for any formatting issues not resolved
 git commit -m "foo bar baz"
 git push
 ```
+## Adding images to the website
+
+:::info
+If you are already working in an active branch, this process works for branched versions of markdown files.
+If you are not, you will be prompted to create a new branch with your edits (to open a pull request) or commit the edits directly.
+:::
+
+We want to keep this repository as lightweight as possible.
+For this reason, please do not add any images to the filesystem of this repository.
+If you'd like to add an image, you should edit the README
+online through Github by:
+
+1. Press the edit button in the top right corner of the markdown file
+2. Drag & drop an image into the markdown file you are editing.
+3. A link to the image should be automatically generated and formattedin the markdown file.
+
+The generated link should look something like: https://user-images.githubusercontent.com/11846963/185976402-ff8c4c77-5a08-42b0-865f-d2840fc0b960.jpg
+
+:::caution
+If you are also editing the file locally, you should add the image to the branch you are actively editing.
+Recommend committing your changes before adding the image to avoid merge conflicts, and using `git pull` to pull in the changes to your local branch before continuing to edit.
+:::
+
+:::tip farm-ng employees
+Please back up the images you add to the website in the `Website/Assets/` directory of our shared drive.
+:::
+
+
 &nbsp
 &nbsp
 &nbsp
