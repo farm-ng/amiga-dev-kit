@@ -12,7 +12,7 @@ And we want to enable you to easily upgrade your dashboard with these improvemen
 :::tip Update
 Over-the-air (OTA) firmware updates for the dashboard application layer are now supported!
 This means that going forward you will be able to wirelessly update your amiga dashboard applications from the touchscreen.
-The OTA update method is available starting with release: [amiga-dash-v0.1.1](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.1.1).
+The OTA update method is available in all of the latest releases, starting with [amiga-dash-v0.1.1](https://github.com/farm-ng/amiga-dev-kit/releases).
 
 For dashboards with earlier versions of the firmware, one additional wired update is required to get to v0.1.1 or later.
 So make sure you have your [**debug cable**](./../debug_cable/) handy before proceeding with the following firmware update steps.
@@ -33,8 +33,14 @@ This process is currently only supported on Windows and Mac.
 
 **Access the files:**
 
-1. Download the application zip file [amiga-dash-v0.1.2.zip](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.1.2/amiga-dash-v0.1.2.zip)
-2. For more details on the release navigate to [Release: amiga-dash-v0.1.2](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.1.2)
+1. Download the latest application zip file [amiga-dash-v0.1.2.zip](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.1.2/amiga-dash-v0.1.2.zip)
+2. For more details on the latest release navigate to [Release: amiga-dash-v0.1.2](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.1.2)
+
+:::tip
+- Check the [amiga-dev-kit Releases](https://github.com/farm-ng/amiga-dev-kit/releases) page, because there may be an even newer available release.
+- Select the newest `amiga-dash-v#.#.#` and download that version.
+- The `fw-dash-v#.#.#` updates are different, and are explained in [UF2 bootloader update](#uf2-bootloader-update).
+:::
 
 **Connect to your dashboard:**
 
