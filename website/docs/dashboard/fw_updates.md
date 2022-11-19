@@ -26,13 +26,13 @@ Note: the OTA update method does not yet support the (infrequent) UF2 bootloader
 We are working on a full walk through of using the `Updator` app.
 In the meantime, please note:
 
-- For dashboards with the `v0.1.1` `Updator` app installed, you will be able to perform your updates wirelessly.
-- It is important that you start by updating your `Updator` app to `v0.1.3` (or later),
-and then proceed to updating your `Dashboard` app to `v0.1.3` (or later).
+- For dashboards with the `v0.1.3` `Updator` app installed, you will be able to install any available update.
+- For dashboards with the `v0.1.1` `Updator` app installed, it is important that you start by updating your `Updator` app to `v0.1.3`.
+  - You can then proceed to updating your `Dashboard` app to `v0.1.3` (or later) and your `Updator` app to versions later than `v0.1.3`.
   - If you have trouble updating your  `v0.1.1` `Updator` app to `v0.1.3`, please try again.
   - If the update fails during the download, it will pick up where it left off when you get back to the download stage.
-  - If you are not able to complete the update, you should perform a wired update to the latest [`amiga-dash` release](https://github.com/farm-ng/amiga-dev-kit/releases).
-- For dashboards without any `Updator` app, you should perform a wired update to the latest [`amiga-dash` release](https://github.com/farm-ng/amiga-dev-kit/releases).
+  - If you are not able to complete the update, you should perform a wired update to the latest [amiga-dash release](https://github.com/farm-ng/amiga-dev-kit/releases).
+- For dashboards without any `Updator` app, you should perform a wired update to the latest [amiga-dash release](https://github.com/farm-ng/amiga-dev-kit/releases).
 :::
 
 ### Wired updates
