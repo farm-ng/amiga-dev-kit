@@ -29,7 +29,10 @@ In the meantime, please note:
 - For dashboards with the `v0.1.1` `Updator` app installed, you will be able to perform your updates wirelessly.
 - It is important that you start by updating your `Updator` app to `v0.1.3` (or later),
 and then proceed to updating your `Dashboard` app to `v0.1.3` (or later).
-- For dashboards without any `Updator` app, you must perform a wired update.
+  - If you have trouble updating your  `v0.1.1` `Updator` app to `v0.1.3`, please try again.
+  - If the update fails during the download, it will pick up where it left off when you get back to the download stage.
+  - If you are not able to complete the update, you should perform a wired update to the latest [`amiga-dash` release](https://github.com/farm-ng/amiga-dev-kit/releases).
+- For dashboards without any `Updator` app, you should perform a wired update to the latest [`amiga-dash` release](https://github.com/farm-ng/amiga-dev-kit/releases).
 :::
 
 ### Wired updates
