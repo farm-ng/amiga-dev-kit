@@ -14,11 +14,22 @@ Over-the-air (OTA) firmware updates for the dashboard application layer are now 
 This means that going forward you will be able to wirelessly update your amiga dashboard applications from the touchscreen.
 The OTA update method is available in all of the latest releases, starting with [amiga-dash-v0.1.1](https://github.com/farm-ng/amiga-dev-kit/releases).
 
-For dashboards with earlier versions of the firmware, one additional wired update is required to get to v0.1.1 or later.
+For dashboards with earlier versions of the firmware, one additional wired update is required to get to `v0.1.1` or later.
 So make sure you have your [**debug cable**](./../debug_cable/) handy before proceeding with the following firmware update steps.
 If you don't have one, reach out to us using one of the options on our [**For Developers**](https://farm-ng.com/pages/for-developers) page.
+And make sure to choose the latest available version when performing your wired update!
 
 Note: the OTA update method does not yet support the (infrequent) UF2 bootloader updates, so keep your debug cable somewhere safe.
+:::
+
+:::caution coming soon
+We are working on a full walk through of using the `Updator` app.
+In the meantime, please note:
+
+- For dashboards with the `v0.1.1` `Updator` app installed, you will be able to perform your updates wirelessly.
+- It is important that you start by updating your `Updator` app to `v0.1.3` (or later),
+and then proceed to updating your `Dashboard` app to `v0.1.3` (or later).
+- For dashboards without any `Updator` app, you must perform a wired update.
 :::
 
 ### Wired updates
@@ -33,8 +44,8 @@ This process is currently only supported on Windows and Mac.
 
 **Access the files:**
 
-1. Download the latest application zip file [amiga-dash-v0.1.2.zip](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.1.2/amiga-dash-v0.1.2.zip)
-2. For more details on the latest release navigate to [Release: amiga-dash-v0.1.2](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.1.2)
+1. Download the latest application zip file [amiga-dash-v0.1.3.zip](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.1.3/amiga-dash-v0.1.3.zip)
+2. For more details on the latest release navigate to [Release: amiga-dash-v0.1.3](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.1.3)
 
 :::tip
 - Check the [amiga-dev-kit Releases](https://github.com/farm-ng/amiga-dev-kit/releases) page, because there may be an even newer available release.
