@@ -12,14 +12,22 @@ We now have a full tutorial that walks you through every step of creating custom
 Check it out at [Vurtual Joystick Tutorial](./../examples/virtual_joystick/00_overview.md).
 :::
 
-#### Quick Tips
+### Quick Tips
 * The Amiga user is able to install APT packages. Edit the "entry.sh" script in the sample git repository.
 * We leverage a venv per application. The contents of requirements.txt will be installed by the bootstrap.sh script.
 * If you've updated the requirements.txt remove the hidden ".lock" before relaunching the app from the Brain UI.
 * You may use VSCode remote development/containers to edit directly on the Amiga brain as well.
 
 
-#### Initial Configuration
+#### Prerequisites
+
+- Linux / WSL:
+  - `apt install wget`
+- Mac:
+  - `brew install wget`
+
+
+### Initial Configuration
 To make ssh easier, we'll add some configuration to our ssh on the workstation.
 
 First check if a file `~/.ssh/config` exists on your workstation.
@@ -47,8 +55,10 @@ Host amiga
     User amiga
     StrictHostKeyChecking no
 ```
-:::tip
-`<ip address>` can be found on the bottom right of the Amiga Brain screen, without the `<` & `>` symbols.
+:::tip tips
+- `<ip address>` can be found on the bottom right of the Amiga Brain screen
+  - Remove the `<` & `>` symbols.
+- Your development station and your Amiga should be on the same network.
 :::
 This utilizes the IP address displayed on the bottom right of the brain display:
 
@@ -63,11 +73,20 @@ ssh amiga
 exit
 ```
 
-Open the "Hello World" workspace by ... You may use an alternate editor of your choice. If you do, the sample application for publishing an app is located at amiga-dev-kit/brain/examples/hello
+### Select an app
 
-Using a terminal window, change to the git repository file cloned above.
+Select an example from the [amiga-brain-api examples](https://github.com/farm-ng/amiga-brain-api/tree/main/py/examples) or create an app from the [template repository](https://github.com/farm-ng/amiga-brain-example).
+See the [template README](https://github.com/farm-ng/amiga-brain-example#readme) for instructions on cloning and creating an app.
 
-#### Live Code Syncing
+:::caution coming soon
+The [amiga-brain-api examples](https://github.com/farm-ng/amiga-brain-api/tree/main/py/examples) will soon be updated to match
+the template repository for setup / install on the amiga.
+
+In the meantime, you can copy the `main.py`, `requirements.txt`, and `assets/` directory (if present)
+from the example and drop them into an app you create in the template repository.
+:::
+
+### Live Code Syncing
 
 Now we'll start a synchronization session that will mirror the code in this directory to an Apps directory (/data/apps) on the Amiga Brain. Note: This directory is persistent across reboots.
 
@@ -82,19 +101,6 @@ To start the synchronization process in the background:
 ```bash
 ./sync.sh -s start
 ```
-
-:::tip
-`wget` is a  prerequisite.
-
-Linux / WSL:
-```bash
-apt install wget
-```
-Mac:
-```bash
-brew install wget
-```
-:::
 
 To stop the synchronization process:
 ```bash
