@@ -34,7 +34,7 @@ pydoc-markdown '{
     loaders: [
         {
             type: python,
-            search_path: [../amiga-brain-api/py/farm_ng]
+            search_path: [../farm-ng-amiga/py/farm_ng]
         }
     ],
     processors: [

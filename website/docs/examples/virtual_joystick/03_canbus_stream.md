@@ -9,8 +9,8 @@ title: 03 - Canbus Stream
 
 The first thing we'll add to our app is a canbus stream.
 This will:
-- Use the [`CanbusClient`](https://github.com/farm-ng/amiga-brain-api/blob/main/py/farm_ng/canbus/canbus_client.py)
-- Parse [`AmigaTpdo1`](https://github.com/farm-ng/amiga-brain-api/blob/main/py/farm_ng/canbus/packet.py) (Amiga state) messages
+- Use the [`CanbusClient`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py)
+- Parse [`AmigaTpdo1`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py) (Amiga state) messages
 - Draw values in realtime as kivy [`Label`](https://kivy.org/doc/stable/api-kivy.uix.label.html) widgets
 
 
@@ -39,10 +39,10 @@ Remember to place all kivy imports below the `Config.set(...)` lines!
 :::
 
 Here we see the first imports from our [farm-ng libraries](#farm-ng-libraries).
-`farm_ng.canbus` is defined in the [farm_ng_amiga](https://github.com/farm-ng/amiga-brain-api) package.
+`farm_ng.canbus` is defined in the [farm_ng_amiga](https://github.com/farm-ng/farm-ng-amiga) package.
 
 The imports ending in `*_pb2` are the compiled `*.proto` definitions we use in the app.
-For example, `from farm_ng.canbus import canbus_pb2` imports the proto messages defined in [canbus.proto](https://github.com/farm-ng/amiga-brain-api/blob/main/protos/farm_ng/canbus/canbus.proto).
+For example, `from farm_ng.canbus import canbus_pb2` imports the proto messages defined in [canbus.proto](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto).
 
 
 #### setup.cfg
@@ -162,9 +162,9 @@ This initializer already includes the command line args and `AmigaTpdo1` contain
 #### CanbusClient
 
 Next, we'll configure and create the gRPC client that will connect to the gRPC canbus service running in the background of the brain.
-The `CanbusClient` is part of the farm-ng API, specifically [farm_ng_amiga](https://github.com/farm-ng/amiga-brain-api).
+The `CanbusClient` is part of the farm-ng API, specifically [farm_ng_amiga](https://github.com/farm-ng/farm-ng-amiga).
 
-The clients define an API that allows you to interact with the services. See [`CanbusClient`](https://github.com/farm-ng/amiga-brain-api/blob/main/py/farm_ng/canbus/canbus_client.py) for an example.
+The clients define an API that allows you to interact with the services. See [`CanbusClient`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py) for an example.
 The `CanbusClient` is constructed with a `CanbusClientConfig`, which itself is constructed with an `address` and a `port`.
 We'll momentarily assume we have two parameters `self.address` & `self.canbus_port` to be used in this constructor, and add those next.
 
@@ -249,7 +249,7 @@ As explained in the [gRPC core concepts - RPC life cycle](https://grpc.io/docs/w
 *Most* of our services have a server streaming RPC set up, so the canbus client can send a single request to the canbus service and proceed to receive the stream of canbus messages until the stream is explicitly stopped, or either of the client or service is killed.
 
 And in this case we will be receiving a server stream from the `canbus` service of proto defined message `StreamCanbusReply`.
-This is defined as the RPC [streamCanbusMessages](https://github.com/farm-ng/amiga-brain-api/blob/main/protos/farm_ng/canbus/canbus.proto).
+This is defined as the RPC [streamCanbusMessages](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto).
 
 ```Python
 while True:
@@ -263,12 +263,12 @@ while True:
 ```
 
 This pattern is relevant as the task starts.
-Basically, we get stuck in a loop until we see that the service is in state `RUNNING`, which is accomplished by using the client defined method [`connect_to_service()`](https://github.com/farm-ng/amiga-brain-api/blob/main/py/farm_ng/canbus/canbus_client.py) (a method we implement in all of our clients).
+Basically, we get stuck in a loop until we see that the service is in state `RUNNING`, which is accomplished by using the client defined method [`connect_to_service()`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py) (a method we implement in all of our clients).
 
 Once we are connected to the client, we initialize the stream of responses in our server streaming RPC with the [client *stub*](https://grpc.io/docs/what-is-grpc/core-concepts/#using-the-api).
 
 :::tip
-Note that the names of the methods and protos match those defined in [canbus.proto](https://github.com/farm-ng/amiga-brain-api/blob/main/protos/farm_ng/canbus/canbus.proto). This is a requirement of gRPC.
+Note that the names of the methods and protos match those defined in [canbus.proto](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto). This is a requirement of gRPC.
 :::
 
 Now that our `CanbusClient` is connected to the canbus service and the stream of `StreamCanbusReply` messages has been requested, the fun starts.
@@ -296,8 +296,8 @@ if response and response.status == canbus_pb2.ReplyStatus.OK:
 await asyncio.sleep(0.001)
 ```
 
-The `StreamCanbusReply`, defined in [canbus.proto](https://github.com/farm-ng/amiga-brain-api/blob/main/protos/farm_ng/canbus/canbus.proto), can contain repeated messages of format `RawCanbusMessage`.
-So we iterate through these, and for each message use the `parse_amiga_tpdo1_proto()` utility to return an `AmigaTpdo1` packet, both defined in [farm_ng.canbus.packet](https://github.com/farm-ng/amiga-brain-api/blob/main/py/farm_ng/canbus/packet.py), if the message matches the id and format we expect.
+The `StreamCanbusReply`, defined in [canbus.proto](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto), can contain repeated messages of format `RawCanbusMessage`.
+So we iterate through these, and for each message use the `parse_amiga_tpdo1_proto()` utility to return an `AmigaTpdo1` packet, both defined in [farm_ng.canbus.packet](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py), if the message matches the id and format we expect.
 Since the can bus operates as an all-to-all communication network, we have to filter out messages we aren't interested in and can't assume all messages are what we want.
 
 :::info
@@ -317,9 +317,9 @@ This is the information you'll use for closed loop control!
 Finally we sleep for 1 ms before the next iteration of the `while` loop.
 Typically we sleep for 10 ms, as you'll see in `stream_camera`
 
-- Reference: [farm_ng.canbus.canbus_client](https://github.com/farm-ng/amiga-brain-api/blob/main/py/farm_ng/canbus/canbus_client.py)
-- Reference: [farm_ng.canbus.packet](https://github.com/farm-ng/amiga-brain-api/blob/main/py/farm_ng/canbus/packet.py)
-- Reference: [canbus.proto](https://github.com/farm-ng/amiga-brain-api/blob/main/protos/farm_ng/canbus/canbus.proto)
+- Reference: [farm_ng.canbus.canbus_client](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py)
+- Reference: [farm_ng.canbus.packet](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py)
+- Reference: [canbus.proto](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto)
 
 
 #### drawing
@@ -416,7 +416,7 @@ Now sync the app to the Brain and launch it with the following instructions!
 [Deploy Instructions](../../brain/custom-applications.md) for syncing the app onto the Amiga Brain.
 :::
 
-You should see the `AmigaTpdo1` values update in realtime as you drive the amiga and change between various command states. See [Amiga Control States](../../dashboard/control_states.mdx) and [`AmigaControlState`](https://github.com/farm-ng/amiga-brain-api/blob/main/py/farm_ng/canbus/packet.py) for more information on the `state` parameter.
+You should see the `AmigaTpdo1` values update in realtime as you drive the amiga and change between various command states. See [Amiga Control States](../../dashboard/control_states.mdx) and [`AmigaControlState`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py) for more information on the `state` parameter.
 
 :::caution
 Make sure all your cables are disconnected from the Amiga before driving around!

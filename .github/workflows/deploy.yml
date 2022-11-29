@@ -20,7 +20,7 @@ jobs:
           node-version: 18
           # cache: yarn
 
-      - run: ls amiga-brain-api
+      - run: ls farm-ng-amiga
       - name: Install adk dependencies
         working-directory: website
         run: pip3 install -r requirements.txt

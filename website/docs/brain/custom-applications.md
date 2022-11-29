@@ -5,11 +5,10 @@ title: Developing Custom Applications
 
 # Developing Custom Applications
 
-
 :::tip
-We now have a full tutorial that walks you through every step of creating custom applications!
+We now have a full tutorial that walks you through creating custom applications that interact with cameras and drive your Amiga from the brain!
 
-Check it out at [Vurtual Joystick Tutorial](./../examples/virtual_joystick/00_overview.md).
+Check it out at [Virtual Joystick Tutorial](./../examples/virtual_joystick/00_overview.md).
 :::
 
 ### Quick Tips
@@ -19,16 +18,21 @@ Check it out at [Vurtual Joystick Tutorial](./../examples/virtual_joystick/00_ov
 * You may use VSCode remote development/containers to edit directly on the Amiga brain as well.
 
 
-#### Prerequisites
+### Prerequisites
 
 - Linux / WSL:
-  - `apt install wget`
+```bash
+apt install wget
+python3 -m pip install --user cookiecutter
+```
 - Mac:
-  - `brew install wget`
-
+```bash
+brew install wget
+brew install cookiecutter
+```
 
 ### Initial Configuration
-To make ssh easier, we'll add some configuration to our ssh on the workstation.
+To make ssh between our workstation and the Amiga easier, we'll add some configuration to our ssh on the workstation.
 
 First check if a file `~/.ssh/config` exists on your workstation.
 `~/` is the home folder on your workstation.
@@ -73,20 +77,71 @@ ssh amiga
 exit
 ```
 
+## Prepare an app
+
+Follow the instructions below to select an example from the [`farm-ng-amiga` examples](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples) or create an app from the [`amiga-app-template`](https://github.com/farm-ng/amiga-app-template) repository.
+
 ### Select an app
 
-Select an example from the [amiga-brain-api examples](https://github.com/farm-ng/amiga-brain-api/tree/main/py/examples) or create an app from the [template repository](https://github.com/farm-ng/amiga-brain-example).
-See the [template README](https://github.com/farm-ng/amiga-brain-example#readme) for instructions on cloning and creating an app.
-
 :::caution coming soon
-The [amiga-brain-api examples](https://github.com/farm-ng/amiga-brain-api/tree/main/py/examples) will soon be updated to match
+The folder structure of the examples in [farm-ng-amiga examples](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples) will soon be updated to match
 the template repository for setup / install on the amiga.
 
-In the meantime, you can copy the `main.py`, `requirements.txt`, and `assets/` directory (if present)
-from the example and drop them into an app you create in the template repository.
+In the meantime, follow the instructions to [Create an app](#create-an-app).
+You can then copy the `main.py`, `requirements.txt`, and `assets/` directory (if present)
+from the example and drop them into an app you create with the template repository.
 :::
 
-### Live Code Syncing
+### Create an app
+
+Use the [`amiga-app-template`](https://github.com/farm-ng/amiga-app-template) repository to create your own custom application with the following instructions.
+
+#### Create a repository from the template
+
+Navigate to the [`amiga-app-template`](https://github.com/farm-ng/amiga-app-template) repository on GitHub.
+
+Click on green *Use this template* button (top right) to create a new repository based on this repo
+
+Fill in the details, example below:
+* Owner: *username*
+* Repository Name: hello-amiga (names should be between 4-17 characters)
+* Set to Public
+
+Once completed, click *[Create repository from template]*
+
+When the repository creation process has completed, clone the repo to your local workspace
+
+#### Create an app from the app template
+
+You're now ready to create your first Kivy app, please choose a name between 4 and 17 characters run the *create app.sh* script
+```bash
+./create_app.sh
+```
+
+1. Enter your full name
+2. press enter
+3. enter your chosen app name as well.
+4. Press enter again
+5. Press enter once more to accept the formatted package name
+    - Or rename the package as you desire
+
+Your kivy application has been created under the *apps* directory
+```bash
+ls apps/
+```
+#### [Optional] Test the app locally
+
+Before any changes, lets see if we can run this app locally on your system.
+```bash
+apps/<your app name>/entry.sh
+```
+
+When running the above script, a virtual environment will be created under the *`<application>`* directory and any dependencies will be installed.
+
+If all goes well, you'll see an empty kivy application on your screen.
+
+
+## Live Code Syncing
 
 Now we'll start a synchronization session that will mirror the code in this directory to an Apps directory (/data/apps) on the Amiga Brain. Note: This directory is persistent across reboots.
 

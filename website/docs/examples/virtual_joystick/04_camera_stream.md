@@ -9,7 +9,7 @@ title: 04 - Camera Stream
 
 The next thing we'll add to our app is a camera stream.
 This will:
-- Use the [`OakCameraClient`](https://github.com/farm-ng/amiga-brain-api/blob/main/py/farm_ng/oak/camera_client.py)
+- Use the [`OakCameraClient`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py)
 - Display images as kivy [`Image`](https://kivy.org/doc/stable/api-kivy.uix.label.html) widgets in a `TabbedPanel`.
 
 
@@ -31,7 +31,7 @@ Remember to place all kivy imports below the `Config.set(...)` lines!
 :::
 
 Here we add another import from our [farm-ng libraries](#farm-ng-libraries).
-`farm_ng.oak` is also defined in the [farm_ng_amiga](https://github.com/farm-ng/amiga-brain-api) package.
+`farm_ng.oak` is also defined in the [farm_ng_amiga](https://github.com/farm-ng/farm-ng-amiga) package.
 
 
 #### TabbedPanel of Image widgets
@@ -192,9 +192,9 @@ async def stream_camera(self, client: OakCameraClient) -> None:
 This task listens to the camera client's stream and populates the tabbed panel with all 4 image streams from the oak camera.
 You'll see a lot of similarity to [`stream_canbus`](#stream_canbus), as this task is also connecting to a "server streaming" RPC.
 
-The first obvious difference you'll notice is the use of [oak.proto](https://github.com/farm-ng/amiga-brain-api/blob/main/protos/farm_ng/oak/oak.proto) definitions rather than canbus protos.
+The first obvious difference you'll notice is the use of [oak.proto](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/oak/oak.proto) definitions rather than canbus protos.
 
-Next, when creating the `response_stream` we wrap the stub call with [`stream_frames()`](https://github.com/farm-ng/amiga-brain-api/blob/main/py/farm_ng/oak/camera_client.py), but in practice the same thing is happening.
+Next, when creating the `response_stream` we wrap the stub call with [`stream_frames()`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py), but in practice the same thing is happening.
 The `StreamFramesRequest` does take an argument called `every_n` which is used to skip frames if you want to throttle the rate of images in the stream.
 You can change this value with the `--stream-every-n` command line argument.
 
@@ -207,7 +207,7 @@ for view_name in ["rgb", "disparity", "left", "right"]:
 ```
 
 Once the `StreamFramesReply` comes in, for each loop, we update the images displayed in the kivy `TabbedPanel` of our app.
-We've matched the tab `id:` name to the frame names coming from the [`OakService`](https://github.com/farm-ng/amiga-brain-api/blob/main/protos/farm_ng/oak/oak.proto), as defined in `OakSyncFrame`, so we can easily match tab to image type by stepping through a list.
+We've matched the tab `id:` name to the frame names coming from the [`OakService`](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/oak/oak.proto), as defined in `OakSyncFrame`, so we can easily match tab to image type by stepping through a list.
 
 :::tip Reminder
 We can access a `Widget` directly using the widget `id:` as in
@@ -223,8 +223,8 @@ await asyncio.sleep(0.01)
 ```
 Lastly, we sleep for our default duration of 10ms before the next iteration.
 
-- Reference: [farm_ng.oak.camera_client](https://github.com/farm-ng/amiga-brain-api/blob/main/py/farm_ng/oak/camera_client.py)
-- Reference: [oak.proto](https://github.com/farm-ng/amiga-brain-api/blob/main/protos/farm_ng/oak/oak.proto)
+- Reference: [farm_ng.oak.camera_client](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py)
+- Reference: [oak.proto](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/oak/oak.proto)
 
 
 #### entry.sh
