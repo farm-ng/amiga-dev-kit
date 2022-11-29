@@ -110,9 +110,9 @@ They are:
 
 See: [farm_ng_core](https://github.com/farm-ng/farm-ng-core)
 
-See: [farm_ng_amiga](https://github.com/farm-ng/amiga-brain-api)
+See: [farm_ng_amiga](https://github.com/farm-ng/farm-ng-amiga)
 
 ## Virtual Joystick tutorial
 
-The goal of this tutorial is to take you step-by-step from the template repository to the full [`virtual_joystick/main.py`](https://github.com/farm-ng/amiga-brain-api/blob/main/py/examples/virtual_joystick/main.py) example.
+The goal of this tutorial is to take you step-by-step from the template repository to the full [`virtual_joystick/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/virtual_joystick/main.py) example.
 Then you can mirror what you've done here in your own custom app development!

@@ -34,7 +34,7 @@ self.max_angular_rate: float = 1.0
 To control the robot from our app, we will use the canbus client to send can messages to the canbus service.
 The service will then unpack, reformat, and forward the can message onto the CAN bus.
 
-This task uses the [sendCanbusMessage](https://github.com/farm-ng/amiga-brain-api/blob/main/protos/farm_ng/canbus/canbus.proto) RPC, which defines a client stream.
+This task uses the [sendCanbusMessage](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto) RPC, which defines a client stream.
 The client stream can be thought of as the inverse of the server streams we've seen so far.
 In this client stream, the canbus client can sends a stream of requests, of type `SendCanbusMessageRequest`, to the canbus service and receives a single message, of type `SendCanbusMessageReply`,  until the stream is explicitly stopped, or either of the client or service is killed.
 In this app, we never actually stop the stream, so don't expect to receive a `SendCanbusMessageReply`.
@@ -96,7 +96,7 @@ It makes use of the `make_amiga_rpdo1_proto()` method that takes a:
 - request speed (forward positive)
 - requested angular rate (left positive)
 
-to construct a [`RawCanbusMessage`](https://github.com/farm-ng/amiga-brain-api/blob/main/protos/farm_ng/canbus/canbus.proto).
+to construct a [`RawCanbusMessage`](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto).
 These messages, packed into a `SendCanbusMessageRequest`, are `yield`-ed to the canbus service to send on the CAN bus.
 
 :::tip

@@ -75,11 +75,11 @@ exit
 
 ### Select an app
 
-Select an example from the [amiga-brain-api examples](https://github.com/farm-ng/amiga-brain-api/tree/main/py/examples) or create an app from the [template repository](https://github.com/farm-ng/amiga-brain-example).
+Select an example from the [farm-ng-amiga examples](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples) or create an app from the [template repository](https://github.com/farm-ng/amiga-brain-example).
 See the [template README](https://github.com/farm-ng/amiga-brain-example#readme) for instructions on cloning and creating an app.
 
 :::caution coming soon
-The [amiga-brain-api examples](https://github.com/farm-ng/amiga-brain-api/tree/main/py/examples) will soon be updated to match
+The [farm-ng-amiga examples](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples) will soon be updated to match
 the template repository for setup / install on the amiga.
 
 In the meantime, you can copy the `main.py`, `requirements.txt`, and `assets/` directory (if present)

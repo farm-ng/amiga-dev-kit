@@ -1,2 +1,2 @@
-../amiga-brain-api
+../farm-ng-amiga
 pydoc-markdown==4.6.3

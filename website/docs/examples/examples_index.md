@@ -14,7 +14,7 @@ These are the examples for developing applications for the [farm-ng Brain](../br
 ### [Virtual Joystick Tutorial](./virtual_joystick/00_overview.md)
 
 :::caution Coming soon
-link to example in amiga-brain-api
+link to example in farm-ng-amiga
 :::
 
 This example application and tutorial is designed to enable you to develop your own custom applications and deploy them to the Amiga brain.
