@@ -4,6 +4,8 @@ title: 00 - Virtual Joystick Overview
 ---
 # Virtual Joystick Overview
 
+[Link to `virtual_joystick/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/virtual_joystick/main.py)
+
 This example application and tutorial is designed to enable you to develop your own custom applications and deploy them to the Amiga brain.
 
 On the Brain, there are multiple gRPC services running in the background, including the oak camera service and the canbus service.

@@ -21,7 +21,7 @@ It is recommended to also install these dependencies and run the example in the 
 
 ```bash
 # assuming you're already in the amiga-dev-kit/ directory
-cd brain/examples/camera_client
+cd farm-ng-amiga/py/examples/camera_client
 ```
 ```bash
 pip3 install -r requirements.txt

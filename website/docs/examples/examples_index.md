@@ -9,13 +9,33 @@ title: Examples Index
 
 :::info
 These are the examples for developing applications for the [farm-ng Brain](../brain/).
+
+Before getting started with any brain examples, you should install the [farm-ng Brain ADK package](/docs/brain/brain-install).
 :::
+
+### File Reader
+
+:::caution coming soon
+More details on the `file_reader` example.
+For now, please refer to the[`file_reader` README](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader#readme)
+:::
+
+[Link to `file_reader/main.py`](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader/main.py)
+
+### [Camera Client](./camera_client/README.md)
+
+[Link to `camera_client/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/camera_client/main.py)
+
+This example acts as an `OakCameraClient` in a standalone Python script.
+
+### [Camera Client GUI](./camera_client_gui/README.md)
+
+[Link to `camera_client_gui/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/camera_client_gui/main.py)
+
+This example implements the `OakCameraClient` in a GUI application using [Kivy](https://kivy.org/).
+
 
 ### [Virtual Joystick Tutorial](./virtual_joystick/00_overview.md)
-
-:::caution Coming soon
-link to example in farm-ng-amiga
-:::
 
 This example application and tutorial is designed to enable you to develop your own custom applications and deploy them to the Amiga brain.
 

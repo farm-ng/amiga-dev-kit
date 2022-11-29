@@ -44,6 +44,7 @@ const sidebars = {
     "Brain": [
       "brain/brain",
       "brain/brain-install",
+      "brain/next-steps",
       "brain/brain-apps"
     ],
     // "Pendant": [
@@ -63,7 +64,6 @@ const sidebars = {
     },
     {
       "Brain ADK": [
-        "brain/brain-install",
         require("./docs/reference/brain/sidebar.json")
       ],
     }
