@@ -10,7 +10,7 @@ to get started on running one of the available brain ADK examples.
 
 ## 2. Tutorial
 
-Go through the [Virtual Joystick Tutorial](./virtual_joystick/00_overview.md) that walks you line-by-line
+Go through the [Virtual Joystick Tutorial](./../examples/virtual_joystick/00_overview.md) that walks you line-by-line
 through creating an Amiga brain application.
 
 
