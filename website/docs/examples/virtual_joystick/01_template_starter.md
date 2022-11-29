@@ -7,7 +7,7 @@ title: 01 - Template Starter
 
 ## Set up your Amiga brain template
 
-[amiga-brain-example README](https://github.com/farm-ng/amiga-brain-example#readme)
+[amiga-app-template README](https://github.com/farm-ng/amiga-app-template#readme)
 
 :::tip
 Feel free to choose any name, but it's recommended to go with `Virtual Joystick`.
