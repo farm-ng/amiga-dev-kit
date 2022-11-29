@@ -6,7 +6,7 @@ title: Developing Custom Applications
 # Developing Custom Applications
 
 :::tip
-We now have a full tutorial that walks you through every step of creating custom applications!
+We now have a full tutorial that walks you through creating custom applications that interact with cameras and drive your Amiga from the brain!
 
 Check it out at [Virtual Joystick Tutorial](./../examples/virtual_joystick/00_overview.md).
 :::
