@@ -22,6 +22,15 @@ For now, please refer to the[`file_reader` README](https://github.com/farm-ng/fa
 
 [Link to `file_reader/main.py`](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader/main.py)
 
+### File Reader CAN
+
+:::caution coming soon
+More details on the `file_reader_can` example.
+For now, please refer to the[`file_reader_can` README](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader_can#readme)
+:::
+
+[Link to `file_reader_can/main.py`](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader_can/main.py)
+
 ### [Camera Client](./camera_client/README.md)
 
 [Link to `camera_client/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/camera_client/main.py)
