@@ -77,6 +77,38 @@ ssh amiga
 exit
 ```
 
+:::caution troubleshooting
+If, after a docker image update, you cannot `ssh` into your amiga or run the `sync.sh` script,
+you may have an error similar to:
+
+```bash
+# $ ssh amiga
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:QsdOvROYuKMa5NqaPTFHwF3kfPCwKaTzgBAj9N/eKCI.
+Please contact your system administrator.
+Add correct host key in /home/<YOUR_NAME>/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/<YOUR_NAME>/.ssh/known_hosts:29
+  remove with:
+  ssh-keygen -f "/home/<YOUR_NAME>/.ssh/known_hosts" -R "192.168.XX.XX"
+ECDSA host key for 192.168.XX.XX has changed and you have requested strict checking.
+Host key verification failed.
+```
+
+Follow the instructions they provide and run:
+```bash
+ssh-keygen -f "/home/<YOUR_NAME>/.ssh/known_hosts" -R "192.168.XX.XX"
+# With correct values for <YOUR_NAME> and IP Address XX.XX
+```
+
+You should now be able to `ssh` into your amiga and/or run the `sync.sh` script
+:::
+
 ## Prepare an app
 
 Follow the instructions below to select an example from the [`farm-ng-amiga` examples](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples) or create an app from the [`amiga-app-template`](https://github.com/farm-ng/amiga-app-template) repository.
