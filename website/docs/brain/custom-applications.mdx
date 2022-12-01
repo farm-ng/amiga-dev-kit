@@ -8,50 +8,70 @@ title: Developing Custom Applications
 :::tip
 We now have a full tutorial that walks you through creating custom applications that interact with cameras and drive your Amiga from the brain!
 
-Check it out at [Virtual Joystick Tutorial](./../examples/virtual_joystick/00_overview.md).
+Check it out at [Virtual Joystick Tutorial](/examples/virtual_joystick/00_overview.md).
 :::
 
-### Quick Tips
-* The Amiga user is able to install APT packages. Edit the "entry.sh" script in the sample git repository.
-* We leverage a venv per application. The contents of requirements.txt will be installed by the bootstrap.sh script.
+## Quick Tips
+
+* The Amiga user is able to install APT packages.
+  * Edit the "entry.sh" script in the sample git repository.
+* We leverage a venv per application.
+  * The contents of requirements.txt will be installed by the bootstrap.sh script.
 * If you've updated the requirements.txt remove the hidden ".lock" before relaunching the app from the Brain UI.
 * You may use VSCode remote development/containers to edit directly on the Amiga brain as well.
 
+## Prerequisites
 
-### Prerequisites
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-- Linux / WSL:
+<Tabs>
+<TabItem value="linux" label="Linux/WSL" default>
+
 ```bash
 apt install wget
 python3 -m pip install --user cookiecutter
 ```
-- Mac:
+
+</TabItem>
+<TabItem value="macos" label="MacOs" default>
+
 ```bash
 brew install wget
 brew install cookiecutter
 ```
 
-### Initial Configuration
+</TabItem>
+</Tabs>
+
+## Initial Configuration
+
 To make ssh between our workstation and the Amiga easier, we'll add some configuration to our ssh on the workstation.
 
 First check if a file `~/.ssh/config` exists on your workstation.
 `~/` is the home folder on your workstation.
 
 :::info
+
 1. If this file does not exist, you'll have to create it.
 
 ```bash
 cd ~ # Navigate to your home folder
 ls -a # Check for a folder called `.ssh/`
 ```
+
 2. If `~/.ssh/` does not exist, run:
+
 ```bash
 ssh-keygen # create ~/.ssh/ folder
 ```
+
 3. Create a file called `config` (no extension) in `~/.ssh`
+
 :::
 
 Add the following to your  `~/.ssh/config`:
+
 ```bash
 Host amiga
     HostName <ip address>
@@ -59,19 +79,23 @@ Host amiga
     User amiga
     StrictHostKeyChecking no
 ```
+
 :::tip tips
-- `<ip address>` can be found on the bottom right of the Amiga Brain screen
-  - Remove the `<` & `>` symbols.
-- Your development station and your Amiga should be on the same network.
+
+* `<ip address>` can be found on the bottom right of the Amiga Brain screen
+* Remove the `<` & `>` symbols.
+* Your development station and your Amiga should be on the same network.
 :::
 This utilizes the IP address displayed on the bottom right of the brain display:
 
 Let’s copy our keys to the robot as well (you may need to do this any time you are working with a new robot)
+
 ```bash
 ssh-copy-id amiga
 ```
 
 Now you can ssh to the robot with:
+
 ```bash
 ssh amiga
 exit
@@ -101,6 +125,7 @@ Host key verification failed.
 ```
 
 Follow the instructions they provide and run:
+
 ```bash
 ssh-keygen -f "/home/<YOUR_NAME>/.ssh/known_hosts" -R "192.168.XX.XX"
 # With correct values for <YOUR_NAME> and IP Address XX.XX
@@ -134,7 +159,11 @@ Navigate to the [`amiga-app-template`](https://github.com/farm-ng/amiga-app-temp
 
 Click on green *Use this template* button (top right) to create a new repository based on this repo
 
+<!-- <img src="./assets/create_new_repo.gif" alt="Dash_Iso" width="600;" /> -->
+![Create a new templated repository](./assets/create_new_repo.gif)
+
 Fill in the details, example below:
+
 * Owner: *username*
 * Repository Name: hello-amiga (names should be between 4-17 characters)
 * Set to Public
@@ -146,6 +175,7 @@ When the repository creation process has completed, clone the repo to your local
 #### Create an app from the app template
 
 You're now ready to create your first Kivy app, please choose a name between 4 and 17 characters run the *create app.sh* script
+
 ```bash
 ./create_app.sh
 ```
@@ -155,15 +185,18 @@ You're now ready to create your first Kivy app, please choose a name between 4 a
 3. enter your chosen app name as well.
 4. Press enter again
 5. Press enter once more to accept the formatted package name
-    - Or rename the package as you desire
+    * Or rename the package as you desire
 
 Your kivy application has been created under the *apps* directory
+
 ```bash
 ls apps/
 ```
+
 #### [Optional] Test the app locally
 
 Before any changes, lets see if we can run this app locally on your system.
+
 ```bash
 apps/<your app name>/entry.sh
 ```
@@ -171,7 +204,6 @@ apps/<your app name>/entry.sh
 When running the above script, a virtual environment will be created under the *`<application>`* directory and any dependencies will be installed.
 
 If all goes well, you'll see an empty kivy application on your screen.
-
 
 ## Live Code Syncing
 
@@ -185,16 +217,19 @@ Run this from the app directory where you'll find `sync.sh`!
 :::
 
 To start the synchronization process in the background:
+
 ```bash
 ./sync.sh -s start
 ```
 
 To stop the synchronization process:
+
 ```bash
 ./sync.sh -s stop
 ```
 
 Finally to view the status:
+
 ```bash
 ./sync.sh -s status
 ```
