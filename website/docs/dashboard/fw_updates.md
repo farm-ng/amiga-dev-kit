@@ -69,11 +69,16 @@ This process is currently only supported on Windows and Mac.
         2. Interrupt the program with `ctrl+C`
         3. Run the following commands in the REPL:
         ```
-        import storage
-        storage.remount("/", False)
+        import boot_utils
+        boot_utils.mount_circuitpy()
+
+        # OR IF YOU DON'T HAVE THAT UTILITY AVAILABLE
         import os
-        os.remove('boot.py')
+        import storage
         import microcontroller
+
+        storage.remount("/", False)
+        os.remove('boot.py')
         microcontroller.reset()
         ```
         4. The CIRCUITPY drive should now show up mounted
@@ -165,6 +170,10 @@ This process is currently only supported on Windows and Mac.
     - Enter the following commands in the REPL
 
     ```
+    import boot_utils
+    boot_utils.reset_to_bootloader()
+
+    # OR IF YOU DON'T HAVE THAT UTILITY AVAILABLE
     import microcontroller
     microcontroller.on_next_reset(microcontroller.RunMode.BOOTLOADER)
     microcontroller.reset()
