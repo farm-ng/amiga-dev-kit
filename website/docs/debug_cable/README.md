@@ -5,15 +5,14 @@ title: Debug Cable Overview
 
 # farm-ng Debug Cable
 
-![debug_cable](https://user-images.githubusercontent.com/53625197/187536591-042b7f19-c587-45d3-9079-74ec05d77b6e.jpeg)
-
+![IMG_9574](https://user-images.githubusercontent.com/64480560/205400778-1bfa084c-a187-4f42-8840-7b91714ab7f0.jpg)
 ## Overview
 
 Cable used to update and debug farm-ng products. It includes rest functionality along with USB and serial communication.
 
 The larger circuit board on the left is the USB / debug breakout, and the smaller board on the right is the serial interface.
 
-![debug_notes](https://user-images.githubusercontent.com/53625197/187536636-64878c45-0d4e-4275-b8b1-7c0b9dd9254f.jpeg)
+![IMG_9578](https://user-images.githubusercontent.com/64480560/205400599-f79e0cae-35f3-4610-bbcf-9a4e50857fac.jpg)
 
 ### Product specific uses
 
