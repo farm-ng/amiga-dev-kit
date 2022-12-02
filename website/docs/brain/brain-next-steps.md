@@ -16,5 +16,5 @@ through creating an Amiga brain application.
 
 ## 3. Developing Custom applications
 
-Follow the instructions at [Developing Custom Applications](./custom-applications.md)
+Follow the instructions at [Developing Custom Applications](custom-applications.mdx)
 to create your own great app for your Amiga!
