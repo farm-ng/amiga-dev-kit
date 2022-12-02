@@ -256,7 +256,7 @@ If you changed the camera port of `Oak0` in the `launcher_configuration.json`, o
 Now sync the app to the Brain and launch it with the following instructions!
 
 :::info Deploy Instructions
-[Deploy Instructions](../../brain/custom-applications.md) for syncing the app onto the Amiga Brain.
+[Deploy Instructions](/brain/custom-applications.mdx) for syncing the app onto the Amiga Brain.
 :::
 
 

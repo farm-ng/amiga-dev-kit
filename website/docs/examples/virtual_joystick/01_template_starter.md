@@ -7,7 +7,7 @@ title: 01 - Template Starter
 
 ## Set up your Amiga brain template
 
-Follow the instructions in [Developing Custom Applications](./../../brain/custom-applications.md)
+Follow the instructions in [Developing Custom Applications](/brain/custom-applications.mdx)
 to set up an application from the [amiga-app-template](https://github.com/farm-ng/amiga-app-template).
 
 :::tip
@@ -52,7 +52,7 @@ except asyncio.CancelledError:
 Now sync the app to the Brain and launch it with the following instructions!
 
 :::info Deploy Instructions
-[Deploy Instructions](../../brain/custom-applications.md) for syncing the app onto the Amiga Brain.
+[Deploy Instructions](/brain/custom-applications.mdx) for syncing the app onto the Amiga Brain.
 :::
 
 You should see a blank kivy app pop up, once loaded, with only a `Back` button.
