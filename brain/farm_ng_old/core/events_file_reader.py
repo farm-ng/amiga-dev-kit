@@ -8,8 +8,8 @@ from typing import Dict
 from typing import List
 from typing import Optional
 
-from farm_ng.core import event_pb2
-from farm_ng.core.uri import Uri
+from farm_ng_old.core import event_pb2
+from farm_ng_old.core.uri import Uri
 
 
 class EventsFileReader:

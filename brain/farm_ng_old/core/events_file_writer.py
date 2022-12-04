@@ -4,7 +4,7 @@ from typing import Any
 from typing import BinaryIO
 from typing import Optional
 
-from farm_ng.core import event_pb2
+from farm_ng_old.core import event_pb2
 
 
 class EventsFileWriter:
