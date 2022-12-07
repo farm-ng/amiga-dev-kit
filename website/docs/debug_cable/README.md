@@ -16,6 +16,12 @@ The larger circuit board on the left is the USB / debug breakout, and the smalle
 
 ### Product specific uses
 
+
+#### How to Connect 
+![187535995-d4ad8c7c-05a0-482b-8be9-6b6fb6b87ac3](https://user-images.githubusercontent.com/64480560/206007745-b36c59c7-22dd-4435-9cae-8503956174f3.png)
+
+
+
 #### Dash
 
 - USB interface is for REPL, filesystem access as well as updating firmware and applications,
@@ -40,11 +46,11 @@ Debug wire colors based on common cable with flying leads used on farm-ng built 
 
 | PIN | Description   | Typical Wire Color | Notes                      |
 | --- | ------------- | ------------------ | -------------------------- |
-| 1   | RESET         | White              |                            |
+| 1   | RESET         | Black              |                            |
 | 2   | TTL RX (3.3v) | Brown              | Connect to TX of interface |
-| 3   | TTL TX (3.3v) | Green              | Connect to RX of interface |
+| 3   | TTL TX (3.3v) | Red                | Connect to RX of interface |
 | 4   | USB D-        | Yellow             |                            |
-| 5   | UDB D+        | Gray               |                            |
-| 6   | USB VBUS      | Pink               |                            |
-| 7   | NC            | Blue               |                            |
-| 8   | GND           | Black              |                            |
+| 5   | UDB D+        | Green              |                            |
+| 6   | USB VBUS      | Blue               |                            |
+| 7   | NC            | Gray               |                            |
+| 8   | GND           | White              |                            |
