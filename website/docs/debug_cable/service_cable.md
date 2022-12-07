@@ -22,7 +22,7 @@ Cable used to update and service farm-ng products. It includes rest functionalit
 #### How to connect
 ![187535995-d4ad8c7c-05a0-482b-8be9-6b6fb6b87ac3](https://user-images.githubusercontent.com/64480560/206007745-b36c59c7-22dd-4435-9cae-8503956174f3.png)
 
-
+**Connect cable to the debug port on the back of dashboard**
 
 #### REPL for BOOTLOADER State
 These commands from the REPL will put the device into the bootloader state the same way the double press reset on  would.
@@ -37,10 +37,12 @@ microcontroller.reset()
 ```
 
 
-**See update process documentation for more information**
+**See update process documentation for more information [here](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)**
 
 
-**See flashing and operating system documentation for more information**
+
+
+**See flashing and operating system documentation for more information [here](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)**
 
 ## Pinout
 

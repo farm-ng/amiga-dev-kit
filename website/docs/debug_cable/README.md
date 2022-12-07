@@ -20,6 +20,7 @@ The larger circuit board on the left is the USB / debug breakout, and the smalle
 #### How to Connect
 ![187535995-d4ad8c7c-05a0-482b-8be9-6b6fb6b87ac3](https://user-images.githubusercontent.com/64480560/206007745-b36c59c7-22dd-4435-9cae-8503956174f3.png)
 
+**Connect cable to the debug port on the back of dashboard**
 
 
 #### Dash
@@ -28,7 +29,7 @@ The larger circuit board on the left is the USB / debug breakout, and the smalle
 - Serial interface is not used at the moment
 - Reset is connected to the Microcontroller reset and used for hard reset. It also can be double pressed to force bootloader mode.
 
-**See update process documentation for more information**
+**See update process documentation for more information [here](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)**
 
 #### Brain
 
@@ -36,7 +37,7 @@ The larger circuit board on the left is the USB / debug breakout, and the smalle
 - Serial interface is used for operating system terminal
 - Reset / Flash button is used for enabling the firmware update mode (press on boot)
 
-**See flashing and operating system documentation for more information**
+**See flashing and operating system documentation for more information [here](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)**
 
 ## Pinout
 
