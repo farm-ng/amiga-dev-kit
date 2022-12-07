@@ -413,7 +413,7 @@ If you change the canbus port in the `launcher_configuration.json`, hard code th
 Now sync the app to the Brain and launch it with the following instructions!
 
 :::info Deploy Instructions
-[Deploy Instructions](../../brain/custom-applications.md) for syncing the app onto the Amiga Brain.
+[Deploy Instructions](/brain/custom-applications.mdx) for syncing the app onto the Amiga Brain.
 :::
 
 You should see the `AmigaTpdo1` values update in realtime as you drive the amiga and change between various command states. See [Amiga Control States](../../dashboard/control_states.mdx) and [`AmigaControlState`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py) for more information on the `state` parameter.

@@ -30,6 +30,14 @@ git clone git@github.com:farm-ng/farm-ng-amiga.git
 cd farm-ng-amiga/
 ```
 
+Keep the repo up-to-date with:
+
+```bash
+# from farm-ng-amiga/ dir
+git checkout main
+git pull
+```
+
 :::caution troubleshooting
 If you have trouble cloning this public repo, Github is likely not able to authenticate your SSH public key.
 
