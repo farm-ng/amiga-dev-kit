@@ -12,7 +12,7 @@ Things that will be included with Amiga
 - Two batteries
 - Battery charging kit
 - Debug cable (only included with Brain)
-- Service cable 
+- Service cable
 
 
 ## Batteries
@@ -48,7 +48,7 @@ Once that has appeared, release ESTOP and wait a few seconds.
 Press / Tap START and the dashboard will appear.
 
 For the first time you should Calibrate your Pendant.
-- Before testing pendant, you should press physical ESTOP so the Amiga does not drive while testing. 
+- Before testing pendant, you should press physical ESTOP so the Amiga does not drive while testing.
 
 ![ezgif com-gif-maker 2 (1)](https://user-images.githubusercontent.com/64480560/206317768-42edeab6-8fea-4c7d-95ae-a3ff3d9e62f1.gif)
 
@@ -58,7 +58,7 @@ To do this you will need to go to the:
 
 - If ESTOP screen appears, tap “CLEAR ESTOP”
 - If other error message appears, try a power cycle by turning the Amiga on and off.
-- If problem persists please submit an issue with us [here](https://discourse.farm-ng.com/c/support/5). 
+- If problem persists please submit an issue with us [here](https://discourse.farm-ng.com/c/support/5).
 
 :::tip
 It is good practice to have both batteries plugged in and on at the same time when powering the Amiga even though the Amiga can operate with only one battery
