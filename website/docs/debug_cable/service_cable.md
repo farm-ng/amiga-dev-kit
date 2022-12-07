@@ -52,4 +52,3 @@ microcontroller.reset()
 | 3   | USB VBUS      | Pink               |                            |
 | 4   | NC            | Blue               |                            |
 | 5   | GND           | Black              |                            |
-

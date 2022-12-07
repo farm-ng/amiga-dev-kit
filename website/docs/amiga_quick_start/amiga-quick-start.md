@@ -31,25 +31,25 @@ First ensure the ESTOP is fully pressed down before operating anything on the Am
 
 Once both batteries are installed with their respective keys, plug in the IEC cables into both batteries, then turn the key to a horizon position to start Amiga.
 
-You should see the Farm-ng logo appear then the START/VAMOS screen. 
+You should see the Farm-ng logo appear then the START/VAMOS screen.
 
-Once that has appeared, release ESTOP and wait a few seconds. 
+Once that has appeared, release ESTOP and wait a few seconds.
 
-Press/ Tap START and the dashboard will appear. 
- 
+Press/ Tap START and the dashboard will appear.
+
 For the first time you should Calibrate your Pendant.
 
 
-To do this you will need to go to the 
-settings tab 
+To do this you will need to go to the
+settings tab
 pendant
 Calibrate pendant
 
 
 - If ESTOP screen appears, tap “CLEAR ESTOP”
-- If other error message appears, try a power cycle by turning the Amiga on and off. 
+- If other error message appears, try a power cycle by turning the Amiga on and off.
 - If problem persists please submit an issue with us here[]
- 
+
 :::tip
 It is good practice to have both batteries plugged in and on at the same time when powering the Amiga even though the Amiga can operate with only one battery
 :::
