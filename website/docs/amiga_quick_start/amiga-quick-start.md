@@ -19,6 +19,10 @@ Things that will be included with Amiga
 
 Be sure to insert both battery packs in their respective locations on the Amiga.
 
+:::tip
+It is good practice to have both batteries plugged in and on at the same time when powering the Amiga even though the Amiga can operate with only one battery
+:::
+
 ![battery](https://user-images.githubusercontent.com/64480560/206290736-59ef9164-9ade-401c-80dc-569e77f088e5.gif)
 
 
@@ -35,9 +39,9 @@ First ensure the ESTOP is fully pressed down before operating anything on the Am
 
 ![ezgif com-gif-maker 3](https://user-images.githubusercontent.com/64480560/206316282-a65726be-9acc-4ef0-8cd4-5410784a2f16.gif)
 
-Once both batteries are installed with their respective keys, plug in the IEC cables into both batteries, then turn the key to a horizon position to start Amiga.
+Once both batteries are installed with their respective keys, plug the IEC power cables into both batteries, then turn the key to a horizon position to start Amiga.
 
-You should see the Farm-ng logo appear then the START/VAMOS screen.
+You should see the farm-ng logo appear then the START/VAMOS screen.
 
 
 ![ezgif com-gif-maker 4 (1)](https://user-images.githubusercontent.com/64480560/206318630-931b5086-9cd8-4f8a-9406-afdc34bef28d.gif)
@@ -47,8 +51,10 @@ Once that has appeared, release ESTOP and wait a few seconds.
 
 Press / Tap START and the dashboard will appear.
 
-For the first time you should Calibrate your Pendant.
+The first time you start your Amiga, and anytime you replace the pendant, you should calibrate the joystick on your Pendant.
+:::caution
 - Before testing pendant, you should press physical ESTOP so the Amiga does not drive while testing.
+:::
 
 ![ezgif com-gif-maker 2 (1)](https://user-images.githubusercontent.com/64480560/206317768-42edeab6-8fea-4c7d-95ae-a3ff3d9e62f1.gif)
 
@@ -60,9 +66,7 @@ To do this you will need to go to the:
 - If other error message appears, try a power cycle by turning the Amiga on and off.
 - If problem persists please submit an issue with us [here](https://discourse.farm-ng.com/c/support/5).
 
-:::tip
-It is good practice to have both batteries plugged in and on at the same time when powering the Amiga even though the Amiga can operate with only one battery
-:::
+
 
 
 ## Now you are ready to use your Amiga!!!

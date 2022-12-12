@@ -15,7 +15,7 @@ Cable used to update and service farm-ng products. It includes rest functionalit
 
 ### Product specific uses
 
-#### Dash
+#### Dashboard
 
 - USB interface is for REPL, filesystem access as well as updating firmware and applications,
 
@@ -37,12 +37,12 @@ microcontroller.reset()
 ```
 
 
-**See update process documentation for more information [here](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)**
+**See update process documentation for more information [here](/docs/dashboard/fw_updates.md)**
 
 
 
 
-**See flashing and operating system documentation for more information [here](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)**
+**See flashing and operating system documentation for more information [here](/docs/brain/README.md)**
 
 ## Pinout
 

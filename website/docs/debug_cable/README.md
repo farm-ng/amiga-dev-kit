@@ -27,9 +27,9 @@ The larger circuit board on the left is the USB / debug breakout, and the smalle
 
 - USB interface is for REPL, filesystem access as well as updating firmware and applications,
 - Serial interface is not used at the moment
-- Reset is connected to the Microcontroller reset and used for hard reset. It also can be double pressed to force bootloader mode.
+- A reset button is connected to the Microcontroller and used for hard reset. It also can be double pressed to force bootloader mode.
 
-**See update process documentation for more information [here](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)**
+**See update process documentation for more information [here](/docs/dashboard/fw_updates.md)**
 
 #### Brain
 
@@ -37,7 +37,7 @@ The larger circuit board on the left is the USB / debug breakout, and the smalle
 - Serial interface is used for operating system terminal
 - Reset / Flash button is used for enabling the firmware update mode (press on boot)
 
-**See flashing and operating system documentation for more information [here](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)**
+**See flashing and operating system documentation for more information [here](/docs/brain/README.md)**
 
 ## Pinout
 
