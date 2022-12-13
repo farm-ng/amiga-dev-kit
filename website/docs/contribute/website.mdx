@@ -161,7 +161,7 @@ When you come back you can re-enter from the root where the venv was created (e.
 source venv/bin/activate
 ```
 :::caution
-On Linux, you may find issues with the `node`, `npm`, or `yarn` version when you re-enter your `venv`.
+You may find issues with the node, npm, or yarn version.
 If so, re-install these packages in your venv with:
 ```bash
 nvm install node
@@ -216,7 +216,73 @@ pre-commit run --all-files # double check for any formatting issues not resolved
 git commit -m "foo bar baz"
 git push
 ```
-## Adding images to the website
+
+## Adding to the website
+
+
+### Adding pages
+
+The pages are defined in a file called `website/sidebars.js`.
+Depending on what you are adding you can choose to add it into the docs section or examples/ wherever would be most appropriate.
+The pattern and structure in `sidebars.js` should be clear.
+
+**For example :**
+
+If you want to add another section in between `Dashboard` and `Debug Cable` it will be something like this:
+```
+"docs": {
+  "Introduction": [
+    "getting-started",
+  ],
+  "Dashboard": [
+    "dashboard/dashboard",
+    "dashboard/dashboard-fw",
+    "dashboard/control-states",
+  ],
+  "Debug Cable": [
+    "debug_cable/debug-cable",
+  ],
+```
+
+You can change it to:
+
+```
+"docs": {
+  "Introduction": [
+    "getting-started",
+  ],
+  "Dashboard": [
+    "dashboard/dashboard",
+    "dashboard/dashboard-fw",
+    "dashboard/control-states",
+  ],
+  "My New Section": [
+    "my_new_section/my-new-page",
+  ],
+  "Debug Cable": [
+    "debug_cable/debug-cable",
+  ],
+```
+
+
+Add a new directory `website/docs/my_new_section/`.
+Then you can add a markdown (`*.md`) file in that directory called `my-new-page.md`.
+The top of `my-new-page.md` should be:
+```
+---
+id: my-new-page
+title: My New Page
+---
+
+# Header of my new page
+
+## Subheader 1
+```
+Now with your locally build docs you should see a new tab called **"My New Section"** with a page called **"My New Page"**.
+If you open that page you should see it has the header of **"Header of my new page"**.
+
+
+### Adding images
 
 :::info
 If you are already working in an active branch, this process works for branched versions of markdown files.
@@ -230,7 +296,7 @@ online through Github by:
 
 1. Press the edit button in the top right corner of the markdown file
 2. Drag & drop an image into the markdown file you are editing.
-3. A link to the image should be automatically generated and formattedin the markdown file.
+3. A link to the image should be automatically generated and formatted in the markdown file.
 
 The generated link should look something like: https://user-images.githubusercontent.com/11846963/185976402-ff8c4c77-5a08-42b0-865f-d2840fc0b960.jpg
 

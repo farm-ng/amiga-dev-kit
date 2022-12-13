@@ -30,6 +30,9 @@ const sidebars = {
     "Introduction": [
       "getting-started",
     ],
+    "Amiga Quick Start": [
+      "amiga_quick_start/amiga-quick-start",
+    ],
     "Dashboard": [
       "dashboard/dashboard",
       "dashboard/dashboard-fw",
@@ -37,6 +40,7 @@ const sidebars = {
     ],
     "Debug Cable": [
       "debug_cable/debug-cable",
+      "debug_cable/service-cable",
     ],
     "Microcontroller Kit": [
       "mcu_kit/microcontroller-kit",
