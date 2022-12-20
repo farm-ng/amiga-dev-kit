@@ -39,6 +39,8 @@ In the meantime, please note:
 
 ### farm-ng Amiga application update
 
+The fastest way to upgrade your dashboard is the wired update.
+
 To upgrade your Dashboard with the latest Amiga application, grab your Dashboard and your debug cable and take the following steps:
 
 :::info
