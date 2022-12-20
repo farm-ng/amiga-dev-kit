@@ -110,13 +110,13 @@ If you don't have a [**debug cable**](/docs/debug_cable/README.md) or [**service
 9. Drag and drop all extracted files from the downloaded firmware update.
     1.  Make sure to drop **all files** (`dashboard/`, `updator/`, `node_id.txt`, `code.py`, `boot.py`, etc.) directly into the root of the `CIRCUITPY` drive (as below).
         1.  The firmware will **NOT** load if the files are nested in a subfolder.
-        # TODO: Add image below
 10. Once the file transfer is complete, power cycle your dashboard (disconnect & reconnect power) and check the basic functionality.
     1.  The dashboard will no longer mount as `CIRCUITPY` when connected to a computer. If you have any issues, go through the connecting / mounting process again OR see the troubleshooting information below.
 11. If all is as expected, you're good to go. Just power down the dashboard, disconnect the debug cable, and enjoy your new features!
 12. `[Recommended]` Navigate to the configuration tab (gear icon) on the dashboard, and select the pendant icon to calibrate your pendant and confirm functionality.
 13. `[Recommended]` Also check the settings and ensure your desired wheel track and turning speed values remain.
 
+![CIRCUITPY_updated_windows](https://user-images.githubusercontent.com/53625197/208778396-68113b71-ddb2-409c-9d0d-acdd9ad887e6.png)
 
 :::caution Troubleshooting
 - If the file transfer process fails, or the behavior is not as expected, just delete all files in CIRCUITPY and try it again.
