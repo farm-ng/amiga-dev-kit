@@ -9,35 +9,39 @@ At farm-ng, we are regularly updating and improving our firmware as we continue 
 We want to get every new feature, performance improvement, and reliability increase out to you as soon as we can.
 And we want to enable you to easily upgrade your dashboard with these improvements at your convenience.
 
-:::tip Update
-Over-the-air (OTA) firmware updates for the dashboard application layer are now supported!
-This means that going forward you will be able to wirelessly update your amiga dashboard applications from the touchscreen.
-The OTA update method is available in all of the latest releases, starting with [amiga-dash-v0.1.1](https://github.com/farm-ng/amiga-dev-kit/releases).
+### Where to start
+
+To update the Amiga application layer (our frequent [amiga-dash FW releases](https://github.com/farm-ng/amiga-dev-kit/releases)), you can follow either:
+<!-- no toc -->
+ - [**Over-the-air (OTA) Amiga application updates**](#over-the-air-ota-amiga-application-updates)
+   - Simpler, especially for v0.1.5+
+   - Has existing version requirements
+   - No required materials
+ - [**Wired Amiga application updates**](#wired-amiga-application-updates)
+   - Faster
+   - Not dependent upon current installed version
+   - Requires a [**debug cable**](/docs/debug_cable/README.md) or [**service cable**](/docs/debug_cable/service_cable.md)
+
+To update the (infrequent) CircuitPython build releases, please follow [UF2 bootloader update](#uf2-bootloader-update).
+
+### Over-the-air (OTA) Amiga application updates
+
+You can use the over-the-air (OTA) firmware update method to wirelessly update your amiga dashboard applications from the touchscreen.
+The updator app is installed alongside the dashboard app, starting with the `amiga-dash-v0.1.1` release.
 
 For dashboards with earlier versions of the firmware, one additional wired update is required to get to `v0.1.1` or later.
-So make sure you have your [**debug cable**](./../debug_cable/) handy before proceeding with the following firmware update steps.
-If you don't have one, reach out to us using one of the options on our [**For Developers**](https://farm-ng.com/pages/for-developers) page.
-And make sure to choose the latest available version when performing your wired update!
-
-Note: the OTA update method does not yet support the (infrequent) UF2 bootloader updates, so keep your debug cable somewhere safe.
-:::
-
-:::caution coming soon
-We are working on a full walk through of using the `Updator` app.
-In the meantime, please note:
+Grab your [**debug cable**](/docs/debug_cable/README.md) or [**service cable**](/docs/debug_cable/service_cable.md),
+and follow the instructions at [**Wired Amiga application updates**](#wired-amiga-application-updates) to install the latest release.
 
 - For dashboards with the `v0.1.3` `Updator` app installed, you will be able to install any available update.
 - For dashboards with the `v0.1.1` `Updator` app installed, it is important that you start by updating your `Updator` app to `v0.1.3`.
   - You can then proceed to updating your `Dashboard` app to `v0.1.3` (or later) and your `Updator` app to versions later than `v0.1.3`.
   - If you have trouble updating your  `v0.1.1` `Updator` app to `v0.1.3`, please try again.
-  - If the update fails during the download, it will pick up where it left off when you get back to the download stage.
-  - If you are not able to complete the update, you should perform a wired update to the latest [amiga-dash release](https://github.com/farm-ng/amiga-dev-kit/releases).
-- For dashboards without any `Updator` app, you should perform a wired update to the latest [amiga-dash release](https://github.com/farm-ng/amiga-dev-kit/releases).
-:::
+    - If the update fails during the download, it will pick up where it left off when you get back to the download stage.
+  - If you are not able to complete the update, you should follow [**Wired Amiga application updates**](#wired-amiga-application-updates) to install the latest release.
+- For dashboards without any `Updator` app, you should follow [**Wired Amiga application updates**](#wired-amiga-application-updates) to install the latest release.
 
-### Wired updates
-
-### farm-ng Amiga application update
+### Wired Amiga application updates
 
 To upgrade your Dashboard with the latest Amiga application, grab your Dashboard and your debug cable and take the following steps:
 
@@ -52,17 +56,21 @@ This process is currently only supported on Windows and Mac.
 3. Extract the files from the zipped folder
 
 :::tip
-- Check the [amiga-dev-kit Releases](https://github.com/farm-ng/amiga-dev-kit/releases) page, because there may be an even newer available release.
+- Check the [amiga-dev-kit Releases](https://github.com/farm-ng/amiga-dev-kit/releases) page, as there may be an even newer available release.
 - Select the newest `amiga-dash-v#.#.#` and download that version.
-- The `fw-dash-v#.#.#` updates are different, and are explained in [UF2 bootloader update](#uf2-bootloader-update).
+  - Npt a `fw-dash-v#.#.#` or `pendant-v#.#.#` update!
 :::
 
 **Connect to your dashboard:**
 
+:::info
+If you don't have a [**debug cable**](/docs/debug_cable/README.md) or [**service cable**](/docs/debug_cable/service_cable.md), reach out to us using one of the options on our [**For Developers**](https://farm-ng.com/pages/for-developers) page.
+:::
+
 4. Power down your dashboard.
 5. Connect the debug cable into the back of the dashboard. See [debug cable](./../debug_cable/) for details.
-7. Connect your Windows or Mac PC to the USB / debug breakout micro-USB port (not the smaller, serial breakout).
-8. Reconnect your dashboard to power
+6. Connect your Windows or Mac PC to the USB / debug breakout micro-USB port (not the smaller, serial breakout).
+7. Reconnect your dashboard to power
    1. With very old versions of firmware, a folder automatically pops up under the name `CIRCUITPY` and resembles the example below.
    2. With newer versions, you'll need to manually bring the `CIRCUITPY` drive up by:
         1. Open a serial console connected to the dashboard
