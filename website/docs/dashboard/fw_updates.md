@@ -58,7 +58,7 @@ This process is currently only supported on Windows and Mac.
 :::tip
 - Check the [amiga-dev-kit Releases](https://github.com/farm-ng/amiga-dev-kit/releases) page, as there may be an even newer available release.
 - Select the newest `amiga-dash-v#.#.#` and download that version.
-  - Do not a `fw-dash-v#.#.#` or `pendant-v#.#.#` update!
+  - Do not select a `fw-dash-v#.#.#` or `pendant-v#.#.#` update!
 :::
 
 **Connect to your dashboard:**
