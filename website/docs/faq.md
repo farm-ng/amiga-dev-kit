@@ -3,18 +3,40 @@ id: faq
 title: Frequently asked questions
 ---
 
-### Connecting to REPL
+## Where can I get support?
+
+:::caution coming soon
+Link to support page
+:::
+
+
+## Using the REPL
 
 <details>
-  <summary>Connecting to REPL</summary>
+  <summary>What is the REPL?</summary>
+  <div>
+    The REPL is the "Read-Evaluate-Print-Loop", an interactive terminal for running CircuitPython commands directly on the microcontroller.
+    <br/><br/>
+    Some basics:
+    <br/>
+    - You can interrupt the running code with <code>ctrl+C</code>
+    <br/>
+    - You can enter CircuitPython commands (or paste them with a right click) following the <code>>>></code> and run them with <code>Enter</code>
+    <br/>
+    - You can restart the previously running application with <code>ctrl+D</code>
+    <br/>
+    - You can find more details at: <a href="https://learn.adafruit.com/welcome-to-circuitpython/the-repl">Adafruit "The REPL"</a>.
+    </div>
+</details>
+
+<details>
+  <summary>How do I connect to the REPL?</summary>
   <div>
     <div>
     There are multiple methods for connecting to the serial console of your microcontrollers (dashboard, pendant, MCU kit, etc.).
-    <br/>
-    <br/>
+    <br/><br/>
     The Advanced serial console is recommended, but Mu is easier to get started with and has some useful added-on functionality (like a plotter for printed tuples).
-    <br/>
-    <br/>
+    <br/><br/>
     The pendant, and other simple microcontrollers, will show up as a single serial port.
     The dashboard will show up as two ports, one for the console and one for data transfer.
     The first port should be the console you want to connect to for stopping the program, running commands in the REPL, etc.
@@ -39,8 +61,7 @@ title: Frequently asked questions
         <summary>Mac</summary>
         <div>
             See the adafruit docs for getting started with 'screen' in your terminal: <a href="https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-mac-and-linux">Mac serial console</a>.
-            <br/>
-            <br/>
+            <br/><br/>
             TIP: Use autocomplete to get the correct usb modem <code>.../tty.usb[tab_for_autocomplete]</code>
         </div>
         </details>
@@ -57,5 +78,22 @@ title: Frequently asked questions
         So we'd recommend checking out their links for the advanced serial consoles for most purposes.
       </div>
     </details>
+  </div>
+</details>
+
+
+<details>
+  <summary>Which port / console do I choose?</summary>
+  <div>
+    As described in the Adafruit advanced serial console links,
+    you can query the devices on Linux & Mac with:<br/><code>ls /dev/ttyACM*</code> or find the Windows <code>COM</code> port in the Device Manager.
+    <br/><br/>
+    - The pendant, and other simple microcontrollers, will show up as a single serial port.
+    <br/>
+    - The dashboard will show up as two ports, one for the console and one for data transfer.
+    The first port should be the console you want to connect to for stopping the program, running commands in the REPL, etc.
+    <br/>
+    <br/>
+    Keep in mind that the ports will increment as you connect multiple devices.
   </div>
 </details>

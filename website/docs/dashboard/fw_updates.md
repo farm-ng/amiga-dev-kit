@@ -39,8 +39,6 @@ In the meantime, please note:
 
 ### farm-ng Amiga application update
 
-The fastest way to upgrade your dashboard is the wired update.
-
 To upgrade your Dashboard with the latest Amiga application, grab your Dashboard and your debug cable and take the following steps:
 
 :::info
@@ -67,22 +65,30 @@ This process is currently only supported on Windows and Mac.
 8. Reconnect your dashboard to power
    1. With very old versions of firmware, a folder automatically pops up under the name `CIRCUITPY` and resembles the example below.
    2. With newer versions, you'll need to manually bring the `CIRCUITPY` drive up by:
-        1.  Open a serial console connected to the dashboard (see: [Adafruit connecting to the serial console](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console))
+        1. Open a serial console connected to the dashboard
+           - If you are unfamiliar, see: [FAQ - Using the REPL](/docs/faq#using-the-repl)
         2. Interrupt the program with `ctrl+C`
         3. Run the following commands in the REPL:
+        <!-- :::tip
+        You can copy code blocks on this website by left clicking the icon in the top right corner of the code block.
+        Paste the commands in the REPL by right clicking and selecting `Paste`.
+        ::: -->
         ```
         import boot_utils
         boot_utils.mount_circuitpy()
-
-        # OR IF YOU DON'T HAVE THAT UTILITY AVAILABLE
+        ```
+        :::caution If you receive an error
+        You don't yet have that utility available with your installed dashboard version.
+        To mount the circuitpy drive, you can instead run:
+        ```
         import os
         import storage
         import microcontroller
-
         storage.remount("/", False)
         os.remove('boot.py')
         microcontroller.reset()
         ```
+        :::
         4. The CIRCUITPY drive should now show up mounted
 
 **CIRCUITPY mounted**
@@ -96,11 +102,12 @@ This process is currently only supported on Windows and Mac.
 9. Drag and drop all extracted files from the downloaded firmware update.
     1.  Make sure to drop **all files** (`dashboard/`, `updator/`, `node_id.txt`, `code.py`, `boot.py`, etc.) directly into the root of the `CIRCUITPY` drive (as below).
         1.  The firmware will **NOT** load if the files are nested in a subfolder.
+        # TODO: Add image below
 10. Once the file transfer is complete, power cycle your dashboard (disconnect & reconnect power) and check the basic functionality.
     1.  The dashboard will no longer mount as `CIRCUITPY` when connected to a computer. If you have any issues, go through the connecting / mounting process again OR see the troubleshooting information below.
-12. If all is as expected, you're good to go. Just power down the dashboard, disconnect the debug cable, and enjoy your new features!
-13. `[Recommended]` Navigate to the configuration tab (gear icon) on the dashboard, and select the pendant icon to calibrate your pendant and confirm functionality.
-14. `[Recommended]` Also check the settings and ensure your desired wheel track and turning speed values remain.
+11. If all is as expected, you're good to go. Just power down the dashboard, disconnect the debug cable, and enjoy your new features!
+12. `[Recommended]` Navigate to the configuration tab (gear icon) on the dashboard, and select the pendant icon to calibrate your pendant and confirm functionality.
+13. `[Recommended]` Also check the settings and ensure your desired wheel track and turning speed values remain.
 
 
 :::caution Troubleshooting
