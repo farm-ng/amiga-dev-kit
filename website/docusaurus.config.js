@@ -66,7 +66,7 @@ async function createConfig() {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
 	announcementBar: {
-        id: 'support_ukraine',
+        id: 'join_discourse',
         content:
           'Join Farm-ng Discourse forum 🤖 🚜 <a target="_blank" rel="noopener noreferrer" href="https://discourse.farm-ng.com/"> Announcements, Q&A, share codes or ideas.</a>.',
         backgroundColor: '#20232a',
