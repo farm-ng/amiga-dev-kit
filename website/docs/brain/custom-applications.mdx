@@ -204,39 +204,24 @@ When running the above script, a virtual environment will be created under the *
 
 If all goes well, you'll see an empty kivy application on your screen.
 
-## Live Code Syncing
+## Develop and test in the robot
 
-Now we'll start a synchronization session that will mirror the code in this directory to an Apps directory (/data/apps) on the Amiga Brain. Note: This directory is persistent across reboots.
+In order to test your app in the robot, we require to push the changes to the remote repository created before and clone it to the robot.
 
-Our current sync process leverages Mutagen, the sync.sh script will set this up for you. Please provide your sudo password if required. This will copy the Mutagen binary and agents to your local filesystem.
-Additional documentation regarding Mutagen may be viewed at: [Mutagen](https://mutagen.io/documentation/introduction).
+We recommend to follow the next steps:
 
-:::info
-Run this from the app directory where you'll find `sync.sh`!
-:::
-
-To start the synchronization process in the background:
+1. ssh to robot `ssh amiga`
+2. Create an ssh key on the amiga `ssh-keygen`
+3. Copy and add the key to your github user
+4. Set username in git config
 
 ```bash
-./sync.sh -s start
+git config --global user.email "YOUR_EMAIL"
+git config --global user.name "YOUR-USERNAME"
 ```
 
-To stop the synchronization process:
+5. clone you repo
 
 ```bash
-./sync.sh -s stop
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 ```
-
-Finally to view the status:
-
-```bash
-./sync.sh -s status
-```
-
-While the sync process is running, any changes are mirrored to the Amiga Brain.
-
-To test this process out, now that the current directory amiga-dev-kit/brain/examples/hello is being synchronized to your brain, lets trigger a refresh of the currently loaded apps by clicking on the "home" icon near the top right.
-
-Click on the new app labeled "Hello" on the Amiga Brain. After a brief moment (bootstrapping the app) the app will load and you'll be greeting a a simple UI app. Close the app by clicking "Exit".
-
-On your workstation, open the "main.py" file in an editor and change the value for YOUR_NAME to be your name (i.e. joe dirt). Save the file and relaunch the app from the Amiga Brain. The text will now reflect your changes.
