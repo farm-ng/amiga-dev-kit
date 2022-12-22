@@ -65,6 +65,14 @@ async function createConfig() {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+	announcementBar: {
+        id: 'join_discourse',
+        content:
+          'Join Farm-ng Discourse forum 🤖 🚜 <a target="_blank" rel="noopener noreferrer" href="https://discourse.farm-ng.com/"> Announcements, Q&A, share codes or ideas.</a>.',
+        backgroundColor: '#20232a',
+        textColor: '#fff',
+        isCloseable: false,
+	},
       navbar: {
 	title: 'Amiga SDK',
 	logo: {
@@ -102,6 +110,12 @@ async function createConfig() {
 	    position: 'left'
 	  },
 	  {
+	    href: 'https://discourse.farm-ng.com',
+		label: 'Forum',
+	    position: 'right',
+	    'aria-label': 'Farm-ng Developers Forum',
+	  },
+	  {
 	    href: 'https://www.youtube.com/channel/UCczyy8tyLbqxjtLE1_8YW3w',
 	    label: 'YouTube',
 	    position: 'right',
@@ -111,12 +125,6 @@ async function createConfig() {
 	    position: 'right',
 	    className: 'header-github-link',
 	    'aria-label': 'GitHub repository',
-	  },
-	  {
-	    href: 'https://discord.gg/YTCyGsEtBU',
-	    position: 'right',
-	    className: 'header-discord-link',
-	    'aria-label': 'Farm-ng Developers Discord',
 	  },
 	],
       },
@@ -148,8 +156,8 @@ async function createConfig() {
 	      //  href: 'https://stackoverflow.com/questions/tagged/docusaurus',
 	      //},
 	      {
-		label: 'Discord',
-		href: 'https://discord.gg/YTCyGsEtBU',
+		label: 'Forum',
+		href: 'https://discourse.farm-ng.com',
 	      },
 	      {
 		label: 'Contribute',
