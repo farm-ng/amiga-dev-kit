@@ -59,7 +59,8 @@ const sidebars = {
         "hardware-tools/etools",
     ],
     "Support": [
-      "support/support"
+      "support/support",
+      "support/faq"
   ],
   },
   "api": [
