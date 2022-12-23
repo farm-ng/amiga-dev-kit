@@ -15,7 +15,7 @@ To update the Amiga application layer (our frequent [amiga-dash FW releases](htt
 <!-- no toc -->
  - [**Over-the-air (OTA) Amiga application updates**](#over-the-air-ota-amiga-application-updates)
    - Simpler, especially for v0.1.5+
-   - Has existing version requirements
+   - Requires v0.1.1+ already installed
    - No required materials
  - [**Wired Amiga application updates**](#wired-amiga-application-updates)
    - Faster
@@ -40,6 +40,12 @@ and follow the instructions at [**Wired Amiga application updates**](#wired-amig
     - If the update fails during the download, it will pick up where it left off when you get back to the download stage.
   - If you are not able to complete the update, you should follow [**Wired Amiga application updates**](#wired-amiga-application-updates) to install the latest release.
 - For dashboards without any `Updator` app, you should follow [**Wired Amiga application updates**](#wired-amiga-application-updates) to install the latest release.
+
+#### Tips
+
+- To begin the Over-the-air (OTA) Amiga application updates, navigate to the ID page of the settings tab.
+- If you decide to cancel and update at any step along the process, you can always exit the Updator app and return to the dashboard app by cancelling the current operation, and clicking back through the home page.
+- Check the versions on the ID page of the settings tab after you update
 
 ### Wired Amiga application updates
 
@@ -85,7 +91,7 @@ If you don't have a [**debug cable**](/docs/debug_cable/README.md) or [**service
         import boot_utils
         boot_utils.mount_circuitpy()
         ```
-        :::caution If you receive an error
+        :::caution If you receive an `AtributeError: ModuleNotFound 'mount_circuitpy'` error
         You don't yet have that utility available with your installed dashboard version.
         To mount the circuitpy drive, you can instead run:
         ```
@@ -97,7 +103,7 @@ If you don't have a [**debug cable**](/docs/debug_cable/README.md) or [**service
         microcontroller.reset()
         ```
         :::
-        4. The CIRCUITPY drive should now show up mounted
+        4. The serial console should freeze / exit and the CIRCUITPY drive should now show up mounted
 
 **CIRCUITPY mounted**
 
