@@ -36,4 +36,3 @@ You can start a conversation and connect with the community [here](https://disco
 :::info
 Before you are able to start a conversion using Discourse, you will need to create an account using your email address.
 :::
-
