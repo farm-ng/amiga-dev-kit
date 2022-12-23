@@ -39,19 +39,29 @@ Before you are able to start a conversion using Discourse, you will need to crea
 
 ## FAQs
 
-#### How do I update the dashboard firmware?
+<details>
+  <summary>How do I update the dashboard firmware?</summary>
+  <div>
+     All latest updates are available online with detailed instructions that will take you step by step to a successful update.
+    <br/><br/>
+    - You can find more details at: <a href="https://amiga.farm-ng.com/docs/dashboard/dashboard-fw#wired-updates">Dashboard Firmware Updates</a>.
+    </div>
+</details>
 
-- To update your dashboard to the latest firmware, please visit [here](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw#wired-updates)
+<details>
+  <summary>How can I create a new app for the brain?</summary>
+  <div>
+     Custom applications can be created on the brain from anywhere. We have a detailed tutorial on creating your first custom app on your Amiga.
+    <br/><br/>
+    - You can find more details at: <a href="https://amiga.farm-ng.com/docs/brain/brain-apps">Custom Brain Applications</a>.
+    </div>
+</details>
 
-#### How can I create a new app for the brain?
-
-- To create your own custom application for the Amiga Brain, please visit [here](https://amiga.farm-ng.com/docs/brain/brain-apps)
-
-#### How do I purchase replacement parts?
-
-- You can purchase replacement parts at [farm-ng.com](https://farm-ng.com)
-
-
-#### Who do I get in touch with for errors with the Amiga?
-
-- If you need to report an issue you are having with your Amiga please start a new bug report here (insert issue here)
+<details>
+  <summary>Who do I get in touch with for errors with the Amiga?</summary>
+  <div>
+  To ensure we are continuous improving the Amiga, we have made it easy for you to submit any bug reports you may be having via the farm-ng-amiga Github.
+    <br/><br/>
+    - You can find more details at: <a href="https://github.com/farm-ng/farm-ng-amiga/issues/new">Create a Bug Report</a>.
+    </div>
+</details>
