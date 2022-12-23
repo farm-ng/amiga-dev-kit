@@ -20,7 +20,7 @@ To create an issue for documentation issues, please go [here](https://github.com
 
 To create an issue for feature requests or bug reports, please go [here](https://github.com/farm-ng/farm-ng-amiga/issues/new)
 
-#### Feature Request 
+#### Feature Request
 ![feat req](https://user-images.githubusercontent.com/64480560/209391730-520c5386-b8d1-4931-976c-a2f868c09292.gif)
 
 
@@ -55,12 +55,3 @@ Before you are able to start a conversion using Discourse, you will need to crea
 #### Who do I get in touch with for errors with the Amiga?
 
 - If you need to report an issue you are having with your Amiga please start a new bug report here (insert issue here)
-
-
-
-
-
-
-
-
-
