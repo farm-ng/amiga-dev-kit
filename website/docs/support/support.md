@@ -7,7 +7,7 @@ title: Support
 
 We will show you how to create an issue with farm-ng.
 
-Issue are created for bugs, feature requests, documentation requests.
+Issue are created for bugs, feature requests, and documentation requests.
 
 To create an issue for documentation requests, please go [here](https://github.com/farm-ng/amiga-dev-kit/issues/new/choose)
 
