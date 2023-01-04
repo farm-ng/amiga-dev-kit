@@ -74,7 +74,7 @@ If you don't have a [**debug cable**](/docs/debug_cable/README.md) or [**service
    1. With very old versions of firmware, a folder automatically pops up under the name `CIRCUITPY` and resembles the example below.
    2. With newer versions, you'll need to manually bring the `CIRCUITPY` drive up by:
         1. Open a serial console connected to the dashboard
-           - If you are unfamiliar, see: [FAQ - Using the REPL](/docs/faq#using-the-repl)
+           - If you are unfamiliar, see: [FAQ - Using the REPL](/docs/reference/faq#using-the-repl)
         2. Interrupt the program with `ctrl+C`
         3. Run the following commands in the REPL:
         <!-- :::tip

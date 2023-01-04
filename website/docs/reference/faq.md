@@ -3,13 +3,6 @@ id: faq
 title: Frequently Asked Questions
 ---
 
-## Where can I get support?
-
-:::caution coming soon
-Link to support page
-:::
-
-
 ## Using the REPL
 
 <details>
@@ -98,6 +91,7 @@ Link to support page
   </div>
 </details>
 
+## General
 <details>
   <summary>How do I update the dashboard firmware?</summary>
   <div>
