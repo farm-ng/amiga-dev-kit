@@ -55,13 +55,11 @@ const sidebars = {
     //   "pendant/pendant",
     // ],
     "Resources": [
-        "faq",
         "hardware-tools/recommended-tools",
         "hardware-tools/etools",
     ],
     "Support": [
       "support/support",
-      "support/faq"
   ],
   },
   "api": [
