@@ -9,12 +9,12 @@ We will show you how to create an issue with farm-ng.
 
 Issue are created for bugs, feature requests, and documentation requests.
 
-To create an issue for documentation requests, please go [here](https://github.com/farm-ng/amiga-dev-kit/issues/new/choose)
+To create a documentation request or report incorrect documentation, please go [here](https://github.com/farm-ng/amiga-dev-kit/issues/new/choose)
 
+#### Documentation Request
 ![doc req](https://user-images.githubusercontent.com/64480560/209391577-688b70ea-edae-4780-8c52-d5aa5c6854ff.gif)
 
-To create an issue for documentation issues, please go [here](https://github.com/farm-ng/amiga-dev-kit/issues/new/choose)
-
+#### Documentation Issue
 ![doc issue](https://user-images.githubusercontent.com/64480560/209391689-090f4ce7-fad2-4359-ac71-c0efb36dc0e6.gif)
 
 
