@@ -51,9 +51,9 @@ const sidebars = {
       "brain/next-steps",
       "brain/brain-apps"
     ],
-    // "Pendant": [
-    //   "pendant/pendant",
-    // ],
+     "Pendant": [
+       "pendant/pendant",
+     ],
     "Resources": [
         "reference/faq",
         "hardware-tools/recommended-tools",
