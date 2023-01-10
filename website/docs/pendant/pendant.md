@@ -16,31 +16,31 @@ The pendant must be connect to CAN/Power accessory port which is location on the
 
 ### Pendant Controls
 
-![pendant 2](https://user-images.githubusercontent.com/64480560/210901638-0ffd9fd6-6901-44d6-8b93-d5146b97e3de.jpg)
+![IMG-9902](https://user-images.githubusercontent.com/64480560/211636387-fa11f5ea-59b0-4506-8005-d99ab21f90c6.jpg)
 
 **Joystick** (omni directional stick that is used to control the amiga. This controls include, Acceleration, and turning left and right, reverse)
-
-:::tip
-Indicators include: Brighter light over the icon, on MC tab, cruise control will be highlighted)
-:::
 
 **Cruise(X)** – this will allow you to place your Amiga into cruise control. Press this button while the amiga is completely stopped. To activate this, press `cruise` then gently push forward the joystick to accelerate, pull back on joystick to decrease acceleration
 
 :::caution
-pushing forward and pulling back on the joystick does not control speed, only acceleration and how much it will accelerate in relation to the set speed on the dashboard home tab.
+Pushing forward and pulling back on the joystick does not control speed, only acceleration and how much it will accelerate in relation to the set speed on the dashboard home tab.
 :::
 
-**Brake(O)** – this is an emergency brake for the MCUs, pressing this will end cruise control and stop all motors
+**Brake(O)**
+this is an emergency brake for the MCUs, pressing this will end cruise control and stop all motors
 
 **PTO (Triangle)**
+Power take-off (PTO) is a device that transfers an engine's mechanical power to another piece of equipment. A PTO allows the hosting energy source to transmit power to additional equipment that does not have its own engine or motor.
 
 **PAUSE(Square)**
+Currently this button is a free button to be updated in future firmware releases.
+
 **ARROWS** -  UP, Down, Left, Right {these are used to control your connect and registered PTO device)
- Basic troubleshooting (can be on FAQ page)
+ Basic troubleshooting can found on our [FAQ page](https://amiga.farm-ng.com/docs/reference/faq)
 
 
 ### How to calibrate pendant
-It is highly recommended and suggested to calibrate you pendant when you first start setup your amiga.
+It is required to calibrate you pendant when you first start setup of your Amiga.
 
 ![ezgif com-gif-maker 2 (1)](https://user-images.githubusercontent.com/64480560/206317768-42edeab6-8fea-4c7d-95ae-a3ff3d9e62f1.gif)
 
