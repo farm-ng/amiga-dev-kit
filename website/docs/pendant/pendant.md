@@ -27,7 +27,7 @@ Pushing forward and pulling back on the joystick does not control speed, only ac
 :::
 
 **Brake(O)**
-This is an emergency brake for the microcontroller unit(MCU), pressing this will end cruise control and stop all motors
+This is a brake for the Amiga. Pressing this will stop all motors and exit cruise control mode (if active).
 
 **PTO (Triangle)**
 Power take-off (PTO) is a device that transfers an engine's mechanical power to another piece of equipment. A PTO allows the hosting energy source to transmit power to additional equipment that does not have its own engine or motor.
