@@ -1,14 +1,7 @@
 ---
 id: faq
-title: Frequently asked questions
+title: Frequently Asked Questions
 ---
-
-## Where can I get support?
-
-:::caution coming soon
-Link to support page
-:::
-
 
 ## Using the REPL
 
@@ -96,4 +89,32 @@ Link to support page
     <br/>
     Keep in mind that the ports will increment as you connect multiple devices.
   </div>
+</details>
+
+## General
+<details>
+  <summary>How do I update the dashboard firmware?</summary>
+  <div>
+     All latest updates are available online with detailed instructions that will take you step by step to a successful update.
+    <br/><br/>
+    - You can find more details at: <a href="https://amiga.farm-ng.com/docs/dashboard/dashboard-fw#wired-updates">Dashboard Firmware Updates</a>.
+    </div>
+</details>
+
+<details>
+  <summary>How can I create a new app for the brain?</summary>
+  <div>
+     Custom applications can be created on the brain from anywhere. We have a detailed tutorial on creating your first custom app on your Amiga.
+    <br/><br/>
+    - You can find more details at: <a href="https://amiga.farm-ng.com/docs/brain/brain-apps">Developing Custom Applications</a>.
+    </div>
+</details>
+
+<details>
+  <summary>Who do I get in touch with for errors with the Amiga?</summary>
+  <div>
+  To ensure we are continuous improving the Amiga, we have made it easy for you to submit any bug reports you may be having via the farm-ng-amiga Github.
+    <br/><br/>
+    - You can find more details at: <a href="https://github.com/farm-ng/farm-ng-amiga/issues/new/choose">Create a Bug Report</a>.
+    </div>
 </details>
