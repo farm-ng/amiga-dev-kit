@@ -20,17 +20,19 @@ The pendant must be connect to CAN/Power accessory port which is location on the
 
 **Joystick** (omni directional stick that is used to control the amiga. This controls include, Acceleration, and turning left and right, reverse)
 
-**Cruise(X)** – this will allow you to place your Amiga into cruise control. Press this button while the amiga is completely stopped. To activate this, press `cruise` then gently push forward the joystick to accelerate, pull back on joystick to decrease acceleration
+**Cruise(X)** – this will allow you to place your Amiga into cruise control. To activate this,while the amiga is completely stopped, press `cruise` then gently push forward the joystick to accelerate, pull back on joystick to decrease acceleration. You can press this button once more to exit cruise control and slow to a stop.
 
 :::caution
 Pushing forward and pulling back on the joystick does not control speed, only acceleration and how much it will accelerate in relation to the set speed on the dashboard home tab.
 :::
 
 **Brake(O)**
-this is an emergency brake for the MCUs, pressing this will end cruise control and stop all motors
+This is an emergency brake for the microcontroller unit(MCU), pressing this will end cruise control and stop all motors
 
 **PTO (Triangle)**
 Power take-off (PTO) is a device that transfers an engine's mechanical power to another piece of equipment. A PTO allows the hosting energy source to transmit power to additional equipment that does not have its own engine or motor.
+
+We use this to facilitate control from the pendant for addition equipment attached to the Amiga, such as the [3-point lift](https://farm-ng.com/products/cat-zero-3-point-lift-kit), [compost spreader](https://farm-ng.com/products/compost-spreader) or [cargo dump box](https://farm-ng.com/products/kit-cargo-dump-box)
 
 **PAUSE(Square)**
 Currently this button is a free button to be updated in future firmware releases.
