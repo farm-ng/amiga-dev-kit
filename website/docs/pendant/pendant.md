@@ -38,7 +38,7 @@ We use this to facilitate control from the pendant for addition equipment attach
 Currently this button is a free button to be updated in future firmware releases.
 
 **ARROWS** -  UP, Down, Left, Right {these are used to control your connect and registered PTO device)
- Basic troubleshooting can found on our [FAQ page](https://amiga.farm-ng.com/docs/reference/faq)
+ Basic troubleshooting can found on our [FAQ page](/docs/reference/faq)
 
 
 ### How to calibrate pendant
