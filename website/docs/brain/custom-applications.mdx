@@ -69,6 +69,10 @@ ssh-keygen # create ~/.ssh/ folder
 
 3. Create a file called `config` (no extension) in `~/.ssh`
 
+```bash
+cd ~/.ssh
+gedit config
+```
 :::
 
 Add the following to your  `~/.ssh/config`:
@@ -264,8 +268,13 @@ To run specific tests: `pytest test/test_dummy.py::TestDummy::test_add`
 
 ---
 ## SSH Configuration
+Now it is time to configure your *config* file to *ssh* in your Amiga.
 
-Configure your *.ssh/config*
+```bash
+gedit ~/.ssh/config
+```
+Edit your *.ssh/config* file to include the below information.
+
 ```
 Host amiga
     HostName <intranet ip address>
@@ -305,4 +314,35 @@ git config --global user.name "YOUR-USERNAME"
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
+
+6. Run the app on your Amiga
+
+```bash
+cd YOUR_REPOSITORY/
+./entry.sh  # install and run
+```
+
+## Run workspace version of launcher
+
+```bash
+cd ~/workspace/amiga
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+Necessary instructions for running workspace version of apps
+
+**Option 1 (symlink)**
+
+```bash
+ln -s ~/workspace/amiga/apps/camera/ ~/apps/camera
+```
+
+toggle off apps screen, then back and Camera Dev should appear. Repeat for apps you want to see.
+
+**Option 2 (env variable)**
+```bash
+export FARM_NG_APPS_PATH=/data/home/amiga/workspace/amiga/apps/
 ```
