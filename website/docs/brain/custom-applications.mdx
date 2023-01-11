@@ -322,26 +322,3 @@ cd YOUR_REPOSITORY/
 ./entry.sh  # install and run
 ```
 
-## Run workspace version of launcher
-
-```bash
-cd ~/workspace/amiga
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-Necessary instructions for running workspace version of apps
-
-**Option 1 (symlink)**
-
-```bash
-ln -s ~/workspace/amiga/apps/camera/ ~/apps/camera
-```
-
-toggle off apps screen, then back and Camera Dev should appear. Repeat for apps you want to see.
-
-**Option 2 (env variable)**
-```bash
-export FARM_NG_APPS_PATH=/data/home/amiga/workspace/amiga/apps/
-```
