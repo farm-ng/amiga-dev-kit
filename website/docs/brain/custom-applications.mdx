@@ -69,6 +69,9 @@ ssh-keygen # create ~/.ssh/ folder
 
 3. Create a file called `config` (no extension) in `~/.ssh`
 
+```bash
+gedit ~/.ssh/config
+```
 :::
 
 Add the following to your  `~/.ssh/config`:
@@ -264,8 +267,13 @@ To run specific tests: `pytest test/test_dummy.py::TestDummy::test_add`
 
 ---
 ## SSH Configuration
+Now it is time to configure your *config* file to *ssh* in your Amiga.
 
-Configure your *.ssh/config*
+```bash
+gedit ~/.ssh/config
+```
+Edit your *.ssh/config* file to include the below information.
+
 ```
 Host amiga
     HostName <intranet ip address>
@@ -305,4 +313,11 @@ git config --global user.name "YOUR-USERNAME"
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
+
+6. Run the app on your Amiga
+
+```bash
+cd YOUR_REPOSITORY/
+./entry.sh  # install and run
 ```
