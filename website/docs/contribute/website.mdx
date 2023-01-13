@@ -53,10 +53,27 @@ Though this is not a requirement and you are welcome to decide how / where to in
 
 Install `pip3` & `virtualenv` (system level):
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="linux" label="Linux" default>
+
 ```bash
 sudo apt-get install python3-pip
 sudo pip3 install virtualenv
 ```
+</TabItem>
+<TabItem value="macos" label="MacOs">
+
+```bash
+brew install python3
+sudo pip3 install virtualenv
+```
+
+</TabItem>
+</Tabs>
+
 Start a virtual environment:
 
 ```bash
@@ -68,8 +85,6 @@ source venv/bin/activate
 
 
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 <Tabs>
 <TabItem value="linux" label="Linux" default>
