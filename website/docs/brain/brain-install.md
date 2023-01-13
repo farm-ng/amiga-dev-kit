@@ -61,10 +61,30 @@ If you want to install [`farm-ng-amiga`](https://pypi.org/project/farm-ng-amiga)
 
 Install `pip3` & `virtualenv`:
 
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="linux" label="Linux" default>
+
 ```bash
 sudo apt-get install python3-pip
 sudo pip3 install virtualenv
 ```
+
+</TabItem>
+<TabItem value="macos" label="MacOs">
+
+```bash
+brew install python3
+# to check if the installation was successful input command
+pip --version
+sudo pip3 install virtualenv
+```
+</TabItem>
+</Tabs>
+
 
 Start a virtual environment:
 
@@ -115,10 +135,26 @@ If you want to edit the package, or contribute, you can install from source.
 
 Install `pip3` & setup a `virtualenv` (as above)
 
+<Tabs>
+<TabItem value="linux" label="Linux" default>
+
 ```bash
 sudo apt-get install python3-pip
 sudo pip3 install virtualenv
 ```
+
+</TabItem>
+<TabItem value="macos" label="MacOs">
+
+```bash
+brew install python3
+# to check if the installation was successful input command
+pip --version
+sudo pip3 install virtualenv
+```
+</TabItem>
+</Tabs>
+
 
 Create and install the ``farm-ng-amiga`` Python package
 
