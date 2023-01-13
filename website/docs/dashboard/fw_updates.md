@@ -170,20 +170,20 @@ This process is currently only supported on Windows and Mac.
 
 **Access the files:**
 
-1. Download the latest [UF2 file](https://github.com/farm-ng/amiga-dev-kit/releases/download/fw-dash-v1.0.0/fw-dash-v1.0.0.uf2)
-2. For more details on the UF2 file release see the release page here: [Release: fw-dash-v1.0.0](https://github.com/farm-ng/amiga-dev-kit/releases/tag/fw-dash-v1.0.0)
+1. Download the latest [fw-dash UF2 file](https://github.com/farm-ng/amiga-dev-kit/releases/download/fw-dash-v1.1.0/fw-dash-v1.1.0.uf2)
+2. For more details on the UF2 file release see the release page here: [Release: fw-dash-v1.1.0](https://github.com/farm-ng/amiga-dev-kit/releases/tag/fw-dash-v1.1.0)
 
 **Connect to your dashboard:**
 
-4. Power down your dashboard.
-5. Connect the debug cable into the back of the dashboard. See [debug cable](./../debug_cable/) for details.
-7. Connect your Windows or Mac PC to the USB / debug breakout micro-USB port (not the smaller, serial breakout).
-8. Reconnect your dashboard to power so a folder automatically pops up under the name `CIRCUITPY`, as with the farm-ng firmware update example above.
+3. Power down your dashboard.
+4. Connect the debug cable into the back of the dashboard. See [debug cable](./../debug_cable/) for details.
+5. Connect your Windows or Mac PC to the USB / debug breakout micro-USB port (not the smaller, serial breakout).
+6. Reconnect your dashboard to power so a folder automatically pops up under the name `CIRCUITPY`, as with the farm-ng firmware update example above.
 
 **Load into BOOTLOADER mode**
 
-10. With the dashboard connected to your PC, double click the reset button on the USB / debug breakout.
-11. This should remount the dashboard under the name `AMIGA` and resemble the example below.
+7. With the dashboard connected to your PC, double click the reset button on the USB / debug breakout.
+8. This should remount the dashboard under the name `AMIGA` and resemble the example below.
     :::tip
     The timing of the double click can be a little tricky, so if it mounts as `CIRCUITPY`, just try again until it mounts as `AMIGA`.
     If you cannot get the double click timing correct, you can enter BOOTLOADER mode with the following advanced user steps:
@@ -202,8 +202,8 @@ This process is currently only supported on Windows and Mac.
     microcontroller.reset()
     ```
     :::
-12. Drag and drop the newly downloaded UF2 file onto the mounted drive.
-13. This will immediately cause the bootloader firmware to update, and the dashboard will automatically reboot as `CIRCUITPY` once complete.
+9. Drag and drop the newly downloaded UF2 file onto the mounted drive.
+10. This will immediately cause the bootloader firmware to update, and the dashboard will automatically reboot as `CIRCUITPY` once complete.
 :::note
 The farm-ng firmware you may have just updated should remain untouched, so the order is not important if you are updating both types of firmware.
 :::
