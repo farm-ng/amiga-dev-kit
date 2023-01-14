@@ -75,7 +75,9 @@ If you don't have a [**debug cable**](/docs/debug_cable/README.md) or [**service
 
 4. Power down your dashboard.
 5. Connect your [**debug cable**](/docs/debug_cable/README.md) or [**service cable**](/docs/debug_cable/service_cable.md) into the [Debug port](/docs/debug_cable/#how-to-connect) on the back of the dashboard.
-   1. If using a debug cable, either the USB or the Serial port will work.
+   1. If using a debug cable, connect your Windows or Mac PC to the **USB** interface:
+      1. On newer cables this is the side labelled `USB`
+      2. On older cables this is the larger purple board
    2. If using a service cable, you only have the one port.
 6. Reconnect your dashboard to power
    1. With very old versions of firmware, a folder automatically pops up under the name `CIRCUITPY` and resembles the example below.
