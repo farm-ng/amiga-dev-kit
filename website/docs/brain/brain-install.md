@@ -50,7 +50,7 @@ git clone https://github.com/farm-ng/farm-ng-amiga.git
 ```
 :::
 
-### [optional] Set up virtual environment
+### [Optional] Set up virtual environment
 
 :::tip
 We recommend running the brain SDK applications in a virtual environment to avoid conflicts with other packages / versions installed on your system.
