@@ -4,7 +4,7 @@ title: 00 - Virtual Joystick Overview
 ---
 # Virtual Joystick Overview
 
-[Link to `virtual_joystick/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/virtual_joystick/main.py)
+[Link to `virtual-joystick`](https://github.com/farm-ng/virtual-joystick)
 
 This example application and tutorial is designed to enable you to develop your own custom applications and deploy them to the Amiga brain.
 
@@ -116,5 +116,5 @@ See: [farm_ng_amiga](https://github.com/farm-ng/farm-ng-amiga)
 
 ## Virtual Joystick tutorial
 
-The goal of this tutorial is to take you step-by-step from the template repository to the full [`virtual_joystick/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/virtual_joystick/main.py) example.
+The goal of this tutorial is to take you step-by-step from the template repository to the full [`virtual-joystick/src/main.py`](https://github.com/farm-ng/virtual-joystick/blob/main/src/main.py) example.
 Then you can mirror what you've done here in your own custom app development!
