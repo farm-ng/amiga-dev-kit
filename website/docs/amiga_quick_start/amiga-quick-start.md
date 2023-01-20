@@ -51,7 +51,10 @@ Once that has appeared, release ESTOP and wait a few seconds.
 
 Press / Tap START and the dashboard will appear.
 
-The first time you start your Amiga, and anytime you replace the pendant, you should calibrate the joystick on your Pendant.
+### Calibrate the pendant
+
+It is required to calibrate you pendant when you first start setup of your Amiga, and anytime you replace the pendant.
+
 :::caution
 - Before testing pendant, you should press physical ESTOP so the Amiga does not drive while testing.
 :::

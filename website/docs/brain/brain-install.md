@@ -1,6 +1,6 @@
 ---
 id: brain-install
-title: Install
+title: Brain ADK Install
 ---
 
 # Brain ADK Installation
@@ -8,17 +8,6 @@ title: Install
 [![PyPI version](https://badge.fury.io/py/farm-ng-amiga.svg)](https://pypi.org/project/farm-ng-amiga)
 
 ## Install
-
-:::info
-If you would like to test your installation by running the `farm-ng-amiga` [**examples**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples),
-please start below with [Clone the repo](#clone-the-repo).
-
-If you only want to install the package, you can simply install the latest release with `pip` and enjoy the [`farm-ng-amiga`](https://pypi.org/project/farm-ng-amiga) package!
-
-```bash
-pip3 install farm-ng-amiga
-```
-:::
 
 
 ### Clone the repo
@@ -50,7 +39,7 @@ git clone https://github.com/farm-ng/farm-ng-amiga.git
 ```
 :::
 
-### [optional] Set up virtual environment
+### [Optional] Set up virtual environment
 
 :::tip
 We recommend running the brain SDK applications in a virtual environment to avoid conflicts with other packages / versions installed on your system.
@@ -133,28 +122,7 @@ pip3 install farm-ng-amiga --upgrade
 
 If you want to edit the package, or contribute, you can install from source.
 
-Install `pip3` & setup a `virtualenv` (as above)
-
-<Tabs>
-<TabItem value="linux" label="Linux" default>
-
-```bash
-sudo apt-get install python3-pip
-sudo pip3 install virtualenv
-```
-
-</TabItem>
-<TabItem value="macos" label="MacOs">
-
-```bash
-brew install python3
-# to check if the installation was successful input command
-pip --version
-sudo pip3 install virtualenv
-```
-</TabItem>
-</Tabs>
-
+Install `pip3` & setup a `virtualenv` (shown [above](#optional-set-up-virtual-environment))
 
 Create and install the ``farm-ng-amiga`` Python package
 

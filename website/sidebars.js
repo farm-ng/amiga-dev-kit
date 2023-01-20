@@ -29,39 +29,28 @@ const sidebars = {
   "docs": {
     "Introduction": [
       "getting-started",
+      "index",
     ],
-    "Amiga Quick Start": [
+    "Getting Started": [
       "amiga_quick_start/amiga-quick-start",
-    ],
-    "Dashboard": [
-      "dashboard/dashboard",
       "dashboard/dashboard-fw",
-      "dashboard/control-states",
-    ],
-    "Debug Cable": [
-      "debug_cable/debug-cable",
-      "debug_cable/service-cable",
-    ],
-    "Microcontroller Kit": [
-      "mcu_kit/microcontroller-kit",
-    ],
-    "Brain": [
-      "brain/brain",
       "brain/brain-install",
       "brain/next-steps",
-      "brain/brain-apps"
     ],
-     "Pendant": [
-       "pendant/pendant",
-     ],
-    "Resources": [
-        "reference/faq",
-        "hardware-tools/recommended-tools",
-        "hardware-tools/etools",
+    "Amiga Overview": [
+      "dashboard/dashboard",
+      "dashboard/control-states",
+      "debug_cable/debug-cable",
+      "debug_cable/service-cable",
+      "mcu_kit/microcontroller-kit",
+      "brain/brain",
+      "pendant/pendant",
     ],
-    "Support": [
+    "Resources/Support": [
+      "hardware-tools/recommended-tools",
+      "reference/faq",
       "support/support",
-  ],
+    ],
   },
   "api": [
     "api",
@@ -96,6 +85,9 @@ const sidebars = {
         "examples/virtual_joystick/virtual-joystick-widget",
         "examples/virtual_joystick/auto-control",
         "examples/virtual_joystick/further-exercises",
+    ],
+    "Developing Custom Applications": [
+      "brain/brain-apps"
     ]
 },
   "contribute": [

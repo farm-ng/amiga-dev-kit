@@ -1,6 +1,6 @@
 ---
 id: getting-started
-title: Getting Started
+title: Introduction
 ---
 
 ### Welcome to the Amiga Development Kit!
@@ -36,14 +36,6 @@ The code for these examples live in the [farm-ng/amiga-dev-kit Github repository
 ![microcontroller-kit-16x9-reduced](https://user-images.githubusercontent.com/53625197/187550507-c52d2666-846c-47d5-a4c2-8685d184c3a6.jpg)
 
 
-### Cloning the Amiga Development Kit
-
-Clone the Amiga development kit repository to work with the Amiga from micro-controllers or your personal computer (Mac/Linux/Windows).
-
-```bash
-cd <to_your_base_directory>
-git clone git@github.com:farm-ng/amiga-dev-kit.git
-```
 
 
 <!-- ## What is the Amiga?
