@@ -77,9 +77,9 @@ This way you can test measuring wheel odometry, controlling the robot, and more 
 We tend to use double scissor lifts, with a 770 lb capacity.
 But what's most important is that the table is long enough to lift the amiga from both crossbars.
 
-- In the past, we've run to Home Depot and purchased: [Eoslift 770 lb double scissor lift](https://www.homedepot.com/p/Eoslift-Industrial-Grade-Heavy-Duty-TAD35-Manual-Double-Scissor-Lift-Table-Cart-770-lbs-Cap-20-5-in-x-39-7in-Swivel-Casters-TAD35/301884311
+- In the past, we've run to Home Depot and purchased: [**Eoslift 770 lb double scissor lift**](https://www.homedepot.com/p/Eoslift-Industrial-Grade-Heavy-Duty-TAD35-Manual-Double-Scissor-Lift-Table-Cart-770-lbs-Cap-20-5-in-x-39-7in-Swivel-Casters-TAD35/301884311
 )
-- And we've ordered from Uline: [Uline 770 lb double scissor lift](
+- And we've ordered from Uline: [**Uline 770 lb double scissor lift**](
 https://www.uline.com/Product/Detail/H-1784/Lift-Tables/Uline-Manual-Lift-Table-Double-Scissor-770-lb-36-x-20)
 
 

@@ -67,7 +67,7 @@ To do this you will need to go to the:
 
 - If ESTOP screen appears, tap “CLEAR ESTOP”
 - If other error message appears, try a power cycle by turning the Amiga on and off.
-- If problem persists please submit an issue with us [here](https://discourse.farm-ng.com/c/support/5).
+- If problem persists please submit an issue with us [**here**](https://discourse.farm-ng.com/c/support/5).
 
 
 

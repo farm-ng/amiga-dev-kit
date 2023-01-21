@@ -7,9 +7,9 @@ title: Camera Client GUI
 
 ![Peek 2022-09-02 12-46](https://user-images.githubusercontent.com/5157099/188124779-41f4d519-78d4-453e-9b90-b3d730762b81.gif)
 
-This example implements the `OakCameraClient` in a GUI application using [Kivy](https://kivy.org/).
+This example implements the `OakCameraClient` in a GUI application using [**Kivy**](https://kivy.org/).
 
-The requirements to run this example are to have a [farm-ng brain](/docs/brain/) running Oak cameras and that your PC is on the same local network as the brain.
+The requirements to run this example are to have a [**farm-ng brain**](/docs/brain/) running Oak cameras and that your PC is on the same local network as the brain.
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 

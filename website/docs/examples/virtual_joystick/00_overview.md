@@ -4,7 +4,7 @@ title: 00 - Virtual Joystick Overview
 ---
 # Virtual Joystick Overview
 
-[Link to `virtual_joystick/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/virtual_joystick/main.py)
+[**Link to `virtual_joystick/main.py`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/virtual_joystick/main.py)
 
 This example application and tutorial is designed to enable you to develop your own custom applications and deploy them to the Amiga brain.
 
@@ -56,17 +56,17 @@ This is a well supported and documented environment.
 
 You should install **WSL2**, using the **Ubuntu 20.04** distribution.
 
-One option: [Ubuntu 20.04 from Microsoft store](https://apps.microsoft.com/store/detail/ubuntu-2004/9N6SVWS3RX71)
+One option: [**Ubuntu 20.04 from Microsoft store**](https://apps.microsoft.com/store/detail/ubuntu-2004/9N6SVWS3RX71)
 
 
 ## Necessary background knowledge
 
 The Amiga brain app development meets at the intersection of three key libraries, as well as some farm-ng libraries:
 
-1. [gRPC](https://grpc.io/)
-2. [asyncio](https://docs.python.org/3/library/asyncio.html)
-3. [kivy](https://kivy.org/)
-4. [farm-ng libraries](#farm-ng-libraries)
+1. [**gRPC**](https://grpc.io/)
+2. [**asyncio**](https://docs.python.org/3/library/asyncio.html)
+3. [**kivy**](https://kivy.org/)
+4. [**farm-ng libraries**](#farm-ng-libraries)
 
 :::info
 Currently we are only supporting Python app development, but our infrastructure allows for C++ app development support in the near future.
@@ -74,14 +74,14 @@ Currently we are only supporting Python app development, but our infrastructure 
 
 ### gRPC
 
-The best place to start to gain an understanding of gRPC is the [gRPC introduction](https://grpc.io/docs/what-is-grpc/introduction/), followed by the [gRPC core concepts](https://grpc.io/docs/what-is-grpc/core-concepts/).
+The best place to start to gain an understanding of gRPC is the [**gRPC introduction**](https://grpc.io/docs/what-is-grpc/introduction/), followed by the [**gRPC core concepts**](https://grpc.io/docs/what-is-grpc/core-concepts/).
 
 gRPC is used as our communication protocol between services (running in the background) and clients (what you link in your app).
-The communication is through Protocol Buffers, defined in `*.proto` files in our [farm-ng libraries](#farm-ng-libraries).
+The communication is through Protocol Buffers, defined in `*.proto` files in our [**farm-ng libraries**](#farm-ng-libraries).
 
 ### asyncio
 
-The best place to start to gain an understanding of asyncio is the [asyncio docs](https://docs.python.org/3/library/asyncio.html).
+The best place to start to gain an understanding of asyncio is the [**asyncio docs**](https://docs.python.org/3/library/asyncio.html).
 
 We use asyncio in order to run multiple concurrent tasks in our applications.
 This is crucial to the system design to prevent high rate robotic control from being blocked by time consuming processes, such as image processing.
@@ -89,15 +89,15 @@ This is crucial to the system design to prevent high rate robotic control from b
 In the virtual joystick example, we have multiple, concurrent `while` loops running that:
 - Receive the camera stream (from the camera service)
 - Receive the canbus stream (from the canbus service)
-- Draw the joystick (in [kivy](#kivy))
+- Draw the joystick (in [**kivy**](#kivy))
 - Send canbus commands (to the canbus service)
 
 ### kivy
 
-The best place to start to gain an understanding of kivy is the [kivy Getting Started >> Introduction](https://kivy.org/doc/stable/gettingstarted/intro.html).
+The best place to start to gain an understanding of kivy is the [**kivy Getting Started >> Introduction**](https://kivy.org/doc/stable/gettingstarted/intro.html).
 
 We use kivy to draw our apps and handle touch screen interactions for our interactive apps.
-kivy can be coded in its own language ([the Kv language](https://kivy.org/doc/stable/guide/lang.html)), in Python, or in some combination of both!
+kivy can be coded in its own language ([**the Kv language**](https://kivy.org/doc/stable/guide/lang.html)), in Python, or in some combination of both!
 
 We tend to define our apps in the kv language at the top of the app files using `"""` strings, and may add some interaction in Python code.
 In this example, however, we also demonstrate creating a custom kivy `Widget` in Python!
@@ -110,11 +110,11 @@ They are:
 - contain the `.proto` definitions used in our gRPC communications
 - contain the gRPC clients you can use to interact with the Amiga brain services
 
-See: [farm_ng_core](https://github.com/farm-ng/farm-ng-core)
+See: [**farm_ng_core**](https://github.com/farm-ng/farm-ng-core)
 
-See: [farm_ng_amiga](https://github.com/farm-ng/farm-ng-amiga)
+See: [**farm_ng_amiga**](https://github.com/farm-ng/farm-ng-amiga)
 
 ## Virtual Joystick tutorial
 
-The goal of this tutorial is to take you step-by-step from the template repository to the full [`virtual_joystick/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/virtual_joystick/main.py) example.
+The goal of this tutorial is to take you step-by-step from the template repository to the full [**`virtual_joystick/main.py`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/virtual_joystick/main.py) example.
 Then you can mirror what you've done here in your own custom app development!

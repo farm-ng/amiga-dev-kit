@@ -9,8 +9,8 @@ title: 04 - Camera Stream
 
 The next thing we'll add to our app is a camera stream.
 This will:
-- Use the [`OakCameraClient`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py)
-- Display images as kivy [`Image`](https://kivy.org/doc/stable/api-kivy.uix.label.html) widgets in a `TabbedPanel`.
+- Use the [**`OakCameraClient`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py)
+- Display images as kivy [**`Image`**](https://kivy.org/doc/stable/api-kivy.uix.label.html) widgets in a `TabbedPanel`.
 
 
 #### imports
@@ -30,8 +30,8 @@ from kivy.core.image import Image as CoreImage  # noqa: E402
 Remember to place all kivy imports below the `Config.set(...)` lines!
 :::
 
-Here we add another import from our [farm-ng libraries](#farm-ng-libraries).
-`farm_ng.oak` is also defined in the [farm_ng_amiga](https://github.com/farm-ng/farm-ng-amiga) package.
+Here we add another import from our [**farm-ng libraries**](#farm-ng-libraries).
+`farm_ng.oak` is also defined in the [**farm_ng_amiga**](https://github.com/farm-ng/farm-ng-amiga) package.
 
 
 #### TabbedPanel of Image widgets
@@ -42,7 +42,7 @@ So we push the `BoxLayout` of `Label` widgets one level deeper and add an additi
 
 So we will have a `BoxLayout` that stacks 2 sub-widgets horizontally (by default) of:
 1. Another `BoxLayout` with 3 vertically stacked labels
-2. A [`TabbedPanel`](https://kivy.org/doc/stable/api-kivy.uix.tabbedpanel.html).
+2. A [**`TabbedPanel`**](https://kivy.org/doc/stable/api-kivy.uix.tabbedpanel.html).
 
 The `TabbedPanel` is used to select between different pages, which in our case is 4 `Image` Widgets.
 
@@ -105,8 +105,8 @@ FOO_WIDGET = self.root.ids['FOO_WIDGET_ID']
 ```
 So we assign each `Image` widget an id so it can be easily referenced in the `App`.
 
-- Reference: [TabbedPanel](https://kivy.org/doc/stable/api-kivy.uix.tabbedpanel.html)
-- Reference: [Image](https://kivy.org/doc/stable/api-kivy.uix.image.html)
+- Reference: [**TabbedPanel**](https://kivy.org/doc/stable/api-kivy.uix.tabbedpanel.html)
+- Reference: [**Image**](https://kivy.org/doc/stable/api-kivy.uix.image.html)
 
 #### command line args
 
@@ -190,11 +190,11 @@ async def stream_camera(self, client: OakCameraClient) -> None:
 ```
 
 This task listens to the camera client's stream and populates the tabbed panel with all 4 image streams from the oak camera.
-You'll see a lot of similarity to [`stream_canbus`](#stream_canbus), as this task is also connecting to a "server streaming" RPC.
+You'll see a lot of similarity to [**`stream_canbus`**](#stream_canbus), as this task is also connecting to a "server streaming" RPC.
 
-The first obvious difference you'll notice is the use of [oak.proto](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/oak/oak.proto) definitions rather than canbus protos.
+The first obvious difference you'll notice is the use of [**oak.proto**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/oak/oak.proto) definitions rather than canbus protos.
 
-Next, when creating the `response_stream` we wrap the stub call with [`stream_frames()`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py), but in practice the same thing is happening.
+Next, when creating the `response_stream` we wrap the stub call with [**`stream_frames()`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py), but in practice the same thing is happening.
 The `StreamFramesRequest` does take an argument called `every_n` which is used to skip frames if you want to throttle the rate of images in the stream.
 You can change this value with the `--stream-every-n` command line argument.
 
@@ -207,7 +207,7 @@ for view_name in ["rgb", "disparity", "left", "right"]:
 ```
 
 Once the `StreamFramesReply` comes in, for each loop, we update the images displayed in the kivy `TabbedPanel` of our app.
-We've matched the tab `id:` name to the frame names coming from the [`OakService`](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/oak/oak.proto), as defined in `OakSyncFrame`, so we can easily match tab to image type by stepping through a list.
+We've matched the tab `id:` name to the frame names coming from the [**`OakService`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/oak/oak.proto), as defined in `OakSyncFrame`, so we can easily match tab to image type by stepping through a list.
 
 :::tip Reminder
 We can access a `Widget` directly using the widget `id:` as in
@@ -216,15 +216,15 @@ FOO_WIDGET = self.root.ids['FOO_WIDGET_ID']
 ```
 :::
 
-We assign the kivy [`Image.texture`](https://kivy.org/doc/stable/api-kivy.uix.image.html#kivy.uix.image.Image.texture) the kivy `CoreImage.texture` from the unpacked jpg images streamed by the `OakService`.
+We assign the kivy [**`Image.texture`**](https://kivy.org/doc/stable/api-kivy.uix.image.html#kivy.uix.image.Image.texture) the kivy `CoreImage.texture` from the unpacked jpg images streamed by the `OakService`.
 
 ```Python
 await asyncio.sleep(0.01)
 ```
 Lastly, we sleep for our default duration of 10ms before the next iteration.
 
-- Reference: [farm_ng.oak.camera_client](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py)
-- Reference: [oak.proto](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/oak/oak.proto)
+- Reference: [**farm_ng.oak.camera_client**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py)
+- Reference: [**oak.proto**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/oak/oak.proto)
 
 
 #### entry.sh
@@ -256,7 +256,7 @@ If you changed the camera port of `Oak0` in the `launcher_configuration.json`, o
 Now sync the app to the Brain and launch it with the following instructions!
 
 :::info Deploy Instructions
-[Deploy Instructions](/brain/custom-applications.mdx) for syncing the app onto the Amiga Brain.
+[**Deploy Instructions**](/brain/custom-applications.mdx) for syncing the app onto the Amiga Brain.
 :::
 
 

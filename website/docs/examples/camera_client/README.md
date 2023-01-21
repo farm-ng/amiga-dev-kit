@@ -7,7 +7,7 @@ title: Camera Client
 
 This example acts as an `OakCameraClient` in a standalone Python script.
 
-The requirements to run this example are to have a [farm-ng brain](/docs/brain/) running Oak cameras and that your PC is on the same local network as the brain.
+The requirements to run this example are to have a [**farm-ng brain**](/docs/brain/) running Oak cameras and that your PC is on the same local network as the brain.
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
@@ -109,5 +109,5 @@ if __name__ == "__main__":
     asyncio.run(main(args.address, args.port, args.stream_every_n))
 ```
 :::tip
-We highgly recommend to have some basic knowledge about [`asyncio`](https://docs.python.org/3/library/asyncio.html).
+We highgly recommend to have some basic knowledge about [**`asyncio`**](https://docs.python.org/3/library/asyncio.html).
 :::

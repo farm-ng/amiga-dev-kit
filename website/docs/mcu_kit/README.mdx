@@ -6,9 +6,7 @@ title: Microcontroller Kit Overview
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-We sell a complete kit containing all necessary components on the Amiga shop website:
-
-#### [farm-ng micro-controller kit](https://farm-ng.com/products/microcontroller-kit)
+We sell a complete kit containing all necessary components on the Amiga shop website: [**farm-ng microcontroller kit**](https://farm-ng.com/products/microcontroller-kit)
 
 
 ## Feather M4 Can device setup
@@ -34,7 +32,7 @@ This device can be used for rapid prototyping of applications that interact with
 
 ## Flashing the UF2 firmware on the M4 device
 
-We run [CircuitPython](https://circuitpython.org/) on the microcontrollers,
+We run [**CircuitPython**](https://circuitpython.org/) on the microcontrollers,
 as it is well supported, well documented, and recommended by Adafruit for their microcontrollers.
 
 CircuitPython is installed by flashing the microcontroller with the correct UF2 file, and you can tell if CircuitPython is installed if the microcontroller is mounted as a directory called `CIRCUITPY` whenever you connect it.
@@ -58,7 +56,7 @@ Check that the large LED is green or randomly varying colored. If it is red, you
    The timing of the double click can be a little tricky, so if it mounts as `CIRCUITPY`, just try again until it mounts as `AMIGA`.
    If you cannot get the double click timing correct, you can enter BOOTLOADER mode with the following advanced user steps:
 
-   - Open a serial console connected to the dashboard (see: [Adafruit connecting to the serial console](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console))
+   - Open a serial console connected to the dashboard (see: [**Adafruit connecting to the serial console**](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console))
    - Pause the program with `ctrl+C`
    - Enter the following commands in the REPL
 
@@ -75,8 +73,8 @@ Check that the large LED is green or randomly varying colored. If it is red, you
 #### Flash by drag & drop
 
 1. Download the correct UF2 file
-   * From our repo: [Download CircuitPython 7.3.2 - Feather M4 CAN](https://github.com/farm-ng/amiga-dev-kit/raw/main/circuitpy/feather_m4_can/uf2s/adafruit-circuitpython-feather_m4_can-en_US-7.3.2.uf2)
-   * Directly from Adafruit: [Download CircuitPython 7.3.3 - Feather M4 CAN](https://downloads.circuitpython.org/bin/feather_m4_can/en_US/adafruit-circuitpython-feather_m4_can-en_US-7.3.3.uf2)
+   * From our repo: [**Download CircuitPython 7.3.2 - Feather M4 CAN**](https://github.com/farm-ng/amiga-dev-kit/raw/main/circuitpy/feather_m4_can/uf2s/adafruit-circuitpython-feather_m4_can-en_US-7.3.2.uf2)
+   * Directly from Adafruit: [**Download CircuitPython 7.3.3 - Feather M4 CAN**](https://downloads.circuitpython.org/bin/feather_m4_can/en_US/adafruit-circuitpython-feather_m4_can-en_US-7.3.3.uf2)
 
 2. Copy (drag & drop) the UF2 file onto the feather mounted in `BOOTLOADER` mode.
 3. It should automatically update and remount as `CIRCUITPY`
@@ -127,13 +125,13 @@ cp circuitpy/feather_m4_can/uf2s/adafruit-circuitpython-feather_m4_can-en_US-7.3
 ### On subsequent connection
 
 When attaching a previously flashed Feather M4 device, it should automatically mount as `CIRCUITPY`.
-You can always check the our [farm-ng adk uf2 dir](https://github.com/farm-ng/amiga-dev-kit/tree/main/circuitpy/feather_m4_can/uf2s) or the [Feather M4 CAN UF2 page](https://circuitpython.org/board/feather_m4_can/) for future stable & experimental releases.
+You can always check the our [**farm-ng adk uf2 dir**](https://github.com/farm-ng/amiga-dev-kit/tree/main/circuitpy/feather_m4_can/uf2s) or the [Feather M4 CAN UF2 page](https://circuitpython.org/board/feather_m4_can/) for future stable & experimental releases.
 
 ## Loading code on the Feather
 
 Now that you have a flashed Feather, time to load some code:
 
-1. Copy the `lib/` folder from [`amiga-dev-kit/circuitpy/`](https://github.com/farm-ng/amiga-dev-kit/tree/main/circuitpy) to the root of the Feather. The contents of `lib/` are automatically added to your python path on the microcontroller.
+1. Copy the `lib/` folder from [**`amiga-dev-kit/circuitpy/`**](https://github.com/farm-ng/amiga-dev-kit/tree/main/circuitpy) to the root of the Feather. The contents of `lib/` are automatically added to your python path on the microcontroller.
 2. Attach a serial terminal to the feather, so you can see std out.
    <Tabs>
    <TabItem value="linux" label="Linux" default>
@@ -154,18 +152,18 @@ Now that you have a flashed Feather, time to load some code:
    </Tabs>
 
    :::tip
-   Mu is the recommended serial console program by adafruit on their [CircuitPython serial console page](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console).
+   Mu is the recommended serial console program by adafruit on their [**CircuitPython serial console page**](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console).
    Mu has a built in plotter for tuples printed to the serial console (print statements in the python code on your microcontroller).
 
     However, we've found that Mu can be a little unstable and freezes occasionally,
    so we'd recommend checking out their links for the "advanced" serial console:
 
-   - [Windows serial console](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-windows)
-   - [Linux serial console](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-linux)
-   - [Mac serial console](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-mac-and-linux)
+   - [**Windows serial console**](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-windows)
+   - [**Linux serial console**](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-linux)
+   - [**Mac serial console**](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-mac-and-linux)
    :::
 
-3. Now add a `code.py` file to the root of the Feather drive. Try one of the examples found in the [Examples index](./../examples/examples_index.md), such as the [Hello MainLoop example](./../examples/hello_main_loop/).
+3. Now add a `code.py` file to the root of the Feather drive. Try one of the examples found in the [**Examples index**](./../examples/examples_index.md), such as the [**Hello Main Loop example**](./../examples/hello_main_loop/).
 
 :::note
 The feather should automatically reload when you drop any new code onto it.
@@ -180,6 +178,6 @@ You can also reload through the serial console by:
 
 # Feather M4 references
 
-* [Adafruit CircuitPython programming guide](https://learn.adafruit.com/circuitpython-essentials/circuitpython-essentials)
-* [Adafruit Feather M4 CAN Express](https://learn.adafruit.com/adafruit-feather-m4-can-express)
-* [CircuitPython on Feather M4 CAN](https://learn.adafruit.com/adafruit-feather-m4-can-express/circuitpython-on-feather-m4-can)
+* [**Adafruit CircuitPython programming guide**](https://learn.adafruit.com/circuitpython-essentials/circuitpython-essentials)
+* [**Adafruit Feather M4 CAN Express**](https://learn.adafruit.com/adafruit-feather-m4-can-express)
+* [**CircuitPython on Feather M4 CAN**](https://learn.adafruit.com/adafruit-feather-m4-can-express/circuitpython-on-feather-m4-can)

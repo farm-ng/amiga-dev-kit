@@ -50,4 +50,6 @@ title: Index
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Frequently Asked Questions](/docs/reference/faq.md)
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Self explanatory]
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Support](/docs/support/support.md)
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[How to create issues on github]
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[How to create issues on github and start conversations in discourse]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating an issue on GitHub](/docs/support/support.md#how-to-create-an-issue)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Starting a conversation in Discourse](/docs/support/support.md#how-to-start-a-conversation-in-discourse)

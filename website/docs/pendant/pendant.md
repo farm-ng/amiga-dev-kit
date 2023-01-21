@@ -32,13 +32,13 @@ This is a brake for the Amiga. Pressing this will stop all motors and exit cruis
 **PTO (Triangle)**
 Power take-off (PTO) is a device that transfers an engine's mechanical power to another piece of equipment. A PTO allows the hosting energy source to transmit power to additional equipment that does not have its own engine or motor.
 
-We use this to facilitate control from the pendant for addition equipment attached to the Amiga, such as the [3-point lift](https://farm-ng.com/products/cat-zero-3-point-lift-kit), [compost spreader](https://farm-ng.com/products/compost-spreader) or [cargo dump box](https://farm-ng.com/products/kit-cargo-dump-box)
+We use this to facilitate control from the pendant for addition equipment attached to the Amiga, such as the [**3-point lift**](https://farm-ng.com/products/cat-zero-3-point-lift-kit), [**compost spreader**](https://farm-ng.com/products/compost-spreader) or [**cargo dump box**](https://farm-ng.com/products/kit-cargo-dump-box)
 
 **PAUSE(Square)**
 Currently this button is a free button to be updated in future firmware releases.
 
 **ARROWS** -  UP, Down, Left, Right {these are used to control your connect and registered PTO device)
- Basic troubleshooting can found on our [FAQ page](/docs/reference/faq)
+ Basic troubleshooting can found on our [**FAQ page**](/docs/reference/faq)
 
 
 ### Calibrate pendant

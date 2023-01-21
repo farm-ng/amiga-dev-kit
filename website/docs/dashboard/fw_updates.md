@@ -11,7 +11,7 @@ And we want to enable you to easily upgrade your dashboard with these improvemen
 
 ### Where to start
 
-To update the Amiga application layer (our frequent [amiga-dash FW releases](https://github.com/farm-ng/amiga-dev-kit/releases)), you can follow either:
+To update the Amiga application layer (our frequent [**amiga-dash FW releases**](https://github.com/farm-ng/amiga-dev-kit/releases)), you can follow either:
 <!-- no toc -->
  - [**Over-the-air (OTA) Amiga application updates**](#over-the-air-ota-amiga-application-updates)
    - Simpler, especially for v0.1.5+
@@ -22,7 +22,7 @@ To update the Amiga application layer (our frequent [amiga-dash FW releases](htt
    - Not dependent upon current installed version
    - Requires a [**debug cable**](/docs/debug_cable/README.md) or [**service cable**](/docs/debug_cable/service_cable.md)
 
-To update the (infrequent) CircuitPython build releases, please follow [UF2 bootloader update](#uf2-bootloader-update).
+To update the (infrequent) CircuitPython build releases, please follow [**UF2 bootloader update**](#uf2-bootloader-update).
 
 ### Over-the-air (OTA) Amiga application updates
 
@@ -57,12 +57,12 @@ This process is currently only supported on Windows and Mac.
 
 **Access the files:**
 
-1. Download the latest application zip file [amiga-dash-v0.1.6.zip](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.1.6/amiga-dash-v0.1.6.zip)
-2. For more details on the git latest release navigate to [Release: amiga-dash-v0.1.6](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.1.6)
+1. Download the latest application zip file [**amiga-dash-v0.1.6.zip**](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.1.6/amiga-dash-v0.1.6.zip)
+2. For more details on the git latest release navigate to [**Release: amiga-dash-v0.1.6**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.1.6)
 3. Extract the files from the zipped folder
 
 :::tip
-- Check the [amiga-dev-kit Releases](https://github.com/farm-ng/amiga-dev-kit/releases) page, as there may be an even newer available release.
+- Check the [**amiga-dev-kit Releases**](https://github.com/farm-ng/amiga-dev-kit/releases) page, as there may be an even newer available release.
 - Select the newest `amiga-dash-v#.#.#` and download that version.
   - Do not select a `fw-dash-v#.#.#` or `pendant-v#.#.#` update!
 :::
@@ -74,7 +74,7 @@ If you don't have a [**debug cable**](/docs/debug_cable/README.md) or [**service
 :::
 
 4. Power down your dashboard.
-5. Connect your [**debug cable**](/docs/debug_cable/README.md) or [**service cable**](/docs/debug_cable/service_cable.md) into the [Debug port](/docs/debug_cable/#how-to-connect) on the back of the dashboard.
+5. Connect your [**debug cable**](/docs/debug_cable/README.md) or [**service cable**](/docs/debug_cable/service_cable.md) into the [**Debug port**](/docs/debug_cable/#how-to-connect) on the back of the dashboard.
    1. If using a debug cable, connect your Windows or Mac PC to the **USB** interface:
       1. On newer cables this is the side labelled `USB`
       2. On older cables this is the larger purple board
@@ -83,7 +83,7 @@ If you don't have a [**debug cable**](/docs/debug_cable/README.md) or [**service
    1. With very old versions of firmware, a folder automatically pops up under the name `CIRCUITPY` and resembles the example below.
    2. With newer versions, you'll need to manually bring the `CIRCUITPY` drive up by:
         1. Open a serial console connected to the dashboard
-           - If you are unfamiliar, see: [FAQ - Using the REPL](/docs/reference/faq#using-the-repl)
+           - If you are unfamiliar, see: [**FAQ - Using the REPL**](/docs/reference/faq#using-the-repl)
         2. Interrupt the program with `ctrl+C`
         3. Run the following commands in the REPL:
         <!-- :::tip
@@ -131,7 +131,7 @@ If you don't have a [**debug cable**](/docs/debug_cable/README.md) or [**service
 - If the file transfer process fails, or the behavior is not as expected, just delete all files in CIRCUITPY and try it again.
   - If the dashboard remounts on your computer as `CIRCUITPY`, just select all and delete.
   - If the dashboard does NOT remount on your computer as `CIRCUITPY`:
-    - Open a serial console connected to the dashboard (see: [Adafruit connecting to the serial console](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console))
+    - Open a serial console connected to the dashboard (see: [**Adafruit connecting to the serial console**](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console))
     - Interrupt the program with `ctrl+C`
     - Enter the following commands in the REPL
     ```
@@ -161,7 +161,7 @@ The farm-ng UF2 releases may come out following a CircuitPython stable release,
 or if we find more modifications that significantly improve performance or enable new features.
 
 To learn more about the topic of UF2 bootloader files,
-[Adafruit UF2 details](https://learn.adafruit.com/adafruit-feather-m0-express-designed-for-circuit-python-circuitpython/uf2-bootloader-details)
+[**Adafruit UF2 details**](https://learn.adafruit.com/adafruit-feather-m0-express-designed-for-circuit-python-circuitpython/uf2-bootloader-details)
 is a great place to start!
 
 #### Bootloader update instructions
@@ -172,13 +172,13 @@ This process is currently only supported on Windows and Mac.
 
 **Access the files:**
 
-1. Download the latest [fw-dash UF2 file](https://github.com/farm-ng/amiga-dev-kit/releases/download/fw-dash-v1.1.0/fw-dash-v1.1.0.uf2)
-   1. For more details on the UF2 file release see the release page here: [Release: fw-dash-v1.1.0](https://github.com/farm-ng/amiga-dev-kit/releases/tag/fw-dash-v1.1.0)
+1. Download the latest [**fw-dash UF2 file**](https://github.com/farm-ng/amiga-dev-kit/releases/download/fw-dash-v1.1.0/fw-dash-v1.1.0.uf2)
+   1. For more details on the UF2 file release see the release page here: [**Release: fw-dash-v1.1.0**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/fw-dash-v1.1.0)
 
 **Connect to your dashboard:**
 
 2. Power down your dashboard.
-3. Connect your [**debug cable**](/docs/debug_cable/README.md) or [**service cable**](/docs/debug_cable/service_cable.md) into the [Debug port](/docs/debug_cable/#how-to-connect) on the back of the dashboard.
+3. Connect your [**debug cable**](/docs/debug_cable/README.md) or [**service cable**](/docs/debug_cable/service_cable.md) into the [**Debug port**](/docs/debug_cable/#how-to-connect) on the back of the dashboard.
    1. If using a debug cable, connect your Windows or Mac PC to the **USB** interface:
       1. On newer cables this is the side labelled `USB`
       2. On older cables this is the larger purple board
@@ -191,7 +191,7 @@ This process is currently only supported on Windows and Mac.
    1. If using a [**debug cable**](/docs/debug_cable/README.md) you can double click the reset button.
    2. If using a [**service cable**](/docs/debug_cable/service_cable.md) (or if you can't seem to get the double click timing right):
       1. Open a serial console connected to the dashboard
-         - See: [FAQ - Using the REPL](/docs/reference/faq#using-the-repl)
+         - See: [**FAQ - Using the REPL**](/docs/reference/faq#using-the-repl)
       2. Interrupt the program with `ctrl+C`
       3. Enter the following commands in the REPL:
         ```
@@ -209,7 +209,7 @@ This process is currently only supported on Windows and Mac.
 6.  Drag and drop the newly downloaded UF2 file onto the mounted drive.
 7.  This will immediately cause the bootloader firmware to update, and the dashboard will automatically reboot as `CIRCUITPY` once complete.
 :::note
-The [Amiga application layer](#wired-amiga-application-updates) should remain untouched, so be sure to update that if it is not already up to date!
+The [**Amiga application layer**](#wired-amiga-application-updates) should remain untouched, so be sure to update that if it is not already up to date!
 :::
 
 **AMIGA mounted**
@@ -222,5 +222,5 @@ In rare cases, the board could go into an update failure mode.
 In this case, the microcontroller inside the dashboard is restored to the factory default `Hello world` example.
 This will be characterized by no display on the dash and no response.
 You can double check this occurred by opening the file named `code.py` (or `main.py`) and seeing that there is only a single line of code `print('hello world')`.
-In this case, you should go through both the [UF2 firmware](#uf2-bootloader-update) and [farm-ng application layer](#farm-ng-amiga-application-update) update steps.
+In this case, you should go through both the [**UF2 firmware**](#uf2-bootloader-update) and [**farm-ng application layer**](#farm-ng-amiga-application-update) update steps.
 :::
