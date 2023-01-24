@@ -8,7 +8,7 @@ title: 00 - Virtual Joystick Overview
 
 This example application and tutorial is designed to enable you to develop your own custom applications and deploy them to the Amiga brain.
 
-On the Brain, there are multiple gRPC services running in the background, including the oak camera service and the canbus service.
+On the brain, there are multiple gRPC services running in the background, including the oak camera service and the canbus service.
 We will teach you how to interact with these two services through the camera client and canbus client, respectively.
 We will also show you how to create a basic kivy application, and use gRPC and asyncio in that application.
 
@@ -35,7 +35,25 @@ System level block diagram
 
 This process works best on Ubuntu 20.04, but we also support Mac and Windows systems.
 
-#### For Mac
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="linux" label="For Windows" default>
+
+
+You should run this with windows Subsystem for Linux (WSL).
+This is a well supported and documented environment.
+
+[**Install WSL**](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+You should install **WSL2**, using the **Ubuntu 20.04** distribution.
+
+One option: [**Ubuntu 20.04 from Microsoft store**](https://apps.microsoft.com/store/detail/ubuntu-2004/9N6SVWS3RX71)
+
+</TabItem>
+<TabItem value="macos" label="For Mac">
+
 
 Everything should work as with Linux, though there may be some unmet dependencies you can install with `brew`.
 E.g.,
@@ -47,17 +65,8 @@ For instance, if you come into an `md5sum` issue, you'll need to change `md5sum`
 
 We are actively working on this support, so please reach out with an issues you encounter so we can help you through them and resolve it promptly!
 
-#### For Windows
-
-You should run this with windows Subsystem for Linux (WSL).
-This is a well supported and documented environment.
-
-[**Install WSL**](https://learn.microsoft.com/en-us/windows/wsl/install)
-
-You should install **WSL2**, using the **Ubuntu 20.04** distribution.
-
-One option: [**Ubuntu 20.04 from Microsoft store**](https://apps.microsoft.com/store/detail/ubuntu-2004/9N6SVWS3RX71)
-
+</TabItem>
+</Tabs>
 
 ## Necessary background knowledge
 

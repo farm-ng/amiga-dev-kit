@@ -13,7 +13,7 @@ Now that you have downloaded the repository and have all the correct packages in
 ## 1. Examples
 
 Either navigate to the `Examples` tab located at the top of this page, or go directly to the [Examples Index](./../examples/examples_index.md),
-to get started on running one of the available brain ADK examples.
+to get started on running one of the available brain ADK examples or CircuitPython examples.
 
 ## 2. Tutorial
 

@@ -67,16 +67,16 @@ const sidebars = {
   ],
   "examples": {
     "Index": ["examples/examples-index"],
-    "CircuitPython" : [
+    "CircuitPython Example" : [
         "examples/hello_main_loop/hello-world",
         "examples/cansniffer/cansniffer",
         "examples/FPV/fpv",
     ],
-    "Brain" : [
+    "Brain Example" : [
         "examples/camera_client/camera-client",
         "examples/camera_client_gui/camera-client-gui",
     ],
-    "Brain Tutorial" :[
+    "Virtual Joystick Tutorial" :[
         "examples/virtual_joystick/virtual-joystick-overview",
         "examples/virtual_joystick/template-starter",
         "examples/virtual_joystick/template-overview",
