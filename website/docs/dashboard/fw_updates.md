@@ -57,8 +57,8 @@ This process is currently only supported on Windows and Mac.
 
 **Access the files:**
 
-1. Download the latest application zip file [**amiga-dash-v0.1.6.zip**](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.1.6/amiga-dash-v0.1.6.zip)
-2. For more details on the git latest release navigate to [**Release: amiga-dash-v0.1.6**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.1.6)
+1. Download the latest application zip file [**amiga-dash-v0.1.7.zip**](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.1.7/amiga-dash-v0.1.7.zip)
+2. For more details on the git latest release navigate to [**Release: amiga-dash-v0.1.7**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.1.7)
 3. Extract the files from the zipped folder
 
 :::tip
