@@ -109,4 +109,5 @@ The topics covered in this tutorial include:
 
 
 ### [Developing Custom Applications](/docs/brain/custom-applications.mdx)
-This takes you through the steps of creating your own app with the use of an app template and deploying and testing it on the Amiga. 
+
+This takes you through the steps of creating your own app with the use of an app template and deploying and testing it on the Amiga.

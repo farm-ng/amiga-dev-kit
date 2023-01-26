@@ -40,9 +40,9 @@ title: Index
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Flashing UF2 firmware on M4 device](/docs/mcu_kit/README.mdx#flashing-the-uf2-firmware-on-the-m4-device)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Loading code on the Feather](/docs/mcu_kit/README.mdx#loading-code-on-the-feather)
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Brain Overview](/docs/brain/README.md)
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Goes over the differnet aspects of the brain]
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Goes over the different aspects of the brain]
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Pendant Overview](/docs/pendant/pendant.md)
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Goes over the differnt controls of the pendant]
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Goes over the different controls of the pendant]
 
 ## Resources/Support
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Recommended Tools](/docs/hardware-tools/recommended_tools.md)
@@ -52,4 +52,5 @@ title: Index
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Support](/docs/support/support.md)
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[How to create issues on github and start conversations in discourse]
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating an issue on GitHub](/docs/support/support.md#how-to-create-an-issue)
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Starting a conversation in Discourse](/docs/support/support.md#how-to-start-a-conversation-in-discourse)
