@@ -8,7 +8,7 @@ title: Debug Cable Overview
 ![IMG_9574](https://user-images.githubusercontent.com/64480560/205400778-1bfa084c-a187-4f42-8840-7b91714ab7f0.jpg)
 ## Overview
 
-Cable used to update and debug farm-ng products. It includes rest functionality along with USB and serial communication.
+Cable is used to update and debug farm-ng products. It includes rest functionality along with USB and serial communication.
 
 The larger circuit board on the left is the USB / debug breakout, and the smaller board on the right is the serial interface.
 
@@ -37,7 +37,7 @@ The larger circuit board on the left is the USB / debug breakout, and the smalle
 - Serial interface is used for operating system terminal
 - Reset / Flash button is used for enabling the firmware update mode (press on boot)
 
-**See flashing and operating system documentation for more information [here](/docs/brain/README.md)**
+**For more flashing and operating system documentation go [here](/docs/brain/README.md)**
 
 ## Pinout
 

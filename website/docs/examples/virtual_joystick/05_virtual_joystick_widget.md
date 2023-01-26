@@ -101,7 +101,7 @@ We also add two parameters: one for the relative pose of joystick and one for th
 #### draw (Widget)
 
 We define how the virtual joystick will draw here, and this function has no requirement from kivy to be named `draw`.
-In this function, we draw in the widget's [`Canvas`](https://kivy.org/doc/stable/api-kivy.graphics.instructions.html).
+In this function, we draw in the widget's [**`Canvas`**](https://kivy.org/doc/stable/api-kivy.graphics.instructions.html).
 
 :::info
 This is the `draw()` method of the `VirtualJoystickWidget`.
@@ -140,16 +140,16 @@ For each call of `draw`, we erase what was previously drawn on the widget canvas
 If you are drawing on top of an `Image` widget, `clear()` will erase the image too!
 :::
 
-We draw two shapes on the canvas with the kivy [Graphics](https://kivy.org/doc/stable/api-kivy.graphics.html) package.
+We draw two shapes on the canvas with the kivy [**Graphics**](https://kivy.org/doc/stable/api-kivy.graphics.html) package.
 :::info Reminder
 Kivy is drawn in pixel coordinates of the `Window`, starting in the bottom left, with `+x` to the right and `+y` up.
 :::
-We use [`Widget`](https://kivy.org/doc/stable/api-kivy.uix.widget.html) parameters, such as [`center`](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.center), [`pos`](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.pos), and [`size`](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.pos), to determine where to draw the stable circle representing the range of the joystick.
+We use [**`Widget`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html) parameters, such as [**`center`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.center), [**`pos`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.pos), and [**`size`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.pos), to determine where to draw the stable circle representing the range of the joystick.
 
 We do the same for the moving joystick, but map the `joystick_pose` value into pixel coordinates, and offset it from the center of the `VirtualJoystickWidget`.
 
-- Reference: [`Canvas`](https://kivy.org/doc/stable/api-kivy.graphics.instructions.html)
-- Reference: [Graphics](https://kivy.org/doc/stable/api-kivy.graphics.html)
+- Reference: [**`Canvas`**](https://kivy.org/doc/stable/api-kivy.graphics.instructions.html)
+- Reference: [**Graphics**](https://kivy.org/doc/stable/api-kivy.graphics.html)
 
 #### draw (App)
 
@@ -200,7 +200,7 @@ Ensure the `VirtualJoystickWidget` is indexed to the same level as the `BoxLayou
 We then have a `BoxLayout` that stacks 3 sub-widgets horizontally (by default):
 1. Another `BoxLayout` with 3 vertically stacked labels
 2. A custom `Widget` called `VirtualJoystickWidget`, defined in Python
-3. A [`TabbedPanel`](https://kivy.org/doc/stable/api-kivy.uix.tabbedpanel.html).
+3. A [**`TabbedPanel`**](https://kivy.org/doc/stable/api-kivy.uix.tabbedpanel.html).
 
 
 Since the `VirtualJoystickWidget` is fully defined in Python below, the only details we need to add is the `id:`, so the Widget can be easily referenced by the `App`.
@@ -259,7 +259,7 @@ Here we set the `joystick_pose` back to a default `Vec2` pose of `(0,0)` wheneve
 Now sync the app to the Brain and launch it with the following instructions!
 
 :::info Deploy Instructions
-[Deploy Instructions](/brain/custom-applications.mdx) for syncing the app onto the Amiga Brain.
+[**Deploy Instructions**](/brain/custom-applications.mdx) for syncing the app onto the Amiga Brain.
 :::
 
 You should now see the virtual joystick between the camera stream (far right) and the `AmigaTpdo1` values from the canbus (left).

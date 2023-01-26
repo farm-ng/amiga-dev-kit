@@ -32,24 +32,14 @@ This is a brake for the Amiga. Pressing this will stop all motors and exit cruis
 **PTO (Triangle)**
 Power take-off (PTO) is a device that transfers an engine's mechanical power to another piece of equipment. A PTO allows the hosting energy source to transmit power to additional equipment that does not have its own engine or motor.
 
-We use this to facilitate control from the pendant for addition equipment attached to the Amiga, such as the [3-point lift](https://farm-ng.com/products/cat-zero-3-point-lift-kit), [compost spreader](https://farm-ng.com/products/compost-spreader) or [cargo dump box](https://farm-ng.com/products/kit-cargo-dump-box)
+We use this to facilitate control from the pendant for addition equipment attached to the Amiga, such as the [**3-point lift**](https://farm-ng.com/products/cat-zero-3-point-lift-kit), [**compost spreader**](https://farm-ng.com/products/compost-spreader) or [**cargo dump box**](https://farm-ng.com/products/kit-cargo-dump-box)
 
 **PAUSE(Square)**
 Currently this button is a free button to be updated in future firmware releases.
 
 **ARROWS** -  UP, Down, Left, Right {these are used to control your connect and registered PTO device)
- Basic troubleshooting can found on our [FAQ page](/docs/reference/faq)
+ Basic troubleshooting can found on our [**FAQ page**](/docs/reference/faq)
 
 
-### How to calibrate pendant
-It is required to calibrate you pendant when you first start setup of your Amiga.
-
-![ezgif com-gif-maker 2 (1)](https://user-images.githubusercontent.com/64480560/206317768-42edeab6-8fea-4c7d-95ae-a3ff3d9e62f1.gif)
-
-
-To do this you will need to go to the:
-- `Settings tab` --> `Pendant` --> `Calibrate Pendant`
-
-- If ESTOP screen appears, tap “CLEAR ESTOP”
-- If other error message appears, try a power cycle by turning the Amiga on and off.
-- If problem persists please submit an issue with us [here](https://discourse.farm-ng.com/c/support/5).
+### Calibrate pendant
+**See calibrate instructions [here](/docs/amiga_quick_start/amiga-quick-start.md#calibrate-the-pendant)**

@@ -8,13 +8,13 @@ title: Hello Main Loop Example
 
 This introductory example covers getting set up, interacting with the Amiga, and
 using auto-control mode to drive your Amiga from a computer
-using the [farm-ng microcontroller Kit](https://farm-ng.com/products/microcontroller-kit).
+using the [**farm-ng microcontroller kit**](https://farm-ng.com/products/microcontroller-kit).
 
 This example enables driving the Amiga by entering simple fwd / rev / left / right keyboard commands the serial port, which the app sends over the CAN bus.
 
 ## Parts required:
 
-- [farm-ng microcontroller kit](https://farm-ng.com/products/microcontroller-kit) (w/ USB-C cable)
+- [**farm-ng microcontroller kit**](https://farm-ng.com/products/microcontroller-kit) (w/ USB-C cable)
 
 ## Code Breakdown
 
@@ -49,7 +49,7 @@ def _handle_pendant_state(self, message):
    print(pendant_state)
 ```
 
-All messages on the bus can be found by using the [cansniffer example app](./../cansniffer/).
+All messages on the bus can be found by using the [**cansniffer example app**](./../cansniffer/).
 You can compare the detected CAN ID's to those in `CanOpenObject`. But keep in mind, node id is added
 to the function code for the full CAN Id, as you'll see below in
 [**CanOpenObject / DASHBOARD_NODE_ID**](#canopenobject--dashboard_node_id).
@@ -75,7 +75,7 @@ If you are creating a long duration application,
 just make sure your period is less than 6 days and that the check
 is called at least that often.
 
-See the [`supervisor.ticks_ms()` docs](https://docs.circuitpython.org/en/latest/shared-bindings/supervisor/#supervisor.ticks_ms)
+See the [**`supervisor.ticks_ms()` docs**](https://docs.circuitpython.org/en/latest/shared-bindings/supervisor/#supervisor.ticks_ms)
 for more details about `ticks_ms`.
 :::
 
@@ -83,7 +83,7 @@ for more details about `ticks_ms`.
 
 Wrapper for CAN packet used for auto mode controls of the Amiga.
 Provide the`AmigaRpdo1` object with a requested `AmigaControlState`, speed, and angular rate.
-Then pack this into a [`canio.Message`](https://docs.circuitpython.org/en/latest/shared-bindings/canio/index.html#canio.Message) and send this message over the bus.
+Then pack this into a [**`canio.Message`**](https://docs.circuitpython.org/en/latest/shared-bindings/canio/index.html#canio.Message) and send this message over the bus.
 
 :::info
 This is a ***request*** for a specific `AmigaControlState`, angular rate, and linear velocity sent to the dashboard.
@@ -104,7 +104,7 @@ Control state of the Amiga.
 #### CanOpenObject / DASHBOARD_NODE_ID
 
 We *mostly* follow the CANopen standards.
-A recommended reading is the [CSS Electronics CANopen tutorial](https://www.csselectronics.com/pages/canopen-tutorial-simple-intro).
+A recommended reading is the [**CSS Electronics CANopen tutorial**](https://www.csselectronics.com/pages/canopen-tutorial-simple-intro).
 
 :::note
 Some of the third-party, auxiliary components we have integrated into the system do not allow for strict adherence to the CANopen standards.
@@ -162,15 +162,15 @@ In our `iter()` call, we:
 
 3. Open the serial console.
    :::tip
-   Mu is the recommended serial console program by adafruit on their [CircuitPython serial console page](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console).
+   Mu is the recommended serial console program by adafruit on their [**CircuitPython serial console page**](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console).
    Mu has a built in plotter for tuples printed to the serial console (print statements in the python code on your microcontroller).
 
    We've found that Mu can be a little unstable and freezes occasionally,
    so we'd recommend checking out their links for the "advanced" serial console:
 
-   - [Windows serial console](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-windows)
-   - [Linux serial console](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-linux)
-   - [Mac serial console](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-mac-and-linux)
+   - [**Windows serial console**](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-windows)
+   - [**Linux serial console**](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-linux)
+   - [**Mac serial console**](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-mac-and-linux)
    :::
 
 You should see an output of the current state of the robot, similar to the screenshot below, and you should see the values update as the robot drives around.

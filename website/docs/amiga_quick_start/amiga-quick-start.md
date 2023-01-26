@@ -20,7 +20,8 @@ Things that will be included with Amiga
 Be sure to insert both battery packs in their respective locations on the Amiga.
 
 :::tip
-It is good practice to have both batteries plugged in and on at the same time when powering the Amiga even though the Amiga can operate with only one battery
+It is good practice to have both batteries plugged in and on at the same time when powering the Amiga even though the Amiga can operate with
+only one battery
 :::
 
 ![battery](https://user-images.githubusercontent.com/64480560/206290736-59ef9164-9ade-401c-80dc-569e77f088e5.gif)
@@ -51,7 +52,10 @@ Once that has appeared, release ESTOP and wait a few seconds.
 
 Press / Tap START and the dashboard will appear.
 
-The first time you start your Amiga, and anytime you replace the pendant, you should calibrate the joystick on your Pendant.
+### Calibrate the pendant
+
+It is required to calibrate you pendant when you first start setup of your Amiga, and anytime you replace the pendant.
+
 :::caution
 - Before testing pendant, you should press physical ESTOP so the Amiga does not drive while testing.
 :::
@@ -64,7 +68,7 @@ To do this you will need to go to the:
 
 - If ESTOP screen appears, tap “CLEAR ESTOP”
 - If other error message appears, try a power cycle by turning the Amiga on and off.
-- If problem persists please submit an issue with us [here](https://discourse.farm-ng.com/c/support/5).
+- If problem persists please submit an issue with us [**here**](https://discourse.farm-ng.com/c/support/5).
 
 
 

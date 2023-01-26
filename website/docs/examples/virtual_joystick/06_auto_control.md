@@ -34,13 +34,13 @@ self.max_angular_rate: float = 1.0
 To control the robot from our app, we will use the canbus client to send can messages to the canbus service.
 The service will then unpack, reformat, and forward the can message onto the CAN bus.
 
-This task uses the [sendCanbusMessage](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto) RPC, which defines a client stream.
+This task uses the [**sendCanbusMessage**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto) RPC, which defines a client stream.
 The client stream can be thought of as the inverse of the server streams we've seen so far.
 In this client stream, the canbus client can sends a stream of requests, of type `SendCanbusMessageRequest`, to the canbus service and receives a single message, of type `SendCanbusMessageReply`,  until the stream is explicitly stopped, or either of the client or service is killed.
 In this app, we never actually stop the stream, so don't expect to receive a `SendCanbusMessageReply`.
 
 The client streaming RPC is started by passing an iterator containing the messages we want to stream.
-We use the [`Generator`](https://book.pythontips.com/en/latest/generators.html) defined in [pose_generator](#pose_generator) for our iterator.
+We use the [**`Generator`**](https://book.pythontips.com/en/latest/generators.html) defined in [**pose_generator**](#pose_generator) for our iterator.
 
 ```Python
 async def send_can_msgs(self, client: CanbusClient) -> None:
@@ -56,7 +56,7 @@ async def send_can_msgs(self, client: CanbusClient) -> None:
         await asyncio.sleep(0.25)
 ```
 
-This task ensures the canbus client `sendCanbusMessage` method has the [`pose_generator`](#pose_generator) it will use to send messages on the can bus.
+This task ensures the canbus client `sendCanbusMessage` method has the [**`pose_generator`**](#pose_generator) it will use to send messages on the can bus.
 
 
 
@@ -68,7 +68,7 @@ While it seems unnecessary to loop forever here, it gives you a placeholder for 
 
 #### pose_generator
 
-We create a [`Generator`](https://book.pythontips.com/en/latest/generators.html) that will run forever as an iterator.
+We create a [**`Generator`**](https://book.pythontips.com/en/latest/generators.html) that will run forever as an iterator.
 If you're not familiar with the concept, you can think of a `Genrator` as a function that returns an array one element at a time.
 
 ```Python
@@ -96,7 +96,7 @@ It makes use of the `make_amiga_rpdo1_proto()` method that takes a:
 - request speed (forward positive)
 - requested angular rate (left positive)
 
-to construct a [`RawCanbusMessage`](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto).
+to construct a [**`RawCanbusMessage`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto).
 These messages, packed into a `SendCanbusMessageRequest`, are `yield`-ed to the canbus service to send on the CAN bus.
 
 :::tip
@@ -120,7 +120,7 @@ self.async_tasks.append(asyncio.ensure_future(self.send_can_msgs(canbus_client))
 Now sync the app to the Brain and launch it with the following instructions!
 
 :::info Deploy Instructions
-[Deploy Instructions](/brain/custom-applications.mdx) for syncing the app onto the Amiga Brain.
+[**Deploy Instructions**](/brain/custom-applications.mdx) for syncing the app onto the Amiga Brain.
 :::
 
 

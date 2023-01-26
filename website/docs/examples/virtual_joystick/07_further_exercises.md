@@ -11,7 +11,7 @@ Two options are:
 
 #### Adjustable rates
 
-Define two kivy [`Slider`](https://kivy.org/doc/stable/api-kivy.uix.slider.html) widgets that allow changing `max_speed` & `max_angular_rate`!
+Define two kivy [**`Slider`**](https://kivy.org/doc/stable/api-kivy.uix.slider.html) widgets that allow changing `max_speed` & `max_angular_rate`!
 Play around with where you can put these and how you can link them directly to the value in the `VirtualJoystickApp`.
 
 Just remember, the actual rates the amiga drives at are limited by the vehicle control unit (VCU), so don't be surprised if the true max speed doesn't reflect the slider.

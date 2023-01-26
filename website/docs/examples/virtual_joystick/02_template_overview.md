@@ -42,7 +42,7 @@ Before any kivy imports, we must explicitly state that the command line args for
 
 
 Next we import kivy `Config` and define the config parameters we recommend for running kivy applications on the brain.
-This should come before importing any other Kivy modules, as stated in [kivy - Configuration object](https://kivy.org/doc/stable/api-kivy.config.html).
+This should come before importing any other Kivy modules, as stated in [**kivy - Configuration object**](https://kivy.org/doc/stable/api-kivy.config.html).
 
 Finally we import the remaining kivy modules we use in our app, with the `# noqa: E402` flag, so any `pre-commit` formatters don't move these imports above the kivy configuration setting.
 
@@ -73,21 +73,21 @@ This definition can be a string at the top of a `.py` file or can be defined
 in a separate `.kv` file, and we tend to go for strings at the top of the Python file.
 
 :::tip
-Throughout this tutorial we'll explain the kivy app created in this example, but this is not intended as a thorough introduction to using kivy. Try the [kivy tutorials](https://kivy.org/doc/stable/tutorials-index.html) and use the [kivy API](https://kivy.org/doc/stable/api-index.html) for more information on creating custom applications with kivy.
+Throughout this tutorial we'll explain the kivy app created in this example, but this is not intended as a thorough introduction to using kivy. Try the [**kivy tutorials**](https://kivy.org/doc/stable/tutorials-index.html) and use the [**kivy API**](https://kivy.org/doc/stable/api-index.html) for more information on creating custom applications with kivy.
 :::
 
 
 #### RelativeLayout
 
-Two key components of kivy are [`Layouts`](https://kivy.org/doc/stable/gettingstarted/layouts.html#) and [`Widgets`](https://kivy.org/doc/stable/api-kivy.uix.html).
+Two key components of kivy are [**`Layouts`**](https://kivy.org/doc/stable/gettingstarted/layouts.html#) and [**`Widgets`**](https://kivy.org/doc/stable/api-kivy.uix.html).
 The root of our template app is a `RelativeLayout`, which contains a `Button` widget.
-The `RelativeLayout` allows us to position the [Back button](#back-button) (and any widgets or nested layouts we may add in the future) in relative coordinates.
+The `RelativeLayout` allows us to position the [**Back button**](#back-button) (and any widgets or nested layouts we may add in the future) in relative coordinates.
 
-- Reference: [Relative Layout](https://kivy.org/doc/stable/api-kivy.uix.relativelayout.html)
+- Reference: [**Relative Layout**](https://kivy.org/doc/stable/api-kivy.uix.relativelayout.html)
 
 #### Back button
 
-This `Button` is used to exit the app when it is pressed, by calling the [`TemplateApp.on_exit_btn()`](#on_exit_button) method.
+This `Button` is used to exit the app when it is pressed, by calling the [**`TemplateApp.on_exit_btn()`**](#on_exit_button) method.
 
 :::info
 To be precise it's actually when the button is released due to using the `on_release:` keyword.
@@ -98,10 +98,10 @@ We define the `Button` with two images, one that shows most of the time, and ano
 You can also define a button with a string, if you want to quickly add buttons without finding an icon.
 
 :::tip
-[Material Icons](https://github.com/google/material-design-icons) is a nice place to find symbols to use for app buttons / UI features.
+[**Material Icons**](https://github.com/google/material-design-icons) is a nice place to find symbols to use for app buttons / UI features.
 :::
 
-- Reference: [Button](https://kivy.org/doc/stable/api-kivy.uix.button.html)
+- Reference: [**Button**](https://kivy.org/doc/stable/api-kivy.uix.button.html)
 
 
 
@@ -230,7 +230,7 @@ async def app_func(self):
 We use the `app_func` pattern, with the nested `run_wrapper`, to build, run, and manage the list of long duration, asynchronous tasks required by the app.
 
 Here we build the list of `async` methods that will run simultaneously for the life of our app.
-Currently this list only consists of a placeholder method called [`template_function()`](#template_function) that we will later replace with tasks that actually do something.
+Currently this list only consists of a placeholder method called [**`template_function()`**](#template_function) that we will later replace with tasks that actually do something.
 
 Each method is added as an `asyncio.Task` following the pattern used to add `self.template_function()`.
 
