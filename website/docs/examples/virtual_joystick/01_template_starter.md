@@ -8,10 +8,10 @@ title: 01 - Template Starter
 ## Set up your Amiga brain template
 
 Follow the instructions in [**Developing Custom Applications**](/brain/custom-applications.mdx)
-to set up an application from the [**amiga-app-template**](https://github.com/farm-ng/amiga-app-template).
+to clone and set up the app template amiga-app-template.
 
 :::tip
-Feel free to choose any name, but it's recommended to go with `Virtual Joystick`.
+Feel free to choose any repository name, but it's recommended to go with `virtual-joystick`.
 :::
 
 ## Rename the `TemplateApp`
@@ -52,11 +52,11 @@ except asyncio.CancelledError:
 Now sync the app to the Brain and launch it with the following instructions!
 
 :::info Deploy Instructions
-[**Deploy Instructions**](/brain/custom-applications.mdx) for syncing the app onto the Amiga Brain.
+[**Deploy Instructions**](/brain/custom-applications.mdx#develop-and-test-in-the-robot) for syncing the app onto the Amiga Brain.
 :::
 
-You should see a blank kivy app pop up, once loaded, with only a `Back` button.
-Try out the button to exit the app.
+After following the deploy instructions, you should see a blank kivy app pop up with only a `Back` button.
+Try using the 'Back' button to exit the app.
 
 ![template](https://user-images.githubusercontent.com/53625197/200450581-7c93eb1f-3aa2-49f5-9c52-51e8b051c76e.png)
 

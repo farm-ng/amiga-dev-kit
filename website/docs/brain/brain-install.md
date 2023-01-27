@@ -9,13 +9,18 @@ title: Brain ADK Install
 
 ## Install
 
+#### [Optional] Make a new directory that will hold all of your farm-ng related files
+
+```bash
+cd <to_your_base_directory>  # In your terminal navigate to where you want this new directory
+mkdir <new_farm_folder>
+cd <new_farm_folder> # change to the directory
+```
 
 ### Clone the repository
 
 To install the [`farm-ng-amiga`](https://github.com/farm-ng/farm-ng-amiga) package and test the available examples, start by cloning the repo:
-
 ```bash
-cd <to_your_base_directory>
 git clone git@github.com:farm-ng/farm-ng-amiga.git
 cd farm-ng-amiga/
 ```
