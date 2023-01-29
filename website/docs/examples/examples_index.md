@@ -57,10 +57,10 @@ Topics:
 - Hardware integration
 - Auto-mode control
 
-## Brain Examples
+## Brain ADK Examples
 
 :::info
-These are the examples for developing applications for the [**farm-ng Brain**](../brain/).
+These are the examples that run on your personal computer for interacting with recorded logs and active services running on the Amiga Brain.
 
 Before getting started with any brain examples, you should install the [**farm-ng Brain ADK package**](/docs/brain/brain-install).
 :::
@@ -88,6 +88,12 @@ For now, please refer to the[**`file_reader_can` README**](https://github.com/fa
 [**Link to `camera_client/main.py`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/camera_client/main.py)
 
 This example acts as an `OakCameraClient` in a standalone Python script.
+
+## Brain App Examples
+
+:::info
+These are the examples for ready-to-run apps and learning how you can develop your own custom applications for the [**farm-ng Brain**](/docs/brain/).
+:::
 
 ### [Camera Client GUI](./camera_client_gui/README.md)
 

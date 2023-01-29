@@ -17,7 +17,7 @@ Check it out at [**Virtual Joystick Tutorial**](/examples/virtual_joystick/00_ov
   * Edit the "entry.sh" script in the sample git repository.
 * We leverage a venv per application.
   * The contents of requirements.txt will be installed by the bootstrap.sh script.
-* If you've updated the requirements.txt remove the hidden ".lock" before relaunching the app from the Brain UI.
+* If you've updated the requirements remove the hidden ".lock" before relaunching the app from the Brain UI.
 * You may use VSCode remote development/containers to edit directly on the Amiga brain as well.
 
 ## Prerequisites
@@ -44,7 +44,7 @@ brew install cookiecutter
 </TabItem>
 </Tabs>
 
-## Initial Configuration
+## Initial SSH Configuration
 
 To make ssh between our workstation and the Amiga easier, we'll add some configuration to our ssh on the workstation.
 To set up ssh, the Amiga and your computer should be on the same network.
@@ -140,18 +140,20 @@ You should now be able to `ssh` into your amiga and/or run the `sync.sh` script
 
 ## Prepare an app
 
-Follow the instructions below to select an example from the [**`farm-ng-amiga` examples**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples) or create an app from the [`amiga-app-template`](https://github.com/farm-ng/amiga-app-template) repository.
+Follow the instructions below to select a [Brain App Example](/docs/examples/examples-index#brain-app-examples)
+prepared by **farm-ng** or create an app from the
+[`amiga-app-template`](https://github.com/farm-ng/amiga-app-template) repository.
 
 ### Select an app
 
-:::caution coming soon
-The folder structure of the examples in [**farm-ng-amiga examples**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples) will soon be updated to match
-the template repository for setup / install on the amiga.
+If you would like to select a [Brain App Example](/docs/examples/examples-index#brain-app-examples)
+prepared by **farm-ng** to test the app deployment process,
+please follow the instructions below as though you were developing a custom application
+and simply replace any `<YOUR-USERNAME/YOUR-REPOSITORY>` placeholder with that of the
+path to the prepared app's Git repository, e.g., `farm-ng/virtual-joystick`.
 
-In the meantime, follow the instructions to [**Create an app**](#create-an-app).
-You can then copy the `main.py`, `requirements.txt`, and `assets/` directory (if present)
-from the example and drop them into an app you create with the template repository.
-:::
+You can skip any sections specific to setting up a new project,
+including [**Create an app**](#create-an-app) and [**Customizing an app**](#customizing-an-app).
 
 ### Create an app
 
@@ -279,35 +281,12 @@ To launch the tests: `pytest test/`
 To run specific tests: `pytest test/test_dummy.py::TestDummy::test_add`
 
 
----
-## SSH Configuration
-Now it is time to configure your *config* file to *ssh* in your Amiga.
-
-```bash
-gedit ~/.ssh/config
-```
-Edit your *.ssh/config* file to include the below information.
-
-```
-Host amiga
-    HostName <intranet ip address>
-    Port 22
-    User amiga
-    StrictHostKeyChecking no
-```
-
-`<intranet ip address>` can be found on the bottom right of the Amiga Brain screen.
-
-Copy your SSH key to the Amiga
-* If you do not have a key created
-    ```bash
-    ssh-keygen
-    ```
-```bash
-ssh-copy-id amiga
-```
-
 ## Develop and test in the robot
+
+:::info
+If you have not already configured your *config* file to *ssh* in your Amiga,
+please refer to [**Initial SSH Configuration**](#initial-ssh-configuration).
+:::
 
 In order to test your app in the robot, we require to push the changes to the remote repository created before and clone it to the robot.
 
