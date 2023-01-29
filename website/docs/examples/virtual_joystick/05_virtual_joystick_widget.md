@@ -5,8 +5,6 @@ title: 05 - Virtual Joystick Widget
 # Virtual Joystick Widget
 
 
-
-
 ### Add the VirtualJoystickWidget
 
 We will now define a custom widget in Python that gives an introduction to kivy drawing.

@@ -264,5 +264,3 @@ You should now see camera stream to the right of the `AmigaTpdo1` values from th
 Check all four tabs to investigate the different camera streams provided by the oak camera.
 
 ![camera_stream](https://user-images.githubusercontent.com/53625197/200481937-5fc317bc-614d-4446-89f5-9df70471c3f6.png)
-
-
