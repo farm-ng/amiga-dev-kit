@@ -267,7 +267,3 @@ Try moving the joystick around with your finger and releasing it, but note: It w
 
 ![joystick](https://user-images.githubusercontent.com/53625197/200641720-c722fa9f-f6a3-4918-a4f0-d7270b73fd43.png)
 
-
-:::caution Coming soon
-Link to this checkpoint
-:::

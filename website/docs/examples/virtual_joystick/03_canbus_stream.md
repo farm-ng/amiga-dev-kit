@@ -424,7 +424,3 @@ Make sure all your cables are disconnected from the Amiga before driving around!
 
 ![canbus_stream](https://user-images.githubusercontent.com/53625197/200458674-f596c306-f10d-48f0-b336-c69dcb774811.png)
 
-
-:::caution Coming soon
-Link to this checkpoint
-:::
