@@ -44,99 +44,6 @@ brew install cookiecutter
 </TabItem>
 </Tabs>
 
-## Initial Configuration
-
-To make ssh between our workstation and the Amiga easier, we'll add some configuration to our ssh on the workstation.
-To set up ssh, the Amiga and your computer should be on the same network.
-
-First check if a file `~/.ssh/config` exists on your workstation.
-`~/` is the home folder on your workstation.
-
-:::info
-
-1. If this file does not exist, you'll have to create it.
-
-```bash
-cd ~ # Navigate to your home folder
-ls -a # Check for a folder called `.ssh/`
-```
-
-2. If `~/.ssh/` does not exist, run:
-
-```bash
-ssh-keygen # create ~/.ssh/ folder
-```
-
-3. Create a file called `config` (no extension) in `~/.ssh`
-
-```bash
-gedit ~/.ssh/config
-```
-:::
-
-Add the following to your  `~/.ssh/config`:
-
-```bash
-Host amiga
-    HostName <ip address>
-    Port 22
-    User amiga
-    StrictHostKeyChecking no
-```
-
-:::tip tips
-
-* `<ip address>` can be found on the bottom right of the Amiga Brain screen
-* Remove the `<` & `>` symbols.
-* Your development station and your Amiga should be on the same network.
-:::
-This utilizes the IP address displayed on the bottom right of the brain display:
-
-Let’s copy our keys to the robot as well (you may need to do this any time you are working with a new robot)
-
-```bash
-ssh-copy-id amiga
-```
-
-Now you can ssh to the robot with:
-
-```bash
-ssh amiga
-exit
-```
-
-:::caution troubleshooting
-If, after a docker image update, you cannot `ssh` into your amiga or run the `sync.sh` script,
-you may have an error similar to:
-
-```bash
-# $ ssh amiga
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
-Someone could be eavesdropping on you right now (man-in-the-middle attack)!
-It is also possible that a host key has just been changed.
-The fingerprint for the ECDSA key sent by the remote host is
-SHA256:QsdOvROYuKMa5NqaPTFHwF3kfPCwKaTzgBAj9N/eKCI.
-Please contact your system administrator.
-Add correct host key in /home/<YOUR_NAME>/.ssh/known_hosts to get rid of this message.
-Offending ECDSA key in /home/<YOUR_NAME>/.ssh/known_hosts:29
-  remove with:
-  ssh-keygen -f "/home/<YOUR_NAME>/.ssh/known_hosts" -R "192.168.XX.XX"
-ECDSA host key for 192.168.XX.XX has changed and you have requested strict checking.
-Host key verification failed.
-```
-
-Follow the instructions they provide and run:
-
-```bash
-ssh-keygen -f "/home/<YOUR_NAME>/.ssh/known_hosts" -R "192.168.XX.XX"
-# With correct values for <YOUR_NAME> and IP Address XX.XX
-```
-
-You should now be able to `ssh` into your amiga and/or run the `sync.sh` script
-:::
 
 ## Prepare an app
 
@@ -171,7 +78,7 @@ Written instructions (same as video above):
 2. Fill out:
     - Owner: (your_username)
     - Repository Name: whatever-you-want
-        - Should be between between 4-17 charcters, and
+        - Should be between between 4-17 characters, and
         - Use underscores (_) or dashes (-) for separating words (no spaces!)
     -Select Public box
     -Click [Create repository from template]
@@ -283,12 +190,95 @@ To run specific tests: `pytest test/test_dummy.py::TestDummy::test_add`
 
 
 ---
-## SSH Configuration
-Now it is time to configure your *config* file to *ssh* in your Amiga.
+## Initial Configuration
+
+To make ssh between our workstation and the Amiga easier, we'll add some configuration to our ssh on the workstation.
+To set up ssh, make sure the Amiga and your computer are on the same network.
+
+First check if a file `~/.ssh/config` exists on your workstation.
+`~/` is the home folder on your workstation.
+
+:::info
+
+1. To check if this file exists put the commands below in your terminal. If this file does not exist, you'll have to create it.
+
+```bash
+cd ~ # Navigate to your home folder
+ls -a # Check for a folder called `.ssh/`
+```
+
+2. If `~/.ssh/` does not exist, run:
+
+```bash
+ssh-keygen # create ~/.ssh/ folder
+```
+
+3. Create a file called `config` (no extension) in `~/.ssh`
+
+<Tabs>
+<TabItem value="linux" label="Linux/WSL" default>
 
 ```bash
 gedit ~/.ssh/config
 ```
+</TabItem>
+<TabItem value="macos" label="MacOs" default>
+
+```bash
+cd .ssh
+cat > config # Then press control D on your keyboard
+open config # Then edit directly in the text editor that pops up and save your changes
+```
+
+</TabItem>
+</Tabs>
+
+:::
+
+Add the following to your  `~/.ssh/config`:
+
+```bash
+Host amiga
+    HostName <ip address>
+    Port 22
+    User amiga
+    StrictHostKeyChecking no
+```
+
+:::tip tips
+
+* `<ip address>` can be found on the bottom right of the Amiga Brain screen
+* Remove the `<` & `>` symbols.
+* Your development station and your Amiga should be on the same network.
+:::
+This utilizes the IP address displayed on the bottom right of the brain display:
+
+Let’s copy our keys to the robot as well (you may need to do this any time you are working with a new robot)
+
+```bash
+ssh-copy-id amiga
+```
+Now you are all set up to [ssh into the amiga](#ssh-to-the-robot)
+## SSH Configuration
+Now it is time to configure your *config* file to *ssh* in your Amiga.
+
+<Tabs>
+<TabItem value="linux" label="Linux/WSL" default>
+
+```bash
+gedit ~/.ssh/config
+```
+</TabItem>
+<TabItem value="macos" label="MacOs" default>
+
+```bash
+cd .ssh
+open config # Then edit directly in the text editor that pops up and save your changes
+```
+
+</TabItem>
+</Tabs>
+
 Edit your *.ssh/config* file to include the below information.
 
 ```
@@ -309,6 +299,45 @@ Copy your SSH key to the Amiga
 ```bash
 ssh-copy-id amiga
 ```
+#### ssh to the robot
+
+```bash
+ssh amiga
+exit # If you want to exit the ssh
+```
+
+:::caution troubleshooting
+If, after a docker image update, you cannot `ssh` into your amiga or run the `sync.sh` script,
+you may have an error similar to:
+
+```bash
+# $ ssh amiga
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:QsdOvROYuKMa5NqaPTFHwF3kfPCwKaTzgBAj9N/eKCI.
+Please contact your system administrator.
+Add correct host key in /home/<YOUR_NAME>/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/<YOUR_NAME>/.ssh/known_hosts:29
+  remove with:
+  ssh-keygen -f "/home/<YOUR_NAME>/.ssh/known_hosts" -R "192.168.XX.XX"
+ECDSA host key for 192.168.XX.XX has changed and you have requested strict checking.
+Host key verification failed.
+```
+
+Follow the instructions they provide and run:
+
+```bash
+ssh-keygen -f "/home/<YOUR_NAME>/.ssh/known_hosts" -R "192.168.XX.XX"
+# With correct values for <YOUR_NAME> and IP Address XX.XX
+```
+
+You should now be able to `ssh` into your amiga and/or run the `sync.sh` script
+:::
 
 ## Develop and test in the robot
 
@@ -318,7 +347,7 @@ We recommend to follow the next steps:
 :::tip
 Make sure you are on the **Linux** tab when you go to the GitHub docs (links below). The page defaults to the system you are on and doesn't know you are SSH'd into a Linux machine, which the Amiga is.
 :::
-1. ssh to robot `ssh amiga`
+1. ssh to robot `ssh amiga` (if have not configured ssh do so [here](#ssh-configuration))
 2. Create an ssh key for github on the amiga `ssh-keygen`
     - See: [GitHub Docs: Generate an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 3. Copy and add the key to your github user
