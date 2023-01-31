@@ -6,13 +6,13 @@ title: File Reader
 # File Reader Example
 
 In this example you will learn how to upload data to this [program](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader)
-and run the example on your machine. 
+and run the example on your machine.
 
-This is an example data file you can use. We will also teach you how to get your own directly from the amiga.
+This is an example data file you can use. We will also teach you how to get your own directly from the Amiga.
 
 Follow the instructions to clone the repository if you haven't already [here](/docs/brain/brain-install.md#clone-the-repository)
 
-Now we will make a data folder for all of our log files and other things that will be useful to us. 
+Now we will make a data folder for all of our log files and other things that will be useful to us.
 
 ## Make a Data folder
 ```bash
@@ -24,7 +24,7 @@ pwd # the output of this is your <path>
 ## Download the log file
 Now you are going to download this log file that you can use in this example and will go in this folder
  The [file is here](https://farm-ng-dev-auto-plot-mvp.s3.us-west-2.amazonaws.com/datasets/western-growers-2022-12-05/events_12052022115852.bin)
- 
+
  Now that the file is downloaded you do the following
  open a new terminal and
  ```bash
@@ -32,7 +32,7 @@ Now you are going to download this log file that you can use in this example and
  cd Downloads
  mv events_12052022115852.bin <path-to-where-data-file-is-above>
  ```
- Now that you have your log file in the correct place navigate to where the repository `farm-ng-amiga` is and 
+ Now that you have your log file in the correct place navigate to where the repository `farm-ng-amiga` is and
 
 ## Setup
 
@@ -65,5 +65,3 @@ python main.py --file-name <path-from-above>/events_12052022115852.bin --camera-
 ```
 
 Congratulations a video should now pop up and play! You finished running this example!
-
- 
