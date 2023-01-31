@@ -7,7 +7,7 @@ title: 00 - Introduction
 This first tutorial is designed to provide you with:
 
 1. References and the basic background knowledge that your Amiga app development will be based on.
-2. An understanding of the [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template) you will sue as the base of your cusotm apps.
+2. An understanding of the [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template) you will use as the base of your custom apps.
 
 ## Your system
 

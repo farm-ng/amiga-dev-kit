@@ -7,10 +7,10 @@ title: 02 - Template Overview
 
 ## Template overview
 
-This section explains all of the Python and kivy code in the app template, so you can understand the base before adding anything.
+This section explains all of the Python and kivy code in the [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template), to help understand the base before you add anything custom.
 
 :::info
-This corresponds to the state of the amiga-app-template on January 31, 2023.
+This corresponds to the state of the `amiga-app-template` on January 31, 2023.
 Some details of the implementation may have changed slightly by the time you are reading.
 :::
 
