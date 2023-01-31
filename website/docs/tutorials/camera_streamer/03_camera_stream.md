@@ -1,15 +1,55 @@
 ---
 id: camera-stream
-title: 03 - Camera Stream
+title: 03 - Python Implementation
 ---
-# Camera Stream
+# Python Implementation
 
-:::caution TODO
-This is a placeholder for the tutorial
+The Python implementation of the [**camera-streamer**](https://github.com/farm-ng/camera-streamer) app can be found at [`src/main.py`](https://github.com/farm-ng/camera-streamer/blob/main/src/main.py).
+You should open that file for reference as you follow along.
+
+
+### Quick notes
+
+#### `farm_ng` Imports
+
+We import the necessary `farm_ng` libraries for creating the camera client and interacting with the camera service.
+
+
+#### Image decoding
+
+We will use `TurboJPEG` as the image decoder (it is much faster than the built-in kivy decoder), so we add that as an import at the top of our `main.py`.
+
+In order to import this, we must add the library `PyTurboJPEG` to the [`setup.cfg`](https://github.com/farm-ng/camera-streamer/blob/main/setup.cfg) file so the dependency installs.
+
+We also construct an instance of this image decoder and assign it as a class variable of our `CameraApp` so it is not created every time we decode an image.
+
+
+#### Command line Arguments
+
+We add a few command line arguments used by the `OakCameraClient` at the bottom of the app and pass these to the `CameraApp` class through the constructor.
+
+These include the `address` and `port` of the oak device we will stream and the `stream_every_n` argument that allows you to throttle the stream rate of your camera, if you wish to save computational resources.
+
+
+#### App icon
+
+We replace the `app_logo.png` with an icon from https://fonts.google.com/icons.
+When developing your own app, you can:
+1. Choose a suitable symbol or icon for your app
+2. Tweak the appearance parameters, including moving to the largest 'Optical Size' available
+3. Export it as a `.png` file
+
+For following along with this tutorial, feel free to download the image from [src/assets/app_logo.png](https://github.com/farm-ng/camera-streamer/blob/main/src/assets/app_logo.png).
+
+
+:::caution todo
+Stopped here
 :::
 
 
 ### Add a camera stream
+
+
 
 The next thing we'll add to our app is a camera stream.
 This will:

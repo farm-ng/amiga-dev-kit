@@ -5,7 +5,7 @@ title: 02 - Kivy Definition
 # Kivy Definition
 
 In the [`src/res/main.kv`](https://github.com/farm-ng/camera-streamer/blob/main/src/res/main.kv) file of the [**camera-streamer**](https://github.com/farm-ng/camera-streamer) app we define the kivy app.
-You should open that file for reference.
+You should open that file for reference as you follow along.
 
 Our app will have two components:
 

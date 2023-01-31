@@ -86,6 +86,7 @@ const sidebars = {
             "tutorials/camera_streamer/template-starter",
             "tutorials/camera_streamer/kivy-definition",
             "tutorials/camera_streamer/camera-stream",
+            "tutorials/camera_streamer/camera-streamer-run",
         ],
         "02 - Virtual Joystick Tutorial" :[
             "tutorials/virtual_joystick/virtual-joystick-overview",
