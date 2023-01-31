@@ -67,26 +67,34 @@ const sidebars = {
   ],
   "examples": {
     "Index": ["examples/examples-index"],
-    "CircuitPython Example" : [
+    "CircuitPython Examples" : [
         "examples/hello_main_loop/hello-world",
         "examples/cansniffer/cansniffer",
         "examples/FPV/fpv",
     ],
-    "Brain Example" : [
+    "Brain ADK Examples" : [
         "examples/camera_client/camera-client",
-        "examples/camera_client_gui/camera-client-gui",
     ],
-    "Virtual Joystick Tutorial" :[
-        "examples/virtual_joystick/virtual-joystick-overview",
-        "examples/virtual_joystick/template-starter",
-        "examples/virtual_joystick/template-overview",
-        "examples/virtual_joystick/canbus-stream",
-        "examples/virtual_joystick/camera-stream",
-        "examples/virtual_joystick/virtual-joystick-widget",
-        "examples/virtual_joystick/auto-control",
-        "examples/virtual_joystick/further-exercises",
-    ],
-    "Developing Custom Applications": [
+    "Brain App Tutorials" : {
+        "00 - Tutorial Introduction" :[
+            "tutorials/introduction/tutorial-introduction",
+            "tutorials/introduction/background-knowledge",
+            "tutorials/introduction/template-overview",
+        ],
+        "01 - Camera Streamer Tutorial" :[
+            "examples/camera_client_gui/camera-client-gui",
+        ],
+        "02 - Virtual Joystick Tutorial" :[
+            "examples/virtual_joystick/virtual-joystick-overview",
+            "examples/virtual_joystick/template-starter",
+            "examples/virtual_joystick/canbus-stream",
+            "examples/virtual_joystick/camera-stream",
+            "examples/virtual_joystick/virtual-joystick-widget",
+            "examples/virtual_joystick/auto-control",
+            "examples/virtual_joystick/further-exercises",
+        ],
+    },
+      "Developing Custom Applications": [
       "brain/brain-apps"
     ]
 },
