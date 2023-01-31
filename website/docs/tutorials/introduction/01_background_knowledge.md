@@ -56,4 +56,3 @@ They are:
 See: [**farm_ng_core**](https://github.com/farm-ng/farm-ng-core)
 
 See: [**farm_ng_amiga**](https://github.com/farm-ng/farm-ng-amiga)
-

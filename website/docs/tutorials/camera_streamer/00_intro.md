@@ -1,7 +1,14 @@
 ---
-id: camera-client-gui
-title: Camera Client GUI
+id: camera-streamer-overview
+title: 00 - Camera Streamer Overview
 ---
+
+# Camera Streamer Overview
+
+:::caution TODO
+1. Set up from amiga-app-template
+2. Construct this as a tutorial
+:::
 
 ### [Link to `camera_client_gui/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/camera_client_gui/main.py)
 

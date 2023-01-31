@@ -12,14 +12,12 @@ Now that you have downloaded the repository and have all the correct packages in
 
 ## 1. Examples
 
-Either navigate to the `Examples` tab located at the top of this page, or go directly to the [Examples Index](./../examples/examples_index.md),
+Either navigate to the `Examples` tab located at the top of this page, or go directly to the [Examples Index](/docs/examples/examples_index.md),
 to get started on running one of the available brain ADK examples or CircuitPython examples.
 
-## 2. Tutorial
+## 2. Tutorials
 
-Go through the [Virtual Joystick Tutorial](./../examples/virtual_joystick/00_overview.md) that walks you line-by-line
-through creating an Amiga brain application.
-
+Go through the [Brain App Tutorials](/docs/examples/examples-index#brain-app-tutorials) that walk you through creating custom applications that interact with cameras and drive your Amiga from the brain!
 
 ## 3. Developing Custom applications
 
