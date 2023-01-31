@@ -5,6 +5,10 @@ title: 00 - Camera Streamer Overview
 
 # Camera Streamer Overview
 
+:::tip
+This tutorial builds off of the [**Tutorial Introduction**](/docs/tutorials/introduction/tutorial-introduction), so please check that out if you have not already.
+:::
+
 ### [Link to `camera-streamer`](https://github.com/farm-ng/camera-streamer)
 
 This example application and tutorial is designed to get you started developing your own basic applications and deploying them to the Amiga brain.

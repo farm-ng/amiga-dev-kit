@@ -106,7 +106,7 @@ The topics covered in this tutorial include:
 - Creating kivy applications
 - GRPC / asyncio application development
 
-### [01 - Camera Streamer](/docs/tutorials/camera_streamer/camera-streamer-overview)
+### [01 - Camera Streamer Tutorial](/docs/tutorials/camera_streamer/camera-streamer-overview)
 
 This tutorial is designed to teach you to implement the `OakCameraClient` in a GUI application using [**Kivy**](https://kivy.org/) following along the [**`camera-streamer`**](https://github.com/farm-ng/camera-streamer) example application built using the [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template).
 

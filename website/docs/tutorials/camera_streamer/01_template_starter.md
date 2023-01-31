@@ -4,10 +4,6 @@ title: 01 - Template Starter
 ---
 # Template Starter
 
-:::caution TODO
-Change names for camera streamer
-:::
-
 
 ## Set up your Amiga brain template
 
@@ -28,7 +24,7 @@ We will assume you went with `camera_tutorial` in this tutorial.
 ## Rename the `TemplateApp`
 
 Now that you've created the template, it's time to rename it for your app.
-In this tutorial, we'll go with `VirtualJoystickApp`.
+In this tutorial, we'll go with `CameraApp`.
 
 Navigate to `main.py` in your app and open it with a text editor.
 
@@ -39,7 +35,7 @@ We recommend [**Visual Studio Code**](https://code.visualstudio.com/)!
 There's 3 places to change the templated name:
 ```Python
 # 1. Rename the class
-class VirtualJoystickApp(App):
+class CameraApp(App):
     def __init__(self) -> None:
         super().__init__()
 
@@ -47,13 +43,13 @@ class VirtualJoystickApp(App):
 
 # 2. Rename the program
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(prog="joystick-template")
+    parser = argparse.ArgumentParser(prog="camera-tutorial")
 
 ...
 
 # 3. Run with the new class name
 try:
-    loop.run_until_complete(VirtualJoystickApp().app_func())
+    loop.run_until_complete(CameraApp().app_func())
 except asyncio.CancelledError:
     pass
 ```
