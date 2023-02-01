@@ -73,6 +73,7 @@ const sidebars = {
         "examples/FPV/fpv",
     ],
     "Brain Example" : [
+        "examples/import_log_file/import-log-file",
         "examples/file_reader/file-reader",
         "examples/file_reader_can/file-reader-can",
         "examples/camera_client/camera-client",
