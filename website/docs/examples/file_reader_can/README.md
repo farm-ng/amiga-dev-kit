@@ -72,3 +72,17 @@ Optionally, you can change the can interface that is played back from the defaul
 ```bash
 python main.py --file-name <path-to-file>/events_12052022115852.bin --can-interface vcan0
 ```
+If everything worked correctly you should now see a large stream of text come up in your terminal!
+
+The output should look something like this:
+
+`AMIGA TPDO1 Amiga state 2 Measured speed 0.000 Measured angular rate 0.000 @ time 1512.775886915
+AMIGA TPDO1 Amiga state 2 Measured speed 0.000 Measured angular rate 0.000 @ time 1512.843416858
+AMIGA TPDO1 Amiga state 2 Measured speed 0.000 Measured angular rate 0.000 @ time 1512.866171608
+AMIGA TPDO1 Amiga state 2 Measured speed 0.000 Measured angular rate 0.000 @ time 1512.928378193
+AMIGA TPDO1 Amiga state 2 Measured speed 0.000 Measured angular rate 0.000 @ time 1512.985744047
+AMIGA TPDO1 Amiga state 2 Measured speed 0.000 Measured angular rate 0.000 @ time 1513.019865388
+AMIGA TPDO1 Amiga state 2 Measured speed 0.000 Measured angular rate 0.000 @ time 1513.076998664`
+
+Congrats you are done!
+

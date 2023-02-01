@@ -64,4 +64,6 @@ Optionally, you can change the camera that is played back from the default of `o
 python main.py --file-name <path-from-above>/events_12052022115852.bin --camera-name oak1
 ```
 
-Congratulations a video should now pop up and play! You finished running this example!
+Congratulations two videos should now pop up and play! One should be RGB and one should be disparity (it might be hidden behind the RGB window so try moving the RGB window). You have now finished running this example!
+
+If you want another log file to run here is an example of Amiga driving in a field [(click to download)](s3://farm-ng-dev-auto-plot-mvp/datasets/jacobs_freedom_1013/events_10132022112259.bin)
