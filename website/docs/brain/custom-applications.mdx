@@ -45,14 +45,14 @@ brew install wget
 ## Initial SSH Configuration
 
 To make ssh between our workstation and the Amiga easier, we'll add some configuration to our ssh on the workstation.
-To set up ssh, the Amiga and your computer should be on the same network.
+To set up ssh, make sure the Amiga and your computer are on the same network.
 
 First check if a file `~/.ssh/config` exists on your workstation.
 `~/` is the home folder on your workstation.
 
 :::info
 
-1. If this file does not exist, you'll have to create it.
+1. To check if this file exists put the commands below in your terminal. If this file does not exist, you'll have to create it.
 
 ```bash
 cd ~ # Navigate to your home folder
@@ -67,9 +67,24 @@ ssh-keygen # create ~/.ssh/ folder
 
 3. Create a file called `config` (no extension) in `~/.ssh`
 
+<Tabs>
+<TabItem value="linux" label="Linux/WSL" default>
+
 ```bash
 gedit ~/.ssh/config
 ```
+</TabItem>
+<TabItem value="macos" label="MacOs" default>
+
+```bash
+cd .ssh
+cat > config # Then press control D on your keyboard
+open config # Then edit directly in the text editor that pops up and save your changes
+```
+
+</TabItem>
+</Tabs>
+
 :::
 
 Add the following to your  `~/.ssh/config`:
@@ -95,12 +110,13 @@ Let’s copy our keys to the robot as well (you may need to do this any time you
 ```bash
 ssh-copy-id amiga
 ```
+Now you are all set up to [ssh into the amiga](#ssh-to-the-robot)
 
-Now you can ssh to the robot with:
+#### ssh to the robot
 
 ```bash
 ssh amiga
-exit
+exit # If you want to exit the ssh
 ```
 
 :::caution troubleshooting
