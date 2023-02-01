@@ -129,4 +129,3 @@ The `Image` widgets in the `TabbedPanel` accessed by their kivy id.
 Run the app on the brain by launching with the app button or run it through a terminal as described in [Command line arguments](#command-line-arguments).
 
 ![camera-streamer](https://user-images.githubusercontent.com/53625197/216075393-6e578a01-677e-4279-b224-70fd3f73ce5f.png)
-
