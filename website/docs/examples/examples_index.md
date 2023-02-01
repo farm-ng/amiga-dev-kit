@@ -57,10 +57,10 @@ Topics:
 - Hardware integration
 - Auto-mode control
 
-## Brain Examples
+## Brain ADK Examples
 
 :::info
-These are the examples for developing applications for the [**farm-ng Brain**](../brain/).
+These are the examples that run on your personal computer for interacting with recorded logs and active services running on the Amiga Brain.
 
 Before getting started with any brain examples, you should install the [**farm-ng Brain ADK package**](/docs/brain/brain-install).
 :::
@@ -89,16 +89,35 @@ For now, please refer to the[**`file_reader_can` README**](https://github.com/fa
 
 This example acts as an `OakCameraClient` in a standalone Python script.
 
-### [Camera Client GUI](./camera_client_gui/README.md)
+## Brain App Tutorials
 
-[**Link to `camera_client_gui/main.py`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/camera_client_gui/main.py)
+These are the examples for ready-to-run apps and learning how you can develop your own custom applications for the [**farm-ng Brain**](/docs/brain/).
 
-This example implements the `OakCameraClient` in a GUI application using [**Kivy**](https://kivy.org/).
+:::tip
+The tutorials build off of one another and are better when followed in order.
+:::
+
+### [00 - Tutorial Introduction](/docs/tutorials/introduction/tutorial-introduction)
 
 
-### [Virtual Joystick Tutorial](./virtual_joystick/00_overview.md)
+This tutorial introduces necessary background knowledge and walks you through the [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template).
 
-This example application and tutorial is designed to enable you to develop your own custom applications and deploy them to the Amiga brain.
+The topics covered in this tutorial include:
+- Creating kivy applications
+- GRPC / asyncio application development
+
+### [01 - Camera Streamer Tutorial](/docs/tutorials/camera_streamer/camera-streamer-overview)
+
+This tutorial is designed to teach you to implement the `OakCameraClient` in a GUI application using [**Kivy**](https://kivy.org/) following along the [**`camera-streamer`**](https://github.com/farm-ng/camera-streamer) example application built using the [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template).
+
+The topics covered in this tutorial include:
+- Creating kivy applications
+- GRPC / asyncio application development
+- Streaming an Oak camera with the camera client
+
+### [02 - Virtual Joystick Tutorial](/docs/tutorials/virtual_joystick/virtual-joystick-overview)
+
+This tutorial is designed to enable you to develop your own custom applications that uses camera streams and controls your Amiga over the CAN bus following along the [**`virtual-joystick`**](https://github.com/farm-ng/virtual-joystick) example application built using the [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template).
 
 The topics covered in this tutorial include:
 - Creating kivy applications

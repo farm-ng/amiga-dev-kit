@@ -8,7 +8,7 @@ title: 02 - Template Overview
 
 ### Template overview
 
-This section explains all of the Python code in the template, so you can understand the base before adding anything.
+This section explains all of the Python and kivy code in the app template, so you can understand the base before adding anything.
 
 #### Imports
 
@@ -19,9 +19,12 @@ import asyncio
 import os
 from typing import List
 
+from amiga_package import ops
+
 # Must come before kivy imports
 os.environ["KIVY_NO_ARGS"] = "1"
 
+# gui configs must go before any other kivy import
 from kivy.config import Config  # noreorder # noqa: E402
 
 Config.set("graphics", "resizable", False)
@@ -31,26 +34,25 @@ Config.set("graphics", "fullscreen", "false")
 Config.set("input", "mouse", "mouse,disable_on_activity")
 Config.set("kivy", "keyboard_mode", "systemanddock")
 
-from kivy.input.providers.mouse import MouseMotionEvent  # noqa: E402
+# kivy imports
 from kivy.app import App  # noqa: E402
 from kivy.lang.builder import Builder  # noqa: E402
-from kivy.core.window import Window  # noqa: E402
 ```
 
-The template starts with generic Python imports that are used in the app, followed by the basic kivy imports and configuration.
+The template starts with generic Python imports that are used in the app, followed by the custom lib imports, then kivy imports and configuration.
+
 Before any kivy imports, we must explicitly state that the command line args for the app are to be used, rather than the default kivy command line args, with `os.environ["KIVY_NO_ARGS"] = "1"`.
 
-
-Next we import kivy `Config` and define the config parameters we recommend for running kivy applications on the brain.
+Notice we import kivy `Config` and define the config parameters we recommend for running kivy applications on the brain.
 This should come before importing any other Kivy modules, as stated in [**kivy - Configuration object**](https://kivy.org/doc/stable/api-kivy.config.html).
 
-Finally we import the remaining kivy modules we use in our app, with the `# noqa: E402` flag, so any `pre-commit` formatters don't move these imports above the kivy configuration setting.
+Finally we import the remaining kivy modules with the `# noqa: E402` flag, so any `pre-commit` formatters don't move these imports above the kivy configuration setting.
 
 
 #### kivy app definition
 
-```Python
-kv = """
+Contents of `res/main.kv`
+```
 RelativeLayout:
     Button:
         id: back_btn_layout
@@ -60,17 +62,19 @@ RelativeLayout:
         background_normal: "assets/back_button.png"
         on_release: app.on_exit_btn()
         Image:
-            source: "assets/back_button_normal.png" \
-            if self.parent.state == "normal" \
-            else "assets/back_button_down.png"
+            source: "assets/back_button_normal.png" if self.parent.state == "normal" else "assets/back_button_down.png"
             pos: self.parent.pos
             size: self.parent.size
-"""
+    Label:
+        id: counter_label
+        text: "Tic: 0"
+        font_size: 40
 ```
 
 Next we define our application in the Kv language.
-This definition can be a string at the top of a `.py` file or can be defined
-in a separate `.kv` file, and we tend to go for strings at the top of the Python file.
+This definition can be a `"""` string at the top of a `.py` file or can be defined in a separate `.kv` file.
+Either can be imported by the [kivy Builder](https://kivy.org/doc/stable/api-kivy.lang.builder.html).
+Here we use a separate .kv file [`res/main.py`](https://github.com/farm-ng/amiga-app-template/blob/main/src/res/main.kv).
 
 :::tip
 Throughout this tutorial we'll explain the kivy app created in this example, but this is not intended as a thorough introduction to using kivy. Try the [**kivy tutorials**](https://kivy.org/doc/stable/tutorials-index.html) and use the [**kivy API**](https://kivy.org/doc/stable/api-index.html) for more information on creating custom applications with kivy.
@@ -80,7 +84,7 @@ Throughout this tutorial we'll explain the kivy app created in this example, but
 #### RelativeLayout
 
 Two key components of kivy are [**`Layouts`**](https://kivy.org/doc/stable/gettingstarted/layouts.html#) and [**`Widgets`**](https://kivy.org/doc/stable/api-kivy.uix.html).
-The root of our template app is a `RelativeLayout`, which contains a `Button` widget.
+The root of our template app is a `RelativeLayout`, which contains a `Button` and a `Label` widget.
 The `RelativeLayout` allows us to position the [**Back button**](#back-button) (and any widgets or nested layouts we may add in the future) in relative coordinates.
 
 - Reference: [**Relative Layout**](https://kivy.org/doc/stable/api-kivy.uix.relativelayout.html)
@@ -109,8 +113,12 @@ You can also define a button with a string, if you want to quickly add buttons w
 
 ```Python
 class TemplateApp(App):
+    """Base class for the main Kivy app."""
+
     def __init__(self) -> None:
         super().__init__()
+
+        self.counter: int = 0
 
         self.async_tasks: List[asyncio.Task] = []
 ```
@@ -124,77 +132,18 @@ All we add here is a placeholder for the `TemplateApp` class methods that will e
 
 ```Python
 def build(self):
-    def on_touch_down(window: Window, touch: MouseMotionEvent) -> bool:
-        """Handles initial press with mouse click or touchscreen."""
-        if isinstance(touch, MouseMotionEvent) and int(
-            os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)
-        ):
-            return True
-        for w in window.children[:]:
-            if w.dispatch("on_touch_down", touch):
-                return True
+    return Builder.load_file("res/main.kv")
 
-        # Add additional on_touch_down behavior here
-
-        return False
-
-    def on_touch_move(window: Window, touch: MouseMotionEvent) -> bool:
-        """Handles when press is held and dragged with mouse click or touchscreen."""
-        if isinstance(touch, MouseMotionEvent) and int(
-            os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)
-        ):
-            return True
-        for w in window.children[:]:
-            if w.dispatch("on_touch_move", touch):
-                return True
-
-        # Add additional on_touch_move behavior here
-
-        return False
-
-    def on_touch_up(window: Window, touch: MouseMotionEvent) -> bool:
-        """Handles release of press with mouse click or touchscreen."""
-        if isinstance(touch, MouseMotionEvent) and int(
-            os.environ.get("DISABLE_KIVY_MOUSE_EVENTS", 0)
-        ):
-            return True
-        for w in window.children[:]:
-            if w.dispatch("on_touch_up", touch):
-                return True
-
-        # Add additional on_touch_up behavior here
-
-        return False
-
-    Window.bind(on_touch_down=on_touch_down)
-    Window.bind(on_touch_move=on_touch_move)
-    Window.bind(on_touch_up=on_touch_up)
-
-    return Builder.load_string(kv)
 ```
 
 
 `build` is a default kivy `App` method that we must overwrite with our app's details.
 
-To load the Kv formatted string into our app, we use the built-in method:
+To load the `.kv` definition of our app, we use the built-in method:
 
 ```Python
-Builder.load_string(KV_STRING)
+Builder.load_file(KV_FILE)
 ```
-
-But first, we need to override the default touch handling since we are interacting on a touchscreen.
-
-##### touch handling
-
-`on_touch_down`, `on_touch_move`, and `on_touch_up` define the behavior at various stages of a screen press or mouse click.
-Because kivy can mis-register touches on the touchscreen, you will notice the clear pattern that all of these follow to correct for this.
-There is a placeholder after the initial pattern in all of these that allows you to add logic to be performed at these various stages of the press.
-
-We also must bind these touch handling functions to the kivy app `Window`.
-
-:::info Note
-In the future we plan to hide this so it is not needed in your apps.
-:::
 
 
 #### on_exit_button
@@ -243,14 +192,19 @@ async def template_function(self) -> None:
         await asyncio.sleep(0.01)
 
     while True:
-        await asyncio.sleep(0.01)
+        await asyncio.sleep(1.0)
+
+        # increment the counter using internal libs and update the gui
+        self.counter = ops.add(self.counter, 1)
+        self.root.ids.counter_label.text = (
+            f"{'Tic' if self.counter % 2 == 0 else 'Tac'}: {self.counter}"
+        )
 ```
 
-In each of our `async` functions, we should wait for the root of the kivy App to be initialized before doing anything in the function.
+In all of our `async` functions, we should wait for the root of the kivy App to be initialized before doing anything in the function.
 Often these functions will rely on the kivy app, so this prevents unexpected crashes.
 
-In this placeholder, the `while` loop doesn't do anything besides sleep for 10 ms before the next iteration of the `while` loop.
-We tend to add this 10 ms at the end of each of our loops.
+In this placeholder, the `while` loop doesn't do anything besides update the text of the `Label` widget to alternate between `Tic` & `Tac` every second.
 
 :::tip
 The custom defined async functions must be defined with the `async` decorator and any blocking tasks with the `await` keyword.

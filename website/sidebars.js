@@ -67,28 +67,40 @@ const sidebars = {
   ],
   "examples": {
     "Index": ["examples/examples-index"],
-    "CircuitPython Example" : [
+    "CircuitPython Examples" : [
         "examples/hello_main_loop/hello-world",
         "examples/cansniffer/cansniffer",
         "examples/FPV/fpv",
     ],
-    "Brain Example" : [
+    "Brain ADK Examples" : [
         "examples/file_reader/file-reader",
         "examples/file_reader_can/file-reader-can",
         "examples/camera_client/camera-client",
-        "examples/camera_client_gui/camera-client-gui",
     ],
-    "Virtual Joystick Tutorial" :[
-        "examples/virtual_joystick/virtual-joystick-overview",
-        "examples/virtual_joystick/template-starter",
-        "examples/virtual_joystick/template-overview",
-        "examples/virtual_joystick/canbus-stream",
-        "examples/virtual_joystick/camera-stream",
-        "examples/virtual_joystick/virtual-joystick-widget",
-        "examples/virtual_joystick/auto-control",
-        "examples/virtual_joystick/further-exercises",
-    ],
-    "Developing Custom Applications": [
+    "Brain App Tutorials" : {
+        "00 - Tutorial Introduction" :[
+            "tutorials/introduction/tutorial-introduction",
+            "tutorials/introduction/background-knowledge",
+            "tutorials/introduction/template-overview",
+        ],
+        "01 - Camera Streamer Tutorial" :[
+            "tutorials/camera_streamer/camera-streamer-overview",
+            "tutorials/camera_streamer/template-starter",
+            "tutorials/camera_streamer/kivy-definition",
+            "tutorials/camera_streamer/camera-stream",
+        ],
+        "02 - Virtual Joystick Tutorial" :[
+            "tutorials/virtual_joystick/virtual-joystick-overview",
+            "tutorials/virtual_joystick/template-starter",
+            "tutorials/virtual_joystick/template-overview",
+            "tutorials/virtual_joystick/canbus-stream",
+            "tutorials/virtual_joystick/camera-stream",
+            "tutorials/virtual_joystick/virtual-joystick-widget",
+            "tutorials/virtual_joystick/auto-control",
+            "tutorials/virtual_joystick/further-exercises",
+        ],
+    },
+      "Developing Custom Applications": [
       "brain/brain-apps"
     ]
 },

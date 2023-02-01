@@ -134,13 +134,4 @@ Navigate to the auto tab and enter the `Auto Ready` state.
 The Brain should take control and enter the `Auto Active` state right away, allowing you to drive with the screen.
 You should see the state on the dashboard match that displayed on the Brain in your app.
 
-:::caution Coming soon
-Link to dashboard instructions to enter auto mode
-:::
-
-
 ![auto_control](https://user-images.githubusercontent.com/53625197/200641685-a712fb2d-66f7-4ec2-bf92-e6d96c93cadb.png)
-
-:::caution Coming soon
-Link to virtual joystick example
-:::

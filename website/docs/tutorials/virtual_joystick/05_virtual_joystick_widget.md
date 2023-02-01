@@ -5,8 +5,6 @@ title: 05 - Virtual Joystick Widget
 # Virtual Joystick Widget
 
 
-
-
 ### Add the VirtualJoystickWidget
 
 We will now define a custom widget in Python that gives an introduction to kivy drawing.
@@ -97,6 +95,12 @@ class VirtualJoystickWidget(Widget):
 We also add two parameters: one for the relative pose of joystick and one for the size (in pixels) to draw the joystick.
 
 
+<!-- But first, we need to override the default touch handling since we are interacting on a touchscreen.
+
+##### A note on touch handling
+
+`on_touch_down`, `on_touch_move`, and `on_touch_up` define the behavior at various stages of a screen press or mouse click.
+Because kivy can mis-register touches on the touchscreen, you can override these built-in methods . -->
 
 #### draw (Widget)
 
@@ -266,8 +270,3 @@ You should now see the virtual joystick between the camera stream (far right) an
 Try moving the joystick around with your finger and releasing it, but note: It won't drive yet!
 
 ![joystick](https://user-images.githubusercontent.com/53625197/200641720-c722fa9f-f6a3-4918-a4f0-d7270b73fd43.png)
-
-
-:::caution Coming soon
-Link to this checkpoint
-:::
