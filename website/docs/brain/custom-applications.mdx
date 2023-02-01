@@ -217,7 +217,7 @@ ssh-keygen # create ~/.ssh/ folder
 <TabItem value="linux" label="Linux/WSL" default>
 
 ```bash
-gedit ~/.ssh/config
+touch ~/.ssh/config
 ```
 </TabItem>
 <TabItem value="macos" label="MacOs" default>
@@ -225,7 +225,6 @@ gedit ~/.ssh/config
 ```bash
 cd .ssh
 cat > config # Then press control D on your keyboard
-open config # Then edit directly in the text editor that pops up and save your changes
 ```
 
 </TabItem>
@@ -233,9 +232,29 @@ open config # Then edit directly in the text editor that pops up and save your c
 
 :::
 
-Add the following to your  `~/.ssh/config`:
+Now it is time to configure your *config* file to *ssh* in your Amiga.
+
+
+<Tabs>
+<TabItem value="linux" label="Linux/WSL" default>
 
 ```bash
+gedit ~/.ssh/config
+```
+</TabItem>
+<TabItem value="macos" label="MacOs" default>
+
+```bash
+cd .ssh
+open config # Then edit directly in the text editor that pops up and save your changes
+```
+
+</TabItem>
+</Tabs>
+
+Edit your *.ssh/config* file to include the below information.
+
+```
 Host amiga
     HostName <ip address>
     Port 22
@@ -256,6 +275,12 @@ Let’s copy our keys to the robot as well (you may need to do this any time you
 ```bash
 ssh-copy-id amiga
 ```
+
+* If you do not already have a key created
+    ```bash
+    ssh-keygen
+    ```
+
 Now you are all set up to [ssh into the amiga](#ssh-to-the-robot)
 
 #### ssh to the robot
@@ -291,8 +316,8 @@ Host key verification failed.
 Follow the instructions they provide and run:
 
 ```bash
-ssh-keygen -f "/home/<YOUR_NAME>/.ssh/known_hosts" -R "192.168.XX.XX"
 # With correct values for <YOUR_NAME> and IP Address XX.XX
+ssh-keygen -f "/home/<YOUR_NAME>/.ssh/known_hosts" -R "192.168.XX.XX"
 ```
 
 You should now be able to `ssh` into your amiga and/or run the `sync.sh` script
