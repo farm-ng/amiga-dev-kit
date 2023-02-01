@@ -17,7 +17,7 @@ We import the necessary `farm_ng` libraries for creating the camera client and i
 
 #### Image decoding
 
-We will use `TurboJPEG` as the image decoder (it is much faster than the built-in kivy decoder), so we add that as an import at the top of our `main.py`.
+We will use `TurboJPEG` as the image decoder (it is much faster than kivy's default image decoder), so we add that as an import in our `main.py` file.
 
 In order to import this, we must add the library `PyTurboJPEG` to the [`setup.cfg`](https://github.com/farm-ng/camera-streamer/blob/main/setup.cfg) file so the dependency installs.
 
@@ -30,6 +30,29 @@ We add a few command line arguments used by the `OakCameraClient` at the bottom 
 
 These include the `address` and `port` of the oak device we will stream and the `stream_every_n` argument that allows you to throttle the stream rate of your camera, if you wish to save computational resources.
 
+There are **required arguments** that must be set in the [`entry.sh`](https://github.com/farm-ng/camera-streamer/blob/main/entry.sh) file and **optional arguments** that take on a default value, unless overridden in the command line.
+
+Since `port` is required, we add `--port 50051` to the `python` call in [`entry.sh`](https://github.com/farm-ng/camera-streamer/blob/main/entry.sh) to set the script to use the `Oak0` device (`Oak1` would be on `50052`, `Oak2` on `50053`, and so on).
+
+When launching your app on the Brain with the button, any required args being passed to `main.py` must already be specified in `entry.sh`.
+
+When launching your app on your computer, or on the brain but from an SSH terminal, you can add additional arguments to change the default value of the optional arguments.
+The `$@` in `python` call in `entry.sh` is what allows for this.
+
+For example, to run the app from your computer, while the camera runs on the brain nearby:
+
+```Python
+cd camera_tutorial/
+./entry.sh --address <amiga ip address>
+```
+
+To run the app on the amiga, with changing a default command line arg:
+```Python
+ssh amiga
+# Now in an ssh terminal
+cd ~/apps/
+./camera_tutorial/entry.sh --stream-every-n 2
+```
 
 #### App icon
 
@@ -41,9 +64,10 @@ When developing your own app, you can:
 
 For following along with this tutorial, feel free to download the image from [src/assets/app_logo.png](https://github.com/farm-ng/camera-streamer/blob/main/src/assets/app_logo.png).
 
-
-:::caution todo
-Stopped here
+:::info note
+The brain may not display the app icon immediately when it is cloned onto your machine.
+You can trigger a `Refresh App Buttons` on the settings screen to apply the newly downloaded app icon.
+This also is applicable if you change the app icon and want to display the new icon.
 :::
 
 
