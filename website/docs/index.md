@@ -73,6 +73,6 @@ title: Index
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[FPV Example](/docs/examples/FPV/README.mdx)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Camera Client](/docs/examples/camera_client/README.md)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Camera Client GUI](/docs/examples/camera_client_gui/README.md)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Virtual Joystick Tutorial](/docs/examples/virtual_joystick/00_overview.md)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Virtual Joystick Tutorial](/docs/tutorials/virtual_joystick/00_overview.md)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Developing Custom Applications](/docs/brain/custom-applications.mdx)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SSH into Amiga](/docs/brain/custom-applications.mdx#initial-configuration)
