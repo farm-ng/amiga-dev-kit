@@ -65,7 +65,7 @@ These are the examples that run on your personal computer for interacting with r
 Before getting started with any brain examples, you should install the [**farm-ng Brain ADK package**](/docs/brain/brain-install).
 :::
 
-### File Reader
+### [File Reader](/docs/examples/file_reader/README.md)
 
 :::caution coming soon
 More details on the `file_reader` example.
@@ -74,7 +74,7 @@ For now, please refer to the[**`file_reader` README**](https://github.com/farm-n
 
 [**Link to `file_reader/main.py`**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader/main.py)
 
-### File Reader CAN
+### [File Reader CAN](/docs/examples/file_reader_can/README.md)
 
 :::caution coming soon
 More details on the `file_reader_can` example.

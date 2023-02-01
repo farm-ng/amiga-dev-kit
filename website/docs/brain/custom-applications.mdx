@@ -155,35 +155,38 @@ including [**Create an app**](#create-an-app) and [**Customizing an app**](#cust
 
 ### Create an app
 
-Use the [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template) repository to create your own custom application with the following instructions.
 
 #### Create a repository from the template
 
-Navigate to the [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template) repository on GitHub.
+To create your own custom application navigate to the [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template) repository on GitHub.
+:::tip
+You need to be signed into your GitHub account to see the option to `Use this template`.
+:::
 
-Click on green *Use this template* button (top right) to create a new repository based on this repo
 
 ![Create a new templated repository](https://user-images.githubusercontent.com/5157099/205272492-356c1540-948e-43dc-8f60-8992caa8d511.gif)
 
-Fill in the details, example below:
+Written instructions (same as video above):
+1. Click on green *Use this template* button (top right) to create a new repository based on this repo
+2. Fill out:
+    - Owner: (your_username)
+    - Repository Name: whatever-you-want
+        - Should be between between 4-17 characters, and
+        - Use underscores (_) or dashes (-) for separating words (no spaces!)
+    -Select Public box
+    -Click [Create repository from template]
+Done!
 
-* Owner: *username*
-* Repository Name: hello-amiga
-    * Names should:
-        1. Be between 4-17 characters
-        2. Use underscores (`_`) or dashes (`-`) for separating words (no spaces!)
-* Set to Public
-Once completed, click *[Create repository from template]*
-
-When the repository creation process has completed, you have two options:
+Now that you are done creating your repository, you have two options:
 
 1. Work in your local workspace.
 2. Work in a remote Remote-SSH session using in vs-code.
 
-In both cases you will have to clone the created repository from above
+In both cases you will have to clone the repository you created above by following the commands below.
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+cd <to-your-base-directory>
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
 ```
 
 ## Project structure
@@ -292,7 +295,7 @@ We recommend to follow the next steps:
 :::tip
 Make sure you are on the **Linux** tab when you go to the GitHub docs (links below). The page defaults to the system you are on and doesn't know you are SSH'd into a Linux machine, which the Amiga is.
 :::
-1. ssh to robot `ssh amiga`
+1. ssh to robot `ssh amiga` (if have not configured ssh do so [here](#ssh-configuration))
 2. Create an ssh key for github on the amiga `ssh-keygen`
     - See: [GitHub Docs: Generate an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 3. Copy and add the key to your github user
@@ -323,7 +326,7 @@ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
 6. Run the app on your Amiga
 
 If your brain is on the launcher screen, your new app should appear!
-You can launch it by clicking the button.
+You can launch it by clicking your the app on the screen, and it should begin loading.
 
 :::caution NOTE
 The first entry will take a while as the requirements have to install
