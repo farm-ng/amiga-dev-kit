@@ -85,4 +85,3 @@ AMIGA TPDO1 Amiga state 2 Measured speed 0.000 Measured angular rate 0.000 @ tim
 AMIGA TPDO1 Amiga state 2 Measured speed 0.000 Measured angular rate 0.000 @ time 1513.076998664`
 
 Congrats you are done!
-
