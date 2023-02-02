@@ -1,6 +1,6 @@
 ---
 id: import-log-file
-title: Get data from your Amiga
+title: Record and Access data
 ---
 
 # How to get data from your Amiga
@@ -21,7 +21,7 @@ Make sure you have done the first step of having data recoreded otherwise you wi
 - You are going to get your USB drive which you have handy and plug this into a USB port in the back of the brain
 - Next go to the `File Mover App` on the brain. Make sure the flash is properly mounted if it is not you will see a big red box that says `Disk Status:: No Disk`.
 If you don't see this then great! Click the button `Start Transfer` and you should see at the button of the screen the data begin to upload.
-- After you receive a message saying download complete you should disconnect the dive and plug it into you computer
+- After you receive a message saying download complete you should disconnect the dive and plug it into your computer
 - After plugging the drive into your machine you should get a pop up containing all the data files on the drive the next step is to drag and drop the files you want onto
 your desktop.
 - From there you can to move the file where you want
@@ -44,9 +44,6 @@ ls farm-ng/workspace/field_data/<yyyy-mm-dd>
 scp -rp nvidia@100.108.196.17:~/farm-ng/workspace/field_data/<yyy-mm-dd>/ ~/<path/to/desired/local/storage>
 ```
 - Now you will organize this how you wish but we recommend writing some notes about the data so it is easier to deal with later
-
-
-
 
 - We want to make sure the naming convention of this file is correct so you can identify the infomration of this file later
 it goes: yyyy_mm_dd_hh_mm_ss_msmsms_type_hostname.xxxx.bin
