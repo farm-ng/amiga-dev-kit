@@ -61,6 +61,7 @@ const sidebars = {
     ],
     "Support": [
       "support/support",
+      "support/github-101",
   ],
   },
   "api": [
