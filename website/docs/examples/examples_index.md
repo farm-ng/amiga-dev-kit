@@ -65,23 +65,20 @@ These are the examples that run on your personal computer for interacting with r
 Before getting started with any brain examples, you should install the [**farm-ng Brain ADK package**](/docs/brain/brain-install).
 :::
 
-### [File Reader](/docs/examples/file_reader/README.md)
+### [Record and Access data](/docs/examples/import_log_file/README.md)
+This tutorial walks you through recording field data and offloading it to your local machine.
 
-:::caution coming soon
-More details on the `file_reader` example.
-For now, please refer to the[**`file_reader` README**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader#readme)
-:::
+### [File Reader](/docs/examples/file_reader/README.md)
 
 [**Link to `file_reader/main.py`**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader/main.py)
 
+This example reads log files and plays their contents.
+
 ### [File Reader CAN](/docs/examples/file_reader_can/README.md)
+[**Link to`file_reader_can`**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader_can)
 
-:::caution coming soon
-More details on the `file_reader_can` example.
-For now, please refer to the[**`file_reader_can` README**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader_can#readme)
-:::
+This example reads the Can data from recorded logs and prints it out.
 
-[**Link to `file_reader_can/main.py`**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader_can/main.py)
 
 ### [Camera Client](./camera_client/README.md)
 
