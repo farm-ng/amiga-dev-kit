@@ -77,3 +77,6 @@ title: Index
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Virtual Joystick Tutorial](/docs/tutorials/virtual_joystick/00_overview.md)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Developing Custom Applications](/docs/brain/custom-applications.mdx)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SSH into Amiga](/docs/brain/custom-applications.mdx#initial-configuration)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Record and Access data tutorial](/docs/examples/import_log_file/README.md)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[File Reader Example](/docs/examples/file_reader/README.md)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[File Reader CAN Example](/docs/examples/file_reader_can/README.md)

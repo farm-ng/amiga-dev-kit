@@ -10,6 +10,9 @@ title: Brain Overview
 
 ### [Brain product page](https://farm-ng.com/products/brain)
 
+## Brain overview video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_p0I11p4QF4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Features overview
 
 **The farm-ng Brain is an Alpha level product subject to change. Not all features are fully tested and validated.**

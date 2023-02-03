@@ -5,34 +5,35 @@ title: File Reader
 
 # File Reader Example
 
-In this example you will learn how to upload data to this [program](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader)
-and run the example on your machine.
+In this example you will learn how to upload a given log file and use it to run the [**file_reader example**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader).
 
-This is an example data file you can use. We will also teach you how to get your own directly from the Amiga.
+:::info
+If you haven't already cloned the `farm-ng-amiga` repository, do so [**here**](/docs/brain/brain-install.md#clone-the-repository).
+:::
 
-Follow the instructions to clone the repository if you haven't already [here](/docs/brain/brain-install.md#clone-the-repository)
+:::tip
+If you already have the log file you want to run with this example you can skip to [**set up**](#setup)
+:::
 
-Now we will make a data folder for all of our log files and other things that will be useful to us.
+## Download the log file
+Now you are going to download the log file that you will use in this example.
+[**Click here to download**](https://farm-ng-dev-auto-plot-mvp.s3.us-west-2.amazonaws.com/datasets/western-growers-2022-12-05/events_12052022115852.bin)
 
-## Make a Data folder
+## [Optional] Make a Data folder
+We are going to make a folder that will store all of our log files, including the one you just downloaded.
 ```bash
 cd <to-your-base-directory>
 mkdir <data-file>
 cd <data-file>
 pwd # the output of this is your <path>
-```
-## Download the log file
-Now you are going to download this log file that you can use in this example and will go in this folder
- The [file is here](https://farm-ng-dev-auto-plot-mvp.s3.us-west-2.amazonaws.com/datasets/western-growers-2022-12-05/events_12052022115852.bin)
 
- Now that the file is downloaded you do the following
- open a new terminal and
- ```bash
- cd ~
- cd Downloads
- mv events_12052022115852.bin <path-to-where-data-file-is-above>
- ```
- Now that you have your log file in the correct place navigate to where the repository `farm-ng-amiga` is and
+# Now that the file is downloaded you will do the following
+
+cd ~ # navigate to home directory
+cd Downloads
+mv events_12052022115852.bin <path-to-where-data-file-is-above> # moving the data to to data-folder
+```
+ Now that you have your log file in the correct place, in your terminal navigate to where the repository `farm-ng-amiga` is and open Visual Studio Code.
 
 ## Setup
 
@@ -67,3 +68,6 @@ python main.py --file-name <path-from-above>/events_12052022115852.bin --camera-
 Congratulations two videos should now pop up and play! One should be RGB and one should be disparity (it might be hidden behind the RGB window so try moving the RGB window). You have now finished running this example!
 
 If you want another log file to run here is an example of Amiga driving in a field [(click to download)](s3://farm-ng-dev-auto-plot-mvp/datasets/jacobs_freedom_1013/events_10132022112259.bin)
+:::tip
+There is another tutorial that walks you through getting data directly from the Amiga [**here**](docs/examples/import_log_file/README.md).
+:::
