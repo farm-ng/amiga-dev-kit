@@ -4,9 +4,10 @@ title: 03 - Python Implementation
 ---
 # Python Implementation
 
+:::info
 The Python implementation of the [**camera-streamer**](https://github.com/farm-ng/camera-streamer) app can be found at [`src/main.py`](https://github.com/farm-ng/camera-streamer/blob/main/src/main.py).
 You should open that file for reference as you follow along.
-
+:::
 
 ### Key notes
 

@@ -1,6 +1,6 @@
 ---
 id: camera-stream
-title: 04 - Camera Stream
+title: 02 - Camera Stream
 ---
 # Camera Stream
 
