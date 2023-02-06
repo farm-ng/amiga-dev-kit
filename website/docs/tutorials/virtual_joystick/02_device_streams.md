@@ -1,11 +1,53 @@
 ---
-id: canbus-stream
-title: 03 - Canbus Stream
+id: device-streams
+title: 02 - Device Streams
 ---
-# Canbus Stream
+# Device Streams
+
+:::info
+In the [`src/res/main.kv`](https://github.com/farm-ng/virtual-joystick/blob/main/src/res/main.kv) and [`src/main.py`](https://github.com/farm-ng/virtual-joystick/blob/main/src/main.py) files of the [**virtual-joystick**](https://github.com/farm-ng/virtual-joystick) app we define the kivy app and Python implementation of the `VirtualJoystickApp`.
+
+You should open these files for reference as you follow along.
+:::
 
 
-### Add a canbus stream
+## Camera stream
+
+:::info
+You should have already gone through the [**Camera Streamer Tutorial**](/docs/tutorials/camera_streamer/camera-streamer-overview) based on the [**camera-streamer**](https://github.com/farm-ng/camera-streamer) example app.
+Understanding these instructions will rely on understanding those!
+:::
+
+You can see we define the camera stream in the same as in the [**Camera Streamer Tutorial**](/docs/tutorials/camera_streamer/camera-streamer-overview).
+This time however, we nest the `TabbedPanel` of `Image` widgets in a [**`BoxLayout`**](https://kivy.org/doc/stable/api-kivy.uix.boxlayout.html) (with  `orientation: horizontal`) so we can arrange some other widgets next to our `TabbedPanel`.
+
+## Canbus stream
+
+### Kivy definition
+
+The first `Widget` we will arrange next to the `TabbedPanel` is another `BoxLayout` (with  `orientation: vertical`), used for displaying real time data streamed by the canbus client.
+
+This `BoxLayout` with contain multiple widgets displaying information streamed from the canbus service, through the [**`CanbusClient`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py).
+One of the easiest widgets to add for conveying information is the [**`Label`**](https://kivy.org/doc/stable/api-kivy.uix.label.html) widget, so we arrange a few of these (and potentially some empty placeholder widgets) in the box layout.
+Unlike with a `RelativeLayout`, where you can position each widget precisely, a `BoxLayout` requires empty widgets if you want to leave some blank space.
+
+You can see the use of [**`size_hint_x`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_x) & [**`size_hint_y`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_y) to adjust the ***relative*** size of the widgets to their parent.
+For us, this means shrinking the relative size of the `BoxLayout` of `Label` widgets displaying the streamed canbus values.
+
+- Reference: [**Box Layout**](https://kivy.org/doc/stable/api-kivy.uix.boxlayout.html)
+- Reference: [**Label**](https://kivy.org/doc/stable/api-kivy.uix.label.html)
+
+### Python canbus stream
+
+You will notice in [`src/main.py`](https://github.com/farm-ng/virtual-joystick/blob/main/src/main.py) that there is a lot of similarity between the `stream_camera` and `stream_canbus` methods of the `VirtualJoystickApp`.
+
+Both methods handle connecting to a "server streaming" RPC, as described in [**gRPC core concepts**](https://grpc.io/docs/what-is-grpc/core-concepts/).
+They only differ in the client used to connect ([**`OakCameraClient`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py) vs [**`CanbusClient`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py) ) and what is done with the received message.
+
+
+:::warning
+OLD FROM HERE DOWN
+:::
 
 The first thing we'll add to our app is a canbus stream.
 This will:
@@ -423,3 +465,42 @@ Make sure all your cables are disconnected from the Amiga before driving around!
 :::
 
 ![canbus_stream](https://user-images.githubusercontent.com/53625197/200458674-f596c306-f10d-48f0-b336-c69dcb774811.png)
+
+
+#### entry.sh
+
+:::caution coming soon
+Instructions for editing entry.sh to automatically use these args
+:::
+
+For now, just hard code the values in `entry.sh` to match the `launcher_configuration.json`.
+`entry.sh` should become:
+
+```
+#!/bin/bash -ex
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+$DIR/bootstrap.sh $DIR $DIR/venv
+
+$DIR/venv/bin/python $DIR/main.py --canbus-port 50060 --camera-port 50051
+
+exit 0
+```
+:::info
+If you changed the camera port of `Oak0` in the `launcher_configuration.json`, or want to use a different oak device, hard code the corresponding `port` value.
+
+:::
+
+### Run the app - camera stream
+
+Now sync the app to the Brain and launch it with the following instructions!
+
+:::info Deploy Instructions
+[**Deploy Instructions**](/brain/custom-applications.mdx) for syncing the app onto the Amiga Brain.
+:::
+
+
+You should now see camera stream to the right of the `AmigaTpdo1` values from the canbus.
+Check all four tabs to investigate the different camera streams provided by the oak camera.
+
+![camera_stream](https://user-images.githubusercontent.com/53625197/200481937-5fc317bc-614d-4446-89f5-9df70471c3f6.png)

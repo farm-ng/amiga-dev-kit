@@ -1,6 +1,6 @@
 ---
 id: auto-control
-title: 05 - Auto Control
+title: 04 - Auto Control
 ---
 # Auto Control
 

@@ -1,6 +1,6 @@
 ---
 id: virtual-joystick-widget
-title: 04 - Virtual Joystick Widget
+title: 03 - Virtual Joystick Widget
 ---
 # Virtual Joystick Widget
 
