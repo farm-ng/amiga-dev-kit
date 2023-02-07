@@ -27,7 +27,7 @@ This time however, we nest the `TabbedPanel` of `Image` widgets in a [**`BoxLayo
 
 The first `Widget` we will arrange next to the `TabbedPanel` is another `BoxLayout` (with  `orientation: vertical`), used for displaying real time data streamed by the canbus client.
 
-This `BoxLayout` with contain multiple widgets displaying information streamed from the canbus service, through the [**`CanbusClient`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py).
+This `BoxLayout` will contain multiple widgets displaying information streamed from the canbus service, through the [**`CanbusClient`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py).
 One of the easiest widgets to add for conveying information is the [**`Label`**](https://kivy.org/doc/stable/api-kivy.uix.label.html) widget, so we arrange a few of these (and potentially some empty placeholder widgets) in the box layout.
 Unlike with a `RelativeLayout`, where you can position each widget precisely, a `BoxLayout` requires empty widgets if you want to leave some blank space.
 
