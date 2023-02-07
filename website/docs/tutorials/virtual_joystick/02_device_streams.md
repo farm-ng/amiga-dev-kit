@@ -32,7 +32,7 @@ One of the easiest widgets to add for conveying information is the [**`Label`**]
 Unlike with a `RelativeLayout`, where you can position each widget precisely, a `BoxLayout` requires empty widgets if you want to leave some blank space.
 
 You can see the use of [**`size_hint_x`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_x) & [**`size_hint_y`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_y) to adjust the ***relative*** size of the widgets to their parent.
-For us, this means shrinking the relative size of the `BoxLayout` of `Label` widgets displaying the streamed canbus values.
+For us, this means shrinking the relative size of the `BoxLayout` of `Label` widgets displaying the streamed canbus values (in the x direction).
 
 - Reference: [**Box Layout**](https://kivy.org/doc/stable/api-kivy.uix.boxlayout.html)
 - Reference: [**Label**](https://kivy.org/doc/stable/api-kivy.uix.label.html)
