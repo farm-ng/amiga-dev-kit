@@ -25,7 +25,7 @@ In this task we connect to a "server streaming" RPC, as described in [**gRPC cor
 
 Once the `root` of the kivy `App` is created, we loop "forever" (until the app is closed).
 
-First we checking the state of the `OakCameraClient`, which forwards the state of the Oak camera service.
+First we check the state of the `OakCameraClient`, which forwards the state of the Oak camera service.
 When the service is in the `IDLE` state it is available, but no client has yet connected to it.
 When the service is in the `RUNNING` state it is available and has a client connected to it.
 In this case, that's your `OakCameraClient`!
