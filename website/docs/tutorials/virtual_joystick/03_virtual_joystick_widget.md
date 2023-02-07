@@ -59,7 +59,7 @@ The [`on_touch_down()`](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kiv
 We overwrite the default behavior of these methods to move the pose of the joystick whenever we touch and/or move within the `VirtualJoystickWidget`,
 and recenter the joystick upon release.
 
-From the [**kivy `Widget` class**](https://kivy.org/doc/stable/api-kivy.uix.widget.html), which all widgets inherit from:
+From the [**kivy `Widget` class docs**](https://kivy.org/doc/stable/api-kivy.uix.widget.html), which all widgets inherit from:
 
 > `on_touch_down()`, `on_touch_move()`, `on_touch_up()` don’t do any sort of collisions.
 > If you want to know if the touch is inside your widget, use `collide_point()`.
