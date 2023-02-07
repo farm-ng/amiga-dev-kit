@@ -38,8 +38,8 @@ Explore [**kivy `Builder`**](https://kivy.org/doc/stable/api-kivy.lang.builder.h
 
 #### kivy `Clock`
 
-We schedule regular updates to the linked variables containing the pose of the drawn joystick to using the [**kivy Clock**](https://kivy.org/doc/stable/api-kivy.clock.html).
-kivy provides multiple options for scheduling tasks
+We schedule regular updates to the linked variables containing the pose of the drawn joystick using the [**kivy Clock**](https://kivy.org/doc/stable/api-kivy.clock.html).
+kivy provides multiple options for scheduling tasks, which you can explore in their API.
 
 Updating these linked values will cause the drawn Widget to automatically update.
 You could alternatively update these values as they are calculated in the touch handling methods if you don't want to use the kivy `Clock`.
