@@ -100,7 +100,7 @@ We name them accordingly and set them both as required.
 Similar to the [**Camera Streamer - Camera Stream - Command line Arguments**](/docs/tutorials/camera_streamer/camera-stream#command-line-arguments),
 we add a few command line arguments used by the `OakCameraClient` and the `CanbusClient` at the bottom of the app and pass these to the `VirtualJoystickApp` class through the constructor.
 
-These include the `address` and `port` of the devices we will stream and the `stream_every_n` argument for the oak device.
+These include the `address` of the brain (common to all devices) and the `port` of both devices we will stream, as well as the `stream_every_n` argument for the oak device.
 
 
 
