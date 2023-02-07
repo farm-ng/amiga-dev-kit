@@ -84,7 +84,7 @@ In this virtual joystick tutorial, we are only teaching you to interact with the
 :::
 
 To display the values in the `Label` widgets we use a kivy [**`StringProperty`**](https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.StringProperty) for each value.
-These are bound to the corresponding `Label` widget text fields, so we only need to update the `StringProperty` and we do not need to update the text field of the `Label` explicitly.
+These are bound to the corresponding `Label` widget text fields, so we only need to update the value of the `StringProperty` and we do not need to update the text field of the `Label` explicitly.
 
 ### Other notes
 
