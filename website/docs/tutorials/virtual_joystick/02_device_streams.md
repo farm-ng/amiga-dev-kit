@@ -44,463 +44,135 @@ You will notice in [`src/main.py`](https://github.com/farm-ng/virtual-joystick/b
 Both methods handle connecting to a "server streaming" RPC, as described in [**gRPC core concepts**](https://grpc.io/docs/what-is-grpc/core-concepts/).
 They only differ in the client used to connect ([**`OakCameraClient`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py) vs [**`CanbusClient`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py) ) and what is done with the received message.
 
+#### Setup
 
-:::warning
-OLD FROM HERE DOWN
-:::
+This is just like [**Camera Streamer - Camera Stream - Setup**](/docs/tutorials/camera_streamer/camera-stream#setup) section, except we use the `CanbusClient`  to connect to the canbus service rather than the `OakCameraClient` connecting to the oak camera service.
 
-The first thing we'll add to our app is a canbus stream.
-This will:
-- Use the [**`CanbusClient`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py)
-- Parse [**`AmigaTpdo1`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py) (Amiga state) messages
-- Draw values in realtime as kivy [**`Label`**](https://kivy.org/doc/stable/api-kivy.uix.label.html) widgets
+#### Connection logic
+
+This is just like [**Camera Streamer - Camera Stream - Connection Logic**](/docs/tutorials/camera_streamer/camera-stream#connection-logic) section, except we use the [**`stream`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py) method of the `CanbusClient` to read the response stream.
+This wraps the GRPC service stub `streamCanbusMessages`.
 
 
-#### imports
+#### Read the stream
 
-The imports we need to add for this step are:
+This is just like [**Camera Streamer - Camera Stream - Read the Stream**](/docs/tutorials/camera_streamer/camera-stream#read-the-stream) section, except we receive a `StreamCanbusReply` proto message, defined in [**canbus.proto**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto), from our canbus service.
 
-```Python
-from typing import Generator
-from typing import Optional
-import grpc
-
-from farm_ng.canbus import canbus_pb2
-from farm_ng.canbus.canbus_client import CanbusClient
-from farm_ng.canbus.canbus_client import CanbusClientConfig
-from farm_ng.canbus.packet import AmigaControlState
-from farm_ng.canbus.packet import AmigaTpdo1
-from farm_ng.canbus.packet import parse_amiga_tpdo1_proto
-
-...
-
-from kivy.properties import StringProperty  # noqa: E402
-```
-:::tip Reminder
-Remember to place all kivy imports below the `Config.set(...)` lines!
-:::
-
-Here we see the first imports from our [**farm-ng libraries**](#farm-ng-libraries).
-`farm_ng.canbus` is defined in the [**farm_ng_amiga**](https://github.com/farm-ng/farm-ng-amiga) package.
-
-The imports ending in `*_pb2` are the compiled `*.proto` definitions we use in the app.
-For example, `from farm_ng.canbus import canbus_pb2` imports the proto messages defined in [**canbus.proto**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto).
+This ultimately contains (in a nested proto definition) an iterable container where each message is a proto defined `RawCanbusMessage`, also defined in [**canbus.proto**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto)
 
 
-#### setup.cfg
+#### Decode and display
 
-`setup.cfg` manages the dependencies we install for the app, and we'll need to add the following dependency under the `install_requires` header:
-```
-grpcio
-```
-
-Now your `setup.cfg` should look something like:
-
-```
-[metadata]
-name = Virtual_Joystick
-
-
-[options]
-setup_requires =
-    wheel==0.37.1
-install_requires =
-    wheel==0.37.1
-    kivy= >=2.1.0
-    farm_ng_amiga
-    grpcio
-package_dir =
-    = apps
-packages = find:
-python_requires = >=3.6
-
-[options.packages.find]
-where = apps
-```
+We parse every proto defined `RawCanbusMessage` to extract the [**`AmigaTpdo1`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py) (Amiga state) message, if the `RawCanbusMessage` contains an `AmigaTpdo1` message.
 
 :::tip
-We may periodically update the `setup.cfg` in the app template, so don't be surprised if yours doesn't match this exactly.
-Just drop `grpcio` under `install_requires` and you should be good to go!
-:::
+The [**`AmigaTpdo1`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py) message comes from the dashboard and contains the:
 
-
-#### kivy Labels
-
-Kivy has the concept of nesting, so not only can you add `Widgets` within `Layouts`, but also you can recursively add `Layouts` within `Layouts`.
-Since we have 3 parameters we want to view, we will add 3 `Label` widgets in a `BoxLayout` (which itself is in the base `RelativeLayout`) to our kivy string, so that the kivy string is defined as:
-
-```Python
-kv = """
-RelativeLayout:
-    Button:
-        id: back_btn_layout
-        pos_hint: {"x": 0.0, "top": 1.0}
-        background_color: 0, 0, 0, 0
-        size_hint: 0.1, 0.1
-        background_normal: "assets/back_button.png"
-        on_release: app.on_exit_btn()
-        Image:
-            source: "assets/back_button_normal.png" \
-            if self.parent.state == "normal" \
-            else "assets/back_button_down.png"
-            pos: self.parent.pos
-            size: self.parent.size
-    BoxLayout:
-        orientation: 'vertical'
-        Label:
-            text: "state:\\n" + str(app.amiga_state)
-        Label:
-            text: "speed:\\n" + str(app.amiga_speed) + "  [m/s]"
-        Label:
-            text: "angular rate:\\n" + str(app.amiga_rate) + "  [rad/s]"
-"""
-```
-
-Since the `BoxLayout` stacks widgets horizontally by default, we define the orientation as `vertical`, so the `Label` widgets appear in a vertical column.
-
-- Reference: [**Box Layout**](https://kivy.org/doc/stable/api-kivy.uix.boxlayout.html)
-
-#### Labels
-
-We define 3 labels that are live updated with class variables from the `VirtualJoystickApp`.
-In order to update the value, e.g.
-```Python
-Label:
-    text: "state:\\n" + str(app.amiga_state)
-```
-the values must be declared as a `StringProperty` of the class
-before the class is initialized and should be defined as type `str`.
-
-So our initializer (eventually) becomes:
-
-```Python
-class VirtualJoystickApp(App):
-    # For kivy labels
-    amiga_speed = StringProperty()
-    amiga_rate = StringProperty()
-    amiga_state = StringProperty()
-
-    def __init__(self, address: str, canbus_port: int) -> None:
-        super().__init__()
-        self.address: int = address
-        self.canbus_port: int = canbus_port
-
-        # Received
-        self.amiga_tpdo1: AmigaTpdo1 = AmigaTpdo1()
-        self.amiga_state: str = "NO CANBUS\nSERVICE DETECTED"
-        self.amiga_speed: str = "???"
-        self.amiga_rate: str = "???"
-
-        self.async_tasks: List[asyncio.Task] = []
-```
-:::info
-This initializer already includes the command line args and `AmigaTpdo1` container we will add later.
-:::
-
-- Reference: [**Label**](https://kivy.org/doc/stable/api-kivy.uix.label.html)
-- Reference: [**StringProperty**](https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.StringProperty)
-
-
-#### CanbusClient
-
-Next, we'll configure and create the gRPC client that will connect to the gRPC canbus service running in the background of the brain.
-The `CanbusClient` is part of the farm-ng API, specifically [**farm_ng_amiga**](https://github.com/farm-ng/farm-ng-amiga).
-
-The clients define an API that allows you to interact with the services. See [**`CanbusClient`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py) for an example.
-The `CanbusClient` is constructed with a `CanbusClientConfig`, which itself is constructed with an `address` and a `port`.
-We'll momentarily assume we have two parameters `self.address` & `self.canbus_port` to be used in this constructor, and add those next.
-
-We'll also replace the `template_function()` placeholder `asyncio.Task` with the tasks required for streaming the canbus.
-
-So we add to our `app_func()`:
-
-```Python
-# configure the canbus client
-canbus_config: CanbusClientConfig = CanbusClientConfig(address=self.address, port=self.canbus_port)
-canbus_client: CanbusClient = CanbusClient(canbus_config)
-
-# Canbus task(s)
-self.async_tasks.append(asyncio.ensure_future(self.stream_canbus(canbus_client)))
-self.async_tasks.append(asyncio.ensure_future(canbus_client.poll_service_state()))
-```
-
-These tasks include the app specific function `stream_canbus` we will define in app momentarily, as well as two generic the `poll_service_state()` method required for all clients.
-`poll_service_state()` regularly checks the state of the gRPC service the client is connected to, and updates the `state` parameter of the client.
-The service's `state` can then be checked wherever relevant in the app to ensure the services are running.
-It's recommended to check this state every iteration in each asynchronous loop that relies on that service.
-
-
-#### stream_canbus
-
-Here we create a task that:
-- listens to the canbus client's stream
-- filters for `AmigaTpdo1` messages
-- extracts useful values from `AmigaTpdo1` messages
-
-```Python
-async def stream_canbus(self, client: CanbusClient) -> None:
-    """This task:
-
-    - listens to the canbus client's stream
-    - filters for AmigaTpdo1 messages
-    - extracts useful values from AmigaTpdo1 messages
-    """
-    while self.root is None:
-        await asyncio.sleep(0.01)
-
-    response_stream: Optional[Generator[canbus_pb2.StreamCanbusReply]] = None
-
-    while True:
-        while client.state.value != canbus_pb2.CanbusServiceState.RUNNING:
-            await client.connect_to_service()
-
-        if response_stream is None:
-            response_stream = client.stub.streamCanbusMessages(canbus_pb2.StreamCanbusRequest())
-
-        response: canbus_pb2.StreamCanbusReply = await response_stream.read()
-        if response == grpc.aio.EOF:
-            # Checks for end of stream
-            break
-        if response and response.status == canbus_pb2.ReplyStatus.OK:
-            for proto in response.messages.messages:
-                amiga_tpdo1: Optional[AmigaTpdo1] = parse_amiga_tpdo1_proto(proto)
-                if amiga_tpdo1:
-                    self.amiga_tpdo1 = amiga_tpdo1
-
-        # Shorter sleep than typical 10ms since canbus is very high rate
-        await asyncio.sleep(0.001)
-```
-
-With
-```Python
-response_stream: Optional[Generator[canbus_pb2.StreamCanbusReply]] = None
-```
-we are being explicit the type of stream we will be connecting to / declaring the type `response_stream` will contain (with the `Optional` decorator because it starts as `None` until we are ready to initialize it), but you may need a little more gRPC understanding to create this line.
-
-:::tip gRPC life cycle deep dive
-
-As explained in the [**gRPC core concepts - RPC life cycle**](https://grpc.io/docs/what-is-grpc/core-concepts/#rpc-life-cycle) section, there are 4 types server methods.
-
-- [**Unary**](https://grpc.io/docs/what-is-grpc/core-concepts/#unary-rpc): single request -> single response
-- [**Server streaming**](https://grpc.io/docs/what-is-grpc/core-concepts/#server-streaming-rpc): single request -> stream of responses
-- [**Client streaming**](https://grpc.io/docs/what-is-grpc/core-concepts/#client-streaming-rpc): stream of requests -> single response
-- [**Bidirectional streaming**](https://grpc.io/docs/what-is-grpc/core-concepts/#bidirectional-streaming-rpc): stream of requests -> stream of responses
-:::
-
-
-*Most* of our services have a server streaming RPC set up, so the canbus client can send a single request to the canbus service and proceed to receive the stream of canbus messages until the stream is explicitly stopped, or either of the client or service is killed.
-
-And in this case we will be receiving a server stream from the `canbus` service of proto defined message `StreamCanbusReply`.
-This is defined as the RPC [**streamCanbusMessages**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto).
-
-```Python
-while True:
-    while client.state.value != canbus_pb2.CanbusServiceState.RUNNING:
-        await client.connect_to_service()
-
-    if response_stream is None:
-        response_stream = client.stub.streamCanbusMessages(
-            canbus_pb2.StreamCanbusRequest()
-        )
-```
-
-This pattern is relevant as the task starts.
-Basically, we get stuck in a loop until we see that the service is in state `RUNNING`, which is accomplished by using the client defined method [**`connect_to_service()`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py) (a method we implement in all of our clients).
-
-Once we are connected to the client, we initialize the stream of responses in our server streaming RPC with the [**client *stub***](https://grpc.io/docs/what-is-grpc/core-concepts/#using-the-api).
-
-:::tip
-Note that the names of the methods and protos match those defined in [**canbus.proto**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto). This is a requirement of gRPC.
-:::
-
-Now that our `CanbusClient` is connected to the canbus service and the stream of `StreamCanbusReply` messages has been requested, the fun starts.
-
-```Python
-response: canbus_pb2.StreamCanbusReply = await response_stream.read()
-```
-Each iteration we stop at this line and wait for the next `StreamCanbusReply` response on the queue, using the async `await` expression.
-
-```Python
-if response == grpc.aio.EOF:
-    # Checks for end of stream
-    break
-```
-
-With our fresh `StreamCanbusReply` in hand, we check if the message contains the end of the stream (not likely in our application since we stream until killed, but is still good practice) before proceeding.
-
-```Python
-if response and response.status == canbus_pb2.ReplyStatus.OK:
-    for proto in response.messages.messages:
-        amiga_tpdo1: Optional[AmigaTpdo1] = parse_amiga_tpdo1_proto(proto)
-        if amiga_tpdo1:
-            self.amiga_tpdo1 = amiga_tpdo1
-
-await asyncio.sleep(0.001)
-```
-
-The `StreamCanbusReply`, defined in [**canbus.proto**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto), can contain repeated messages of format `RawCanbusMessage`.
-So we iterate through these, and for each message use the `parse_amiga_tpdo1_proto()` utility to return an `AmigaTpdo1` packet, both defined in [**farm_ng.canbus.packet**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py), if the message matches the id and format we expect.
-Since the can bus operates as an all-to-all communication network, we have to filter out messages we aren't interested in and can't assume all messages are what we want.
-
-:::info
-This is the `AmigaTpdo1` container we added in our initializer earlier.
-:::
-
-
-The `AmigaTpdo1` message comes from the dashboard and contains the:
 - state of the Amiga (AmigaControlState)
 - measured speed (forward positive)
 - measured angular rate (left positive)
 
-:::tip
 This is the information you'll use for closed loop control!
 :::
 
-Finally we sleep for 1 ms before the next iteration of the `while` loop.
-Typically we sleep for 10 ms, as you'll see in `stream_camera`
+The canbus service reformats and forwards all CAN messages to the canbus client, so there are a lot of messages to filter out.
+The [**`parse_amiga_tpdo1_proto`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py) returns `None` if the `RawCanbusMessage` does not contain an `AmigaTpdo1` message.
 
-- Reference: [**farm_ng.canbus.canbus_client**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py)
-- Reference: [**farm_ng.canbus.packet**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py)
-- Reference: [**canbus.proto**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto)
+:::info
+If you're curious to learn more about CAN bus in general, see [**CSS Electronics - CAN Bus Explained**](https://www.csselectronics.com/pages/can-bus-simple-intro-tutorial).
+In this virtual joystick tutorial, we are only teaching you to interact with the canbus client through Amiga state messages.
+:::
 
+To display the values in the `Label` widgets we use a kivy [**`StringProperty`**](https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.StringProperty) for each value.
+These are bound to the corresponding `Label` widget text fields, so we only need to update the `StringProperty` and we do not need to update the text field of the `Label` explicitly.
 
-#### drawing
+### Other notes
 
-We'll rename the placeholder `template_function()` and use it for drawing with kivy.
-For now the only thing we need to "draw" is updating the values in the `StringProperty` strings.
-So let's define two functions.
+#### `farm_ng` Imports
 
-We'll add a simple utility for updating the displayed strings in the kivy `Label` widgets by parsing the values from the most recent `AmigaTpdo1` message.
+We import the necessary `farm_ng` libraries for creating the camera and canbus clients and interacting with both services.
 
-```Python
-def update_kivy_strings(self) -> None:
-    """Updates the `StringProperty` strings displayed as `Label` widgets."""
-    self.amiga_state = AmigaControlState(self.amiga_tpdo1.state).name[6:]
-    self.amiga_speed = str(self.amiga_tpdo1.meas_speed)
-    self.amiga_rate = str(self.amiga_tpdo1.meas_ang_rate)
-```
+#### Command line Arguments
 
-And we'll add an `async` function called `draw()` (replacing `template_function()`) for calling this in perpetuity.
+We now have two device services to connect to, an oak camera and the canbus, running on different ports.
+We name them accordingly and set them both as required.
 
-```Python
-async def draw(self) -> None:
-    while self.root is None:
-        await asyncio.sleep(0.01)
+Similar to the [**Camera Streamer - Camera Stream - Command line Arguments**](/docs/tutorials/camera_streamer/camera-stream#command-line-arguments),
+we add a few command line arguments used by the `OakCameraClient` and the `CanbusClient` at the bottom of the app and pass these to the `VirtualJoystickApp` class through the constructor.
 
-    while True:
-        self.update_kivy_strings()
-        await asyncio.sleep(0.01)
-
-```
-
-Here we loop forever, constantly updating the `StringProperty` strings displayed as `Label` widgets, containing values from the most recent `AmigaTpdo1` message with our simple `update_kivy_strings()` method.
-Each loop we also sleep for our default duration of 10ms before the next iteration.
+These include the `address` and `port` of the devices we will stream and the `stream_every_n` argument for the oak device.
 
 
-Remember to update the function name of the `asyncio.Task` in our list in `app_func()` to:
-```Python
-# Drawing task(s)
-self.async_tasks.append(asyncio.ensure_future(self.draw()))
-```
-
-
-#### command line args
-
-Finally, we add the two arguments required by the `CanbusClientConfig`:
-
-```Python
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(prog="virtual-joystick")
-
-    parser.add_argument("--address", type=str, default="localhost", help="The server address")
-    parser.add_argument(
-        "--canbus-port", type=int, required=True, help="The grpc port where the canbus service is running."
-    )
-    args = parser.parse_args()
-
-    loop = asyncio.get_event_loop()
-    try:
-        loop.run_until_complete(VirtualJoystickApp(args.address, args.canbus_port).app_func())
-    except asyncio.CancelledError:
-        pass
-    loop.close()
-```
-These are values used by gRPC to link client to server and are handled by `entry.sh`.
 
 #### entry.sh
 
-:::caution coming soon
-Instructions for editing entry.sh to automatically use these args
-:::
+As in the [**Camera Streamer - Camera Stream - entry.sh**](/docs/tutorials/camera_streamer/camera-stream#entrysh),
+the required arguments are added to the `entry.sh` file.
+Since `camera_port` and `canbus_port` are required, we add `--camera-port 50051` and `--canbus-port 50060` to the `python` call in [`entry.sh`](https://github.com/farm-ng/virtual-joystick/blob/main/entry.sh) to set the script to use the `Oak0` device and the canbus.
 
-For now, just hard code the values in `entry.sh` to match the `launcher_configuration.json`.
-`entry.sh` should become:
 
-```
-#!/bin/bash -ex
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-
-$DIR/bootstrap.sh $DIR $DIR/venv
-
-$DIR/venv/bin/python $DIR/main.py --canbus-port 50060
-
-exit 0
-```
 :::info
-If you change the canbus port in the `launcher_configuration.json`, hard code the corresponding value.
+If you want to use a different oak device than `Oak0`, hard code the corresponding `camera-port` value.
+`Oak1` would be on `50052`, `Oak2` on `50053`, and so on...
 :::
 
-### Run the app - canbus stream
+When launching your app on the Brain with the button, any required args being passed to `main.py` must already be specified in `entry.sh`.
 
-Now sync the app to the Brain and launch it with the following instructions!
+When launching your app on your computer, or on the brain but from an SSH terminal, you can add additional arguments to change the default value of the optional arguments.
+The `$@` in `python` call in `entry.sh` is what allows for this.
 
-:::info Deploy Instructions
-[**Deploy Instructions**](/brain/custom-applications.mdx) for syncing the app onto the Amiga Brain.
+For example, to run the app from your computer, while the camera runs on the brain nearby:
+
+```Python
+cd joystick_tutorial/
+./entry.sh --address <amiga ip address>
+```
+
+To run the app on the amiga, with changing a default command line arg:
+```Python
+ssh amiga
+# Now in an ssh terminal
+cd ~/apps/
+./joystick_tutorial/entry.sh --stream-every-n 2
+```
+
+
+#### App icon
+
+We replace the `app_logo.png` with an icon from https://fonts.google.com/icons.
+When developing your own app, you can:
+
+1. Choose a suitable symbol or icon for your app
+2. Tweak the appearance parameters, including moving to the largest 'Optical Size' available
+3. Export it as a `.png` file
+
+For following along with this tutorial, feel free to download the image from [src/assets/app_logo.png](https://github.com/farm-ng/virtual-joystick/blob/main/src/assets/app_logo.png).
+
+:::info note
+The brain may not display the app icon immediately when it is cloned onto your machine.
+You can trigger a `Refresh App Buttons` on the settings screen to apply the newly downloaded app icon.
+This also is applicable if you change the app icon and want to display the new icon.
+:::
+
+#### `app_func()`
+
+Here we create the `OakCameraClient` and `CanbusClient` and add the `stream_camera` `stream_canbus` asyncio tasks to our tasks list.
+
+### Run it
+
+Run the app on the brain by launching with the app button or run it through a terminal as described in [Command line arguments](#command-line-arguments).
+
+:::caution
+Make sure all of your cables are disconnected from the Amiga before driving around!
 :::
 
 You should see the `AmigaTpdo1` values update in realtime as you drive the amiga and change between various command states. See [**Amiga Control States**](../../dashboard/control_states.mdx) and [**`AmigaControlState`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py) for more information on the `state` parameter.
 
-:::caution
-Make sure all your cables are disconnected from the Amiga before driving around!
-:::
-
-![canbus_stream](https://user-images.githubusercontent.com/53625197/200458674-f596c306-f10d-48f0-b336-c69dcb774811.png)
-
-
-#### entry.sh
-
-:::caution coming soon
-Instructions for editing entry.sh to automatically use these args
-:::
-
-For now, just hard code the values in `entry.sh` to match the `launcher_configuration.json`.
-`entry.sh` should become:
-
-```
-#!/bin/bash -ex
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-
-$DIR/bootstrap.sh $DIR $DIR/venv
-
-$DIR/venv/bin/python $DIR/main.py --canbus-port 50060 --camera-port 50051
-
-exit 0
-```
-:::info
-If you changed the camera port of `Oak0` in the `launcher_configuration.json`, or want to use a different oak device, hard code the corresponding `port` value.
-
-:::
-
-### Run the app - camera stream
-
-Now sync the app to the Brain and launch it with the following instructions!
-
-:::info Deploy Instructions
-[**Deploy Instructions**](/brain/custom-applications.mdx) for syncing the app onto the Amiga Brain.
-:::
-
-
-You should now see camera stream to the right of the `AmigaTpdo1` values from the canbus.
+You should also see camera stream to the right of the `AmigaTpdo1` values from the canbus.
 Check all four tabs to investigate the different camera streams provided by the oak camera.
 
 ![camera_stream](https://user-images.githubusercontent.com/53625197/200481937-5fc317bc-614d-4446-89f5-9df70471c3f6.png)
+
+<!-- - Reference: [**farm_ng.canbus.canbus_client**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py)
+- Reference: [**farm_ng.canbus.packet**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py)
+- Reference: [**canbus.proto**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto) -->

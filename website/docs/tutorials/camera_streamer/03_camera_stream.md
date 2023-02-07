@@ -46,7 +46,7 @@ The asyncio grpc stream allows your client to wait, in a non-blocking way, for a
 
 If a service crashes unexpectedly, it is ideal to handle this gracefully with the client.
 
-We access the `OakSyncFrame` proto message, defined in[**oak.proto**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/oak/oak.proto), from the response.
+We receive a `StreamFramesReply` and access the `OakSyncFrame` proto message it contains, both defined in [**oak.proto**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/oak/oak.proto), from the response.
 This contains all of the available camera streams from the Oak device you are connected to.
 Remember, the Oak camera devices have 3 cameras and, in this case, send 4 image streams (rgb, left, right, & disparity).
 
@@ -79,6 +79,8 @@ We add a few command line arguments used by the `OakCameraClient` at the bottom 
 
 These include the `address` and `port` of the oak device we will stream and the `stream_every_n` argument that allows you to throttle the stream rate of your camera, if you wish to save computational resources.
 
+#### entry.sh
+
 There are **required arguments** that must be set in the [`entry.sh`](https://github.com/farm-ng/camera-streamer/blob/main/entry.sh) file and **optional arguments** that take on a default value, unless overridden in the command line.
 
 Since `port` is required, we add `--port 50051` to the `python` call in [`entry.sh`](https://github.com/farm-ng/camera-streamer/blob/main/entry.sh) to set the script to use the `Oak0` device (`Oak1` would be on `50052`, `Oak2` on `50053`, and so on).
@@ -107,6 +109,7 @@ cd ~/apps/
 
 We replace the `app_logo.png` with an icon from https://fonts.google.com/icons.
 When developing your own app, you can:
+
 1. Choose a suitable symbol or icon for your app
 2. Tweak the appearance parameters, including moving to the largest 'Optical Size' available
 3. Export it as a `.png` file
@@ -123,7 +126,7 @@ This also is applicable if you change the app icon and want to display the new i
 
 Here we create the `OakCameraClient` and add the `stream_camera` asyncio task to our tasks list.
 
-### Run it!
+### Run it
 
 Run the app on the brain by launching with the app button or run it through a terminal as described in [Command line arguments](#command-line-arguments).
 
