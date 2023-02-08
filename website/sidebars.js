@@ -93,9 +93,7 @@ const sidebars = {
         "02 - Virtual Joystick Tutorial" :[
             "tutorials/virtual_joystick/virtual-joystick-overview",
             "tutorials/virtual_joystick/template-starter",
-            "tutorials/virtual_joystick/template-overview",
-            "tutorials/virtual_joystick/canbus-stream",
-            "tutorials/virtual_joystick/camera-stream",
+            "tutorials/virtual_joystick/device-streams",
             "tutorials/virtual_joystick/virtual-joystick-widget",
             "tutorials/virtual_joystick/auto-control",
             "tutorials/virtual_joystick/further-exercises",

@@ -63,4 +63,4 @@ for syncing the app onto the Amiga Brain!
 After the requirements install, you should see the template kivy app pop up.
 Try out the `Back` button to exit the app.
 
-![template](https://user-images.githubusercontent.com/53625197/200450581-7c93eb1f-3aa2-49f5-9c52-51e8b051c76e.png)
+![app-template](https://user-images.githubusercontent.com/53625197/217021857-aede9e9b-0f85-4b15-971f-c45944a3813c.png)

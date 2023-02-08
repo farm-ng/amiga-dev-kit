@@ -4,11 +4,60 @@ title: 03 - Python Implementation
 ---
 # Python Implementation
 
+:::info
 The Python implementation of the [**camera-streamer**](https://github.com/farm-ng/camera-streamer) app can be found at [`src/main.py`](https://github.com/farm-ng/camera-streamer/blob/main/src/main.py).
 You should open that file for reference as you follow along.
+:::
 
 
-### Key notes
+### Add a camera stream
+
+The main method we'll add to our app is a camera stream.
+This will:
+- Use the [**`OakCameraClient`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py)
+- Display images as kivy [**`Image`**](https://kivy.org/doc/stable/api-kivy.uix.label.html) widgets in our `TabbedPanel`.
+
+
+This task listens to the camera client's stream and populates the tabbed panel with all 4 image streams from the oak camera.
+In this task we connect to a "server streaming" RPC, as described in [**gRPC core concepts**](https://grpc.io/docs/what-is-grpc/core-concepts/).
+
+#### Setup
+
+Once the `root` of the kivy `App` is created, we loop "forever" (until the app is closed).
+
+First we check the state of the `OakCameraClient`, which forwards the state of the Oak camera service.
+When the service is in the `IDLE` state it is available, but no client has yet connected to it.
+When the service is in the `RUNNING` state it is available and has a client connected to it.
+In this case, that's your `OakCameraClient`!
+
+#### Connection logic
+
+If the service is in one of these available states (`IDLE` or `RUNNING`), you want to create a stream with your client.
+
+If the service is not in one of these available states (`IDLE` or `RUNNING`), you want to cancel the stream (if it exists) and re-create it once it is again available.
+
+When creating the `response_stream` we use the [**`stream_frames()`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py) call.
+This wraps the GRPC service stub `StreamFramesRequest`, which takes the `every_n` argument used to throttle the rate of images in the stream.
+
+
+#### Read the stream
+
+The asyncio grpc stream allows your client to wait, in a non-blocking way, for a new message from the service to be put on the stream queue.
+
+If a service crashes unexpectedly, it is ideal to handle this gracefully with the client.
+
+We receive a `StreamFramesReply` and access the `OakSyncFrame` proto message it contains, both defined in [**oak.proto**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/oak/oak.proto), from the response.
+This contains all of the available camera streams from the Oak device you are connected to.
+Remember, the Oak camera devices have 3 cameras and, in this case, send 4 image streams (rgb, left, right, & disparity).
+
+#### Decode and display
+
+Finally, we can decode and display the images received from the stream.
+
+For each of the image streams, we update the `Image` widget `Texture` in the `TabbedPanel` with the corresponding decoded image.
+The `Image` widgets in the `TabbedPanel` accessed by their kivy id.
+
+### Other notes
 
 #### `farm_ng` Imports
 
@@ -29,6 +78,8 @@ We also construct an instance of this image decoder and assign it as a class var
 We add a few command line arguments used by the `OakCameraClient` at the bottom of the app and pass these to the `CameraApp` class through the constructor.
 
 These include the `address` and `port` of the oak device we will stream and the `stream_every_n` argument that allows you to throttle the stream rate of your camera, if you wish to save computational resources.
+
+#### entry.sh
 
 There are **required arguments** that must be set in the [`entry.sh`](https://github.com/farm-ng/camera-streamer/blob/main/entry.sh) file and **optional arguments** that take on a default value, unless overridden in the command line.
 
@@ -58,6 +109,7 @@ cd ~/apps/
 
 We replace the `app_logo.png` with an icon from https://fonts.google.com/icons.
 When developing your own app, you can:
+
 1. Choose a suitable symbol or icon for your app
 2. Tweak the appearance parameters, including moving to the largest 'Optical Size' available
 3. Export it as a `.png` file
@@ -74,57 +126,7 @@ This also is applicable if you change the app icon and want to display the new i
 
 Here we create the `OakCameraClient` and add the `stream_camera` asyncio task to our tasks list.
 
-### Add a camera stream
-
-The next thing we'll add to our app is a camera stream.
-This will:
-- Use the [**`OakCameraClient`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py)
-- Display images as kivy [**`Image`**](https://kivy.org/doc/stable/api-kivy.uix.label.html) widgets in our `TabbedPanel`.
-
-
-This task listens to the camera client's stream and populates the tabbed panel with all 4 image streams from the oak camera.
-In this task we connect to a "server streaming" RPC, as described in [**gRPC core concepts**](https://grpc.io/docs/what-is-grpc/core-concepts/).
-
-#### Setup
-
-Once the `root` of the kivy `App` is created, we loop "forever" (until the app is closed).
-
-First we checking the state of the `OakCameraClient`, which forwards the state of the Oak camera service.
-When the service is in the `IDLE` state it is available, but no client has yet connected to it.
-When the service is in the `RUNNING` state it is available and has a client connected to it.
-In this case, that's your `OakCameraClient`!
-
-#### Connection logic
-
-If the service is in one of these available states (`IDLE` or `RUNNING`), you want to create a stream with your client.
-
-If the service is not in one of these available states (`IDLE` or `RUNNING`), you want to cancel the stream (if it exists) and re-create it once it is again available.
-
-When creating the `response_stream` we use the [**`stream_frames()`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py) call.
-This wraps the GRPC service stub `StreamFramesRequest`, which takes the `every_n` argument used to throttle the rate of images in the stream.
-
-
-#### Read the stream
-
-The asyncio grpc stream allows your client to wait, in a non-blocking way, for a new message from the service to be put on the stream queue.
-
-If a service crashes unexpectedly, it is ideal to handle this gracefully with the client.
-
-We access the `OakSyncFrame` proto message, defined in[**oak.proto**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/oak/oak.proto), from the response.
-This contains all of the available camera streams from the Oak device you are connected to.
-Remember, the Oak camera devices have 3 cameras and, in this case, send 4 image streams (rgb, left, right, & disparity).
-
-#### Decode and display
-
-Finally, we can decode and display the images received from the stream.
-
-For each of the image streams, we update the `Image` widget `Texture` in the `TabbedPanel` with the corresponding decoded image.
-The `Image` widgets in the `TabbedPanel` accessed by their kivy id.
-
-
-
-
-### Run it!
+### Run it
 
 Run the app on the brain by launching with the app button or run it through a terminal as described in [Command line arguments](#command-line-arguments).
 

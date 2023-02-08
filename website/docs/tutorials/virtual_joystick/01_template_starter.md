@@ -18,7 +18,7 @@ Feel free to choose any repository name, but it's recommended to go with somethi
 That difference will make it easier to differentiate between the [`farm-ng/virtual-joystick`](https://github.com/farm-ng/virtual-joystick)
 example and your own implementation if they both get cloned onto the same machine.
 
-We will assume this is the case in the tutorial.
+We will assume you went with `joystick_tutorial` in this tutorial.
 :::
 
 ## Rename the `TemplateApp`
@@ -43,7 +43,7 @@ class VirtualJoystickApp(App):
 
 # 2. Rename the program
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(prog="joystick-template")
+    parser = argparse.ArgumentParser(prog="joystick-tutorial")
 
 ...
 
@@ -60,7 +60,7 @@ Now sync the app to the Brain and launch it with the
 [**Deploy Instructions**](/docs/brain/brain-apps#develop-and-test-in-the-robot)
 for syncing the app onto the Amiga Brain!
 
-After following the deploy instructions, you should see a blank kivy app pop up with only a `Back` button.
-Try using the 'Back' button to exit the app.
+After the requirements install, you should see the template kivy app pop up.
+Try out the `Back` button to exit the app.
 
-![template](https://user-images.githubusercontent.com/53625197/200450581-7c93eb1f-3aa2-49f5-9c52-51e8b051c76e.png)
+![app-template](https://user-images.githubusercontent.com/53625197/217021857-aede9e9b-0f85-4b15-971f-c45944a3813c.png)
