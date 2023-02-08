@@ -63,7 +63,8 @@ First you have completed your code and you are ready to make a push, you should 
 
 
 Pre-commit your code
-```
+```bash
+pre-commit install
 git add -p # Add the changes I want
 pre-commit run --all-files
 git add -p # Add the formatting changes the check just fixed
