@@ -17,6 +17,7 @@ Prerequisites:
 Once you do that you will need to generate a personal token:
 
 ## Personal Access Token
+
 1. Verify your email address, if it hasn't been verified yet.
 
 2. In the upper-right corner of any page, click your profile photo, then click Settings.
