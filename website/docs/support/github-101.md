@@ -9,7 +9,8 @@ Here will be the guide to all the steps you need to follow in order to be able t
 
 We use GitHub. There are all of our repositories and where you can access the files needed to being working on the project and Amiga.
 
-Prerequisites
+Prerequisites:
+
 1) First you will need to have an Github account
 - To create on you can go [here](https://www.github.com)
 
