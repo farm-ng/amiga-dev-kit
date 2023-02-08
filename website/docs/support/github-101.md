@@ -34,7 +34,6 @@ Once you do that you will need to generate a personal token:
 To give your token an expiration, select the Expiration drop-down menu, then click a default or use the calendar picker.
 :::
 
-
 8. Select the scopes you'd like to grant this token.
 
 9.  To use your token to access repositories from the command line, select repo. A token with no assigned scopes can only access public information. For more information, see "Available scopes".
