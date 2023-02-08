@@ -9,13 +9,15 @@ Here will be the guide to all the steps you need to follow in order to be able t
 
 We use GitHub. There are all of our repositories and where you can access the files needed to being working on the project and Amiga.
 
-Prerequisites
+Prerequisites:
+
 1) First you will need to have an Github account
 - To create on you can go [here](https://www.github.com)
 
 Once you do that you will need to generate a personal token:
 
 ## Personal Access Token
+
 1. Verify your email address, if it hasn't been verified yet.
 
 2. In the upper-right corner of any page, click your profile photo, then click Settings.
@@ -32,7 +34,6 @@ Once you do that you will need to generate a personal token:
 :::tip
 To give your token an expiration, select the Expiration drop-down menu, then click a default or use the calendar picker.
 :::
-
 
 8. Select the scopes you'd like to grant this token.
 
