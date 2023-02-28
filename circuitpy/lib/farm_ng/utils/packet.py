@@ -82,7 +82,6 @@ class Packet:
         """Age of the most recent message."""
         return ticks_diff(ticks_ms(), self.ticks_ms)
 
-
 class BumperState(Packet):
     """State of the 4 Bumpers (True => corresponding pin is pressed) button states are packed as follows:
     (0x1 * board.D10) + (0x2 * board.D11) + (0x4 * board.12) + (0x8 * board.b13)
@@ -106,7 +105,7 @@ class BumperState(Packet):
     def __str__(self):
         return "pins on adafuit D10: {}, D11: {}, D12: {}, D13:{}".format(
             bool(self.buttons & 0x1), bool(self.buttons & 0x2), bool(self.buttons & 0x4), bool(self.buttons & 0x8)
-            )
+        )
 
 
 class PendantState(Packet):

@@ -28,8 +28,6 @@ See [brain/](/brain/) for instructions on building the `farm_ng` lib for the bra
        * Once you copy your own or farm-ng's code onto the microcontroller, you can use vscode to just open the the root directory to actively work on the files there. Any `code.py` file in the root directory will automatically run, but in the terminal ^D will cause the microcontroller to restart code execution.
        * To develop on a laptop, you can use the `screen` program such that python print statements show up. Running `code.py` with `screen` is described [here](https://amiga.farm-ng.com/docs/mcu_kit/#loading-code-on-the-feather)
 
-   
-
 ## Cloning the Amiga Development Kit
 
 Clone this repository to work with the Amiga from micro-controllers or your personal computer (Mac/Linux/Windows).
