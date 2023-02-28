@@ -21,7 +21,7 @@ See [brain/](/brain/) for instructions on building the `farm_ng` lib for the bra
 
 ### Circuitpy
 
-   * Farm-ng's feather microcontroller kit's introduction/overview and buying page is at the [Amiga Development Kit](https://farm-ng.github.io/amiga-dev-kit) website.    
+   * Farm-ng's feather microcontroller kit's introduction/overview and buying page is at the [Amiga Development Kit](https://farm-ng.github.io/amiga-dev-kit) website.
    * Farm-ng's github CircuitPython codebase is here: [circuitpy/](/circuitpy/).
       * After attaching a USB cable to the feather chip, follow instructions to get circuitpy onto the microcontroller board  [here](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw#wired-amiga-application-updates).
    * Hardware setup of farm-ng's feather microcontroller and running farm-ng's codebase on the chip is [here](https://amiga.farm-ng.com/docs/mcu_kit/)
