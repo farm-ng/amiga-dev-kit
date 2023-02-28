@@ -89,7 +89,7 @@ class BumperState(Packet):
     In other words, pins are bit coded in the first 4 bits
     bit 0 => pin D10, bit 1 => pin D11, bit 2 => pin D12, bit 3 => pin D13
     """
-    
+
     def __init__(self, buttons=0):
         self.format = "<HHHH"  # 8 unsigned, button state encoded in the first unsigned short
         self.buttons = buttons
