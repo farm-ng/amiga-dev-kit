@@ -11,6 +11,7 @@ DASHBOARD_NODE_ID = 0xE
 PENDANT_NODE_ID = 0xF
 BRAIN_NODE_ID = 0x1F
 SDK_NODE_ID = 0x2A
+BUMPER_NODE_ID = 0x2F
 
 
 class ReqRepIds:
@@ -80,6 +81,35 @@ class Packet:
     def age(self):
         """Age of the most recent message."""
         return ticks_diff(ticks_ms(), self.ticks_ms)
+
+
+class BumperState(Packet):
+    """State of the 4 Bumpers (True => corresponding pin is pressed)
+       button states are packed as follows as follows:
+       (0x1 * board.D10) + (0x2 * board.D11) + (0x4 * board.12) + (0x8 * board.b13)
+
+       In other words, pins are bit coded in the first 4 bits
+       bit 0 => pin D10, bit 1 => pin D11, bit 2 => pin D12, bit 3 => pin D13 """
+
+    def __init__(self, buttons=0):
+        self.format = "<HHHH" #8 unsigned, button state encoded in the first unsigned short
+        self.buttons = buttons
+        self.stamp()
+
+    def encode(self):
+        """Returns the data contained by the class encoded as CAN message data."""
+        return pack(self.format, self.buttons, 0,0,0) #first short has button bits, rest are unsigned short 0s
+
+    def decode(self, data):
+        """Decodes CAN message data and populates the values of the class."""
+        #A,B,C are just dummy returns
+        (self.buttons,A,B,C) = unpack(self.format, data)
+
+    def __str__(self):
+        return "pins on adafuit D10: {}, D11: {}, D12: {}, D13:{}".format(bool(self.buttons & 0x1),
+                                                                  bool(self.buttons & 0x2),
+                                                                  bool(self.buttons & 0x4),
+                                                                  bool(self.buttons & 0x8))
 
 
 class PendantState(Packet):
