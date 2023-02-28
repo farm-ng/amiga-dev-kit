@@ -82,6 +82,7 @@ class Packet:
         """Age of the most recent message."""
         return ticks_diff(ticks_ms(), self.ticks_ms)
 
+
 class BumperState(Packet):
     """State of the 4 Bumpers (True => corresponding pin is pressed) button states are packed as follows:
 
