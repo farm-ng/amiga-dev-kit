@@ -104,7 +104,7 @@ class BumperState(Packet):
 
     def __str__(self):
         return "pins on adafuit D10: {}, D11: {}, D12: {}, D13:{}".format(
-            bool(self.buttons & 0x1), bool(self.buttons & 0x2), bool(self.buttons & 0x4), bool(self.buttons & 0x8)
+           bool(self.buttons & 0x1), bool(self.buttons & 0x2), bool(self.buttons & 0x4), bool(self.buttons & 0x8)
         )
 
 
