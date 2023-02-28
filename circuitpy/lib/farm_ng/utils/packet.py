@@ -84,10 +84,12 @@ class Packet:
 
 class BumperState(Packet):
     """State of the 4 Bumpers (True => corresponding pin is pressed) button states are packed as follows:
+
     (0x1 * board.D10) + (0x2 * board.D11) + (0x4 * board.12) + (0x8 * board.b13)
     In other words, pins are bit coded in the first 4 bits
     bit 0 => pin D10, bit 1 => pin D11, bit 2 => pin D12, bit 3 => pin D13
     """
+    
     def __init__(self, buttons=0):
         self.format = "<HHHH"  # 8 unsigned, button state encoded in the first unsigned short
         self.buttons = buttons
