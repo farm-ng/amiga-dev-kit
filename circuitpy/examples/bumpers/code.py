@@ -1,14 +1,14 @@
-"""This class reads bumper contacts where the 3 volt pin on the feather chip is connected to a
-bumper contact connecting the 3 volts to bumpers attached to pins D10-D13 driving them high
-if the bumper is pressed.
+"""This class reads bumper contacts where the 3 volt pin on the feather chip is connected to a bumper contact connecting the 3 volts to bumpers attached to pins D10-D13 driving them high if the bumper is pressed.
+
 For CAN Bus, message ID is BUMPER_NODE_ID = 0x2F (see corresponding packet.py)
 4 shorts (8 bytes) are sent as the CAN bus message. The lower order bits are set
 where "1" means "bumper pressed" So pins are bit coded in the first 4 bits
        bit 0 => pin D10, bit 1 => pin D11, bit 2 => pin D12, bit 3 => pin D13
 """
+import adafruit_debouncer
 import board
 import digitalio
-import adafruit_debouncer
+
 from canio import Message
 from farm_ng.utils.cobid import CanOpenObject
 from farm_ng.utils.general import TickRepeater
@@ -57,7 +57,7 @@ class BumperMainLoopApp:
         pass
 
     def _handle_bumpers(self, message):
-        """FILL IN THIS IF YOU WANT BUMPERS TO HANDLE MESSAGES"""
+        """FILL IN THIS IF YOU WANT BUMPERS TO HANDLE MESSAGES."""
         pass
 
     def iter(self):
