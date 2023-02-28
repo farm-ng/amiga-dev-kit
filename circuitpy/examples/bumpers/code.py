@@ -1,4 +1,5 @@
-"""This class reads bumper contacts where the 3 volt pin on the feather chip is connected to a bumper contact connecting the 3 volts to bumpers attached to pins D10-D13 driving them high if the bumper is pressed.
+"""This class reads bumper contacts where the 3 volt pin on the feather chip is connected to a bumper contact
+connecting the 3 volts to bumpers attached to pins D10-D13 driving them high if the bumper is pressed.
 
 For CAN Bus, message ID is BUMPER_NODE_ID = 0x2F (see corresponding packet.py)
 4 shorts (8 bytes) are sent as the CAN bus message. The lower order bits are set
@@ -8,7 +9,6 @@ where "1" means "bumper pressed" So pins are bit coded in the first 4 bits
 import adafruit_debouncer
 import board
 import digitalio
-
 from canio import Message
 from farm_ng.utils.cobid import CanOpenObject
 from farm_ng.utils.general import TickRepeater
@@ -16,9 +16,11 @@ from farm_ng.utils.main_loop import MainLoop
 from farm_ng.utils.packet import BUMPER_NODE_ID
 from farm_ng.utils.packet import BumperState
 from usb_cdc import console
+
 # NOTE: To use debouncer, you may have to clone farm_ng firmware: amiga-fw and get 2 files from
 # amiga-fw/thirdparty: adafruit_debouncer.mpy and adafruit_ticks.mpy. Copy these into the adafruit's
 # lib directory (code.py goes to the root directory):
+
 
 def read_adafruit_pin(p):
     '''
