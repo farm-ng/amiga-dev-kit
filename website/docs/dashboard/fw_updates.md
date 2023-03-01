@@ -57,8 +57,8 @@ This process is currently only supported on Windows and Mac.
 
 **Access the files:**
 
-1. Download the latest application zip file [amiga-dash-v0.1.7.zip](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.1.7/amiga-dash-v0.1.7.zip)
-2. For more details on the git latest release navigate to [Release: amiga-dash-v0.1.7](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.1.7)
+1. Download the latest application zip file [amiga-dash-v0.1.8.zip](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.1.8/amiga-dash-v0.1.8.zip)
+2. For more details on the git latest release navigate to [Release: amiga-dash-v0.1.8](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.1.8)
 3. Extract the files from the zipped folder
 
 :::tip
@@ -80,8 +80,9 @@ If you don't have a [**debug cable**](/docs/debug_cable/README.md) or [**service
       2. On older cables this is the larger purple board
    2. If using a service cable, you only have the one port.
 6. Reconnect your dashboard to power
-   1. With very old versions of firmware, a folder automatically pops up under the name `CIRCUITPY` and resembles the example below.
-   2. With newer versions, you'll need to manually bring the `CIRCUITPY` drive up by:
+   1. With **very** early versions of firmware, a folder automatically pops up under the name `CIRCUITPY` and resembles the example below.
+   2. With versions `v0.1.8` and higher, there is a `Mount CIRCUITPY` advanced user button that'll reboot the dashboard and mount it for Windows or Mac computers.
+   3. With older versions, you'll need to manually bring the `CIRCUITPY` drive up on your Windows or Mac computer by:
         1. Open a serial console connected to the dashboard
            - If you are unfamiliar, see: [**FAQ - Using the REPL**](/docs/reference/faq#using-the-repl)
         2. Interrupt the program with `ctrl+C`
@@ -188,8 +189,9 @@ This process is currently only supported on Windows and Mac.
 **Load into BOOTLOADER mode**
 
 5. With the dashboard connected to your PC, load into `BOOTLOADER` mode so the dashboard remounts under the name `AMIGA` and resembles the **AMIGA mounted** example below:
-   1. If using a [**debug cable**](/docs/debug_cable/README.md) you can double click the reset button.
-   2. If using a [**service cable**](/docs/debug_cable/service_cable.md) (or if you can't seem to get the double click timing right):
+   1. With versions `v0.1.8` and higher, there is a `BOOTLOADER` advanced user button that'll reboot the dashboard into `BOOTLOADER` mode.
+   2. Otherwise, if using a [**debug cable**](/docs/debug_cable/README.md) you can double click the reset button.
+   3. Otherwise, if using a [**service cable**](/docs/debug_cable/service_cable.md) (or if you can't seem to get the double click timing right):
       1. Open a serial console connected to the dashboard
          - See: [**FAQ - Using the REPL**](/docs/reference/faq#using-the-repl)
       2. Interrupt the program with `ctrl+C`
