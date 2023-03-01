@@ -189,8 +189,9 @@ This process is currently only supported on Windows and Mac.
 **Load into BOOTLOADER mode**
 
 5. With the dashboard connected to your PC, load into `BOOTLOADER` mode so the dashboard remounts under the name `AMIGA` and resembles the **AMIGA mounted** example below:
-   1. If using a [**debug cable**](/docs/debug_cable/README.md) you can double click the reset button.
-   2. If using a [**service cable**](/docs/debug_cable/service_cable.md) (or if you can't seem to get the double click timing right):
+   1. With versions `v0.1.8` and higher, there is a `BOOTLOADER` advanced user button that'll reboot the dashboard into `BOOTLOADER` mode.
+   2. Otherwise, if using a [**debug cable**](/docs/debug_cable/README.md) you can double click the reset button.
+   3. Otherwise, if using a [**service cable**](/docs/debug_cable/service_cable.md) (or if you can't seem to get the double click timing right):
       1. Open a serial console connected to the dashboard
          - See: [**FAQ - Using the REPL**](/docs/reference/faq#using-the-repl)
       2. Interrupt the program with `ctrl+C`
