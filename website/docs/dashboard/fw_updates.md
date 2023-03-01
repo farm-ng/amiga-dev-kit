@@ -80,8 +80,9 @@ If you don't have a [**debug cable**](/docs/debug_cable/README.md) or [**service
       2. On older cables this is the larger purple board
    2. If using a service cable, you only have the one port.
 6. Reconnect your dashboard to power
-   1. With very old versions of firmware, a folder automatically pops up under the name `CIRCUITPY` and resembles the example below.
-   2. With newer versions, you'll need to manually bring the `CIRCUITPY` drive up by:
+   1. With **very** early versions of firmware, a folder automatically pops up under the name `CIRCUITPY` and resembles the example below.
+   2. With versions `v0.1.8` and higher, there is a `Mount CIRCUITPY` advanced user button that'll reboot the dashboard and mount it for Windows or Mac computers.
+   3. With older versions, you'll need to manually bring the `CIRCUITPY` drive up on your Windows or Mac computer by:
         1. Open a serial console connected to the dashboard
            - If you are unfamiliar, see: [**FAQ - Using the REPL**](/docs/reference/faq#using-the-repl)
         2. Interrupt the program with `ctrl+C`
