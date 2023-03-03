@@ -1,6 +1,8 @@
+# Python imports
 from struct import pack
 from struct import unpack
 
+from canio import Message
 from supervisor import ticks_ms
 
 from .general import clip
@@ -22,6 +24,8 @@ class SupervisorReqRepIds:
     NOP = 0
     DISABLE_USB = 1
     ENABLE_USB_DRIVE = 2
+    REGISTER_SAFETY_DEVICE = 3
+    # DISABLE_SAFETY_DEVICE = 4
 
 
 class PendantButtons:
@@ -215,9 +219,7 @@ class SupervisorReq(Packet):
         assert id == ReqRepIds.SUPERVISOR
 
     @classmethod
-    def make_mesage(cls, node_id, id, payload=bytes(6)):
-        from canio import Message
-
+    def make_message(cls, node_id, id, payload=bytes(6)):
         return Message(id=(cls.cob_id | node_id), data=SupervisorReq(id=id, payload=payload).encode())
 
     def __str__(self):
@@ -245,6 +247,60 @@ class SupervisorRep(Packet):
 
     def __str__(self):
         return "supervisor rep  id {} payload {} ".format(self.id, self.payload)
+
+
+class EstopRegister(Packet):
+    """A 6 byte packet contained in the payload of a SupervisorReq packet. We only use the first two bytes.
+
+    node_id: the node_id of the safety device, should be on range [0x1,0x5].
+    """
+
+    cob_id = 0x180  # TPDO1
+    allowed_ids = [0x1, 0x2, 0x3, 0x4, 0x5]
+
+    def __init__(self, node_id: int):
+        assert node_id in self.allowed_ids
+
+        self.format = "<H4s"
+        self.node_id = node_id
+        self.stamp()
+
+    def encode(self):
+        """Returns the data contained by the class encoded as CAN message data."""
+        return pack(self.format, self.node_id, b'\0\0\0\0')
+
+    def decode(self, data):
+        """Decodes CAN message data and populates the values of the class."""
+        self.cob_id, _ = unpack(self.format, data)
+
+    def __str__(self):
+        return "Cobid to register 0x{:X}".format(self.cob_id)
+
+
+class EstopRequest(Packet):
+    """An 8 byte packet that requests an e-stop.
+
+    We only care about the first byte and throw the rest away. The other bytes can be used as a message state unique to
+    the device requesting the e-stop.
+    """
+
+    cob_id = 0x180  # TPDO1
+
+    def __init__(self, request_estop: bool = False):
+        self.format = "<?7s"
+        self.request_estop = request_estop
+        self.stamp()
+
+    def encode(self):
+        """Returns the data contained by the class encoded as CAN message data."""
+        return pack(self.format, self.request_estop, b'\0\0\0\0\0\0\0')
+
+    def decode(self, data):
+        """Decodes CAN message data and populates the values of the class."""
+        self.request_estop, _ = unpack(self.format, data)
+
+    def __str__(self):
+        return "Request e-stop {}".format(self.request_estop)
 
 
 class FirmwareVersion(Packet):
