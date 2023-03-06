@@ -1,10 +1,12 @@
 # from canio import Message
 from farm_ng.utils.cobid import CanOpenObject
 from farm_ng.utils.general import TickRepeater
+from farm_ng.utils.general import ticks_fresh
 from farm_ng.utils.main_loop import MainLoop
 from farm_ng.utils.packet import AmigaControlState
 from farm_ng.utils.packet import AmigaTpdo1
 from farm_ng.utils.packet import DASHBOARD_NODE_ID
+from supervisor import ticks_ms
 from usb_cdc import console
 
 
@@ -19,6 +21,8 @@ class SpacebarEstopApp:
 
         self.registered_with_dashboard = False
         self.pressed = False
+        self.ser_stamp = ticks_ms()
+        self.amiga_tpdo1: AmigaTpdo1 = None
 
         self._register_message_handlers()
 
@@ -29,24 +33,35 @@ class SpacebarEstopApp:
     def _handle_amiga_tpdo1(self, message):
         """Listens to Amiga Tpdo1 for fun."""
         self.amiga_tpdo1 = AmigaTpdo1.from_can_data(message.data)
-        print("Amiga e-stopped {}".format(self.amiga_tpdo1.state == AmigaControlState.STATE_ESTOPPED), end="\r")
-
-    def parse_wasd_cmd(self, char):
-        self.pressed = char == " "
 
     def serial_read(self):
         while console.in_waiting > 0:
-            self.parse_wasd_cmd((console.read().decode("ascii")))
+            char = console.read().decode("ascii")
+            if char == " ":
+                self.pressed = True
+                self.ser_stamp = ticks_ms()
+
+        if not ticks_fresh(self.ser_stamp, thresh_ms=500):
+            self.pressed = False
 
     def iter(self):
+        # Check for spacebar input
         self.serial_read()
 
+        # Print status
+        estop_str: str = (
+            "???" if self.amiga_tpdo1 is None else str(self.amiga_tpdo1.state == AmigaControlState.STATE_ESTOPPED)
+        )
+        print("Amiga e-stopped {} ".format(estop_str) + " | " + "Request e-stopped {}  ".format(self.pressed), end="\r")
+
+        # Register safety device with Amiga dashboard
         if not self.registered_with_dashboard:
             if self.reg_repeater.check():
                 pass
                 # TODO: send register SupervisorReq
             return
 
+        # Send e-stop request to Amiga dashboard
         if self.cmd_repeater.check():
             # TODO: Send estop request message using self.pressed
             pass
