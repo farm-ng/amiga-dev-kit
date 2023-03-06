@@ -5,7 +5,7 @@ title: 03 - Python Implementation
 # Python Implementation
 
 :::info
-The Python implementation of the [**camera-streamer**](https://github.com/farm-ng/camera-streamer) app can be found at [`src/main.py`](https://github.com/farm-ng/camera-streamer/blob/main/src/main.py).
+The Python implementation of the [**camera-streamer**](https://github.com/farm-ng/camera-streamer) app can be found at [**`src/main.py`**](https://github.com/farm-ng/camera-streamer/blob/main/src/main.py).
 You should open that file for reference as you follow along.
 :::
 
@@ -68,7 +68,7 @@ We import the necessary `farm_ng` libraries for creating the camera client and i
 
 We will use `TurboJPEG` as the image decoder (it is much faster than kivy's default image decoder), so we add that as an import in our `main.py` file.
 
-In order to import this, we must add the library `PyTurboJPEG` to the [`setup.cfg`](https://github.com/farm-ng/camera-streamer/blob/main/setup.cfg) file so the dependency installs.
+In order to import this, we must add the library `PyTurboJPEG` to the [**`setup.cfg`**](https://github.com/farm-ng/camera-streamer/blob/main/setup.cfg) file so the dependency installs.
 
 We also construct an instance of this image decoder and assign it as a class variable of our `CameraApp` so it is not created every time we decode an image.
 
@@ -81,9 +81,9 @@ These include the `address` and `port` of the oak device we will stream and the 
 
 #### entry.sh
 
-There are **required arguments** that must be set in the [`entry.sh`](https://github.com/farm-ng/camera-streamer/blob/main/entry.sh) file and **optional arguments** that take on a default value, unless overridden in the command line.
+There are **required arguments** that must be set in the [**`entry.sh`**](https://github.com/farm-ng/camera-streamer/blob/main/entry.sh) file and **optional arguments** that take on a default value, unless overridden in the command line.
 
-Since `port` is required, we add `--port 50051` to the `python` call in [`entry.sh`](https://github.com/farm-ng/camera-streamer/blob/main/entry.sh) to set the script to use the `Oak0` device (`Oak1` would be on `50052`, `Oak2` on `50053`, and so on).
+Since `port` is required, we add `--port 50051` to the `python` call in [**`entry.sh`**](https://github.com/farm-ng/camera-streamer/blob/main/entry.sh) to set the script to use the `Oak0` device (`Oak1` would be on `50052`, `Oak2` on `50053`, and so on).
 
 When launching your app on the Brain with the button, any required args being passed to `main.py` must already be specified in `entry.sh`.
 
@@ -100,6 +100,7 @@ cd camera_tutorial/
 To run the app on the amiga, with changing a default command line arg:
 ```Python
 ssh amiga
+    # Password: amiga
 # Now in an ssh terminal
 cd ~/apps/
 ./camera_tutorial/entry.sh --stream-every-n 2
@@ -114,7 +115,7 @@ When developing your own app, you can:
 2. Tweak the appearance parameters, including moving to the largest 'Optical Size' available
 3. Export it as a `.png` file
 
-For following along with this tutorial, feel free to download the image from [src/assets/app_logo.png](https://github.com/farm-ng/camera-streamer/blob/main/src/assets/app_logo.png).
+For following along with this tutorial, feel free to download the image from [**src/assets/app_logo.png**](https://github.com/farm-ng/camera-streamer/blob/main/src/assets/app_logo.png).
 
 :::info note
 The brain may not display the app icon immediately when it is cloned onto your machine.
@@ -128,6 +129,6 @@ Here we create the `OakCameraClient` and add the `stream_camera` asyncio task to
 
 ### Run it
 
-Run the app on the brain by launching with the app button or run it through a terminal as described in [Command line arguments](#command-line-arguments).
+Run the app on the brain by launching with the app button or run it through a terminal as described in [**Command line arguments**](#command-line-arguments).
 
 ![camera-streamer](https://user-images.githubusercontent.com/53625197/216075393-6e578a01-677e-4279-b224-70fd3f73ce5f.png)

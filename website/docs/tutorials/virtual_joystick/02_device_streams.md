@@ -5,7 +5,7 @@ title: 02 - Device Streams
 # Device Streams
 
 :::info
-In the [`src/res/main.kv`](https://github.com/farm-ng/virtual-joystick/blob/main/src/res/main.kv) and [`src/main.py`](https://github.com/farm-ng/virtual-joystick/blob/main/src/main.py) files of the [**virtual-joystick**](https://github.com/farm-ng/virtual-joystick) app we define the kivy app and Python implementation of the `VirtualJoystickApp`.
+In the [**`src/res/main.kv`**](https://github.com/farm-ng/virtual-joystick/blob/main/src/res/main.kv) and [**`src/main.py`**](https://github.com/farm-ng/virtual-joystick/blob/main/src/main.py) files of the [**virtual-joystick**](https://github.com/farm-ng/virtual-joystick) app we define the kivy app and Python implementation of the `VirtualJoystickApp`.
 
 You should open these files for reference as you follow along.
 :::
@@ -131,6 +131,7 @@ cd joystick_tutorial/
 To run the app on the amiga, with changing a default command line arg:
 ```Python
 ssh amiga
+    # Password : amiga
 # Now in an ssh terminal
 cd ~/apps/
 ./joystick_tutorial/entry.sh --stream-every-n 2

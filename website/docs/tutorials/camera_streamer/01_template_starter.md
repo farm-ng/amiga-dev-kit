@@ -10,12 +10,12 @@ title: 01 - Template Starter
 Follow the instructions in [**Developing Custom Applications**](/docs/brain/custom-applications.mdx)
 to set up an application from the [**amiga-app-template**](https://github.com/farm-ng/amiga-app-template).
 
-Be sure not to skip the [Customizing an app](/docs/brain/brain-apps#customizing-an-app) required to properly configure
+Be sure not to skip the [**Customizing an app**](/docs/brain/brain-apps#customizing-an-app) required to properly configure
 the library and app you are creating.
 
 :::tip
 Feel free to choose any name, but it's recommended to go with something like `camera_tutorial` or `streamer_tutorial`for the repository.
-That difference will make it easier to differentiate between the [`farm-ng/camera-streamer`](https://github.com/farm-ng/camera-streamer)
+That difference will make it easier to differentiate between the [**`farm-ng/camera-streamer`**](https://github.com/farm-ng/camera-streamer)
 example and your own implementation if they both get cloned onto the same machine.
 
 We will assume you went with `camera_tutorial` in this tutorial.
