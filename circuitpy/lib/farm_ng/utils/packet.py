@@ -258,8 +258,10 @@ class EstopRegister(Packet):
     cob_id = 0x180  # TPDO1
     allowed_ids = [0x1, 0x2, 0x3, 0x4, 0x5]
 
-    def __init__(self, node_id: int):
-        assert node_id in self.allowed_ids
+    def __init__(self, node_id: int = 0x1):
+        assert node_id in self.allowed_ids, "Safety devices must be in {}".format(
+            ["0x{:X}".format(x) for x in self.allowed_ids]
+        )
 
         self.format = "<H4s"
         self.node_id = node_id
@@ -287,8 +289,8 @@ class EstopRequest(Packet):
     cob_id = 0x180  # TPDO1
 
     def __init__(self, request_estop: bool = False):
-        self.format = "<?7s"
-        self.request_estop = request_estop
+        self.format = "<b7s"
+        self.request_estop: bool = request_estop
         self.stamp()
 
     def encode(self):
@@ -297,7 +299,12 @@ class EstopRequest(Packet):
 
     def decode(self, data):
         """Decodes CAN message data and populates the values of the class."""
-        self.request_estop, _ = unpack(self.format, data)
+        req, _ = unpack(self.format, data)
+        self.request_estop = bool(req)
+
+    @classmethod
+    def make_message(cls, node_id, request_estop):
+        return Message(id=(cls.cob_id | node_id), data=EstopRequest(request_estop=request_estop).encode())
 
     def __str__(self):
         return "Request e-stop {}".format(self.request_estop)

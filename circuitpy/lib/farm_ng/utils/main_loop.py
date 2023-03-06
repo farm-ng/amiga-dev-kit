@@ -159,8 +159,8 @@ class MainLoop:
         try:
             self.command_handlers.get(message.id, self.can_dummy)(message)
         except KeyError:
-            # print("Unable to parse: %x" % (message.id,), message.data)
-            pass
+            print("Unable to parse: %x" % (message.id,), message.data)
+            print("using function: ", self.command_handlers.get(message.id, self.can_dummy).__name__)
 
     def can_dummy(self, message):
         """Dummy function that is called when message does not meet filter."""
