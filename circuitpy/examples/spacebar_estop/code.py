@@ -23,7 +23,7 @@ class SpacebarEstopApp:
         self.main_loop.show_debug = True
         self.print_repeater = TickRepeater(ticks_period_ms=100)
         self.cmd_repeater = TickRepeater(ticks_period_ms=50)
-        self.reg_repeater = TickRepeater(ticks_period_ms=500)
+        self.reg_repeater = TickRepeater(ticks_period_ms=1000)
 
         self.registered = False
         self.pressed = False
@@ -69,19 +69,22 @@ class SpacebarEstopApp:
                 "???" if self.amiga_tpdo1 is None else str(self.amiga_tpdo1.state == AmigaControlState.STATE_ESTOPPED)
             )
             print(
-                "Amiga e-stopped {} ".format(estop_str) + " | " + "Request e-stopped {}  ".format(self.pressed),
+                "Registered: {} ".format(self.registered)
+                + " | "
+                + "Amiga e-stopped: {} ".format(estop_str)
+                + " | "
+                + "Request e-stopped: {}  ".format(self.pressed),
                 end="\r",
             )
 
         # Register safety device with Amiga dashboard
-        if not self.registered:
-            if self.reg_repeater.check():
-                reg = EstopRegister(node_id=self.node_id)
-                req_msg = SupervisorReq.make_message(
-                    node_id=DASHBOARD_NODE_ID, id=SupervisorReqRepIds.REGISTER_SAFETY_DEVICE, payload=reg.encode()
-                )
-                self.can.send(req_msg)
-            return
+        if self.reg_repeater.check():
+            # TODO: We need to more intelligently query whether we are still connected
+            reg = EstopRegister(node_id=self.node_id)
+            req_msg = SupervisorReq.make_message(
+                node_id=DASHBOARD_NODE_ID, id=SupervisorReqRepIds.REGISTER_SAFETY_DEVICE, payload=reg.encode()
+            )
+            self.can.send(req_msg)
 
         # Send e-stop request to Amiga dashboard
         if self.cmd_repeater.check():
