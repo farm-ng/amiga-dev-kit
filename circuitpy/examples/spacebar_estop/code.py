@@ -6,11 +6,8 @@ from farm_ng.utils.main_loop import MainLoop
 from farm_ng.utils.packet import AmigaControlState
 from farm_ng.utils.packet import AmigaTpdo1
 from farm_ng.utils.packet import DASHBOARD_NODE_ID
-from farm_ng.utils.packet import EstopRegister
+from farm_ng.utils.packet import EstopReply
 from farm_ng.utils.packet import EstopRequest
-from farm_ng.utils.packet import SupervisorRep
-from farm_ng.utils.packet import SupervisorReq
-from farm_ng.utils.packet import SupervisorReqRepIds
 from supervisor import ticks_ms
 from usb_cdc import console
 
@@ -23,7 +20,6 @@ class SpacebarEstopApp:
         self.main_loop.show_debug = True
         self.print_repeater = TickRepeater(ticks_period_ms=100)
         self.cmd_repeater = TickRepeater(ticks_period_ms=50)
-        self.reg_repeater = TickRepeater(ticks_period_ms=1000)
 
         self.registered = False
         self.pressed = False
@@ -34,20 +30,17 @@ class SpacebarEstopApp:
 
     def _register_message_handlers(self):
         self.main_loop.command_handlers[CanOpenObject.TPDO1 | DASHBOARD_NODE_ID] = self._handle_amiga_tpdo1
-        self.main_loop.command_handlers[SupervisorRep.cob_id | DASHBOARD_NODE_ID] = self._handle_supervisor_rep
+        self.main_loop.command_handlers[CanOpenObject.RPDO1 | self.node_id] = self._handle_estop_reply
         # TODO: Register SupervisorReq for handshake reply
 
     def _handle_amiga_tpdo1(self, message):
         """Listens to Amiga Tpdo1 to check e-stop state of dashboard."""
         self.amiga_tpdo1 = AmigaTpdo1.from_can_data(message.data)
 
-    def _handle_supervisor_rep(self, message):
-        """Listens to SepuervisorReq to confirm if e-stop device is registered."""
-        rep = SupervisorRep.from_can_data(message.data)
-        if rep.id == SupervisorReqRepIds.REGISTER_SAFETY_DEVICE:
-            estop_reg = EstopRegister.from_can_data(rep.payload)
-            if estop_reg.node_id == self.node_id:
-                self.registered = True
+    def _handle_estop_reply(self, message):
+        """Listens to Amiga Tpdo1 to check e-stop state of dashboard."""
+        self.reply = EstopReply.from_can_data(message.data)
+        self.registered = bool(self.node_id & self.reply.registered_devices)
 
     def serial_read(self):
         while console.in_waiting > 0:
@@ -76,15 +69,6 @@ class SpacebarEstopApp:
                 + "Request e-stopped: {}  ".format(self.pressed),
                 end="\r",
             )
-
-        # Register safety device with Amiga dashboard
-        if self.reg_repeater.check():
-            # TODO: We need to more intelligently query whether we are still connected
-            reg = EstopRegister(node_id=self.node_id)
-            req_msg = SupervisorReq.make_message(
-                node_id=DASHBOARD_NODE_ID, id=SupervisorReqRepIds.REGISTER_SAFETY_DEVICE, payload=reg.encode()
-            )
-            self.can.send(req_msg)
 
         # Send e-stop request to Amiga dashboard
         if self.cmd_repeater.check():

@@ -249,41 +249,11 @@ class SupervisorRep(Packet):
         return "supervisor rep  id {} payload {} ".format(self.id, self.payload)
 
 
-class EstopRegister(Packet):
-    """A 6 byte packet contained in the payload of a SupervisorReq packet. We only use the first two bytes.
-
-    node_id: the node_id of the safety device, should be on range [0x1,0x5].
-    """
-
-    cob_id = 0x180  # TPDO1
-    allowed_ids = [0x1, 0x2, 0x3, 0x4, 0x5]
-
-    def __init__(self, node_id: int = 0x1):
-        assert node_id in self.allowed_ids, "Safety devices must be in {}".format(
-            ["0x{:X}".format(x) for x in self.allowed_ids]
-        )
-
-        self.format = "<H4s"
-        self.node_id = node_id
-        self.stamp()
-
-    def encode(self):
-        """Returns the data contained by the class encoded as CAN message data."""
-        return pack(self.format, self.node_id, b'\0\0\0\0')
-
-    def decode(self, data):
-        """Decodes CAN message data and populates the values of the class."""
-        self.cob_id, _ = unpack(self.format, data)
-
-    def __str__(self):
-        return "Cobid to register 0x{:X}".format(self.cob_id)
-
-
 class EstopRequest(Packet):
     """An 8 byte packet that requests an e-stop.
 
-    We only care about the first byte and throw the rest away. The other bytes can be used as a message state unique to
-    the device requesting the e-stop.
+    We only care about the first byte and throw the rest away (for now). The other bytes can be used as a message state
+    unique to the device requesting the e-stop.
     """
 
     cob_id = 0x180  # TPDO1
@@ -295,7 +265,7 @@ class EstopRequest(Packet):
 
     def encode(self):
         """Returns the data contained by the class encoded as CAN message data."""
-        return pack(self.format, self.request_estop, b'\0\0\0\0\0\0\0')
+        return pack(self.format, self.request_estop, bytes(7))
 
     def decode(self, data):
         """Decodes CAN message data and populates the values of the class."""
@@ -308,6 +278,44 @@ class EstopRequest(Packet):
 
     def __str__(self):
         return "Request e-stop {}".format(self.request_estop)
+
+
+class EstopReply(Packet):
+    """An 8 byte packet that responds with registered e-stop devices.
+
+    We only care about the first 4 bytes and throw the rest away (for now).
+    """
+
+    cob_id = 0x200  # RPDO1
+
+    def __init__(self, registered_devices: int = 0x0, estop_devices: int = 0x0):
+        self.format = "<HH4s"
+        self.registered_devices: int = registered_devices
+        self.estop_devices: int = estop_devices
+        self.stamp()
+
+    def encode(self):
+        """Returns the data contained by the class encoded as CAN message data."""
+        return pack(self.format, self.registered_devices, self.estop_devices, bytes(4))
+
+    def decode(self, data):
+        """Decodes CAN message data and populates the values of the class."""
+        self.registered_devices, self.estop_devices, _ = unpack(self.format, data)
+
+    @classmethod
+    def make_message(cls, node_id, registered_devices, estop_devices):
+        return Message(
+            id=(cls.cob_id | node_id),
+            data=EstopReply(registered_devices=registered_devices, estop_devices=estop_devices).encode(),
+        )
+
+    def __str__(self):
+        # TODO: Parse the bit masking
+        return (
+            "EstopReply - registered e-stop devices (bit masked) 0x{:X} triggered devices (bit masked) 0x{:X}".format(
+                self.registered_devices, self.estop_devices
+            )
+        )
 
 
 class FirmwareVersion(Packet):
