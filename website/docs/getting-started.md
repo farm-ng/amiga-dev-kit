@@ -25,8 +25,7 @@ Some of our Amiga development kit hacking projects have been hardened and listed
 
 ## The Amiga Development Kit
 
-The [**Amiga Development Kit**](https://farm-ng.com/products/microcontroller-kit)
-is the best hardware option for hackers to get started with building custom applications for their Amiga robot.
+Buy the [**Amiga Development Kit**](https://farm-ng.com/products/microcontroller-kit), which is the best hardware option for hackers to get started with building custom applications for their Amiga robot. See the [coding index](https://amiga.farm-ng.com/docs/#microcontroller-kit-overview) for how to load, run and develop code on the microcontroller.
 
 We have a constantly expanding library of thorough examples, covering software and hardware,
 to provide guidance and inspiration for your next project!
