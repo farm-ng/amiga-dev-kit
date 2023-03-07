@@ -31,7 +31,6 @@ class SpacebarEstopApp:
     def _register_message_handlers(self):
         self.main_loop.command_handlers[CanOpenObject.TPDO1 | DASHBOARD_NODE_ID] = self._handle_amiga_tpdo1
         self.main_loop.command_handlers[CanOpenObject.RPDO1 | self.node_id] = self._handle_estop_reply
-        # TODO: Register SupervisorReq for handshake reply
 
     def _handle_amiga_tpdo1(self, message):
         """Listens to Amiga Tpdo1 to check e-stop state of dashboard."""
