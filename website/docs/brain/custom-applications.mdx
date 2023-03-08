@@ -44,15 +44,23 @@ brew install wget
 
 ## Prepare an app
 
-Follow the instructions below to select a [Brain App Example](/docs/examples/examples-index#brain-app-examples)
+Follow the instructions below to select a [**Brain App Example**](/docs/examples/examples-index#brain-app-tutorials)
 prepared by **farm-ng** or create an app from the
-[`amiga-app-template`](https://github.com/farm-ng/amiga-app-template) repository.
+[**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template) repository.
 
 ### Select an app
 
-If you would like to select a [Brain App Example](/docs/examples/examples-index#brain-app-examples)
-prepared by **farm-ng** to test the app deployment process,
-please follow the instructions below as though you were developing a custom application
+To test the app deployment process of a fully made app developed by farm-ng, you can choose either the [**camera-streamer**](https://github.com/farm-ng/camera-streamer)
+example or the [**virtual-joystick**](https://github.com/farm-ng/virtual-joystick) example from [**Brain App Example**](/docs/examples/examples-index#brain-app-tutorials). To clone one
+of the examples click on one of the links in the previous sentence and click the green code button in GitHub and then copy the text highlighted in yellow.
+![Create a new templated repository](https://user-images.githubusercontent.com/66448234/223195510-2160a0b1-115e-4e36-bff1-c1560a4a6b2f.png)
+
+Now in the terminal enter the following commands, but where it says `git clone http...` and replace the `https..` part with your copied text.
+```bash
+cd <to-your-base-directory>
+git clone https://github.com/farm-ng/camera-streamer.git # To clone the camera-streamer repo or other.
+```
+Now you can follow the instructions below as though you were developing a custom application
 and simply replace any `<YOUR-USERNAME/YOUR-REPOSITORY>` placeholder with that of the
 path to the prepared app's Git repository, e.g., `farm-ng/virtual-joystick`.
 
@@ -188,12 +196,17 @@ To launch the tests: `pytest test/`
 To run specific tests: `pytest test/test_dummy.py::TestDummy::test_add`
 
 
-## Initial SSH Configuration
 
-To make ssh between our workstation and the Amiga easier, we'll add some configuration to our ssh on the workstation.
-To set up ssh, make sure the Amiga and your computer are on the same network.
+## How to SSH into the Amiga
+If this is your very first time ssh into Amiga follow the instructions under `Initial SSH set up` otherwise follow the steps at [**SSH Configuration**](#ssh-configuration).
 
-First check if a file `~/.ssh/config` exists on your workstation.
+### Initial SSH set up
+Follow the steps listed below and then continue on to **SSH Configuration**
+to complete the process.
+
+- To set up ssh, make sure the Amiga and your computer are on the same network (check the Wifi on the Amiga and adjust accordingly).
+
+- Then check if a file `~/.ssh/config` exists on your workstation with the steps below.
 `~/` is the home folder on your workstation.
 
 :::info
@@ -232,7 +245,9 @@ cat > config # Then press control D on your keyboard
 
 :::
 
-Now it is time to configure your *config* file to *ssh* in your Amiga.
+### SSH Configuration
+
+Now it is time to configure your *config* file to *ssh* into your Amiga.
 
 
 <Tabs>
@@ -276,12 +291,14 @@ Let’s copy our keys to the robot as well (you may need to do this any time you
 ssh-copy-id amiga
 ```
 
-Now you are all set up to [ssh into the amiga](#ssh-to-the-robot)
+Now you are all set up to ssh into the Amiga
 
-#### ssh to the robot
+#### SSH Amiga
 
 ```bash
 ssh amiga
+# When prompted for a user name and password enter the following :
+#    password: amiga
 exit # If you want to exit the ssh
 ```
 

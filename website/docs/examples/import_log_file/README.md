@@ -34,7 +34,11 @@ Congrats you now have transferred files from the Amiga to you local machine!
 
 ## Transfer data with SSH
 To transfer files using ssh you will first need to ssh into the Amiga.
-- Instructions for how to do this are listed [**here**](/docs/brain/custom-applications.mdx#initial-ssh-configuration)
+```bash
+ssh amiga
+    # Password: amiga
+```
+- If having issues further instructions for how to do this are listed [**here**](/docs/brain/custom-applications.mdx#ssh-configuration)
 
 - Once connected: Verify the logs are present on the Amiga
 ```bash

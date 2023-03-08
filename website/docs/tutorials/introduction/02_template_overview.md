@@ -77,8 +77,8 @@ RelativeLayout:
 
 Next we define our application in the Kv language.
 This definition can be a `"""` string at the top of a `.py` file or can be defined in a separate `.kv` file.
-Either can be imported by the [kivy Builder](https://kivy.org/doc/stable/api-kivy.lang.builder.html).
-Here we use a separate .kv file [`res/main.py`](https://github.com/farm-ng/amiga-app-template/blob/main/src/res/main.kv).
+Either can be imported by the [**kivy Builder**](https://kivy.org/doc/stable/api-kivy.lang.builder.html).
+Here we use a separate .kv file [**`res/main.py`**](https://github.com/farm-ng/amiga-app-template/blob/main/src/res/main.kv).
 
 :::tip
 Throughout this tutorial we'll explain the kivy app created in this example, but this is not intended as a thorough introduction to using kivy. Try the [**kivy tutorials**](https://kivy.org/doc/stable/tutorials-index.html) and use the [**kivy API**](https://kivy.org/doc/stable/api-index.html) for more information on creating custom applications with kivy.

@@ -5,18 +5,18 @@ title: 02 - Kivy Definition
 # Kivy Definition
 
 :::info
-In the [`src/res/main.kv`](https://github.com/farm-ng/camera-streamer/blob/main/src/res/main.kv) file of the [**camera-streamer**](https://github.com/farm-ng/camera-streamer) app we define the kivy app.
+In the [**`src/res/main.kv`**](https://github.com/farm-ng/camera-streamer/blob/main/src/res/main.kv) file of the [**camera-streamer**](https://github.com/farm-ng/camera-streamer) app we define the kivy app.
 You should open that file for reference as you follow along.
 :::
 
 Our app will have two components:
 
-1. A [`TabbedPanel`](https://kivy.org/doc/stable/api-kivy.uix.tabbedpanel.html) of [`Image`](https://kivy.org/doc/stable/api-kivy.uix.image.html) widgets for displaying the camera streams
-2. A [`Button`](https://kivy.org/doc/stable/api-kivy.uix.button.html) for exiting the app
+1. A [**`TabbedPanel`**](https://kivy.org/doc/stable/api-kivy.uix.tabbedpanel.html) of [**`Image`**](https://kivy.org/doc/stable/api-kivy.uix.image.html) widgets for displaying the camera streams
+2. A [**`Button`**](https://kivy.org/doc/stable/api-kivy.uix.button.html) for exiting the app
 
 ### Starting with the template
 
-The [`src/res/main.kv`](https://github.com/farm-ng/amiga-app-template/blob/main/src/res/main.kv) file of the [**amiga-app-template**](https://github.com/farm-ng/amiga-app-template) defines a root of a `RelativeLayout`, with a `Button`, and a `Label`, as explained in [kivy app definition](/docs/tutorials/introduction/template-overview#kivy-app-definition).
+The [**`src/res/main.kv`**](https://github.com/farm-ng/amiga-app-template/blob/main/src/res/main.kv) file of the [**amiga-app-template**](https://github.com/farm-ng/amiga-app-template) defines a root of a `RelativeLayout`, with a `Button`, and a `Label`, as explained in [**kivy app definition**](/docs/tutorials/introduction/template-overview#kivy-app-definition).
 
 We will keep the `RelativeLayout` root and the `Button` for exiting the app, but remove the `Label` widget.
 Instead, we will add a `TabbedPanel` for displaying the image streams from our Oak device.
