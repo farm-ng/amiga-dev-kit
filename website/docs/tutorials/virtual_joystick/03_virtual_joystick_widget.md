@@ -11,14 +11,14 @@ This widget will be used to drive the robot by moving the virtual joystick on th
 The driving behavior is modelled after the behavior of driving with the joystick on the pendant.
 
 :::info
-In the [`libs/virtual_joystick/res/joystick.kv`](https://github.com/farm-ng/virtual-joystick/blob/main/libs/virtual_joystick/res/joystick.kv) and [`libs/virtual_joystick/joystick.py`](https://github.com/farm-ng/virtual-joystick/blob/main/libs/virtual_joystick/joystick.py) files of the [**virtual-joystick**](https://github.com/farm-ng/virtual-joystick) app we define the custom widget in kivy and Python.
+In the [**`libs/virtual_joystick/res/joystick.kv`**](https://github.com/farm-ng/virtual-joystick/blob/main/libs/virtual_joystick/res/joystick.kv) and [**`libs/virtual_joystick/joystick.py`**](https://github.com/farm-ng/virtual-joystick/blob/main/libs/virtual_joystick/joystick.py) files of the [**virtual-joystick**](https://github.com/farm-ng/virtual-joystick) app we define the custom widget in kivy and Python.
 
 You should open these files for reference as you follow along.
 :::
 
 ### kivy Definition
 
-We first define a few custom arguments for defining the drawn `joystick` that are linked to the [`Ellipse`](https://kivy.org/doc/stable/api-kivy.graphics.html#kivy.graphics.Ellipse) widget used to draw the joystick circle (the one with `id: joystick`).
+We first define a few custom arguments for defining the drawn `joystick` that are linked to the [**`Ellipse`**](https://kivy.org/doc/stable/api-kivy.graphics.html#kivy.graphics.Ellipse) widget used to draw the joystick circle (the one with `id: joystick`).
 Because these values are linked, they can be updated on the Python side of the `VirtualJoystickWidget` and the kivy drawing will update accordingly.
 
 An important component to understand is the kivy [**`Canvas`**](https://kivy.org/doc/stable/api-kivy.graphics.instructions.html),
@@ -54,7 +54,7 @@ Blocking tasks should be scheduled as an `asyncio` task!
 
 #### Touch handling
 
-The [`on_touch_down()`](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_down), [`on_touch_move()`](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_move), & [`on_touch_up()`](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_up) calls are triggered for all `Widget`s within a kivy `App` whenever there is a touch interaction (by default).
+The [**`on_touch_down()`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_down), [**`on_touch_move()`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_move), & [**`on_touch_up()`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_up) calls are triggered for all `Widget`s within a kivy `App` whenever there is a touch interaction (by default).
 
 We overwrite the default behavior of these methods to move the pose of the joystick whenever we touch and/or move within the `VirtualJoystickWidget`,
 and recenter the joystick upon release.
@@ -70,13 +70,13 @@ Because we want to recenter the joystick regardless of which widget the `touch_u
 
 #### Vec2
 
-We also define a simple container called `Vec2` for handling the `x` & `y` values of the joystick coordinates in [libs/virtual_joystick/utils.py](https://github.com/farm-ng/virtual-joystick/blob/main/libs/virtual_joystick/utils.py) and import this into `joystick.py`.
+We also define a simple container called `Vec2` for handling the `x` & `y` values of the joystick coordinates in [**libs/virtual_joystick/utils.py**](https://github.com/farm-ng/virtual-joystick/blob/main/libs/virtual_joystick/utils.py) and import this into `joystick.py`.
 
 
 ### Add it to the app
 
-- Import this widget in [`src/main.py`](https://github.com/farm-ng/virtual-joystick/blob/main/src/main.py)
-- Add the `VirtualJoystickWidget` next to the `TabbedPanel` in the `BoxLayout` of app's kivy definition in [`src/res/main.kv`](https://github.com/farm-ng/virtual-joystick/blob/main/src/res/main.kv)
+- Import this widget in [**`src/main.py`**](https://github.com/farm-ng/virtual-joystick/blob/main/src/main.py)
+- Add the `VirtualJoystickWidget` next to the `TabbedPanel` in the `BoxLayout` of app's kivy definition in [**`src/res/main.kv`**](https://github.com/farm-ng/virtual-joystick/blob/main/src/res/main.kv)
 
 
 ### Run it
