@@ -287,17 +287,17 @@ class EstopRequest(Packet):
     cob_id = 0x180  # TPDO1
 
     def __init__(self, request_estop: bool = False):
-        self.format = "<b7s"
+        self.format = "<b7x"
         self.request_estop: bool = request_estop
         self.stamp()
 
     def encode(self):
         """Returns the data contained by the class encoded as CAN message data."""
-        return pack(self.format, self.request_estop, bytes(7))
+        return pack(self.format, self.request_estop)
 
     def decode(self, data):
         """Decodes CAN message data and populates the values of the class."""
-        req, _ = unpack(self.format, data)
+        req = unpack(self.format, data)
         self.request_estop = bool(req)
 
     @classmethod
@@ -317,18 +317,18 @@ class EstopReply(Packet):
     cob_id = 0x200  # RPDO1
 
     def __init__(self, registered_devices: int = 0x0, estop_devices: int = 0x0):
-        self.format = "<HH4s"
+        self.format = "<HH4x"
         self.registered_devices: int = registered_devices
         self.estop_devices: int = estop_devices
         self.stamp()
 
     def encode(self):
         """Returns the data contained by the class encoded as CAN message data."""
-        return pack(self.format, self.registered_devices, self.estop_devices, bytes(4))
+        return pack(self.format, self.registered_devices, self.estop_devices)
 
     def decode(self, data):
         """Decodes CAN message data and populates the values of the class."""
-        self.registered_devices, self.estop_devices, _ = unpack(self.format, data)
+        self.registered_devices, self.estop_devices = unpack(self.format, data)
 
     @classmethod
     def make_message(cls, node_id, registered_devices, estop_devices):

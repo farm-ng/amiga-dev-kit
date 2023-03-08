@@ -46,6 +46,8 @@ class BumperMainLoopApp:
         self.main_loop.show_debug = True
         self.cmd_repeater = TickRepeater(ticks_period_ms=50)
 
+        # NOTE: ``self.registered`` could be used for some visual indicator
+        # on your safety device
         self.registered = False
         # self.amiga_tpdo1: AmigaTpdo1 = None
 

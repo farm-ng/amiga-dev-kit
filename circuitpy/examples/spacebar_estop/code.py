@@ -11,6 +11,9 @@ from farm_ng.utils.packet import EstopRequest
 from supervisor import ticks_ms
 from usb_cdc import console
 
+# This was just created as a convenience for developing the safety device concept
+# As such, it is not documented as a true amiga-dev-kit/circuitpy example
+
 
 class SpacebarEstopApp:
     def __init__(self, main_loop: MainLoop, can, node_id) -> None:
@@ -21,6 +24,8 @@ class SpacebarEstopApp:
         self.print_repeater = TickRepeater(ticks_period_ms=100)
         self.cmd_repeater = TickRepeater(ticks_period_ms=50)
 
+        # NOTE: ``self.registered`` could be used for some visual indicator
+        # on your safety device
         self.registered = False
         self.pressed = False
         self.ser_stamp = ticks_ms()
