@@ -297,7 +297,7 @@ class EstopRequest(Packet):
 
     def decode(self, data):
         """Decodes CAN message data and populates the values of the class."""
-        req = unpack(self.format, data)
+        (req,) = unpack(self.format, data)
         self.request_estop = bool(req)
 
     @classmethod
