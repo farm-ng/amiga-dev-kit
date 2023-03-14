@@ -9,21 +9,19 @@ where "1" means "bumper pressed" So pins are bit coded in the first 4 bits
 import adafruit_debouncer
 import board
 import digitalio
+from canio import Message
 from farm_ng.utils.cobid import CanOpenObject
 from farm_ng.utils.general import TickRepeater
 from farm_ng.utils.main_loop import MainLoop
+from farm_ng.utils.packet import BumperState
 from farm_ng.utils.packet import EstopReply
-from farm_ng.utils.packet import EstopRequest
 
-# from farm_ng.utils.packet import BUMPER_NODE_ID
-# from farm_ng.utils.packet import BumperState
-# from farm_ng.utils.packet import DASHBOARD_NODE_ID
-# from farm_ng.utils.packet import AmigaTpdo1
+# from farm_ng.utils.packet import EstopRequest
 
-
-# NOTE: To use debouncer, you may have to clone farm_ng firmware: amiga-fw and get 2 files from
-# amiga-fw/thirdparty: adafruit_debouncer.mpy and adafruit_ticks.mpy. Copy these into the adafruit's
-# lib directory (code.py goes to the root directory):
+# NOTE: To use the adafruit_debouncer lib, you need adafruit_debouncer.mpy
+# and adafruit_ticks.mpy on your microcontroller.
+# These can be extracted from the adafruit-circuitpython-bundle (we use version 7.x),
+# which you can download at https://circuitpython.org/libraries
 
 
 def read_adafruit_pin(p):
@@ -43,13 +41,11 @@ class BumperMainLoopApp:
         self.can = can
         self.node_id = node_id
         self.main_loop = main_loop
-        self.main_loop.show_debug = True
         self.cmd_repeater = TickRepeater(ticks_period_ms=50)
 
         # NOTE: ``self.registered`` could be used for some visual indicator
         # on your safety device
         self.registered = False
-        # self.amiga_tpdo1: AmigaTpdo1 = None
 
         self._register_message_handlers()
 
@@ -62,38 +58,34 @@ class BumperMainLoopApp:
         # self.main_loop.command_handlers[CanOpenObject.TPDO1 | DASHBOARD_NODE_ID] = self._handle_amiga_tpdo1
         self.main_loop.command_handlers[CanOpenObject.RPDO1 | self.node_id] = self._handle_estop_reply
 
-    # def _handle_amiga_tpdo1(self, message):
-    #     """Listens to Amiga Tpdo1 to check e-stop state of dashboard."""
-    #     self.amiga_tpdo1 = AmigaTpdo1.from_can_data(message.data)
-
     def _handle_estop_reply(self, message):
         """Listens to Amiga Tpdo1 to check e-stop state of dashboard."""
         self.reply = EstopReply.from_can_data(message.data)
         self.registered = bool(self.node_id & self.reply.registered_devices)
 
-    def _handle_bumpers(self, message):
-        """FILL IN THIS IF YOU WANT BUMPERS TO HANDLE MESSAGES."""
-        pass
-
     def iter(self):
         if self.cmd_repeater.check():
+            # Pins must be updated before values can be read
             self.pin_D10.update()
             self.pin_D11.update()
             self.pin_D12.update()
             self.pin_D13.update()
 
-            D10 = self.pin_D10.value
-            D11 = self.pin_D11.value
-            D12 = self.pin_D12.value
-            D13 = self.pin_D13.value
-            bbytes = (0x1 * D10) + (0x2 * D11) + (0x4 * D12) + (0x8 * D13)
+            # Construct and send the BumperState
+            bbytes = (
+                (0x1 * self.pin_D10.value)
+                + (0x2 * self.pin_D11.value)
+                + (0x4 * self.pin_D12.value)
+                + (0x8 * self.pin_D13.value)
+            )
+            bumper_state_obj = BumperState(bbytes)
+            self.can.send(Message(id=CanOpenObject.TPDO1 | self.node_id, data=bumper_state_obj.encode()))
 
-            # bumper_state_obj = BumperState(bbytes)
+            # # Another option is just send a generic EstopRequest
+            # self.can.send(EstopRequest.make_message(self.node_id, bool(bbytes != 0x0)))
+
             # # NOTE: IF DEVELOPING ON LAPTOP, PRINT BUMPER STATE MESSAGE:
             # # print("bumperstate {}".format(bumper_state_obj))
-            # self.can.send(Message(id=CanOpenObject.TPDO1 | BUMPER_NODE_ID, data=bumper_state_obj.encode()))
-
-            self.can.send(EstopRequest.make_message(self.node_id, bool(bbytes != 0x0)))
 
 
 def main():
