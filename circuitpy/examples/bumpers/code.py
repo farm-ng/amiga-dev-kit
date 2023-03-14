@@ -1,10 +1,7 @@
 """This class reads bumper contacts where the 3 volt pin on the feather chip is connected to a bumper contact
 connecting the 3 volts to bumpers attached to pins D10-D13 driving them high if the bumper is pressed.
 
-For CAN Bus, message ID is BUMPER_NODE_ID = 0x2F (see corresponding packet.py)
-4 shorts (8 bytes) are sent as the CAN bus message. The lower order bits are set
-where "1" means "bumper pressed" So pins are bit coded in the first 4 bits
-       bit 0 => pin D10, bit 1 => pin D11, bit 2 => pin D12, bit 3 => pin D13
+See README for more details
 """
 import adafruit_debouncer
 import board
@@ -55,7 +52,6 @@ class BumperMainLoopApp:
         self.pin_D13 = read_adafruit_pin(board.D13)
 
     def _register_message_handlers(self):
-        # self.main_loop.command_handlers[CanOpenObject.TPDO1 | DASHBOARD_NODE_ID] = self._handle_amiga_tpdo1
         self.main_loop.command_handlers[CanOpenObject.RPDO1 | self.node_id] = self._handle_estop_reply
 
     def _handle_estop_reply(self, message):
