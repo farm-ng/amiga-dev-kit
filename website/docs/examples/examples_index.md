@@ -57,6 +57,22 @@ Topics:
 - Hardware integration
 - Auto-mode control
 
+### Other examples
+
+#### Bumpers
+
+[**Link to `bumpers/code.py`**](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/bumpers/code.py)
+
+The bumpers example shows how to use the ***experimental*** safety device API on the Amiga dashboard.
+Since this is still experimental, it's not documented as a full example until the safety devices API is released as a stable feature
+in the dashboard firmware.
+
+> NOTE: We're targeting the `v0.1.9` release for this feature, with a planned date in April 2023.
+
+In the meantime, we'll still link the README and code for the
+[bumpers example](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/bumpers)
+to get you inspired about how easy it will be for you to develop your own safety devices to add them to your Amiga!
+
 ## Brain ADK Examples
 
 :::info
