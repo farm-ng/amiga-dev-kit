@@ -134,67 +134,114 @@ class PendantLEDs(Packet):
 
 
 class AmigaRpdo1(Packet):
-    """State, speed, and angular rate command (request) sent to the Amiga vehicle control unit (VCU)"""
+    """State, speed, and angular rate command (request) sent to the Amiga vehicle control unit (VCU).
+
+    New in fw v0.1.9 / farm-ng-amiga v0.0.7: Add pto & hbridge control. Message data is now 8 bytes (was 5).
+    """
 
     def __init__(
         self,
         state_req: AmigaControlState = AmigaControlState.STATE_ESTOPPED,
         cmd_speed: float = 0.0,
         cmd_ang_rate: float = 0.0,
+        pto_bits: int = 0x0,
+        hbridge_bits: int = 0x0,
     ):
-        self.format = "<Bhh"
+        self.format = "<BhhBBx"
+        self.legacy_format = "<Bhh"
+
         self.state_req = state_req
         self.cmd_speed = cmd_speed
         self.cmd_ang_rate = cmd_ang_rate
+        self.pto_bits = pto_bits
+        self.hbridge_bits = hbridge_bits
 
         self.stamp()
 
     def encode(self):
         """Returns the data contained by the class encoded as CAN message data."""
-        return pack(self.format, self.state_req, int(self.cmd_speed * 1000.0), int(self.cmd_ang_rate * 1000.0))
+        return pack(
+            self.format,
+            self.state_req,
+            int(self.cmd_speed * 1000.0),
+            int(self.cmd_ang_rate * 1000.0),
+            self.pto_bits,
+            self.hbridge_bits,
+        )
 
     def decode(self, data):
         """Decodes CAN message data and populates the values of the class."""
-        (self.state_req, cmd_speed, cmd_ang_rate) = unpack(self.format, data)
-        self.cmd_speed = cmd_speed / 1000.0
-        self.cmd_ang_rate = cmd_ang_rate / 1000.0
+        if len(data) == 5:
+            # TODO: Remove in a future version
+            print("WARNING: Amiga is being controlled by out of date AmigaRpdo1 message (updated in fw v0.1.9).")
+            print("Please update the source of the AmigaRpdo1 message.")
+            (self.state_req, cmd_speed, cmd_ang_rate) = unpack(self.legacy_format, data)
+            self.cmd_speed = cmd_speed / 1000.0
+            self.cmd_ang_rate = cmd_ang_rate / 1000.0
+        else:
+            (self.state_req, cmd_speed, cmd_ang_rate, self.pto_bits, self.hbridge_bits) = unpack(self.format, data)
+            self.cmd_speed = cmd_speed / 1000.0
+            self.cmd_ang_rate = cmd_ang_rate / 1000.0
 
     def __str__(self):
         return "AMIGA RPDO1 Request state {} Command speed {:0.3f} Command angular rate {:0.3f}".format(
             self.state_req, self.cmd_speed, self.cmd_ang_rate
-        )
+        ) + " Command PTO bits 0x{:x} Command h-bridge bits 0x{:x}".format(self.pto_bits, self.hbridge_bits)
 
 
 class AmigaTpdo1(Packet):
-    """State, speed, and angular rate of the Amiga vehicle control unit (VCU)"""
+    """State, speed, and angular rate of the Amiga vehicle control unit (VCU).
+
+    New in fw v0.1.9 / farm-ng-amiga v0.0.7: Add pto & hbridge control. Message data is now 8 bytes (was 5).
+    """
 
     def __init__(
         self,
         state: AmigaControlState = AmigaControlState.STATE_ESTOPPED,
         meas_speed: float = 0.0,
         meas_ang_rate: float = 0.0,
+        pto_bits: int = 0x0,
+        hbridge_bits: int = 0x0,
     ):
-        self.format = "<Bhh"
+        self.format = "<BhhBBx"
+        self.legacy_format = "<Bhh"
+
         self.state = state
         self.meas_speed = meas_speed
         self.meas_ang_rate = meas_ang_rate
+        self.pto_bits = pto_bits
+        self.hbridge_bits = hbridge_bits
 
         self.stamp()
 
     def encode(self):
         """Returns the data contained by the class encoded as CAN message data."""
-        return pack(self.format, self.state, int(self.meas_speed * 1000.0), int(self.meas_ang_rate * 1000.0))
+        return pack(
+            self.format,
+            self.state,
+            int(self.meas_speed * 1000.0),
+            int(self.meas_ang_rate * 1000.0),
+            self.pto_bits,
+            self.hbridge_bits,
+        )
 
     def decode(self, data):
         """Decodes CAN message data and populates the values of the class."""
-        (self.state, meas_speed, meas_ang_rate) = unpack(self.format, data)
-        self.meas_speed = meas_speed / 1000.0
-        self.meas_ang_rate = meas_ang_rate / 1000.0
+        if len(data) == 5:
+            print("WARNING: Received an out of date AmigaTpdo1 message (updated in fw v0.1.9).")
+            print("Please update the source of the AmigaTpdo1 message.")
+            (self.state, meas_speed, meas_ang_rate) = unpack(self.legacy_format, data)
+            self.meas_speed = meas_speed / 1000.0
+            self.meas_ang_rate = meas_ang_rate / 1000.0
+        else:
+            (self.state, meas_speed, meas_ang_rate, self.pto_bits, self.hbridge_bits) = unpack(self.format, data)
+            self.meas_speed = meas_speed / 1000.0
+            self.meas_ang_rate = meas_ang_rate / 1000.0
 
     def __str__(self):
         return "AMIGA TPDO1 Amiga state {} Measured speed {:0.3f} Measured angular rate {:0.3f}".format(
             self.state, self.meas_speed, self.meas_ang_rate
-        )
+        ) + " PTO bits 0x{:x} h-bridge bits 0x{:x}".format(self.pto_bits, self.hbridge_bits)
 
 
 class SupervisorReq(Packet):
