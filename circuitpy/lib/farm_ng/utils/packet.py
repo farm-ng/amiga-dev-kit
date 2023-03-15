@@ -1,6 +1,8 @@
+# Python imports
 from struct import pack
 from struct import unpack
 
+from canio import Message
 from supervisor import ticks_ms
 
 from .general import clip
@@ -22,6 +24,8 @@ class SupervisorReqRepIds:
     NOP = 0
     DISABLE_USB = 1
     ENABLE_USB_DRIVE = 2
+    REGISTER_SAFETY_DEVICE = 3
+    # DISABLE_SAFETY_DEVICE = 4
 
 
 class PendantButtons:
@@ -98,7 +102,6 @@ class PendantState(Packet):
 
     def decode(self, data):
         """Decodes CAN message data and populates the values of the class."""
-
         (xi, yi, self.buttons) = unpack(self.format, data)
         self.x = xi / 32767
         self.y = yi / 32767
@@ -215,9 +218,7 @@ class SupervisorReq(Packet):
         assert id == ReqRepIds.SUPERVISOR
 
     @classmethod
-    def make_mesage(cls, node_id, id, payload=bytes(6)):
-        from canio import Message
-
+    def make_message(cls, node_id, id, payload=bytes(6)):
         return Message(id=(cls.cob_id | node_id), data=SupervisorReq(id=id, payload=payload).encode())
 
     def __str__(self):
@@ -245,6 +246,114 @@ class SupervisorRep(Packet):
 
     def __str__(self):
         return "supervisor rep  id {} payload {} ".format(self.id, self.payload)
+
+
+class EstopRequest(Packet):
+    """An 8 byte packet that requests an e-stop.
+
+    We only care about the first byte and throw the rest away (for now). The other bytes can be used as a message state
+    unique to the device requesting the e-stop.
+    """
+
+    cob_id = 0x180  # TPDO1
+
+    def __init__(self, request_estop: bool = False):
+        self.format = "<b7x"
+        self.request_estop: bool = request_estop
+        self.stamp()
+
+    def encode(self):
+        """Returns the data contained by the class encoded as CAN message data."""
+        return pack(self.format, self.request_estop)
+
+    def decode(self, data):
+        """Decodes CAN message data and populates the values of the class."""
+        (req,) = unpack(self.format, data)
+        self.request_estop = bool(req)
+
+    @classmethod
+    def make_message(cls, node_id, request_estop):
+        return Message(id=(cls.cob_id | node_id), data=EstopRequest(request_estop=request_estop).encode())
+
+    def __str__(self):
+        return "Request e-stop {}".format(self.request_estop)
+
+
+class EstopReply(Packet):
+    """An 8 byte packet that responds with registered e-stop devices.
+
+    We only care about the first 4 bytes and throw the rest away (for now).
+    """
+
+    cob_id = 0x200  # RPDO1
+
+    def __init__(self, registered_devices: int = 0x0, estop_devices: int = 0x0):
+        self.format = "<HH4x"
+        self.registered_devices: int = registered_devices
+        self.estop_devices: int = estop_devices
+        self.stamp()
+
+    def encode(self):
+        """Returns the data contained by the class encoded as CAN message data."""
+        return pack(self.format, self.registered_devices, self.estop_devices)
+
+    def decode(self, data):
+        """Decodes CAN message data and populates the values of the class."""
+        self.registered_devices, self.estop_devices = unpack(self.format, data)
+
+    @classmethod
+    def make_message(cls, node_id, registered_devices, estop_devices):
+        return Message(
+            id=(cls.cob_id | node_id),
+            data=EstopReply(registered_devices=registered_devices, estop_devices=estop_devices).encode(),
+        )
+
+    def __str__(self):
+        # TODO: Parse the bit masking
+        return (
+            "EstopReply - registered e-stop devices (bit masked) 0x{:X} triggered devices (bit masked) 0x{:X}".format(
+                self.registered_devices, self.estop_devices
+            )
+        )
+
+
+class BumperState(Packet):
+    """This is an expansion of the EstopRequest packet that also includes the state of the 4 Bumpers. This is so
+    the dashboard can treat the BumperState as a generic EstopRequest, ignoring the contents of any byte besides
+    the estop_request bool in the first signed char. While other components could look for more insight from the
+    BumperState encoded data.
+
+    Encoding:
+        - b: signed char used as bool for true/false estop-request
+        - h: signed short encoding pressed bumpers
+        - 5x: pad bytes
+
+    For the circuitpy/examples/bumpers/main.py:
+    (True => corresponding pin is pressed) button states are packed as follows:
+    (0x1 * board.D10) + (0x2 * board.D11) + (0x4 * board.12) + (0x8 * board.b13)
+    In other words, pins are bit coded in the first 4 bits
+    bit 0 => pin D10, bit 1 => pin D11, bit 2 => pin D12, bit 3 => pin D13
+    """
+
+    cob_id = 0x180  # TPDO1
+
+    def __init__(self, buttons=0):
+        self.format = "<bh5x"
+        self.buttons = buttons
+        self.stamp()
+
+    def encode(self):
+        """Returns the data contained by the class encoded as CAN message data."""
+        return pack(self.format, self.buttons != 0x0, self.buttons)
+
+    def decode(self, data):
+        """Decodes CAN message data and populates the values of the class."""
+        (estop_req, self.buttons) = unpack(self.format, data)
+
+    def __str__(self):
+        return "pins on adafuit D10: {}, D11: {}, D12: {}, D13:{}".format(
+            bool(self.buttons & 0x1), bool(self.buttons & 0x2), bool(self.buttons & 0x4), bool(self.buttons & 0x8)
+        )
 
 
 class FirmwareVersion(Packet):
