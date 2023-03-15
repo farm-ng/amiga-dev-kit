@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 # from canio import Message
+=======
+>>>>>>> origin/main
 from farm_ng.utils.cobid import CanOpenObject
 from farm_ng.utils.general import TickRepeater
 from farm_ng.utils.general import ticks_fresh
@@ -20,7 +23,10 @@ class SpacebarEstopApp:
         self.can = can
         self.node_id = node_id
         self.main_loop = main_loop
+<<<<<<< HEAD
         self.main_loop.show_debug = True
+=======
+>>>>>>> origin/main
         self.print_repeater = TickRepeater(ticks_period_ms=100)
         self.cmd_repeater = TickRepeater(ticks_period_ms=50)
 
@@ -42,7 +48,11 @@ class SpacebarEstopApp:
         self.amiga_tpdo1 = AmigaTpdo1.from_can_data(message.data)
 
     def _handle_estop_reply(self, message):
+<<<<<<< HEAD
         """Listens to Amiga Tpdo1 to check e-stop state of dashboard."""
+=======
+        """Listens to EstopReply to check e-stop safety devices registered with the dashboard."""
+>>>>>>> origin/main
         self.reply = EstopReply.from_can_data(message.data)
         self.registered = bool(self.node_id & self.reply.registered_devices)
 
@@ -53,6 +63,10 @@ class SpacebarEstopApp:
                 self.pressed = True
                 self.ser_stamp = ticks_ms()
 
+<<<<<<< HEAD
+=======
+        # Add a timeout from last press of the space bar
+>>>>>>> origin/main
         if not ticks_fresh(self.ser_stamp, thresh_ms=500):
             self.pressed = False
 
