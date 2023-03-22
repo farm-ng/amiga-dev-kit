@@ -128,6 +128,11 @@ async function createConfig() {
 	  },
 	],
       },
+	algolia: {
+		apiKey: '49fc2907454ef96c42acc0c2315a0718',
+		indexName: 'farm_dev',
+		appId: 'EWY2LBZNZX',
+	},
       footer: {
 	style: 'dark',
 	links: [
