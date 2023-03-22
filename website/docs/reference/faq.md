@@ -118,3 +118,12 @@ title: Frequently Asked Questions
     - You can find more details at: <a href="https://github.com/farm-ng/farm-ng-amiga/issues/new/choose">Create a Bug Report</a>.
     </div>
 </details>
+
+## CAN bus
+<details>
+  <summary>What is the baud rate of the CAN bus the Amiga runs on?</summary>
+  <div>
+     The Amiga CAN bus runs at 250 kbps (250,000 bits per second).
+    <br/><br/>
+    </div>
+</details>
