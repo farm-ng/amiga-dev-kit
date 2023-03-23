@@ -53,6 +53,10 @@ You should see the farm-ng logo appear then the START/VAMOS screen.
 Once that has appeared, release ESTOP and wait a few seconds.
 
 Press / Tap START and the dashboard will appear.
+:::info
+Video that overviews the full dashboard below.
+:::
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PKOhI4hbGUs?list=PLWQmpzk0y9NDXFKSwvCjYtRL8QNWfK4ND" title="Amiga Dashboard Tour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Calibrate the pendant
 
@@ -72,7 +76,8 @@ To do this you will need to go to the:
 - If other error message appears, try a power cycle by turning the Amiga on and off.
 - If problem persists please submit an issue with us [**here**](https://discourse.farm-ng.com/c/support/5).
 
-
+### Overview the Brain
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_p0I11p4QF4?list=PLWQmpzk0y9NDXFKSwvCjYtRL8QNWfK4ND" title="Amiga Brain Overview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 ## Now you are ready to use your Amiga!!!
