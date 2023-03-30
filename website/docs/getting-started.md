@@ -7,6 +7,10 @@ title: Introduction
 
 In this website you will find full context on our
 [**ADK repository**](https://github.com/farm-ng/amiga-dev-kit), including documentation, tutorials, & the development kit API.
+:::info
+For a walk through of this website watch the following video!
+:::
+<iframe width="560" height="315" src="https://www.youtube.com/embed/E-KLkQRhuyU?list=PLWQmpzk0y9NDXFKSwvCjYtRL8QNWfK4ND" title="SDK Tutorial v1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## The Amiga
 
