@@ -77,7 +77,8 @@ const sidebars = {
         "examples/file_reader/file-reader",
         "examples/file_reader_can/file-reader-can",
         "examples/camera_client/camera-client",
-        "examples/people_detection/people-detection"
+        "examples/people_detection/people-detection",
+        "examples/motor_state/motor-state"
     ],
     "Brain App Tutorials" : {
         "00 - Tutorial Introduction" :[
