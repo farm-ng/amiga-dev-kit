@@ -38,7 +38,14 @@ const sidebars = {
       "brain/next-steps",
     ],
     "Amiga Overview": [
-      "dashboard/dashboard",
+      {
+        "items": [
+        "dashboard/dashboard",
+        "dashboard/dashboard-qs",
+      ],
+      "label": "Dashboard",
+      "type": "category"
+    },
       "dashboard/control-states",
       "debug_cable/debug-cable",
       "debug_cable/service-cable",
