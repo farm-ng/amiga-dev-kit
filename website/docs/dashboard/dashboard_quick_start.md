@@ -1,5 +1,5 @@
 ---
-id: dashboard-qs
+id: dashboard-user-guide
 title: Dashboard User Guide
 ---
 :::caution

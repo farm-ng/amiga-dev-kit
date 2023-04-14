@@ -33,7 +33,6 @@ const sidebars = {
     ],
     "Getting Started": [
       "amiga_quick_start/amiga-quick-start",
-      "dashboard/dashboard-fw",
       "brain/brain-install",
       "brain/next-steps",
     ],
@@ -41,12 +40,13 @@ const sidebars = {
       {
         "items": [
         "dashboard/dashboard",
-        "dashboard/dashboard-qs",
+        "dashboard/dashboard-user-guide",
+        "dashboard/control-states",
+        "dashboard/dashboard-fw",
       ],
       "label": "Dashboard",
       "type": "category"
     },
-      "dashboard/control-states",
       "debug_cable/debug-cable",
       "debug_cable/service-cable",
       "mcu_kit/microcontroller-kit",
