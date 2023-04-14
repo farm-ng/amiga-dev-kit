@@ -16,11 +16,14 @@ If you already have the log file you want to run with this example you can skip 
 :::
 
 ## Download the log file
+
 Now you are going to download the log file that you will use in this example.
 [**Click here to download**](https://farm-ng-dev-auto-plot-mvp.s3.us-west-2.amazonaws.com/datasets/western-growers-2022-12-05/events_12052022115852.bin)
 
 ## [Optional] Make a Data folder
+
 We are going to make a folder that will store all of our log files, including the one you just downloaded.
+
 ```bash
 cd <to-your-base-directory>
 mkdir <data-file>
@@ -33,6 +36,7 @@ cd ~ # navigate to home directory
 cd Downloads
 mv events_12052022115852.bin <path-to-where-data-file-is-above> # moving the data to to data-folder
 ```
+
  Now that you have your log file in the correct place, in your terminal navigate to where the repository `farm-ng-amiga` is and open Visual Studio Code.
 
 ## Setup

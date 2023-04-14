@@ -3,7 +3,7 @@ id: getting-started
 title: Introduction
 ---
 
-### Welcome to the Amiga Development Kit!
+### Welcome to the Amiga Development Kit
 
 In this website you will find full context on our
 [**ADK repository**](https://github.com/farm-ng/amiga-dev-kit), including documentation, tutorials, & the development kit API.
@@ -35,11 +35,7 @@ We have a constantly expanding library of thorough examples, covering software a
 to provide guidance and inspiration for your next project!
 The code for these examples live in the [**farm-ng/amiga-dev-kit Github repository**](https://github.com/farm-ng/amiga-dev-kit).
 
-
 ![microcontroller-kit-16x9-reduced](https://user-images.githubusercontent.com/53625197/187550507-c52d2666-846c-47d5-a4c2-8685d184c3a6.jpg)
-
-
-
 
 <!-- ## What is the Amiga?
 (Components Overview)

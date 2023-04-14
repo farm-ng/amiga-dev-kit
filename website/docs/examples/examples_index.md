@@ -32,7 +32,6 @@ Topics:
 - Serial port 101
 - Auto-mode control
 
-
 ### [Cansniffer](./cansniffer/)
 
 [**Link to `cansniffer/code.py`**](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/cansniffer/code.py)
@@ -82,6 +81,7 @@ Before getting started with any brain examples, you should install the [**farm-n
 :::
 
 ### [Record and Access data](/docs/examples/import_log_file/README.md)
+
 This tutorial walks you through recording field data and offloading it to your local machine.
 
 ### [File Reader](/docs/examples/file_reader/README.md)
@@ -91,10 +91,10 @@ This tutorial walks you through recording field data and offloading it to your l
 This example reads log files and plays their contents.
 
 ### [File Reader CAN](/docs/examples/file_reader_can/README.md)
+
 [**Link to`file_reader_can`**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader_can)
 
 This example reads the Can data from recorded logs and prints it out.
-
 
 ### [Camera Client](./camera_client/README.md)
 
@@ -112,10 +112,10 @@ The tutorials build off of one another and are better when followed in order.
 
 ### [00 - Tutorial Introduction](/docs/tutorials/introduction/tutorial-introduction)
 
-
 This tutorial introduces necessary background knowledge and walks you through the [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template).
 
 The topics covered in this tutorial include:
+
 - Creating kivy applications
 - GRPC / asyncio application development
 
@@ -124,6 +124,7 @@ The topics covered in this tutorial include:
 This tutorial is designed to teach you to implement the `OakCameraClient` in a GUI application using [**Kivy**](https://kivy.org/) following along the [**`camera-streamer`**](https://github.com/farm-ng/camera-streamer) example application built using the [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template).
 
 The topics covered in this tutorial include:
+
 - Creating kivy applications
 - GRPC / asyncio application development
 - Streaming an Oak camera with the camera client
@@ -133,12 +134,12 @@ The topics covered in this tutorial include:
 This tutorial is designed to enable you to develop your own custom applications that uses camera streams and controls your Amiga over the CAN bus following along the [**`virtual-joystick`**](https://github.com/farm-ng/virtual-joystick) example application built using the [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template).
 
 The topics covered in this tutorial include:
+
 - Creating kivy applications
 - GRPC / asyncio application development
 - Streaming an Oak camera with the camera client
 - Streaming Amiga state information with the canbus client
 - Auto control mode of Amiga robot with the canbus client
-
 
 ### [Developing Custom Applications](/docs/brain/custom-applications.mdx)
 

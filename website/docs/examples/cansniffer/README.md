@@ -14,7 +14,7 @@ The example is inspired by the
 
 You should read through the [**Hello Main Loop**](/examples/hello_main_loop/README.md) example first, as some required concepts are explained there.
 
-## Parts required:
+## Parts required
 
 - [**farm-ng microcontroller kit**](https://farm-ng.com/products/microcontroller-kit) (w/ USB-C cable)
 
@@ -24,22 +24,28 @@ Here we create `CansnifferApp` as a very simple example of the types of `AppClas
 
 In our app, we create a `TickRepeater` that will cause our print statements to execute every 1000 ms (every second).
 In those print statements (in `CansnifferApp.iter()`), we first clear the console with:
+
 ```Python
 print("\033[2J", end="")
 ```
+
 then print metrics about the CAN bus that are already measured by default in `MainLoop`, returned by the `debug_str()` method.
+
 ```Python
 print(self.main_loop.debug_str())
 ```
+
 These statistics include transmission and receive CAN errors,
 as well as all CAN Id's received by the microcontroller's CAN interface, with statistics on the time between received messages for each CAN Id.
 
 :::info Take it further:
 You could also add memory statistics to the printed lines
 by adding the following line to the `CansnifferApp` constructor:
+
 ```Python
 self.main_loop.show_mem = True
 ```
+
 :::
 
 ## CAN Introduction
@@ -76,7 +82,6 @@ For example, key examples of our PDO sets include:
 | Dashboard       | Motor Controller (x4) | Motor Controller ID | Status, rpm                | Status, voltage, rpm, current |
 | Auto controller | Dashboard             | Dashboard           | State, speed, angular rate | State, speed, angular rate    |
 
-
 When possible, the RPDO requests are followed and the values measured when following these requests are sent as a TPDO response.
 When the requests cannot be followed, the reason should be inferable from the TPDO response.
 The [**Hello World Auto-mode (hello_main_loop)**](/examples/hello_main_loop/README.md) provides the ability to interact directly with the Auto controller / dashboard PDO set of RPDO request & TPDO response.
@@ -92,10 +97,12 @@ Steps 1 - 3 are explained in greater detail in the [**Hello Auto Mode**](/exampl
 2. From `amiga-dev-kit/circuitpy/`, drop the `code.py` file and the `lib/` folder directly into the root of the mounted `CIRCUITPY` drive.
     :::note
     This assumes you have already cloned the amiga-dev-kit repo.
+
     ```bash
     cd <to_your_base_directory>
     git clone git@github.com:farm-ng/amiga-dev-kit.git
     ```
+
     :::
 3. Open the serial console.
 4. You should now see the can statistics printed and updated every 1000 ms.

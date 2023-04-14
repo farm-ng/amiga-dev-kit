@@ -19,6 +19,7 @@ We will teach you how to interact with these two services through the camera cli
 We will also show you how to create a basic kivy application, a custom kivy widget, and use gRPC and asyncio in that application.
 
 The topics covered in this tutorial include:
+
 - Creating kivy applications
 - Custom kivy widgets
 - GRPC / asyncio application development
@@ -30,7 +31,6 @@ The topics covered in this tutorial include:
 We hope that after completing this tutorial, and the predecessors, you are prepared to develop your own custom Amiga brain applications on the Amiga brain.
 If you feel we missed any key details, please let us know at [**discourse.farm-ng.com**](https://discourse.farm-ng.com/) so we can help you through it and add it to the tutorial for everyone else to benefit from!
 :::
-
 
 ## Block diagram
 

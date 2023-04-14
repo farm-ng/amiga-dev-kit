@@ -12,7 +12,7 @@ using the [**farm-ng microcontroller kit**](https://farm-ng.com/products/microco
 
 This example enables driving the Amiga by entering simple fwd / rev / left / right keyboard commands the serial port, which the app sends over the CAN bus.
 
-## Parts required:
+## Parts required
 
 - [**farm-ng microcontroller kit**](https://farm-ng.com/products/microcontroller-kit) (w/ USB-C cable)
 
@@ -25,7 +25,6 @@ This example enables driving the Amiga by entering simple fwd / rev / left / rig
 The `MainLoop` class is used throughout the application layer of the farm-ng firmware.
 `MainLoop` contains generic functionality we use on our pendant, dashboard, and auxiliary components for constant looping, receiving of CAN messages, sending of regular status updates called `Heartbeats`, and more.
 The `MainLoop` takes an `AppClass` in the constructor, and the `AppClass` is expected to contain a method called `iter` that is called every in every iteration (also called `iter`) of the `MainLoop`.
-
 
 The `_register_message_handlers()` method is an important feature to note.
 This method adds parsing directly into the MainLoop so the App only receives the desired CAN messages.
@@ -64,7 +63,6 @@ When `True` is returned, the repeater is updated to the next checkpoint, so you 
 
 The `TickRepeater` is what we call a "catch-up" repeater, in which the the next checkpoint is the `ticks_period_ms` (period in ms) added to the last checkpoint (rather than the next checkpoint being the `ticks_period_ms` added to the time of last execution).
 As you can infer, there's no reason to use one of these catch-up repeaters if the `check()` will be called less frequently than the `ticks_period_ms` used in the constructor.
-
 
 :::info `ticks_ms`
 We use `ticks_ms`
@@ -130,10 +128,10 @@ Here we create `HelloMainLoopApp` as a simple example of the types of `AppClass`
 In our `HelloMainLoopApp` constructor, we create a `TickRepeater` that will stream the automatic control command to the dashboard every 50 ms (at a 20hz rate).
 
 In our `iter()` call, we:
+
 - Check for control keys entered into the serial console [`<space bar>` for toggling auto mode, & `w` / `a` / `s` / `d` [fwd / left / rev / right] for adjusting velocities].
 - Parse through all received CAN messages, sorting only for the `AmigaTpdo1` responses coming from the dashboard.
 - Send the most up-to-date auto control commands, based on serial console entries, in an `AmigaRpdo1` formatted packet.
-
 
 ## Instructions
 
@@ -149,10 +147,12 @@ In our `iter()` call, we:
 2. From `amiga-dev-kit/circuitpy/`, drop the `code.py` file and the `lib/` folder directly into the root of the mounted `CIRCUITPY` drive, as seen below.
     :::note
     This assumes you have already cloned the amiga-dev-kit repo.
+
     ```bash
     cd <to_your_base_directory>
     git clone git@github.com:farm-ng/amiga-dev-kit.git
     ```
+
     :::
 
 <!-- <p align="center">

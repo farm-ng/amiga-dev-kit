@@ -36,11 +36,13 @@ We assign each `Image` widget an `id` so it can be easily referenced in the Pyth
 This will allow us to set the correct image stream to the correct tab, so the `rgb` image stream is shown on the `rgb` panel and the `left` stereo camera stream is displayed on the `left` tab.
 
 In the Python app, we can access a `Widget` directly using the widget `id` in two ways:
+
 ```Python
 # As a dictionary
 FOO_WIDGET = self.root.ids['FOO_WIDGET_ID']
 # As an attribute
 FOO_WIDGET = self.root.ids.FOO_WIDGET_ID
 ```
+
 - Reference: [**TabbedPanel**](https://kivy.org/doc/stable/api-kivy.uix.tabbedpanel.html)
 - Reference: [**Image**](https://kivy.org/doc/stable/api-kivy.uix.image.html)

@@ -4,7 +4,6 @@ title: 02 - Template Overview
 ---
 # Template Overview
 
-
 ## Template overview
 
 This section explains all of the Python and kivy code in the [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template), to help understand the base before you add anything custom.
@@ -52,10 +51,10 @@ This should come before importing any other Kivy modules, as stated in [**kivy -
 
 Finally we import the remaining kivy modules with the `# noqa: E402` flag, so any `pre-commit` formatters don't move these imports above the kivy configuration setting.
 
-
 ### kivy app definition
 
 Contents of `res/main.kv`
+
 ```
 RelativeLayout:
     Button:
@@ -84,7 +83,6 @@ Here we use a separate .kv file [**`res/main.py`**](https://github.com/farm-ng/a
 Throughout this tutorial we'll explain the kivy app created in this example, but this is not intended as a thorough introduction to using kivy. Try the [**kivy tutorials**](https://kivy.org/doc/stable/tutorials-index.html) and use the [**kivy API**](https://kivy.org/doc/stable/api-index.html) for more information on creating custom applications with kivy.
 :::
 
-
 #### RelativeLayout
 
 Two key components of kivy are [**`Layouts`**](https://kivy.org/doc/stable/gettingstarted/layouts.html#) and [**`Widgets`**](https://kivy.org/doc/stable/api-kivy.uix.html).
@@ -111,8 +109,6 @@ You can also define a button with a string, if you want to quickly add buttons w
 
 - Reference: [**Button**](https://kivy.org/doc/stable/api-kivy.uix.button.html)
 
-
-
 ### TemplateApp
 
 ```Python
@@ -131,7 +127,6 @@ We define the `TemplateApp` to inherit from the kivy `App` class, so it has all 
 
 All we add here is a placeholder for the `TemplateApp` class methods that will each be added as an `asyncio.Task`.
 
-
 #### build
 
 ```Python
@@ -140,7 +135,6 @@ def build(self):
 
 ```
 
-
 `build` is a default kivy `App` method that we must overwrite with our app's details.
 
 To load the `.kv` definition of our app, we use the built-in method:
@@ -148,7 +142,6 @@ To load the `.kv` definition of our app, we use the built-in method:
 ```Python
 Builder.load_file(KV_FILE)
 ```
-
 
 #### on_exit_button
 
@@ -160,8 +153,6 @@ def on_exit_btn(self) -> None:
 
 This simple method stops the running kivy app.
 When an app was launched on the Amiga Brain through the Launcher app, this will return the Brain state to the Launcher app.
-
-
 
 #### app_func
 

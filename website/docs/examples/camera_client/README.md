@@ -23,6 +23,7 @@ It is recommended to also install these dependencies and run the example in the 
 # assuming you're already in the amiga-dev-kit/ directory
 cd farm-ng-amiga/py/examples/camera_client
 ```
+
 ```bash
 pip3 install -r requirements.txt
 ```
@@ -57,6 +58,7 @@ python3 main.py --help
 #   --stream-every-n STREAM_EVERY_N
 #                         Streaming frequency
 ```
+
 Usage example:
 
 ```bash
@@ -108,6 +110,7 @@ if __name__ == "__main__":
 
     asyncio.run(main(args.address, args.port, args.stream_every_n))
 ```
+
 :::tip
 We highgly recommend to have some basic knowledge about [**`asyncio`**](https://docs.python.org/3/library/asyncio.html).
 :::

@@ -7,7 +7,6 @@ title: Motor State
 
 Currently this is a very basic example showing how to access and decode the `MotorState` values streamed by the canbus service.
 
-
 ## Setup
 
 Create first a virtual environment
@@ -32,7 +31,6 @@ Specify the file (download before)
 ```bash
 python main.py --canbus-port 50060 # --address <YOUR_AMIGA_IP_ADDRESS>
 ```
-
 
 ## Expected output
 

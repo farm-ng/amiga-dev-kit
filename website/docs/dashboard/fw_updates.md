@@ -13,14 +13,14 @@ And we want to enable you to easily upgrade your dashboard with these improvemen
 
 To update the Amiga application layer (our frequent [**amiga-dash FW releases**](https://github.com/farm-ng/amiga-dev-kit/releases)), you can follow either:
 <!-- no toc -->
- - [**Over-the-air (OTA) Amiga application updates**](#over-the-air-ota-amiga-application-updates)
-   - Simpler, especially for v0.1.5+
-   - Requires v0.1.1+ already installed
-   - No required materials
- - [**Wired Amiga application updates**](#wired-amiga-application-updates)
-   - Faster
-   - Not dependent upon current installed version
-   - Requires a [**debug cable**](/docs/debug_cable/README.md) or [**service cable**](/docs/debug_cable/service_cable.md)
+- [**Over-the-air (OTA) Amiga application updates**](#over-the-air-ota-amiga-application-updates)
+  - Simpler, especially for v0.1.5+
+  - Requires v0.1.1+ already installed
+  - No required materials
+- [**Wired Amiga application updates**](#wired-amiga-application-updates)
+  - Faster
+  - Not dependent upon current installed version
+  - Requires a [**debug cable**](/docs/debug_cable/README.md) or [**service cable**](/docs/debug_cable/service_cable.md)
 
 To update the (infrequent) CircuitPython build releases, please follow [**UF2 bootloader update**](#uf2-bootloader-update).
 
@@ -62,6 +62,7 @@ This process is currently only supported on Windows and Mac.
 3. Extract the files from the zipped folder
 
 :::tip
+
 - Check the [**amiga-dev-kit Releases**](https://github.com/farm-ng/amiga-dev-kit/releases) page, as there may be an even newer available release.
 - Select the newest `amiga-dash-v#.#.#` and download that version.
   - Do not select a `fw-dash-v#.#.#` or `pendant-v#.#.#` update!
@@ -95,9 +96,11 @@ If you don't have a [**debug cable**](/docs/debug_cable/README.md) or [**service
         import boot_utils
         boot_utils.mount_circuitpy()
         ```
+
         :::caution If you receive an `AtributeError: ModuleNotFound 'mount_circuitpy'` error
         You don't yet have that utility available with your installed dashboard version.
         To mount the circuitpy drive, you can instead run:
+
         ```
         import os
         import storage
@@ -106,6 +109,7 @@ If you don't have a [**debug cable**](/docs/debug_cable/README.md) or [**service
         os.remove('boot.py')
         microcontroller.reset()
         ```
+
         :::
         4. The serial console should freeze / exit and the CIRCUITPY drive should now show up mounted
 
@@ -115,13 +119,13 @@ If you don't have a [**debug cable**](/docs/debug_cable/README.md) or [**service
 
 **Update the firmware:**
 
-7.  Select all files in the mounted CIRCUITPY drive and delete them
+7. Select all files in the mounted CIRCUITPY drive and delete them
 <!-- 1.  This *may* freeze the dash on the screen it was displaying, if it was running. -->
 8. Drag and drop all extracted files from the downloaded firmware update.
-    1.  Make sure to drop **all files** (`dashboard/`, `updator/`, `node_id.txt`, `code.py`, `boot.py`, etc.) directly into the root of the `CIRCUITPY` drive (as below).
-        1.  The firmware will **NOT** load if the files are nested in a subfolder.
+    1. Make sure to drop **all files** (`dashboard/`, `updator/`, `node_id.txt`, `code.py`, `boot.py`, etc.) directly into the root of the `CIRCUITPY` drive (as below).
+        1. The firmware will **NOT** load if the files are nested in a subfolder.
 9. Once the file transfer is complete, power cycle your dashboard (disconnect & reconnect power) and check the basic functionality.
-    1.  The dashboard will no longer mount as `CIRCUITPY` when connected to a computer. If you have any issues, go through the connecting / mounting process again OR see the troubleshooting information below.
+    1. The dashboard will no longer mount as `CIRCUITPY` when connected to a computer. If you have any issues, go through the connecting / mounting process again OR see the troubleshooting information below.
 10. If all is as expected, you're good to go. Just power down the dashboard, disconnect the debug cable, and enjoy your new features!
 11. `[Recommended]` Navigate to the configuration tab (gear icon) on the dashboard, and select the pendant icon to calibrate your pendant and confirm functionality.
 12. `[Recommended]` Also check the settings and ensure your desired wheel track and turning speed values remain.
@@ -129,12 +133,14 @@ If you don't have a [**debug cable**](/docs/debug_cable/README.md) or [**service
 ![CIRCUITPY_updated_windows](https://user-images.githubusercontent.com/53625197/208778396-68113b71-ddb2-409c-9d0d-acdd9ad887e6.png)
 
 :::caution Troubleshooting
+
 - If the file transfer process fails, or the behavior is not as expected, just delete all files in CIRCUITPY and try it again.
   - If the dashboard remounts on your computer as `CIRCUITPY`, just select all and delete.
   - If the dashboard does NOT remount on your computer as `CIRCUITPY`:
     - Open a serial console connected to the dashboard (see: [**Adafruit connecting to the serial console**](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console))
     - Interrupt the program with `ctrl+C`
     - Enter the following commands in the REPL
+
     ```
     import storage
     storage.erase_filesystem()
@@ -143,6 +149,7 @@ If you don't have a [**debug cable**](/docs/debug_cable/README.md) or [**service
     import microcontroller
     microcontroller.reset()
     ```
+
     - This will reset the microcontroller to a "hello world" state and it should remount as `CIRCUITPY`.
     - You can now manually delete all files and try again.
 - Repeated hot plugging / unplugging of the dashboard can cause the filesystem to go into an irregular state. Try connecting / disconnecting between dashboard and your PC with the dashboard powered down.
@@ -196,20 +203,24 @@ This process is currently only supported on Windows and Mac.
          - See: [**FAQ - Using the REPL**](/docs/reference/faq#using-the-repl)
       2. Interrupt the program with `ctrl+C`
       3. Enter the following commands in the REPL:
+
         ```
         import boot_utils
         boot_utils.reset_to_bootloader()
         ```
+
         :::caution If you receive an `AtributeError: ModuleNotFound 'reset_to_bootloader'` error
         You don't yet have that utility available with your installed dashboard version.
         To load into `BOOTLOADER` mode, you can instead run:
+
         ```
         import microcontroller
         microcontroller.on_next_reset(microcontroller.RunMode.BOOTLOADER)
         microcontroller.reset()
         ```
-6.  Drag and drop the newly downloaded UF2 file onto the mounted drive.
-7.  This will immediately cause the bootloader firmware to update, and the dashboard will automatically reboot as `CIRCUITPY` once complete.
+
+6. Drag and drop the newly downloaded UF2 file onto the mounted drive.
+7. This will immediately cause the bootloader firmware to update, and the dashboard will automatically reboot as `CIRCUITPY` once complete.
 :::note
 The [**Amiga application layer**](#wired-amiga-application-updates) should remain untouched, so be sure to update that if it is not already up to date!
 :::

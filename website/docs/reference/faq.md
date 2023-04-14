@@ -74,7 +74,6 @@ title: Frequently Asked Questions
   </div>
 </details>
 
-
 <details>
   <summary>Which port / console do I choose?</summary>
   <div>
@@ -92,6 +91,7 @@ title: Frequently Asked Questions
 </details>
 
 ## General
+
 <details>
   <summary>How do I update the dashboard firmware?</summary>
   <div>
@@ -120,6 +120,7 @@ title: Frequently Asked Questions
 </details>
 
 ## CAN bus
+
 <details>
   <summary>What is the baud rate of the CAN bus the Amiga runs on?</summary>
   <div>

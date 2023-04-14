@@ -8,9 +8,10 @@ The CAN bus message data takes the form of 8 bytes coded as 1 signed char, 1 sig
 The lower order bits of the unsigned short are set (where "1" means "bumper pressed" and "0" means "not pressed).
 
 So pins are bit coded in the first 4 bits as:
-   * bit 0 => pin D10 => 0x1,
-   * bit 1 => pin D11 => 0x2,
-   * bit 2 => pin D12 => 0x4,
-   * bit 3 => pin D13 => 0x8
+
+* bit 0 => pin D10 => 0x1,
+* bit 1 => pin D11 => 0x2,
+* bit 2 => pin D12 => 0x4,
+* bit 3 => pin D13 => 0x8
 
 The dashboard will read the `BumperState` message as a generic `EstopRequest` message and treat the unsigned short as pad bytes.

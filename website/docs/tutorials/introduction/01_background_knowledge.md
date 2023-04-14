@@ -30,6 +30,7 @@ We use asyncio in order to run multiple concurrent tasks in our applications.
 This is crucial to the system design to prevent high rate robotic control from being blocked by time consuming processes, such as image processing.
 
 In the virtual joystick example, we have multiple, concurrent `while` loops running that:
+
 - Receive the camera stream (from the camera service)
 - Receive the canbus stream (from the canbus service)
 - Draw the joystick (in [**kivy**](#kivy))
@@ -49,6 +50,7 @@ In the example, however, we also demonstrate creating a custom kivy `Widget` in 
 
 We have some libraries that are imported by the brain infrastructure and are used in our apps.
 They are:
+
 - defined as python packages (installed with `pip` by pointing to the repo)
 - contain the `.proto` definitions used in our gRPC communications
 - contain the gRPC clients you can use to interact with the Amiga brain services

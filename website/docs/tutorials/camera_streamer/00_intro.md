@@ -18,6 +18,7 @@ You will see how to interact with one of these services through the camera clien
 using gRPC and asyncio in that application.
 
 The topics covered in this tutorial include:
+
 - Creating kivy applications
 - GRPC / asyncio application development
 - Streaming an Oak camera with the camera client

@@ -9,7 +9,7 @@ Please check out the [Amiga Development Kit documentation](https://farm-ng.githu
 
 If you're just now learning about farm-ng and the Amiga robot, check out our website:
 
-### https://farm-ng.com/
+### <https://farm-ng.com/>
 
 The Amiga, and accompanying development kit, is a [toolset](https://farm-ng.com/collections/amiga-attachments) of hardware and software built by farm-ng to enable farmers, hackers, engineers, roboticists, or anyone with a vision of creating ruggedized, waterproof, outdoor robotic rover applications.
 
@@ -21,14 +21,14 @@ See [brain/](/brain/) for instructions on building the `farm_ng` lib for the bra
 
 ### Circuitpy
 
-   * Farm-ng's feather microcontroller kit's introduction/overview and buying page is at the [Amiga Development Kit](https://farm-ng.github.io/amiga-dev-kit) website.
-   * Farm-ng's github CircuitPython codebase is here: [circuitpy/](/circuitpy/).
-      * After attaching a USB cable to the feather chip, follow instructions to get circuitpy onto the microcontroller board  [here](https://amiga.farm-ng.com/docs/mcu_kit/#loading-code-on-the-feather).
-   * Hardware setup of farm-ng's feather microcontroller and running farm-ng's codebase on the chip is [here](https://amiga.farm-ng.com/docs/mcu_kit/)
-      * Once you copy your own or farm-ng's code onto the microcontroller, you can use vscode to just open the the root directory to actively work on the files there. Any `code.py` file in the root directory will automatically run, but in the terminal ^D will cause the microcontroller to restart code execution.
-      * To develop on a laptop, you can enter the REPL in a number of ways, discussed in [FAQ - Using the REPL](https://amiga.farm-ng.com/docs/reference/faq#using-the-repl)
-        * On linux, you can use `screen` program such that python print statements show up. Running `code.py` with `screen` is described [here]
-      (https://amiga.farm-ng.com/docs/mcu_kit/#loading-code-on-the-feather)
+* Farm-ng's feather microcontroller kit's introduction/overview and buying page is at the [Amiga Development Kit](https://farm-ng.github.io/amiga-dev-kit) website.
+* Farm-ng's github CircuitPython codebase is here: [circuitpy/](/circuitpy/).
+  * After attaching a USB cable to the feather chip, follow instructions to get circuitpy onto the microcontroller board  [here](https://amiga.farm-ng.com/docs/mcu_kit/#loading-code-on-the-feather).
+* Hardware setup of farm-ng's feather microcontroller and running farm-ng's codebase on the chip is [here](https://amiga.farm-ng.com/docs/mcu_kit/)
+  * Once you copy your own or farm-ng's code onto the microcontroller, you can use vscode to just open the the root directory to actively work on the files there. Any `code.py` file in the root directory will automatically run, but in the terminal ^D will cause the microcontroller to restart code execution.
+  * To develop on a laptop, you can enter the REPL in a number of ways, discussed in [FAQ - Using the REPL](https://amiga.farm-ng.com/docs/reference/faq#using-the-repl)
+    * On linux, you can use `screen` program such that python print statements show up. Running `code.py` with `screen` is described [here]
+      (<https://amiga.farm-ng.com/docs/mcu_kit/#loading-code-on-the-feather>)
 
 ## Cloning the Amiga Development Kit
 
@@ -42,6 +42,7 @@ git clone git@github.com:farm-ng/amiga-dev-kit.git
 ### Develop using PyCharm
 
 In Pycharm, you can:
+
 * Create a new project
 * Use the menu: `VCS` -> `Checkout From Version Control` -> `Git`
 * Enter the github SSH URL and set the directory

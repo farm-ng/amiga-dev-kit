@@ -9,14 +9,13 @@ The Python implementation of the [**camera-streamer**](https://github.com/farm-n
 You should open that file for reference as you follow along.
 :::
 
-
 ### Add a camera stream
 
 The main method we'll add to our app is a camera stream.
 This will:
+
 - Use the [**`OakCameraClient`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py)
 - Display images as kivy [**`Image`**](https://kivy.org/doc/stable/api-kivy.uix.label.html) widgets in our `TabbedPanel`.
-
 
 This task listens to the camera client's stream and populates the tabbed panel with all 4 image streams from the oak camera.
 In this task we connect to a "server streaming" RPC, as described in [**gRPC core concepts**](https://grpc.io/docs/what-is-grpc/core-concepts/).
@@ -38,7 +37,6 @@ If the service is not in one of these available states (`IDLE` or `RUNNING`), yo
 
 When creating the `response_stream` we use the [**`stream_frames()`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py) call.
 This wraps the GRPC service stub `StreamFramesRequest`, which takes the `every_n` argument used to throttle the rate of images in the stream.
-
 
 #### Read the stream
 
@@ -63,7 +61,6 @@ The `Image` widgets in the `TabbedPanel` accessed by their kivy id.
 
 We import the necessary `farm_ng` libraries for creating the camera client and interacting with the camera service.
 
-
 #### Image decoding
 
 We will use `TurboJPEG` as the image decoder (it is much faster than kivy's default image decoder), so we add that as an import in our `main.py` file.
@@ -71,7 +68,6 @@ We will use `TurboJPEG` as the image decoder (it is much faster than kivy's defa
 In order to import this, we must add the library `PyTurboJPEG` to the [**`setup.cfg`**](https://github.com/farm-ng/camera-streamer/blob/main/setup.cfg) file so the dependency installs.
 
 We also construct an instance of this image decoder and assign it as a class variable of our `CameraApp` so it is not created every time we decode an image.
-
 
 #### Command line Arguments
 
@@ -98,6 +94,7 @@ cd camera_tutorial/
 ```
 
 To run the app on the amiga, with changing a default command line arg:
+
 ```Python
 ssh amiga
     # Password: amiga
@@ -108,7 +105,7 @@ cd ~/apps/
 
 #### App icon
 
-We replace the `app_logo.png` with an icon from https://fonts.google.com/icons.
+We replace the `app_logo.png` with an icon from <https://fonts.google.com/icons>.
 When developing your own app, you can:
 
 1. Choose a suitable symbol or icon for your app

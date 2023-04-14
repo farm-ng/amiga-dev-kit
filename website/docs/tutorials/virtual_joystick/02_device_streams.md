@@ -10,7 +10,6 @@ In the [**`src/res/main.kv`**](https://github.com/farm-ng/virtual-joystick/blob/
 You should open these files for reference as you follow along.
 :::
 
-
 ## Camera stream
 
 :::info
@@ -53,13 +52,11 @@ This is just like [**Camera Streamer - Camera Stream - Setup**](/docs/tutorials/
 This is just like [**Camera Streamer - Camera Stream - Connection Logic**](/docs/tutorials/camera_streamer/camera-stream#connection-logic) section, except we use the [**`stream`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py) method of the `CanbusClient` to read the response stream.
 This wraps the GRPC service stub `streamCanbusMessages`.
 
-
 #### Read the stream
 
 This is just like [**Camera Streamer - Camera Stream - Read the Stream**](/docs/tutorials/camera_streamer/camera-stream#read-the-stream) section, except we receive a `StreamCanbusReply` proto message, defined in [**canbus.proto**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto), from our canbus service.
 
 This ultimately contains (in a nested proto definition) an iterable container where each message is a proto defined `RawCanbusMessage`, also defined in [**canbus.proto**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto)
-
 
 #### Decode and display
 
@@ -102,14 +99,11 @@ we add a few command line arguments used by the `OakCameraClient` and the `Canbu
 
 These include the `address` of the brain (common to all devices) and the `port` of both devices we will stream, as well as the `stream_every_n` argument for the oak device.
 
-
-
 #### entry.sh
 
 As in the [**Camera Streamer - Camera Stream - entry.sh**](/docs/tutorials/camera_streamer/camera-stream#entrysh),
 the required arguments are added to the `entry.sh` file.
 Since `camera_port` and `canbus_port` are required, we add `--camera-port 50051` and `--canbus-port 50060` to the `python` call in [`entry.sh`](https://github.com/farm-ng/virtual-joystick/blob/main/entry.sh) to set the script to use the `Oak0` device and the canbus.
-
 
 :::info
 If you want to use a different oak device than `Oak0`, hard code the corresponding `camera-port` value.
@@ -129,6 +123,7 @@ cd joystick_tutorial/
 ```
 
 To run the app on the amiga, with changing a default command line arg:
+
 ```Python
 ssh amiga
     # Password : amiga
@@ -137,10 +132,9 @@ cd ~/apps/
 ./joystick_tutorial/entry.sh --stream-every-n 2
 ```
 
-
 #### App icon
 
-We replace the `app_logo.png` with an icon from https://fonts.google.com/icons.
+We replace the `app_logo.png` with an icon from <https://fonts.google.com/icons>.
 When developing your own app, you can:
 
 1. Choose a suitable symbol or icon for your app

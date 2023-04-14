@@ -44,7 +44,6 @@ kivy provides multiple options for scheduling tasks, which you can explore in th
 Updating these linked values will cause the drawn Widget to automatically update.
 You could alternatively update these values as they are calculated in the touch handling methods if you don't want to use the kivy `Clock`.
 
-
 :::caution
 Do not schedule long running, blocking tasks with the kivy clock or you will freeze the app while the task executes.
 The kivy clock (which runs on the main loop) should only be used to schedule very quick actions.
@@ -72,12 +71,10 @@ Because we want to recenter the joystick regardless of which widget the `touch_u
 
 We also define a simple container called `Vec2` for handling the `x` & `y` values of the joystick coordinates in [**libs/virtual_joystick/utils.py**](https://github.com/farm-ng/virtual-joystick/blob/main/libs/virtual_joystick/utils.py) and import this into `joystick.py`.
 
-
 ### Add it to the app
 
 - Import this widget in [**`src/main.py`**](https://github.com/farm-ng/virtual-joystick/blob/main/src/main.py)
 - Add the `VirtualJoystickWidget` next to the `TabbedPanel` in the `BoxLayout` of app's kivy definition in [**`src/res/main.kv`**](https://github.com/farm-ng/virtual-joystick/blob/main/src/res/main.kv)
-
 
 ### Run it
 

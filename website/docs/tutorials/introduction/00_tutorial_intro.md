@@ -23,7 +23,6 @@ The instructions should work as written on native Linux machines!
 
 <TabItem value="windows" label="Windows" default>
 
-
 You should run this with windows Subsystem for Linux (WSL).
 This is a well supported and documented environment.
 
@@ -38,12 +37,13 @@ For the most part, you should be able to use WSL to run the native Linux command
 </TabItem>
 <TabItem value="macos" label="Mac">
 
-
 Everything should work as with Linux, though there may be some unmet dependencies you can install with `brew`.
 E.g.,
+
 ```bash
 brew install wget
 ```
+
 Some of the scripts may fail, and we're working through that.
 For instance, if you come into an `md5sum` issue, you'll need to change `md5sum` to `md5`.
 

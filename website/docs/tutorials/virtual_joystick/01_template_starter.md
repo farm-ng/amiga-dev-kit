@@ -4,7 +4,6 @@ title: 01 - Template Starter
 ---
 # Template Starter
 
-
 ## Set up your Amiga brain template
 
 Follow the instructions in [**Developing Custom Applications**](/docs/brain/custom-applications.mdx)
@@ -33,6 +32,7 @@ We recommend [**Visual Studio Code**](https://code.visualstudio.com/)!
 :::
 
 There's 3 places to change the templated name:
+
 ```Python
 # 1. Rename the class
 class VirtualJoystickApp(App):
