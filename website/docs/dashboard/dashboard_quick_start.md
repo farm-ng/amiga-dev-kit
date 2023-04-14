@@ -63,32 +63,31 @@ If you have a brain, here is where you will be able to use the [`virtual_joy_sti
 
 Now we have the settings tab, which may be the most important tab. Here on the settings tab you have a few options. Here you can find:
 
-- ### The General Settings Tab
+### The General Settings Tab
 
-  - This page is where all of the general settings are located. Here, you will be able to set the total `wheel_track` of the Amiga, or even motor you would like to disable or enable.
-    - The settings you can set on this page are:
-      - wheel_track
-      - v_max_default
-      - max_turn_rate
-      - min_turn_rate
-      - turtle_v
-      - turtle_turn_rate
-      - max_accel
-      - flip_joystick
-      - steering_gamma
-      - batt_lo
-      - batt_hi
-      - pto_gear_ratio
-      - default_pto
-      - min_pto_
-      - max_pto
-      - m10_on (motor control)
-      - m11_on (motor control)
-      - m12_on (motor control)
-      - m13_on (motor control)
+- This page is where all of the general settings are located. Here, you will be able to set the total `wheel_track` of the Amiga, or even motor you would like to disable or enable.
+  - The settings you can set on this page are:
+    - wheel_track
+    - v_max_default
+    - max_turn_rate
+    - min_turn_rate
+    - turtle_v
+    - turtle_turn_rate
+    - max_accel
+    - flip_joystick
+    - steering_gamma
+    - batt_lo
+    - batt_hi
+    - pto_gear_ratio
+    - default_pto
+    - min_pto_
+    - max_pto
+    - m10_on (motor control)
+    - m11_on (motor control)
+    - m12_on (motor control)
+    - m13_on (motor control)
 
-
-- ### The Pendant Settings
+### The Pendant Settings
 
 <img src="https://user-images.githubusercontent.com/64480560/231795336-43477c82-db0d-4fa7-9cfc-638af2e11ede.GIF"
      width="320"
@@ -96,20 +95,21 @@ Now we have the settings tab, which may be the most important tab. Here on the s
 
 - This page is the hub for the pendant. Here is where you will go to calibrate it, and to ensure all of the functions of the pendant are operational. This including the buttons, joystick, and data reception.
 
-- ### Advanced settings
+### Advanced settings
 
-  - This page are for specific function of the dashboard firmware. The options under `Advance Settings` are :
-    - `Reboot Dashboard`: This will give a soft reboot to the dashboard without having to power cycle your Amiga.
-    - `Factory Setting Reset`: This setting will revert the general settings such as `wheel_track`, `max_turn_rate`, and more, back to the factory default values.
-      - NOTE: These may not match the values when you first received your Amiga if you do not have the standard configuration.
-    - `Mount CIRCUITPY`: When you would like to Mount CIRCUITPY to update the Dashboard Firmware, here is where you will do that in order for your computer to communicate with your Dashboard.
-    - `Bootloader Mode`: Similar to `Mount CIRCUITPY`, when you would like to update the UF2 file on the dashboard you will need to place it in a `Bootloader` state. With this button you can perform that action.
+This page are for specific function of the dashboard firmware. The options under `Advance Settings` are :
+
+- `Reboot Dashboard`: This will give a soft reboot to the dashboard without having to power cycle your Amiga.
+- `Factory Setting Reset`: This setting will revert the general settings such as `wheel_track`, `max_turn_rate`, and more, back to the factory default values.
+  - NOTE: These may not match the values when you first received your Amiga if you do not have the standard configuration.
+- `Mount CIRCUITPY`: When you would like to Mount CIRCUITPY to update the Dashboard Firmware, here is where you will do that in order for your computer to communicate with your Dashboard.
+- `Bootloader Mode`: Similar to `Mount CIRCUITPY`, when you would like to update the UF2 file on the dashboard you will need to place it in a `Bootloader` state. With this button you can perform that action.
 
 :::tip
 For more information about Firmware Updates or how to perform an update, please visit [Dashboard Firmware Update](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)
 :::
 
-- ### H-bridge settings
+### H-bridge settings
 
 This page shows the status of the H-bridge linear actuators on your Amiga.
 The H-bridge actuators are controlled with the arrow keys on the pendant.
@@ -122,7 +122,7 @@ There are three states you will see for the H-bridge actuators.
 - Yellow: `Idle` (detected, but not selected)
 - Green: `Active` (detected and selected)
 
-- ### PTO(power take-off) settings
+### PTO(power take-off) settings
 
 Currently only 1 PTO device is supported.
 You will see a message that no PTO is detected if there is not a PTO detected.
@@ -138,18 +138,17 @@ If there is detected a PTO device, you will see the following features:
 Note the PTO rpm values are the output RPM.
 The PTO gear ratio can also be configured on the settings page.
 
-- ### ID settings
+### ID settings
 
-  - On this page, you will find important information about your Amiga, including the `Tractor Hardware ID`, `Dashboard Firmware` version number, and the `Updator App`.
+On this page, you will find important information about your Amiga, including the `Tractor Hardware ID`, `Dashboard Firmware` version number, and the `Updator App`.
 
-  - #### Updator App
+#### Updator App
 
-    - On the `Updator App`, you will be able to update your Amiga dashboard and Updator app itself through here. You can use the `Updator App` to perform an Over-the-air update.
+On the `Updator App`, you will be able to update your Amiga dashboard and Updator app itself through here. You can use the `Updator App` to perform an Over-the-air update.
 
 :::tip
 For more information about Firmware Updates or how to perform an update, please visit [Dashboard Firmware Update](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)
 :::
-
 
 ### State Indicators
 
@@ -172,7 +171,6 @@ When your Amiga is E-stopped, a red border will display around the edges of your
 <img src="https://user-images.githubusercontent.com/64480560/232084662-8b3dcd53-06ac-4479-946a-97471815cb60.gif"
      width="315"
      height="300" />
-
 
 This state will enable you to place your Amiga at a given speed and allow your Amiga to `cruise` at that speed. When this control state is activated, a green border will be at the edge of your dashboard screen.
 
