@@ -38,3 +38,14 @@ repos:
     hooks:
       - id: docformatter
         args: [--in-place, --wrap-summaries=115, --wrap-descriptions=120]
+
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.33.0
+    hooks:
+    - id: markdownlint-fix
+
+  - repo: https://github.com/klieret/jekyll-relative-url-check
+    rev: main
+    hooks:
+    - id: jekyll-relative-url-check-html
+    - id: jekyll-relative-url-check-markdown
