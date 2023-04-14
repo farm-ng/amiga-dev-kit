@@ -111,9 +111,32 @@ For more information about Firmware Updates or how to perform an update, please 
 
 - ### H-bridge settings
 
+This page shows the status of the H-bridge linear actuators on your Amiga.
+The H-bridge actuators are controlled with the arrow keys on the pendant.
+Only one H-bridge can be actuated at a time,
+so the `left` - `right` arrow keys are to select the active H-bridge device
+and the `up` - `down` arrows are to move an `Active` actuator.
+There are three states you will see for the H-bridge actuators.
+
+- Red: `Not detected`
+- Yellow: `Idle` (detected, but not selected)
+- Green: `Active` (detected and selected)
 
 - ### PTO(power take-off) settings
 
+Currently only 1 PTO device is supported.
+You will see a message that no PTO is detected if there is not a PTO detected.
+> If you see the "No PTO" message and expect a PTO device, contact farm-ng for support.
+
+If there is detected a PTO device, you will see the following features:
+
+- A direction toggle
+- A PTO rpm slider
+  - The default, min, & max values of this slider can be configured on the settings page.
+- A graph of PTO set-point & measured rpm values.
+
+Note the PTO rpm values are the output RPM.
+The PTO gear ratio can also be configured on the settings page.
 
 - ### ID settings
 
