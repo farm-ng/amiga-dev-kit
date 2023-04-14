@@ -35,9 +35,19 @@ This is the home screen of the dashboard. On this screen you will find:
 - Battery levels of the amiga
 
 ## Motor Status Screen
+
+<img src="https://user-images.githubusercontent.com/64480560/232093032-cd99e871-5f09-41bb-9485-6e3cf1c3871b.jpg"
+     width="330"
+     height="300" />
+
+<img src="https://user-images.githubusercontent.com/64480560/232093025-48b6792e-08a3-48f8-b83e-52d4813d84e9.jpg"
+     width="330"
+     height="300" />
+
+
 This screen for monitoring each motor in much more detail than that of the home screen. On this screen you can:
-- monitor the control state of the motors,
-- their individual temperature,
+- Monitor the control state of the motors,
+- Temperature of each motor,
 - CAN state
 
 ## Auto Control Screen
@@ -77,8 +87,9 @@ Now we have the settings tab, which may be the most important tab. Here on the s
 
 
 - ### The Pendant Settings
-
-![IMG-0641](https://user-images.githubusercontent.com/64480560/231795336-43477c82-db0d-4fa7-9cfc-638af2e11ede.GIF)
+<img src="https://user-images.githubusercontent.com/64480560/231795336-43477c82-db0d-4fa7-9cfc-638af2e11ede.GIF"
+     width="320"
+     height="300" />
 
   - This page is the hub for the pendant. Here is where you will go to calibrate it, and to ensure all of the functions of the pendant are operatinal. This including the buttons, joystick, and data reception.
 - ### Advanced settings
