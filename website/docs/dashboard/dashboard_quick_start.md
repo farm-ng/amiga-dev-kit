@@ -6,7 +6,7 @@ title: Dashboard User Guide
 This is subject for change with new updates to the Dashboard. The current version of the Dashboard Firmware is `v0.1.9`.
 :::
 ![DSCF6570-2-16x9-aspect-reduced](https://user-images.githubusercontent.com/11846963/186734463-aa149b3a-7510-4d5a-99ea-f9a8a96775d2.jpg)
-## Dahboard overview video
+## Dashboard overview video
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PKOhI4hbGUs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

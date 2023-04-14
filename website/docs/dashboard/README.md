@@ -7,10 +7,12 @@ title: Dashboard Overview
 
 ### [Dashboard product page](https://farm-ng.com/products/dashboard)
 
-## Dahboard overview video
+## Dashboard overview video
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PKOhI4hbGUs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Description
+
 Farm-ng's Dashboard is a ruggedized, waterproof, outdoor-visible touch-screen display and machine controller - customizable through our ADK (Amiga-Dev-Kit) toolset!
 
 Under the hood is a simple yet powerful embedded microcontroller based on Adafruit's Feather M4 CAN, which runs CircuitPython and makes building your own custom interfaces as simple as connecting a USB cable and writing a few lines of code.  If you've been looking for a microcontroller and display that can handle harsh environments, look no further!
@@ -19,9 +21,7 @@ The Dashboard comes with a Wifi modem and CANbus transceiver on board, and is po
 
 ## Features overview
 
-**The farm-ng Dash display is a Beta early release product, specification and rating are subject to change**
-
-
+> **The farm-ng Dash display is a Beta early release product, specification and rating are subject to change**
 
 | Specifications       |                                                                                                                       |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------- |
@@ -37,11 +37,7 @@ The Dashboard comes with a Wifi modem and CANbus transceiver on board, and is po
 | Basic dimensions     | xxx (Not including shroud)                                                                                            |
 | Weight               | TBD                                                                                                                   |
 
-
-
 ## Mechanical
-
-
 
 ## Connections
 
@@ -50,7 +46,6 @@ The Dashboard comes with a Wifi modem and CANbus transceiver on board, and is po
 ### Pinouts
 
 ![Dash_Pinout](https://user-images.githubusercontent.com/53625197/187536079-a3c71c29-d13d-4c54-a343-5960ef98c793.png)
-
 
 ### CAN/Power input
 
@@ -64,8 +59,6 @@ Mating connector M12-5 A code female
 | 4   | CAN_High      | White              | Needs at least one termination, and two devices to function. |
 | 5   | CAN_Low       | Blue               | Needs at least one termination, and two devices to function. |
 
-
-
 ### CAN/Power output (accessories)
 
 Mating connector M12-5 A code male
@@ -77,8 +70,6 @@ Mating connector M12-5 A code male
 | 3   | GND           | Black              |                                                              |
 | 4   | CAN_High      | White              | Needs at least one termination, and two devices to function. |
 | 5   | CAN_Low       | Blue               | Needs at least one termination, and two devices to function. |
-
-
 
 ### Debug
 
