@@ -360,7 +360,7 @@ This is done by properly setting `ROS_MASTER_URI` & `ROS_IP` on all devices, as 
 
 > NOTE: You must stop the oak camera service(s) in your apps launcher setting page so the `depthai-ros` package can access the Oak camera device(s).
 >
-> <img src="https://user-images.githubusercontent.com/53625197/228701415-89fb6d36-dce5-4b42-808d-2dd486db91a5.png" width="35%">
+> <img src="https://user-images.githubusercontent.com/53625197/228701415-89fb6d36-dce5-4b42-808d-2dd486db91a5.png" width="35%"/>
 
 **Tips:**
 
@@ -414,8 +414,8 @@ And `<DEV_STATION_IP>` corresponds to the IP address on your PC running ROS, con
 
 Now select the image you want to view based on topic, e.g. `/stereo_inertial_publisher/color/image` or  `/stereo_inertial_publisher/stereo/depth`.
 
-<img src="https://user-images.githubusercontent.com/53625197/228702256-d5ef02d9-98a6-476d-b636-56f66f84822d.png" width="50%">
+<img src="https://user-images.githubusercontent.com/53625197/228702256-d5ef02d9-98a6-476d-b636-56f66f84822d.png" width="50%"/>
 
 ## Do you want to know more?
 
-Inspect [`ci_test.sh`](ci_test.sh) for a full example of how to run the bridge in a CI environment.
+Inspect [`ci_test.sh`](https://github.com/farm-ng/amiga-ros-bridge/blob/main/ci_test.sh) for a full example of how to run the bridge in a CI environment.
