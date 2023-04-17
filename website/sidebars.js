@@ -102,7 +102,8 @@ const sidebars = {
         ],
     },
       "Developing Custom Applications": [
-      "brain/brain-apps"
+      "brain/brain-apps",
+      "brain/ros-bridge"
     ]
 },
   "contribute": [
