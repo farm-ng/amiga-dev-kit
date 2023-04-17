@@ -32,19 +32,26 @@ If you feel we missed any key details, please let us know at [**discourse.farm-n
 :::
 
 
-## gRPC Block diagram
+## Block diagram
 
 ```mermaid
   flowchart BT;
-
-    subgraph VirtualJoystickApp
-        OakCameraClient
-        CanbusClient
+    subgraph kivy_window
+        direction LR
+        VirtualJoystickWidget
+        ImageTexture
+        Displayed_Labels
     end
 
     subgraph AmigaOS
         OakCameraServices
         CanbusService
+    end
+
+    subgraph VirtualJoystickApp
+        VirtualJoystickWidget -- commands --> CanbusClient
+        CanbusClient -- measured rates --> Displayed_Labels
+        OakCameraClient -- decoded jpeg --> ImageTexture
     end
 
     subgraph OakCameraServices
@@ -55,8 +62,7 @@ If you feel we missed any key details, please let us know at [**discourse.farm-n
         Oak3
     end
 
-
-    Oak0 -- streamFrames --> OakCameraClient
-    CanbusService -- streamCanbusMessages --> CanbusClient
-    CanbusService <-- sendCanbusMessage --> CanbusClient
+    Oak0 -- streamFrames rpc --> OakCameraClient
+    CanbusService -- streamCanbusMessages rpc --> CanbusClient
+    CanbusService <-- sendCanbusMessage rpc --> CanbusClient
 ```
