@@ -1,16 +1,12 @@
 ---
 id: ros-bridge
-title: ROS Bridge
+title: Amiga ROS Bridge
 ---
 
 
-# ROS bridge for the Amiga
+# Amiga ROS Bridge
 
-[![Continuous integration](https://github.com/farm-ng/amiga-ros-bridge/actions/workflows/ci.yml/badge.svg)](https://github.com/farm-ng/amiga-ros-bridge/actions/workflows/ci.yml)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/farm-ng/amiga-ros-bridge)](https://github.com/farm-ng/amiga-ros-bridge/releases/latest)
-[![License](https://img.shields.io/badge/License-ADK-blue.svg)](https://github.com/farm-ng/farm-ng-amiga/blob/main/LICENSE)
-[![ROS](https://img.shields.io/badge/ROS-Noetic-blue)](https://www.ros.org)
-[![Rust](https://img.shields.io/badge/rust-1.66.0+-93450a.svg?logo=rust)](https://www.rust-lang.org)
+### [Link to `farm-ng/amiga-ros-bridge`](https://github.com/farm-ng/amiga-ros-bridge)
 
 This repository contains a ROS bridge for the Farm-ng Amiga platform written in [Rust](https://www.rust-lang.org/).
 
