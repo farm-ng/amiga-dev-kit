@@ -47,8 +47,14 @@ const sidebars = {
       "label": "Dashboard",
       "type": "category"
     },
-      "debug_cable/debug-cable",
-      "debug_cable/service-cable",
+    {
+        "items": [
+            "debug_cable/debug-cable",
+            "debug_cable/service-cable",
+      ],
+      "label": "Cables",
+      "type": "category"
+    },
       "mcu_kit/microcontroller-kit",
       "brain/brain",
       "pendant/pendant",
