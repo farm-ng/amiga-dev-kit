@@ -21,3 +21,34 @@ The topics covered in this tutorial include:
 - Creating kivy applications
 - GRPC / asyncio application development
 - Streaming an Oak camera with the camera client
+
+## Block diagram
+
+```mermaid
+  flowchart BT;
+
+    subgraph kivy_window
+        direction LR
+        ImageTexture
+    end
+
+    subgraph AmigaOS
+        OakCameraServices
+        CanbusService
+    end
+
+    subgraph CameraStreamerApp
+        OakCameraClient -- decoded jpeg --> ImageTexture
+    end
+
+    subgraph OakCameraServices
+        direction LR
+        Oak0
+        Oak1
+        Oak2
+        Oak3
+    end
+
+    Oak0 -- streamFrames rpc --> OakCameraClient
+
+```
