@@ -326,18 +326,18 @@ rostopic echo /amiga/vel
 
 ## Try the examples
 
-We have provided some examples to help you get started. You will find the examples in the `examples` directory.
+We have provided some examples to help you get started. You will find the examples in the [`examples`](https://github.com/farm-ng/amiga-ros-bridge/tree/main/examples) directory.
 
 ### Python
 
-- [`amiga_cmd_vel_publisher.py`](examples/amiga_cmd_vel_publisher.py): Publishes a `TwistStamped` message on the `/amiga/cmd_vel` topic.
-- [`amiga_vel_subscriber.py`](examples/amiga_vel_subscriber.py): Subscribes to the `/amiga/vel` topic and prints the received `TwistStamped` messages.
+- [`amiga_cmd_vel_publisher.py`](https://github.com/farm-ng/amiga-ros-bridge/tree/main/examples/amiga_cmd_vel_publisher.py): Publishes a `TwistStamped` message on the `/amiga/cmd_vel` topic.
+- [`amiga_vel_subscriber.py`](https://github.com/farm-ng/amiga-ros-bridge/tree/main/examples/amiga_vel_subscriber.py): Subscribes to the `/amiga/vel` topic and prints the received `TwistStamped` messages.
 
 ### Rust
 
-- [`amiga_cmd_vel_publisher.rs`](examples/amiga_cmd_vel_publisher.rs): Publishes a `TwistStamped` message on the `/amiga/cmd_vel` topic.
-- [`amiga_vel_subscriber.rs`](examples/amiga_vel_subscriber.rs): Subscribes to the `/amiga/vel` topic and prints the received `TwistStamped` messages.
-- [`amiga-joystick.rs`](examples/amiga-joystick.rs): A simple joystick to command velocities to the Amiga and print received velocity states.
+- [`amiga_cmd_vel_publisher.rs`](https://github.com/farm-ng/amiga-ros-bridge/tree/main/examples/amiga_cmd_vel_publisher.rs): Publishes a `TwistStamped` message on the `/amiga/cmd_vel` topic.
+- [`amiga_vel_subscriber.rs`](https://github.com/farm-ng/amiga-ros-bridge/tree/main/examples/amiga_vel_subscriber.rs): Subscribes to the `/amiga/vel` topic and prints the received `TwistStamped` messages.
+- [`amiga-joystick.rs`](https://github.com/farm-ng/amiga-ros-bridge/tree/main/examples/amiga-joystick.rs): A simple joystick to command velocities to the Amiga and print received velocity states.
 
 ## Use `depthai-ros` for Oak camera streaming
 
