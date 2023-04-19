@@ -13,7 +13,18 @@ This is subject for change with new updates to the Dashboard. The current versio
 
 ## Main Screen
 
+<img src="https://user-images.githubusercontent.com/64480560/233126363-7aee7937-d308-4d79-a424-33a1fe531bae.jpg"
+     width="320"
+     height="300" />
+
+
+
 This is the main screen of the dashboard. This screen will appear when you first turn on the Amiga. “Ready” or “listo” will appear and once you touch the button you will be taken to the home screen
+
+<img src="https://user-images.githubusercontent.com/64480560/233126475-5416e312-9d77-4552-876c-f4129d30f244.jpg"
+     width="400"
+     height="500" />
+
 
 Alternatively if you receive this page, this means that either you have defective pendant or your pendant needs to be calibrated.
 If your pendant is not being detected at all and if it says `No Pendant Detected` please contact the Farm-ng Support immediately.
@@ -50,6 +61,10 @@ This screen for monitoring each motor in much more detail than that of the home 
 - CAN state
 
 ## Auto Control Screen
+<img src="https://user-images.githubusercontent.com/64480560/233127552-3a6f2f56-cddd-4b48-b947-bbd9292e2843.jpg"
+     width="320"
+     height="300" />
+
 
 On this screen, is where the autonomous control of the amiga comes to life. Here you will be able to :
 
@@ -60,10 +75,16 @@ On this screen, is where the autonomous control of the amiga comes to life. Here
 If you have a brain, here is where you will be able to use the [`virtual_joy_stick`](https://amiga.farm-ng.com/docs/tutorials/virtual_joystick/virtual-joystick-overview). to control your Amiga.
 
 ## General Settings Tab
+<img src="https://user-images.githubusercontent.com/64480560/233127789-39f05f32-e17e-4e7b-8118-91500a4bc75f.jpg"
+     width="320"
+     height="300" />
 
 Now we have the settings tab, which may be the most important tab. Here on the settings tab you have a few options. Here you can find:
 
 ### The General Settings Tab
+<img src="https://user-images.githubusercontent.com/64480560/233127855-eafd4df9-555f-4154-a238-48c8a2961e3c.jpg"
+     width="320"
+     height="300" />
 
 - This page is where all of the general settings are located. Here, you will be able to set the total `wheel_track` of the Amiga, or even motor you would like to disable or enable.
   - The settings you can set on this page are:
@@ -97,6 +118,11 @@ Now we have the settings tab, which may be the most important tab. Here on the s
 
 ### Advanced settings
 
+<img src="https://user-images.githubusercontent.com/64480560/233129573-9df7f43f-14ea-49e0-a4e0-8efbfcf3e36f.jpg"
+     width="320"
+     height="300" />
+
+
 This page are for specific function of the dashboard firmware. The options under `Advance Settings` are :
 
 - `Reboot Dashboard`: This will give a soft reboot to the dashboard without having to power cycle your Amiga.
@@ -110,6 +136,10 @@ For more information about Firmware Updates or how to perform an update, please 
 :::
 
 ### H-bridge settings
+<img src="https://user-images.githubusercontent.com/64480560/233127456-1f294f6f-69ac-4563-a070-9b25c2e78ac3.jpg"
+     width="320"
+     height="300" />
+
 
 This page shows the status of the H-bridge linear actuators on your Amiga.
 The H-bridge actuators are controlled with the arrow keys on the pendant.
@@ -139,6 +169,9 @@ Note the PTO rpm values are the output RPM.
 The PTO gear ratio can also be configured on the settings page.
 
 ### ID settings
+<img src="https://user-images.githubusercontent.com/64480560/233126613-838261d6-a3ee-4f7c-b126-8f26162551c4.jpg"
+     width="320"
+     height="300" />
 
 On this page, you will find important information about your Amiga, including the `Tractor Hardware ID`, `Dashboard Firmware` version number, and the `Updator App`.
 
