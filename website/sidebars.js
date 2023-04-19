@@ -85,13 +85,14 @@ const sidebars = {
         "examples/cansniffer/cansniffer",
         "examples/FPV/fpv",
     ],
-    "Brain Example" : [
+    "Brain Examples" : [
         "examples/import_log_file/import-log-file",
         "examples/file_reader/file-reader",
         "examples/file_reader_can/file-reader-can",
         "examples/camera_client/camera-client",
         "examples/people_detection/people-detection",
-        "examples/motor_state/motor-state"
+        "examples/motor_state/motor-state",
+        "examples/vnc_viewer/vnc-viewer"
     ],
     "Brain App Tutorials" : {
         "00 - Tutorial Introduction" :[
