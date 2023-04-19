@@ -67,7 +67,7 @@ python main.py --file-name <path-from-above>/events_12052022115852.bin --camera-
 
 Congratulations two videos should now pop up and play! One should be RGB and one should be disparity (it might be hidden behind the RGB window so try moving the RGB window). You have now finished running this example!
 
-If you want another log file to run here is an example of Amiga driving in a field [(click to download)](s3://farm-ng-dev-auto-plot-mvp/datasets/jacobs_freedom_1013/events_10132022112259.bin)
+If you want another log file to run here is an example of Amiga driving in a field [(click to download)](https://farm-ng-dev-auto-plot-mvp.s3.us-west-2.amazonaws.com/datasets/jacobs_freedom_1013/events_10132022112259.bin)
 :::tip
 There is another tutorial that walks you through getting data directly from the Amiga [**here**](docs/examples/import_log_file/README.md).
 :::
