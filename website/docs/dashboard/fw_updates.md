@@ -49,10 +49,14 @@ and follow the instructions at [**Wired Amiga application updates**](#wired-amig
 
 ### Wired Amiga application updates
 
-To upgrade your Dashboard with the latest Amiga application, grab your Dashboard and your debug cable and take the following steps:
-
 :::info
 This process is currently only supported on Windows and Mac.
+:::
+
+To upgrade your Dashboard with the latest Amiga application, grab your Dashboard and your debug cable and take the following steps:
+
+:::caution
+It is required to have a data USB-C cable and not a charge only USB-C cable when connecting to the debug or service cable.
 :::
 
 **Access the files:**

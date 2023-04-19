@@ -33,15 +33,28 @@ const sidebars = {
     ],
     "Getting Started": [
       "amiga_quick_start/amiga-quick-start",
-      "dashboard/dashboard-fw",
       "brain/brain-install",
       "brain/next-steps",
     ],
     "Amiga Overview": [
-      "dashboard/dashboard",
-      "dashboard/control-states",
-      "debug_cable/debug-cable",
-      "debug_cable/service-cable",
+      {
+        "items": [
+        "dashboard/dashboard",
+        "dashboard/dashboard-user-guide",
+        "dashboard/control-states",
+        "dashboard/dashboard-fw",
+      ],
+      "label": "Dashboard",
+      "type": "category"
+    },
+    {
+        "items": [
+            "debug_cable/debug-cable",
+            "debug_cable/service-cable",
+      ],
+      "label": "Cables",
+      "type": "category"
+    },
       "mcu_kit/microcontroller-kit",
       "brain/brain",
       "pendant/pendant",
