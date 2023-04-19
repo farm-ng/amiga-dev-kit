@@ -36,6 +36,11 @@ You can check this in the `pendant` section of the Settings tab.
 If you need help with support you can go [here](https://amiga.farm-ng.com/docs/support/)
 
 ## Home Screen
+<img src="https://user-images.githubusercontent.com/64480560/233131301-372ac33f-1a21-4aa9-999e-5093eaa53360.jpg"
+     width="400"
+     height="500" />
+
+
 
 This is the home screen of the dashboard. On this screen you will find:
 
