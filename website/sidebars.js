@@ -101,7 +101,7 @@ const sidebars = {
             "tutorials/virtual_joystick/further-exercises",
         ],
     },
-      "Developing Custom Applications": [
+      "Amiga Brain Development": [
       "brain/brain-apps",
       "brain/ros-bridge"
     ]
