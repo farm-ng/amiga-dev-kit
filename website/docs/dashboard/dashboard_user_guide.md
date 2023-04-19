@@ -155,11 +155,14 @@ There are three states you will see for the H-bridge actuators.
 - Yellow: `Idle` (detected, but not selected)
 - Green: `Active` (detected and selected)
 
-### PTO(power take-off) settings
+### PTO settings
 
-Currently only 1 PTO device is supported.
-You will see a message that no PTO is detected if there is not a PTO detected.
+Currently only 1 PTO (power take-off) device is supported.
+You will see a message that no PTO is detected if there is not a detected PTO device.
 > If you see the "No PTO" message and expect a PTO device, contact farm-ng for support by visiting [our Support page](https://amiga.farm-ng.com/docs/support/).
+
+<img src="https://user-images.githubusercontent.com/53625197/233201899-59ddb864-75dd-45d3-86c9-bdb7b3c4a358.jpg"
+     width="320" />
 
 If there is detected a PTO device, you will see the following features:
 
@@ -168,7 +171,10 @@ If there is detected a PTO device, you will see the following features:
   - The default, min, & max values of this slider can be configured on the settings page.
 - A graph of PTO set-point & measured rpm values.
 
-Note the PTO rpm values are the output RPM.
+<img src="https://user-images.githubusercontent.com/53625197/233201446-d6ef777f-3650-4b69-bdce-7f61e10075ac.jpg"
+     width="320" />
+
+Note that the PTO rpm values are the output RPM.
 The PTO gear ratio can also be configured on the settings page.
 
 ### ID settings
