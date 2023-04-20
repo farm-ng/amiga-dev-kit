@@ -88,6 +88,7 @@ const sidebars = {
     "Brain Examples" : [
         "examples/import_log_file/import-log-file",
         "examples/file_reader/file-reader",
+        "examples/file_converter/file-converter",
         "examples/file_reader_can/file-reader-can",
         "examples/camera_client/camera-client",
         "examples/people_detection/people-detection",
