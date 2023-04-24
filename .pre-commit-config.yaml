@@ -9,12 +9,6 @@ repos:
     hooks:
     - id: markdownlint-fix
 
-  - repo: https://github.com/klieret/jekyll-relative-url-check
-    rev: main
-    hooks:
-    - id: jekyll-relative-url-check-html
-    - id: jekyll-relative-url-check-markdown
-
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.1.0
     hooks:
