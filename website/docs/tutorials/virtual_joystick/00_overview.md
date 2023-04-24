@@ -52,6 +52,35 @@ else to benefit from!
 
 ## Block diagram
 
-:::caution Coming soon
-System level block diagram
-:::
+```mermaid
+  flowchart BT;
+    subgraph kivy_window
+        direction LR
+        VirtualJoystickWidget
+        ImageTexture
+        Displayed_Labels
+    end
+
+    subgraph AmigaOS
+        OakCameraServices
+        CanbusService
+    end
+
+    subgraph VirtualJoystickApp
+        VirtualJoystickWidget -- commands --> CanbusClient
+        CanbusClient -- measured rates --> Displayed_Labels
+        OakCameraClient -- decoded jpeg --> ImageTexture
+    end
+
+    subgraph OakCameraServices
+        direction LR
+        Oak0
+        Oak1
+        Oak2
+        Oak3
+    end
+
+    Oak0 -- streamFrames rpc --> OakCameraClient
+    CanbusService -- streamCanbusMessages rpc --> CanbusClient
+    CanbusService <-- sendCanbusMessage rpc --> CanbusClient
+```

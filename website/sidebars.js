@@ -33,15 +33,28 @@ const sidebars = {
     ],
     "Getting Started": [
       "amiga_quick_start/amiga-quick-start",
-      "dashboard/dashboard-fw",
       "brain/brain-install",
       "brain/next-steps",
     ],
     "Amiga Overview": [
-      "dashboard/dashboard",
-      "dashboard/control-states",
-      "debug_cable/debug-cable",
-      "debug_cable/service-cable",
+      {
+        "items": [
+        "dashboard/dashboard",
+        "dashboard/dashboard-user-guide",
+        "dashboard/control-states",
+        "dashboard/dashboard-fw",
+      ],
+      "label": "Dashboard",
+      "type": "category"
+    },
+    {
+        "items": [
+            "debug_cable/debug-cable",
+            "debug_cable/service-cable",
+      ],
+      "label": "Cables",
+      "type": "category"
+    },
       "mcu_kit/microcontroller-kit",
       "brain/brain",
       "pendant/pendant",
@@ -72,13 +85,15 @@ const sidebars = {
         "examples/cansniffer/cansniffer",
         "examples/FPV/fpv",
     ],
-    "Brain Example" : [
+    "Brain Examples" : [
         "examples/import_log_file/import-log-file",
         "examples/file_reader/file-reader",
+        "examples/file_converter/file-converter",
         "examples/file_reader_can/file-reader-can",
         "examples/camera_client/camera-client",
         "examples/people_detection/people-detection",
-        "examples/motor_state/motor-state"
+        "examples/motor_state/motor-state",
+        "examples/vnc_viewer/vnc-viewer"
     ],
     "Brain App Tutorials" : {
         "00 - Tutorial Introduction" :[
@@ -101,8 +116,9 @@ const sidebars = {
             "tutorials/virtual_joystick/further-exercises",
         ],
     },
-      "Developing Custom Applications": [
-      "brain/brain-apps"
+      "Amiga Brain Development": [
+      "brain/brain-apps",
+      "brain/ros-bridge"
     ]
 },
   "contribute": [

@@ -84,6 +84,12 @@ your Dashboard and your debug cable and take the following steps:
 This process is currently only supported on Windows and Mac.
 :::
 
+To upgrade your Dashboard with the latest Amiga application, grab your Dashboard and your debug cable and take the following steps:
+
+:::caution
+It is required to have a data USB-C cable and not a charge only USB-C cable when connecting to the debug or service cable.
+:::
+
 **Access the files:**
 
 1. Download the latest application zip file

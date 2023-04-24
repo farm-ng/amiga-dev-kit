@@ -7,11 +7,15 @@ title: Dashboard Overview
 
 ### [Dashboard product page](https://farm-ng.com/products/dashboard)
 
-## Dahboard overview video
+## Dashboard overview video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PKOhI4hbGUs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Description
+
+Farm-ng's Dashboard is a ruggedized, waterproof, outdoor-visible touch-screen display and machine controller - customizable through our ADK (Amiga-Dev-Kit) toolset!
+
+Under the hood is a simple yet powerful embedded microcontroller based on Adafruit's Feather M4 CAN, which runs CircuitPython and makes building your own custom interfaces as simple as connecting a USB cable and writing a few lines of code.  If you've been looking for a microcontroller and display that can handle harsh environments, look no further!
 
 Farm-ng's Dashboard is a ruggedized, waterproof, outdoor-visible
 touch-screen display and machine controller - customizable

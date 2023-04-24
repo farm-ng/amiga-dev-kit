@@ -9,8 +9,12 @@ title: Service Cable Overview
 
 ## Overview
 
-Cable used to update and service farm-ng products. It includes
-rest functionality along with USB communication.
+Cable used to update and service farm-ng products.
+It includes reset functionality and USB communication.
+
+:::caution
+It is required to have a data USB-C cable and not a charge only USB-C cable when connecting to the debug or service cable.
+:::
 
 ![IMG-9585](https://user-images.githubusercontent.com/64480560/205402615-a182d74f-ea46-437b-ad3f-f02f4efbb28d.jpg)
 
