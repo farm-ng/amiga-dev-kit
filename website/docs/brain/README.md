@@ -1,9 +1,9 @@
 ---
 id: brain
-title: Brain Overview
+title: Overview
 ---
 
-# farm-ng Brain
+# farm-ng Brain v1
 
 <!-- <img src="./assets/brain_render_iso.png" alt="Dash_Iso" width="600;" /> -->
 ![](./assets/brain_render_iso.png)

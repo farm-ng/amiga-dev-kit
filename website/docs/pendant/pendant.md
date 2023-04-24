@@ -1,6 +1,6 @@
 ---
 id: pendant
-title: Pendant Overview
+title: Overview
 ---
 ![pendant 3](https://user-images.githubusercontent.com/64480560/210899367-c57a8bae-c450-4f71-bc68-5f05d337c896.jpg)
 

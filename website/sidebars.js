@@ -36,7 +36,7 @@ const sidebars = {
       "brain/brain-install",
       "brain/next-steps",
     ],
-    "Amiga Overview": [
+    "Amiga Rover": [
       {
         "items": [
         "dashboard/dashboard",
@@ -48,17 +48,47 @@ const sidebars = {
       "type": "category"
     },
     {
+      "items": [
+        {
+        "items": [
+          "brain/brain",
+        ],
+        "label": "Brain v1",
+        "type": "category"
+
+      },
+      {
+        "items": [
+          "intelligence_kit/v2-intro",
+        ],
+        "label": "Brain v2",
+        "type": "category"
+      }
+
+    ],
+    "label": "Intelligence Kit",
+    "type": "category"
+
+  },
+
+    {
         "items": [
             "debug_cable/debug-cable",
             "debug_cable/service-cable",
+            "mcu_kit/microcontroller-kit",
       ],
-      "label": "Cables",
+      "label": "Developer Tools",
       "type": "category"
     },
-      "mcu_kit/microcontroller-kit",
-      "brain/brain",
-      "pendant/pendant",
+    {
+      "items": [
+        "pendant/pendant",
+      ],
+      "label": "Pendant",
+      "type": "category"
+    }
     ],
+
     "Resources/Support": [
       "hardware-tools/recommended-tools",
       "reference/faq",
