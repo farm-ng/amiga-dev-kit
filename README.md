@@ -5,16 +5,16 @@
 
 Welcome to the Amiga Development Kit!
 
-Please check out the [Amiga Development Kit documentation](https://farm-ng.github.io/amiga-dev-kit/) for full context on
-this repository, where you'll find documentation, tutorials, &
-the API.
+Please check out the [Amiga Development Kit documentation](https://farm-ng.github.io/amiga-dev-kit/)
+for full context on this repository, where you'll find documentation, tutorials, & the API.
 
 If you're just now learning about farm-ng and the Amiga robot,
 check out our website:
 
 ## <https://farm-ng.com/>
 
-The Amiga, and accompanying development kit, is a [toolset](https://farm-ng.com/collections/amiga-attachments) of hardware
+The Amiga, and accompanying development kit,
+is a [toolset](https://farm-ng.com/collections/amiga-attachments) of hardware
 and software built by farm-ng to enable farmers, hackers,
 engineers, roboticists, or anyone with a vision of creating
 ruggedized, waterproof, outdoor robotic rover applications.

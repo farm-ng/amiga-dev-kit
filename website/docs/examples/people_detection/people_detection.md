@@ -59,11 +59,15 @@ mkdir models
 ```
 
 ```bash
-wget https://github.com/rdeepc/ExploreOpencvDnn/raw/master/models/frozen_inference_graph.pb -O models/frozen_inference_graph.pb
+wget \
+https://github.com/rdeepc/ExploreOpencvDnn/raw/master/models/frozen_inference_graph.pb \
+-O models/frozen_inference_graph.pb
 ```
 
 ```bash
-wget https://github.com/rdeepc/ExploreOpencvDnn/raw/master/models/ssd_mobilenet_v2_coco_2018_03_29.pbtxt -O models/ssd_mobilenet_v2_coco_2018_03_29.pbtxt
+wget \
+https://github.com/rdeepc/ExploreOpencvDnn/raw/master/models/ssd_mobilenet_v2_coco_2018_03_29.pbtxt \
+-O models/ssd_mobilenet_v2_coco_2018_03_29.pbtxt
 ```
 
 ### 4. Run the service

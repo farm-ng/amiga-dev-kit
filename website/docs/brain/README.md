@@ -18,7 +18,10 @@ allowfullscreen></iframe>
 
 ## Features overview
 
-**The farm-ng Brain is an Alpha level product subject to change. Not all features are fully tested and validated.**
+:::note
+**The farm-ng Brain is an Alpha level product subject to change.**
+**Not all features are fully tested and validated.**
+:::
 
 The farm-ng Brain brings supercomputer performance to the edge,
 in a ruggedized packaged designed for the harshest environments.

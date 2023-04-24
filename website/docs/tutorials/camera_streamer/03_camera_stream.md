@@ -18,7 +18,8 @@ The main method we'll add to our app is a camera stream.
 This will:
 
 - Use the [**`OakCameraClient`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py)
-- Display images as kivy [**`Image`**](https://kivy.org/doc/stable/api-kivy.uix.label.html) widgets in our `TabbedPanel`.
+- Display images as kivy [**`Image`**](https://kivy.org/doc/stable/api-kivy.uix.label.html)
+  widgets in our `TabbedPanel`.
 
 This task listens to the camera client's stream and populates the
 tabbed panel with all 4 image streams from the oak camera.
@@ -48,7 +49,8 @@ If the service is not in one of these available states (`IDLE` or
 re-create it once it is again available.
 
 When creating the `response_stream` we use the
-[**`stream_frames()`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py) call.
+[**`stream_frames()`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py)
+call.
 This wraps the GRPC service stub `StreamFramesRequest`, which
 takes the `every_n` argument used to throttle the rate of images
 in the stream.
@@ -123,8 +125,8 @@ file and **optional arguments** that take on a default value,
 unless overridden in the command line.
 
 Since `port` is required, we add `--port 50051` to the `python`
-call in [**`entry.sh`**](https://github.com/farm-ng/camera-streamer/blob/main/entry.sh) to set the script to use the
-`Oak0` device (`Oak1` would be on `50052`, `Oak2` on `50053`,
+call in [**`entry.sh`**](https://github.com/farm-ng/camera-streamer/blob/main/entry.sh)
+to set the script to use the `Oak0` device (`Oak1` would be on `50052`, `Oak2` on `50053`,
 and so on).
 
 When launching your app on the Brain with the button, any

@@ -4,7 +4,8 @@ title: 01 - Background Knowledge
 ---
 # Background knowledge
 
-The Amiga brain app development meets at the intersection of three key libraries, as well as a few publicly available libraries developed by the **farm-ng** team:
+The Amiga brain app development meets at the intersection of three key libraries,
+as well as a few publicly available libraries developed by the **farm-ng** team:
 
 1. [**gRPC**](https://grpc.io/)
 2. [**asyncio**](https://docs.python.org/3/library/asyncio.html)

@@ -13,7 +13,11 @@ transfer that data from the Amiga to your local machine.
 The first step in this tutorial is to record some field data. To
 do this, you are going to use the handy Recorder app on the
 Amiga. To learn how to use it, watch the video below (watch until 5:03)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_p0I11p4QF4?start=169" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/_p0I11p4QF4?start=169"
+title="YouTube video player" frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen></iframe>
 
 # How to transfer data from the Amiga to your local machine
 

@@ -55,9 +55,10 @@ widget precisely, a `BoxLayout` requires empty widgets if you
 want to leave some blank space.
 
 You can see the use of
-[**`size_hint_x`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_x) &
-[**`size_hint_y`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_y) to adjust the
-***relative*** size of the widgets to their parent.
+[**`size_hint_x`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_x)
+&
+[**`size_hint_y`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_y)
+to adjust the ***relative*** size of the widgets to their parent.
 For us, this means shrinking the relative size of the `BoxLayout`
 of `Label` widgets displaying the streamed canbus values (in the
 x direction).
@@ -76,8 +77,9 @@ that there is a lot of similarity between the `stream_camera` and
 Both methods handle connecting to a "server streaming" RPC, as
 described in [**gRPC core concepts**](https://grpc.io/docs/what-is-grpc/core-concepts/).
 They only differ in the client used to connect
-([**`OakCameraClient`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py) vs
-[**`CanbusClient`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py) )
+([**`OakCameraClient`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/oak/camera_client.py)
+vs
+[**`CanbusClient`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py))
 and what is done with the received message.
 
 #### Setup
@@ -119,8 +121,8 @@ We parse every proto defined `RawCanbusMessage` to extract the
 `AmigaTpdo1` message.
 
 :::tip
-The [**`AmigaTpdo1`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py) message comes from the
-dashboard and contains the:
+The [**`AmigaTpdo1`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py)
+message comes from the dashboard and contains the:
 
 - state of the Amiga (AmigaControlState)
 - measured speed (forward positive)
@@ -131,9 +133,8 @@ This is the information you'll use for closed loop control!
 
 The canbus service reformats and forwards all CAN messages to the
 canbus client, so there are a lot of messages to filter out.
-The [**`parse_amiga_tpdo1_proto`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py) returns
-`None` if the `RawCanbusMessage` does not contain an `AmigaTpdo1`
-message.
+The [**`parse_amiga_tpdo1_proto`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py)
+returns `None` if the `RawCanbusMessage` does not contain an `AmigaTpdo1` message.
 
 :::info
 If you're curious to learn more about CAN bus in general, see
@@ -143,8 +144,8 @@ interact with the canbus client through Amiga state messages.
 :::
 
 To display the values in the `Label` widgets we use a kivy
-
-[**`StringProperty`**](https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.StringProperty) for each value.
+[**`StringProperty`**](https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.StringProperty)
+for each value.
 These are bound to the corresponding `Label` widget text fields,
 so we only need to update the value of the `StringProperty` and
 we do not need to update the text field of the `Label` explicitly.
@@ -257,8 +258,8 @@ before driving around!
 You should see the `AmigaTpdo1` values update in realtime as you
 drive the amiga and change between various command states. See
 [**Amiga Control States**](../../dashboard/control_states.mdx)
-and [**`AmigaControlState`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py) for more
-information on the `state` parameter.
+and [**`AmigaControlState`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py)
+for more information on the `state` parameter.
 
 You should also see camera stream to the right of the
 `AmigaTpdo1` values from the canbus.
@@ -267,6 +268,8 @@ provided by the oak camera.
 
 ![camera_stream](https://user-images.githubusercontent.com/53625197/200481937-5fc317bc-614d-4446-89f5-9df70471c3f6.png)
 
-<!-- - Reference: [**farm_ng.canbus.canbus_client**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py)
-- Reference: [**farm_ng.canbus.packet**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py)
-- Reference: [**canbus.proto**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto) -->
+### References
+
+- [**farm_ng.canbus.canbus_client**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py)
+- [**farm_ng.canbus.packet**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py)
+- [**canbus.proto**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto)

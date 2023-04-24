@@ -5,8 +5,8 @@ title: File Reader Can
 
 # File Reader Can Example
 
-This [**file_reader_can example**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader_can) parses the
-CAN data from a recorded log and prints the `AmigaTpdo1` parsed
+This [**file_reader_can example**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader_can)
+parses the CAN data from a recorded log and prints the `AmigaTpdo1` parsed
 values. The `AmigaTpdo1` can packet contains
 the `state`, `speed`, and `angular rate` of the Amiga, as
 reported by the vehicle control unit (VCU).

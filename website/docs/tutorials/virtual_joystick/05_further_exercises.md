@@ -9,8 +9,8 @@ Two options are:
 
 ## Adjustable rates
 
-Define two kivy [**`Slider`**](https://kivy.org/doc/stable/api-kivy.uix.slider.html) widgets that allow changing
-`max_speed` & `max_angular_rate`!
+Define two kivy [**`Slider`**](https://kivy.org/doc/stable/api-kivy.uix.slider.html)
+widgets that allow changing `max_speed` & `max_angular_rate`!
 Play around with where you can put these and how you can link
 them directly to the value in the `VirtualJoystickApp`.
 

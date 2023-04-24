@@ -112,7 +112,8 @@ for more details about `ticks_ms`.
 Wrapper for CAN packet used for auto mode controls of the Amiga.
 Provide the`AmigaRpdo1` object with a requested
 `AmigaControlState`, speed, and angular rate.
-Then pack this into a [**`canio.Message`**](https://docs.circuitpython.org/en/latest/shared-bindings/canio/index.html#canio.Message) and send this message over the bus.
+Then pack this into a [**`canio.Message`**](https://docs.circuitpython.org/en/latest/shared-bindings/canio/index.html#canio.Message)
+and send this message over the bus.
 
 :::info
 This is a ***request*** for a specific `AmigaControlState`,
@@ -252,8 +253,9 @@ update as the robot drives around.
 
 #### On the dashboard
 
-Navigate to the Auto mode tab on your dashboard, and click the `[AUTO CONTROL]` button. The `[AUTO READY]` icon should turn
-yellow, indicating the dashboard is ready for a component to take `Auto Control`.
+Navigate to the Auto mode tab on your dashboard, and click the `[AUTO CONTROL]` button.
+The `[AUTO READY]` icon should turn yellow,
+indicating the dashboard is ready for a component to take `Auto Control`.
 
 #### In the serial console
 

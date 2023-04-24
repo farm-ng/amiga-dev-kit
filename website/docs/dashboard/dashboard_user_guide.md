@@ -3,7 +3,8 @@ id: dashboard-user-guide
 title: Dashboard User Guide
 ---
 :::caution
-This is subject for change with new updates to the Dashboard. The current version of the Dashboard Firmware is `v0.1.9`.
+This is subject for change with new updates to the Dashboard.
+The current version of the Dashboard Firmware is `v0.1.9`.
 :::
 ![DSCF6570-2-16x9-aspect-reduced](https://user-images.githubusercontent.com/11846963/186734463-aa149b3a-7510-4d5a-99ea-f9a8a96775d2.jpg)
 
@@ -61,7 +62,8 @@ This is the home screen of the dashboard. On this screen you will find:
      width="330"
      height="300" />
 
-This screen for monitoring each motor in much more detail than that of the home screen. On this screen you can:
+This screen for monitoring each motor in much more detail than that of the home screen.
+On this screen you can:
 
 - Monitor the control state of the Amiga
 - Voltage, RPM, temperature, and current of each motor / motor controller
@@ -87,7 +89,8 @@ and the [FPV example](/docs/examples/FPV/) (micro-controller).
 
 ## General Settings Tab
 
-Now we have the settings tab, which may be the most important tab. Here on the settings tab you have a few options. Here you can find:
+Now we have the settings tab, which may be the most important tab.
+Here on the settings tab you have a few options. Here you can find:
 
 <img src="https://user-images.githubusercontent.com/64480560/233127789-39f05f32-e17e-4e7b-8118-91500a4bc75f.jpg"
      width="320"

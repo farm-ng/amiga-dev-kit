@@ -106,7 +106,8 @@ title: Index
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Support](/docs/support/support.md)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How to create issues on github and start conversations in discourse
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+How to create issues on github and start conversations in discourse
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating an issue on GitHub](/docs/support/support.md#how-to-create-an-issue)
 
@@ -118,4 +119,5 @@ title: Index
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Amiga SDK Examples](/docs/examples/examples_index.md)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a link to an index laying out the examples and tutorials we have available
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+This is a link to an index laying out the examples and tutorials we have available

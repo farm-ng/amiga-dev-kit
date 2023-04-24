@@ -84,10 +84,12 @@ your Dashboard and your debug cable and take the following steps:
 This process is currently only supported on Windows and Mac.
 :::
 
-To upgrade your Dashboard with the latest Amiga application, grab your Dashboard and your debug cable and take the following steps:
+To upgrade your Dashboard with the latest Amiga application,
+grab your Dashboard and your debug cable and take the following steps:
 
 :::caution
-It is required to have a data USB-C cable and not a charge only USB-C cable when connecting to the debug or service cable.
+It is required to have a data USB-C cable and not a charge only USB-C cable
+when connecting to the debug or service cable.
 :::
 
 #### Access the files
@@ -290,9 +292,10 @@ update example above.
    1. With versions `v0.1.8` and higher, there is a `BOOTLOADER`
    advanced user button that'll reboot the dashboard into
    `BOOTLOADER` mode.
-   2. Otherwise, if using a [**debug cable**](/docs/debug_cable/
-   README.md) you can double click the reset button.
-   3. Otherwise, if using a [**service cable**](/docs/debug_cable/service_cable.md) (or if you can't seem to get the double click timing right):
+   2. Otherwise, if using a [**debug cable**](/docs/debug_cable/README.md)
+      you can double click the reset button.
+   3. Otherwise, if using a [**service cable**](/docs/debug_cable/service_cable.md)
+      (or if you can't seem to get the double click timing right):
       1. Open a serial console connected to the dashboard
          - See: [**FAQ - Using the REPL**](/docs/reference/faq#using-the-repl)
       2. Interrupt the program with `ctrl+C`
@@ -317,9 +320,9 @@ update example above.
         microcontroller.reset()
         ```
 
-2. Drag and drop the newly downloaded UF2 file onto the mounted
+1. Drag and drop the newly downloaded UF2 file onto the mounted
 drive.
-3. This will immediately cause the bootloader firmware to update,
+1. This will immediately cause the bootloader firmware to update,
 and the dashboard will automatically reboot as `CIRCUITPY` once
 complete.
 :::note
@@ -343,5 +346,6 @@ response.
 You can double check this occurred by opening the file named
 `code.py` (or `main.py`) and seeing that there is only a single
 line of code `print('hello world')`.
-In this case, you should go through both the [**UF2 firmware**](#uf2-bootloader-update) and [**Amiga application updates**](#wired-amiga-application-updates) update steps.
+In this case, you should go through both the [**UF2 firmware**](#uf2-bootloader-update) and
+[**Amiga application updates**](#wired-amiga-application-updates) update steps.
 :::

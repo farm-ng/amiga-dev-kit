@@ -15,8 +15,8 @@ The driving behavior is modelled after the behavior of driving
 with the joystick on the pendant.
 
 :::info
-In the [**`libs/virtual_joystick/res/joystick.kv`**](https://github.com/farm-ng/virtual-joystick/blob/main/libs/virtual_joystick/res/joystick.kv) and
-[**`libs/virtual_joystick/joystick.py`**](https://github.com/farm-ng/virtual-joystick/blob/main/libs/virtual_joystick/joystick.py)
+In the [**`libs/virtual_joystick/res/joystick.kv`**](https://github.com/farm-ng/virtual-joystick/blob/main/libs/virtual_joystick/res/joystick.kv)
+and [**`libs/virtual_joystick/joystick.py`**](https://github.com/farm-ng/virtual-joystick/blob/main/libs/virtual_joystick/joystick.py)
 files of the
 [**virtual-joystick**](https://github.com/farm-ng/virtual-joystick)
 app we define the custom widget in kivy and Python.
@@ -28,8 +28,8 @@ You should open these files for reference as you follow along.
 
 We first define a few custom arguments for defining the drawn
 `joystick` that are linked to the
-[**`Ellipse`**](https://kivy.org/doc/stable/api-kivy.graphics.html#kivy.graphics.Ellipse) widget used to draw the joystick
-circle (the one with `id: joystick`).
+[**`Ellipse`**](https://kivy.org/doc/stable/api-kivy.graphics.html#kivy.graphics.Ellipse)
+widget used to draw the joystick circle (the one with `id: joystick`).
 Because these values are linked, they can be updated on the
 Python side of the `VirtualJoystickWidget` and the kivy drawing
 will update accordingly.
@@ -84,10 +84,10 @@ Blocking tasks should be scheduled as an `asyncio` task!
 ### Touch handling
 
 The [**`on_touch_down()`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_down),
-[**`on_touch_move()`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_move), &
-[**`on_touch_up()`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_up) calls are
-triggered for all `Widget`s within a kivy `App` whenever there is
-a touch interaction (by default).
+[**`on_touch_move()`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_move),
+and
+[**`on_touch_up()`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_up)
+calls are triggered for all `Widget`s within a kivy `App` whenever there is a touch interaction (by default).
 
 We overwrite the default behavior of these methods to move the
 pose of the joystick whenever we touch and/or move within the
@@ -103,9 +103,8 @@ any sort of collisions.
 `collide_point()`.
 
 So we filter `on_touch_down()` & `on_touch_move()` with
-[**`collide_point()`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.collide_point) to only perform
-our custom behavior when the touch occurred within our
-`VirtualJoystickWidget`.
+[**`collide_point()`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.collide_point)
+to only perform our custom behavior when the touch occurred within our `VirtualJoystickWidget`.
 
 Because we want to recenter the joystick regardless of which
 widget the `touch_up` occurred in, we do not filter
@@ -115,8 +114,8 @@ widget the `touch_up` occurred in, we do not filter
 
 We also define a simple container called `Vec2` for handling the
 `x` & `y` values of the joystick coordinates in
-[**libs/virtual_joystick/utils.py**](https://github.com/farm-ng/virtual-joystick/blob/main/libs/virtual_joystick/utils.py) and
-import this into `joystick.py`.
+[**libs/virtual_joystick/utils.py**](https://github.com/farm-ng/virtual-joystick/blob/main/libs/virtual_joystick/utils.py)
+and import this into `joystick.py`.
 
 ## Add it to the app
 

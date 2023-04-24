@@ -23,7 +23,8 @@ title: Frequently Asked Questions
     - You can restart the previously running application with
     <code>ctrl+D</code>
     <br/>
-    - You can find more details at: <a href="https://learn.adafruit.com/welcome-to-circuitpython/the-repl">Adafruit "The REPL"</a>.
+    - You can find more details at: <a
+      href="https://learn.adafruit.com/welcome-to-circuitpython/the-repl">Adafruit "The REPL"</a>.
     </div>
 </details>
 
@@ -53,23 +54,27 @@ title: Frequently Asked Questions
         <details>
         <summary>Windows</summary>
         <div>
-            See the adafruit docs for getting started with PuTTY: <a href="https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-windows">Windows serial console</a>.
+            See the adafruit docs for getting started with PuTTY: <a
+            href="https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-windows">
+            Windows serial console</a>.
         </div>
         </details>
         <details>
         <summary>Linux</summary>
         <div>
             See the adafruit docs for getting started with
-            'screen' in your terminal: <a href="https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-linux">Linux serial
-            console</a>.
+            'screen' in your terminal: <a
+            href="https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-linux">
+            Linux serial console</a>.
         </div>
         </details>
         <details>
         <summary>Mac</summary>
         <div>
             See the adafruit docs for getting started with
-            'screen' in your terminal: <a href="https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-mac-and-linux">Mac serial
-            console</a>.
+            'screen' in your terminal: <a
+            href="https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-mac-and-linux">
+            Mac serial console</a>.
             <br/><br/>
             TIP: Use autocomplete to get the correct usb modem
             <code>.../tty.usb[tab_for_autocomplete]</code>
@@ -130,7 +135,8 @@ title: Frequently Asked Questions
      instructions that will take you step by step to a successful
      update.
     <br/><br/>
-    - You can find more details at: <a href="https://amiga.farm-ng.com/docs/dashboard/dashboard-fw#wired-updates">Dashboard Firmware Updates</a>.
+    - You can find more details at: <a href="docs/dashboard/dashboard-fw#wired-updates">
+      Dashboard Firmware Updates</a>.
     </div>
 </details>
 
@@ -141,8 +147,8 @@ title: Frequently Asked Questions
      anywhere. We have a detailed tutorial on creating your first
      custom app on your Amiga.
     <br/><br/>
-    - You can find more details at: <a href="https://amiga.farm-ng.com/docs/brain/brain-apps">Developing Custom
-    Applications</a>.
+    - You can find more details at: <a href="/docs/brain/brain-apps">
+      Developing Custom Applications</a>.
     </div>
 </details>
 
@@ -153,7 +159,8 @@ title: Frequently Asked Questions
   it easy for you to submit any bug reports you may be having via
   the farm-ng-amiga Github.
     <br/><br/>
-    - You can find more details at: <a href="https://github.com/farm-ng/farm-ng-amiga/issues/new/choose">Create a Bug Report</a>.
+    - You can find more details at: <a href="https://github.com/farm-ng/farm-ng-amiga/issues/new/choose">
+      Create a Bug Report</a>.
     </div>
 </details>
 

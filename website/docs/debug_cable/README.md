@@ -16,7 +16,8 @@ The larger circuit board on the left is the USB / debug breakout,
 and the smaller board on the right is the serial interface.
 
 :::caution
-It is required to have a data USB-C cable and not a charge only USB-C cable when connecting to the debug or service cable.
+It is required to have a data USB-C cable and not a charge only USB-C cable
+when connecting to the debug or service cable.
 :::
 
 ![IMG_9578](https://user-images.githubusercontent.com/64480560/205400599-f79e0cae-35f3-4610-bbcf-9a4e50857fac.jpg)
