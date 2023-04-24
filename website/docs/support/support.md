@@ -31,10 +31,13 @@ To create an issue for feature requests or bug reports, please go [**here**](htt
 
 ## How to start a conversation in Discourse
 
-We also have a space for users to start conversations and interact with the Amiga community.
+We also have a space for users to start conversations and
+interact with the Amiga community.
 
 :::tip
-Before you are able to start a conversion using Discourse, you will need to create an account using your email address.
+Before you are able to start a conversion using Discourse, you
+will need to create an account using your email address.
 :::
 
-You can start a conversation and connect with the community [**here in Discourse.**](https://discourse.farm-ng.com/)
+You can start a conversation and connect with the community
+[**here in Discourse.**](https://discourse.farm-ng.com/)

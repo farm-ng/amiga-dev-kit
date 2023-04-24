@@ -18,9 +18,16 @@ title: Brain Overview
 
 **The farm-ng Brain is an Alpha level product subject to change. Not all features are fully tested and validated.**
 
-The farm-ng Brain brings supercomputer performance to the edge, in a ruggedized packaged designed for the harshest environments.
-The Brain contains a NVIDIA Xavier NX which has up to 21 TOPS of hardware accelerated computing power for machine learning and AI applications, and paired it with a touch-screen display designed to be outdoor-visible, creating both a user-interface and sensor hub in a single, waterproof package.
-This provides quick entry into the world of artificial intelligence, and a single packaged solution for developing tools and interfaces for outdoor autonomy.
+The farm-ng Brain brings supercomputer performance to the edge,
+in a ruggedized packaged designed for the harshest environments.
+The Brain contains a NVIDIA Xavier NX which has up to 21 TOPS of
+hardware accelerated computing power for machine learning and AI
+applications, and paired it with a touch-screen display designed
+to be outdoor-visible, creating both a user-interface and sensor
+hub in a single, waterproof package.
+This provides quick entry into the world of artificial
+intelligence, and a single packaged solution for developing tools
+and interfaces for outdoor autonomy.
 
 Includes CAN bus, USB, and GIGe ethernet bus options.
 
@@ -53,10 +60,14 @@ Includes CAN bus, USB, and GIGe ethernet bus options.
 
 Xavier provides the following connectors and button for IO
 
-- Power button is used for powering up and down the embedded computer
-- Debug is for interacting and updating with the OS (See information on debug connector)
+- Power button is used for powering up and down the embedded
+computer
+- Debug is for interacting and updating with the OS (See
+information on debug connector)
 - CAN / Power connector provides 12/24 volts and CAN interface
-- ACC USBs are two accessory USBs (as of the early version of the display are USB 2.0 Micro USB connectors) that allow attaching USB devices
+- ACC USBs are two accessory USBs (as of the early version of the
+display are USB 2.0 Micro USB connectors) that allow attaching
+USB devices
 - Ethernet X coded M12 ethernet connection
 
 ### Pinouts
@@ -79,7 +90,8 @@ Mating connector M12-5 A code female
 
 Mating connector M12-8 A code female
 
-Debug wire colors based on common cable with flying leads used on farm-ng built debug kits.
+Debug wire colors based on common cable with flying leads used on
+farm-ng built debug kits.
 
 | PIN | Description   | Typical Wire Color | Notes                      |
 | --- | ------------- | ------------------ | -------------------------- |

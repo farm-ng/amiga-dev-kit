@@ -13,11 +13,20 @@ title: Dashboard Overview
 
 ## Description
 
-Farm-ng's Dashboard is a ruggedized, waterproof, outdoor-visible touch-screen display and machine controller - customizable through our ADK (Amiga-Dev-Kit) toolset!
+Farm-ng's Dashboard is a ruggedized, waterproof, outdoor-visible
+touch-screen display and machine controller - customizable
+through our ADK (Amiga-Dev-Kit) toolset!
 
-Under the hood is a simple yet powerful embedded microcontroller based on Adafruit's Feather M4 CAN, which runs CircuitPython and makes building your own custom interfaces as simple as connecting a USB cable and writing a few lines of code.  If you've been looking for a microcontroller and display that can handle harsh environments, look no further!
+Under the hood is a simple yet powerful embedded microcontroller
+based on Adafruit's Feather M4 CAN, which runs CircuitPython and
+makes building your own custom interfaces as simple as connecting
+a USB cable and writing a few lines of code.  If you've been
+looking for a microcontroller and display that can handle harsh
+environments, look no further!
 
-The Dashboard comes with a Wifi modem and CANbus transceiver on board, and is powered over an industrial M12 connector compatible with the Amiga.  Includes debug cable.
+The Dashboard comes with a Wifi modem and CANbus transceiver on
+board, and is powered over an industrial M12 connector compatible
+with the Amiga.  Includes debug cable.
 
 ## Features overview
 
@@ -75,7 +84,8 @@ Mating connector M12-5 A code male
 
 Mating connector M12-8 A code female
 
-Debug wire colors based on common cable with flying leads used on farm-ng built debug kits.
+Debug wire colors based on common cable with flying leads used on
+farm-ng built debug kits.
 
 | PIN | Description   | Typical Wire Color | Notes                      |
 | --- | ------------- | ------------------ | -------------------------- |

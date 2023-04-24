@@ -34,7 +34,8 @@ title: Index
 
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Overview of how to turn on Amiga and get it running]
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Calibrate the pendant](/docs/amiga_quick_start/amiga-quick-start.md#calibrate-the-pendant)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[Calibrate the pendant](/docs/amiga_quick_start/amiga-quick-start.md#calibrate-the-pendant)
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Dashboard Firmware Updates](/docs/dashboard/fw_updates.md)
 

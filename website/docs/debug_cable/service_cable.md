@@ -9,7 +9,8 @@ title: Service Cable Overview
 
 ## Overview
 
-Cable used to update and service farm-ng products. It includes rest functionality along with USB communication.
+Cable used to update and service farm-ng products. It includes
+rest functionality along with USB communication.
 
 ![IMG-9585](https://user-images.githubusercontent.com/64480560/205402615-a182d74f-ea46-437b-ad3f-f02f4efbb28d.jpg)
 
@@ -17,7 +18,8 @@ Cable used to update and service farm-ng products. It includes rest functionalit
 
 #### Dashboard
 
-- USB interface is for REPL, filesystem access as well as updating firmware and applications,
+- USB interface is for REPL, filesystem access as well as
+updating firmware and applications,
 
 #### How to connect
 
@@ -27,7 +29,8 @@ Cable used to update and service farm-ng products. It includes rest functionalit
 
 #### REPL for BOOTLOADER State
 
-These commands from the REPL will put the device into the bootloader state the same way the double press reset on  would.
+These commands from the REPL will put the device into the
+bootloader state the same way the double press reset on  would.
 
 ##### On Linux/ WSL
 
@@ -39,9 +42,11 @@ microcontroller.on_next_reset(microcontroller.RunMode.BOOTLOADER)
 microcontroller.reset()
 ```
 
-**See update process documentation for more information [here](/docs/dashboard/fw_updates.md)**
+**See update process documentation for more information**
+**[here](/docs/dashboard/fw_updates.md)**
 
-**See flashing and operating system documentation for more information [here](/docs/brain/README.md)**
+**See flashing and operating system documentation for more**
+**information [here](/docs/brain/README.md)**
 
 ## Pinout
 

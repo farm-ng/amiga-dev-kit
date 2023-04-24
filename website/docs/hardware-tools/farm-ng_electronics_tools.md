@@ -5,12 +5,16 @@ title: Basic Electronics Tool Kit
 ## Basic recommended tool kit for hardware hacking
 
 :::caution Work in Progress
-We're working on putting together a compact, yet exhaustive, list of
-the tools you'll want to have on hand for hacking on robotics hardware.
+We're working on putting together a compact, yet exhaustive, list
+of
+the tools you'll want to have on hand for hacking on robotics
+hardware.
 
-In the meantime, we hope this can serve as inspiration for what you
+In the meantime, we hope this can serve as inspiration for what
+you
 ought to have on hand. And feel free to check for / reach out
-with any questions on the Discord server (found at the bottom of the page).
+with any questions on the Discord server (found at the bottom of
+the page).
 :::
 
 ### Screwdrivers

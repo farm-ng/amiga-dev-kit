@@ -7,12 +7,16 @@ title: Recommended Tools
 ## Basic recommended tool kit for hardware hacking
 
 :::caution Work in Progress
-We're working on putting together a compact, yet exhaustive, list of
-the tools you'll want to have on hand for hacking on robotics hardware.
+We're working on putting together a compact, yet exhaustive, list
+of
+the tools you'll want to have on hand for hacking on robotics
+hardware.
 
-In the meantime, we hope this can serve as inspiration for what you
+In the meantime, we hope this can serve as inspiration for what
+you
 ought to have on hand. And feel free to check for / reach out
-with any questions on the Discord server (found at the bottom of the page).
+with any questions on the Discord server (found at the bottom of
+the page).
 :::
 
 ### Screwdrivers
@@ -74,11 +78,15 @@ with any questions on the Discord server (found at the bottom of the page).
 
 ## Scissor lift
 
-A great way to develop with the Amiga, especially when working on control applications, is to put it up on a scissor lift.
-This way you can test measuring wheel odometry, controlling the robot, and more without concern of running into anything or pulling out any cables you may have connected.
+A great way to develop with the Amiga, especially when working on
+control applications, is to put it up on a scissor lift.
+This way you can test measuring wheel odometry, controlling the
+robot, and more without concern of running into anything or
+pulling out any cables you may have connected.
 
 We tend to use double scissor lifts, with a 770 lb capacity.
-But what's most important is that the table is long enough to lift the amiga from both crossbars.
+But what's most important is that the table is long enough to
+lift the amiga from both crossbars.
 
 - In the past, we've run to Home Depot and purchased: [**Eoslift 770 lb double scissor lift**](https://www.homedepot.com/p/Eoslift-Industrial-Grade-Heavy-Duty-TAD35-Manual-Double-Scissor-Lift-Table-Cart-770-lbs-Cap-20-5-in-x-39-7in-Swivel-Casters-TAD35/301884311
 )

@@ -12,14 +12,18 @@ title: Brain ADK Install
 #### [Optional] Make a new directory that will hold all of your farm-ng related files
 
 ```bash
-cd <to_your_base_directory>  # In your terminal navigate to where you want this new directory
+cd <to_your_base_directory>  # In your terminal navigate to where
+#you want this new directory
 mkdir <new_farm_folder>
 cd <new_farm_folder> # change to the directory
 ```
 
 ### Clone the repository
 
-To install the [`farm-ng-amiga`](https://github.com/farm-ng/farm-ng-amiga) package and test the available examples, start by cloning the repo:
+To install the
+[`farm-ng-amiga`](https://github.com/farm-ng/farm-ng-amiga)
+package and test the available examples, start by cloning the
+repo:
 
 ```bash
 git clone git@github.com:farm-ng/farm-ng-amiga.git
@@ -35,7 +39,8 @@ git pull
 ```
 
 :::caution troubleshooting
-If you have trouble cloning this public repo, Github is likely not able to authenticate your SSH public key.
+If you have trouble cloning this public repo, Github is likely
+not able to authenticate your SSH public key.
 
 If this is the case, you can either:
 
@@ -52,8 +57,11 @@ git clone https://github.com/farm-ng/farm-ng-amiga.git
 ### [Optional] Set up virtual environment
 
 :::tip
-We recommend running the brain SDK applications in a virtual environment to avoid conflicts with other packages / versions installed on your system.
-Though this is not a requirement and you are welcome to decide how/where to install.
+We recommend running the brain SDK applications in a virtual
+environment to avoid conflicts with other packages / versions
+installed on your system.
+Though this is not a requirement and you are welcome to decide
+how/where to install.
 :::
 
 If you want to install [`farm-ng-amiga`](https://pypi.org/project/farm-ng-amiga) in a virtual environment:
@@ -87,7 +95,8 @@ sudo pip3 install virtualenv
 Start a virtual environment:
 
 ```bash
-# assuming you're in the directory where you want to create your `venv`
+# assuming you're in the directory where you want to create your
+# `venv`
 python3 -m venv venv
 source venv/bin/activate
 ```
@@ -96,7 +105,8 @@ Later, when you want to exit / re-enter your `venv`:
 
 ```bash
 deactivate # exit
-source venv/bin/activate # re-enter, assuming you're in the root containing `venv/`
+source venv/bin/activate # re-enter, assuming you're in the root
+# containing `venv/`
 ```
 
 ### Package install
@@ -120,7 +130,8 @@ pip3 list | grep farm-ng
 
 ### Package updates
 
-As new releases come out, you can keep your farm-ng packages up to date with:
+As new releases come out, you can keep your farm-ng packages up
+to date with:
 
 ```bash
 pip3 install farm-ng-package --upgrade
@@ -130,9 +141,11 @@ pip3 install farm-ng-amiga --upgrade
 
 ### [Advanced] From source
 
-If you want to edit the package, or contribute, you can install from source.
+If you want to edit the package, or contribute, you can install
+from source.
 
-Install `pip3` & setup a `virtualenv` (shown [above](#optional-set-up-virtual-environment))
+Install `pip3` & setup a `virtualenv` (shown
+[above](#optional-set-up-virtual-environment))
 
 Create and install the ``farm-ng-amiga`` Python package
 

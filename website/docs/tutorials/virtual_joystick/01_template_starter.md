@@ -7,22 +7,29 @@ title: 01 - Template Starter
 ## Set up your Amiga brain template
 
 Follow the instructions in [**Developing Custom Applications**](/docs/brain/custom-applications.mdx)
-to clone and set up an application from the [**amiga-app-template**](https://github.com/farm-ng/amiga-app-template).
+to clone and set up an application from the
+[**amiga-app-template**](https://github.com/farm-ng/amiga-app-template).
 
-Be sure not to skip the [**Customizing an app**](/docs/brain/brain-apps#customizing-an-app) required to properly configure
+Be sure not to skip the
+[**Customizing an app**](/docs/brain/brain-apps#customizing-an-app)
+required to properly configure
 the library and app you are creating.
 
 :::tip
-Feel free to choose any repository name, but it's recommended to go with something like `joystick_tutorial` for the repository.
-That difference will make it easier to differentiate between the [**`farm-ng/virtual-joystick`**](https://github.com/farm-ng/virtual-joystick)
-example and your own implementation if they both get cloned onto the same machine.
+Feel free to choose any repository name, but it's recommended to
+go with something like `joystick_tutorial` for the repository.
+That difference will make it easier to differentiate between the
+[**`farm-ng/virtual-joystick`**](https://github.com/farm-ng/virtual-joystick)
+example and your own implementation if they both get cloned onto
+the same machine.
 
 We will assume you went with `joystick_tutorial` in this tutorial.
 :::
 
 ## Rename the `TemplateApp`
 
-Now that you've created the template, it's time to rename it for your app.
+Now that you've created the template, it's time to rename it for
+your app.
 In this tutorial, we'll go with `VirtualJoystickApp`.
 
 Navigate to `main.py` in your app and open it with a text editor.
@@ -60,7 +67,8 @@ Now sync the app to the Brain and launch it with the
 [**Deploy Instructions**](/docs/brain/brain-apps#develop-and-test-in-the-robot)
 for syncing the app onto the Amiga Brain!
 
-After the requirements install, you should see the template kivy app pop up.
+After the requirements install, you should see the template kivy
+app pop up.
 Try out the `Back` button to exit the app.
 
 ![app-template](https://user-images.githubusercontent.com/53625197/217021857-aede9e9b-0f85-4b15-971f-c45944a3813c.png)
