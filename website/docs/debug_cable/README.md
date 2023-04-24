@@ -25,7 +25,7 @@ It is required to have a data USB-C cable and not a charge only USB-C cable when
 
 #### How to Connect
 
-Connect cable to the debug port on the back of dashboard
+Connect cable to the debug port on the back of the dashboard
 
 ![187535995-d4ad8c7c-05a0-482b-8be9-6b6fb6b87ac3](https://user-images.githubusercontent.com/64480560/206007745-b36c59c7-22dd-4435-9cae-8503956174f3.png)
 
