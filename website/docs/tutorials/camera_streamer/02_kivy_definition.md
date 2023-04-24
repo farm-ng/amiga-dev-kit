@@ -5,7 +5,8 @@ title: 02 - Kivy Definition
 # Kivy Definition
 
 :::info
-In the [**`src/res/main.kv`**](https://github.com/farm-ng/camera-streamer/blob/main/src/res/main.kv) file of the
+In the [**`src/res/main.kv`**](https://github.com/farm-ng/camera-streamer/blob/main/src/res/main.kv)
+file of the
 [**camera-streamer**](https://github.com/farm-ng/camera-streamer)
 app we define the kivy app.
 You should open that file for reference as you follow along.
@@ -21,9 +22,12 @@ for exiting the app
 
 ## Starting with the template
 
-The [**`src/res/main.kv`**](https://github.com/farm-ng/amiga-app-template/blob/main/src/res/main.kv) file of the
-[**amiga-app-template**](https://github.com/farm-ng/amiga-app-template) defines a root of a `RelativeLayout`, with a
-`Button`, and a `Label`, as explained in [**kivy app definition**](/docs/tutorials/introduction/template-overview#kivy-app-definition).
+The [**`src/res/main.kv`**](https://github.com/farm-ng/amiga-app-template/blob/main/src/res/main.kv)
+file of the
+[**amiga-app-template**](https://github.com/farm-ng/amiga-app-template)
+defines a root of a `RelativeLayout`, with a
+`Button`, and a `Label`,
+as explained in [**kivy app definition**](/docs/tutorials/introduction/template-overview#kivy-app-definition).
 
 We will keep the `RelativeLayout` root and the `Button` for
 exiting the app, but remove the `Label` widget.

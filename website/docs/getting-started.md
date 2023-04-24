@@ -11,7 +11,12 @@ including documentation, tutorials, & the development kit API.
 :::info
 For a walk through of this website watch the following video!
 :::
-<iframe width="560" height="315" src="https://www.youtube.com/embed/E-KLkQRhuyU?list=PLWQmpzk0y9NDXFKSwvCjYtRL8QNWfK4ND" title="SDK Tutorial v1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/E-KLkQRhuyU?list=PLWQmpzk0y9NDXFKSwvCjYtRL8QNWfK4ND"
+title="SDK Tutorial v1" frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
 
 ## The Amiga
 

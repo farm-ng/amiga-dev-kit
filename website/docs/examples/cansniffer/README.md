@@ -87,8 +87,8 @@ messages, or ignore them.
 
 The first CANopen standard to familiarize yourself with before
 interacting with the Amiga dev kit is the
-[**PDO Service**](https://www.csselectronics.com/pages/canopen-tutorial-simple-intro#pdo-process-data-object) used for
-sharing realtime information.
+[**PDO Service**](https://www.csselectronics.com/pages/canopen-tutorial-simple-intro#pdo-process-data-object)
+used for sharing realtime information.
 Our dashboard is in constant communication with the pendant and
 all motor controllers.
 
@@ -108,7 +108,8 @@ measured when following these requests are sent as a TPDO
 response.
 When the requests cannot be followed, the reason should be
 inferable from the TPDO response.
-The [**Hello World Auto-mode (hello_main_loop)**](/examples/hello_main_loop/README.md) provides the ability to interact
+The [**Hello World Auto-mode (hello_main_loop)**](/examples/hello_main_loop/README.md)
+provides the ability to interact
 directly with the Auto controller / dashboard PDO set of RPDO
 request & TPDO response.
 To test this, try requesting control of the robot when it is

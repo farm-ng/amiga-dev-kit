@@ -10,24 +10,35 @@ title: Amiga ROS Bridge
 
 This repository contains a ROS bridge for the Farm-ng Amiga platform written in [Rust](https://www.rust-lang.org/).
 
-> **Disclaimer:** the Amiga stack does not leverage ROS for control, but rather uses a gRPC service for control. This bridge is provided as a convenience for users who wish to use ROS for control. For performance critical applications, we recommend using the gRPC service directly.
+> **Disclaimer:** the Amiga stack does not leverage ROS for control,
+> but rather uses a gRPC service for control. This bridge is provided as a convenience
+> for users who wish to use ROS for control. For performance critical applications,
+> we recommend using the gRPC service directly.
 
 ## Overview
 
-The ROS bridge, currently supported for ROS Noetic, interfaces with the [Amiga gRPC services](https://github.com/farm-ng/farm-ng-amiga) for control with ROS [`Twist`](http://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/Twist.html) messages.
+The ROS bridge, currently supported for ROS Noetic, interfaces with the
+[Amiga gRPC services](https://github.com/farm-ng/farm-ng-amiga) for control with ROS
+[`Twist`](http://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/Twist.html) messages.
 
 Using the ROS bridge with the amiga requires an Amiga OS `>= v1.2.0`.
 
-The ROS bridge allows you to publish [`Twist`](http://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/Twist.html) commands on the `/amiga/cmd_vel` topic to drive the Amiga and subscribe to [`TwistStamped`](http://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/TwistStamped.html) measured rates on the  `/amiga/vel` topic.
+The ROS bridge allows you to publish
+[`Twist`](http://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/Twist.html) commands on the
+`/amiga/cmd_vel` topic to drive the Amiga and subscribe to
+[`TwistStamped`](http://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/TwistStamped.html)
+measured rates on the  `/amiga/vel` topic.
 
 ### Usage options
 
 There are currently 3 methods for using the `amiga_ros_bridge`:
 
-1. Running the `amiga_ros_bridge` (and ROS master) on the Amiga, with other ROS nodes on your PC connected to the Amiga ROS master
+1. Running the `amiga_ros_bridge` (and ROS master) on the Amiga,
+   with other ROS nodes on your PC connected to the Amiga ROS master
     - Look for sections tagged as **`[Method 1]`**
    <!-- - See [ROS bridge on the Amiga](#ros-bridge-on-the-amiga) for instructions -->
-2. Running the `amiga_ros_bridge` (and ROS master) on your PC, connected to the Amiga canbus service over gRPC
+2. Running the `amiga_ros_bridge` (and ROS master) on your PC,
+   connected to the Amiga canbus service over gRPC
    - Look for sections tagged as **`[Method 2]`**
    <!-- - See [ROS bridge on your PC](#ros-bridge-on-your-pc) for instructions -->
 3. Running the `amiga_ros_bridge` (and ROS master) on your PC, using the mock server
@@ -67,7 +78,8 @@ To run the `amiga_ros_bridge` on your PC, you will need:
 - [Rust install instructions](https://www.rust-lang.org/learn/get-started).
   - Rust is only needed if you will run the `amiga_ros_bridge` or any Rust examples on your PC.
 
-> NOTE: Using ROS on your PC means you're either running some flavor of Linux or know how to run ROS in a VM on your other OS.
+> NOTE: Using ROS on your PC means you're either running some flavor of
+> Linux or know how to run ROS in a VM on your other OS.
 
 ### `amiga_ros_bridge` installation
 
@@ -151,7 +163,8 @@ export ROS_MASTER_URI=http://<AMIGA_IP>:11311
 export ROS_IP=<AMIGA_IP>
 ```
 
-Where `<AMIGA_IP>` corresponds to the IP address seen on the bottom right hand corner of your Amiga brain home screen.
+Where `<AMIGA_IP>` corresponds to the IP address seen on the
+bottom right hand corner of your Amiga brain home screen.
 So this command would become, e.g.:
 
 ```bash
@@ -166,7 +179,8 @@ export ROS_MASTER_URI=http://<AMIGA_IP>:11311
 export ROS_IP=<DEV_STATION_IP>
 ```
 
-Where `<DEV_STATION_IP>` corresponds to the IP address on your PC running ROS, connected to the same network as the Amiga.
+Where `<DEV_STATION_IP>` corresponds to the IP address on your PC running ROS,
+connected to the same network as the Amiga.
 
 > Hint: `<DEV_STATION_IP>` can be found with `ifconfig` or other basic tools.
 
@@ -204,7 +218,8 @@ export ROS_IP=<AMIGA_IP>
 roslaunch amiga_ros_bridge amiga_ros_bridge.launch
 ```
 
-Where `<AMIGA_IP>` corresponds to the IP address seen on the bottom right hand corner of your Amiga brain home screen.
+Where `<AMIGA_IP>` corresponds to the IP address seen on the
+bottom right hand corner of your Amiga brain home screen.
 
 ### ROS bridge on your PC
 
@@ -218,13 +233,15 @@ and that you know the IP address of the Amiga.
 roslaunch amiga_ros_bridge amiga_ros_bridge.launch host:=<AMIGA_IP>
 ```
 
-Where `<AMIGA_IP>` corresponds to the IP address seen on the bottom right hand corner of your Amiga brain home screen.
+Where `<AMIGA_IP>` corresponds to the IP address seen on the
+bottom right hand corner of your Amiga brain home screen.
 
 ### ROS bridge with mock server
 
 For: **`[Method 3]`**
 
-Finally, you can run the package in your computer with a mock Amiga canbus server that just echos velocity commands back.
+Finally, you can run the package in your computer with a
+mock Amiga canbus server that just echos velocity commands back.
 To run this, you must first start the mock server in a separate terminal:
 
 #### Start the mock server
@@ -258,8 +275,9 @@ source ~/catkin_ws/devel/setup.bash
 rostopic list
 ```
 
-> NOTE: If running the `amiga_ros_bridge` on the Amiga (as in **`[Method 1]`**) and connecting with ROS over the network,
-make sure to follow the [Specifying the ROS Master](#specifying-the-ros-master) instructions.
+> NOTE: If running the `amiga_ros_bridge` on the Amiga (as in **`[Method 1]`**)
+> and connecting with ROS over the network,
+> make sure to follow the [Specifying the ROS Master](#specifying-the-ros-master) instructions.
 > Remember to set your `ROS_MASTER_URI` & `ROS_IP` before running. E.g.,
 >
 > ```bash
@@ -300,7 +318,8 @@ Use arrow keys (left, right, up, down) to command velocities to the Amiga.
 
 ### Stable ROS packages
 
-You can publish `Twist` commands to the ROS bridge on the `/amiga/cmd_vel` topic with the [`rqt_robot_steering`](http://wiki.ros.org/rqt_robot_steering) package.
+You can publish `Twist` commands to the ROS bridge on the `/amiga/cmd_vel` topic with the
+[`rqt_robot_steering`](http://wiki.ros.org/rqt_robot_steering) package.
 
 Install `rqt_robot_steering`, if needed:
 
@@ -325,25 +344,32 @@ rostopic echo /amiga/vel
 
 ## Try the examples
 
-We have provided some examples to help you get started. You will find the examples in the [`examples`](https://github.com/farm-ng/amiga-ros-bridge/tree/main/examples) directory.
+We have provided some examples to help you get started. You will find the examples in the
+[`examples`](https://github.com/farm-ng/amiga-ros-bridge/tree/main/examples) directory.
 
 ### Python
 
-- [`amiga_cmd_vel_publisher.py`](https://github.com/farm-ng/amiga-ros-bridge/tree/main/examples/amiga_cmd_vel_publisher.py): Publishes a `TwistStamped` message on the `/amiga/cmd_vel` topic.
-- [`amiga_vel_subscriber.py`](https://github.com/farm-ng/amiga-ros-bridge/tree/main/examples/amiga_vel_subscriber.py): Subscribes to the `/amiga/vel` topic and prints the received `TwistStamped` messages.
+- [`amiga_cmd_vel_publisher.py`](https://github.com/farm-ng/amiga-ros-bridge/tree/main/examples/amiga_cmd_vel_publisher.py):
+  Publishes a `TwistStamped` message on the `/amiga/cmd_vel` topic.
+- [`amiga_vel_subscriber.py`](https://github.com/farm-ng/amiga-ros-bridge/tree/main/examples/amiga_vel_subscriber.py):
+  Subscribes to the `/amiga/vel` topic and prints the received `TwistStamped` messages.
 
 ### Rust
 
-- [`amiga_cmd_vel_publisher.rs`](https://github.com/farm-ng/amiga-ros-bridge/tree/main/examples/amiga_cmd_vel_publisher.rs): Publishes a `TwistStamped` message on the `/amiga/cmd_vel` topic.
-- [`amiga_vel_subscriber.rs`](https://github.com/farm-ng/amiga-ros-bridge/tree/main/examples/amiga_vel_subscriber.rs): Subscribes to the `/amiga/vel` topic and prints the received `TwistStamped` messages.
-- [`amiga-joystick.rs`](https://github.com/farm-ng/amiga-ros-bridge/tree/main/examples/amiga-joystick.rs): A simple joystick to command velocities to the Amiga and print received velocity states.
+- [`amiga_cmd_vel_publisher.rs`](https://github.com/farm-ng/amiga-ros-bridge/tree/main/examples/amiga_cmd_vel_publisher.rs):
+  Publishes a `TwistStamped` message on the `/amiga/cmd_vel` topic.
+- [`amiga_vel_subscriber.rs`](https://github.com/farm-ng/amiga-ros-bridge/tree/main/examples/amiga_vel_subscriber.rs):
+  Subscribes to the `/amiga/vel` topic and prints the received `TwistStamped` messages.
+- [`amiga-joystick.rs`](https://github.com/farm-ng/amiga-ros-bridge/tree/main/examples/amiga-joystick.rs):
+  A simple joystick to command velocities to the Amiga and print received velocity states.
 
 ## Use `depthai-ros` for Oak camera streaming
 
 As of March 29, 2023 - the ROS docker container for the Amiga has a built in installation of [`depthai-ros`](https://github.com/luxonis/depthai-ros).
 This is installed as the `ros-noetic-depthai-ros` apt package.
 
-You can install the March 29, 2023 ROS docker container for the Amiga with the same command you used to install the original ROS docker container for the Amiga.
+You can install the March 29, 2023 ROS docker container for the Amiga with the same command
+you used to install the original ROS docker container for the Amiga.
 
 Please refer to [`depthai-ros`](https://github.com/luxonis/depthai-ros) on full usage of their ROS package.
 
@@ -351,16 +377,20 @@ As of March 29, 2023 - there is no support for visualization in the ROS docker c
 This means you can use the `depthai-ros` library to connect to the Oak cameras on your amiga,
 use other ROS nodes running on the Amiga for image processing,
 but you will need to stream them over a network to a PC to visualize them.
-This is done by properly setting `ROS_MASTER_URI` & `ROS_IP` on all devices, as explained in [Specifying the ROS Master](#specifying-the-ros-master).
+This is done by properly setting `ROS_MASTER_URI` & `ROS_IP` on all devices, as explained in
+[Specifying the ROS Master](#specifying-the-ros-master).
 
-> NOTE: You must stop the oak camera service(s) in your apps launcher setting page so the `depthai-ros` package can access the Oak camera device(s).
+> NOTE: You must stop the oak camera service(s) in your apps launcher setting page so the
+> `depthai-ros` package can access the Oak camera device(s).
 >
-> <img src="https://user-images.githubusercontent.com/53625197/228701415-89fb6d36-dce5-4b42-808d-2dd486db91a5.png" width="35%"/>
+> <img src="https://user-images.githubusercontent.com/53625197/228701415-89fb6d36-dce5-4b42-808d-2dd486db91a5.png"
+> width="35%"/>
 
 **Tips:**
 
 - We provide a quick example of using the `depthai-ros` to stream images below
-- It is up to you to read their docs to decide which of their launch files / nodes / examples you want to use
+- It is up to you to read their docs to decide which of their
+  launch files / nodes / examples you want to use
 - It is up to you to read their docs to configure / interact with the cameras how you want. E.g.,
   - Specify `MxId` of the camera you want to stream
   - Configure for PoE cameras to reduce expected throughput compared to USB (See: <https://github.com/luxonis/depthai-ros#poe-cameras>)
@@ -381,9 +411,11 @@ export ROS_IP=<AMIGA_IP>
 roslaunch depthai_examples stereo_inertial_node.launch
 ```
 
-Where `<AMIGA_IP>` corresponds to the IP address seen on the bottom right hand corner of your Amiga brain home screen.
+Where `<AMIGA_IP>` corresponds to the IP address seen on the
+bottom right hand corner of your Amiga brain home screen.
 
-> You will see an error that rviz cannot be launched because there is no support for visualization in this docker container.
+> You will see an error that rviz cannot be launched because there is no support for visualization
+> in this docker container.
 > But, if the Oak camera is available, the `depthai-ros` node will start and a camera will be streaming.
 >
 > ```bash
@@ -404,13 +436,18 @@ export ROS_IP=<DEV_STATION_IP>
 rqt_image_view
 ```
 
-Where `<AMIGA_IP>` corresponds to the IP address seen on the bottom right hand corner of your Amiga brain home screen.
-And `<DEV_STATION_IP>` corresponds to the IP address on your PC running ROS, connected to the same network as the Amiga.
+Where `<AMIGA_IP>` corresponds to the IP address seen on the
+bottom right hand corner of your Amiga brain home screen.
+And `<DEV_STATION_IP>` corresponds to the IP address on your PC running ROS,
+connected to the same network as the Amiga.
 
-Now select the image you want to view based on topic, e.g. `/stereo_inertial_publisher/color/image` or  `/stereo_inertial_publisher/stereo/depth`.
+Now select the image you want to view based on topic,
+e.g. `/stereo_inertial_publisher/color/image` or  `/stereo_inertial_publisher/stereo/depth`.
 
-<img src="https://user-images.githubusercontent.com/53625197/228702256-d5ef02d9-98a6-476d-b636-56f66f84822d.png" width="50%"/>
+<img src="https://user-images.githubusercontent.com/53625197/228702256-d5ef02d9-98a6-476d-b636-56f66f84822d.png"
+width="50%"/>
 
 ## Do you want to know more?
 
-Inspect [`ci_test.sh`](https://github.com/farm-ng/amiga-ros-bridge/blob/main/ci_test.sh) for a full example of how to run the bridge in a CI environment.
+Inspect [`ci_test.sh`](https://github.com/farm-ng/amiga-ros-bridge/blob/main/ci_test.sh)
+for a full example of how to run the bridge in a CI environment.
