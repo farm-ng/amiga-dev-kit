@@ -59,7 +59,8 @@ const sidebars = {
       },
       {
         "items": [
-          "intelligence_kit/v2-intro",
+          "intelligence-kit/v2-intro",
+          "intelligence-kit/v2-features"
         ],
         "label": "Brain v2",
         "type": "category"
