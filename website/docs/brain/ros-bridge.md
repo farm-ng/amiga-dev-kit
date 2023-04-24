@@ -6,7 +6,7 @@ title: Amiga ROS Bridge
 
 # Amiga ROS Bridge
 
-### [Link to `farm-ng/amiga-ros-bridge`](https://github.com/farm-ng/amiga-ros-bridge)
+## [Link to `farm-ng/amiga-ros-bridge`](https://github.com/farm-ng/amiga-ros-bridge)
 
 This repository contains a ROS bridge for the Farm-ng Amiga platform written in [Rust](https://www.rust-lang.org/).
 
@@ -45,7 +45,6 @@ There are currently 3 methods for using the `amiga_ros_bridge`:
   - Published by ROS bridge
   - Topic: `/amiga/vel`
   - Format: [`geometry_msgs/TwistStamped`](http://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/TwistStamped.html)
-
 
 ## Prerequisites
 
@@ -364,7 +363,7 @@ This is done by properly setting `ROS_MASTER_URI` & `ROS_IP` on all devices, as 
 - It is up to you to read their docs to decide which of their launch files / nodes / examples you want to use
 - It is up to you to read their docs to configure / interact with the cameras how you want. E.g.,
   - Specify `MxId` of the camera you want to stream
-  - Configure for PoE cameras to reduce expected throughput compared to USB (See: https://github.com/luxonis/depthai-ros#poe-cameras)
+  - Configure for PoE cameras to reduce expected throughput compared to USB (See: <https://github.com/luxonis/depthai-ros#poe-cameras>)
   - Get camera calibrations
   - Pass a Neural Network to run on the Oak
   - Etc.

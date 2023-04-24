@@ -84,6 +84,7 @@ Now we have the settings tab, which may be the most important tab. Here on the s
      height="300" />
 
 ### The General Settings Tab
+
 <img src="https://user-images.githubusercontent.com/64480560/233127855-eafd4df9-555f-4154-a238-48c8a2961e3c.jpg"
      width="320"
      height="300" />
@@ -139,10 +140,10 @@ For more information about Firmware Updates or how to perform an update, please 
 :::
 
 ### H-bridge settings
+
 <img src="https://user-images.githubusercontent.com/64480560/233127456-1f294f6f-69ac-4563-a070-9b25c2e78ac3.jpg"
      width="320"
      height="300" />
-
 
 This page shows the status of the H-bridge linear actuators on your Amiga.
 The H-bridge actuators are controlled with the arrow keys on the pendant.

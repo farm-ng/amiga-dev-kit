@@ -25,11 +25,11 @@ It is required to have a data USB-C cable and not a charge only USB-C cable when
 - USB interface is for REPL, filesystem access as well as
 updating firmware and applications,
 
-#### How to connect
+### How to connect
+
+Connect cable to the debug port on the back of the dashboard
 
 ![187535995-d4ad8c7c-05a0-482b-8be9-6b6fb6b87ac3](https://user-images.githubusercontent.com/64480560/206007745-b36c59c7-22dd-4435-9cae-8503956174f3.png)
-
-**Connect cable to the debug port on the back of dashboard**
 
 #### REPL for BOOTLOADER State
 
@@ -38,7 +38,7 @@ bootloader state the same way the double press reset on  would.
 
 ##### On Linux/ WSL
 
-```
+```bash
 sudo screen /dev/ttyACM0
 
 import microcontroller

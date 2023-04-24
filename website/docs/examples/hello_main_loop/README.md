@@ -4,7 +4,7 @@ title: Hello Main Loop Example
 ---
 # Hello Main Loop Example
 
-### [Link to `hello_main_loop/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/hello_main_loop/code.py)
+## [Link to `hello_main_loop/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/hello_main_loop/code.py)
 
 This introductory example covers getting set up, interacting with
 the Amiga, and
@@ -188,7 +188,9 @@ console entries, in an `AmigaRpdo1` formatted packet.
 
 ## Instructions
 
-1. Connect your microcontroller as in the following diagram:
+### 1. Connection
+
+Connect your microcontroller as in the following diagram:
 <!--
 <p align="center">
 <img src="./assets/hello_main_loop_diagram.png" alt="drawing"
@@ -196,43 +198,47 @@ width="600"/>
 </p>
 <img width="847" alt="hello_main_loop_diagram" src="https://user-images.githubusercontent.com/53625197/187538323-f70bb5d5-8c9a-40c2-ab75-25fd6c80acfb.png">
 -->
-![](https://user-images.githubusercontent.com/53625197/187538323-f70bb5d5-8c9a-40c2-ab75-25fd6c80acfb.png)
+![connection](https://user-images.githubusercontent.com/53625197/187538323-f70bb5d5-8c9a-40c2-ab75-25fd6c80acfb.png)
 
-2. From `amiga-dev-kit/circuitpy/`, drop the `code.py` file and
+### 2. Load the code
+
+From `amiga-dev-kit/circuitpy/`, drop the `code.py` file and
 the `lib/` folder directly into the root of the mounted
 `CIRCUITPY` drive, as seen below.
-    :::note
-    This assumes you have already cloned the amiga-dev-kit repo.
 
-    ```bash
-    cd <to_your_base_directory>
-    git clone git@github.com:farm-ng/amiga-dev-kit.git
-    ```
+:::info
+This assumes you have already cloned the amiga-dev-kit repo.
 
-    :::
+```bash
+cd <to_your_base_directory>
+git clone git@github.com:farm-ng/amiga-dev-kit.git
+```
+
+:::
 
 <!-- <p align="center">
 <img src="./assets/hello_main_loop_filesystem.png" alt="drawing" width="500"/>
 </p> -->
 ![hello_main_loop_filesystem](https://user-images.githubusercontent.com/53625197/187538475-9d301b0f-f303-4ead-a1e7-b55c6b449b9f.png)
 
-3. Open the serial console.
-   :::tip
-   Mu is the recommended serial console program by adafruit on
-   their [**CircuitPython serial console page**](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console).
-   Mu has a built in plotter for tuples printed to the serial
-   console (print statements in the python code on your
-   microcontroller).
+### 3. Open the Serial Console
 
-   We've found that Mu can be a little unstable and freezes
-   occasionally,
-   so we'd recommend checking out their links for the "advanced"
-   serial console:
+:::tip
+Mu is the recommended serial console program by adafruit on
+their [**CircuitPython serial console page**](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console).
+Mu has a built in plotter for tuples printed to the serial
+console (print statements in the python code on your
+microcontroller).
 
-   - [**Windows serial console**](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-windows)
-   - [**Linux serial console**](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-linux)
-   - [**Mac serial console**](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-mac-and-linux)
-   :::
+We've found that Mu can be a little unstable and freezes
+occasionally,
+so we'd recommend checking out their links for the "advanced"
+serial console:
+
+- [**Windows serial console**](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-windows)
+- [**Linux serial console**](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-linux)
+- [**Mac serial console**](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-mac-and-linux)
+:::
 
 You should see an output of the current state of the robot,
 similar to the screenshot below, and you should see the values
@@ -242,16 +248,29 @@ update as the robot drives around.
 </p> -->
 ![hello_main_loop_console](https://user-images.githubusercontent.com/53625197/187538512-90d53da9-8588-4d15-9973-49cca16bff72.png)
 
-4. Navigate to the Auto mode tab on your dashboard, and click the `[AUTO CONTROL]` button. The `[AUTO READY]` icon should turn
+### 4. Enable AUTO
+
+#### On the dashboard
+
+Navigate to the Auto mode tab on your dashboard, and click the `[AUTO CONTROL]` button. The `[AUTO READY]` icon should turn
 yellow, indicating the dashboard is ready for a component to take `Auto Control`.
-5. Hit the space bar in your serial console to request auto
+
+#### In the serial console
+
+Hit the space bar in your serial console to request auto
 control, and you should see the `[AUTO READY]` turn green,
 indicating the dashboard is in `Auto Control` mode.
-   1. The space bar may not register every press, so use the dash
-   indicators!
-6. In the serial console, increase / decrease the robot forward /
+
+> NOTE: The space bar may not register every press, so use the dash indicators!
+
+### 5. Drive the robot
+
+In the serial console, increase / decrease the robot forward /
 reverse speed with the `w` & `s` keys, and increase / decrease
 the robot angular rate with the `a` & `d` keys.
-7. Hit the space bar in the serial console to release auto
+
+### 6. Release AUTO
+
+Hit the space bar in the serial console to release auto
 control and return to the `[AUTO READY]` state. Or hit the E-Stop
 on your Amiga!
