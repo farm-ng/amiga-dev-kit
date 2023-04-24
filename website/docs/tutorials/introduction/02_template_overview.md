@@ -4,8 +4,6 @@ title: 02 - Template Overview
 ---
 # Template Overview
 
-## Template overview
-
 This section explains all of the Python and kivy code in the
 [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template),
 to help understand the base before you add anything custom.
@@ -17,7 +15,7 @@ Some details of the implementation may have changed slightly by
 the time you are reading.
 :::
 
-### Imports
+## Imports
 
 ```Python
 # Copyright (c) farm-ng, inc. Amiga Development Kit License,
@@ -66,11 +64,11 @@ Finally we import the remaining kivy modules with the
 `# noqa: E402` flag, so any `pre-commit` formatters don't move
 these imports above the kivy configuration setting.
 
-### kivy app definition
+## kivy app definition
 
 Contents of `res/main.kv`
 
-```
+```Python
 RelativeLayout:
     Button:
         id: back_btn_layout
@@ -107,7 +105,7 @@ and use the [**kivy API**](https://kivy.org/doc/stable/api-index.html)
 for more information on creating custom applications with kivy.
 :::
 
-#### RelativeLayout
+### RelativeLayout
 
 Two key components of kivy are
 [**`Layouts`**](https://kivy.org/doc/stable/gettingstarted/layouts.html#) and
@@ -120,7 +118,7 @@ layouts we may add in the future) in relative coordinates.
 
 - Reference: [**Relative Layout**](https://kivy.org/doc/stable/api-kivy.uix.relativelayout.html)
 
-#### Back button
+### Back button
 
 This `Button` is used to exit the app when it is pressed, by
 calling the [**`TemplateApp.on_exit_btn()`**](#on_exit_button)
@@ -147,7 +145,7 @@ features.
 
 - Reference: [**Button**](https://kivy.org/doc/stable/api-kivy.uix.button.html)
 
-### TemplateApp
+## TemplateApp
 
 ```Python
 class TemplateApp(App):
@@ -168,7 +166,7 @@ add to it.
 All we add here is a placeholder for the `TemplateApp` class
 methods that will each be added as an `asyncio.Task`.
 
-#### build
+### build
 
 ```Python
 def build(self):
@@ -186,7 +184,7 @@ method:
 Builder.load_file(KV_FILE)
 ```
 
-#### on_exit_button
+### on_exit_button
 
 ```Python
 def on_exit_btn(self) -> None:
@@ -198,7 +196,7 @@ This simple method stops the running kivy app.
 When an app was launched on the Amiga Brain through the Launcher
 app, this will return the Brain state to the Launcher app.
 
-#### app_func
+### app_func
 
 ```Python
 async def app_func(self):
@@ -230,7 +228,7 @@ later replace with tasks that actually do something.
 Each method is added as an `asyncio.Task` following the pattern
 used to add `self.template_function()`.
 
-#### template_function
+### template_function
 
 ```Python
 async def template_function(self) -> None:
@@ -265,7 +263,7 @@ The custom defined async functions must be defined with the
 `async` decorator and any blocking tasks with the `await` keyword.
 :::
 
-### Command line args and execution
+## Command line args and execution
 
 ```Python
 if __name__ == "__main__":

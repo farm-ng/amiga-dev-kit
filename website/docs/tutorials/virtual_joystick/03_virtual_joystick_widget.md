@@ -24,7 +24,7 @@ app we define the custom widget in kivy and Python.
 You should open these files for reference as you follow along.
 :::
 
-### kivy Definition
+## kivy Definition
 
 We first define a few custom arguments for defining the drawn
 `joystick` that are linked to the
@@ -44,9 +44,9 @@ Also note how the
  is set before drawing each widget in `rgba` format, allowing
  color and alpha adjustments.
 
-### Python Implementation
+## Python Implementation
 
-#### Builder
+### Builder
 
 By building the `.kv` definition of the `VirtualJoystickWidget`
 in the Python constructor,
@@ -59,7 +59,7 @@ Explore
 [**kivy `Builder`**](https://kivy.org/doc/stable/api-kivy.lang.builder.html)
 for more details.
 
-#### kivy `Clock`
+### kivy `Clock`
 
 We schedule regular updates to the linked variables containing
 the pose of the drawn joystick using the [**kivy Clock**](https://kivy.org/doc/stable/api-kivy.clock.html).
@@ -81,7 +81,7 @@ to schedule very quick actions.
 Blocking tasks should be scheduled as an `asyncio` task!
 :::
 
-#### Touch handling
+### Touch handling
 
 The [**`on_touch_down()`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_down),
 [**`on_touch_move()`**](https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_move), &
@@ -111,21 +111,21 @@ Because we want to recenter the joystick regardless of which
 widget the `touch_up` occurred in, we do not filter
 `on_touch_up()` with `collide_point()`.
 
-#### Vec2
+### Vec2
 
 We also define a simple container called `Vec2` for handling the
 `x` & `y` values of the joystick coordinates in
 [**libs/virtual_joystick/utils.py**](https://github.com/farm-ng/virtual-joystick/blob/main/libs/virtual_joystick/utils.py) and
 import this into `joystick.py`.
 
-### Add it to the app
+## Add it to the app
 
 - Import this widget in [**`src/main.py`**](https://github.com/farm-ng/virtual-joystick/blob/main/src/main.py)
 - Add the `VirtualJoystickWidget` next to the `TabbedPanel` in
 the `BoxLayout` of app's kivy definition in
 [**`src/res/main.kv`**](https://github.com/farm-ng/virtual-joystick/blob/main/src/res/main.kv)
 
-### Run it
+## Run it
 
 Now sync the app to the Brain and launch it.
 

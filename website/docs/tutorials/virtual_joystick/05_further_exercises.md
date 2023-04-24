@@ -4,12 +4,10 @@ title: 05 - Further Exercises
 ---
 # Further Exercises
 
-### Further exercises
-
 Optionally, go beyond the tutorial and try to add features to this example.
 Two options are:
 
-#### Adjustable rates
+## Adjustable rates
 
 Define two kivy [**`Slider`**](https://kivy.org/doc/stable/api-kivy.uix.slider.html) widgets that allow changing
 `max_speed` & `max_angular_rate`!
@@ -20,7 +18,7 @@ Just remember, the actual rates the amiga drives at are limited
 by the vehicle control unit (VCU), so don't be surprised if the
 true max speed doesn't reflect the slider.
 
-#### Toggle between Auto modes
+## Toggle between Auto modes
 
 Try to add a kivy `Button` widget that toggles the requested
 `AmigaControlState` so the brain is not constantly trying to take

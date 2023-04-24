@@ -19,7 +19,7 @@ widgets for displaying the camera streams
 2. A [**`Button`**](https://kivy.org/doc/stable/api-kivy.uix.button.html)
 for exiting the app
 
-### Starting with the template
+## Starting with the template
 
 The [**`src/res/main.kv`**](https://github.com/farm-ng/amiga-app-template/blob/main/src/res/main.kv) file of the
 [**amiga-app-template**](https://github.com/farm-ng/amiga-app-template) defines a root of a `RelativeLayout`, with a
@@ -36,7 +36,7 @@ full size of our window with the button drawn on top.
 Notice we draw the `Button` after the `TabbedPannel` so it is
 visible and usable.
 
-### TabbedPanel of Image widgets
+## TabbedPanel of Image widgets
 
 To conveniently package the 4 image streams from the oak camera
 in the kivy `Window`, we will add the `Image` widgets as a

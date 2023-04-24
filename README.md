@@ -12,7 +12,7 @@ the API.
 If you're just now learning about farm-ng and the Amiga robot,
 check out our website:
 
-### <https://farm-ng.com/>
+## <https://farm-ng.com/>
 
 The Amiga, and accompanying development kit, is a [toolset](https://farm-ng.com/collections/amiga-attachments) of hardware
 and software built by farm-ng to enable farmers, hackers,

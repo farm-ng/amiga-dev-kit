@@ -9,7 +9,7 @@ title: Brain ADK Install
 
 ## Install
 
-#### [Optional] Make a new directory that will hold all of your farm-ng related files
+### [Optional] Make a new directory that will hold all of your farm-ng related files
 
 ```bash
 cd <to_your_base_directory>  # In your terminal navigate to where

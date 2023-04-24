@@ -32,14 +32,14 @@ title: Index
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Quick Start Guide](/docs/amiga_quick_start/amiga-quick-start.md)
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Overview of how to turn on Amiga and get it running]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overview of how to turn on Amiga and get it running
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 [Calibrate the pendant](/docs/amiga_quick_start/amiga-quick-start.md#calibrate-the-pendant)
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Dashboard Firmware Updates](/docs/dashboard/fw_updates.md)
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Instructions for how to get the dashboard updated]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instructions for how to update the dashboard
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Over-the-air (OTA) Amiga Application updates](/docs/dashboard/fw_updates.md#over-the-air-ota-amiga-application-updates)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Wired Amiga Application updates](/docs/dashboard/fw_updates.md#wired-amiga-application-updates)
@@ -47,7 +47,7 @@ title: Index
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Brain ADK Install](/docs/brain/brain-install.md)
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Instructions for how to install the brain ADK]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instructions for how to install the brain ADK
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Clone the repo](/docs/brain/brain-install.md#clone-the-repo)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Start virtual environment](/docs/brain/brain-install.md#optional-set-up-virtual-environment)
@@ -56,31 +56,31 @@ title: Index
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Next Steps](/docs/brain/brain-next-steps.md)
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Lays out the next steps after everything is set up]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lays out the next steps after everything is set up
 
 ## Amiga Overview
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Dashboard Overview](/docs/dashboard/README.md)
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Goes over the mechanisms that make up the dashboard]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Goes over the mechanisms that make up the dashboard
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Amiga Control States](/docs/dashboard/control_states.mdx)
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Diagram and definitions of all the Amiga control states]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Diagram and definitions of all the Amiga control states
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Debug Cable Overview](/docs/debug_cable/README.md)
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Goes over the parts of the debug cable]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Goes over the parts of the debug cable
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Service Cable Overview](/docs/debug_cable/service_cable.md)
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Goes over the parts of the service cable]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Goes over the parts of the service cable
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[REPL for BOOTLOADER State](/docs/debug_cable/service_cable.md#repl-for-bootloader-state)
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Microcontroller Kit Overview](/docs/mcu_kit/README.mdx)
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Goes over the parts of the microcontroller kit]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Goes over the parts of the microcontroller kit
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Feather M4 Can device setup](/docs/mcu_kit/README.mdx#feather-m4-can-device-setup)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Flashing UF2 firmware on M4 device](/docs/mcu_kit/README.mdx#flashing-the-uf2-firmware-on-the-m4-device)
@@ -88,25 +88,25 @@ title: Index
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Brain Overview](/docs/brain/README.md)
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Goes over the different aspects of the brain]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Goes over the different aspects of the brain
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Pendant Overview](/docs/pendant/pendant.md)
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Goes over the different controls of the pendant]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Goes over the different controls of the pendant
 
 ## Resources/Support
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Recommended Tools](/docs/hardware-tools/recommended_tools.md)
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Lays out the different recommended tools]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lays out the different recommended tools
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Frequently Asked Questions](/docs/reference/faq.md)
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Self explanatory]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your first resource for support
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Support](/docs/support/support.md)
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[How to create issues on github and start conversations in discourse]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How to create issues on github and start conversations in discourse
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creating an issue on GitHub](/docs/support/support.md#how-to-create-an-issue)
 
@@ -118,4 +118,4 @@ title: Index
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;[Amiga SDK Examples](/docs/examples/examples_index.md)
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[This is a link to an index laying out the examples and tutorials we have available]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a link to an index laying out the examples and tutorials we have available

@@ -30,7 +30,9 @@ with the Amiga.  Includes debug cable.
 
 ## Features overview
 
-**The farm-ng Dash display is a Beta early release product, specification and rating are subject to change**
+:::info
+The farm-ng Dash display is a Beta early release product, specification and rating are subject to change
+:::
 
 | Specifications       |                                                                                                                       |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------- |

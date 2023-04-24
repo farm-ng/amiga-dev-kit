@@ -12,7 +12,7 @@ app can be found at
 You should open that file for reference as you follow along.
 :::
 
-### Add a camera stream
+## Add a camera stream
 
 The main method we'll add to our app is a camera stream.
 This will:
@@ -25,7 +25,7 @@ tabbed panel with all 4 image streams from the oak camera.
 In this task we connect to a "server streaming" RPC, as described
 in [**gRPC core concepts**](https://grpc.io/docs/what-is-grpc/core-concepts/).
 
-#### Setup
+### Setup
 
 Once the `root` of the kivy `App` is created, we loop "forever"
 (until the app is closed).
@@ -38,7 +38,7 @@ When the service is in the `RUNNING` state it is available and
 has a client connected to it.
 In this case, that's your `OakCameraClient`!
 
-#### Connection logic
+### Connection logic
 
 If the service is in one of these available states (`IDLE` or
 `RUNNING`), you want to create a stream with your client.
@@ -53,7 +53,7 @@ This wraps the GRPC service stub `StreamFramesRequest`, which
 takes the `every_n` argument used to throttle the rate of images
 in the stream.
 
-#### Read the stream
+### Read the stream
 
 The asyncio grpc stream allows your client to wait, in a
 non-blocking way, for a new message from the service to be put on
@@ -71,7 +71,7 @@ device you are connected to.
 Remember, the Oak camera devices have 3 cameras and, in this
 case, send 4 image streams (rgb, left, right, & disparity).
 
-#### Decode and display
+### Decode and display
 
 Finally, we can decode and display the images received from the
 stream.
@@ -82,14 +82,14 @@ image.
 The `Image` widgets in the `TabbedPanel` accessed by their kivy
 id.
 
-### Other notes
+## Other notes
 
-#### `farm_ng` Imports
+### `farm_ng` Imports
 
 We import the necessary `farm_ng` libraries for creating the
 camera client and interacting with the camera service.
 
-#### Image decoding
+### Image decoding
 
 We will use `TurboJPEG` as the image decoder (it is much faster
 than kivy's default image decoder), so we add that as an import
@@ -104,7 +104,7 @@ We also construct an instance of this image decoder and assign it
 as a class variable of our `CameraApp` so it is not created every
 time we decode an image.
 
-#### Command line Arguments
+### Command line Arguments
 
 We add a few command line arguments used by the `OakCameraClient`
 at the bottom of the app and pass these to the `CameraApp` class
@@ -115,7 +115,7 @@ stream and the `stream_every_n` argument that allows you to
 throttle the stream rate of your camera, if you wish to save
 computational resources.
 
-#### entry.sh
+### entry.sh
 
 There are **required arguments** that must be set in the
 [**`entry.sh`**](https://github.com/farm-ng/camera-streamer/blob/main/entry.sh)
@@ -155,7 +155,7 @@ cd ~/apps/
 ./camera_tutorial/entry.sh --stream-every-n 2
 ```
 
-#### App icon
+### App icon
 
 We replace the `app_logo.png` with an icon from
 <https://fonts.google.com/icons>.
@@ -179,12 +179,12 @@ This also is applicable if you change the app icon and want to
 display the new icon.
 :::
 
-#### `app_func()`
+### `app_func()`
 
 Here we create the `OakCameraClient` and add the `stream_camera`
 asyncio task to our tasks list.
 
-### Run it
+## Run it
 
 Run the app on the brain by launching with the app button or run
 it through a terminal as described in

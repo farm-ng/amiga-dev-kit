@@ -4,14 +4,14 @@ title: Pendant Overview
 ---
 ![pendant 3](https://user-images.githubusercontent.com/64480560/210899367-c57a8bae-c450-4f71-bc68-5f05d337c896.jpg)
 
-### Description
+## Description
 
 The pendant is a wired Manual joystick control interface with a
 rubberized backlit keypad that is  waterproof and rugged. This
 CANbus enabled controller is pluggable anywhere on the tractor
 communication backbone.
 
-### How to connect
+## How to connect
 
 The pendant must be connect to CAN/Power accessory port which is
 location on the back of the dashboard panel. (please reference
@@ -19,7 +19,7 @@ photo below)
 
 ![187535995-d4ad8c7c-05a0-482b-8be9-6b6fb6b87ac3](https://user-images.githubusercontent.com/64480560/210901594-6733b85d-292b-4468-9c65-3e275ed1c6f5.png)
 
-### Pendant Controls
+## Pendant Controls
 
 ![IMG-9902](https://user-images.githubusercontent.com/64480560/211636387-fa11f5ea-59b0-4506-8005-d99ab21f90c6.jpg)
 
@@ -65,6 +65,6 @@ your connect and registered PTO device).
 Basic troubleshooting can found on our
 [**FAQ page**](../reference/faq)
 
-### Calibrate pendant
+## Calibrate pendant
 
 **See calibrate instructions [here](/docs/amiga_quick_start/amiga-quick-start.md#calibrate-the-pendant)**

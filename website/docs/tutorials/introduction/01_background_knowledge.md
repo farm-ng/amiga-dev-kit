@@ -17,7 +17,7 @@ infrastructure allows for C++ app development support in the near
 future.
 :::
 
-### gRPC
+## gRPC
 
 The best place to start to gain an understanding of gRPC is the
 [**gRPC introduction**](https://grpc.io/docs/what-is-grpc/introduction/),
@@ -29,7 +29,7 @@ you connect to services in your app).
 The communication is done through Protocol Buffers, defined in `*.
 proto` files in our [**farm-ng libraries**](#farm-ng-libraries).
 
-### asyncio
+## asyncio
 
 The best place to start to gain an understanding of asyncio is
 the [**asyncio docs**](https://docs.python.org/3/library/asyncio.html).
@@ -48,7 +48,7 @@ In the virtual joystick example, we have multiple, concurrent
 - Draw the joystick (in [**kivy**](#kivy))
 - Send canbus commands (to the canbus service)
 
-### kivy
+## kivy
 
 The best place to start to gain an understanding of kivy is the
 [**kivy Getting Started >> Introduction**](https://kivy.org/doc/stable/gettingstarted/intro.html).
@@ -64,7 +64,7 @@ interaction in Python code.
 In the example, however, we also demonstrate creating a custom
 kivy `Widget` in Python!
 
-### farm-ng libraries
+## farm-ng libraries
 
 We have some libraries that are imported by the brain
 infrastructure and are used in our apps.

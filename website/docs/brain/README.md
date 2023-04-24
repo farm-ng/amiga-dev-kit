@@ -3,12 +3,11 @@ id: brain
 title: Brain Overview
 ---
 
-# farm-ng Brain
+![brain_render](./assets/brain_render_iso.png)
 
-<!-- <img src="./assets/brain_render_iso.png" alt="Dash_Iso" width="600;" /> -->
-![](./assets/brain_render_iso.png)
-
-### [Brain product page](https://farm-ng.com/products/brain)
+:::tip
+Find additional information and purchasing options at: [**Brain product page**](https://farm-ng.com/products/brain)
+:::
 
 ## Brain overview video
 
@@ -56,7 +55,7 @@ Includes CAN bus, USB, and GIGe ethernet bus options.
 ## Connections
 
 <!-- <img src="./assets/brain_connect.jpg" alt="Dash_Iso" width="600;" /> -->
-![](./assets/brain_connect.jpg)
+![brain_connections](./assets/brain_connect.jpg)
 
 Xavier provides the following connectors and button for IO
 
@@ -86,7 +85,9 @@ Mating connector M12-5 A code female
 
 ### Debug
 
-**SEE INFORMATION ON DEBUG CABLE**
+:::tip
+See information on debug cable here: [Debug Cable Overview](/docs/debug_cable/README.md)
+:::
 
 Mating connector M12-8 A code female
 

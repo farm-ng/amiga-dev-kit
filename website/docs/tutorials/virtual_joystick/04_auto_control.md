@@ -8,7 +8,7 @@ Finally, we will use this virtual joystick and the canbus
 client / service connection to control the Amiga to complete the
 full Virtual Joystick example.
 
-### Control the Amiga
+## Control the Amiga
 
 This is done with a third forever-running `asyncio` task for
 sending CAN messages.
@@ -53,7 +53,7 @@ generator loop if the service does not respond with a confirmed
 Once the canbus service is ready for streaming control again, it
 should re-initiate automatically.
 
-#### generator details
+### generator details
 
 The pose generator yields an [**`AmigaRpdo1`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py)
 (auto control command) for the canbus client to send on the bus
@@ -67,12 +67,12 @@ responsiveness, and go too fast and you risk saturating the CAN
 bus, which can cause loss of communication between all components
 on the bus.
 
-#### Add this as a task
+### Add this as a task
 
 Remember to add the `send_can_msgs()` method to the `asyncio.
 Task` in our list in `app_func()`!
 
-### Run it
+## Run it
 
 Now sync the app to the Brain and launch it.
 
