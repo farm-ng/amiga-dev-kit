@@ -119,6 +119,53 @@ title: Frequently Asked Questions
     </div>
 </details>
 
+<details>
+ <summary>How do i access the MAC address on Brain</summary>
+  <div>
+The following describes how to retrieve the MAC Address of the Brain WiFi adapter.
+If you are unable to connect to the Amiga Brain via WiFi, please configure a machine with an RJ45 port and the included M12 to RJ45 cable as indicated here: amiga-ethernet.
+
+1.  Connect to the Amiga via Ethernet or WiFi (through Hotspot 2 method)
+SSH to the Amiga
+Over WiFi via IP address located on the dashboard
+
+```bash
+ssh amiga@192.168.0.111
+```
+
+Over an Ethernet connection
+
+```bash
+ssh amiga@10.95.76.1
+```
+3. Type “ifconfig wlan0 | grep ether” without quotes and press Enter.
+```bash
+ifconfig wlan0 | grep ether
+```
+4. The MAC address of the WiFi adapter is located after the word “ether” in the output. In the following screenshot, the MAC Address would be: 28:d0:ea:89:f4:1d.
+   <br/><br/>
+   - You can find more details at: <a href="https://discourse.farm-ng.com/t/wifi-access-the-mac-address/139">WiFi - Access the MAC Address</a>.
+   </div>
+</details>
+
+<details>
+ <summary>What is the voltage level of the amiga pendant and brain?</summary>
+ <div>
+24v power is the voltage for the brain and pendant. While the PoE Switch is 48v.
+<br/><br/>
+   </div>
+</details>
+
+<details>
+ <summary>How do I connect the Amiga to Cell Phone Hotspot?</summary>
+ <div>
+Depending on your cellular device, instructions can be found in the link below.
+   <br/><br/>
+   - You can find more details at: <a href="https://discourse.farm-ng.com/t/connecting-to-the-amiga-cell-phone-hotspot/131">Connecting to the Amiga - Cell Phone Hotspot</a>.
+   </div>
+</details>
+
+
 ## CAN bus
 <details>
   <summary>What is the baud rate of the CAN bus the Amiga runs on?</summary>
