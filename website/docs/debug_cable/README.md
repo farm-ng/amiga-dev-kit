@@ -52,9 +52,8 @@ mode (press on boot)
 
 ## Pinout
 
-Connector M12-8 A code female used to connect to farm-ng
-products. The debug cable connects the IO to two MicroUSB
-connectors and a reset button.
+Connector M12-8 A code female used to connect to farm-ng products.
+The debug cable connects the IO to two MicroUSB connectors and a reset button.
 
 Debug wire colors based on common cable with flying leads used on
 farm-ng built debug kits.

@@ -102,9 +102,9 @@ when connecting to the debug or service cable.
 
 :::tip
 
-- Check the [**amiga-dev-kit Releases**](https://github.com/
-farm-ng/amiga-dev-kit/releases) page, as there may be an even
-newer available release.
+- Check out the
+[**amiga-dev-kit Releases**](https://github.com/farm-ng/amiga-dev-kit/releases)
+page, as there may be an even newer available release.
 - Select the newest `amiga-dash-v#.#.#` and download that version.
   - Do not select a `fw-dash-v#.#.#` or `pendant-v#.#.#` update!
 :::
@@ -315,8 +315,7 @@ update example above.
 
         ```Python
         import microcontroller
-        microcontroller.on_next_reset(microcontroller.RunMode.
-        BOOTLOADER)
+        microcontroller.on_next_reset(microcontroller.RunMode.BOOTLOADER)
         microcontroller.reset()
         ```
 

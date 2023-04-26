@@ -34,9 +34,10 @@ The Amiga is a platform, community, and ecosystem of components
 built to customize the Amiga, extend it, and maintain it forever.
 
 If you're just now learning about farm-ng and the Amiga robot,
-you should start by checking out the [**farm-ng website**]
-(<https://farm-ng.com/>) to get an introduction to the [**Amiga**]
-(<https://farm-ng.com/products/la-maquina-amiga>) robot.
+you should start by checking out the
+[**farm-ng website**](<https://farm-ng.com/>),
+to get an introduction to the
+[**Amiga**](<https://farm-ng.com/products/la-maquina-amiga>) robot.
 :::
 
 Some of our Amiga development kit hacking projects have been
