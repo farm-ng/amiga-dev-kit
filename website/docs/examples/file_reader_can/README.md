@@ -85,7 +85,8 @@ of text come up in your terminal!
 
 The output should look something like this:
 
-`AMIGA TPDO1 Amiga state 2 Measured speed 0.000 Measured angular
+```Python
+AMIGA TPDO1 Amiga state 2 Measured speed 0.000 Measured angular
 rate 0.000 @ time 1512.775886915
 AMIGA TPDO1 Amiga state 2 Measured speed 0.000 Measured angular
 rate 0.000 @ time 1512.843416858
@@ -98,7 +99,8 @@ rate 0.000 @ time 1512.985744047
 AMIGA TPDO1 Amiga state 2 Measured speed 0.000 Measured angular
 rate 0.000 @ time 1513.019865388
 AMIGA TPDO1 Amiga state 2 Measured speed 0.000 Measured angular
-rate 0.000 @ time 1513.076998664`
+rate 0.000 @ time 1513.076998664
+```
 
 Congrats you are done!
 :::tip
