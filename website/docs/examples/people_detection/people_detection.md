@@ -70,7 +70,7 @@ With this command, you can run this on either your computer or your Amiga!
 
 In another terminal, run the a pipeline using the client:
 ```bash
-python main.py --port-camera 50051 --port-detector 50090
+python main.py --port-camera 50051 --port-detector 50095
 ```
 And you should see a window with the video stream and the detected people. The server is a process receives the decoded images then computes an AI model and returns the results. If you have a service on your machine and the client consume from the robot, there is the transmission overhead of grpc from the robot-camera to you laptop (service).
 
