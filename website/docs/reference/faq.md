@@ -174,22 +174,26 @@ title: Frequently Asked Questions
 
 <details>
  <summary>How do I connect the Amiga to Cell Phone Hotspot?</summary>
- <div>
-Depending on your cellular device, instructions can be found in the link below.
-   <br/><br/>
-   - You can find more details at: <a href="https://discourse.farm-ng.com/t/connecting-to-the-amiga-cell-phone-hotspot/131">Connecting to the Amiga - Cell Phone Hotspot</a>.
+   <div>
+    Depending on your cellular device, instructions can be found in the link below.
+    <br/><br/>
+    You can find more details at: <a
+    href="https://discourse.farm-ng.com/t/connecting-to-the-amiga-cell-phone-hotspot/131">
+    Connecting to the Amiga - Cell Phone Hotspot</a>.
    </div>
 </details>
 
 <details>
   <summary>How do i access the MAC address on Brain?</summary>
   <div>
-To learn how to access the MAC address of the Brain's WiFi adapter please visit the link below. There, the following describes how to retrieve the MAC Address of the Brain WiFi adapter.
+    To learn how to access the MAC address of the Brain's WiFi adapter please visit the link below.
+    There, the following describes how to retrieve the MAC Address of the Brain WiFi adapter.
     <br/><br/>
-    - You can find more details at: <a href="https://discourse.farm-ng.com/t/wifi-access-the-mac-address/139">How to access MAC address on Brain</a>.
+    You can find more details at: <a
+    href="https://discourse.farm-ng.com/t/wifi-access-the-mac-address/139">
+    How to access MAC address on Brain</a>.
     </div>
 </details>
-
 
 ## CAN bus
 
