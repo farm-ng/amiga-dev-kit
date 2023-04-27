@@ -21,6 +21,10 @@ allowfullscreen></iframe>
 
 # How to transfer data from the Amiga to your local machine
 
+:::info
+It is a requirement that your USB drive is formatted as either `exFAT` or `ext4`.
+:::
+
 There are two different methods you can use to transfer the log
 files from the Amiga to your local machine.
 The first way is to use a USB flash drive, and the second way is
