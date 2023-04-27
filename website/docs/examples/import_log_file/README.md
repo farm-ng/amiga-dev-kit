@@ -32,6 +32,10 @@ otherwise you will have nothing to transfer.
 
 ## Transfer data with a USB flash drive
 
+:::info
+It is a requirement that your USB drive is formatted as either `exFAT` or `ext4`.
+:::
+
 - You are going to get a USB fash drive and plug it into the USB
 port in the back of the brain (There is a label next to the USB
 port
