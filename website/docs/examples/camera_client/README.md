@@ -5,9 +5,12 @@ title: Camera Client
 
 ### [Link to `camera_client/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/camera_client/main.py)
 
-This example acts as an `OakCameraClient` in a standalone Python script.
+This example acts as an `OakCameraClient` in a standalone Python
+script.
 
-The requirements to run this example are to have a [**farm-ng brain**](/docs/brain/) running Oak cameras and that your PC is on the same local network as the brain.
+The requirements to run this example are to have a
+[**farm-ng brain**](/docs/brain/) running Oak cameras and that
+your PC is on the same local network as the brain.
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
@@ -15,7 +18,8 @@ The requirements to run this example are to have a [**farm-ng brain**](/docs/bra
 
 :::tip
 
-It is recommended to also install these dependencies and run the example in the brain ADK virtual environment.
+It is recommended to also install these dependencies and run the
+example in the brain ADK virtual environment.
 
 :::
 
@@ -23,6 +27,7 @@ It is recommended to also install these dependencies and run the example in the 
 # assuming you're already in the amiga-dev-kit/ directory
 cd farm-ng-amiga/py/examples/camera_client
 ```
+
 ```bash
 pip3 install -r requirements.txt
 ```
@@ -39,16 +44,19 @@ By default, the camera address is assumed top be `localhost`.
 
 ### 4. Customize the run
 
-Let's have some fun and stream the camera to your laptop over the Wifi.
+Let's have some fun and stream the camera to your laptop over the
+Wifi.
 
 :::tip
-You need to discover the WiFi address of your Amiga Brain using the `WifiClient` (coming soon)
+You need to discover the WiFi address of your Amiga Brain using
+the `WifiClient` (coming soon)
 :::
 
 ```bash
 python3 main.py --help
 
-# usage: amiga-camera-app [-h] --port PORT [--address ADDRESS] [--stream-every-n STREAM_EVERY_N]
+# usage: amiga-camera-app [-h] --port PORT [--address ADDRESS]
+#[--stream-every-n STREAM_EVERY_N]
 
 # optional arguments:
 #   -h, --help            show this help message and exit
@@ -57,6 +65,7 @@ python3 main.py --help
 #   --stream-every-n STREAM_EVERY_N
 #                         Streaming frequency
 ```
+
 Usage example:
 
 ```bash
@@ -65,13 +74,16 @@ python3 main.py --address 192.168.1.93 --port 50051
 
 ### 5. Code overview
 
-Basic structure to consume from the camera client in an async fashion.
+Basic structure to consume from the camera client in an async
+fashion.
 
 ```python
-from farm_ng.oak.client import OakCameraClient, OakCameraClientConfig
+from farm_ng.oak.client import OakCameraClient,
+OakCameraClientConfig
 from farm_ng.oak import oak_pb2
 
-async def main(address: str, port: int, stream_every_n: int) -> None:
+async def main(address: str, port: int, stream_every_n: int) ->
+None:
 
     # configure the camera client
     config = OakCameraClientConfig(address=address, port=port)
@@ -91,7 +103,8 @@ async def main(address: str, port: int, stream_every_n: int) -> None:
             print("Camera is not streaming!")
             continue
 
-        response: oak_pb2.StreamFramesReply = await response_stream.read()
+        response: oak_pb2.StreamFramesReply = await
+        response_stream.read()
         if response and response.status == oak_pb2.ReplyStatus.OK:
             # get the sync frame
             frame: oak_pb2.OakSyncFrame = response.frame
@@ -101,13 +114,19 @@ async def main(address: str, port: int, stream_every_n: int) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog="amiga-camera-app")
-    parser.add_argument("--port", type=int, required=True, help="The camera port.")
-    parser.add_argument("--address", type=str, default="localhost", help="The camera address")
-    parser.add_argument("--stream-every-n", type=int, default=4, help="Streaming frequency")
+    parser.add_argument("--port", type=int, required=True,
+    help="The camera port.")
+    parser.add_argument("--address", type=str,
+    default="localhost", help="The camera address")
+    parser.add_argument("--stream-every-n", type=int, default=4,
+    help="Streaming frequency")
     args = parser.parse_args()
 
-    asyncio.run(main(args.address, args.port, args.stream_every_n))
+    asyncio.run(main(args.address, args.port, args.
+    stream_every_n))
 ```
+
 :::tip
-We highgly recommend to have some basic knowledge about [**`asyncio`**](https://docs.python.org/3/library/asyncio.html).
+We highgly recommend to have some basic knowledge about
+[**`asyncio`**](https://docs.python.org/3/library/asyncio.html).
 :::
