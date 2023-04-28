@@ -47,45 +47,77 @@ const sidebars = {
       "label": "Dashboard",
       "type": "category"
     },
-    {
-      "items": [
-        {
+
+    ],
+    "Intelligence Kit": [
+      "intelligence-kit/v2-intro",
+      "intelligence-kit/v2-features",
+      {
+        "items": [
+          "intelligence-kit/specifications/connections-diagram",
+          "intelligence-kit/specifications/brain-computer",
+          "intelligence-kit/specifications/dual-band",
+          "intelligence-kit/specifications/rtk-gps",
+          "intelligence-kit/specifications/oak-d",
+          "intelligence-kit/specifications/poe-switch"
+
+        ],
+        "label": "3. Specifications",
+        "type": "category"
+      },
+
+      "intelligence-kit/compatibility",
+      "intelligence-kit/installation-setup",
+      {
+        "items": [
+          "intelligence-kit/operation-usage/image-recording",
+          "intelligence-kit/operation-usage/gallery-application",
+          "intelligence-kit/operation-usage/metadata-tagging",
+          "intelligence-kit/operation-usage/brain-configuration",
+          "intelligence-kit/operation-usage/file-transfer",
+          "intelligence-kit/operation-usage/processing-gps"
+        ],
+        "label": "6. Operation and Usage",
+        "type": "category"
+      },
+      "intelligence-kit/maintenance",
+      "intelligence-kit/warranty",
+      "intelligence-kit/compliance",
+      "intelligence-kit/ordering-information",
+      "intelligence-kit/revision-history",
+      {
+
         "items": [
           "brain/brain",
         ],
-        "label": "Brain v1",
+        "label": "Earlier Versions",
         "type": "category"
 
-      },
+      }
+    ],
+
+    "Development Tools": [
       {
         "items": [
-          "intelligence-kit/v2-intro",
-          "intelligence-kit/v2-features"
-        ],
-        "label": "Brain v2",
-        "type": "category"
-      }
-
-    ],
-    "label": "Intelligence Kit",
-    "type": "category"
-
-  },
-
-    {
-        "items": [
             "debug_cable/debug-cable",
-            "debug_cable/service-cable",
-            "mcu_kit/microcontroller-kit",
+            "debug_cable/service-cable"
       ],
-      "label": "Developer Tools",
+      "label": "Cables",
       "type": "category"
     },
     {
       "items": [
-        "pendant/pendant",
+        "pendant/pendant"
+
       ],
       "label": "Pendant",
+      "type": "category"
+    },
+    {
+      "items": [
+        "mcu_kit/microcontroller-kit",
+      ],
+      "label": "Microcontroller Kit",
       "type": "category"
     }
     ],
