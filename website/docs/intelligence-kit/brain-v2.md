@@ -1,5 +1,5 @@
 ---
-id: v2-intro
+id: brain-v2
 title: 1. Introduction
 ---
 

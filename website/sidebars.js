@@ -50,7 +50,7 @@ const sidebars = {
 
     ],
     "Intelligence Kit": [
-      "intelligence-kit/v2-intro",
+      "intelligence-kit/brain-v2",
       "intelligence-kit/v2-features",
       {
         "items": [
