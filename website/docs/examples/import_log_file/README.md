@@ -17,20 +17,62 @@ Make sure you have done the first step of having data recorded otherwise you wil
 :::
 
 ## Transfer data with a USB flash drive
-- You are going to get a USB fash drive and plug it into the USB port in the back of the brain (There is a label next to the USB port
-and you may have to unscrew a black cap covering the opening to use it).
-- Next go to the File Mover App on the brain. If the flash is not properly mounted, you will see a big red box that
-says `Disk Status:: No Disk`. If the flash is properly mounted, you will see a green box that says `Disk Status:: Available`.
-This means you are good to go.
-- Click the `Start Transfer` button.
-- You should now see a blue line begin to appear on the bottom on the screen indicating the progress of the transfer. When the
-transfer is done, a pop up message will appear that says `Transfer Status Done`. Click outside of the box to exit it.
-- Dismount the flash drive and plug it into your computer. A pop up containing all the data files on the flash drive should appear.
-- The next step is to drag and drop the files to wherever you want to store them.
-```bash
-mv <file-name> <path> # command to move the files to a location on your machine
-```
-Congrats you now have transferred files from the Amiga to you local machine!
+The very first thing you are going to need is a USB drive
+- In order to transfer data with this USB drive it will need to be in the **exfat** format
+Steps:
+1. Plug your USB drive into your computer
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="linux" label="Linux" default>
+
+2. Navigate to `files` then right click on your USB name.
+3. Next, click on `properties`, then `Open in Discs`
+4. Under the Volumes click on the setting icon
+6. Then click `Format Partition...`
+
+![image_480-1](https://user-images.githubusercontent.com/66448234/233509945-08e8ff77-83fc-4ef3-b51a-3cd39d6f8a17.png)
+
+7. Then you will get the above picture. Name the file what you want and select
+    `Internal disk for use with Linux systems only (Ext4)`
+8. Then select `Next` and then select `Format`
+Congrats you successfully formatted your USB drive!
+
+</TabItem>
+<TabItem value="macos" label="MacOs" default>
+
+2. Launch Disk Utility (from Applications > Utilities > Disk Utility).
+3. Select the drive in the left-hand sidebar.
+4. Click Erase.
+5. From the Format menu, select ExFAT.
+6. From the Scheme menu, select Master Boot Record.
+7. Click Erase and follow prompts to confirm.
+You have now formatted your flash drive on a Mac
+
+</TabItem>
+</Tabs>
+
+
+:::caution
+Right now you have to first open the file mover app then plug in the USB. Do not plug in the USB before you open the File Mover App or it may not behave as expected.
+:::
+
+1. Open the File Mover App
+2. Plug in the USB drive into the back of the brain.
+    - Watch for the top left to go from red, `Disk Status:: No Disk` to green `Disk Status:: Available`, so you know you are good to go.
+    - You should see the button `Select All` and the left box light up, meaning it is now press-able.
+3. Now, you are going to select which files you want to transfer
+    - The left box is what files are available to transfer, each is a toggle button, so to select one you only need to press which file you want and it will highlight in blue as in selected.
+    - You can also choose to transfer all files in which case click the `Select All` button and all the buttons should highlight it blue.
+    - You can also undo this action by no pressing `De-select All`
+4. Now that you have selected the files you want to transfer you may press `Start Transfer`, and the transfer will begin.
+    - If you decide you no longer want to transfer the files click `Cancel Transfer` to stop it.
+    - As the transfer progresses, you will see at the bottom of the page a blue progress bar move across the screen updating you on the progress of the transfer.
+5. After the transfer is complete you will be notified and you can now dismount you drive.
+You have now successfully transferred files to your USB and can now proceed to put them on you computer.
+
 
 ## Transfer data with SSH
 To transfer files using ssh you will first need to ssh into the Amiga.
