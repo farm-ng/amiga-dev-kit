@@ -2,7 +2,7 @@
 id: oak-d
 title: 3.5 Luxonis OAK-D Robotic Cameras
 ---
-# 3.5. Luxonis OAK-D Robotic Cameras
+# 3.5 Luxonis OAK-D Robotic Cameras
 
 
 <table>
@@ -15,13 +15,13 @@ title: 3.5 Luxonis OAK-D Robotic Cameras
   <tr>
    <td>Product
    </td>
-   <td>Manufacturer and name
+   <td>Luxonis OAK-D W PoE
    </td>
   </tr>
   <tr>
    <td>Manufacturer datasheet
    </td>
-   <td>URL
+   <td>https://docs.luxonis.com/projects/hardware/en/latest/pages/NG9097w.html
    </td>
   </tr>
   <tr>
