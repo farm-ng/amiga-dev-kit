@@ -135,7 +135,7 @@ title: Frequently Asked Questions
      instructions that will take you step by step to a successful
      update.
     <br/><br/>
-    - You can find more details at: <a href="docs/dashboard/dashboard-fw#wired-updates">
+    - You can find more details at: <a href="docs/dashboard/fw_updates">
       Dashboard Firmware Updates</a>.
     </div>
 </details>
