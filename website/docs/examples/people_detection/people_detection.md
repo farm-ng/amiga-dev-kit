@@ -55,9 +55,9 @@ wget https://github.com/rdeepc/ExploreOpencvDnn/raw/master/models/ssd_mobilenet_
 Open one terminal or in that same terminal run the service:
 
 ```bash
-python service.py --port 50090 --models-dir models/
+python service.py --port 50095 --models-dir models/
 # INFO:__main__:Loaded model: /home/edgar/software/farm-ng-amiga/py/examples/people_detection/models
-# INFO:__main__:Starting server on port 50090
+# INFO:__main__:Starting server on port 50095
 # INFO:__main__:Server started
 ```
 ![server](https://user-images.githubusercontent.com/64480560/229893034-7302d479-692a-4907-98e1-87a31b60fc19.png)
