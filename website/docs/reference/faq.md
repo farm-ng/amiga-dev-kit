@@ -233,5 +233,7 @@ title: Frequently Asked Questions
     <br/><br/>
     Then launch the app template by clicking the <code>Amiga App Template</code> AppButton on the launcher
     before running your custom app with the <code>entry.sh</code> script.
+    <br/><br/>
+    Apps launched by clicking the AppButton should not experience this issue.
     </div>
 </details>
