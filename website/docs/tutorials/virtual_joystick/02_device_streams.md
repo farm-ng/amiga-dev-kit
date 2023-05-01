@@ -216,6 +216,15 @@ cd ~/apps/
 ./joystick_tutorial/entry.sh --stream-every-n 2
 ```
 
+:::caution
+If you launch the `Virtual Joystick` app with the command line,
+it is currently possible to have touch interactions with the launcher behind.
+This will cause other installed apps to unexpectedly launch over the app you are trying to use.
+
+Please see instructions for a workaround under:
+[**FAQ - Brain App Development**](/docs/reference/faq#brain-app-development)
+:::
+
 #### App icon
 
 We replace the `app_logo.png` with an icon from <https://fonts.google.com/icons>.

@@ -373,15 +373,25 @@ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
 
 6. Run the app on your Amiga
 
+:::info
+The first time you launch will take a while, as the requirements have to install.
+:::
+
 If your brain is on the launcher screen, your new app should appear!
 You can launch it by clicking your the app on the screen, and it should begin loading.
 
-:::caution NOTE
-The first entry will take a while as the requirements have to install
-:::
-
 Alternatively, you can launch from the command line:
+
 ```bash
 cd YOUR_REPOSITORY/
 ./entry.sh  # install and run
 ```
+
+:::caution
+If you launch your app with the command line,
+it is currently possible to have touch interactions with the launcher behind.
+This will cause other installed apps to unexpectedly launch over the app you are trying to use.
+
+Please see instructions for a workaround under:
+[**FAQ - Brain App Development**](/docs/reference/faq#brain-app-development)
+:::
