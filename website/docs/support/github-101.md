@@ -62,7 +62,7 @@ git checkout -b "insert name of branch here"
 
 From there begin coding!
 
-Now that you have completed your code and you are ready to make a push, you should follow this workflow.
+Now that you have completed your code, you are ready to make a push. It is recommended that you follow this workflow.
 
 
 Pre-commit your code
@@ -95,7 +95,7 @@ Never edit on the main branch. It is required for you to start your own branch b
 After you have created your pull request, it will need to go under review by another team member of the SDK team.
 
 :::tip
-If you need any help from a team member of the Farm-ng Software team please either email
-support@farm-ng.com, Join our [Discourse Channel](https://discourse.farm-ng.com/) and
-posting your question there.
+If you need any help from the Farm-ng support please see our
+[Support page](/docs/support/support.md) for instructions on starting a conversation on our
+[Discourse Channel](https://discourse.farm-ng.com/) and posting your question there.
 :::
