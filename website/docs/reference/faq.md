@@ -129,13 +129,13 @@ title: Frequently Asked Questions
 ## General
 
 <details>
-  <summary>How do I update the dashboard firmware?</summary>
+  <summary>How do I update the Dashboard Firmware?</summary>
   <div>
      All latest updates are available online with detailed
      instructions that will take you step by step to a successful
      update.
     <br/><br/>
-    - You can find more details at: <a href="docs/dashboard/dashboard-fw#wired-updates">
+    - You can find more details at: <a href="/docs/dashboard/dashboard-fw">
       Dashboard Firmware Updates</a>.
     </div>
 </details>
