@@ -32,37 +32,75 @@ otherwise you will have nothing to transfer.
 
 ## Transfer data with a USB flash drive
 
+The very first thing you are going to need is a USB drive
+
 :::info
-It is a requirement that your USB drive is formatted as either `exFAT` or `ext4`.
+In order to transfer data with this USB drive it will need to either be in the `exFAT` or `ext4` format.
+
+If your USB drive is not appearing in the `File Mover` app when you plug it in,
+it is likely not formatted as one of these.
 :::
 
-- You are going to get a USB fash drive and plug it into the USB
-port in the back of the brain (There is a label next to the USB
-port
-and you may have to unscrew a black cap covering the opening to
-use it).
-- Next go to the File Mover App on the brain. If the flash is not
-properly mounted, you will see a big red box that
-says `Disk Status:: No Disk`. If the flash is properly mounted,
-you will see a green box that says `Disk Status:: Available`.
-This means you are good to go.
-- Click the `Start Transfer` button.
-- You should now see a blue line begin to appear on the bottom on
-the screen indicating the progress of the transfer. When the
-transfer is done, a pop up message will appear that says
-`Transfer Status Done`. Click outside of the box to exit it.
-- Dismount the flash drive and plug it into your computer. A pop
-up containing all the data files on the flash drive should appear.
-- The next step is to drag and drop the files to wherever you
-want to store them.
+### Format your USB drive
 
-```bash
-mv <file-name> <path> # command to move the files to a location
-# on your machine
-```
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-Congrats you now have transferred files from the Amiga to you
-local machine!
+<Tabs>
+<TabItem value="linux" label="Linux" default>
+
+1. Plug your USB drive into your computer
+2. Backup any files you don't want to to lose
+3. Navigate to `files` then right click on your USB name
+4. Next, click on `properties`, then `Open in Discs`
+5. Under the Volumes click on the setting icon
+6. Then click `Format Partition...`
+7. Name the file what you want and select
+    `Internal disk for use with Linux systems only (Ext4)`
+       > ![image_480-1](https://user-images.githubusercontent.com/66448234/233509945-08e8ff77-83fc-4ef3-b51a-3cd39d6f8a17.png)
+8. Then select `Next` and then select `Format`
+
+Congrats you successfully formatted your USB drive!
+
+</TabItem>
+<TabItem value="macos" label="MacOs">
+
+1. Plug your USB drive into your computer
+2. Backup any files you don't want to to lose
+3. Launch Disk Utility (from Applications > Utilities > Disk Utility)
+4. Select the drive in the left-hand sidebar
+5. Click Erase
+6. From the Format menu, select ExFAT
+7. From the Scheme menu, select Master Boot Record
+8. Click Erase and follow prompts to confirm
+
+You have now formatted your flash drive on a Mac!
+
+</TabItem>
+</Tabs>
+
+### Use the `File Mover` app
+
+:::caution
+Right now you have to first open the file mover app then plug in the USB.
+Do not plug in the USB before you open the File Mover App or it may not behave as expected.
+:::
+
+1. Open the File Mover App
+2. Plug in the USB drive into the back of the brain.
+    - Watch for the top left to go from red, `Disk Status: No Disk` to green `Disk Status: Available`
+    - The `Select All` button and the list of files on the left should light up, meaning they are active.
+3. Select the files you want to transfer
+    - The list of files on the left contains files available to transfer
+    - The list of files on the right contains files already on the USB drive
+    - Each file is a `ToggleButton` that highlights blue when selected
+    - You can choose to transfer all files, in which case click the `Select All` button
+    and all the buttons should highlight blue.
+    - You can undo this action by pressing `De-select All`
+4. Press `Start Transfer` to begin the transfer onto the USB drive
+    - If you decide you no longer want to transfer the files click `Cancel Transfer`
+    - There is a blue progress bar at the bottom of the page to track the progress
+5. After the transfer is complete you will be notified and you can now dismount you drive
 
 ## Transfer data with SSH
 
@@ -85,7 +123,7 @@ cd ~ # to go to home directory
 cd /data/farm_ng/ # navigate to where the logs are located
 ls
 # In the output you should see the name of the logs you just
-#recoreded.
+#recorded.
 # You can see its the right log by the date in the of its name.
 ```
 
