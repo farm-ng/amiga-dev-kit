@@ -7,11 +7,11 @@ Welcome to GitHub 101!
 
 Here will be the guide to all the steps you need to follow in order to be able to participate in the challenge.
 
-We use GitHub. There are all of our repositories and where you can access the files needed to being working on the project and Amiga.
+We use GitHub for all of our repositories and that is also where you can access the files needed to being working on the project and Amiga.
 
 Prerequisites:
 
-1) First you will need to have an Github account
+First you will need to have an Github account
 - To create on you can go [here](https://www.github.com)
 
 Once you do that you will need to generate a personal token:
@@ -91,3 +91,9 @@ Never edit on the main branch. It is required for you to start your own branch b
 :::
 
 After you have created your pull request, it will need to go under review by another team member of the SDK team.
+
+:::tip
+If you need any help from a team member of the Farm-ng Software team please either email
+support@farm-ng.com, Join our [Discourse Channel](https://discourse.farm-ng.com/) and
+posting your question there.
+:::
