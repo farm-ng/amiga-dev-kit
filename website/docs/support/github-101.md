@@ -60,7 +60,9 @@ cd <RESPECTIVE REPOSITORY>
 git checkout -b "insert name of branch here"
 ```
 
-First you have completed your code and you are ready to make a push, you should follow this workflow.
+From there begin coding!
+
+Now that you have completed your code and you are ready to make a push, you should follow this workflow.
 
 
 Pre-commit your code
