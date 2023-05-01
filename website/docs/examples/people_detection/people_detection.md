@@ -75,10 +75,9 @@ https://github.com/rdeepc/ExploreOpencvDnn/raw/master/models/ssd_mobilenet_v2_co
 Open one terminal or in that same terminal run the service:
 
 ```bash
-python service.py --port 50090 --models-dir models/
-# INFO:__main__:Loaded model: /home/edgar/software/farm-ng-amiga/
-# py/examples/people_detection/models
-# INFO:__main__:Starting server on port 50090
+python service.py --port 50095 --models-dir models/
+# INFO:__main__:Loaded model: /home/edgar/software/farm-ng-amiga/py/examples/people_detection/models
+# INFO:__main__:Starting server on port 50095
 # INFO:__main__:Server started
 ```
 
@@ -94,7 +93,7 @@ your Amiga!
 In another terminal, run the a pipeline using the client:
 
 ```bash
-python main.py --port-camera 50051 --port-detector 50090
+python main.py --port-camera 50051 --port-detector 50095
 ```
 
 And you should see a window with the video stream and the
