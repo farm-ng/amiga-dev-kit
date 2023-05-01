@@ -141,18 +141,6 @@ title: Frequently Asked Questions
 </details>
 
 <details>
-  <summary>How can I create a new app for the brain?</summary>
-  <div>
-     Custom applications can be created on the brain from
-     anywhere. We have a detailed tutorial on creating your first
-     custom app on your Amiga.
-    <br/><br/>
-    - You can find more details at: <a href="/docs/brain/brain-apps">
-      Developing Custom Applications</a>.
-    </div>
-</details>
-
-<details>
   <summary>Who do I get in touch with for errors with the Amiga?</summary>
   <div>
   To ensure we are continuous improving the Amiga, we have made
@@ -203,5 +191,47 @@ title: Frequently Asked Questions
   <div>
      The Amiga CAN bus runs at 250 kbps (250,000 bits per second).
     <br/><br/>
+    </div>
+</details>
+
+## Brain App Development
+
+<details>
+  <summary>How can I create a new app for the brain?</summary>
+  <div>
+     Custom applications can be created on the brain from
+     anywhere. We have a detailed tutorial on creating your first
+     custom app on your Amiga.
+    <br/><br/>
+    - You can find more details at: <a href="/docs/brain/brain-apps">
+      Developing Custom Applications</a>.
+    </div>
+</details>
+
+<details>
+  <summary>Why are other apps launching over the app I'm currently using?
+  </summary>
+  <div>
+    If you launch an app with the command line using an <code>entry.sh</code> script,
+    it is currently possible to have touch interactions with the launcher behind.
+    This will cause other installed apps to unexpectedly launch over the app you are trying to use.
+    <br/><br/>
+    If this is causing you issues,
+    a simple workaround is to launch a basic, empty app that will block touches from the launcher.
+    The <a href="https://github.com/farm-ng/amiga-app-template"><code>amiga-app-template</code>
+    </a> is well suited for this.
+    <br/><br/>
+    In your terminal <code>ssh</code>'d in as the <code>amiga</code> user:
+    <br/><br/>
+    <code>
+    cd ~/apps/
+    </code>
+    <br/>
+    <code>
+    git clone https://github.com/farm-ng/amiga-app-template.git
+    </code>
+    <br/><br/>
+    Then launch the app template by clicking the <code>Amiga App Template</code> AppButton on the launcher
+    before running your custom app with the <code>entry.sh</code> script.
     </div>
 </details>
