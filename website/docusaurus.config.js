@@ -110,6 +110,11 @@ async function createConfig() {
 	    position: 'left'
 	  },
 	  {
+	    href: 'https://farm-ng.com/',
+	    label: 'Shop',
+	    position: 'left'
+	  },
+	  {
 	    href: 'https://discourse.farm-ng.com',
 		label: 'Forum',
 	    position: 'right',

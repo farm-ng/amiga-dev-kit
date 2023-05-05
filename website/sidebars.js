@@ -51,42 +51,7 @@ const sidebars = {
     ],
     "Intelligence Kit": [
       "intelligence-kit/brain-v2",
-      "intelligence-kit/v2-features",
-      {
-        "items": [
-          "intelligence-kit/specifications/connections-diagram",
-          "intelligence-kit/specifications/brain-computer",
-          "intelligence-kit/specifications/dual-band",
-          "intelligence-kit/specifications/rtk-gps",
-          "intelligence-kit/specifications/oak-d",
-          "intelligence-kit/specifications/poe-switch"
-
-        ],
-        "label": "3. Specifications",
-        "type": "category"
-      },
-
-      "intelligence-kit/compatibility",
-      "intelligence-kit/installation-setup",
-      {
-        "items": [
-          "intelligence-kit/operation-usage/image-recording",
-          "intelligence-kit/operation-usage/gallery-application",
-          "intelligence-kit/operation-usage/metadata-tagging",
-          "intelligence-kit/operation-usage/brain-configuration",
-          "intelligence-kit/operation-usage/file-transfer",
-          "intelligence-kit/operation-usage/processing-gps"
-        ],
-        "label": "6. Operation and Usage",
-        "type": "category"
-      },
-      "intelligence-kit/maintenance",
-      "intelligence-kit/warranty",
-      "intelligence-kit/compliance",
-      "intelligence-kit/ordering-information",
-      "intelligence-kit/revision-history",
-      {
-
+{
         "items": [
           "brain/brain",
         ],
