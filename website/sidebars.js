@@ -91,6 +91,7 @@ const sidebars = {
         "examples/file_converter/file-converter",
         "examples/file_reader_can/file-reader-can",
         "examples/camera_client/camera-client",
+        "examples/camera_calibration/camera-calibration",
         "examples/people_detection/people-detection",
         "examples/motor_state/motor-state",
         "examples/vnc_viewer/vnc-viewer"
