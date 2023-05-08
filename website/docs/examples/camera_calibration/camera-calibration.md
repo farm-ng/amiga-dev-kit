@@ -3,7 +3,7 @@ id: camera-calibration
 title: Camera Calibration
 ---
 
-## [Link to `camera_calibration/main.py`](insert link here)
+## [Link to `camera_calibration/read_oak_calibration.py`](insert link here)
 
 The requirements to run this example are to have a
 [**farm-ng brain**](/docs/brain/) running Oak cameras and that
@@ -41,7 +41,7 @@ pip3 install -r requirements.txt
 ### 4. Execute the Python script
 
 ```bash
-python3 main.py --port 50051
+python3 read_oak_calibration.py --port 50051
 ```
 
 :::info
@@ -51,7 +51,7 @@ By default, the camera address is assumed top be `localhost`.
 Usage example:
 
 ```bash
-python3 main.py --address 192.168.1.93 --port 50051
+python3 read_oak_calibration.py --address 192.168.1.93 --port 50051
 ```
 
 :::info
@@ -63,7 +63,7 @@ The `--address` will be the IP address of the Amiga.
 Here you can review the code and gain a closer look at how this
 example is done.
 
-### [Link to `camera_calibration/main.py`](insert link)
+### [Link to `camera_calibration/read_oak_calibration.py`](insert link)
 
 :::tip
 We highgly recommend to have some basic knowledge about
