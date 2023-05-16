@@ -180,5 +180,9 @@ The Amiga Intelligence Kit is a modular expansion system developed for the Amiga
   </tr>
 </table>
 
+## Datasheet
+- [Datasheet](website/docs/intelligence-kit/assets/024-00001-001 - Datasheet for Amiga Intelligence Kit V2.01 (DRAFT) (1).pdf)
+- <a href="/home/farm-ng/amiga-dev-kit/website/docs/intelligence-kit/assets/024-00001-001 - Datasheet for Amiga Intelligence Kit V2.01 (DRAFT) (1).pdf" download>Click to Download</a>
+
 ## Got Questions?
 > Head over to **[Discussion Forum](https://discourse.farm-ng.com/)** for technical support or any other questions you might have.
