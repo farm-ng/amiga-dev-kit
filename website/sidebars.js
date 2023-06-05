@@ -26,7 +26,7 @@ const sidebars = {
     },
   ],
    */
-  "docs": {
+  "Documentation": {
     "Introduction": [
       "getting-started",
       "index",
@@ -36,6 +36,8 @@ const sidebars = {
       "brain/brain-install",
       "brain/next-steps",
     ],
+
+
     "Amiga Rover": [
       {
         "items": [
@@ -50,15 +52,32 @@ const sidebars = {
 
     ],
     "Intelligence Kit": [
-      "intelligence-kit/brain-v2",
+      "intelligence-kit/overview-intel",
 {
         "items": [
           "brain/brain",
+          "intelligence-kit/brain/brain-v2",
         ],
-        "label": "Earlier Versions",
+        "label": "Brain",
         "type": "category"
 
-      }
+      },
+      // {
+      //   "items": [
+      //     "intelligence-kit/rtk-gps/rtk-overview"
+      //   ],
+      //   "label": "RTK GPS",
+      //   "type": "category"
+
+      // },
+      // {
+      //   "items": [
+      //     "intelligence-kit/additional-hardware/additional-hardware"
+      //   ],
+      //   "label": "Additional Hardware",
+      //   "type": "category"
+      // }
+
     ],
 
     "Development Tools": [
@@ -151,7 +170,13 @@ const sidebars = {
 },
   "contribute": [
     "contribute/contribute-website"
-  ]
+  ],
+
+
+
 };
 
-module.exports = sidebars;
+
+
+
+module.exports = sidebars

@@ -1,6 +1,6 @@
 ---
 id: brain
-title: Overview
+title: Brain v1.0
 ---
 
 # farm-ng Brain v1
