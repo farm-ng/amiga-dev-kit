@@ -3,7 +3,6 @@ id: brain
 title: Brain v1.0
 ---
 
-# farm-ng Brain v1
 
 <!-- <img src="./assets/brain_render_iso.png" alt="Dash_Iso" width="600;" /> -->
 ![](./assets/brain_render_iso.png)
