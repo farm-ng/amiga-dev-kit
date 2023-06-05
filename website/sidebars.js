@@ -62,22 +62,6 @@ const sidebars = {
         "type": "category"
 
       },
-      // {
-      //   "items": [
-      //     "intelligence-kit/rtk-gps/rtk-overview"
-      //   ],
-      //   "label": "RTK GPS",
-      //   "type": "category"
-
-      // },
-      // {
-      //   "items": [
-      //     "intelligence-kit/additional-hardware/additional-hardware"
-      //   ],
-      //   "label": "Additional Hardware",
-      //   "type": "category"
-      // }
-
     ],
 
     "Development Tools": [
@@ -172,11 +156,6 @@ const sidebars = {
     "contribute/contribute-website"
   ],
 
-
-
 };
-
-
-
 
 module.exports = sidebars
