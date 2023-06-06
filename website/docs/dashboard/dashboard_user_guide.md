@@ -3,23 +3,30 @@ id: dashboard-user-guide
 title: Dashboard User Guide
 ---
 :::caution
-This is subject for change with new updates to the Dashboard. The current version of the Dashboard Firmware is `v0.1.9`.
+This is subject for change with new updates to the Dashboard.
+The current version of the Dashboard Firmware is `v0.1.9`.
 :::
 ![DSCF6570-2-16x9-aspect-reduced](https://user-images.githubusercontent.com/11846963/186734463-aa149b3a-7510-4d5a-99ea-f9a8a96775d2.jpg)
 
 ## Dashboard overview video
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PKOhI4hbGUs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PKOhI4hbGUs"
+title="YouTube video player" frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen></iframe>
 
 ## Entry Screen
 
-This is the entry screen of the dashboard. This screen will appear when you first turn on the Amiga. “Amiga is ready” and “Amiga esta lista” will appear and once you touch the "START" / "VAMOS" button you will be taken to the home screen
+This is the entry screen of the dashboard. This screen will appear when you first turn on the Amiga.
+“Amiga is ready” and “Amiga esta lista” will appear and once you touch the "START" / "VAMOS" button
+you will be taken to the home screen.
 
 <img src="https://user-images.githubusercontent.com/64480560/233126363-7aee7937-d308-4d79-a424-33a1fe531bae.jpg"
      width="320"
      height="300" />
 
-Alternatively if you receive the "Check pendant calibration" page, this means that either you have defective pendant or your pendant needs to be calibrated.
+Alternatively if you receive the "Check pendant calibration" page,
+this means that either you have defective pendant or your pendant needs to be calibrated.
 
 <img src="https://user-images.githubusercontent.com/64480560/233126475-5416e312-9d77-4552-876c-f4129d30f244.jpg"
      width="400"
@@ -29,7 +36,8 @@ Alternatively if you receive the "Check pendant calibration" page, this means th
 This button will take you to the same page as the `pendant` section of the Settings tab.
 :::
 
-If your pendant is not being detected at all and if it says `No Pendant Detected` please contact the Farm-ng Support immediately by visiting [our Support page](https://amiga.farm-ng.com/docs/support/).
+If your pendant is not being detected at all and if it says `No Pendant Detected`
+please contact the Farm-ng Support immediately by visiting [our Support page](https://amiga.farm-ng.com/docs/support/).
 
 ## Home Screen
 
@@ -54,7 +62,8 @@ This is the home screen of the dashboard. On this screen you will find:
      width="330"
      height="300" />
 
-This screen for monitoring each motor in much more detail than that of the home screen. On this screen you can:
+This screen for monitoring each motor in much more detail than that of the home screen.
+On this screen you can:
 
 - Monitor the control state of the Amiga
 - Voltage, RPM, temperature, and current of each motor / motor controller
@@ -72,23 +81,30 @@ This screen is where the autonomous control of the amiga comes to life. Here you
 - Monitor the auto control state
 - Monitor the commanded & measured speed and turning rates of the amiga
 
-If you are controlling the Amiga with a brain or other micro-controller, here is where you will enable & monitor the auto control commands sent to your Amiga.
-Auto control examples include the [Virtual Joystick Example](/docs/tutorials/virtual_joystick/virtual-joystick-overview) (brain) and the [FPV example](/docs/examples/FPV/) (micro-controller).
+If you are controlling the Amiga with a brain or other micro-controller,
+here is where you will enable & monitor the auto control commands sent to your Amiga.
+Auto control examples include the
+[Virtual Joystick Example](/docs/tutorials/virtual_joystick/virtual-joystick-overview) (brain)
+and the [FPV example](/docs/examples/FPV/) (micro-controller).
 
 ## General Settings Tab
 
-Now we have the settings tab, which may be the most important tab. Here on the settings tab you have a few options. Here you can find:
+Now we have the settings tab, which may be the most important tab.
+Here on the settings tab you have a few options. Here you can find:
 
 <img src="https://user-images.githubusercontent.com/64480560/233127789-39f05f32-e17e-4e7b-8118-91500a4bc75f.jpg"
      width="320"
      height="300" />
 
 ### The General Settings Tab
+
 <img src="https://user-images.githubusercontent.com/64480560/233127855-eafd4df9-555f-4154-a238-48c8a2961e3c.jpg"
      width="320"
      height="300" />
 
-This page is where all of the general settings are located. Here, you will be able to set the total `wheel_track` of the Amiga, or even motor you would like to disable or enable.
+This page is where all of the general settings are located.
+Here you will be able to set the total `wheel_track` of the Amiga,
+or even motor you would like to disable or enable.
 
 The settings you can set on this page are:
 
@@ -118,7 +134,9 @@ The settings you can set on this page are:
      width="320"
      height="300" />
 
-This page is the hub for the pendant. Here is where you will go to calibrate it, and to ensure all of the functions of the pendant are operational. This including the buttons, joystick, and data reception.
+This page is the hub for the pendant. Here is where you will go to calibrate it,
+and to ensure all of the functions of the pendant are operational.
+This including the buttons, joystick, and data reception.
 
 ### Advanced settings
 
@@ -126,23 +144,31 @@ This page is the hub for the pendant. Here is where you will go to calibrate it,
      width="320"
      height="300" />
 
-This page are for specific function of the dashboard firmware. The options under `Advance Settings` are :
+This page are for specific function of the dashboard firmware.
+The options under `Advance Settings` are:
 
-- `Reboot Dashboard`: This will give a soft reboot to the dashboard without having to power cycle your Amiga.
-- `Factory Setting Reset`: This setting will revert the general settings such as `wheel_track`, `max_turn_rate`, and more, back to the factory default values.
-  - NOTE: These may not match the values when you first received your Amiga if you do not have the standard configuration.
-- `Mount CIRCUITPY`: When you would like to Mount CIRCUITPY to update the Dashboard Firmware, here is where you will do that in order for your computer to communicate with your Dashboard.
-- `Bootloader Mode`: Similar to `Mount CIRCUITPY`, when you would like to update the UF2 file on the dashboard you will need to place it in a `Bootloader` state. With this button you can perform that action.
+- `Reboot Dashboard`: This will give a soft reboot to the dashboard
+  without having to power cycle your Amiga.
+- `Factory Setting Reset`: This setting will revert the general settings such as
+`wheel_track`, `max_turn_rate`, and more, back to the factory default values.
+  - NOTE: These may not match the values when you first received your Amiga
+    if you do not have the standard configuration.
+- `Mount CIRCUITPY`: When you would like to Mount CIRCUITPY to update the Dashboard Firmware,
+  here is where you will do that in order for your computer to communicate with your Dashboard.
+- `Bootloader Mode`: Similar to `Mount CIRCUITPY`,
+  when you would like to update the UF2 file on the dashboard you will need to
+  place it in a `Bootloader` state. With this button you can perform that action.
 
 :::tip
-For more information about Firmware Updates or how to perform an update, please visit [Dashboard Firmware Update](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)
+For more information about Firmware Updates or how to perform an update,
+please visit [Dashboard Firmware Update](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)
 :::
 
 ### H-bridge settings
+
 <img src="https://user-images.githubusercontent.com/64480560/233127456-1f294f6f-69ac-4563-a070-9b25c2e78ac3.jpg"
      width="320"
      height="300" />
-
 
 This page shows the status of the H-bridge linear actuators on your Amiga.
 The H-bridge actuators are controlled with the arrow keys on the pendant.
@@ -159,7 +185,8 @@ There are three states you will see for the H-bridge actuators.
 
 Currently only 1 PTO (power take-off) device is supported.
 You will see a message that no PTO is detected if there is not a detected PTO device.
-> If you see the "No PTO" message and expect a PTO device, contact farm-ng for support by visiting [our Support page](https://amiga.farm-ng.com/docs/support/).
+> If you see the "No PTO" message and expect a PTO device, contact farm-ng for support by visiting
+> [our Support page](https://amiga.farm-ng.com/docs/support/).
 
 <img src="https://user-images.githubusercontent.com/53625197/233201899-59ddb864-75dd-45d3-86c9-bdb7b3c4a358.jpg"
      width="320" />
@@ -183,19 +210,23 @@ The PTO gear ratio can also be configured on the settings page.
      width="320"
      height="300" />
 
-On this page, you will find important information about your Amiga, including the `Tractor Hardware ID`, `Dashboard Firmware` version number, and the `Updator App`.
+On this page, you will find important information about your Amiga, including the
+`Tractor Hardware ID`, `Dashboard Firmware` version number, and the `Updator App`.
 
 #### Updator App
 
-On the `Updator App`, you will be able to update your Amiga dashboard and Updator app itself through here. You can use the `Updator App` to perform an Over-the-air update.
+On the `Updator App`, you will be able to update your Amiga dashboard and Updator app itself
+through here. You can use the `Updator App` to perform an Over-the-air update.
 
 :::tip
-For more information about Firmware Updates or how to perform an update, please visit [Dashboard Firmware Update](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)
+For more information about Firmware Updates or how to perform an update,
+please visit [Dashboard Firmware Update](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)
 :::
 
 ### State Indicators
 
-The state indicators are for distacting and understanding which control state your Amiga is in. These states include, but are not limited to, `E-stopped`, `Auto_ready`, and `Cruise Control`.
+The state indicators are for distacting and understanding which control state your Amiga is in.
+These states include, but are not limited to, `E-stopped`, `Auto_ready`, and `Cruise Control`.
 
 #### E-stopped
 
@@ -207,7 +238,8 @@ The state indicators are for distacting and understanding which control state yo
      width="315"
      height="300" />
 
-When your Amiga is E-stopped, a red border will display around the edges of your dashboard screen. When your Amiga is in this state, your motor controller will be un able to move on command.
+When your Amiga is E-stopped, a red border will display around the edges of your dashboard screen.
+When your Amiga is in this state, your motor controller will be un able to move on command.
 
 #### Cruise Control
 
@@ -215,7 +247,9 @@ When your Amiga is E-stopped, a red border will display around the edges of your
      width="315"
      height="300" />
 
-This state will enable you to place your Amiga at a given speed and allow your Amiga to `cruise` at that speed. When this control state is activated, a green border will be at the edge of your dashboard screen.
+This state will enable you to place your Amiga at a given speed and allow your Amiga to `cruise`
+at that speed. When this control state is activated,
+a green border will be at the edge of your dashboard screen.
 
 #### Auto Control
 
@@ -223,9 +257,13 @@ This state will enable you to place your Amiga at a given speed and allow your A
      width="315"
      height="300" />
 
-This state will enable you to control your Amiga via external controls and through remote source. Some of these sources include the [`virtual_joy_stick`](https://amiga.farm-ng.com/docs/tutorials/virtual_joystick/virtual-joystick-overview).
+This state will enable you to control your Amiga via external controls and through remote source.
+Some of these sources include the [`virtual_joy_stick`](https://amiga.farm-ng.com/docs/tutorials/virtual_joystick/virtual-joystick-overview).
 
-When you activate the `auto_control` feature on your dashboard. You will see a yellow border appear around the edge of your dashboard. This yellow border means your Amiga in the `auto_ready` state and once the connection is secure it will then gain a green border meaning it is in the `auto_active` state.
+When you activate the `auto_control` feature on your dashboard.
+You will see a yellow border appear around the edge of your dashboard.
+This yellow border means your Amiga in the `auto_ready` state and once the connection is secure
+it will then gain a green border meaning it is in the `auto_active` state.
 
 :::tip
 For more information about Amiga Control States , please visit [Amiga Control States](https://amiga.farm-ng.com/docs/dashboard/control-states)

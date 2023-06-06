@@ -6,8 +6,9 @@ title: File Converter
 
 # File Converter Example
 
-> This will take the `*.bin` log file for a given Oak Camera Stream or snapshot captured by the Recorder app on an Amiga brain
-and convert it to either `*.mp4` videos or `*.jpg` images for each view stream.
+> This will take the `*.bin` log file for a given Oak Camera Stream or snapshot
+> captured by the Recorder app on an Amiga brain and convert it to either
+> `*.mp4` videos or `*.jpg` images for each view stream.
 
 :::tip
 You should typically expect 4 view streams per Oak Device ("rgb", "disparity", "left, "right").
@@ -35,7 +36,8 @@ pip install -r requirements.txt
 **Specify the file (download before)**
 :::
 
-See **[How to Record and Access data on the Amiga](https://amiga.farm-ng.com/docs/examples/import_log_file/)** for instructions.
+See **[How to Record and Access data on the Amiga](/docs/examples/import_log_file/)**
+for instructions.
 
 ```bash
 python main.py --file-name events_09162022160753_000000.bin
@@ -48,19 +50,22 @@ python main.py --file-name events_09162022160753_000000.bin
 ```bash
 $ python main.py --help
 
-usage: Event file converter example. [-h] --file-name FILE_NAME [--output-path OUTPUT_PATH] [--camera-name CAMERA_NAME] [--disparity-scale DISPARITY_SCALE] [--video-to-jpg] [--snapshot]
+usage: Event file converter example. [-h] --file-name FILE_NAME [--output-path OUTPUT_PATH]
+[--camera-name CAMERA_NAME] [--disparity-scale DISPARITY_SCALE] [--video-to-jpg] [--snapshot]
 
 optional arguments:
   -h, --help            show this help message and exit
   --file-name FILE_NAME
                         Path to the `events.bin` file.
   --output-path OUTPUT_PATH
-                        Path to the folder where converted data will be written. Default: /home/kyle/farm-ng/farm-ng-amiga/py/examples/file_converter
+                        Path to the folder where converted data will be written.
+                        Default: /home/kyle/farm-ng/farm-ng-amiga/py/examples/file_converter
   --camera-name CAMERA_NAME
                         The name of the camera to visualize. Default: oak0.
   --disparity-scale DISPARITY_SCALE
                         Scale for amplifying disparity color mapping. Default: 1.
-  --video-to-jpg        Use this flag to convert video .bin files to a series of jpg images. Default for videos is mp4.
+  --video-to-jpg        Use this flag to convert video .bin files to a series of jpg images.
+                        Default for videos is mp4.
   --snapshot            Use this flag if the .bin file is a single snapshot. Output will be jpg images.
 ```
 
