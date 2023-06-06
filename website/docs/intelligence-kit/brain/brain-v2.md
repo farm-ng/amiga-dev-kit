@@ -3,15 +3,22 @@ id: brain-v2
 title: Brain v2.0
 ---
 # Overview
+
 [Buy this in the Farm-ng Shop](https://farm-ng.com/products/brain)
 
 ![DSCF8927 (1) (1)](https://user-images.githubusercontent.com/64480560/236523251-98876568-f370-4feb-8866-7f67fb20b757.png)
 
-### [Brain product page](https://farm-ng.com/products/brain)
+## [Brain product page](https://farm-ng.com/products/brain)
 
-## Brain overview video
+### Brain overview video
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_p0I11p4QF4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560"
+height="315"
+src="https://www.youtube.com/embed/_p0I11p4QF4"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen></iframe>
 
 ### CAN/Power Input
 
@@ -108,13 +115,15 @@ title: Brain v2.0
   <tr>
    <td>Screen
    </td>
-   <td>10.1" High brightness (850cd/m2) optically bonded IPS display, 1280x800 resolution
+   <td>10.1" High brightness (850cd/m2) optically bonded IPS display,
+   1280x800 resolution
    </td>
   </tr>
   <tr>
    <td>Touch
    </td>
-   <td>Industrial capacitive touch screen controller, tunable for gloves and wet environment, Multitouch capable
+   <td>Industrial capacitive touch screen controller, tunable for gloves and
+   wet environment, Multitouch capable
    </td>
   </tr>
   <tr>
@@ -144,7 +153,8 @@ title: Brain v2.0
   <tr>
    <td>CANbus
    </td>
-   <td>1x M12-5pin A-coded breakout, standardized industrial DeviceNet / NMEA2000 pinouts and hardware specifications
+   <td>1x M12-5pin A-coded breakout, standardized industrial DeviceNet /
+   NMEA2000 pinouts and hardware specifications
    </td>
   </tr>
   <tr>
@@ -180,4 +190,5 @@ title: Brain v2.0
 </table>
 
 ## Dimensions and Weight
+
 ![image (1)](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/8a37b7a0-d451-4867-9154-4fb9e482e3b2)
