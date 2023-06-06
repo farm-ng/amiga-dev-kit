@@ -1,6 +1,6 @@
 ---
 id: brain
-title: Brain Overview
+title: Brain v1.0
 ---
 
 ![brain_render](./assets/brain_render_iso.png)

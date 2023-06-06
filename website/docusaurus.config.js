@@ -81,7 +81,7 @@ async function createConfig() {
 	},
 	items: [
 	  {
-	    label: 'Docs',
+	    label: 'Documentation',
 	    type: 'doc',
 	    docId: 'getting-started',
 	    position: 'left',
@@ -99,26 +99,39 @@ async function createConfig() {
 	    position: 'left',
 	  },
 	  {
-	    label: 'Contribute',
-	    type: 'doc',
-	    docId: 'contribute/contribute-website',
-	    position: 'left',
+
+    	to: 'https://farm-ng.com/pages/about-farm-ng',
+    	label: 'About Us',
+    	position: 'left',
+},
+
+	//   {
+	//     label: 'Contribute',
+	//     type: 'doc',
+	//     docId: 'contribute/contribute-website',
+	//     position: 'left',
+	//   },
+	//   {
+	//     to: '/blog',
+	//     label: 'Blog',
+	//     position: 'left'
+	//   },
+	  {
+		to: 'https://discourse.farm-ng.com/',
+    	label: 'Discuss',
+    	position: 'left',
 	  },
 	  {
-	    to: '/blog',
-	    label: 'Blog',
+	    to: 'https://farm-ng.com/',
+	    label: 'Shop',
 	    position: 'left'
 	  },
-	  {
-	    href: 'https://discourse.farm-ng.com',
-		label: 'Forum',
-	    position: 'right',
-	    'aria-label': 'Farm-ng Developers Forum',
-	  },
+
 	  {
 	    href: 'https://www.youtube.com/channel/UCczyy8tyLbqxjtLE1_8YW3w',
-	    label: 'YouTube',
 	    position: 'right',
+		className: 'header-youtube-link',
+		'aria-label': 'Youtube',
 	  },
 	  {
 	    href: 'https://github.com/farm-ng/amiga-dev-kit',
@@ -137,7 +150,7 @@ async function createConfig() {
 	style: 'dark',
 	links: [
 	  {
-	    title: 'Docs',
+	    title: 'Documentation',
 	    items: [
 	      {
 		label: 'Getting Started',
@@ -199,7 +212,7 @@ async function createConfig() {
 	    title: 'More',
 	    items: [
 	      {
-		label: 'Blog',
+		label: 'Release Notes',
 		to: '/blog',
 	      },
 	      {

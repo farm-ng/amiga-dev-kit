@@ -5,6 +5,8 @@ title: Introduction
 
 ### Welcome to the Amiga Development Kit
 
+![ezgif com-gif-maker (1)](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/18dbebd2-98a1-4c5b-b6b4-2c73093fb7df)
+
 In this website you will find full context on our
 [**ADK repository**](https://github.com/farm-ng/amiga-dev-kit),
 including documentation, tutorials, & the development kit API.

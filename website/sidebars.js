@@ -26,7 +26,7 @@ const sidebars = {
     },
   ],
    */
-  "docs": {
+  "Documentation": {
     "Introduction": [
       "getting-started",
       "index",
@@ -36,7 +36,9 @@ const sidebars = {
       "brain/brain-install",
       "brain/next-steps",
     ],
-    "Amiga Overview": [
+
+
+    "Amiga Rover": [
       {
         "items": [
         "dashboard/dashboard",
@@ -47,18 +49,47 @@ const sidebars = {
       "label": "Dashboard",
       "type": "category"
     },
-    {
+
+    ],
+    "Intelligence Kit": [
+      "intelligence-kit/overview-intel",
+{
+        "items": [
+          "brain/brain",
+          "intelligence-kit/brain/brain-v2",
+        ],
+        "label": "Brain",
+        "type": "category"
+
+      },
+    ],
+
+    "Development Tools": [
+      {
         "items": [
             "debug_cable/debug-cable",
-            "debug_cable/service-cable",
+            "debug_cable/service-cable"
       ],
       "label": "Cables",
       "type": "category"
     },
-      "mcu_kit/microcontroller-kit",
-      "brain/brain",
-      "pendant/pendant",
+    {
+      "items": [
+        "pendant/pendant"
+
+      ],
+      "label": "Pendant",
+      "type": "category"
+    },
+    {
+      "items": [
+        "mcu_kit/microcontroller-kit",
+      ],
+      "label": "Microcontroller Kit",
+      "type": "category"
+    }
     ],
+
     "Resources/Support": [
       "hardware-tools/recommended-tools",
       "reference/faq",
@@ -124,7 +155,8 @@ const sidebars = {
 },
   "contribute": [
     "contribute/contribute-website"
-  ]
+  ],
+
 };
 
-module.exports = sidebars;
+module.exports = sidebars
