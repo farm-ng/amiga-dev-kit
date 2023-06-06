@@ -22,6 +22,7 @@ while the Brain with a NVIDIA Orin NX offers up to 100 TOPS of
 hardware-accelerated computing power for machine learning and AI applications.
 
 ### RTK GPS
+
 The kit includes a dual-band GPS antenna that connects directly to the Brain,
 along with an RTK-capable GPS module located within the Brain and
 linked to the GPS antenna via an SMA connector.
@@ -38,18 +39,22 @@ The M12 X-Coded Ethernet to A-coded cable connectors are designed for secure
 and reliable connection.
 
 ### PoE Switch
+
 This device allows you to connect the Cameras, Brain and
 RTK-GPS module to the Amiga.
 It includes 6 ports to allow connection of 4 smart cameras.
 
 ### Additional Hardware
+
 1. Debug Cable
 2. Mast Hardware
 3. Productive Case
 
 ## Datasheet
+
 - [Datasheet](https://github.com/farm-ng/amiga-dev-kit/files/11489159/024-00001-001.-.Datasheet.for.Amiga.Intelligence.Kit.V2.01.DRAFT.1.pdf)
 
 ## Got Questions?
+
 > Head over to **[Discussion Forum](https://discourse.farm-ng.com/)** for
 > technical support or any other questions you might have.
