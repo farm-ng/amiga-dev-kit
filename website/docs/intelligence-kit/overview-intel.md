@@ -50,7 +50,6 @@ It includes 6 ports to allow connection of 4 smart cameras.
 ## Datasheet
 - [Datasheet](https://github.com/farm-ng/amiga-dev-kit/files/11489159/024-00001-001.-.Datasheet.for.Amiga.Intelligence.Kit.V2.01.DRAFT.1.pdf)
 
-
 ## Got Questions?
 > Head over to **[Discussion Forum](https://discourse.farm-ng.com/)** for
 > technical support or any other questions you might have.
