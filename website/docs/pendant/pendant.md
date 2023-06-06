@@ -4,42 +4,67 @@ title: Overview
 ---
 ![pendant 3](https://user-images.githubusercontent.com/64480560/210899367-c57a8bae-c450-4f71-bc68-5f05d337c896.jpg)
 
-### Description
-The pendant is a wired Manual joystick control interface with a rubberized backlit keypad that is  waterproof and rugged. This CANbus enabled controller is pluggable anywhere on the tractor communication backbone.
+## Description
 
-### How to connect
+The pendant is a wired Manual joystick control interface with a
+rubberized backlit keypad that is  waterproof and rugged. This
+CANbus enabled controller is pluggable anywhere on the tractor
+communication backbone.
 
-The pendant must be connect to CAN/Power accessory port which is location on the back of the dashboard panel. (please reference photo below)
+## How to connect
+
+The pendant must be connect to CAN/Power accessory port which is
+location on the back of the dashboard panel. (please reference
+photo below)
 
 ![187535995-d4ad8c7c-05a0-482b-8be9-6b6fb6b87ac3](https://user-images.githubusercontent.com/64480560/210901594-6733b85d-292b-4468-9c65-3e275ed1c6f5.png)
 
-
-### Pendant Controls
+## Pendant Controls
 
 ![IMG-9902](https://user-images.githubusercontent.com/64480560/211636387-fa11f5ea-59b0-4506-8005-d99ab21f90c6.jpg)
 
-**Joystick** (omni directional stick that is used to control the amiga. This controls include, Acceleration, and turning left and right, reverse)
+**Joystick** (omni directional stick that is used to control the
+amiga. This controls include, Acceleration, and turning left and
+right, reverse)
 
-**Cruise(X)** – this will allow you to place your Amiga into cruise control. To activate this,while the amiga is completely stopped, press `cruise` then gently push forward the joystick to accelerate, pull back on joystick to decrease acceleration. You can press this button once more to exit cruise control and slow to a stop.
+**Cruise(X)** – this will allow you to place your Amiga into
+cruise control. To activate this,while the amiga is completely
+stopped, press `cruise` then gently push forward the joystick to
+accelerate, pull back on joystick to decrease acceleration. You
+can press this button once more to exit cruise control and slow
+to a stop.
 
 :::caution
-Pushing forward and pulling back on the joystick does not control speed, only acceleration and how much it will accelerate in relation to the set speed on the dashboard home tab.
+Pushing forward and pulling back on the joystick does not control
+speed, only acceleration and how much it will accelerate in
+relation to the set speed on the dashboard home tab.
 :::
 
 **Brake(O)**
-This is a brake for the Amiga. Pressing this will stop all motors and exit cruise control mode (if active).
+This is a brake for the Amiga. Pressing this will stop all motors
+and exit cruise control mode (if active).
 
 **PTO (Triangle)**
-Power take-off (PTO) is a device that transfers an engine's mechanical power to another piece of equipment. A PTO allows the hosting energy source to transmit power to additional equipment that does not have its own engine or motor.
+Power take-off (PTO) is a device that transfers an engine's
+mechanical power to another piece of equipment. A PTO allows the
+hosting energy source to transmit power to additional equipment
+that does not have its own engine or motor.
 
-We use this to facilitate control from the pendant for addition equipment attached to the Amiga, such as the [**3-point lift**](https://farm-ng.com/products/cat-zero-3-point-lift-kit), [**compost spreader**](https://farm-ng.com/products/compost-spreader) or [**cargo dump box**](https://farm-ng.com/products/kit-cargo-dump-box)
+We use this to facilitate control from the pendant for addition
+equipment attached to the Amiga, such as the
+[**3-point lift**](https://farm-ng.com/products/cat-zero-3-point-lift-kit),
+[**compost spreader**](https://farm-ng.com/products/compost-spreader) or
+[**cargo dump box**](https://farm-ng.com/products/kit-cargo-dump-box)
 
 **PAUSE(Square)**
-Currently this button is a free button to be updated in future firmware releases.
+Currently this button is a free button to be updated in future
+firmware releases.
 
-**ARROWS** -  UP, Down, Left, Right {these are used to control your connect and registered PTO device)
- Basic troubleshooting can found on our [**FAQ page**](/docs/reference/faq)
+**ARROWS** -  UP, Down, Left, Right (these are used to control
+your connect and registered PTO device).
+Basic troubleshooting can found on our
+[**FAQ page**](../reference/faq)
 
+## Calibrate pendant
 
-### Calibrate pendant
 **See calibrate instructions [here](/docs/amiga_quick_start/amiga-quick-start.md#calibrate-the-pendant)**

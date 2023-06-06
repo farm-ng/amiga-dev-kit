@@ -3,7 +3,8 @@ id: vnc-viewer
 title: Using a VNC Viewer
 ---
 
-If you want to see the screen of the Amiga and interact with it from a laptop or dev station, use a remote desktop / VNC viewing program.
+If you want to see the screen of the Amiga and interact with it from a laptop or dev station,
+use a remote desktop / VNC viewing program.
 There are an abundance of free VNC viewing programs available, so feel free to use your preferred tool.
 
 If you don't have a preferred tool, an option for each OS includes:

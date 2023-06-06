@@ -5,8 +5,8 @@ title: Motor State
 
 # Amiga Motor State Stream
 
-Currently this is a very basic example showing how to access and decode the `MotorState` values streamed by the canbus service.
-
+Currently this is a very basic example showing how to access and
+decode the `MotorState` values streamed by the canbus service.
 
 ## Setup
 
@@ -30,10 +30,11 @@ pip install -r requirements.txt
 Specify the file (download before)
 
 ```bash
-python main.py --canbus-port 50060 # --address <YOUR_AMIGA_IP_ADDRESS>
+python main.py --canbus-port 50060 # --address
+# <YOUR_AMIGA_IP_ADDRESS>
 ```
-
 
 ## Expected output
 
-You should see a printed stream of the current `MotorState` for all detected motors in your terminal.
+You should see a printed stream of the current `MotorState` for
+all detected motors in your terminal.
