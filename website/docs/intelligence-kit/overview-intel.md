@@ -48,7 +48,7 @@ It includes 6 ports to allow connection of 4 smart cameras.
 
 1. Debug Cable
 2. Mast Hardware
-3. Productive Case
+3. Protective Case
 
 ## Datasheet
 

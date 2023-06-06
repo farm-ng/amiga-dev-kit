@@ -2,7 +2,7 @@
 id: brain-v2
 title: Brain v2.0
 ---
-# Overview
+# Brain v2.0
 
 [Buy this in the Farm-ng Shop](https://farm-ng.com/products/brain)
 
