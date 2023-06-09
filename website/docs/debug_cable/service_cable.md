@@ -3,7 +3,6 @@ id: service-cable
 title: Service Cable Overview
 ---
 
-# farm-ng Service Cable
 
 ![IMG-9583](https://user-images.githubusercontent.com/64480560/205402624-fa7d8a61-4017-4691-9d24-d6d3ebdeb359.jpg)
 

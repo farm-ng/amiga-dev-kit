@@ -3,8 +3,6 @@ id: debug-cable
 title: Debug Cable Overview
 ---
 
-# farm-ng Debug Cable
-
 ![IMG_9574](https://user-images.githubusercontent.com/64480560/205400778-1bfa084c-a187-4f42-8840-7b91714ab7f0.jpg)
 
 ## Overview
