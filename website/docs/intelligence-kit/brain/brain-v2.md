@@ -4,7 +4,7 @@ title: Brain v2.0
 ---
 # Brain v2.0
 
-[Buy this in the Farm-ng Shop](https://farm-ng.com/products/brain)
+[Buy it on Farm-ng Shop](https://farm-ng.com/products/brain)
 
 ![DSCF8927 (1) (1)](https://user-images.githubusercontent.com/64480560/236523251-98876568-f370-4feb-8866-7f67fb20b757.png)
 

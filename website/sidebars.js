@@ -49,6 +49,14 @@ const sidebars = {
       "label": "Dashboard",
       "type": "category"
     },
+    {
+      "items": [
+        "pendant/pendant"
+
+      ],
+      "label": "Pendant",
+      "type": "category"
+    },
 
     ],
     "Intelligence Kit": [
@@ -71,14 +79,6 @@ const sidebars = {
             "debug_cable/service-cable"
       ],
       "label": "Cables",
-      "type": "category"
-    },
-    {
-      "items": [
-        "pendant/pendant"
-
-      ],
-      "label": "Pendant",
       "type": "category"
     },
     {
