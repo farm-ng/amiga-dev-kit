@@ -87,7 +87,14 @@ const sidebars = {
       ],
       "label": "Microcontroller Kit",
       "type": "category"
-    }
+    },
+    {
+      "items": [
+        "hardware-tools/three-point",
+      ],
+      "label": "Three Point",
+      "type": "category"
+    },
     ],
 
     "Resources/Support": [

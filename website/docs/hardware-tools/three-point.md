@@ -1,8 +1,18 @@
 ---
 id: three-point
-title: 3 Point Installation Guide
+title: Installation Guide
 ---
-# Assembly instructions for Farm-ng 3 point
+# Three Point Lift Installation Guide
+
+This guide is a step by step instruction on how to assemble the farm-ng three point lift.
+
+## Tools needed
+
+1. Socket wrenches
+2. 3/8 & 5/8 size sockets
+3. Needle nose pliers for bending the cotter pins on the top cylinder connection.
+
+## Assembly
 
 1. Mount the 3 point brackets centered on the Amiga cross bars using universal clamps and related hardware
 
@@ -10,7 +20,7 @@ title: 3 Point Installation Guide
 
 2. Mount to the 3 point backplate to the brackets in the following way.
 
-    ![image](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/d1be0c48-2a47-472a-a494-46815d73ca7d)
+    ![image](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/17460082-5160-40f3-ad39-97a8044e5a7e)
 
     ![image](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/e051765c-3b6d-4058-8cbf-69742ecf35ba)
 
@@ -21,6 +31,7 @@ title: 3 Point Installation Guide
     ![image](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/0d96efa8-735d-4670-a19a-8efb99629a05)
 
 4. Secure the arm brackets to the 3 point backplate
+
     ![image](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/079fd062-3fc6-4840-97af-34ca0d2e03e6)
 
 5. Connect the upper 3 point linkage to the arm brackets with the adjustable lift arms
@@ -31,15 +42,15 @@ title: 3 Point Installation Guide
 
 6. Connect the turnbuckles to the arm links and the 3 point backplate
 
-    ![image](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/ded68d17-fd78-4dd6-b0f9-1220f29f9c1b)
+    ![img_3141_720](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/8282a4b6-6976-4fca-a39d-a7e040acaed9)
 
 7. Connect the 3point cylinder actuator to back plate and the upper 3point linkage.
 
-    ![image](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/3212ed0a-84f7-46e3-b6a7-ed0c23dd7d48)
+    ![image0](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/451e1e25-c493-400f-9d7b-5c0009677ed3)
 
-    ![image](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/135a7c09-6fee-43f2-9154-531077a4b104)
+    ![image2](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/f091ba54-53f7-45df-b9d1-3eff3fbdbed5)
 
-    ![image](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/ec9ccdf7-1ff2-446e-a866-b6b16fa1b7f5)
+    ![image1](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/25db5975-db23-472d-8359-db72afbdb3eb)
 
 8. Attach the adjustable top link to the 3 point backplate
 
@@ -63,8 +74,4 @@ title: 3 Point Installation Guide
 
 13. Your result should look like this
 
-    ![image](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/ed5e3326-300d-471b-bdce-9428da92a0d2)
-
-    ![image](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/2ad17aa8-b610-49c6-8aa3-75c904d244c3)
-
-    ![image](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/8d54213d-f01d-4558-9123-4d4af74e6f38)
+   ![img_3145_720](https://github.com/farm-ng/amiga-dev-kit/assets/64480560/b483ace5-9836-43b0-9b5e-8597bf8e8fc6)
