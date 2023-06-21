@@ -6,10 +6,22 @@ title: Installation Guide
 
 This guide is a step by step instruction on how to assemble the farm-ng three point lift.
 
+If you are missing any necessary pieces, please contact farm-ng immediately.
+
+## Included Hardware
+
+1. Carriage bolts 3/8' by 1 1/14' ---- 24 count
+2. Flat Washers 3/8' --- 24 count
+3. Nylon Insert Locknut 3/8" --- 24 count
+4. Hex Cap Screw 5/8  x 3" --- 4 count
+5. Flat Washers 5/8" --- 12 count
+6. Hex Cap Screw 5/8 x 2 1/4" --- 2 count
+7. Hex Nut 5/8" --- 6
+
 ## Tools needed
 
 1. Socket wrenches
-2. 3/8 & 5/8 size sockets
+2. Socket sizes above
 3. Needle nose pliers for bending the cotter pins on the top cylinder connection.
 
 ## Assembly
