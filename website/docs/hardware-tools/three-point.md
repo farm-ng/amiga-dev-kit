@@ -33,41 +33,43 @@ immediately.
 1. Mount the 3 point brackets centered on the Amiga cross bars using universal clamps and related hardware.
 
     <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/b5911e9b-98e1-4b2a-ba67-e01fe1f77422"
-     width="320"
+     width="500"
      height="300" />
 
 2. Mount to the 3 point backplate to the brackets in the following way.
-    <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/e051765c-3b6d-4058-8cbf-69742ecf35ba"
-     width="320"
-     height="400" />
 
     <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/17460082-5160-40f3-ad39-97a8044e5a7e"
-     width="320"
-     height="300" />
-
-3. Mount the upper 3 point linkage to the 3point back plate.
-    <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/6df75a7a-d632-46e8-92c0-2c852139068d"
-     width="320"
+     width="600"
      height="200" />
 
+    <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/e051765c-3b6d-4058-8cbf-69742ecf35ba"
+     width="200"
+     height="190" />
+
+3. Mount the upper 3 point linkage to the 3point back plate.
+
     <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/0d96efa8-735d-4670-a19a-8efb99629a05"
-     width="320"
+     width="510"
+     height="200" />
+
+    <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/6df75a7a-d632-46e8-92c0-2c852139068d"
+     width="200"
      height="200" />
 
 4. Secure the arm brackets to the 3 point backplate.
 
      <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/079fd062-3fc6-4840-97af-34ca0d2e03e6"
-     width="320"
-     height="200" />
+     width="500"
+     height="300" />
 
 5. Connect the upper 3 point linkage to the arm brackets with the adjustable lift arms.
 
-     <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/bc830964-4b00-49d9-93ab-343732594661"
-     width="320"
+     <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/9a17f13c-6550-4ecc-918c-db76a4364955"
+     width="474"
      height="200" />
 
-     <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/9a17f13c-6550-4ecc-918c-db76a4364955"
-     width="320"
+     <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/bc830964-4b00-49d9-93ab-343732594661"
+     width="200"
      height="200" />
 
 6. Connect the turnbuckles to the arm links and the 3 point backplate.
@@ -104,15 +106,15 @@ immediately.
      height="200" />
 11. Connect E-stop and CAN cables to H-bridge bringing power to it from the main harness.
      <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/f511a27b-5d08-427e-bcf4-e42fc5444ba8"
-     width="320"
+     width="500"
      height="200" />
 
 12. Connect power to the 3point cylinder ( please note lower connection).
      <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/545fb266-4bd9-4138-93b8-450a327061be"
-     width="320"
+     width="500"
      height="200" />
 
 13. Your result should represent the image below.
      <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/b483ace5-9836-43b0-9b5e-8597bf8e8fc6"
-     width="320"
+     width="500"
      height="200" />
