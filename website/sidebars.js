@@ -70,6 +70,13 @@ const sidebars = {
         "type": "category"
 
       },
+{
+  "items": [
+    "release-notes/release-01",
+  ],
+  "label": "Release Notes",
+  "type": "category"
+},
     ],
 
     "Development Tools": [
