@@ -70,6 +70,13 @@ const sidebars = {
         "type": "category"
 
       },
+{
+  "items": [
+    "release-notes/release-01",
+  ],
+  "label": "Release Notes",
+  "type": "category"
+},
     ],
 
     "Development Tools": [
@@ -87,7 +94,14 @@ const sidebars = {
       ],
       "label": "Microcontroller Kit",
       "type": "category"
-    }
+    },
+    {
+      "items": [
+        "hardware-tools/three-point",
+      ],
+      "label": "Three Point",
+      "type": "category"
+    },
     ],
 
     "Resources/Support": [
