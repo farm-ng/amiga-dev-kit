@@ -78,7 +78,15 @@ const sidebars = {
   "type": "category"
 },
     ],
-
+    "Farm Tools":[
+      {
+        "items": [
+          "farm-tools/three-point",
+        ],
+        "label": "Three Point",
+        "type": "category"
+      },
+  ],
     "Development Tools": [
       {
         "items": [
@@ -95,14 +103,7 @@ const sidebars = {
       "label": "Microcontroller Kit",
       "type": "category"
     },
-    {
-      "items": [
-        "hardware-tools/three-point",
-      ],
-      "label": "Three Point",
-      "type": "category"
-    },
-    ],
+  ],
 
     "Resources/Support": [
       "hardware-tools/recommended-tools",
