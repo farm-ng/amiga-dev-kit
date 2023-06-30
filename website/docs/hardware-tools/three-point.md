@@ -95,10 +95,18 @@ immediately.
      width="320"
      height="200" />
 
-9. Add T to the existing E-stop connection.
+9. In the fork closest to the dashboard, add T to the existing E-stop connection.
+     <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/b87996ac-8934-416b-a2ad-e506e92f1224"
+     width="280"
+     height="200" />
+
+      <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/aae1e52c-e267-420c-b49c-03c273893354"
+     width="280"
+     height="200" />
+
      <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/82249dd7-bde9-45d4-855c-c78f890ea964"
      width="320"
-     height="200" />
+     height="320" />
 
 10. Attach a CAN cable to the CAN hub.
      <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/3e652b3a-9456-4ae1-a032-57fab9f0b86b"
