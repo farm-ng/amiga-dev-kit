@@ -14,7 +14,7 @@ immediately.
 
 ## Included Hardware
 
-1. **24** Carriage bolts 3/8" by 1 1/14"
+1. **24** Carriage bolts 3/8" by 1 1/4"
 2. **24** Flat Washers 3/8"
 3. **24** Nylon Insert Locknut 3/8"
 4. **4** Hex Cap Screw 5/8"  x 3"
