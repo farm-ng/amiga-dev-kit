@@ -19,6 +19,66 @@ title="YouTube video player" frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 allowfullscreen></iframe>
 
+### File naming convention
+
+The data will be recorded with a file naming convention that captures the precise timestamp (to the microsecond)
+at the time recording starts, the name of the robot on which the files were recorded,
+and the file number in the video sequence:
+
+```bash
+<yyyy>_<mm>_<dd>_<hh>_<mn>_<ss>_<msmsms>_events_<robot_name>.<####>.bin
+```
+
+E.g.,
+
+```bash
+  2023_01_12_16_17_52_134845_events_banana_bot.0000.bin
+# yyyy_mm_dd_hh_mn_ss_msmsms_events_robot_name.####.bin
+```
+
+#### Snapshots
+
+For individual snapshots, the `events` keyword is replaced with `snapshot`:
+
+```bash
+<yyyy>_<mm>_<dd>_<hh>_<mn>_<ss>_<msmsms>_snapshot_<robot_name>.<####>.bin
+```
+
+#### Sequence number
+
+The first file suffix (`.<####>`) reflects the file number in the recorded sequence,
+so you can easily determine the order in which the files in a single video sequence were recorded.
+The order starts with `.0000` and increases by 1 per file split.
+
+This is applicable when the `Max. file size (Mb)` value in the Recorder App settings is non-zero.
+When this value is non-zero (and positive), the recorded logs will be split when the recording reaches
+a multiple of the specified max file size value, in megabytes.
+
+For example, if you record a 3.3 gigabyte log with a max file size of 500 Mb,
+you will get six logs of ~500 Mb and one of ~300 Mb.
+This will look something like:
+
+```bash
+2023_01_12_16_17_52_134845_events_banana_bot.0000.bin # ~500 Mb
+2023_01_12_16_17_52_134845_events_banana_bot.0001.bin # ~500 Mb
+2023_01_12_16_17_52_134845_events_banana_bot.0002.bin # ~500 Mb
+2023_01_12_16_17_52_134845_events_banana_bot.0003.bin # ~500 Mb
+2023_01_12_16_17_52_134845_events_banana_bot.0004.bin # ~500 Mb
+2023_01_12_16_17_52_134845_events_banana_bot.0005.bin # ~500 Mb
+2023_01_12_16_17_52_134845_events_banana_bot.0006.bin # ~500 Mb
+2023_01_12_16_17_52_134845_events_banana_bot.0007.bin # ~300 Mb
+```
+
+When the max file size is set to zero, or is much larger than the size of the recorded log,
+the file will not be split and the entire recorded log will be in a single log
+with sequence number of `.0000`
+
+In our example above that would yield:
+
+```bash
+2023_01_12_16_17_52_134845_events_banana_bot.0000.bin # ~ 3.3 Gb
+```
+
 # How to transfer data from the Amiga to your local machine
 
 There are two different methods you can use to transfer the log
