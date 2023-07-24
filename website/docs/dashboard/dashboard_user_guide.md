@@ -128,7 +128,7 @@ The settings you can set on this page are:
 - `m12_on` (motor C on)
 - `m13_on` (motor D on)
 
-::caution
+:::caution
 You should press the physical E-stop prior to turning the motors on / off
 (with `m10_on`, `m11_on`, `m12_on`, `m13_on`).
 
