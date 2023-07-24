@@ -128,6 +128,13 @@ The settings you can set on this page are:
 - `m12_on` (motor C on)
 - `m13_on` (motor D on)
 
+::caution
+You should press the physical E-stop prior to turning the motors on / off
+(with `m10_on`, `m11_on`, `m12_on`, `m13_on`).
+
+If you do not press the physical E-stop, the wheels will brake until it is pressed -> released.
+:::
+
 ### The Pendant Settings
 
 <img src="https://user-images.githubusercontent.com/64480560/231795336-43477c82-db0d-4fa7-9cfc-638af2e11ede.GIF"
