@@ -47,8 +47,9 @@ python3 main.py --service-config service_config.json --camera-settings camera_se
 ### 5. Customize run
 
 ```bash
-# usage: amiga-camera-settings [-h] --service-config SERVICE_CONFIG [--camera-settings CAMERA_SETTINGS] [--stream-name {rgb,mono}]
-# 
+# usage: amiga-camera-settings [-h] --service-config SERVICE_CONFIG
+#                              [--camera-settings CAMERA_SETTINGS] [--stream-name {rgb,mono}]
+#
 # optional arguments:
 #   -h, --help            show this help message and exit
 #   --service-config SERVICE_CONFIG
@@ -61,13 +62,19 @@ python3 main.py --service-config service_config.json --camera-settings camera_se
 
 ### 6. Code overview
 
-In this example we use the `EventClient` with the `request_reply` method to receive and set the camera settings. The `request_reply` method is a coroutine that returns a `Future` object. The `Future` object is used to retrieve the result of the request.
+In this example we use the `EventClient` with the `request_reply` method to receive and
+set the camera settings. The `request_reply` method is a coroutine that returns a `Future` object.
+The `Future` object is used to retrieve the result of the request.
 
-To get the settings, the path to the camera service is `/camera_settings/<stream_name>` and the request message is `Empty`. The reply message is `oak_pb2.CameraSettings` and contains the current camera settings.
+To get the settings, the path to the camera service is
+`/camera_settings/<stream_name>` and the request message is `Empty`.
+The reply message is `oak_pb2.CameraSettings` and contains the current camera settings.
 
-To set the settings, the path to the camera service is `/camera_settings/<stream_name>` and the request message is `oak_pb2.CameraSettings`.
+To set the settings, the path to the camera service is `/camera_settings/<stream_name>`
+and the request message is `oak_pb2.CameraSettings`.
 
-You can explore the files `service_config.json` to customize the camera service configuration and `camera_settings.json` to customize the camera settings.
+You can explore the files `service_config.json` to customize the camera service configuration
+and `camera_settings.json` to customize the camera settings.
 
 ```python
 async def main(service_config_path: Path, settings_config_path: Path, stream_name: str) -> None:
@@ -115,6 +122,6 @@ if __name__ == "__main__":
 ```
 
 :::tip
-We highgly recommend to have some basic knowledge about
+We highly recommend to have some basic knowledge about
 [**`asyncio`**](https://docs.python.org/3/library/asyncio.html).
 :::

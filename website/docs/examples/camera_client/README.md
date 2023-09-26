@@ -56,14 +56,15 @@ the `WifiClient` (coming soon)
 python3 main.py --help
 
 # usage: amiga-camera-stream [-h] --service-config SERVICE_CONFIG
-# 
+#
 # optional arguments:
 #   -h, --help            show this help message and exit
 #   --service-config SERVICE_CONFIG
 #                         The camera config.
 ```
 
-To customize the run, you need to update the `service_config.json` by modifying the `host` and `port` fields.
+To customize the run, you need to update the `service_config.json`
+by modifying the `host` and `port` fields.
 
 ### 5. Code overview
 
@@ -105,6 +106,6 @@ if __name__ == "__main__":
 ```
 
 :::tip
-We highgly recommend to have some basic knowledge about
+We highly recommend to have some basic knowledge about
 [**`asyncio`**](https://docs.python.org/3/library/asyncio.html).
 :::

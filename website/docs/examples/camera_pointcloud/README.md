@@ -48,7 +48,7 @@ python3 main.py --service-config service_config.json
 
 ```bash
 # usage: amiga-camera-pointcloud [-h] --service-config SERVICE_CONFIG [--save-disparity] [--save-pointcloud]
-# 
+#
 # optional arguments:
 #   -h, --help            show this help message and exit
 #   --service-config SERVICE_CONFIG
@@ -59,11 +59,14 @@ python3 main.py --service-config service_config.json
 
 ### 6. Code overview
 
-In this example we use 
+In this example we use
 
-In this example we get the camera calibration from the camera service that jointly with the `disparity` image we will be used to generate the `pointcloud`.
+In this example we get the camera calibration from the camera service that jointly with
+the `disparity` image we will be used to generate the `pointcloud`.
 
-First, we use the `EventClient` to request the camera calibration from the camera service. The camera calibration is a `oak_pb2.CameraCalibration` message that contains the camera intrinsics and extrinsics.
+First, we use the `EventClient` to request the camera calibration from the camera service.
+The camera calibration is a `oak_pb2.CameraCalibration` message that
+contains the camera intrinsics and extrinsics.
 
 ```python
 # create a client to the camera service
@@ -72,7 +75,8 @@ config: EventServiceConfig = proto_from_json_file(args.service_config, EventServ
 camera_client = EventClient(config)
 
 # get the calibration message
-calibration_proto: oak_pb2.OakCalibration = await camera_client.request_reply("/calibration", Empty(), decode=True)
+calibration_proto: oak_pb2.OakCalibration =
+                    await camera_client.request_reply("/calibration", Empty(), decode=True)
 
 # NOTE: The OakCalibration message contains the camera calibration data for all the cameras.
 # Since we are interested in the disparity image, we will use the calibration data for the right camera
@@ -83,8 +87,9 @@ camera_data: oak_pb2.CameraData = calibration_proto.camera_data[0]
 camera_matrix: Tensor = get_camera_matrix(camera_data)
 ```
 
-Below is the code to compute the camera matrix from the calibration data. Notice that we cast the `intrinsic_matrix` to a `Tensor` and reshape it to a 3x3 matrix for later easy integration with the
-kornia library.
+Below is the code to compute the camera matrix from the calibration data.
+Notice that we cast the `intrinsic_matrix` to a `Tensor` and reshape it to
+a 3x3 matrix for later easy integration with the kornia library.
 
 ```python
 def get_camera_matrix(camera_data: oak_pb2.CameraData) -> Tensor:
@@ -104,9 +109,12 @@ def get_camera_matrix(camera_data: oak_pb2.CameraData) -> Tensor:
     return tensor([[fx, 0, cx], [0, fy, cy], [0, 0, 1]])
 ```
 
-Next, we use the `EventClient` to subsribe to the `disparity` path from the camera service. The `disparity` image is a `oak_pb2.OakImage` message that contains the `disparity` image data.
-To compute the `pointcloud` we first need to decode the `disparity` image data to a `Tensor` and then compute the `pointcloud` from the `disparity` image using the kornia method `depth_from_disparity`
-and `depth_to_3d_v2`.
+Next, we use the `EventClient` to subsribe to the `disparity` path from the camera service.
+The `disparity` image is a `oak_pb2.OakImage` message that contains the `disparity` image data.
+
+To compute the `pointcloud` we first need to decode the `disparity` image data to a `Tensor`
+and then compute the `pointcloud` from the `disparity` image
+using the kornia method `depth_from_disparity` and `depth_to_3d_v2`.
 
 ```python
 async for event, message in camera_client.subscribe(
@@ -132,6 +140,7 @@ async for event, message in camera_client.subscribe(
 
     points_xyz = points_xyz[valid_mask].reshape(-1, 3)  # Nx3
 ```
+
 Below is the code to decode the `disparity` image data to a `Tensor`.
 
 ```python
@@ -154,9 +163,10 @@ def decode_disparity(message: oak_pb2.OakFrame, decoder: ImageDecoder) -> Tensor
     return disparity_t[..., 0].float()  # HxW
 ```
 
-Additionally, we can save the `disparity` image and the `pointcloud` to disk by using the `--save-disparity` and `--save-pointcloud` flags respectively.
+Additionally, we can save the `disparity` image and the `pointcloud` to disk by
+using the `--save-disparity` and `--save-pointcloud` flags respectively.
 
 :::tip
-We highgly recommend to have some basic knowledge about
+We highly recommend to have some basic knowledge about
 [**`asyncio`**](https://docs.python.org/3/library/asyncio.html).
 :::

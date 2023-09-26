@@ -52,7 +52,7 @@ By default, the camera address is assumed top be `localhost`.
 
 ```bash
 # usage: amiga-camera-calibration [-h] --service-config SERVICE_CONFIG
-# 
+#
 # optional arguments:
 #   -h, --help            show this help message and exit
 #   --service-config SERVICE_CONFIG
@@ -61,9 +61,14 @@ By default, the camera address is assumed top be `localhost`.
 
 ### 6. Code overview
 
-In this example we use the `EventClient` with the `request_rreply` method to receive the camera camera calibration. The `request_reply` method is a coroutine that returns a `Future` object. The `Future` object is used to retrieve the result of the request.
+In this example we use the `EventClient` with the `request_reply`
+method to receive the camera camera calibration.
+The `request_reply` method is a coroutine that returns a `Future` object.
+The `Future` object is used to retrieve the result of the request.
 
-The path to the calibration service is `/calibration` and the request message is `Empty`. The response message is `OakCalibration`, which is automatically decoded by the `request_reply` method using the `decode=True` argument.
+The path to the calibration service is `/calibration` and the request message is `Empty`.
+The response message is `OakCalibration`, which is automatically decoded by the `request_reply`
+method using the `decode=True` argument.
 
 ```python
 async def main(service_config_path: Path) -> None:
@@ -76,7 +81,8 @@ async def main(service_config_path: Path) -> None:
     config: EventServiceConfig = proto_from_json_file(service_config_path, EventServiceConfig())
 
     # get the calibration message
-    calibration: oak_pb2.OakCalibration = await EventClient(config).request_reply("/calibration", Empty(), decode=True)
+    calibration: oak_pb2.OakCalibration =
+        await EventClient(config).request_reply("/calibration", Empty(), decode=True)
     print(calibration)
 
 
@@ -89,6 +95,6 @@ if __name__ == "__main__":
 ```
 
 :::tip
-We highgly recommend to have some basic knowledge about
+We highly recommend to have some basic knowledge about
 [**`asyncio`**](https://docs.python.org/3/library/asyncio.html).
 :::

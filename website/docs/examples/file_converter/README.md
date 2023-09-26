@@ -48,10 +48,11 @@ python main.py --file-name events_09162022160753_000000.bin
  Use the `--help` flag to see all possible arguments for using this tool.
 
 ```bash
-# usage: Event file converter example. [-h] --file-name FILE_NAME [--output-path OUTPUT_PATH] [--camera-name CAMERA_NAME]
+# usage: Event file converter example. [-h] --file-name FILE_NAME
+#                                      [--output-path OUTPUT_PATH] [--camera-name CAMERA_NAME]
 #                                      [--view-name {rgb,left,right,disparity}] [--disparity-scale DISPARITY_SCALE]
 #                                      [--video-to-jpg]
-# 
+#
 # optional arguments:
 #   -h, --help            show this help message and exit
 #   --file-name FILE_NAME
@@ -64,7 +65,8 @@ python main.py --file-name events_09162022160753_000000.bin
 #                         The name of the camera view to visualize. Default: rbg.
 #   --disparity-scale DISPARITY_SCALE
 #                         Scale for amplifying disparity color mapping. Default: 1.
-#   --video-to-jpg        Use this flag to convert video .bin files to a series of jpg images. Default is mp4.
+#   --video-to-jpg        Use this flag to convert video .bin files to a series of jpg images.
+#                         Default is mp4.
 ```
 
  For instance, you can change the camera that is played back from the default of `oak0`. E.g.,

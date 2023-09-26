@@ -1,5 +1,5 @@
 ---
-id: service-counter 
+id: service-counter
 title: Service Counter
 ---
 
@@ -20,9 +20,12 @@ This example only requires the farm-ng-core package.
 pip3 install farm-ng-core
 
 ```
+
 :::tip
-We highgly recommend to have some basic knowledge about
-[**`asyncio`**](https://docs.python.org/3/library/asyncio.html), [**`gRPC`**](https://grpc.io/docs/what-is-grpc/introduction/) and [**`protobuf`**](https://developers.google.com/protocol-buffers/docs/pythontutorial).
+We highly recommend to have some basic knowledge about
+[**`asyncio`**](https://docs.python.org/3/library/asyncio.html),
+[**`gRPC`**](https://grpc.io/docs/what-is-grpc/introduction/),
+and [**`protobuf`**](https://developers.google.com/protocol-buffers/docs/pythontutorial).
 :::
 
 ### Create the service
@@ -65,7 +68,7 @@ class CounterServer:
             await self._event_service.publish("/counter", Int32Value(value=self._counter))
             self._counter += 1
             await asyncio.sleep(1.0 / self._rate)
-    
+
     async def serve(self) -> None:
         await asyncio.gather(self._event_service.serve(), self.run())
 ```
@@ -160,7 +163,7 @@ python client.py --service-config service_config.json reset
 you should see the following output:
 
 ```bash
-Received message: 
+Received message:
 Received message: value: 1
 
 Received message: value: 2

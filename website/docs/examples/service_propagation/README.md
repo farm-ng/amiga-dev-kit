@@ -181,7 +181,7 @@ pip3 install farm-ng-core
 ```
 
 :::tip
-We highgly recommend to have some basic knowledge about
+We highly recommend to have some basic knowledge about
 [**`asyncio`**](https://docs.python.org/3/library/asyncio.html),
 [**`gRPC`**](https://grpc.io/docs/what-is-grpc/introduction/) and
 [**`protobuf`**](https://developers.google.com/protocol-buffers/docs/pythontutorial).
