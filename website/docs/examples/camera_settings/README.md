@@ -61,7 +61,7 @@ python3 main.py --service-config service_config.json --camera-settings camera_se
 
 ### 6. Code overview
 
-In this example we use the `EventClient` with the `request_rreply` method to receive and set the camera settings. The `request_reply` method is a coroutine that returns a `Future` object. The `Future` object is used to retrieve the result of the request.
+In this example we use the `EventClient` with the `request_reply` method to receive and set the camera settings. The `request_reply` method is a coroutine that returns a `Future` object. The `Future` object is used to retrieve the result of the request.
 
 To get the settings, the path to the camera service is `/camera_settings/<stream_name>` and the request message is `Empty`. The reply message is `oak_pb2.CameraSettings` and contains the current camera settings.
 
