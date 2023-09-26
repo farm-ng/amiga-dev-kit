@@ -134,13 +134,18 @@ const sidebars = {
     "Brain Examples" : [
         "examples/import_log_file/import-log-file",
         "examples/file_reader/file-reader",
-        "examples/file_converter/file-converter",
         "examples/file_reader_can/file-reader-can",
+        "examples/file_converter/file-converter",
         "examples/camera_client/camera-client",
         "examples/camera_calibration/camera-calibration",
-        "examples/people_detection/people-detection",
+        "examples/camera_settings/camera-settings",
+        "examples/camera_pointcloud/camera-pointcloud",
         "examples/motor_state/motor-state",
-        "examples/vnc_viewer/vnc-viewer"
+        "examples/vehicle_twist/vehicle-twist",
+        "examples/vnc_viewer/vnc-viewer",
+        "examples/service_client/service-client",
+        "examples/service_counter/service-counter",
+        "examples/service_propagation/service-propagation",
     ],
     "Brain App Tutorials" : {
         "00 - Tutorial Introduction" :[
