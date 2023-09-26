@@ -67,7 +67,7 @@ To customize the run, you need to update the `service_config.json` by modifying 
 
 ### 5. Code overview
 
-In this example we use the `EventClient` with the subscribe method to receive the camera stream.
+In this example we use the `EventClient` with the `subscribe` method to receive the camera stream.
 
 ```python
 async def main(service_config_path: Path) -> None:
