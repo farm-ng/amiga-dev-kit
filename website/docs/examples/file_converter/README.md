@@ -48,25 +48,25 @@ python main.py --file-name events_09162022160753_000000.bin
  Use the `--help` flag to see all possible arguments for using this tool.
 
 ```bash
-$ python main.py --help
-
-usage: Event file converter example. [-h] --file-name FILE_NAME [--output-path OUTPUT_PATH]
-[--camera-name CAMERA_NAME] [--disparity-scale DISPARITY_SCALE] [--video-to-jpg] [--snapshot]
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --file-name FILE_NAME
-                        Path to the `events.bin` file.
-  --output-path OUTPUT_PATH
-                        Path to the folder where converted data will be written.
-                        Default: /home/kyle/farm-ng/farm-ng-amiga/py/examples/file_converter
-  --camera-name CAMERA_NAME
-                        The name of the camera to visualize. Default: oak0.
-  --disparity-scale DISPARITY_SCALE
-                        Scale for amplifying disparity color mapping. Default: 1.
-  --video-to-jpg        Use this flag to convert video .bin files to a series of jpg images.
-                        Default for videos is mp4.
-  --snapshot            Use this flag if the .bin file is a single snapshot. Output will be jpg images.
+# usage: Event file converter example. [-h] --file-name FILE_NAME
+#                                      [--output-path OUTPUT_PATH] [--camera-name CAMERA_NAME]
+#                                      [--view-name {rgb,left,right,disparity}] [--disparity-scale DISPARITY_SCALE]
+#                                      [--video-to-jpg]
+#
+# optional arguments:
+#   -h, --help            show this help message and exit
+#   --file-name FILE_NAME
+#                         Path to the `events.bin` file.
+#   --output-path OUTPUT_PATH
+#                         Path to the folder where converted data will be written.
+#   --camera-name CAMERA_NAME
+#                         The name of the camera to visualize. Default: oak0.
+#   --view-name {rgb,left,right,disparity}
+#                         The name of the camera view to visualize. Default: rbg.
+#   --disparity-scale DISPARITY_SCALE
+#                         Scale for amplifying disparity color mapping. Default: 1.
+#   --video-to-jpg        Use this flag to convert video .bin files to a series of jpg images.
+#                         Default is mp4.
 ```
 
  For instance, you can change the camera that is played back from the default of `oak0`. E.g.,
@@ -84,7 +84,7 @@ python main.py --file-name events_09162022160753_000000.bin --camera-name oak1 -
 Or you can convert a "snapshot" log to one jpg per view.
 
 ```bash
-python main.py --file-name cpy_data/farm_ng/2023_01_06_13_24_33_445932_snapshot_b42d218.bin --snapshot
+python main.py --file-name cpy_data/farm_ng/2023_01_06_13_24_33_445932_snapshot_b42d218.bin --video-to-jpg
 ```
 
 > NOTE: video logs will not convert if the `--snapshot` flag is used.

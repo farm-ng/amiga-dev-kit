@@ -72,10 +72,11 @@ python main.py --file-name <path-from-above>/events_12052022115852.bin
 ```
 
 Optionally, you can change the camera that is played back from
-the default of `oak0`. E.g.,
+the default of `oak0`. E.g., and the view `rgb`. E.g.
 
 ```bash
-python main.py --file-name <path-from-above>/events_12052022115852.bin --camera-name oak1
+python main.py --file-name <path-from-above>/events_12052022115852.bin \
+               --camera-name oak1 --view-name rgb
 ```
 
 Congratulations two videos should now pop up and play! One should
