@@ -5,13 +5,10 @@ title: Camera Client
 
 ### [Link to `camera_client/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/camera_client/main.py)
 
-This example acts as an `OakCameraClient` in a standalone Python
-script.
-
-The requirements to run this example are to have a
-[**farm-ng brain**](/docs/brain/) running Oak cameras and that
-your PC is on the same local network as the brain.
-
+This example operates as an `OakCameraClient` within a standalone Python script.
+To successfully run this example, you must use your local PC, as the example won't
+work if executed directly from a brain. Ensure that a [**farm-ng brain**](/docs/brain/) running Oak cameras is active.
+Your local PC should be either connected to the same local network as the brain or linked to it through tailscale.
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
 ### 2. Install the example's dependencies
@@ -39,7 +36,8 @@ python3 main.py --service-config service_config.json
 ```
 
 :::info
-By default, the camera address is assumed top be `localhost`.
+By default, the camera address is assumed to be `localhost` (`service_config.json` - line 4).
+You should replace `localhost` with your brain's IP address (e.g.,100.67.32.5) or your amiga's name (e.g., aluminum-pineapple).
 :::
 
 ### 4. Customize the run
@@ -64,7 +62,8 @@ python3 main.py --help
 ```
 
 To customize the run, you need to update the `service_config.json`
-by modifying the `host` and `port` fields.
+by modifying the `host` and `port` fields. You can also stream the stereo
+left or right images or the camera's disparity by changing the `path` field (e.g., /left).
 
 ### 5. Code overview
 
