@@ -40,8 +40,9 @@ pip3 install -r requirements.txt
 ### 4. Execute the Python script
 
 In the provided example, we show how to implement the `/start` and `/stop`
-requests to start and stop the recording of events. We also provide two example profiles `record_camera_config.json` and `record_fiter_config.json` that can be used to record the
- camera and filter events.
+requests to start and stop the recording of events. We also provide two example profiles
+`record_camera_config.json` and `record_fiter_config.json` that can be used to record the
+camera and filter events.
 
 ```python
 async def start_recording(service_config: EventServiceConfig, recording_profile: EventServiceConfigList) -> None:
