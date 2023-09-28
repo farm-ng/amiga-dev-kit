@@ -49,7 +49,7 @@ python3 main.py --service-config service_config.json
 :::info
 By default, the camera address is assumed to be `localhost` (service_config.json - line 4).
 If running the example from your local PC, you should replace `localhost` with your brain's
-IP address (e.g.,100.67.32.5) or your amiga's name (e.g., aluminum-pineapple -
+IP address (e.g., 100.67.32.5) or your Amiga's name (e.g., aluminum-pineapple -
 only supported if connected via tailscale).
 :::
 
