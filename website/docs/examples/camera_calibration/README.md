@@ -6,10 +6,10 @@ title: Camera Calibration
 ## Camera Calibration
 
 The requirement to run this example is to have a
-[**farm-ng brain**](/docs/brain/) running Oak cameras. This can be run either
-directly from a brain or from your local PC. If running from your local PC,
-ensure it's connected to the same local network as the brain
-or linked to it through tailscale.
+[**farm-ng brain**](/docs/brain/) running Oak cameras.
+This can be run either directly from a brain or from your local PC.
+If running from your local PC,
+ensure it's connected to the same local network as the brain or linked to it through tailscale.
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
