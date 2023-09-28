@@ -122,3 +122,14 @@ There is another tutorial that walks you through getting data
 directly from the Amiga
 [**here**](docs/examples/import_log_file/README.md).
 :::
+
+:::info
+**PVT** (Position, Velocity, and Time) messages provide the all-in-one solution: position, velocity,
+and time.
+It contains details like longitude, latitude, altitude, speed, and UTC time.
+
+**RELPOSNED** (Relative Positioning) messages provide relative position
+information in a North, East, Down (N-E-D) frame. It's mainly used for applications requiring relative
+positioning between two receivers, often as a part of Real Time Kinematics (RTK) solutions.
+It shows the difference in position between a "moving" receiver and a "fixed" reference receiver.
+:::
