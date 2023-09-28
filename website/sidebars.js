@@ -29,7 +29,6 @@ const sidebars = {
   "Documentation": {
     "Introduction": [
       "getting-started",
-      "index",
     ],
     "Getting Started": [
       "amiga_quick_start/amiga-quick-start",
