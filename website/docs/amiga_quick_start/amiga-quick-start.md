@@ -87,6 +87,11 @@ To do this you will need to go to the:
 
 ### Overview the Brain
 
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This video only applies to brains running Amiga OS `v1.x` versions.
+:::
+
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/_p0I11p4QF4?list=PLWQmpzk0y9NDXFKSwvCjYtRL8QNWfK4ND"
 title="Amiga Brain Overview" frameborder="0"
