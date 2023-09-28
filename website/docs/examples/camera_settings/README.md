@@ -5,9 +5,11 @@ title: Camera Settings
 
 ## Camera Settings
 
-The requirements to run this example are to have a
-[**farm-ng brain**](/docs/brain/) running Oak cameras and that
-your PC is on the same local network as the brain.
+The requirement to run this example is to have a
+[**farm-ng brain**](/docs/brain/) running Oak cameras. This can be run either
+directly from a brain or from your local PC. If running from your local PC,
+ensure it's connected to the same local network as the brain
+or linked to it through tailscale.
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
@@ -43,6 +45,13 @@ pip3 install -r requirements.txt
 ```bash
 python3 main.py --service-config service_config.json --camera-settings camera_settings.json
 ```
+
+:::info
+By default, the camera address is assumed to be `localhost` (service_config.json - line 4).
+If running the example from your local PC, you should replace `localhost` with your brain's
+IP address (e.g.,100.67.32.5) or your amiga's name (e.g., aluminum-pineapple -
+only supported if connected via tailscale).
+:::
 
 ### 5. Customize run
 

@@ -135,6 +135,7 @@ const sidebars = {
         "examples/import_log_file/import-log-file",
         "examples/file_reader/file-reader",
         "examples/file_reader_can/file-reader-can",
+        "examples/file_reader_gps/file-reader-gps",
         "examples/file_converter/file-converter",
         "examples/camera_client/camera-client",
         "examples/camera_calibration/camera-calibration",
