@@ -3,7 +3,10 @@ id: file-reader-gps
 title: File Reader GPS Example
 ---
 
-This [file_reader_gps_example] (Link to gps_event_reader/main.py) provides a utility for reading and parsing GPS messages from the event file. It can process two types of GPS messages: relposned and pvt. The user specifies the type of GPS message to parse, and the script reads the corresponding data, unpacks it, and prints it to the console.
+This [file_reader_gps_example] (Link to gps_event_reader/main.py) provides a utility for reading and
+parsing GPS messages from the event file. It can process two types of GPS messages: relposned and pvt.
+The user specifies the type of GPS message to parse, and the script reads the corresponding data,
+unpacks it, and prints it to the console.
 
 :::info
 If you haven't already cloned the `farm-ng-amiga` repository, do
@@ -70,7 +73,8 @@ python main.py --file-name <path-to-file>/events_12052022115852.bin
 :::info
 You should replace <path_to_events.bin> with the path to your events binary file.
 
-By default, the msg-type is set to relposned (relative to the base station). You can also use pvt as an option.
+By default, the msg-type is set to relposned (relative to the base station).
+You can also use pvt as an option.
 :::
 
 ```bash
