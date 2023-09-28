@@ -4,6 +4,12 @@ title: 04 - Auto Control
 ---
 # Auto Control
 
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
+:::
+
 Finally, we will use this virtual joystick and the canbus
 client / service connection to control the Amiga to complete the
 full Virtual Joystick example.

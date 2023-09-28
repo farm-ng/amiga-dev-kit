@@ -4,6 +4,12 @@ title: 01 - Background Knowledge
 ---
 # Background knowledge
 
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
+:::
+
 The Amiga brain app development meets at the intersection of three key libraries,
 as well as a few publicly available libraries developed by the **farm-ng** team:
 
