@@ -5,9 +5,16 @@ title: Camera Calibration
 
 ## Camera Calibration
 
-The requirements to run this example are to have a
-[**farm-ng brain**](/docs/brain/) running Oak cameras and that
-your PC is on the same local network as the brain.
+This example operates as a standalone Python script,
+in which an `EventClient` to an Oak camera service running on an Amiga brain is created.
+The calibration of the Oak camera is printed in the terminal.
+
+You can either run this example directly on a brain by `ssh`'ing in,
+or use your local PC.
+If using your local PC, it should be either connected to the same local network as the brain
+or linked to it through tailscale.
+
+Ensure that a [**farm-ng brain**](/docs/brain/) running Oak cameras is active.
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
@@ -45,7 +52,10 @@ python3 main.py --service-config service_config.json
 ```
 
 :::info
-By default, the camera address is assumed to be `localhost`.
+By default, the camera host is assumed to be `localhost`.
+If running the example from your local PC, you should replace `localhost` with your brain's
+IP address (e.g., 100.67.32.5) or your Amiga's name (e.g., aluminum-pineapple -
+only supported if connected via tailscale).
 :::
 
 ### 5. Customize run
