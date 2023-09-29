@@ -21,6 +21,11 @@ example you can skip to [**set up**](#setup)
 
 ## Download the log file
 
+:::caution deprecation warning
+This log file comes from a brain running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated log file from a brain running `v2.x` Amiga OS software.
+:::
+
 Now you are going to download the log file that you will use in
 this example.
 [**Click here to download**](https://farm-ng-dev-auto-plot-mvp.s3.us-west-2.amazonaws.com/datasets/western-growers-2022-12-05/events_12052022115852.bin)
@@ -72,10 +77,11 @@ python main.py --file-name <path-from-above>/events_12052022115852.bin
 ```
 
 Optionally, you can change the camera that is played back from
-the default of `oak0`. E.g.,
+the default of `oak0`. E.g., and the view `rgb`. E.g.
 
 ```bash
-python main.py --file-name <path-from-above>/events_12052022115852.bin --camera-name oak1
+python main.py --file-name <path-from-above>/events_12052022115852.bin \
+               --camera-name oak1 --view-name rgb
 ```
 
 Congratulations two videos should now pop up and play! One should
@@ -83,9 +89,15 @@ be RGB and one should be disparity (it might be hidden behind the
 RGB window so try moving the RGB window). You have now finished
 running this example!
 
+:::caution deprecation warning
+This log file comes from a brain running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated log file from a brain running `v2.x` Amiga OS software.
+:::
+
 If you want another log file to run here is an example of Amiga
 driving in a field
 [(click to download)](https://farm-ng-dev-auto-plot-mvp.s3.us-west-2.amazonaws.com/datasets/jacobs_freedom_1013/events_10132022112259.bin)
+
 :::tip
 There is another tutorial that walks you through getting data
 directly from the Amiga

@@ -26,7 +26,7 @@ package and test the available examples, start by cloning the
 repo:
 
 ```bash
-git clone git@github.com:farm-ng/farm-ng-amiga.git
+git clone https://github.com/farm-ng/farm-ng-amiga.git
 cd farm-ng-amiga/
 ```
 
@@ -38,23 +38,15 @@ git checkout main
 git pull
 ```
 
-:::caution troubleshooting
-If you have trouble cloning this public repo, Github is likely
-not able to authenticate your SSH public key.
-
-If this is the case, you can either:
+:::tip
+If you want to setup an ssh key and clone with git instead of https, you can:
 
 1. [Create a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 2. [Connect to GitHub with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
-3. Clone with `https`. E.g.,
-
-```bash
-git clone https://github.com/farm-ng/farm-ng-amiga.git
-```
-
+3. Clone with `git clone git@github.com:farm-ng/farm-ng-amiga.git`
 :::
 
-### [Optional] Set up virtual environment
+### [Recommended] Set up virtual environment
 
 :::tip
 We recommend running the brain SDK applications in a virtual
@@ -145,7 +137,7 @@ If you want to edit the package, or contribute, you can install
 from source.
 
 Install `pip3` & setup a `virtualenv` (shown
-[above](#optional-set-up-virtual-environment))
+[above](#recommended-set-up-virtual-environment))
 
 Create and install the ``farm-ng-amiga`` Python package
 

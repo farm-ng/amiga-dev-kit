@@ -23,6 +23,11 @@ example you can skip to [**set up**](#setup)
 
 ## Download the log file
 
+:::caution deprecation warning
+This log file comes from a brain running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated log file from a brain running `v2.x` Amiga OS software.
+:::
+
 Now you are going to download the log file that you will use in
 this example.
 [**Click here to download**](https://farm-ng-dev-auto-plot-mvp.s3.us-west-2.amazonaws.com/datasets/western-growers-2022-12-05/events_12052022115852.bin)

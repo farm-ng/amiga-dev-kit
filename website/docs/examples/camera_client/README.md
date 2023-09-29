@@ -35,7 +35,7 @@ pip3 install -r requirements.txt
 ### 3. Execute the Python script
 
 ```bash
-python3 main.py --port 50051
+python3 main.py --service-config service_config.json
 ```
 
 :::info
@@ -55,78 +55,57 @@ the `WifiClient` (coming soon)
 ```bash
 python3 main.py --help
 
-# usage: amiga-camera-app [-h] --port PORT [--address ADDRESS]
-#[--stream-every-n STREAM_EVERY_N]
-
+# usage: amiga-camera-stream [-h] --service-config SERVICE_CONFIG
+#
 # optional arguments:
 #   -h, --help            show this help message and exit
-#   --port PORT           The camera port.
-#   --address ADDRESS     The camera address
-#   --stream-every-n STREAM_EVERY_N
-#                         Streaming frequency
+#   --service-config SERVICE_CONFIG
+#                         The camera config.
 ```
 
-Usage example:
-
-```bash
-python3 main.py --address 192.168.1.93 --port 50051
-```
+To customize the run, you need to update the `service_config.json`
+by modifying the `host` and `port` fields.
 
 ### 5. Code overview
 
-Basic structure to consume from the camera client in an async
-fashion.
+In this example we use the `EventClient` with the `subscribe` method to receive the camera stream.
 
 ```python
-from farm_ng.oak.client import OakCameraClient,
-OakCameraClientConfig
-from farm_ng.oak import oak_pb2
+async def main(service_config_path: Path) -> None:
+    """Run the camera service client.
 
-async def main(address: str, port: int, stream_every_n: int) ->
-None:
+    Args:
+        service_config_path (Path): The path to the camera service config.
+    """
+    # create a client to the camera service
+    config: EventServiceConfig = proto_from_json_file(service_config_path, EventServiceConfig())
 
-    # configure the camera client
-    config = OakCameraClientConfig(address=address, port=port)
-    client = OakCameraClient(config)
+    # instantiate the image decoder
+    image_decoder = ImageDecoder()
 
-    # get the streaming object
-    response_stream = client.stream_frames(every_n=stream_every_n)
+    async for event, message in EventClient(config).subscribe(config.subscriptions[0], decode=True):
+        print(f"Timestamps: {event.timestamps[-2]}")
+        print(f"Meta: {message.meta}")
+        print("###################\n")
 
-    # start the streaming service
-    await client.connect_to_service()
+        # cast image data bytes to numpy and decode
+        image = np.from_dlpack(image_decoder.decode(message.image_data))
 
-    while True:
-        # query the service state
-        state: oak_pb2.OakServiceState = await client.get_state()
+        # visualize the image
+        cv2.namedWindow("image", cv2.WINDOW_NORMAL)
+        cv2.imshow("image", image)
+        cv2.waitKey(1)
 
-        if state.value != oak_pb2.OakServiceState.RUNNING:
-            print("Camera is not streaming!")
-            continue
-
-        response: oak_pb2.StreamFramesReply = await
-        response_stream.read()
-        if response and response.status == oak_pb2.ReplyStatus.OK:
-            # get the sync frame
-            frame: oak_pb2.OakSyncFrame = response.frame
-            print(f"Got frame: {frame.sequence_num}")
-            print(f"Device info: {frame.device_info}")
-            print("#################################\n")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(prog="amiga-camera-app")
-    parser.add_argument("--port", type=int, required=True,
-    help="The camera port.")
-    parser.add_argument("--address", type=str,
-    default="localhost", help="The camera address")
-    parser.add_argument("--stream-every-n", type=int, default=4,
-    help="Streaming frequency")
+    parser = argparse.ArgumentParser(prog="amiga-camera-stream")
+    parser.add_argument("--service-config", type=Path, required=True, help="The camera config.")
     args = parser.parse_args()
 
-    asyncio.run(main(args.address, args.port, args.
-    stream_every_n))
+    asyncio.run(main(args.service_config))
 ```
 
 :::tip
-We highgly recommend to have some basic knowledge about
+We highly recommend to have some basic knowledge about
 [**`asyncio`**](https://docs.python.org/3/library/asyncio.html).
 :::

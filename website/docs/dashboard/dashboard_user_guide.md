@@ -4,7 +4,7 @@ title: Dashboard User Guide
 ---
 :::caution
 This is subject for change with new updates to the Dashboard.
-The current version of the Dashboard Firmware is `v0.1.9`.
+The current version of the Dashboard Firmware is `v0.2.0`.
 :::
 ![DSCF6570-2-16x9-aspect-reduced](https://user-images.githubusercontent.com/11846963/186734463-aa149b3a-7510-4d5a-99ea-f9a8a96775d2.jpg)
 
@@ -127,6 +127,13 @@ The settings you can set on this page are:
 - `m11_on` (motor B on)
 - `m12_on` (motor C on)
 - `m13_on` (motor D on)
+
+:::caution
+You should press the physical E-stop prior to turning the motors on / off
+(with `m10_on`, `m11_on`, `m12_on`, `m13_on`).
+
+If you do not press the physical E-stop, the wheels will brake until it is pressed -> released.
+:::
 
 ### The Pendant Settings
 

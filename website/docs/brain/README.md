@@ -1,7 +1,12 @@
 ---
 id: brain
-title: Brain Overview
+title: Brain v1.0
 ---
+
+:::info
+The Brain v1.0 tag here refers to the **hardware** version of the brain
+and is not mutually exclusive with Amiga OS software versioning.
+:::
 
 ![brain_render](./assets/brain_render_iso.png)
 
@@ -10,6 +15,11 @@ Find additional information and purchasing options at: [**Brain product page**](
 :::
 
 ## Brain overview video
+
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This video only applies to brains running Amiga OS `v1.x` versions.
+:::
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_p0I11p4QF4"
 title="YouTube video player" frameborder="0"

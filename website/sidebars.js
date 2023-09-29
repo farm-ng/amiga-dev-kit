@@ -26,7 +26,7 @@ const sidebars = {
     },
   ],
    */
-  "docs": {
+  "Documentation": {
     "Introduction": [
       "getting-started",
       "index",
@@ -36,7 +36,9 @@ const sidebars = {
       "brain/brain-install",
       "brain/next-steps",
     ],
-    "Amiga Overview": [
+
+
+    "Amiga Rover": [
       {
         "items": [
         "dashboard/dashboard",
@@ -48,17 +50,61 @@ const sidebars = {
       "type": "category"
     },
     {
+      "items": [
+        "pendant/pendant"
+
+      ],
+      "label": "Pendant",
+      "type": "category"
+    },
+
+    ],
+    "Intelligence Kit": [
+      "intelligence-kit/overview-intel",
+{
+        "items": [
+          "brain/brain",
+          "intelligence-kit/brain/brain-v2",
+        ],
+        "label": "Brain",
+        "type": "category"
+
+      },
+{
+  "items": [
+    "release-notes/release-01",
+  ],
+  "label": "Release Notes",
+  "type": "category"
+},
+    ],
+    "Farm Tools":[
+      {
+        "items": [
+          "farm-tools/three-point",
+        ],
+        "label": "Three Point",
+        "type": "category"
+      },
+  ],
+    "Development Tools": [
+      {
         "items": [
             "debug_cable/debug-cable",
-            "debug_cable/service-cable",
+            "debug_cable/service-cable"
       ],
       "label": "Cables",
       "type": "category"
     },
-      "mcu_kit/microcontroller-kit",
-      "brain/brain",
-      "pendant/pendant",
-    ],
+    {
+      "items": [
+        "mcu_kit/microcontroller-kit",
+      ],
+      "label": "Microcontroller Kit",
+      "type": "category"
+    },
+  ],
+
     "Resources/Support": [
       "hardware-tools/recommended-tools",
       "reference/faq",
@@ -88,12 +134,18 @@ const sidebars = {
     "Brain Examples" : [
         "examples/import_log_file/import-log-file",
         "examples/file_reader/file-reader",
-        "examples/file_converter/file-converter",
         "examples/file_reader_can/file-reader-can",
+        "examples/file_converter/file-converter",
         "examples/camera_client/camera-client",
-        "examples/people_detection/people-detection",
+        "examples/camera_calibration/camera-calibration",
+        "examples/camera_settings/camera-settings",
+        "examples/camera_pointcloud/camera-pointcloud",
         "examples/motor_state/motor-state",
-        "examples/vnc_viewer/vnc-viewer"
+        "examples/vehicle_twist/vehicle-twist",
+        "examples/vnc_viewer/vnc-viewer",
+        "examples/service_client/service-client",
+        "examples/service_counter/service-counter",
+        "examples/service_propagation/service-propagation",
     ],
     "Brain App Tutorials" : {
         "00 - Tutorial Introduction" :[
@@ -123,7 +175,8 @@ const sidebars = {
 },
   "contribute": [
     "contribute/contribute-website"
-  ]
+  ],
+
 };
 
-module.exports = sidebars;
+module.exports = sidebars
