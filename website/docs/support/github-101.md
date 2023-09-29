@@ -17,7 +17,7 @@ First you will need to have an Github account
 
 - To create one, just go to [github.com](https://www.github.com) and sign up!
 
-## Set up an ssh key
+## Git clone
 
 There are two primary options for cloning a git repository, `https` & `ssh`.
 You can find these by clicking on the green **`<> Code`** button on a repository's home page.
@@ -46,6 +46,15 @@ you should clone with `ssh`.
 This will be the case for your project!
 :::
 
+After you've followed the [Set up an ssh key](#set-up-an-ssh-key) instructions,
+you can clone with e.g.:
+
+```bash
+git clone https://github.com/farm-ng/farm-ng-amiga.git
+```
+
+## Set up an ssh key
+
 To set up an ssh key, follow the instructions from GitHub:
 
 1. [Create a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
@@ -54,6 +63,8 @@ To set up an ssh key, follow the instructions from GitHub:
 
 This will allow you to `pull`, `branch`, `push`, etc. to your heart's content on public
 and your personal and team's private repos.
+You should only need to do this once per device,
+unless you delete the key or remove it from your GitHub account.
 
 ## Your Identity
 
