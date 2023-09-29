@@ -1,19 +1,34 @@
 ---
 id: gps-client
-title: GPS service client Example
+title: GPS Client
 ---
 
-This [example](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/gps_client/main.py)
-acts as a `GpsClient` in a standalone Python script.
+The [GPS Client example](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/gps_client/main.py)
+acts as a `EventClient` to the GPS service in a standalone Python script.
 
-It can process two types of GPS messages: relposned and pvt.
+It can process two types of GPS messages: `relposned` and `pvt`.
 The user specifies the type of GPS message to parse, and the script reads the corresponding data,
 and prints it to the console.
 
-To run this example, you need a [**farm-ng brain**](/docs/brain/) and a GPS.
-In addition, your PC should be connected to the same network as the brain.
+To run this example, you need a [**farm-ng brain**](/docs/brain/) and an RTK GPS.
+If running this example on your PC, please ensure it's connected to the same
+network as the brain.
+Alternatively, this example can also just be run directly on the brain.
 
 :::info
+There are two types of GPS messages: **PVT** and **RELPOSNED**.
+
+**PVT** (Position, Velocity, and Time) messages provide the all-in-one solution: position, velocity,
+and time.
+It contains details like longitude, latitude, altitude, speed, and UTC time.
+
+**RELPOSNED** (Relative Positioning) messages provide relative position
+information in a North, East, Down (N-E-D) frame. It's mainly used for applications requiring relative
+positioning between two receivers, often as a part of Real Time Kinematics (RTK) solutions.
+It shows the difference in position between a "moving" receiver and a "fixed" reference receiver.
+:::
+
+:::tip
 If you haven't already cloned the `farm-ng-amiga` repository, do
 so [**here**](/docs/brain/brain-install.md#clone-the-repository).
 :::
@@ -29,37 +44,39 @@ example in the brain ADK virtual environment.
 
 :::
 
-## Setup
+#### Setup
 
-Create first a virtual environment
+:::important Recommended
+Create a virtual environment
+:::
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-## Install
+#### Install
 
 ```bash
-cd py/examples/file_reader_can
+cd py/examples/gps_client
 pip install -r requirements.txt
 ```
 
-## Run example
-
-Specify the file (download before)
+### 3. Execture the Python script
 
 ```bash
-python main.py --service-conf service_config.json
+python main.py --service-config service_config.json
 ```
 
-:::info
-By default, the msg-type is set to relposned (relative to the base station).
-You can also use pvt as an option.
+:::tip Tip
+You can also specify a gps interface (`relposned` or `pvt`) to read by adding the flag **--uri-path**
 :::
 
+For example:
+
 ```bash
-python main.py --service-conf service_config.json --msg-type pvt
+python main.py --service-config service_config.json --uri-path /relposned
+python main.py --service-config service_config.json --uri-path /pvt
 ```
 
 If everything worked correctly you should now see a large stream
@@ -67,48 +84,25 @@ of text come up in your terminal!
 
 The output should look something like this:
 
-```Python
-
-Message stamp: 92614.926564468
-GPS time: 1695861128.4
-Relative pose north: 2680.3909000000003
-Relative pose east: -4297.41093
-Relative pose down: -4.00042
-Relative pose length: 506481.000063
-Accuracy north: 0.0010000000474974513
-Accuracy east: 0.0010000000474974513
-Accuracy down: 0.0011399999493733048
-Carr soln: 2
-GNSS fix ok: True
-################################
-Message stamp: 92615.350155732
-GPS time: 1695861128.8
-Relative pose north: 2680.39071
-Relative pose east: -4297.42
-Relative pose down: -4.00037
-Relative pose length: 506481.000059
-Accuracy north: 0.0010000000474974513
-Accuracy east: 0.0010000000474974513
-Accuracy down: 0.0011500000255182385
-Carr soln: 2
-GNSS fix ok: True
-################################
+```bash
+Message stamp: 913.417056353
+GPS time: 1696009971.6
+Latitude: 36.9293043
+Longitude: -121.7903499
+Altitude: 35.574
+Ground speed: 0.78
+Speed accuracy: 0.06199999898672104
+Horizontal accuracy: 0.014999999664723873
+Vertical accuracy: 0.017000000923871994
+P DOP: 0.0179
+--------------------------------------------------
 ```
 
-Congrats you are done!
-
-:::info
-**PVT** (Position, Velocity, and Time) messages provide the all-in-one solution: position, velocity,
-and time.
-It contains details like longitude, latitude, altitude, speed, and UTC time.
-
-**RELPOSNED** (Relative Positioning) messages provide relative position
-information in a North, East, Down (N-E-D) frame. It's mainly used for applications requiring relative
-positioning between two receivers, often as a part of Real Time Kinematics (RTK) solutions.
-It shows the difference in position between a "moving" receiver and a "fixed" reference receiver.
-:::
+**Congrats you are done!**
 
 :::tip
 We highly recommend to have some basic knowledge about
 [**`asyncio`**](https://docs.python.org/3/library/asyncio.html).
 :::
+
+<!-- INCLUDE_CODE: farm-ng-amiga/py/examples/gps_client/main.py -->
