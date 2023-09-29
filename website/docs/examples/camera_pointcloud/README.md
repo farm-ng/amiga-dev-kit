@@ -29,7 +29,7 @@ source venv/bin/activate
 
 ```bash
 # assuming you're already in the amiga-dev-kit/ directory
-cd farm-ng-amiga/py/examples/poincloud
+cd farm-ng-amiga/py/examples/pointcloud
 ```
 
 ### 3. Install the example's dependencies
@@ -59,14 +59,12 @@ python3 main.py --service-config service_config.json
 
 ### 6. Code overview
 
-In this example we use
+In this example we get the camera calibration from the camera service and use it jointly
+with the `disparity` image to generate the `pointcloud`.
 
-In this example we get the camera calibration from the camera service that jointly with
-the `disparity` image we will be used to generate the `pointcloud`.
-
-First, we use the `EventClient` to request the camera calibration from the camera service.
-The camera calibration is a `oak_pb2.CameraCalibration` message that
-contains the camera intrinsics and extrinsics.
+Firstly, we use the `EventClient` to request the camera calibration from the camera service.
+The camera calibration is an `oak_pb2.CameraCalibration` message that
+contains the camera intrinsic and extrinsic parameters.
 
 ```python
 # create a client to the camera service
@@ -89,7 +87,8 @@ camera_matrix: Tensor = get_camera_matrix(camera_data)
 
 Below is the code to compute the camera matrix from the calibration data.
 Notice that we cast the `intrinsic_matrix` to a `Tensor` and reshape it to
-a 3x3 matrix for later easy integration with the kornia library.
+a 3x3 matrix.
+This will allow an easy integration with the kornia library.
 
 ```python
 def get_camera_matrix(camera_data: oak_pb2.CameraData) -> Tensor:
@@ -109,8 +108,8 @@ def get_camera_matrix(camera_data: oak_pb2.CameraData) -> Tensor:
     return tensor([[fx, 0, cx], [0, fy, cy], [0, 0, 1]])
 ```
 
-Next, we use the `EventClient` to subsribe to the `disparity` path from the camera service.
-The `disparity` image is a `oak_pb2.OakImage` message that contains the `disparity` image data.
+Next, we use the `EventClient` to subscribe to the `disparity` path from the camera service.
+The `disparity` image is an `oak_pb2.OakImage` message that contains the `disparity` image data.
 
 To compute the `pointcloud` we first need to decode the `disparity` image data to a `Tensor`
 and then compute the `pointcloud` from the `disparity` image

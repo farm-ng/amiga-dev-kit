@@ -1,9 +1,9 @@
 ---
 id: file-reader-can
-title: File Reader Can
+title: File Reader CAN
 ---
 
-# File Reader Can Example
+# File Reader CAN Example
 
 This [**file_reader_can example**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader_can)
 parses the CAN data from a recorded log and prints the `AmigaTpdo1` parsed
@@ -22,6 +22,11 @@ example you can skip to [**set up**](#setup)
 :::
 
 ## Download the log file
+
+:::caution deprecation warning
+This log file comes from a brain running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated log file from a brain running `v2.x` Amiga OS software.
+:::
 
 Now you are going to download the log file that you will use in
 this example.
@@ -71,13 +76,6 @@ Specify the file (download before)
 
 ```bash
 python main.py --file-name <path-to-file>/events_12052022115852.bin
-```
-
-Optionally, you can change the can interface that is played back
-from the default of `can0`. E.g.,
-
-```bash
-python main.py --file-name <path-to-file>/events_12052022115852.bin --can-interface vcan0
 ```
 
 If everything worked correctly you should now see a large stream

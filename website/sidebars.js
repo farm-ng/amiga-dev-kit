@@ -29,7 +29,6 @@ const sidebars = {
   "Documentation": {
     "Introduction": [
       "getting-started",
-      "index",
     ],
     "Getting Started": [
       "amiga_quick_start/amiga-quick-start",
@@ -109,6 +108,7 @@ const sidebars = {
       "hardware-tools/recommended-tools",
       "reference/faq",
       "support/support",
+      "support/github-101",
     ],
   },
   "api": [
@@ -135,7 +135,9 @@ const sidebars = {
         "examples/import_log_file/import-log-file",
         "examples/file_reader/file-reader",
         "examples/file_reader_can/file-reader-can",
+        "examples/file_reader_gps/file-reader-gps",
         "examples/file_converter/file-converter",
+        "examples/events_recorder/events-recorder",
         "examples/camera_client/camera-client",
         "examples/camera_calibration/camera-calibration",
         "examples/camera_settings/camera-settings",
@@ -143,6 +145,7 @@ const sidebars = {
         "examples/motor_state/motor-state",
         "examples/vehicle_twist/vehicle-twist",
         "examples/gps_client/gps-client",
+        "examples/filter_client/filter-client",
         "examples/vnc_viewer/vnc-viewer",
         "examples/service_client/service-client",
         "examples/service_counter/service-counter",

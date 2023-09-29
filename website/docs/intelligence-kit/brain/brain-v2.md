@@ -2,6 +2,12 @@
 id: brain-v2
 title: Brain v2.0
 ---
+
+:::info
+The Brain v2.0 tag here refers to the **hardware** version of the brain
+and is not mutually exclusive with Amiga OS software versioning.
+:::
+
 # Brain v2.0
 
 [Buy it on Farm-ng Shop](https://farm-ng.com/products/brain)
@@ -11,6 +17,11 @@ title: Brain v2.0
 ## [Brain product page](https://farm-ng.com/products/brain)
 
 ### Brain overview video
+
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This video only applies to brains running Amiga OS `v1.x` versions.
+:::
 
 <iframe width="560"
 height="315"

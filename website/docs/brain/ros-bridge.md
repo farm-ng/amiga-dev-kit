@@ -6,6 +6,12 @@ title: Amiga ROS Bridge
 
 # Amiga ROS Bridge
 
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
+:::
+
 ## [Link to `farm-ng/amiga-ros-bridge`](https://github.com/farm-ng/amiga-ros-bridge)
 
 This repository contains a ROS bridge for the Farm-ng Amiga platform written in [Rust](https://www.rust-lang.org/).
