@@ -23,14 +23,9 @@ example you can skip to [**set up**](#setup)
 
 ## Download the log file
 
-:::caution deprecation warning
-This log file comes from a brain running Amiga OS `v1.x` versions.<br/>
-Please check back for an updated log file from a brain running `v2.x` Amiga OS software.
-:::
-
 Now you are going to download the log file that you will use in
 this example.
-[**Click here to download**](https://farm-ng-dev-auto-plot-mvp.s3.us-west-2.amazonaws.com/datasets/western-growers-2022-12-05/events_12052022115852.bin)
+[**Click here to download**](https://farm-ng-dev-auto-plot-mvp.s3.us-west-2.amazonaws.com/datasets/examples_log_file/2023_09_29_17_52_35_070804_dubnium-durian.0000.bin)
 
 ## [Optional] Make a Data folder
 
@@ -47,7 +42,8 @@ pwd # the output of this is your <path>
 
 cd ~ # navigate to home directory
 cd Downloads
-mv events_12052022115852.bin <path-to-where-data-file-is-above> # moving the data to to data-folder
+mv 2023_09_29_17_52_35_070804_dubnium-durian.0000.bin <path-to-where-data-file-is-above>
+# moving the data to to data-folder
 ```
 
  Now that you have your log file in the correct place, in your
@@ -75,7 +71,7 @@ pip install -r requirements.txt
 Specify the file (download before)
 
 ```bash
-python main.py --file-name <path-to-file>/events_12052022115852.bin
+python main.py --file-name <path-to-file>/2023_09_29_17_52_35_070804_dubnium-durian.0000.bin
 ```
 
 If everything worked correctly you should now see a large stream

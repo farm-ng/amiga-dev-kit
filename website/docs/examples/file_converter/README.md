@@ -41,7 +41,7 @@ See **[How to Record and Access data on the Amiga](/docs/examples/import_log_fil
 for instructions.
 
 ```bash
-python main.py --file-name events_09162022160753_000000.bin
+python main.py --file-name <path-to-file>/2023_09_29_17_52_35_070804_dubnium-durian.0000.bin
 ```
 
 ### Additional args
