@@ -5,7 +5,7 @@ title: File Reader GPS
 
 # File Reader GPS Example
 
-This [**file_reader_gps_example**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/file_reader_gps/main.py)
+This [**file_reader_gps_example**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/file_reader_gps/main.py)
 provides a utility for reading and parsing GPS messages from the event file.
 It can process two types of GPS messages: `relposned` and `pvt`.
 The user specifies the type of GPS message to parse, and the script reads the corresponding data,

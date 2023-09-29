@@ -5,7 +5,8 @@ title: Motor State
 
 # Amiga Motor State Stream Example
 
-Currently this is a very basic example showing how to access and decode the
+Currently this is a very basic [example](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/motor_states_stream/main.py)
+showing how to access and decode the
 `MotorState` values streamed by the canbus service.
 
 :::info

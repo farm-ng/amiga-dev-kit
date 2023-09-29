@@ -3,7 +3,7 @@ id: camera-client
 title: Camera Client
 ---
 
-### [Link to `camera_client/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/camera_client/main.py)
+### [Link to `camera_client/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/camera_client/main.py)
 
 This example operates as a standalone Python script,
 in which an `EventClient` to an Oak camera service running on an Amiga brain is created.

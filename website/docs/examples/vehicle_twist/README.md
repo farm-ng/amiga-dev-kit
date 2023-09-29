@@ -5,7 +5,8 @@ title: Vehicle Twist
 
 # Amiga Vehicle Twist example
 
-Currently this is a very basic example showing how to send `Twist2d` proto messages
+Currently this is a very basic [example](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/vehicle_twist/main.py)
+showing how to send `Twist2d` proto messages
 to the canbus service to control the amiga.
 
 ## Setup

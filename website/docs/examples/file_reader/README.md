@@ -7,7 +7,7 @@ title: File Reader
 
 In this example you will learn how to upload a given log file and
 use it to run the
-[**file_reader example**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader).
+[**file_reader example**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/py/examples/file_reader/main.py).
 
 :::info
 If you haven't already cloned the `farm-ng-amiga` repository, do
