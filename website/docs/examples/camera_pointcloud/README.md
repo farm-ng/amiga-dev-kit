@@ -87,7 +87,8 @@ camera_matrix: Tensor = get_camera_matrix(camera_data)
 
 Below is the code to compute the camera matrix from the calibration data.
 Notice that we cast the `intrinsic_matrix` to a `Tensor` and reshape it to
-a 3x3 matrix. This will allow an easy integration with the kornia library.
+a 3x3 matrix.
+This will allow an easy integration with the kornia library.
 
 ```python
 def get_camera_matrix(camera_data: oak_pb2.CameraData) -> Tensor:
