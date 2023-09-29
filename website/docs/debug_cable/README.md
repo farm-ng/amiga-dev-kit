@@ -3,15 +3,17 @@ id: debug-cable
 title: Debug Cable Overview
 ---
 
-![IMG_9574](https://user-images.githubusercontent.com/64480560/205400778-1bfa084c-a187-4f42-8840-7b91714ab7f0.jpg)
+# farm-ng Debug Cable
+
+![image](https://user-images.githubusercontent.com/64480560/236905673-456671a1-9930-416b-af00-9c489addc206.png)
 
 ## Overview
 
 Cable is used to update and debug farm-ng products.
 It includes reset functionality along with USB and serial communication.
 
-The larger circuit board on the left is the USB / debug breakout,
-and the smaller board on the right is the serial interface.
+The `debug cable` has a single circuit board with two ports connected to it.
+On the left is the USB / debug breakout, and on the right is the serial interface.
 
 :::caution
 It is required to have a data USB-C cable and not a charge only USB-C cable
