@@ -5,10 +5,13 @@ title: Camera Client
 
 ### [Link to `camera_client/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/camera_client/main.py)
 
-This example operates as an `OakCameraClient` within a standalone Python script.
+This example operates as a standalone Python script,
+in which an `EventClient` to an Oak camera service running on an Amiga brain is created.
+The selected stream is displayed in a popup window.
+
 To successfully run this example, you must use your local PC, as the example won't
-work if executed directly from a brain. Ensure that a [**farm-ng brain**](/docs/brain/)
-running Oak cameras is active.
+work if executed directly from a brain (because of the popup window).
+Ensure that a [**farm-ng brain**](/docs/brain/) running Oak cameras is active.
 Your local PC should be either connected to the same local network as the brain
 or linked to it through tailscale.
 

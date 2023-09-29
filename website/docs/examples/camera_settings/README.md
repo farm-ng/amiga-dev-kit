@@ -5,11 +5,17 @@ title: Camera Settings
 
 ## Camera Settings
 
-The requirement to run this example is to have a
-[**farm-ng brain**](/docs/brain/) running Oak cameras.
-This can be run either directly from a brain or from your local PC.
-If running from your local PC, ensure it's connected to the same local
-network as the brain or linked to it through tailscale.
+This example operates as a standalone Python script,
+in which an `EventClient` to an Oak camera service running on an Amiga brain is created.
+The settings of an Oak camera camera are set,
+and the returned result is printed in the terminal.
+
+You can either run this example directly on a brain by `ssh`'ing in,
+or use your local PC.
+If using your local PC, it should be either connected to the same local network as the brain
+or linked to it through tailscale.
+
+Ensure that a [**farm-ng brain**](/docs/brain/) running Oak cameras is active.
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
