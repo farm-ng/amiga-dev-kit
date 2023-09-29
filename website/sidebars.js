@@ -137,6 +137,7 @@ const sidebars = {
         "examples/file_reader_can/file-reader-can",
         "examples/file_reader_gps/file-reader-gps",
         "examples/file_converter/file-converter",
+        "examples/events_recorder/events-recorder",
         "examples/camera_client/camera-client",
         "examples/camera_calibration/camera-calibration",
         "examples/camera_settings/camera-settings",
