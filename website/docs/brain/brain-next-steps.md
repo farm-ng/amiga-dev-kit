@@ -3,18 +3,36 @@ id: next-steps
 title: Next Steps
 ---
 
+:::caution Warning
+You will not be able to follow the examples and tutorials listed
+below if you have not downloaded the farm-ng-amiga repository.
+Please first follow the instructions at [Brain ADK Install](/docs/brain/brain-install.md).
+:::
+
+Now that you have downloaded the repository and have all the
+correct packages installed, its time to put these new tools to
+use. Below is where you can find some examples that utilize
+different functionalities of the Amiga and a tutorial that guides
+you through making your very own Amiga application. You can go
+through the following in any order that you wish!
+
 ## 1. Examples
 
-Navigate to the `Examples` tab, or go directly to the [Examples Index](./../examples/examples_index.md),
-to get started on running one of the available brain ADK examples.
+Either navigate to the `Examples` tab located at the top of this
+page, or go directly to the
+[Examples Index](/docs/examples/examples_index.md),
+to get started on running one of the available brain ADK examples
+or CircuitPython examples.
 
-## 2. Tutorial
+## 2. Tutorials
 
-Go through the [Virtual Joystick Tutorial](./../examples/virtual_joystick/00_overview.md) that walks you line-by-line
-through creating an Amiga brain application.
-
+Go through the
+[Brain App Tutorials](/docs/examples/examples-index#brain-app-tutorials) that walk you through
+creating custom applications that interact with cameras and drive
+your Amiga from the brain!
 
 ## 3. Developing Custom applications
 
-Follow the instructions at [Developing Custom Applications](custom-applications.mdx)
+Follow the instructions at
+[Developing Custom Applications](custom-applications.mdx)
 to create your own great app for your Amiga!

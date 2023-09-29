@@ -5,96 +5,51 @@ title: Examples Index
 
 # Amiga SDK Examples
 
-## Brain Examples
-
-:::info
-These are the examples for developing applications for the [farm-ng Brain](../brain/).
-
-Before getting started with any brain examples, you should install the [farm-ng Brain ADK package](/docs/brain/brain-install).
-:::
-
-### File Reader
-
-:::caution coming soon
-More details on the `file_reader` example.
-For now, please refer to the[`file_reader` README](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader#readme)
-:::
-
-[Link to `file_reader/main.py`](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader/main.py)
-
-### File Reader CAN
-
-:::caution coming soon
-More details on the `file_reader_can` example.
-For now, please refer to the[`file_reader_can` README](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader_can#readme)
-:::
-
-[Link to `file_reader_can/main.py`](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader_can/main.py)
-
-### [Camera Client](./camera_client/README.md)
-
-[Link to `camera_client/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/camera_client/main.py)
-
-This example acts as an `OakCameraClient` in a standalone Python script.
-
-### [Camera Client GUI](./camera_client_gui/README.md)
-
-[Link to `camera_client_gui/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/camera_client_gui/main.py)
-
-This example implements the `OakCameraClient` in a GUI application using [Kivy](https://kivy.org/).
-
-
-### [Virtual Joystick Tutorial](./virtual_joystick/00_overview.md)
-
-This example application and tutorial is designed to enable you to develop your own custom applications and deploy them to the Amiga brain.
-
-The topics covered in this tutorial include:
-- Creating kivy applications
-- GRPC / asyncio application development
-- Streaming an Oak camera with the camera client
-- Streaming Amiga state information with the canbus client
-- Auto control mode of Amiga robot with the canbus client
-
 ## CircuitPython Examples
 
 :::info
-These are the examples for developing programs for the [farm-ng Micro-controller Kit](../mcu_kit/).
+These are the examples for developing programs for the
+[**farm-ng microcontroller kit**](../mcu_kit/).
 :::
 
-To begin any of these examples, start by cloning the `amiga-dev-kit` repository:
-```bash
-cd <to_your_base_directory>
-git clone git@github.com:farm-ng/amiga-dev-kit.git
-```
+Before attempting any of these examples make sure you have
+already cloned the `amiga-dev-kit` repository, If you have not
+follow the instructions listed
+[**here**](/docs/contribute/website.mdx)
 
 ### [Hello World Auto-mode (hello_main_loop)](./hello_main_loop/)
 
-[Link to `hello_main_loop/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/hello_main_loop/code.py)
+[**Link to `hello_main_loop/code.py`**](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/hello_main_loop/code.py)
 
 :::tip
-It's recommended to start with this example before proceeding to any of the others.
+It's recommended to start with this example before proceeding to
+any of the others.
 :::
 
-This introductory example covers getting set up, interacting with the Amiga, and
+This introductory example covers getting set up, interacting with
+the Amiga, and
 using auto-control mode to drive your Amiga from a computer
-using the [farm-ng microcontroller Kit](https://farm-ng.com/products/microcontroller-kit).
+using the
+[**farm-ng microcontroller kit**](https://farm-ng.com/products/microcontroller-kit).
 
-This example enables driving the Amiga by entering simple fwd / rev / left / right keyboard commands the serial port, which the app sends over the CAN bus.
+This example enables driving the Amiga by entering simple fwd /
+rev / left / right keyboard commands the serial port, which the
+app sends over the CAN bus.
 
 Topics:
 
 - Serial port 101
 - Auto-mode control
 
-
 ### [Cansniffer](./cansniffer/)
 
-[Link to `cansniffer/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/cansniffer/code.py)
+[**Link to `cansniffer/code.py`**](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/cansniffer/code.py)
 
-This basic example covers a simple tool for listening to all CAN Id's streaming on the bus
+This basic example covers a simple tool for listening to all CAN
+Id's streaming on the bus
 and measuring simple statistics about the streamed messages.
 The example is inspired by the
-[cansniffer command line tool from can-utils](https://manpages.debian.org/testing/can-utils/cansniffer.1.en.html).
+[**cansniffer command line tool from can-utils**](https://manpages.debian.org/testing/can-utils/cansniffer.1.en.html).
 
 Topics:
 
@@ -102,11 +57,173 @@ Topics:
 
 ### [FPV](./FPV/)
 
-[Link to `FPV/code.py`](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/FPV/code.py)
+[**Link to `FPV/code.py`**](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/FPV/code.py)
 
-This example shows how to connect off the shelf FPV equipment to your Amiga to enable realtime video streaming and teleoperation through remote control.  This makes the Amiga remotely operable from the comfort of your office (or cab of your truck) and we're pretty psyched by how low cost and practical FPV control of the Amiga is.
+This example shows how to connect off the shelf FPV equipment to
+your Amiga to enable realtime video streaming and teleoperation
+through remote control.  This makes the Amiga remotely operable
+from the comfort of your office (or cab of your truck) and we're
+pretty psyched by how low cost and practical FPV control of the
+Amiga is.
 
 Topics:
 
 - Hardware integration
 - Auto-mode control
+
+### Other examples
+
+#### Bumpers
+
+[**Link to `bumpers/code.py`**](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/bumpers/code.py)
+
+The bumpers example shows how to use the ***experimental***
+safety device API on the Amiga dashboard.
+Since this is still experimental, it's not documented as a full
+example until the safety devices API is released as a stable
+feature
+in the dashboard firmware.
+
+> NOTE: We're targeting the `v0.1.9` release for this feature,
+with a planned date in April 2023.
+
+In the meantime, we'll still link the README and code for the
+[bumpers example](https://github.com/farm-ng/amiga-dev-kit/blob/main/circuitpy/examples/bumpers)
+to get you inspired about how easy it will be for you to develop
+your own safety devices to add them to your Amiga!
+
+## Brain ADK Examples
+
+:::info
+These are the examples that run on your personal computer for
+interacting with recorded logs and active services running on the
+Amiga Brain.
+
+Before getting started with any brain examples, you should
+install the
+[**farm-ng Brain ADK package**](/docs/brain/brain-install).
+:::
+
+### [Record and Access data](/docs/examples/import_log_file/README.md)
+
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This example only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated example for brains running `v2.x` Amiga OS software.
+:::
+
+This tutorial walks you through recording field data and
+offloading it to your local machine.
+
+### [File Reader](/docs/examples/file_reader/README.md)
+
+[**Link to `file_reader/main.py`**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader/main.py)
+
+This example reads log files and plays their contents.
+
+### [File Reader CAN](/docs/examples/file_reader_can/README.md)
+
+[**Link to`file_reader_can`**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader_can)
+
+This example reads the Can data from recorded logs and prints it
+out.
+
+### [Camera Client](./camera_client/README.md)
+
+[**Link to `camera_client/main.py`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/camera_client/main.py)
+
+This example acts as an `OakCameraClient` in a standalone Python
+script.
+
+## Brain App Tutorials
+
+These are the examples for ready-to-run apps and learning how you
+can develop your own custom applications for the [**farm-ng Brain**](/docs/brain/).
+
+:::tip
+The tutorials build off of one another and are better when
+followed in order.
+:::
+
+### [00 - Tutorial Introduction](/docs/tutorials/introduction/tutorial-introduction)
+
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
+:::
+
+This tutorial introduces necessary background knowledge and walks
+you through the
+[**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template).
+
+The topics covered in this tutorial include:
+
+- Creating kivy applications
+- GRPC / asyncio application development
+
+### [01 - Camera Streamer Tutorial](/docs/tutorials/camera_streamer/camera-streamer-overview)
+
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
+:::
+
+This tutorial is designed to teach you to implement the
+`OakCameraClient` in a GUI application using
+[**Kivy**](https://kivy.org/) following along the
+[**`camera-streamer`**](https://github.com/farm-ng/camera-streamer) example application built using the
+[**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template).
+
+The topics covered in this tutorial include:
+
+- Creating kivy applications
+- GRPC / asyncio application development
+- Streaming an Oak camera with the camera client
+
+### [02 - Virtual Joystick Tutorial](/docs/tutorials/virtual_joystick/virtual-joystick-overview)
+
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
+:::
+
+This tutorial is designed to enable you to develop your own
+custom applications that uses camera streams and controls your
+Amiga over the CAN bus following along the
+[**`virtual-joystick`**](https://github.com/farm-ng/virtual-joystick)
+example application built using the
+[**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template).
+
+The topics covered in this tutorial include:
+
+- Creating kivy applications
+- GRPC / asyncio application development
+- Streaming an Oak camera with the camera client
+- Streaming Amiga state information with the canbus client
+- Auto control mode of Amiga robot with the canbus client
+
+### [Developing Custom Applications](/docs/brain/custom-applications.mdx)
+
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
+:::
+
+This takes you through the steps of creating your own app with
+the use of an app template and deploying and testing it on the
+Amiga.
+
+### [Amiga ROS Bridge](/docs/brain/ros-bridge.md)
+
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
+:::
+
+This takes you through the steps of setting up the Amiga ROS bridge
+for controlling the Amiga robot using your existing ROS nodes.

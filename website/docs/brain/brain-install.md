@@ -1,6 +1,6 @@
 ---
 id: brain-install
-title: Install
+title: Brain ADK Install
 ---
 
 # Brain ADK Installation
@@ -9,24 +9,24 @@ title: Install
 
 ## Install
 
-:::info
-If you would like to test your installation by running the `farm-ng-amiga` [**examples**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples),
-please start below with [Clone the repo](#clone-the-repo).
-
-If you only want to install the package, you can simply install the latest release with `pip` and enjoy the [`farm-ng-amiga`](https://pypi.org/project/farm-ng-amiga) package!
+### [Optional] Make a new directory that will hold all of your farm-ng related files
 
 ```bash
-pip3 install farm-ng-amiga
+cd <to_your_base_directory>  # In your terminal navigate to where
+#you want this new directory
+mkdir <new_farm_folder>
+cd <new_farm_folder> # change to the directory
 ```
-:::
 
+### Clone the repository
 
-### Clone the repo
-
-To install the [`farm-ng-amiga`](https://github.com/farm-ng/farm-ng-amiga) package and test the available examples, start by cloning the repo:
+To install the
+[`farm-ng-amiga`](https://github.com/farm-ng/farm-ng-amiga)
+package and test the available examples, start by cloning the
+repo:
 
 ```bash
-git clone git@github.com:farm-ng/farm-ng-amiga.git
+git clone https://github.com/farm-ng/farm-ng-amiga.git
 cd farm-ng-amiga/
 ```
 
@@ -38,49 +38,71 @@ git checkout main
 git pull
 ```
 
-:::caution troubleshooting
-If you have trouble cloning this public repo, Github is likely not able to authenticate your SSH public key.
+:::tip
+If you want to setup an ssh key and clone with git instead of https, you can:
 
-If this is the case, you can either:
 1. [Create a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 2. [Connect to GitHub with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
-3. Clone with `https`. E.g.,
-```bash
-git clone https://github.com/farm-ng/farm-ng-amiga.git
-```
+3. Clone with `git clone git@github.com:farm-ng/farm-ng-amiga.git`
 :::
 
-### [optional] Set up virtual environment
+### [Recommended] Set up virtual environment
 
 :::tip
-We recommend running the brain SDK applications in a virtual environment to avoid conflicts with other packages / versions installed on your system.
-Though this is not a requirement and you are welcome to decide how/where to install.
+We recommend running the brain SDK applications in a virtual
+environment to avoid conflicts with other packages / versions
+installed on your system.
+Though this is not a requirement and you are welcome to decide
+how/where to install.
 :::
 
 If you want to install [`farm-ng-amiga`](https://pypi.org/project/farm-ng-amiga) in a virtual environment:
 
 Install `pip3` & `virtualenv`:
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="linux" label="Linux" default>
+
 ```bash
 sudo apt-get install python3-pip
 sudo pip3 install virtualenv
 ```
 
+</TabItem>
+<TabItem value="macos" label="MacOs">
+
+```bash
+brew install python3
+# to check if the installation was successful input command
+pip --version
+sudo pip3 install virtualenv
+```
+
+</TabItem>
+</Tabs>
+
 Start a virtual environment:
 
 ```bash
-# assuming you're in the directory where you want to create your `venv`
+# assuming you're in the directory where you want to create your
+# `venv`
 python3 -m venv venv
 source venv/bin/activate
 ```
 
 Later, when you want to exit / re-enter your `venv`:
+
 ```bash
 deactivate # exit
-source venv/bin/activate # re-enter, assuming you're in the root containing `venv/`
+source venv/bin/activate # re-enter, assuming you're in the root
+# containing `venv/`
 ```
 
 ### Package install
+
 Now install the package with `pip`
 
 ```bash
@@ -100,7 +122,8 @@ pip3 list | grep farm-ng
 
 ### Package updates
 
-As new releases come out, you can keep your farm-ng packages up to date with:
+As new releases come out, you can keep your farm-ng packages up
+to date with:
 
 ```bash
 pip3 install farm-ng-package --upgrade
@@ -108,17 +131,13 @@ pip3 install farm-ng-core --upgrade
 pip3 install farm-ng-amiga --upgrade
 ```
 
-
 ### [Advanced] From source
 
-If you want to edit the package, or contribute, you can install from source.
+If you want to edit the package, or contribute, you can install
+from source.
 
-Install `pip3` & setup a `virtualenv` (as above)
-
-```bash
-sudo apt-get install python3-pip
-sudo pip3 install virtualenv
-```
+Install `pip3` & setup a `virtualenv` (shown
+[above](#recommended-set-up-virtual-environment))
 
 Create and install the ``farm-ng-amiga`` Python package
 

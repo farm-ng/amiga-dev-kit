@@ -1,22 +1,48 @@
 ---
 id: brain
-title: Brain Overview
+title: Brain v1.0
 ---
 
-# farm-ng Brain
+:::info
+The Brain v1.0 tag here refers to the **hardware** version of the brain
+and is not mutually exclusive with Amiga OS software versioning.
+:::
 
-<!-- <img src="./assets/brain_render_iso.png" alt="Dash_Iso" width="600;" /> -->
-![](./assets/brain_render_iso.png)
+![brain_render](./assets/brain_render_iso.png)
 
-### [Brain product page](https://farm-ng.com/products/brain)
+:::tip
+Find additional information and purchasing options at: [**Brain product page**](https://farm-ng.com/products/brain)
+:::
+
+## Brain overview video
+
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This video only applies to brains running Amiga OS `v1.x` versions.
+:::
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_p0I11p4QF4"
+title="YouTube video player" frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen></iframe>
 
 ## Features overview
 
-**The farm-ng Brain is an Alpha level product subject to change. Not all features are fully tested and validated.**
+:::note
+**The farm-ng Brain is an Alpha level product subject to change.**
+**Not all features are fully tested and validated.**
+:::
 
-The farm-ng Brain brings supercomputer performance to the edge, in a ruggedized packaged designed for the harshest environments.
-The Brain contains a NVIDIA Xavier NX which has up to 21 TOPS of hardware accelerated computing power for machine learning and AI applications, and paired it with a touch-screen display designed to be outdoor-visible, creating both a user-interface and sensor hub in a single, waterproof package.
-This provides quick entry into the world of artificial intelligence, and a single packaged solution for developing tools and interfaces for outdoor autonomy.
+The farm-ng Brain brings supercomputer performance to the edge,
+in a ruggedized packaged designed for the harshest environments.
+The Brain contains a NVIDIA Xavier NX which has up to 21 TOPS of
+hardware accelerated computing power for machine learning and AI
+applications, and paired it with a touch-screen display designed
+to be outdoor-visible, creating both a user-interface and sensor
+hub in a single, waterproof package.
+This provides quick entry into the world of artificial
+intelligence, and a single packaged solution for developing tools
+and interfaces for outdoor autonomy.
 
 Includes CAN bus, USB, and GIGe ethernet bus options.
 
@@ -32,11 +58,7 @@ Includes CAN bus, USB, and GIGe ethernet bus options.
 | USB                  | 2x USB 3.0 (Limited by MicroUSB connectors), Debug connector contains USB for firmware and serial terminal.                               |
 | Network              | 1 x M12-8 with 1Gb ethernet capability. Built in WiFi.                                                                                    |
 
-
-
 ### Xavier computer
-
-
 
 | Specifications |                                          |     |
 | -------------- | ---------------------------------------- | --- |
@@ -46,25 +68,22 @@ Includes CAN bus, USB, and GIGe ethernet bus options.
 | WiFi           | Integrated WiFi with OS drivers          |     |
 |                |                                          |     |
 
-
-
-
-
 ## Connections
 
 <!-- <img src="./assets/brain_connect.jpg" alt="Dash_Iso" width="600;" /> -->
-![](./assets/brain_connect.jpg)
-
+![brain_connections](./assets/brain_connect.jpg)
 
 Xavier provides the following connectors and button for IO
 
-- Power button is used for powering up and down the embedded computer
-- Debug is for interacting and updating with the OS (See information on debug connector)
+- Power button is used for powering up and down the embedded
+computer
+- Debug is for interacting and updating with the OS (See
+information on debug connector)
 - CAN / Power connector provides 12/24 volts and CAN interface
-- ACC USBs are two accessory USBs (as of the early version of the display are USB 2.0 Micro USB connectors) that allow attaching USB devices
+- ACC USBs are two accessory USBs (as of the early version of the
+display are USB 2.0 Micro USB connectors) that allow attaching
+USB devices
 - Ethernet X coded M12 ethernet connection
-
-
 
 ### Pinouts
 
@@ -82,11 +101,14 @@ Mating connector M12-5 A code female
 
 ### Debug
 
-**SEE INFORMATION ON DEBUG CABLE**
+:::tip
+See information on debug cable here: [Debug Cable Overview](/docs/debug_cable/README.md)
+:::
 
 Mating connector M12-8 A code female
 
-Debug wire colors based on common cable with flying leads used on farm-ng built debug kits.
+Debug wire colors based on common cable with flying leads used on
+farm-ng built debug kits.
 
 | PIN | Description   | Typical Wire Color | Notes                      |
 | --- | ------------- | ------------------ | -------------------------- |

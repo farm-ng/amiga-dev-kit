@@ -26,43 +26,91 @@ const sidebars = {
     },
   ],
    */
-  "docs": {
+  "Documentation": {
     "Introduction": [
       "getting-started",
+      "index",
     ],
-    "Amiga Quick Start": [
+    "Getting Started": [
       "amiga_quick_start/amiga-quick-start",
-    ],
-    "Dashboard": [
-      "dashboard/dashboard",
-      "dashboard/dashboard-fw",
-      "dashboard/control-states",
-    ],
-    "Debug Cable": [
-      "debug_cable/debug-cable",
-      "debug_cable/service-cable",
-    ],
-    "Microcontroller Kit": [
-      "mcu_kit/microcontroller-kit",
-    ],
-    "Brain": [
-      "brain/brain",
       "brain/brain-install",
       "brain/next-steps",
-      "brain/brain-apps"
     ],
-     "Pendant": [
-       "pendant/pendant",
-     ],
-    "Resources": [
-        "reference/faq",
-        "hardware-tools/recommended-tools",
-        "hardware-tools/etools",
+
+
+    "Amiga Rover": [
+      {
+        "items": [
+        "dashboard/dashboard",
+        "dashboard/dashboard-user-guide",
+        "dashboard/control-states",
+        "dashboard/dashboard-fw",
+      ],
+      "label": "Dashboard",
+      "type": "category"
+    },
+    {
+      "items": [
+        "pendant/pendant"
+
+      ],
+      "label": "Pendant",
+      "type": "category"
+    },
+
     ],
-    "Support": [
+    "Intelligence Kit": [
+      "intelligence-kit/overview-intel",
+{
+        "items": [
+          "brain/brain",
+          "intelligence-kit/brain/brain-v2",
+        ],
+        "label": "Brain",
+        "type": "category"
+
+      },
+{
+  "items": [
+    "release-notes/release-01",
+  ],
+  "label": "Release Notes",
+  "type": "category"
+},
+    ],
+    "Farm Tools":[
+      {
+        "items": [
+          "farm-tools/three-point",
+        ],
+        "label": "Three Point",
+        "type": "category"
+      },
+  ],
+    "Development Tools": [
+      {
+        "items": [
+            "debug_cable/debug-cable",
+            "debug_cable/service-cable"
+      ],
+      "label": "Cables",
+      "type": "category"
+    },
+    {
+      "items": [
+        "mcu_kit/microcontroller-kit",
+      ],
+      "label": "Microcontroller Kit",
+      "type": "category"
+    },
+  ],
+
+    "Resources/Support": [
+      "hardware-tools/recommended-tools",
+      "reference/faq",
       "support/support",
       "support/github-101",
-  ],
+    ],
   },
   "api": [
     "api",
@@ -79,29 +127,58 @@ const sidebars = {
   ],
   "examples": {
     "Index": ["examples/examples-index"],
-    "CircuitPython" : [
+    "CircuitPython Examples" : [
         "examples/hello_main_loop/hello-world",
         "examples/cansniffer/cansniffer",
         "examples/FPV/fpv",
     ],
-    "Brain" : [
+    "Brain Examples" : [
+        "examples/import_log_file/import-log-file",
+        "examples/file_reader/file-reader",
+        "examples/file_reader_can/file-reader-can",
+        "examples/file_converter/file-converter",
         "examples/camera_client/camera-client",
-        "examples/camera_client_gui/camera-client-gui",
+        "examples/camera_calibration/camera-calibration",
+        "examples/camera_settings/camera-settings",
+        "examples/camera_pointcloud/camera-pointcloud",
+        "examples/motor_state/motor-state",
+        "examples/vehicle_twist/vehicle-twist",
+        "examples/filter_client/filter-client",
+        "examples/vnc_viewer/vnc-viewer",
+        "examples/service_client/service-client",
+        "examples/service_counter/service-counter",
+        "examples/service_propagation/service-propagation",
     ],
-    "Brain Tutorial" :[
-        "examples/virtual_joystick/virtual-joystick-overview",
-        "examples/virtual_joystick/template-starter",
-        "examples/virtual_joystick/template-overview",
-        "examples/virtual_joystick/canbus-stream",
-        "examples/virtual_joystick/camera-stream",
-        "examples/virtual_joystick/virtual-joystick-widget",
-        "examples/virtual_joystick/auto-control",
-        "examples/virtual_joystick/further-exercises",
+    "Brain App Tutorials" : {
+        "00 - Tutorial Introduction" :[
+            "tutorials/introduction/tutorial-introduction",
+            "tutorials/introduction/background-knowledge",
+            "tutorials/introduction/template-overview",
+        ],
+        "01 - Camera Streamer Tutorial" :[
+            "tutorials/camera_streamer/camera-streamer-overview",
+            "tutorials/camera_streamer/template-starter",
+            "tutorials/camera_streamer/kivy-definition",
+            "tutorials/camera_streamer/camera-stream",
+        ],
+        "02 - Virtual Joystick Tutorial" :[
+            "tutorials/virtual_joystick/virtual-joystick-overview",
+            "tutorials/virtual_joystick/template-starter",
+            "tutorials/virtual_joystick/device-streams",
+            "tutorials/virtual_joystick/virtual-joystick-widget",
+            "tutorials/virtual_joystick/auto-control",
+            "tutorials/virtual_joystick/further-exercises",
+        ],
+    },
+      "Amiga Brain Development": [
+      "brain/brain-apps",
+      "brain/ros-bridge"
     ]
 },
   "contribute": [
     "contribute/contribute-website"
-  ]
+  ],
+
 };
 
-module.exports = sidebars;
+module.exports = sidebars

@@ -5,10 +5,16 @@ title: Developing Custom Applications
 
 # Developing Custom Applications
 
-:::tip
-We now have a full tutorial that walks you through creating custom applications that interact with cameras and drive your Amiga from the brain!
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
+:::
 
-Check it out at [Virtual Joystick Tutorial](/examples/virtual_joystick/00_overview.md).
+:::tip
+We now have a set of tutorials that walk you through creating custom applications that interact with cameras and drive your Amiga from the brain!
+
+Check them out at [**Brain App Tutorials**](/docs/examples/examples-index#brain-app-tutorials).
 :::
 
 ## Quick Tips
@@ -17,7 +23,7 @@ Check it out at [Virtual Joystick Tutorial](/examples/virtual_joystick/00_overvi
   * Edit the "entry.sh" script in the sample git repository.
 * We leverage a venv per application.
   * The contents of requirements.txt will be installed by the bootstrap.sh script.
-* If you've updated the requirements.txt remove the hidden ".lock" before relaunching the app from the Brain UI.
+* If you've updated the requirements remove the hidden ".lock" before relaunching the app from the Brain UI.
 * You may use VSCode remote development/containers to edit directly on the Amiga brain as well.
 
 ## Prerequisites
@@ -30,7 +36,6 @@ import TabItem from '@theme/TabItem';
 
 ```bash
 apt install wget
-python3 -m pip install --user cookiecutter
 ```
 
 </TabItem>
@@ -38,150 +43,70 @@ python3 -m pip install --user cookiecutter
 
 ```bash
 brew install wget
-brew install cookiecutter
 ```
 
 </TabItem>
 </Tabs>
 
-## Initial Configuration
-
-To make ssh between our workstation and the Amiga easier, we'll add some configuration to our ssh on the workstation.
-To set up ssh, the Amiga and your computer should be on the same network.
-
-First check if a file `~/.ssh/config` exists on your workstation.
-`~/` is the home folder on your workstation.
-
-:::info
-
-1. If this file does not exist, you'll have to create it.
-
-```bash
-cd ~ # Navigate to your home folder
-ls -a # Check for a folder called `.ssh/`
-```
-
-2. If `~/.ssh/` does not exist, run:
-
-```bash
-ssh-keygen # create ~/.ssh/ folder
-```
-
-3. Create a file called `config` (no extension) in `~/.ssh`
-
-```bash
-gedit ~/.ssh/config
-```
-:::
-
-Add the following to your  `~/.ssh/config`:
-
-```bash
-Host amiga
-    HostName <ip address>
-    Port 22
-    User amiga
-    StrictHostKeyChecking no
-```
-
-:::tip tips
-
-* `<ip address>` can be found on the bottom right of the Amiga Brain screen
-* Remove the `<` & `>` symbols.
-* Your development station and your Amiga should be on the same network.
-:::
-This utilizes the IP address displayed on the bottom right of the brain display:
-
-Let’s copy our keys to the robot as well (you may need to do this any time you are working with a new robot)
-
-```bash
-ssh-copy-id amiga
-```
-
-Now you can ssh to the robot with:
-
-```bash
-ssh amiga
-exit
-```
-
-:::caution troubleshooting
-If, after a docker image update, you cannot `ssh` into your amiga or run the `sync.sh` script,
-you may have an error similar to:
-
-```bash
-# $ ssh amiga
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
-Someone could be eavesdropping on you right now (man-in-the-middle attack)!
-It is also possible that a host key has just been changed.
-The fingerprint for the ECDSA key sent by the remote host is
-SHA256:QsdOvROYuKMa5NqaPTFHwF3kfPCwKaTzgBAj9N/eKCI.
-Please contact your system administrator.
-Add correct host key in /home/<YOUR_NAME>/.ssh/known_hosts to get rid of this message.
-Offending ECDSA key in /home/<YOUR_NAME>/.ssh/known_hosts:29
-  remove with:
-  ssh-keygen -f "/home/<YOUR_NAME>/.ssh/known_hosts" -R "192.168.XX.XX"
-ECDSA host key for 192.168.XX.XX has changed and you have requested strict checking.
-Host key verification failed.
-```
-
-Follow the instructions they provide and run:
-
-```bash
-ssh-keygen -f "/home/<YOUR_NAME>/.ssh/known_hosts" -R "192.168.XX.XX"
-# With correct values for <YOUR_NAME> and IP Address XX.XX
-```
-
-You should now be able to `ssh` into your amiga and/or run the `sync.sh` script
-:::
-
 ## Prepare an app
 
-Follow the instructions below to select an example from the [`farm-ng-amiga` examples](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples) or create an app from the [`amiga-app-template`](https://github.com/farm-ng/amiga-app-template) repository.
+Follow the instructions below to select a [**Brain App Example**](/docs/examples/examples-index#brain-app-tutorials)
+prepared by **farm-ng** or create an app from the
+[**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template) repository.
 
 ### Select an app
 
-:::caution coming soon
-The folder structure of the examples in [farm-ng-amiga examples](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples) will soon be updated to match
-the template repository for setup / install on the amiga.
+To test the app deployment process of a fully made app developed by farm-ng, you can choose either the [**camera-streamer**](https://github.com/farm-ng/camera-streamer)
+example or the [**virtual-joystick**](https://github.com/farm-ng/virtual-joystick) example from [**Brain App Example**](/docs/examples/examples-index#brain-app-tutorials). To clone one
+of the examples click on one of the links in the previous sentence and click the green code button in GitHub and then copy the text highlighted in yellow.
+![Create a new templated repository](https://user-images.githubusercontent.com/66448234/223195510-2160a0b1-115e-4e36-bff1-c1560a4a6b2f.png)
 
-In the meantime, follow the instructions to [Create an app](#create-an-app).
-You can then copy the `main.py`, `requirements.txt`, and `assets/` directory (if present)
-from the example and drop them into an app you create with the template repository.
-:::
+Now in the terminal enter the following commands, but where it says `git clone http...` and replace the `https..` part with your copied text.
+```bash
+cd <to-your-base-directory>
+git clone https://github.com/farm-ng/camera-streamer.git # To clone the camera-streamer repo or other.
+```
+Now you can follow the instructions below as though you were developing a custom application
+and simply replace any `<YOUR-USERNAME/YOUR-REPOSITORY>` placeholder with that of the
+path to the prepared app's Git repository, e.g., `farm-ng/virtual-joystick`.
+
+You can skip any sections specific to setting up a new project,
+including [**Create an app**](#create-an-app) and [**Customizing an app**](#customizing-an-app).
 
 ### Create an app
 
-Use the [`amiga-app-template`](https://github.com/farm-ng/amiga-app-template) repository to create your own custom application with the following instructions.
 
 #### Create a repository from the template
 
-Navigate to the [`amiga-app-template`](https://github.com/farm-ng/amiga-app-template) repository on GitHub.
+To create your own custom application navigate to the [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template) repository on GitHub.
+:::tip
+You need to be signed into your GitHub account to see the option to `Use this template`.
+:::
 
-Click on green *Use this template* button (top right) to create a new repository based on this repo
 
 ![Create a new templated repository](https://user-images.githubusercontent.com/5157099/205272492-356c1540-948e-43dc-8f60-8992caa8d511.gif)
 
-Fill in the details, example below:
+Written instructions (same as video above):
+1. Click on green *Use this template* button (top right) to create a new repository based on this repo
+2. Fill out:
+    - Owner: (your_username)
+    - Repository Name: whatever-you-want
+        - Should be between between 4-17 characters, and
+        - Use underscores (_) or dashes (-) for separating words (no spaces!)
+    -Select Public box
+    -Click [Create repository from template]
+Done!
 
-* Owner: *username*
-* Repository Name: hello-amiga (names should be between 4-17 characters)
-* Set to Public
-
-Once completed, click *[Create repository from template]*
-
-When the repository creation process has completed, you have two options:
+Now that you are done creating your repository, you have two options:
 
 1. Work in your local workspace.
 2. Work in a remote Remote-SSH session using in vs-code.
 
-In both cases you will have to clone the created repository from above
+In both cases you will have to clone the repository you created above by following the commands below.
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+cd <to-your-base-directory>
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
 ```
 
 ## Project structure
@@ -227,13 +152,26 @@ If all goes well, you'll see an dummy kivy application on your screen.
 
 ## Customizing an app
 
-In order to customize an app we leverage the `setup.cfg` that contains all the metadata and package configuration. More: https://setuptools.pypa.io/en/latest/userguide/declarative_config.html
+In order to customize an app we leverage the `setup.cfg` that contains all the metadata and package configuration.
+More can be found [here](https://setuptools.pypa.io/en/latest/userguide/declarative_config.html)!
 
 The most important first steps are to modify the metadata of the project and dependencies:
 
 1. Inside the `setup.cfg` file, adjust the fields under the tag `[metadata]`
-    * For basic users, the package name  goes in the `name` field, and must match with the directory name right under the `libs/` directory.
-    * For advanced users, you can modify as much is complaint with Python `setuptools`.
+    * For basic users, the package name (`project_name` in the project structure above) goes in the `name` field, and must match with the directory name right under the `libs/` directory.
+      * I.e., change both the `name` field and the directory name under `libs/` to your new app name.
+      * VScode should prompt you to change the import names in `test_dummy.py` once you change the directory name.
+        * If not, manually change:
+            ```
+            from amiga_package import __version__
+            from amiga_package import ops
+            ```
+        * To:
+            ```
+            from <project_name> import __version__
+            from <project_name> import ops
+            ```
+    * For advanced users, you can modify as much is compliant with Python `setuptools`.
 2. Adjust the package dependencies
     * Include whatever extra dependency you need in the `install_requires` field.
     * Our only requirements are:
@@ -241,8 +179,7 @@ The most important first steps are to modify the metadata of the project and dep
         * `kivy`: to generate the graphical user interface (GUI).
         * `farm-ng-amiga`: the Farm-ng Amiga public SDK.
 
-In case you face issues, connect with us and the community:
-* https://discourse.farm-ng.com/c/support/5
+In case you face issues, connect with us and the community on [Discourse](https://discourse.farm-ng.com/c/support/5)
 
 
 
@@ -265,59 +202,202 @@ To launch the tests: `pytest test/`
 To run specific tests: `pytest test/test_dummy.py::TestDummy::test_add`
 
 
----
-## SSH Configuration
-Now it is time to configure your *config* file to *ssh* in your Amiga.
+
+## How to SSH into the Amiga
+If this is your very first time ssh into Amiga follow the instructions under `Initial SSH set up` otherwise follow the steps at [**SSH Configuration**](#ssh-configuration).
+
+### Initial SSH set up
+Follow the steps listed below and then continue on to **SSH Configuration**
+to complete the process.
+
+- To set up ssh, make sure the Amiga and your computer are on the same network (check the Wifi on the Amiga and adjust accordingly).
+
+- Then check if a file `~/.ssh/config` exists on your workstation with the steps below.
+`~/` is the home folder on your workstation.
+
+:::info
+
+1. To check if this file exists put the commands below in your terminal. If this file does not exist, you'll have to create it.
+
+```bash
+cd ~ # Navigate to your home folder
+ls -a # Check for a folder called `.ssh/`
+```
+
+2. If `~/.ssh/` does not exist, run:
+
+```bash
+ssh-keygen # create ~/.ssh/ folder
+```
+
+3. Create a file called `config` (no extension) in `~/.ssh`
+
+<Tabs>
+<TabItem value="linux" label="Linux/WSL" default>
+
+```bash
+touch ~/.ssh/config
+```
+</TabItem>
+<TabItem value="macos" label="MacOs" default>
+
+```bash
+cd .ssh
+cat > config # Then press control D on your keyboard
+```
+
+</TabItem>
+</Tabs>
+
+:::
+
+### SSH Configuration
+
+Now it is time to configure your *config* file to *ssh* into your Amiga.
+
+
+<Tabs>
+<TabItem value="linux" label="Linux/WSL" default>
 
 ```bash
 gedit ~/.ssh/config
 ```
+</TabItem>
+<TabItem value="macos" label="MacOs" default>
+
+```bash
+cd .ssh
+open config # Then edit directly in the text editor that pops up and save your changes
+```
+
+</TabItem>
+</Tabs>
+
 Edit your *.ssh/config* file to include the below information.
 
 ```
 Host amiga
-    HostName <intranet ip address>
+    HostName <ip address>
     Port 22
     User amiga
     StrictHostKeyChecking no
 ```
 
-`<intranet ip address>` can be found on the bottom right of the Amiga Brain screen.
+:::tip tips
 
-Copy your SSH key to the Amiga
-* If you do not have a key created
-    ```bash
-    ssh-keygen
-    ```
+* `<ip address>` can be found on the bottom right of the Amiga Brain screen
+* Remove the `<` & `>` symbols.
+* Your development station and your Amiga should be on the same network.
+:::
+This utilizes the IP address displayed on the bottom right of the brain display:
+
+Let’s copy our keys to the robot as well (you may need to do this any time you are working with a new robot)
+
 ```bash
 ssh-copy-id amiga
 ```
+
+Now you are all set up to ssh into the Amiga
+
+#### SSH Amiga
+
+```bash
+ssh amiga
+# When prompted for a user name and password enter the following :
+#    password: amiga
+exit # If you want to exit the ssh
+```
+
+:::caution troubleshooting
+If, after a docker image update, you cannot `ssh` into your amiga or run the `sync.sh` script,
+you may have an error similar to:
+
+```bash
+# $ ssh amiga
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:QsdOvROYuKMa5NqaPTFHwF3kfPCwKaTzgBAj9N/eKCI.
+Please contact your system administrator.
+Add correct host key in /home/<YOUR_NAME>/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/<YOUR_NAME>/.ssh/known_hosts:29
+  remove with:
+  ssh-keygen -f "/home/<YOUR_NAME>/.ssh/known_hosts" -R "192.168.XX.XX"
+ECDSA host key for 192.168.XX.XX has changed and you have requested strict checking.
+Host key verification failed.
+```
+
+Follow the instructions they provide and run:
+
+```bash
+# With correct values for <YOUR_NAME> and IP Address XX.XX
+ssh-keygen -f "/home/<YOUR_NAME>/.ssh/known_hosts" -R "192.168.XX.XX"
+```
+
+You should now be able to `ssh` into your amiga and/or run the `sync.sh` script
+:::
 
 ## Develop and test in the robot
 
 In order to test your app in the robot, we require to push the changes to the remote repository created before and clone it to the robot.
 
 We recommend to follow the next steps:
-
-1. ssh to robot `ssh amiga`
-2. Create an ssh key on the amiga `ssh-keygen`
+:::tip
+Make sure you are on the **Linux** tab when you go to the GitHub docs (links below). The page defaults to the system you are on and doesn't know you are SSH'd into a Linux machine, which the Amiga is.
+:::
+1. ssh to robot `ssh amiga` (if have not configured ssh do so [here](#ssh-configuration))
+2. Create an ssh key for github on the amiga `ssh-keygen`
+    - See: [GitHub Docs: Generate an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 3. Copy and add the key to your github user
-4. Set username in git config
+    - See: [GitHub Docs: Add an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+4. Set your username in git config
 
 ```bash
 git config --global user.email "YOUR_EMAIL"
 git config --global user.name "YOUR-USERNAME"
 ```
 
-5. clone you repo
+5. Clone your repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+cd apps/
+# Replace 'YOUR-USERNAME/YOUR-REPOSITORY' below with the correct link to your new repo
+# You can get this path from the SSH tab on the green '<> code' button of your new repo
+git clone git@github.com:YOUR-USERNAME/YOUR-REPOSITORY.git
 ```
+:::tip
+If you cannot clone with SSH, you can try https:
+```
+# You can get this path from the HTTPS tab on the green '<> code' button of your new repo
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+```
+:::
 
 6. Run the app on your Amiga
+
+:::info
+The first time you launch will take a while, as the requirements have to install.
+:::
+
+If your brain is on the launcher screen, your new app should appear!
+You can launch it by clicking your the app on the screen, and it should begin loading.
+
+Alternatively, you can launch from the command line:
 
 ```bash
 cd YOUR_REPOSITORY/
 ./entry.sh  # install and run
 ```
+
+:::caution
+If you launch your app with the command line,
+it is currently possible to have touch interactions with the launcher behind.
+This will cause other installed apps to unexpectedly launch over the app you are trying to use.
+
+Please see instructions for a workaround under:
+[**FAQ - Brain App Development**](/docs/reference/faq#brain-app-development)
+:::
