@@ -6,9 +6,7 @@ title: Next Steps
 :::caution Warning
 You will not be able to follow the examples and tutorials listed
 below if you have not downloaded the farm-ng-amiga repository.
-To download the repository navigate
-[**here**](/docs/brain/brain-install.md) and follow the
-instructions
+Please first follow the instructions at [Brain ADK Install](/docs/brain/brain-install.md).
 :::
 
 Now that you have downloaded the repository and have all the
