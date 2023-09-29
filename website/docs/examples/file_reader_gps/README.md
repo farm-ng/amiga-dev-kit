@@ -76,15 +76,14 @@ python main.py --file-name <path-to-your-file>
 You should replace &lt;path-to-your-file&gt; with the path to your events binary file (**.bin**).
 :::
 :::tip Tip
-You can also specify a gps interface to read by adding the flag **--uri-path**
-
+You can also specify a gps interface to read by adding the flag **--topic-name**
+:::
 For example:
 
 ```bash
-python main.py --file-name <path-to-your-file> --uri-path /relposned
+python main.py --file-name <path-to-your-file> --topic-name relposned
+python main.py --file-name <path-to-your-file> --topic-name pvt
 ```
-
-:::
 
 If everything worked correctly you should now see a large stream
 of text come up in your terminal!
