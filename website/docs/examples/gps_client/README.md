@@ -3,17 +3,22 @@ id: gps-client
 title: GPS Client
 ---
 
-The [GPS Client example](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/gps_client/main.py)
-acts as a `EventClient` to the GPS service in a standalone Python script.
+# GPS Client Example
 
-It can process two types of GPS messages: `relposned` and `pvt`.
-The user specifies the type of GPS message to parse, and the script reads the corresponding data,
-and prints it to the console.
+The [**GPS Client example**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/gps_client/main.py)
+operates as a standalone Python script,
+in which an `EventClient` to the farm-ng GPS service running on an Amiga brain is created.
 
-To run this example, you need a [**farm-ng brain**](/docs/brain/) and an RTK GPS.
-If running this example on your PC, please ensure it's connected to the same
-network as the brain.
-Alternatively, this example can also just be run directly on the brain.
+The script processes two types of GPS messages: `relposned` and `pvt`.
+The user specifies which GPS message topics to subscribe to in the service configuration.
+The script subscribes to the corresponding data streams and prints the output to the console.
+
+You can either run this example directly on a brain by `ssh`'ing in, or use your local PC.
+If using your local PC, it should be either connected to the same local network as the brain
+or linked to it through tailscale.
+
+Ensure that a [**farm-ng brain**](/docs/brain/), with a GPS receiver, is actively running the GPS service.
+For `relposned` messages, a connection to an RTK base station is also required.
 
 :::info
 There are two types of GPS messages: **PVT** and **RELPOSNED**.
@@ -33,9 +38,9 @@ If you haven't already cloned the `farm-ng-amiga` repository, do
 so [**here**](/docs/brain/brain-install.md#clone-the-repository).
 :::
 
-### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
+## 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
-### 2. Install the example's dependencies
+## 2. Install the example's dependencies
 
 :::tip
 
@@ -44,7 +49,7 @@ example in the brain ADK virtual environment.
 
 :::
 
-#### Setup
+### Setup
 
 :::important Recommended
 Create a virtual environment
@@ -55,14 +60,14 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-#### Install
+### Install
 
 ```bash
 cd py/examples/gps_client
 pip install -r requirements.txt
 ```
 
-### 3. Execture the Python script
+## 3. Execute the Python script
 
 ```bash
 python main.py --service-config service_config.json
@@ -76,7 +81,7 @@ The default value (**'*'**) will stream all messages published by the service.
 
 For example:
 
-```bash
+```json
 {
     "name": "gps",
     "port": 3001,
