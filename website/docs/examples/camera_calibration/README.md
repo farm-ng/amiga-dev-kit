@@ -45,7 +45,7 @@ python3 main.py --service-config service_config.json
 ```
 
 :::info
-By default, the camera address is assumed top be `localhost`.
+By default, the camera address is assumed to be `localhost`.
 :::
 
 ### 5. Customize run

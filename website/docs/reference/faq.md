@@ -212,6 +212,11 @@ title: Frequently Asked Questions
   <summary>Why are other apps launching over the app I'm currently using?
   </summary>
   <div>
+    **deprecation warning**<br/>
+    This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+    This video only applies to brains running Amiga OS `v1.x` versions.<br/>
+    **end warning**<br/>
+    <br/><br/>
     If you launch an app with the command line using an <code>entry.sh</code> script,
     it is currently possible to have touch interactions with the launcher behind.
     This will cause other installed apps to unexpectedly launch over the app you are trying to use.

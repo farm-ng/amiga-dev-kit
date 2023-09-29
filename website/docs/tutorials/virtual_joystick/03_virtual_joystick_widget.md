@@ -4,6 +4,12 @@ title: 03 - Virtual Joystick Widget
 ---
 # Virtual Joystick Widget
 
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
+:::
+
 We will now define a custom widget, the `VirtualJoystickWidget`,
 in kivy and Python to give an introduction to kivy drawing.
 We define the custom widget such that it can be imported just

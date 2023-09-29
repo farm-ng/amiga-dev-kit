@@ -3,6 +3,12 @@ id: import-log-file
 title: Record and Access data
 ---
 
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This example only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated example for brains running `v2.x` Amiga OS software.
+:::
+
 # How to Record and Access data on the Amiga
 
 This tutorial will walk you through how to record field data and
@@ -13,6 +19,12 @@ transfer that data from the Amiga to your local machine.
 The first step in this tutorial is to record some field data. To
 do this, you are going to use the handy Recorder app on the
 Amiga. To learn how to use it, watch the video below (watch until 5:03)
+
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This video only applies to brains running Amiga OS `v1.x` versions.
+:::
+
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/_p0I11p4QF4?start=169"
 title="YouTube video player" frameborder="0"

@@ -4,6 +4,12 @@ title: 03 - Python Implementation
 ---
 # Python Implementation
 
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
+:::
+
 :::info
 The Python implementation of the
 [**camera-streamer**](https://github.com/farm-ng/camera-streamer)
