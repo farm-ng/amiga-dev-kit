@@ -108,6 +108,7 @@ const sidebars = {
       "hardware-tools/recommended-tools",
       "reference/faq",
       "support/support",
+      "support/github-101",
     ],
   },
   "api": [

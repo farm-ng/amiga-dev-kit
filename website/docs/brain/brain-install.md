@@ -30,6 +30,18 @@ git clone https://github.com/farm-ng/farm-ng-amiga.git
 cd farm-ng-amiga/
 ```
 
+:::tip
+If you want to clone with `git` instead of `https`:
+
+```bash
+git clone git@github.com:farm-ng/farm-ng-amiga.git
+```
+
+> NOTE: This requires that you have an ssh key set up.<br/>
+> See [farm-ng Github 101 - Set up an SSH key](/docs/support/github-101.md#set-up-an-ssh-key)
+> for more information and instructions.
+:::
+
 Keep the repo up-to-date with:
 
 ```bash
@@ -37,14 +49,6 @@ Keep the repo up-to-date with:
 git checkout main
 git pull
 ```
-
-:::tip
-If you want to setup an ssh key and clone with git instead of https, you can:
-
-1. [Create a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
-2. [Connect to GitHub with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
-3. Clone with `git clone git@github.com:farm-ng/farm-ng-amiga.git`
-:::
 
 ### [Recommended] Set up virtual environment
 
