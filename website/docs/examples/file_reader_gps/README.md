@@ -72,21 +72,24 @@ python main.py --file-name <path-to-your-file>
 
 :::info
 You should replace &lt;path-to-your-file&gt; with the path to your events binary file (**.bin**).
-
-By default, the msg-type is set to relposned (relative to the base station).
-You can also use pvt as an option.
 :::
+:::tip Tip
+You can also specify a gps interface to read by adding the flag **--uri-path**
+
+For example:
 
 ```bash
-python main.py --file-name <path-to-file>/events_12052022115852.bin --msg-type pvt
+python main.py --file-name <path-to-your-file> --uri-path /relposned
 ```
+
+:::
 
 If everything worked correctly you should now see a large stream
 of text come up in your terminal!
 
 The output should look something like this:
 
-```Python
+```bash
 All available topics: ['/gps/pvt', '/gps/relposned']
 Found 11 packets of gps/relposned
 
@@ -99,9 +102,9 @@ Relative pose length: 506481.000063
 Accuracy north: 0.0010000000474974513
 Accuracy east: 0.0010000000474974513
 Accuracy down: 0.0011399999493733048
-Carr soln: 2
+Carrier solution: 2
 GNSS fix ok: True
-################################
+--------------------------------------------------
 ```
 
-Congrats you are done!
+**Congrats you are done!**
