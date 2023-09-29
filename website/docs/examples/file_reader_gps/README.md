@@ -1,6 +1,6 @@
 ---
 id: file-reader-gps
-title: File Reader GPS Example
+title: File Reader GPS
 ---
 
 This [**file_reader_gps_example**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/file_reader_gps/main.py)
@@ -75,14 +75,13 @@ You should replace &lt;path-to-your-file&gt; with the path to your events binary
 :::
 :::tip Tip
 You can also specify a gps interface to read by adding the flag **--uri-path**
-
+:::
 For example:
 
 ```bash
-python main.py --file-name <path-to-your-file> --uri-path /relposned
+python main.py --file-name <path-to-your-file> --uri-path relposned
+python main.py --file-name <path-to-your-file> --uri-path pvt
 ```
-
-:::
 
 If everything worked correctly you should now see a large stream
 of text come up in your terminal!
