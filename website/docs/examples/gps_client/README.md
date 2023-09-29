@@ -68,15 +68,30 @@ pip install -r requirements.txt
 python main.py --service-config service_config.json
 ```
 
-:::tip Tip
-You can also specify a gps interface (`relposned` or `pvt`) to read by adding the flag **--uri-path**
-:::
+### 4. Customize the run
+
+You can also specify a gps interface (`/relposned` or `/pvt`) to read by
+modifying the `uri.path` in the `service_config.json` file.
+The default value (**'*'**) will stream all messages published by the service.
 
 For example:
 
 ```bash
-python main.py --service-config service_config.json --uri-path /relposned
-python main.py --service-config service_config.json --uri-path /pvt
+{
+    "name": "gps",
+    "port": 3001,
+    "host": "localhost",
+    "log_level": "INFO",
+    "subscriptions": [
+        {
+            "uri": {
+                "path": "/relposned",
+                "query": "service_name=gps"
+            },
+            "every_n": 1
+        }
+    ]
+}
 ```
 
 If everything worked correctly you should now see a large stream
