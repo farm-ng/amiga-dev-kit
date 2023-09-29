@@ -106,6 +106,12 @@ install the
 
 ### [Record and Access data](/docs/examples/import_log_file/README.md)
 
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This example only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated example for brains running `v2.x` Amiga OS software.
+:::
+
 This tutorial walks you through recording field data and
 offloading it to your local machine.
 
@@ -141,6 +147,12 @@ followed in order.
 
 ### [00 - Tutorial Introduction](/docs/tutorials/introduction/tutorial-introduction)
 
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
+:::
+
 This tutorial introduces necessary background knowledge and walks
 you through the
 [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template).
@@ -151,6 +163,12 @@ The topics covered in this tutorial include:
 - GRPC / asyncio application development
 
 ### [01 - Camera Streamer Tutorial](/docs/tutorials/camera_streamer/camera-streamer-overview)
+
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
+:::
 
 This tutorial is designed to teach you to implement the
 `OakCameraClient` in a GUI application using
@@ -165,6 +183,12 @@ The topics covered in this tutorial include:
 - Streaming an Oak camera with the camera client
 
 ### [02 - Virtual Joystick Tutorial](/docs/tutorials/virtual_joystick/virtual-joystick-overview)
+
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
+:::
 
 This tutorial is designed to enable you to develop your own
 custom applications that uses camera streams and controls your
@@ -183,6 +207,23 @@ The topics covered in this tutorial include:
 
 ### [Developing Custom Applications](/docs/brain/custom-applications.mdx)
 
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
+:::
+
 This takes you through the steps of creating your own app with
 the use of an app template and deploying and testing it on the
 Amiga.
+
+### [Amiga ROS Bridge](/docs/brain/ros-bridge.md)
+
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
+:::
+
+This takes you through the steps of setting up the Amiga ROS bridge
+for controlling the Amiga robot using your existing ROS nodes.
