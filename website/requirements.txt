@@ -1,2 +1,2 @@
 ../farm-ng-amiga
-pydoc-markdown==4.6.3
+pydoc-markdown>=4.6.3
