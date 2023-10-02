@@ -5,8 +5,9 @@ title: Multi Client GeoImage
 
 ### [Link to `multi_client_geoimage/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/multi_client_geoimage/main.py)
 
-This example shows how to leverage a multi client application to create a geoimage from the `oak` and `gps` services. We show how to implement a simple
-technique to synchronize the images and the gps data.
+This example shows how to leverage a multi client application to create a geoimage
+from the `oak` and `gps` services. We show how to implement a simple technique to
+synchronize the images and the gps data.
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
@@ -30,8 +31,10 @@ pip3 install -r requirements.txt
 
 ### 3. Create a client wrapper
 
-We first create a `GeoTaggedImageSubscriber` class that will encapsulate the needed clients and the subscriptions. In order to showcase the synchronization
-technique, we will also create a queue to store the images since they come in faster than we can process them.
+We first create a `GeoTaggedImageSubscriber` class that will encapsulate
+the needed clients and the subscriptions. In order to showcase the synchronization
+technique, we will also create a queue to store the images since they come
+in faster than we can process them.
 
 ```python
 class GeoTaggedImageSubscriber:
@@ -58,15 +61,21 @@ class GeoTaggedImageSubscriber:
         self.image_queue: asyncio.Queue = asyncio.Queue()
 ```
 
-This class will also have a method called `_subscribe` that will allow us to subscribe to the particular service. In the first place, we show how to filter the message type and
-if the message is of type `farm_ng.oak.proto.OakFrame` we store it in the queue. If the message is of type `farm_ng.gps.proto.GpsFrame` we try to find the closest image in the queue.
+This class will also have a method called `_subscribe` that will allow us to
+subscribe to the particular service. In the first place, we show how to filter the message type and
+if the message is of type `farm_ng.oak.proto.OakFrame` we store it in the queue.
+If the message is of type `farm_ng.gps.proto.GpsFrame` we try to find the closest image in the queue.
 
-In this example, we use the `get_stamp_by_semantics_and_clock_type` function to get the timestamp of the event. This function is used to get the timestamp of the event
-based on the semantics and the clock type. The semantics is the type of event and the clock type is the type of clock used to timestamp the event.
+In this example, we use the `get_stamp_by_semantics_and_clock_type` function to get
+the timestamp of the event. This function is used to get the timestamp of the event
+based on the semantics and the clock type. The semantics is the type of event and
+the clock type is the type of clock used to timestamp the event.
 
-The threshold used to synchronize the images and the gps data is defined by the `stamp_diff` variable. This threshold depends on the precision of your application.
+The threshold used to synchronize the images and the gps data is defined by
+ the `stamp_diff` variable. This threshold depends on the precision of your application.
 
-For educational purposes, we left a lot of `print` statements in the code to visualize the flow of the program. We recommend to remove them later in your application.
+For educational purposes, we left a lot of `print` statements in the code to
+visualize the flow of the program. We recommend to remove them later in your application.
 
 ```python
 async def _subscribe(self, subscription: SubscribeRequest) -> None:
@@ -111,7 +120,8 @@ async def _subscribe(self, subscription: SubscribeRequest) -> None:
 ```
 
 In addition, we provide a `config.json` file example that contains the configuration of the
-service. Notice that the subscribers are against the `oak0` and `gps` services, in particular to the `/rgb` and `/pvt` paths respectively.
+service. Notice that the subscribers are against the `oak0` and `gps` services, 
+in particular to the `/rgb` and `/pvt` paths respectively.
 
 ```json
 {
