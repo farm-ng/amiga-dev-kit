@@ -30,8 +30,10 @@ and [**`protobuf`**](https://developers.google.com/protocol-buffers/docs/pythont
 
 ### Create the service
 
-We first create a service that will publish the counter value at a certain
-rate. For this, we will create a `counter.py` program that will
+We first create a [service](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/service_counter/client.py)
+that will publish the counter value at a certain
+rate. For this, we will create a [`counter.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/service_counter/counter.py)
+program that will
 instantiate the `EventServiceGrpc` and will run the service leveraging
 the `serve` method with the `asyncio` event loop.
 

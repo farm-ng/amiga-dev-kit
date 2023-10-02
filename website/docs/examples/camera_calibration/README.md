@@ -5,7 +5,8 @@ title: Camera Calibration
 
 ## Camera Calibration
 
-This example operates as a standalone Python script,
+This [example](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/camera_calibration/main.py)
+operates as a standalone Python script,
 in which an `EventClient` to an Oak camera service running on an Amiga brain is created.
 The calibration of the Oak camera is printed in the terminal.
 

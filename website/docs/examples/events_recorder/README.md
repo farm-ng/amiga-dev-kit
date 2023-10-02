@@ -5,7 +5,8 @@ title: Events Recorder
 
 ## Events Recorder
 
-In this example we show how to record events from farm-ng-brain using
+In [this example](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/event_recorder/main.py)
+we show how to record events from farm-ng-brain using
 the `EventClient` class.
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)

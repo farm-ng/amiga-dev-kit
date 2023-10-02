@@ -3,7 +3,7 @@ id: filter-client
 title: Filter Client
 ---
 
-### [Link to `filter_client/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/filter_client/main.py)
+### [Link to `filter_client/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/filter_client/main.py)
 
 This example streams the results from the state estimation filter running on the Amiga.
 

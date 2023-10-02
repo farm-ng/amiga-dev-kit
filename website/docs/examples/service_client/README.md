@@ -12,6 +12,8 @@ class encapsulating the gRPC server.
 
 In the following example, we will explain how to define your own service
 and how to use the `EventClient` to subscribe to the service.
+You will need a file to create the [service](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/service_client/service.py)
+and another one to create the [client](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/service_client/client.py)
 
 ### Requirements
 
