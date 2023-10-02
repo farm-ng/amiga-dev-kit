@@ -120,7 +120,7 @@ async def _subscribe(self, subscription: SubscribeRequest) -> None:
 ```
 
 In addition, we provide a `config.json` file example that contains the configuration of the
-service. Notice that the subscribers are against the `oak0` and `gps` services, 
+service. Notice that the subscribers are against the `oak0` and `gps` services,
 in particular to the `/rgb` and `/pvt` paths respectively.
 
 ```json
