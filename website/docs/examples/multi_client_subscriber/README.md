@@ -21,7 +21,7 @@ example in the brain ADK virtual environment.
 
 ```bash
 # assuming you're already in the amiga-dev-kit/ directory
-cd farm-ng-amiga/py/examples/camera_client
+cd farm-ng-amiga/py/examples/multi_client_subscriber
 ```
 
 ```bash
