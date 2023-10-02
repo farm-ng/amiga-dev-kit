@@ -78,7 +78,7 @@ class MultiClientSubscriber:
         await asyncio.gather(*tasks)
 ```
 
-In addtion, we provide a `config.json` file example that contains the configuration of the
+In addition, we provide a `config.json` file example that contains the configuration of the
 service. The `config.json` file contains the following fields:
 
 ```json
