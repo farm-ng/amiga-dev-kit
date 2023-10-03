@@ -143,6 +143,8 @@ const sidebars = {
         "examples/camera_settings/camera-settings",
         "examples/camera_pointcloud/camera-pointcloud",
         "examples/motor_state/motor-state",
+        "examples/multi_client_subscriber/multi-client-subscriber",
+        "examples/multi_client_geoimage/multi-client-geoimage",
         "examples/vehicle_twist/vehicle-twist",
         "examples/gps_client/gps-client",
         "examples/filter_client/filter-client",
