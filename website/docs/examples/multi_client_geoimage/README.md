@@ -9,6 +9,16 @@ This example shows how to leverage a multi client application to create a geoima
 from the `oak` and `gps` services. We show how to implement a simple technique to
 synchronize the images and the gps data.
 
+You can either run this example directly on a brain by `ssh`'ing in, or use your local PC.
+To successfully run this example, ensure that a [**farm-ng brain**](/docs/brain/) running
+Oak cameras and GPS is active. Your local PC should be either connected to the same local
+ network as the brain or linked to it through tailscale.
+
+:::tip
+
+We recommend to read first the
+[**`Multi Client Subscriber`**](/docs/examples/multi-client-subscriber) tutorial.
+
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
 ### 2. Install the example's dependencies
@@ -120,8 +130,13 @@ async def _subscribe(self, subscription: SubscribeRequest) -> None:
 ```
 
 In addition, we provide a `config.json` file example that contains the configuration of the
-service. Notice that the subscribers are against the `oak0` and `gps` services,
-in particular to the `/rgb` and `/pvt` paths respectively.
+service. Notice that we subscribe to the `oak0` and `gps` services,
+in particular to the `/left` and `/pvt` paths respectively.
+
+:::tip
+If you want to better understand the different GPS message types,
+make sure to check this [link](/docs/examples/file_reader_gps/).
+:::
 
 ```json
 {
@@ -172,62 +187,26 @@ you should see the following output:
 ```bash
 Received event from gps/pvt
 Could not sync image and gps data
-Received event from oak0/rgb
-Received event from oak0/rgb
-Received event from oak0/rgb
-Received event from oak0/rgb
-Received event from oak0/rgb
+Received event from oak0/right
+Received event from oak0/right
+Received event from oak0/right
+Received event from oak0/right
 Received event from gps/pvt
-Skipping image because stamp_diff is too large: 0.4036272089870181
-Skipping image because stamp_diff is too large: 0.30224284599535167
-Skipping image because stamp_diff is too large: 0.19944817599025555
-Skipping image because stamp_diff is too large: 0.09692963500856422
-Synced image and gps data with stamp_diff: 0.006475306989159435
-Received event from oak0/rgb
-Received event from oak0/rgb
-Received event from oak0/rgb
-Received event from oak0/rgb
+Skipping image because stamp_diff is too large: 0.3942121310028597
+Skipping image because stamp_diff is too large: 0.2926876120036468
+Skipping image because stamp_diff is too large: 0.1811352020013146
+Synced image and gps data with stamp_diff: 0.07548795500042615
+Received event from oak0/right
+Received event from oak0/right
+Received event from oak0/right
+Received event from oak0/right
+Received event from oak0/right
 Received event from gps/pvt
-Skipping image because stamp_diff is too large: 0.32480611599748954
-Skipping image because stamp_diff is too large: 0.22475609098910354
-Skipping image because stamp_diff is too large: 0.12418683301075362
-Synced image and gps data with stamp_diff: 0.024251561000710353
-Received event from oak0/rgb
-Received event from oak0/rgb
-Received event from oak0/rgb
-Received event from gps/pvt
-Skipping image because stamp_diff is too large: 0.23738648000289686
-Skipping image because stamp_diff is too large: 0.09838183000101708
-Synced image and gps data with stamp_diff: 0.039805378997698426
-Received event from oak0/rgb
-Received event from oak0/rgb
-Received event from oak0/rgb
-Received event from oak0/rgb
-Received event from gps/pvt
-Skipping image because stamp_diff is too large: 0.3453739270044025
-Skipping image because stamp_diff is too large: 0.24114773501059972
-Skipping image because stamp_diff is too large: 0.14996879699174315
-Skipping image because stamp_diff is too large: 0.05010190900065936
-Could not sync image and gps data
-Received event from oak0/rgb
-Received event from oak0/rgb
-Received event from oak0/rgb
-Received event from oak0/rgb
-Received event from gps/pvt
-Skipping image because stamp_diff is too large: 0.36291974800406024
-Skipping image because stamp_diff is too large: 0.2664781129860785
-Skipping image because stamp_diff is too large: 0.1661627120047342
-Skipping image because stamp_diff is too large: 0.06768680198001675
-Could not sync image and gps data
-Received event from oak0/rgb
-Received event from oak0/rgb
-Received event from oak0/rgb
-Received event from oak0/rgb
-Received event from gps/pvt
-Skipping image because stamp_diff is too large: 0.38380739899002947
-Skipping image because stamp_diff is too large: 0.28419670299626887
-Skipping image because stamp_diff is too large: 0.1739979569974821
-Skipping image because stamp_diff is too large: 0.07935888497740962
+Skipping image because stamp_diff is too large: 0.3935612499990384
+Skipping image because stamp_diff is too large: 0.3073112889978802
+Skipping image because stamp_diff is too large: 0.20796539900038624
+Skipping image because stamp_diff is too large: 0.10631262399692787
+Synced image and gps data with stamp_diff: 0.00445908099936787
 ```
 
 :::tip
