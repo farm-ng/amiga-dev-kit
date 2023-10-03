@@ -6,7 +6,8 @@ title: File Converter
 
 # File Converter Example
 
-> This will take the `*.bin` log file for a given Oak Camera Stream or snapshot
+> [This example](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/file_converter/main.py)
+will take the `*.bin` log file for a given Oak Camera Stream or snapshot
 > captured by the Recorder app on an Amiga brain and convert it to either
 > `*.mp4` videos or `*.jpg` images for each view stream.
 
@@ -40,7 +41,7 @@ See **[How to Record and Access data on the Amiga](/docs/examples/import_log_fil
 for instructions.
 
 ```bash
-python main.py --file-name events_09162022160753_000000.bin
+python main.py --file-name <path-to-file>/2023_09_29_17_52_35_070804_dubnium-durian.0000.bin
 ```
 
 ### Additional args

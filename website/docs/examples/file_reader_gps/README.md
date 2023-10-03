@@ -5,7 +5,7 @@ title: File Reader GPS
 
 # File Reader GPS Example
 
-This [**file_reader_gps_example**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/file_reader_gps/main.py)
+This [**file_reader_gps_example**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/file_reader_gps/main.py)
 provides a utility for reading and parsing GPS messages from the event file.
 It can process two types of GPS messages: `relposned` and `pvt`.
 The user specifies the type of GPS message to parse, and the script reads the corresponding data,
@@ -34,11 +34,7 @@ so [**here**](/docs/brain/brain-install.md#clone-the-repository).
 Now you are going to download the log file that you will use in
 this example.
 
-:::caution deprecation warning
-This file is temporarily oudated
-:::
-
-[**Click here to download**](https://farm-ng-dev-auto-plot-mvp.s3.us-west-2.amazonaws.com/datasets/western-growers-2022-12-05/events_12052022115852.bin)
+[**Click here to download**](https://farm-ng-dev-auto-plot-mvp.s3.us-west-2.amazonaws.com/datasets/examples_log_file/2023_09_29_17_52_35_070804_dubnium-durian.0000.bin)
 
 :::tip
 If you want to use your own log file, there is another tutorial

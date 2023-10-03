@@ -5,7 +5,8 @@ title: Camera Settings
 
 ## Camera Settings
 
-This example operates as a standalone Python script,
+[This example](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/camera_settings/main.py)
+operates as a standalone Python script,
 in which an `EventClient` to an Oak camera service running on an Amiga brain is created.
 The settings of an Oak camera camera are set,
 and the returned result is printed in the terminal.

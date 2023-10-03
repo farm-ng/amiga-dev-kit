@@ -7,7 +7,7 @@ title: File Reader
 
 In this example you will learn how to upload a given log file and
 use it to run the
-[**file_reader example**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader).
+[**file_reader example**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/py/examples/file_reader/main.py).
 
 :::info
 If you haven't already cloned the `farm-ng-amiga` repository, do
@@ -21,14 +21,9 @@ example you can skip to [**set up**](#setup)
 
 ## Download the log file
 
-:::caution deprecation warning
-This log file comes from a brain running Amiga OS `v1.x` versions.<br/>
-Please check back for an updated log file from a brain running `v2.x` Amiga OS software.
-:::
-
 Now you are going to download the log file that you will use in
 this example.
-[**Click here to download**](https://farm-ng-dev-auto-plot-mvp.s3.us-west-2.amazonaws.com/datasets/western-growers-2022-12-05/events_12052022115852.bin)
+[**Click here to download**](https://farm-ng-dev-auto-plot-mvp.s3.us-west-2.amazonaws.com/datasets/examples_log_file/2023_09_29_17_52_35_070804_dubnium-durian.0000.bin)
 
 ## [Optional] Make a Data folder
 
@@ -80,7 +75,7 @@ Optionally, you can change the camera that is played back from
 the default of `oak0`. E.g., and the view `rgb`. E.g.
 
 ```bash
-python main.py --file-name <path-from-above>/events_12052022115852.bin \
+python main.py --file-name <path-from-above>/2023_09_29_17_52_35_070804_dubnium-durian.0000.bin \
                --camera-name oak1 --view-name rgb
 ```
 
