@@ -19,6 +19,8 @@ Oak cameras and GPS is active. Your local PC should be either connected to the s
 We recommend to read first the
 [**`Multi Client Subscriber`**](/docs/examples/multi_client_subscriber) tutorial.
 
+:::
+
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
 ### 2. Install the example's dependencies
@@ -156,7 +158,7 @@ make sure to check this [link](/docs/examples/file_reader_gps/).
       "subscriptions": [
         {
           "uri": {
-            "path": "/rgb",
+            "path": "/left",
             "query": "service_name=oak0"
           },
           "every_n": 2
