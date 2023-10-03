@@ -17,7 +17,7 @@ Oak cameras and GPS is active. Your local PC should be either connected to the s
 :::tip
 
 We recommend to read first the
-[**`Multi Client Subscriber`**](/docs/examples/multi_client_subscriber/README) tutorial.
+[**`Multi Client Subscriber`**](/docs/examples/multi_client_subscriber) tutorial.
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
