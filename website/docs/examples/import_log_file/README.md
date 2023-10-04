@@ -19,7 +19,7 @@ There are two recorder apps, one of them is deprecated and will soon be removed.
 Make sure you select the **Recorder** app as seen on the picture below.
 :::
 
-![Placeholder1](https://github.com/farm-ng/workspace/assets/39603677/59926f6e-0b20-448f-bd64-c1884e1ab2e4)
+![Screenshot from 2023-10-04 11-46-02](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/f26485f5-d71b-4aa6-adc8-986216b5b761)
 
 On the **Recorder** app, select what data you want to record by checking
 the boxes under the column `Include URI` to indicate which topics to record.
@@ -27,9 +27,9 @@ the boxes under the column `Include URI` to indicate which topics to record.
 Then use the `Start` and `Stop` buttons to start/stop collecting data.
 
 While recording data, a message displaying **Recording in Progress** will pop up
-on the left hand side of the menu.
+on the left-hand side of the menu.
 
-![Placeholder2](https://github.com/farm-ng/workspace/assets/39603677/59926f6e-0b20-448f-bd64-c1884e1ab2e4)
+![Screenshot from 2023-10-04 11-46-43](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/8464afd9-88fb-43b0-b624-1e308e13c36b)
 
 :::info Info
 Change the values on the `everyN` column to adjust the frequency of data collection.
