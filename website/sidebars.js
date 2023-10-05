@@ -32,6 +32,7 @@ const sidebars = {
     ],
     "Getting Started": [
       "amiga_quick_start/amiga-quick-start",
+      "ssh/ssh",
       "brain/brain-install",
       "brain/next-steps",
     ],
