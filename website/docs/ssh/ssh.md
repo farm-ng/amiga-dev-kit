@@ -4,6 +4,7 @@ title: Access and Develop on the Brain
 ---
 
 Users can remotely access and start developing on the brain via `SSH` access.
+The only requirement is to be connected to the same network of your Amiga.
 
 ### Sign up for a farm-ng-user account
 

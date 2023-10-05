@@ -3,6 +3,7 @@ id: faq
 title: Frequently Asked Questions
 ---
 
+
 ## Using the REPL
 
 <details>
@@ -127,6 +128,15 @@ title: Frequently Asked Questions
 </details>
 
 ## General
+
+<details>
+  <summary>How do I access and develop on the brain?</summary>
+  <div>
+     We have a dedicated webpage to help you connect your Amiga.
+     Check out this <a href="/docs/ssh/">
+      tutorial</a>
+    </div>
+</details>
 
 <details>
   <summary>How do I update the Dashboard Firmware?</summary>
