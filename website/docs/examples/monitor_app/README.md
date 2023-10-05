@@ -3,6 +3,51 @@ id: monitor-app
 title: Monitor App
 ---
 
+## Building an App: Understanding the Basics
+
+Every modern app typically consists of two main parts: the backend and the frontend.
+Let's dive into what each of these components does and how they interact with each other.
+
+Backend:
+
+The backend is like the brain of your app. It processes data, makes calculations,
+ communicates with databases, and performs all the logical operations.
+  When you hear terms like "server," "API," or "database," they're usually related to the backend.
+
+In our example, we're using FastAPI to build our backend. FastAPI is a modern, high-performance
+web framework for building APIs. Coupled with the farm-ng brain services, our backend will
+fetch and serve data efficiently and securely to the frontend.
+
+Key Points:
+
+- Handles data processing, storage, and retrieval.
+- Communicates with other services and databases.
+- Secures data and ensures only authorized users can access it.
+
+Frontend:
+
+The frontend is the part of the app users see and interact with. Think of it as the face of your app.
+ It includes everything that you can touch, click, or interact with:
+  buttons, images, text inputs, animations, and more.
+
+For our frontend, we're using React. React is a popular JavaScript library for building
+ user interfaces. It allows developers to create responsive and interactive UI components easily.
+
+Key Points:
+
+- Displays data fetched from the backend.
+- Interacts with users, capturing their inputs and preferences.
+- Updates in real-time, ensuring users always see the latest data.
+
+### How They Work Together
+
+- A user interacts with the frontend (e.g., clicks a button to fetch information).
+- The frontend sends a request to the backend, asking for specific data.
+- The backend processes the request, fetches the data (from databases, other services,
+ or the farm-ng brain services in our case).
+- Once the data is retrieved, the backend sends it back to the frontend.
+- The frontend then displays this data to the user in a readable and interactive manner.
+
 ### [Link to `monitor_app/`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/monitor_app/)
 
 In this example we will show how to create a simple web application to stream and monitor
@@ -377,7 +422,6 @@ you should see the following output:
 Now you can open the browser and go to `http://localhost:5173/` and you should see the following:
 
 ![Screenshot from 2023-10-04 15-40-28](https://github.com/farm-ng/amiga-dev-kit/assets/5157099/ff25d6c5-aa51-49a4-b8e0-398e12d5f00a)
-
 
 ::: tip
 
