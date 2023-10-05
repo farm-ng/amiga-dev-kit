@@ -376,7 +376,8 @@ you should see the following output:
 
 Now you can open the browser and go to `http://localhost:5173/` and you should see the following:
 
-![monitor_app](./monitor_app.png)
+![Screenshot from 2023-10-04 15-40-28](https://github.com/farm-ng/amiga-dev-kit/assets/5157099/ff25d6c5-aa51-49a4-b8e0-398e12d5f00a)
+
 
 ::: tip
 
