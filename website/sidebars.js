@@ -148,6 +148,7 @@ const sidebars = {
         "examples/vehicle_twist/vehicle-twist",
         "examples/gps_client/gps-client",
         "examples/filter_client/filter-client",
+        "examples/monitor_app/monitor-app",
         "examples/vnc_viewer/vnc-viewer",
         "examples/service_client/service-client",
         "examples/service_counter/service-counter",
