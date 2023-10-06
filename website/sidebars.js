@@ -148,12 +148,13 @@ const sidebars = {
         "examples/vehicle_twist/vehicle-twist",
         "examples/gps_client/gps-client",
         "examples/filter_client/filter-client",
-        "examples/record_track/record-track",
         "examples/monitor_app/monitor-app",
         "examples/vnc_viewer/vnc-viewer",
         "examples/service_client/service-client",
         "examples/service_counter/service-counter",
         "examples/service_propagation/service-propagation",
+        "examples/record_track/record-track",
+        "examples/controller_track/controller-track",
     ],
     "Brain App Tutorials" : {
         "00 - Tutorial Introduction" :[

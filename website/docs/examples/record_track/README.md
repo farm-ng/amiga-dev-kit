@@ -15,6 +15,14 @@ we use the `/track` output stream from the filter service.
 The requirements to run this example are to have a
 [**farm-ng brain**](/docs/intelligence-kit/brain/brain-v2/) running the `filter service`.
 
+:::info
+The state estimation filter service is a client of the following services:
+
+- canbus
+- gps
+- oak0
+:::
+
 You can either run this example directly on a brain by `ssh`'ing in,
 or use your local PC.
 If using your local PC, it should be either connected to the same local network as the brain
@@ -28,10 +36,11 @@ A valid path for the existing controller is one with motion that is either turn-
 Forward motion can be either straight or curved.
 The filter service will **NOT** add to the track under certain conditions
 that would make following this track difficult or undesirable.
-This includes:
+These include:
 
 - Poor state estimation results (lack of filter convergence)
 - State estimation missing required sensor data
+- GPS service is not connected to an RTK base station
 - Driving backwards
 - Discontinuities in the path
 
@@ -68,14 +77,32 @@ By default, the host address is assumed to be `localhost`.
 Once you've started the script,
 drive your Amiga along the route you wish to record as a track for the controller to later follow.
 When you are done driving the track, kill the script with `ctrl` + `C`.
-<!-- You can then set the Amiga to follow this track by following the
-[**Controller Track Example**](/docs/examples/controller_track). -->
+You can then set the Amiga to follow this track by following the
+[**Controller Follow Track Example**](/docs/examples/controller_track).
 
 ## 4. Customize the run
 
 If you want to record the track on your laptop, by connecting with a gRPC client over Wifi,
 you can change the `host` field in `service_config.json` from `localhost`
 to your robot's name (e.g., `aluminum-pineapple`).
+
+```json
+{
+    "name": "filter",
+    "port": 20001,
+    "host": "aluminum-pineapple",
+    "log_level": "INFO",
+    "subscriptions": [
+        {
+            "uri": {
+                "path": "/track",
+                "query": "service_name=filter"
+            },
+            "every_n": 1
+        }
+    ]
+}
+```
 
 You can optionally specify the `--output-dir` to change the default directory
 in which your track file will be saved.
