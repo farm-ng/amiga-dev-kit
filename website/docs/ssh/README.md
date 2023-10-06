@@ -4,7 +4,7 @@ title: Access and Develop on the Brain
 ---
 
 Users can remotely access and start developing on the brain via `SSH` access.
-The only requirement is to be connected to the same network of your Amiga.
+The only requirement is to **be connected to the same network of your Amiga**.
 
 ### Sign up for a farm-ng-user account
 
@@ -41,15 +41,15 @@ without using a password.
 
 #### 8. Open a terminal window on your computer and type
 
-:::tip TIP
-You can skip this step if you already have a `~/.ssh/id_rsa.pub` public key
-on your computer that you'd like to use.
-:::
-
 ```bash
 cd ~ # This will take you to your home directory
 ssh-keygen # This creates an ssh key
 ```
+
+:::tip TIP
+You can skip this step if you already have a `~/.ssh/id_rsa.pub` public key
+on your computer that you'd like to use.
+:::
 
 #### 9. When prompted, press Enter twice to use a blank passphrase
 
@@ -59,7 +59,7 @@ ssh-keygen # This creates an ssh key
 cat ~/.ssh/id_rsa.pub # Copy it with Shift + Ctrl + C
 ```
 
-#### 11. Copy your ssh key to the fleet manager website (`New SSH Key`)
+#### 11. Copy your SSH key to the fleet manager website (`New SSH Key`)
 
 #### 12. Assign a name to that key (e.g., my-lenovo-pc)
 
@@ -73,7 +73,7 @@ They will grant you access to your robot.
 
 Congratulations, you're done setting up your account!
 
-:::tip Tip
+:::info INFO
 Each SSH key corresponds to a single PC.
 If you need to access the Amiga from multiple PCs, you will need to repeat steps 7-13 for each PC.
 :::
@@ -94,7 +94,7 @@ Open a terminal window and type the following command:
 
 ```bash
 gedit ~/.ssh/config # This will open your .ssh/config
-# Here we're using gedit as our edit, feel free to choose one of your choice (e.g., vin, nano)
+# Here we're using gedit as our text manager, feel free to choose another one (e.g., vin, nano)
 ```
 
 Hit **Enter** and then add the following lines to your file:
@@ -108,7 +108,7 @@ Host <robot-name>
 Replace `<robot-name>` with your robot name (e.g., dubinium-durian).
 You should have received your robot name via email.
 
-Replace `<username` with your username (e.g., john-doe).
+Replace `<username>` with your username (e.g., john-doe).
 Make sure to save the file before you close it!
 
 </TabItem>
@@ -163,7 +163,7 @@ ssh farm-ng-user-<your-farm-ng-username>@<robot-name>
 # e.g., farm-ng-user-john-doe@dubnium-durian
 ```
 
-:::tip INFO
+:::tip TIP
 If you have configured your SSH Connections (`.ssh/config`)
 you can connect to the robot by simply typing:
 
