@@ -140,46 +140,46 @@ we will render the 3d detection into the original image.
 
 ```python
 def detect_pose(self, frame: np.ndarray, camera_matrix: np.ndarray, distortion_coeff: np.ndarray):
-"""Detect ArUco markers in an image frame.
+    """Detect ArUco markers in an image frame.
 
-    Args:
-        frame (np.ndarray): The image frame in rgb format with shape HxWx3.
-        camera_matrix (np.ndarray): The camera matrix with shape 3x3.
-        distortion_coeff (np.ndarray): The distortion coefficients with shape 1x5.
-"""
-assert len(frame.shape) == 3 and frame.shape[2] == 3, "image must be rgb"
+        Args:
+            frame (np.ndarray): The image frame in rgb format with shape HxWx3.
+            camera_matrix (np.ndarray): The camera matrix with shape 3x3.
+            distortion_coeff (np.ndarray): The distortion coefficients with shape 1x5.
+    """
+    assert len(frame.shape) == 3 and frame.shape[2] == 3, "image must be rgb"
 
-# Convert the image to grayscale
-gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
+    # Convert the image to grayscale
+    gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
 
-# Detect the markers
-corners, _, _ = self._detector.detectMarkers(gray)
+    # Detect the markers
+    corners, _, _ = self._detector.detectMarkers(gray)
 
-print(f"Detected {len(corners)} markers")
+    print(f"Detected {len(corners)} markers")
 
-rvec = []
-tvec = []
-frame_vis = frame
+    rvec = []
+    tvec = []
+    frame_vis = frame
 
-for corner in corners:
-    # Estimate the pose of the marker
-    _rvec, _tvec, _ = cv2.aruco.estimatePoseSingleMarkers(
-        corner, self._marker_size, camera_matrix, distortion_coeff
-    )
+    for corner in corners:
+        # Estimate the pose of the marker
+        _rvec, _tvec, _ = cv2.aruco.estimatePoseSingleMarkers(
+            corner, self._marker_size, camera_matrix, distortion_coeff
+        )
 
-    # sotre the results
-    rvec.append(_rvec)
-    tvec.append(_tvec)
+        # sotre the results
+        rvec.append(_rvec)
+        tvec.append(_tvec)
 
-    # Draw the detected marker and its pose
-    frame_vis = cv2.drawFrameAxes(
-        frame, camera_matrix, distortion_coeff, _rvec, _tvec, self._marker_size * 0.5
-    )
+        # Draw the detected marker and its pose
+        frame_vis = cv2.drawFrameAxes(
+            frame, camera_matrix, distortion_coeff, _rvec, _tvec, self._marker_size * 0.5
+        )
 
-# Draw the detected markers
-frame_vis = cv2.aruco.drawDetectedMarkers(frame_vis, corners)
+    # Draw the detected markers
+    frame_vis = cv2.aruco.drawDetectedMarkers(frame_vis, corners)
 
-return (np.array(rvec), np.array(tvec)), frame_vis
+    return (np.array(rvec), np.array(tvec)), frame_vis
 ```
 
 ### 4. The main function
