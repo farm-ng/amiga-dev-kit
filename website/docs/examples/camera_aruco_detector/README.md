@@ -184,9 +184,10 @@ def detect_pose(self, frame: np.ndarray, camera_matrix: np.ndarray, distortion_c
 
 ### 4. The main function
 
-Now that we have the Aruco detector, we can create the main function that will from where we'll
+Now that we have the Aruco detector, we can create the main function from where we'll
 first request the camera calibration data and then subscribe to the camera service to receive
-the camera stream and detect the Aruco markers.
+the camera stream and detect the Aruco markers. Finally, we'll visualize the detections in the
+original image using OpenCV.
 
 ```python
 # create a client to the camera service
