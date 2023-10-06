@@ -208,5 +208,3 @@ To run this example, you must activate the `auto control` mode on your Amiga via
 We highly recommend to have some basic knowledge about
 [**`asyncio`**](https://docs.python.org/3/library/asyncio.html).
 :::
-
-<!-- INCLUDE_CODE: farm-ng-amiga/py/examples/gps_client/main.py -->
