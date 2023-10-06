@@ -36,9 +36,10 @@ Change the values on the `everyN` column to adjust the frequency of data collect
 
 `everyN` = Max_frequency / Desired_frequency.
 
-For example, `gps/relposned` messages are published at a frequency of 2.5 Hz.
-If you wish to receive those messages at a frequency of 1 Hz, then change the value of
-`everyN` to 2.5.
+For example, `gps/relposned` messages are published at a frequency of 2 Hz.
+If, for example, you wish to receive those messages at a frequency of 1 Hz,
+then change the value of `everyN` to 2.
+Be sure to use integers in the `everyN` field.
 :::
 
 ### File naming convention
@@ -48,14 +49,14 @@ at the time recording starts, the name of the robot on which the files were reco
 and the file number in the video sequence:
 
 ```bash
-<yyyy>_<mm>_<dd>_<hh>_<mn>_<ss>_<msmsms>_events_<robot_name>.0000.bin
+<yyyy>_<mm>_<dd>_<hh>_<mn>_<ss>_<msmsms>_<robot_name>.0000.bin
 ```
 
 E.g.,
 
 ```bash
-  2023_01_12_16_17_52_134845_events_dubnium-durian.0000.bin
-# yyyy_mm_dd_hh_mn_ss_msmsms_events_robot_name.####.bin
+  2023_01_12_16_17_52_134845_dubnium-durian.0000.bin
+# yyyy_mm_dd_hh_mn_ss_msmsms_robot_name.####.bin
 ```
 
 # How to transfer data from the Amiga to your local machine
@@ -103,10 +104,7 @@ terminal and not the Amiga
 :::
 - The files should begin to download, and when it reaches 100%
 the download is complete, and the file transfer it done!
-- We recommend adding meaningful names to your field data so that
-you will know what it is later down the road. An example of this
-is
-yyyy_mm_dd_hh_mm_ss_msmsms_type_hostname.xxxx.bin
+- Feel free to rename the file once it has transferred to your local PC
 
 Congratulations you have now completed this tutorial, and should
 now know how to record field data and offload it!
