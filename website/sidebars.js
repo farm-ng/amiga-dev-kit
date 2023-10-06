@@ -138,6 +138,7 @@ const sidebars = {
         "examples/file_reader_gps/file-reader-gps",
         "examples/file_converter/file-converter",
         "examples/events_recorder/events-recorder",
+        "examples/camera_aruco_detector/camera-aruco-detector",
         "examples/camera_client/camera-client",
         "examples/camera_calibration/camera-calibration",
         "examples/camera_settings/camera-settings",
