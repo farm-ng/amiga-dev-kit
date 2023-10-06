@@ -8,7 +8,7 @@ The only requirement is to be connected to the same network of your Amiga.
 
 ### Sign up for a farm-ng-user account
 
-#### 1. Request SSH access to our Fleet Customer Support via email (fleet@farm-ng.com)
+#### 1. Request SSH access to our Fleet Customer Support via email (coming up soon)
 
 #### 2. You will receive a confirmation email with a link for sign-up along with instructions
 
@@ -41,6 +41,11 @@ without using a password.
 
 #### 8. Open a terminal window on your computer and type
 
+:::tip TIP
+You can skip this step if you already have a `~/.ssh/id_rsa.pub` public key
+on your computer that you'd like to use.
+:::
+
 ```bash
 cd ~ # This will take you to your home directory
 ssh-keygen # This creates an ssh key
@@ -62,7 +67,7 @@ cat ~/.ssh/id_rsa.pub # Copy it with Shift + Ctrl + C
 
 ![Screenshot from 2023-10-05 11-44-09](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/2fe86af2-6156-4fda-bef8-7bb803d5ff52)
 
-#### 14. Email our Fleet Custommer Support to inform that you have signed up successfully
+#### 14. Email our Fleet Customer Support to inform that you have signed up successfully
 
 They will grant you access to your robot.
 
@@ -73,23 +78,41 @@ Each SSH key corresponds to a single PC.
 If you need to access the Amiga from multiple PCs, you will need to repeat steps 7-13 for each PC.
 :::
 
-### Accessing the brain
+### (Recommended) Configure your SSH Connections
 
-You can access the brain via a terminal or VS Code.
+Now that you have an `SSH key` and your account is ready, let's configure your SSH connections.
 
-#### Terminal
+This can be done via the terminal or VS Code.
 
-Connecting to your robot via the terminal is simple.
-Open a terminal window and type:
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="terminal" label="Terminal" default>
+
+Open a terminal window and type the following command:
 
 ```bash
-ssh farm-ng-user-<your-farm-ng-username>@<robot-name>
-# e.g., farm-ng-user-john-doe@dubnium-durian
+gedit ~/.ssh/config # This will open your .ssh/config
+# Here we're using gedit as our edit, feel free to choose one of your choice (e.g., vin, nano)
 ```
 
-You should now be connected to your robot!
+Hit **Enter** and then add the following lines to your file:
 
-#### VS Code
+```bash
+Host <robot-name>
+  HostName <robot-name>
+  User farm-ng-user-<username>
+  ```
+
+Replace `<robot-name>` with your robot name (e.g., dubinium-durian).
+You should have received your robot name via email.
+
+Replace `<username` with your username (e.g., john-doe).
+Make sure to save the file before you close it!
+
+</TabItem>
+<TabItem value="vscode" label="VS Code">
 
 #### 1. Click on the "Open a Remote Window" (blue button on the bottom left corner of your VS Code screen)
 
@@ -110,9 +133,11 @@ You should now be connected to your robot!
 #### 5. Add the following lines to your file
 
 ```bash
-Host boron-banana
-  HostName boron-banana
+Host <robot-name>
+  HostName <robot-name>
   User farm-ng-user-<username>
+  # Replace <robot-name> with your robot name (e.g., dubinium-durian).
+  # You should receive your robot name via email
   # Replace <username> with your username (e.g., john-doe)
   ```
 
@@ -120,10 +145,49 @@ Host boron-banana
 
 #### 6. Save and close the document
 
-#### 7. Click on "Open a Remote Window" again (same as Step 1)
+</TabItem>
+</Tabs>
 
-#### 8. Select the host
+### Accessing the brain
 
-#### 9. Hit Enter if asked to continue
+You can access the brain via a terminal or VS Code.
 
-Congratulations, you are connected to your robot via SSH
+<Tabs>
+<TabItem value="terminal" label="Terminal" default>
+
+Connecting to your robot via the terminal is simple.
+Open a terminal window and type:
+
+```bash
+ssh farm-ng-user-<your-farm-ng-username>@<robot-name>
+# e.g., farm-ng-user-john-doe@dubnium-durian
+```
+
+:::tip INFO
+If you have configured your SSH Connections (`.ssh/config`)
+you can connect to the robot by simply typing:
+
+```bash
+ssh <robot-name>
+# Make sure to replace <robot-name> with your actual robot name
+```
+
+:::
+
+You should now be connected to your robot!
+
+</TabItem>
+<TabItem value="vscode" label="VS Code">
+
+#### 1. Click on the "Open a Remote Window" (blue button on the bottom left corner of your VS Code)
+
+![Screenshot from 2023-10-05 13-57-39](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/24d84831-7bca-4923-9b2d-ce2abcce3ea7)
+
+#### 2. Select the host
+
+#### 3. Hit Enter if asked to continue
+
+Congratulations, you are connected to your robot via SSH!
+
+</TabItem>
+</Tabs>
