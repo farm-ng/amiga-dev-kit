@@ -76,7 +76,9 @@ If everything worked correctly you should now see a large stream
 of text come up in your terminal!
 
 The output should look something like this:
+
 ## 4. Customize the run
+
 If you want to command the robot from your laptop, by connecting with a `gRPC` client over Wifi,
 you can change the `host` field in `service_config.json` from localhost to your robot's name
 (e.g., dubnium-durian).
@@ -100,6 +102,7 @@ you can change the `host` field in `service_config.json` from localhost to your 
 ```
 
 ## 5. Code Overview
+
 In this example we use the `EventClient` with the `request_reply` method to set a track
 (`/set_track`) to be followed.
 And then, we command the controller to follow the set track (`/follow_track`).
@@ -171,6 +174,7 @@ if __name__ == "__main__":
     loop.run_until_complete(run(args))
 
 ```
+
 We also use the `subscribe` method to receive and stream the controller state.
 
 ```bash
