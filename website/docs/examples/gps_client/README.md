@@ -33,11 +33,6 @@ positioning between two receivers, often as a part of Real Time Kinematics (RTK)
 It shows the difference in position between a "moving" receiver and a "fixed" reference receiver.
 :::
 
-:::tip
-If you haven't already cloned the `farm-ng-amiga` repository, do
-so [**here**](/docs/brain/brain-install.md#clone-the-repository).
-:::
-
 ## 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
 ## 2. Install the example's dependencies

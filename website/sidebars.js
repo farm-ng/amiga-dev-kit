@@ -143,6 +143,7 @@ const sidebars = {
         "examples/file_reader_can/file-reader-can",
         "examples/file_reader_gps/file-reader-gps",
         "examples/filter_client/filter-client",
+        "examples/controller_track/controller-track",
         "examples/gps_client/gps-client",
         "examples/monitor_app/monitor-app",
         "examples/motor_state/motor-state",
