@@ -1,9 +1,9 @@
 ---
-id: controller_track
+id: controller-track
 title: Follow a track
 ---
 
-# Controller Track Example
+# Controller Follow Track Example
 
 :::warning Danger
 **WARNING**: When the dashboard is in auto mode, this will cause the Amiga to drive.
@@ -13,7 +13,7 @@ You can also run this example when the Amiga dashboard is not in `AUTO READY` or
 and see the commands being sent with the red needle on the auto page.
 :::
 
-The [**Controller Track Example**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/controller_track/main.py)
+The [**Controller Follow Track Example**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/controller_track/main.py)
 operates as a standalone Python script,
 in which an `EventClient` to the farm-ng Controller service running on an Amiga brain is created.
 
@@ -24,12 +24,28 @@ If using your local PC, it should be either connected to the same local network 
 or linked to it through tailscale.
 
 Ensure that a [**farm-ng brain**](/docs/brain/), with a GPS receiver and Oak cameras,
-is actively running the GPS and OAK service.
-A connection to an RTK base station is also required.
+is actively running the controller service.
 
-:::tip
-If you haven't already cloned the `farm-ng-amiga` repository, do
-so [**here**](/docs/brain/brain-install.md#clone-the-repository).
+:::info
+The controller service is a client of the following services:
+
+- canbus
+- filter (state estimation)
+
+The state estimation filter service is a client of the following services:
+
+- canbus
+- gps
+- oak0
+
+There are a few requirements on the `/state` output of the state estimation filter
+for the controller service to consider the results valid and allow for following a track.
+These include:
+
+- GPS service is connected to an RTK base station
+- State estimation is receiving all required sensor data
+- State estimation results have converged
+  - Requires a few seconds of driving around after starting the filter service
 :::
 
 ## 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
@@ -69,21 +85,19 @@ python main.py --service-config service_config.json --track <path-to-your-track>
 ```
 
 :::tip Tip
-There's an example to teach you how to [**record your own track here**](/docs/examples/record-track).
+There's an example to teach you how to [**record your own track here**](/docs/examples/record_track).
 :::
 
 If everything worked correctly you should now see a large stream
 of text come up in your terminal!
 
-The output should look something like this:
-
 ## 4. Customize the run
 
 If you want to command the robot from your laptop, by connecting with a `gRPC` client over Wifi,
 you can change the `host` field in `service_config.json` from localhost to your robot's name
-(e.g., dubnium-durian).
+(e.g., `dubnium-durian`).
 
-```bash
+```json
 {
     "name": "controller",
     "port": 20101,
@@ -105,9 +119,9 @@ you can change the `host` field in `service_config.json` from localhost to your 
 
 In this example we use the `EventClient` with the `request_reply` method to set a track
 (`/set_track`) to be followed.
-And then, we command the controller to follow the set track (`/follow_track`).
+We then command the controller to follow the set track (`/follow_track`).
 
-```bash
+```python
 async def set_track(service_config: EventServiceConfig, filter_track: FilterTrack) -> None:
     """Set the track of the controller.
 
@@ -153,31 +167,11 @@ async def main(service_config_path: Path, track_path: Path) -> None:
 
     # Follow the track
     await follow_track(service_config)
-
-    async def run(args) -> None:
-    tasks: list[asyncio.Task] = [
-        asyncio.create_task(main(args.service_config, args.track)),
-        asyncio.create_task(stream_controller_state(args.service_config)),
-    ]
-    await asyncio.gather(*tasks)
-
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(prog="amiga-controller-track")
-    parser.add_argument("--service-config", type=Path, required=True,
-        help="The controller service config.")
-    parser.add_argument("--track", type=Path, required=True,
-        help="The filepath of the track to follow.")
-    args = parser.parse_args()
-
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(run(args))
-
 ```
 
 We also use the `subscribe` method to receive and stream the controller state.
 
-```bash
+```python
 async def stream_controller_state(service_config_path: Path) -> None:
     """Stream the controller state.
 
@@ -196,6 +190,31 @@ async def stream_controller_state(service_config_path: Path) -> None:
     async for event, message in EventClient(config).subscribe(config.subscriptions[0], decode=True):
         print("###################")
         print(message)
+```
+
+We use the `asyncio.gather` method to allow running the two tasks,
+(1) setting the controller to follow the track and (2) streaming the controller state,
+simultaneously and asynchronously.
+
+```python
+async def run(args) -> None:
+    tasks: list[asyncio.Task] = [
+        asyncio.create_task(main(args.service_config, args.track)),
+        asyncio.create_task(stream_controller_state(args.service_config)),
+    ]
+    await asyncio.gather(*tasks)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(prog="amiga-controller-track")
+    parser.add_argument("--service-config", type=Path, required=True,
+        help="The controller service config.")
+    parser.add_argument("--track", type=Path, required=True,
+        help="The filepath of the track to follow.")
+    args = parser.parse_args()
+
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(run(args))
 ```
 
 **Congrats you are done!**

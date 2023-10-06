@@ -11,17 +11,14 @@ values. The `AmigaTpdo1` can packet contains
 the `state`, `speed`, and `angular rate` of the Amiga, as
 reported by the vehicle control unit (VCU).
 
-:::info
-If you haven't already cloned the `farm-ng-amiga` repository, do
-so [**here**](/docs/brain/brain-install.md#clone-the-repository).
-:::
+## Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
+
+## Download the log file
 
 :::tip
 If you already have the log file you want to run with this
 example you can skip to [**set up**](#setup)
 :::
-
-## Download the log file
 
 Now you are going to download the log file that you will use in
 this example.
