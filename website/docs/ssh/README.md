@@ -101,16 +101,20 @@ Hit **Enter** and then add the following lines to your file:
 
 ```bash
 Host <robot-name>
-  HostName <robot-name>
+  HostName <ip-address>
   User farm-ng-user-<username>
   ```
 
-Replace `<robot-name>` with your robot name (e.g., dubinium-durian).
-You should have received your robot name via email.
+Replace `<robot-name>` with your robot name (e.g., dubinium-durian) and
+`<ip-address>` the robot's local IP address.
 
 Replace `<username>` with your username (e.g., john-doe).
 Make sure to save the file before you close it!
 
+:::tip TIP
+You can download [**Fing**](https://www.fing.com/products/fing-app) to scan
+all devices connected to your network and figure out your robot's IP address.
+:::
 </TabItem>
 <TabItem value="vscode" label="VS Code">
 
@@ -134,14 +138,18 @@ Make sure to save the file before you close it!
 
 ```bash
 Host <robot-name>
-  HostName <robot-name>
+  HostName <ip-address>
   User farm-ng-user-<username>
   # Replace <robot-name> with your robot name (e.g., dubinium-durian).
   # You should receive your robot name via email
   # Replace <username> with your username (e.g., john-doe)
+  # and <ip-address> with the robot's local IP address.
   ```
 
-![Screenshot from 2023-10-05 13-58-32](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/82ed45cf-82e1-46c4-9220-33e2338cc6d0)
+:::tip TIP
+You can download [**Fing**](https://www.fing.com/products/fing-app) to scan
+all devices connected to your network and figure out your robot's IP address.
+:::
 
 #### 6. Save and close the document
 
@@ -159,8 +167,8 @@ Connecting to your robot via the terminal is simple.
 Open a terminal window and type:
 
 ```bash
-ssh farm-ng-user-<your-farm-ng-username>@<robot-name>
-# e.g., farm-ng-user-john-doe@dubnium-durian
+ssh farm-ng-user-<your-farm-ng-username>@<ip-address>
+# e.g., farm-ng-user-john-doe@10.0.4.116
 ```
 
 :::tip TIP
