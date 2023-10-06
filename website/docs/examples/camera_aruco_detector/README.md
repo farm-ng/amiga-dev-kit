@@ -236,3 +236,5 @@ python3 main.py --service-config service_config.json --aruco-type DICT_6X6_250 -
 ```
 
 The example will open a window with the camera stream and the detected Aruco markers.
+
+![Screenshot from 2023-10-06 16-34-59](https://github.com/farm-ng/amiga-dev-kit/assets/5157099/a0a1abb4-4727-4c2e-be76-b94868dd75fa)
