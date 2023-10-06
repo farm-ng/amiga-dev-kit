@@ -153,6 +153,7 @@ const sidebars = {
         "examples/service_client/service-client",
         "examples/service_counter/service-counter",
         "examples/service_propagation/service-propagation",
+        "examples/controller_track/controller_track",
     ],
     "Brain App Tutorials" : {
         "00 - Tutorial Introduction" :[
