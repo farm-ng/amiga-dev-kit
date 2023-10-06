@@ -68,8 +68,8 @@ By default, the host address is assumed to be `localhost`.
 Once you've started the script,
 drive your Amiga along the route you wish to record as a track for the controller to later follow.
 When you are done driving the track, kill the script with `ctrl` + `C`.
-You can then set the Amiga to follow this track by following the
-[**Controller Track Example**](/docs/examples/controller_track).
+<!-- You can then set the Amiga to follow this track by following the
+[**Controller Track Example**](/docs/examples/controller_track). -->
 
 ## 4. Customize the run
 
