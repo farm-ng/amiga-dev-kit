@@ -55,7 +55,7 @@ and the file number in the video sequence:
 E.g.,
 
 ```bash
-  2023_01_12_16_17_52_134845_dubnium-durian.0000.bin
+  2023_01_12_16_17_52_134845_element-vegetable.0000.bin
 # yyyy_mm_dd_hh_mn_ss_msmsms_robot_name.####.bin
 ```
 
@@ -70,7 +70,7 @@ Using a terminal command window:
 ssh <robot-name>
 ```
 
-You should replace `<robot-name>` with your actual robot name, e.g., `dubnium-durian`.
+You should replace `<robot-name>` with your actual robot name, e.g., `element-vegetable`.
 
 - If having issues further instructions for how to do this are
 listed

@@ -226,7 +226,7 @@ async for event, message in camera_client.subscribe(config.subscriptions[0], dec
 ### 5. Execute the Python script
 
 To run this script from your PC, you need to update the `service_config.json`
-by modifying the `host` filed with your Amiga brain name (e.g., `aluminum-pineapple`).
+by modifying the `host` filed with your Amiga brain name (e.g., `element-vegetable`).
 
 You can also stream the stereo left or right images or the camera's disparity by changing
 the `path` field (e.g., /left) or change the port and service name to instead stream
