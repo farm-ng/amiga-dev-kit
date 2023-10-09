@@ -105,7 +105,7 @@ Host <robot-name>
   User farm-ng-user-<username>
   ```
 
-Replace `<robot-name>` with your robot name (e.g., dubinium-durian) and
+Replace `<robot-name>` with your robot name (e.g., element-vegetable) and
 `<ip-address>` the robot's local IP address.
 
 Replace `<username>` with your username (e.g., john-doe).
@@ -140,7 +140,7 @@ all devices connected to your network and figure out your robot's IP address.
 Host <robot-name>
   HostName <ip-address>
   User farm-ng-user-<username>
-  # Replace <robot-name> with your robot name (e.g., dubinium-durian).
+  # Replace <robot-name> with your robot name (e.g., element-vegetable).
   # You should receive your robot name via email
   # Replace <username> with your username (e.g., john-doe)
   # and <ip-address> with the robot's local IP address.

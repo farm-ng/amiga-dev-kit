@@ -331,21 +331,21 @@ curl http://localhost:8002/list_uris
   "gps/health":
     {
       "scheme":"protobuf",
-      "authority":"lead-mango",
+      "authority":"element-vegetable",
       "path":"/health",
       "query":"type=google.protobuf.Struct&pb=google/protobuf/struct.proto&service_name=gps"
     },
   "gps/pvt":
     {
       "scheme":"protobuf",
-      "authority":"lead-mango",
+      "authority":"element-vegetable",
       "path":"/pvt",
       "query":"type=farm_ng.gps.proto.GpsFrame&pb=farm_ng/gps/gps.proto&service_name=gps"
     },
   "gps/relposned":
     {
       "scheme":"protobuf",
-      "authority":"lead-mango",
+      "authority":"element-vegetable",
       "path":"/relposned",
       "query":"type=farm_ng.gps.proto.RelativePositionFrame&pb=farm_ng/gps/gps.proto&service_name=gps"
     }
@@ -366,7 +366,7 @@ and you should see the following output:
 {
   "stamp": {
     "stamp": 64291.767745599,
-    "clockName": "lead-mango/monotonic",
+    "clockName": "element-vegetable/monotonic",
     "semantics": "driver/receive"
   },
   "longitude": -121.7905902,
