@@ -94,7 +94,7 @@ Open a terminal window and type the following command:
 
 ```bash
 gedit ~/.ssh/config # This will open your .ssh/config
-# Here we're using gedit as our text manager, feel free to choose another one (e.g., vin, nano)
+# Here we're using gedit as our text manager, feel free to choose another one (e.g., vi, nano)
 ```
 
 Hit **Enter** and then add the following lines to your file:
