@@ -199,3 +199,11 @@ Congratulations, you are connected to your robot via SSH!
 
 </TabItem>
 </Tabs>
+
+## Check out our Examples
+
+Now that you know how to connect to your Amiga, start developing your own applications!
+
+We have plenty of examples to help you understand how to communicate with our services,
+access data, and submit requests (e.g., commanding your Amiga to follow a path).
+Make sure to check the [**examples here**](../examples/examples-index).
