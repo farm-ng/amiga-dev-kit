@@ -154,6 +154,7 @@ const sidebars = {
       },
       {
         "items": [
+          "examples/controller_header/controller-info",
           "examples/record_track/record-track",
           "examples/controller_track/controller-track",
         ],
