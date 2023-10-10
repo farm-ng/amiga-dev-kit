@@ -27,25 +27,11 @@ Ensure that a [**farm-ng brain**](/docs/brain/), with a GPS receiver and Oak cam
 is actively running the controller service.
 
 :::info
-The controller service is a client of the following services:
+It is **highly recommended** to read through the [Controller Service Overview](/docs/concepts/controller_service/)
+before running this example.
 
-- canbus
-- filter (state estimation)
-
-The state estimation filter service is a client of the following services:
-
-- canbus
-- gps
-- oak0
-
-There are a few requirements on the `/state` output of the state estimation filter
-for the controller service to consider the results valid and allow for following a track.
-These include:
-
-- GPS service is connected to an RTK base station
-- State estimation is receiving all required sensor data
-- State estimation results have converged
-  - Requires a few seconds of driving around after starting the filter service
+This will provide insight into the requirements and API
+for using the controller service to follow a path.
 :::
 
 ## 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
