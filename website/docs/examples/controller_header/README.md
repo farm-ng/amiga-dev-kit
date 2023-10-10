@@ -5,14 +5,6 @@ title: Controller 101
 
 # Controller
 
-:::warning Danger
-**WARNING**: The controller examples will cause the Amiga to drive when the dashboard is in auto mode.
-Make sure the area is clear before running examples.
-
-You can also run this example when the Amiga dashboard is not in `AUTO READY` or `AUTO ACTIVE`
-and see the commands being sent with the red needle on the auto page.
-:::
-
 The Controller is the autonomy hub of the Amiga.
 It takes in user commands and turns them into actions the robot can perform.
 
@@ -163,3 +155,11 @@ controller examples:
 
 - [Record a Track](/docs/examples/record_track)
 - [Follow a Track](/docs/examples/controller_track)
+
+:::warning Danger
+**WARNING**: The controller examples will cause the Amiga to drive when the dashboard is in auto mode.
+Make sure the area is clear before running examples.
+
+You can also run this example when the Amiga dashboard is not in `AUTO READY` or `AUTO ACTIVE`
+and see the commands being sent with the red needle on the auto page.
+:::
