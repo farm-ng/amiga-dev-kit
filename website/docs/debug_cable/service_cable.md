@@ -50,7 +50,7 @@ microcontroller.reset()
 **[here](/docs/dashboard/fw_updates.md)**
 
 **See flashing and operating system documentation for more**
-**information [here](/docs/brain/README.md)**
+**information [here](//docs/intelligence-kit/brain/brain-v2/)**
 
 ## Pinout
 

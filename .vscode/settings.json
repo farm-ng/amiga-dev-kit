@@ -5,6 +5,5 @@
         "~/.local/lib/python3.8/site-packages"
     ],
     "python.analysis.autoImportCompletions": false,
-    "python.formatting.provider": "black",
-    "cmake.sourceDirectory": "/home/gdemoura/amiga-dev-kit/farm-ng-amiga"
+    "python.formatting.provider": "black"
 }

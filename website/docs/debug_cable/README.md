@@ -48,7 +48,7 @@ mode.
 - Reset / Flash button is used for enabling the firmware update
 mode (press on boot)
 
-**For more flashing and operating system documentation go [here](/docs/brain/README.md)**
+**For more flashing and operating system documentation go [here](/docs/intelligence-kit/brain/brain-v2/)**
 
 ## Pinout
 

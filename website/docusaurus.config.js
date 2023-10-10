@@ -81,9 +81,15 @@ async function createConfig() {
 	},
 	items: [
 	  {
-	    label: 'Documentation',
+	    label: 'Introduction',
 	    type: 'doc',
 	    docId: 'getting-started',
+	    position: 'left',
+	  },
+	  {
+	    label: 'Concepts',
+	    type: 'doc',
+	    docId: 'concepts/concepts-index',
 	    position: 'left',
 	  },
 	  {
@@ -95,7 +101,7 @@ async function createConfig() {
 	  {
 	    label: 'API',
 	    type: 'doc',
-	    docId: 'api',
+	    docId: 'api/api-index',
 	    position: 'left',
 	  },
 	  {
