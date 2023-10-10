@@ -18,20 +18,26 @@ through the following in any order that you wish!
 
 ## 1. Examples
 
-Either navigate to the `Examples` tab located at the top of this
-page, or go directly to the
-[Examples Index](/docs/examples/examples_index.md),
+Either navigate to the `Examples` tab located at the top of this page,
+or go directly to the [Examples Index](/docs/examples/examples-index),
 to get started on running one of the available brain ADK examples
 or CircuitPython examples.
 
-## 2. Tutorials
+## 2. Service Overviews
+
+Either navigate to the `API` tab located at the top of this page,
+or go directly to the [API Index](/docs/api/),
+to read through details of the various services running on your Amiga's brain
+and the corresponding APIs.
+
+## 3. Tutorials
 
 Go through the
 [Brain App Tutorials](/docs/examples/examples-index#brain-app-tutorials) that walk you through
 creating custom applications that interact with cameras and drive
 your Amiga from the brain!
 
-## 3. Developing Custom applications
+## 4. Developing Custom applications
 
 Follow the instructions at
 [Developing Custom Applications](custom-applications.mdx)
