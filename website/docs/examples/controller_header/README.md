@@ -23,7 +23,8 @@ on their main tasks without needing to know the complex workings underneath.
 In short, the Controller does the heavy lifting, allowing users to easily command the Amiga without
 deep technical knowledge.
 
-### Subscriptions
+## Subscriptions
+
 The `Controller` is a client of the following services:
 
 - Canbus
@@ -38,7 +39,8 @@ The State estimation filter service is a client of the following services:
 For this reason, all of the above-mentioned services must be up and running for the `Controller`
 to work.
 
-### Requirements
+## Requirements
+
 There are a few requirements on the `/state` output of the state estimation filter
 for the controller service to consider the results valid and allow for following a track.
 These include:
@@ -48,7 +50,7 @@ These include:
 - State estimation results have converged
   - Requires a few seconds of driving around after starting the filter service
 
-### API
+## API
 
 - `/append_track`: Add a single waypoint to the end of the current track.
 - `/cancel`: Terminate any ongoing operations and bring the Amiga to a stop.
@@ -60,7 +62,8 @@ These include:
 - `/set_track`: Provide a specific track (series of waypoints) for the Amiga to follow.
 - `/stop`: Instruct the Amiga to halt all movements immediately.
 
-### The Controller on practice
+## The Controller on practice
+
 Before the controller can drive the Amiga autonomously, users must set a predefined track
 for the robot to follow using the `/set_track` API.
 
@@ -78,15 +81,15 @@ The controller offers a level of flexibility and intelligence that goes beyond s
 a predefined path.
 Once a track is set, the robot can also traverse it in a few unique ways:
 
-1. Reversing the Track
-After the Amiga robot has learned a track, it's not restricted to following it in just the direction
+1. **Reversing the Track**:
+After the Amiga has learned a track, it's not restricted to following it in just the direction
 it was taught.
 The end point of the learned track can seamlessly become the starting point, provided the robot is
 oriented towards its recorded initial position.
 This allows the robot to navigate environments bidirectionally, offering greater autonomy and
 adaptability in dynamic settings.
 
-2. Initiating from Intermediate Points
+2. **Initiating from Intermediate Points**:
 You don't always have to start the robot from the beginning of a track.
 The controller is smart enough to allow track following from any intermediate point within the path.
 This is especially useful if the robot needs to start its journey from a point that's not the
@@ -107,18 +110,16 @@ Specifically, it should be within 30 degrees of the track point's heading.
 This condition ensures the robot is oriented correctly and can safely navigate along the desired
 path without sudden, unexpected maneuvers.
 :::
-By meeting these requirements, users can guarantee that the Amiga robot is well-prepared
-and positioned to navigate the predefined path safely and effectively.
-Whether moving forwards, backwards, or from an intermediate point, the controller ensures smooth
-and autonomous navigation.
-### Tracks
+
+## Tracks
 
 A track is essentially a sequence of waypoints, guiding the robot from its starting point,
 through various intermediary points, to its destination.
 Each waypoint in this track provides specific spatial information about where the robot should
 be and how it should be oriented at that point.
 
-How to Define a Track:
+### Define a Track
+
 A track is represented as a JSON file, where each waypoint is defined by a pose.
 A pose captures the robot's position and orientation in the world.
 Here's an example of what a single pose looks like:
@@ -154,3 +155,11 @@ Here's an example of what a single pose looks like:
       "heading": -2.909058930621276
     },
 ```
+
+### Examples
+
+Now that you have a good understanding of how the controller works, try some of the
+controller examples:
+
+- [Record a Track](/docs/examples/record_track)
+- [Follow a Track](/docs/examples/controller_track)
