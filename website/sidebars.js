@@ -130,8 +130,9 @@ const sidebars = {
       ],
     }
   ],
-  "examples": {
-    "Index": ["examples/examples-index"],
+  "examples": [
+    "examples/examples-index",
+    {
     "CircuitPython Examples" : [
         "examples/hello_main_loop/hello-world",
         "examples/cansniffer/cansniffer",
@@ -140,11 +141,29 @@ const sidebars = {
     "Brain Examples" : [
       {
         "items": [
-          "examples/camera_aruco_detector/camera-aruco-detector",
-          "examples/camera_calibration/camera-calibration",
+            "examples/import_log_file/import-log-file",
+            "examples/events_recorder/events-recorder",
+        ],
+        "label": "Data Recording Examples",
+        "type": "category"
+      },
+      {
+        "items": [
+        "examples/file_reader/file-reader",
+        "examples/file_converter/file-converter",
+        "examples/file_reader_can/file-reader-can",
+        "examples/file_reader_gps/file-reader-gps",
+        ],
+        "label": "Playback Examples",
+        "type": "category"
+      },
+      {
+        "items": [
           "examples/camera_client/camera-client",
-          "examples/camera_pointcloud/camera-pointcloud",
           "examples/camera_settings/camera-settings",
+          "examples/camera_calibration/camera-calibration",
+          "examples/camera_pointcloud/camera-pointcloud",
+          "examples/camera_aruco_detector/camera-aruco-detector",
         ],
         "label": "Camera Examples",
         "type": "category"
@@ -153,8 +172,24 @@ const sidebars = {
         "items": [
           "examples/motor_state/motor-state",
           "examples/vehicle_twist/vehicle-twist",
+          "examples/file_reader_can/file-reader-can",
         ],
-        "label": "CANBUS Examples",
+        "label": "CAN bus Examples",
+        "type": "category"
+      },
+      {
+        "items": [
+          "examples/gps_client/gps-client",
+          "examples/file_reader_gps/file-reader-gps",
+        ],
+        "label": "GPS Examples",
+        "type": "category"
+      },
+      {
+        "items": [
+          "examples/filter_client/filter-client",
+        ],
+        "label": "State Estimation Examples",
         "type": "category"
       },
       {
@@ -167,44 +202,17 @@ const sidebars = {
       },
       {
         "items": [
-          "examples/events_recorder/events-recorder",
-          "examples/import_log_file/import-log-file",
-        ],
-        "label": "Data Recording Examples",
-        "type": "category"
-      },
-      {
-        "items": [
-          "examples/file_reader_gps/file-reader-gps",
-          "examples/gps_client/gps-client",
-        ],
-        "label": "GPS Examples",
-        "type": "category"
-      },
-      {
-        "items": [
-          "examples/file_converter/file-converter",
-          "examples/file_reader/file-reader",
-          "examples/file_reader_can/file-reader-can",
-          "examples/file_reader_gps/file-reader-gps",
-        ],
-        "label": "Playback Examples",
-        "type": "category"
-      },
-      {
-        "items": [
           "examples/service_client/service-client",
           "examples/service_counter/service-counter",
           "examples/service_propagation/service-propagation",
         ],
-      "label": "Service Examples",
+      "label": "Custom Service Examples",
       "type": "category"
       },
       {
       "items": [
-        "examples/filter_client/filter-client",
-        "examples/monitor_app/monitor-app",
         "examples/vnc_viewer/vnc-viewer",
+        "examples/monitor_app/monitor-app",
       ],
       "label": "Miscellaneous Examples",
       "type": "category"
@@ -235,7 +243,8 @@ const sidebars = {
       "brain/brain-apps",
       "brain/ros-bridge"
     ]
-},
+    }
+  ],
   "contribute": [
     "contribute/contribute-website"
   ],
