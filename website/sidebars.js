@@ -112,13 +112,16 @@ const sidebars = {
       "support/github-101",
     ],
   },
-  "api": [
-    "api/api-index",
+  "Conepts": [
+    "concepts/concepts-index",
     {
       "Service Overviews": [
-        "api/controller_service/controller-info",
+        "concepts/controller_service/controller-info",
       ],
     },
+  ],
+  "api": [
+    "api/api-index",
     {
       "CircuitPython ADK": [
         require("./docs/reference/circuitpy/sidebar.json")

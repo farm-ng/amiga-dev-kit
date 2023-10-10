@@ -227,3 +227,8 @@ Please check back for an updated tutorial for brains running `v2.x` Amiga OS sof
 
 This takes you through the steps of setting up the Amiga ROS bridge
 for controlling the Amiga robot using your existing ROS nodes.
+
+## Not seeing what you need?
+
+Reach out to us by creating a [Documentation Request](/docs/support/#documentation-request)
+based on the instructions on our support page.
