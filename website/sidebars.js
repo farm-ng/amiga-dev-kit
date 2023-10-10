@@ -133,30 +133,78 @@ const sidebars = {
         "examples/FPV/fpv",
     ],
     "Brain Examples" : [
-        "examples/camera_aruco_detector/camera-aruco-detector",
-        "examples/camera_calibration/camera-calibration",
-        "examples/camera_client/camera-client",
-        "examples/camera_pointcloud/camera-pointcloud",
-        "examples/camera_settings/camera-settings",
-        "examples/controller_track/controller-track",
-        "examples/events_recorder/events-recorder",
-        "examples/file_converter/file-converter",
-        "examples/file_reader/file-reader",
-        "examples/file_reader_can/file-reader-can",
-        "examples/file_reader_gps/file-reader-gps",
+      {
+        "items": [
+          "examples/camera_aruco_detector/camera-aruco-detector",
+          "examples/camera_calibration/camera-calibration",
+          "examples/camera_client/camera-client",
+          "examples/camera_pointcloud/camera-pointcloud",
+          "examples/camera_settings/camera-settings",
+        ],
+        "label": "Camera Examples",
+        "type": "category"
+      },
+      {
+        "items": [
+          "examples/motor_state/motor-state",
+          "examples/vehicle_twist/vehicle-twist",
+        ],
+        "label": "CANBUS Examples",
+        "type": "category"
+      },
+      {
+        "items": [
+          "examples/controller_header/controller-info",
+          "examples/record_track/record-track",
+          "examples/controller_track/controller-track",
+        ],
+        "label": "Controller Examples",
+        "type": "category"
+      },
+      {
+        "items": [
+          "examples/events_recorder/events-recorder",
+          "examples/import_log_file/import-log-file",
+        ],
+        "label": "Data Recording Examples",
+        "type": "category"
+      },
+      {
+        "items": [
+          "examples/file_reader_gps/file-reader-gps",
+          "examples/gps_client/gps-client",
+        ],
+        "label": "GPS Examples",
+        "type": "category"
+      },
+      {
+        "items": [
+          "examples/file_converter/file-converter",
+          "examples/file_reader/file-reader",
+          "examples/file_reader_can/file-reader-can",
+          "examples/file_reader_gps/file-reader-gps",
+        ],
+        "label": "Playback Examples",
+        "type": "category"
+      },
+      {
+        "items": [
+          "examples/service_client/service-client",
+          "examples/service_counter/service-counter",
+          "examples/service_propagation/service-propagation",
+        ],
+      "label": "Service Examples",
+      "type": "category"
+      },
+      {
+      "items": [
         "examples/filter_client/filter-client",
-        "examples/gps_client/gps-client",
-        "examples/import_log_file/import-log-file",
         "examples/monitor_app/monitor-app",
-        "examples/motor_state/motor-state",
-        "examples/multi_client_geoimage/multi-client-geoimage",
-        "examples/multi_client_subscriber/multi-client-subscriber",
-        "examples/record_track/record-track",
-        "examples/service_client/service-client",
-        "examples/service_counter/service-counter",
-        "examples/service_propagation/service-propagation",
         "examples/vnc_viewer/vnc-viewer",
-        "examples/vehicle_twist/vehicle-twist",
+      ],
+      "label": "Miscellaneous Examples",
+      "type": "category"
+      },
     ],
     "Brain App Tutorials" : {
         "00 - Tutorial Introduction" :[
