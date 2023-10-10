@@ -59,7 +59,7 @@ source venv/bin/activate
 ### Install
 
 ```bash
-cd py/examples/gps_client
+cd py/examples/controller_track
 pip install -r requirements.txt
 ```
 

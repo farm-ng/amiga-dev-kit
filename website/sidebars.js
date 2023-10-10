@@ -199,6 +199,7 @@ const sidebars = {
         "items": [
           "examples/record_track/record-track",
           "examples/controller_track/controller-track",
+          "examples/controller_square/controller-square",
         ],
         "label": "Controller Examples",
         "type": "category"
