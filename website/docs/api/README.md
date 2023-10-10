@@ -1,6 +1,6 @@
 ---
-id: api
-title: APIs Index
+id: api-index
+title: API Index
 ---
 
 There are two distinct, yet compatible, APIs.

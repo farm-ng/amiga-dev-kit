@@ -95,7 +95,7 @@ async function createConfig() {
 	  {
 	    label: 'API',
 	    type: 'doc',
-	    docId: 'api',
+	    docId: 'api/api-index',
 	    position: 'left',
 	  },
 	  {

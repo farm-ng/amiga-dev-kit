@@ -113,7 +113,12 @@ const sidebars = {
     ],
   },
   "api": [
-    "api",
+    "api/api-index",
+    {
+      "Service Overviews": [
+        "api/controller_service/controller-info",
+      ],
+    },
     {
       "CircuitPython ADK": [
         require("./docs/reference/circuitpy/sidebar.json")
@@ -154,7 +159,6 @@ const sidebars = {
       },
       {
         "items": [
-          "examples/controller_header/controller-info",
           "examples/record_track/record-track",
           "examples/controller_track/controller-track",
         ],
