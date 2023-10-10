@@ -1,9 +1,9 @@
 ---
-id: controller-track
-title: Follow a track
+id: controller-square
+title: Drive a Square
 ---
 
-# Controller Follow Track Example
+# Controller Drive a Square Example
 
 :::caution Warning
 The controller examples will cause the Amiga to drive when the dashboard is in auto mode.
@@ -13,11 +13,13 @@ You can also run the examples when the Amiga dashboard is not in `AUTO READY` or
 and see the commands being sent with the red needle on the auto page without the Amiga actually moving.
 :::
 
-The [**Controller Follow Track Example**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/controller_track/main.py)
+The [**Controller Drive a Square Example**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/controller_square/main.py)
 operates as a standalone Python script,
 in which an `EventClient` to the farm-ng Controller service running on an Amiga brain is created.
 
-This script takes in a pre-recorded track and commands the Amiga to follow it.
+This script requests the current pose of the robot,
+creates a square track from the current pose for the controller,
+and commands the Amiga to follow the square track.
 
 You can either run this example directly on a brain by `ssh`'ing in, or use your local PC.
 If using your local PC, it should be either connected to the same local network as the brain
@@ -32,6 +34,9 @@ before running this example.
 
 This will provide insight into the requirements and API
 for using the controller service to follow a path.
+
+It is also recommended you go through the simpler
+[Follow a Track](/docs/examples/controller_track/) example first.
 :::
 
 ## 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
@@ -59,25 +64,22 @@ source venv/bin/activate
 ### Install
 
 ```bash
-cd py/examples/controller_track
+cd py/examples/controller_square
 pip install -r requirements.txt
 ```
 
 ## 3. Execute the Python script
 
 ```bash
-python main.py --service-config service_config.json --track <path-to-your-track>
-# Replace <path-to-your-track> to the actual path to your track
+python main.py --service-config service_config.json
 ```
-
-:::tip Tip
-There's an example to teach you how to [**record your own track here**](/docs/examples/record_track).
-:::
 
 If everything worked correctly you should now see a large stream
 of text come up in your terminal!
 
 ## 4. Customize the run
+
+### Run remotely
 
 If you want to command the robot from your laptop, by connecting with a `gRPC` client over Wifi,
 you can change the `host` field in `service_config.json` from localhost to your robot's name
@@ -101,7 +103,35 @@ you can change the `host` field in `service_config.json` from localhost to your 
 }
 ```
 
-## 5. Code Overview
+### Modify the square
+
+If you wish to modify the square, you can either:
+
+- Change the side length by specifying a `--side-length` value
+- Change the direction of the square by using the `--clockwise` flag
+
+Check for details with:
+
+```bash
+python main.py --help
+```
+
+And see:
+
+```bash
+usage: amiga-controller-square [-h] --service-config SERVICE_CONFIG [--side-length SIDE_LENGTH] [--clockwise]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --service-config SERVICE_CONFIG
+                        The controller service config.
+  --side-length SIDE_LENGTH
+                        The side length of the square.
+  --clockwise           Set to drive the square clockwise (right hand turns).
+                        Default is counter-clockwise (left hand turns).
+```
+
+<!-- ## 5. Code Overview
 
 In this example we use the `EventClient` with the `request_reply` method to set a track
 (`/set_track`) to be followed.
@@ -122,7 +152,6 @@ async def set_track(service_config: EventServiceConfig, filter_track: FilterTrac
     print(f"Setting track:\n{filter_track}")
     await EventClient(service_config).request_reply("/set_track", filter_track)
 
-
 async def follow_track(service_config: EventServiceConfig) -> None:
     """Follow the track.
 
@@ -132,7 +161,6 @@ async def follow_track(service_config: EventServiceConfig) -> None:
     print("Following track...")
     await EventClient(service_config).request_reply("/follow_track",
         StringValue(value="my_custom_track"))
-
 
 async def main(service_config_path: Path, track_path: Path) -> None:
     """Run the controller track example. The robot will drive the pre-recorded track.
@@ -179,7 +207,7 @@ async def stream_controller_state(service_config_path: Path) -> None:
 ```
 
 We use the `asyncio.gather` method to allow running the two tasks,
-(1) setting the controller to follow the track and (2) streaming the controller state,
+(1) creating and setting the controller to follow the track and (2) streaming the controller state,
 simultaneously and asynchronously.
 
 ```python
@@ -189,7 +217,6 @@ async def run(args) -> None:
         asyncio.create_task(stream_controller_state(args.service_config)),
     ]
     await asyncio.gather(*tasks)
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog="amiga-controller-track")
@@ -201,7 +228,7 @@ if __name__ == "__main__":
 
     loop = asyncio.get_event_loop()
     loop.run_until_complete(run(args))
-```
+``` -->
 
 **Congrats you are done!**
 
