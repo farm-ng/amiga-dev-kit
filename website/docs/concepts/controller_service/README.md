@@ -1,5 +1,5 @@
 ---
-id: controller-info
+id: controller-overview
 title: Controller
 ---
 
@@ -44,17 +44,15 @@ These include:
 
 ## API
 
-- `/append_track`: Add a single waypoint to the end of the current track.
-- `/cancel`: Terminate any ongoing operations and bring the Amiga to a stop.
-- `/extend_track`: Add additional waypoints to the current track.
-- `/follow_track`: Instruct the Amiga to commence following the previously set track.
+These are the commands you can use to interact with the controller service with
+an `EventClient` of the controller service.
+
 - `/get_pose`: Retrieve the current position and orientation of the Amiga.
-- `/get_track_end`: Returns the final waypoint of the currently set track.
-- `/replace_track`: Provide a new track for the Amiga to follow, replacing the current one.
 - `/set_track`: Provide a specific track (series of waypoints) for the Amiga to follow.
+- `/follow_track`: Instruct the Amiga to commence following the previously set track.
 - `/stop`: Instruct the Amiga to halt all movements immediately.
 
-## The Controller on practice
+## The Controller in practice
 
 Before the controller can drive the Amiga autonomously, users must set a predefined track
 for the robot to follow using the `/set_track` API.
@@ -64,11 +62,14 @@ This is done using the `/follow_track` API.
 The controller will then navigate the robot through each waypoint in the sequence, ensuring it follows
 the predefined path.
 
-Remember: It's crucial first to set the track before asking the robot to follow it.
+:::info Remember
+It's crucial first to set the track before asking the robot to follow it.
 The controller expects the sequence of waypoints in the order they should be traversed.
 Without a set track, the controller wouldn't know where to direct the robot.
+:::
 
-:::tip Features
+### Features
+
 The controller offers a level of flexibility and intelligence that goes beyond simply following
 a predefined path.
 Once a track is set, the robot can also traverse it in a few unique ways:
@@ -86,9 +87,9 @@ You don't always have to start the robot from the beginning of a track.
 The controller is smart enough to allow track following from any intermediate point within the path.
 This is especially useful if the robot needs to start its journey from a point that's not the
 traditional beginning or end.
-:::
 
-:::info Requirements for Following a Track:
+### Requirements for Following a Track
+
 For the controller to begin guiding the robot along a track, certain conditions must be met to
 ensure accurate and safe navigation:
 
@@ -101,7 +102,6 @@ point on the track.
 Specifically, it should be within 30 degrees of the track point's heading.
 This condition ensures the robot is oriented correctly and can safely navigate along the desired
 path without sudden, unexpected maneuvers.
-:::
 
 ## Tracks
 
@@ -116,36 +116,36 @@ A track is represented as a JSON file, where each waypoint is defined by a pose.
 A pose captures the robot's position and orientation in the world.
 Here's an example of what a single pose looks like:
 
-```bash
-   {
-      "pose": {
-        "aFromB": {
-          "rotation": {
-            "unitQuaternion": {
-              "imag": {
-                "z": -0.9932486190247055
-              },
-              "real": 0.11600508956729176
-            }
+```json
+{
+  "pose": {
+    "aFromB": {
+      "rotation": {
+        "unitQuaternion": {
+          "imag": {
+            "z": -0.9932486190247055
           },
-          "translation": {
-            "x": 2674.593868581748,
-            "y": 4297.325262829638
-          }
-        },
-        "frameA": "world",
-        "frameB": "robot",
-        "tangentOfBInA": {
-          "linearVelocity": {
-            "x": 0.4467579546503179
-          },
-          "angularVelocity": {
-            "z": 0.00475509022854358
-          }
+          "real": 0.11600508956729176
         }
       },
-      "heading": -2.909058930621276
+      "translation": {
+        "x": 2674.593868581748,
+        "y": 4297.325262829638
+      }
     },
+    "frameA": "world",
+    "frameB": "robot",
+    "tangentOfBInA": {
+      "linearVelocity": {
+        "x": 0.4467579546503179
+      },
+      "angularVelocity": {
+        "z": 0.00475509022854358
+      }
+    }
+  },
+  "heading": -2.909058930621276
+},
 ```
 
 ### Examples
@@ -156,10 +156,10 @@ controller examples:
 - [Record a Track](/docs/examples/record_track)
 - [Follow a Track](/docs/examples/controller_track)
 
-:::warning Danger
-**WARNING**: The controller examples will cause the Amiga to drive when the dashboard is in auto mode.
+:::caution Warning
+The controller examples will cause the Amiga to drive when the dashboard is in auto mode.
 Make sure the area is clear before running examples.
 
-You can also run this example when the Amiga dashboard is not in `AUTO READY` or `AUTO ACTIVE`
-and see the commands being sent with the red needle on the auto page.
+You can also run the examples when the Amiga dashboard is not in `AUTO READY` or `AUTO ACTIVE`
+and see the commands being sent with the red needle on the auto page without the Amiga actually moving.
 :::

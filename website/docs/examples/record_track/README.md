@@ -1,9 +1,17 @@
 ---
 id: record-track
-title: Record Track
+title: Record a Track
 ---
 
 # Filter Track Recording Example
+
+:::caution Warning
+The controller examples will cause the Amiga to drive when the dashboard is in auto mode.
+Make sure the area is clear before running examples.
+
+You can also run the examples when the Amiga dashboard is not in `AUTO READY` or `AUTO ACTIVE`
+and see the commands being sent with the red needle on the auto page without the Amiga actually moving.
+:::
 
 This [example](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/record_track/main.py)
 operates as a standalone Python script,

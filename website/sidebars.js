@@ -116,7 +116,7 @@ const sidebars = {
     "concepts/concepts-index",
     {
       "Service Overviews": [
-        "concepts/controller_service/controller-info",
+        "concepts/controller_service/controller-overview",
       ],
     },
   ],

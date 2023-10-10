@@ -5,12 +5,12 @@ title: Follow a track
 
 # Controller Follow Track Example
 
-:::warning Danger
-**WARNING**: When the dashboard is in auto mode, this will cause the Amiga to drive.
-Make sure the area is clear before running this example.
+:::caution Warning
+The controller examples will cause the Amiga to drive when the dashboard is in auto mode.
+Make sure the area is clear before running examples.
 
-You can also run this example when the Amiga dashboard is not in `AUTO READY` or `AUTO ACTIVE`
-and see the commands being sent with the red needle on the auto page.
+You can also run the examples when the Amiga dashboard is not in `AUTO READY` or `AUTO ACTIVE`
+and see the commands being sent with the red needle on the auto page without the Amiga actually moving.
 :::
 
 The [**Controller Follow Track Example**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/controller_track/main.py)
