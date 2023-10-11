@@ -159,19 +159,15 @@ b. On the terminal type:
 
 ```bash
 cd .ssh
+copy nul config
 start .
 ```
 
 c. Hit **Enter**
 
-d. This will open the folder where you need to save your configurations.
+d. This will create a file named config and open the folder it's stored.
 
-e. Create a new file and name it config.
-
-**Hint**: Create a copy of your ssh_rsa.pub, and rename it to config;
-but make sure that it doesn't have an extension (e.g., ".pub").
-
-e. Open the file and overwrite its content with:
+e. Open the file using a text editor such as notepad and paste the following:
 
 ```bash
 Host <robot-name>
