@@ -81,7 +81,7 @@ d. This will open the folder where your `SSH` key was saved.
 
 e. Open the `id_rsa.pub` on a text editor such as Notepad.
 
-f. Copy the entire content of the file (including ssh-rsa) and paste in the website (Step 7)
+f. Copy the entire content of the file (including ssh-rsa) and paste in the website (Step 11)
 </TabItem>
 
 <TabItem value="macos" label="MacOS" default>
