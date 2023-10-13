@@ -53,13 +53,47 @@ on your computer that you'd like to use.
 
 #### 9. When prompted, press Enter twice to use a blank passphrase
 
-#### 10. Use the following command to display your public SSH key
+#### 10. Display your public SSH key
+
+<Tabs>
+<TabItem value="linux" label="Linux" default>
 
 ```bash
 cat ~/.ssh/id_rsa.pub # Copy it with Shift + Ctrl + C
 ```
 
-#### 11. Copy your SSH key to the fleet manager website (`New SSH Key`)
+</TabItem>
+
+<TabItem value="windows" label="Windows" default>
+
+a. Open the command prompt (Windows Key + R -> cmd -> Enter)
+
+b. On the terminal window type:
+
+```bash
+cd .ssh
+start .
+```
+
+c. Hit **Enter**
+
+d. This will open the folder where your `SSH` key was saved.
+
+e. Open the `id_rsa.pub` on a text editor such as Notepad.
+
+f. Copy the entire content of the file (including ssh-rsa) and paste in the website (Step 11)
+</TabItem>
+
+<TabItem value="macos" label="MacOS" default>
+
+```bash
+cat ~/.ssh/id_rsa.pub # Copy it with Shift + Ctrl + C
+```
+
+</TabItem>
+</Tabs>
+
+#### 11. Copy your SSH key (including ssh-rsa) to the fleet manager website (`New SSH Key`)
 
 #### 12. Assign a name to that key (e.g., my-lenovo-pc)
 
@@ -88,7 +122,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="terminal" label="Terminal" default>
+<TabItem value="linux" label="Linux" default>
 
 Open a terminal window and type the following command:
 
@@ -116,6 +150,73 @@ You can download [**Fing**](https://www.fing.com/products/fing-app) to scan
 all devices connected to your network and figure out your robot's IP address.
 :::
 </TabItem>
+
+<TabItem value="windows" label="Windows" default>
+
+a. Open the command prompt (Windows Key + R -> cmd -> Enter)
+
+b. On the terminal type:
+
+```bash
+cd .ssh
+copy nul config
+start .
+```
+
+c. Hit **Enter**
+
+d. This will create a file named config and open the folder it's stored.
+
+e. Open the file using a text editor such as notepad and paste the following:
+
+```bash
+Host <robot-name>
+  HostName <ip-address>
+  User farm-ng-user-<username>
+  ```
+
+Replace `<robot-name>` with your robot name (e.g., element-vegetable) and
+`<ip-address>` the robot's local IP address.
+
+Replace `<username>` with your username (e.g., john-doe).
+Make sure to save the file before you close it!
+
+:::tip TIP
+You can download [**Fing**](https://www.fing.com/products/fing-app) to scan
+all devices connected to your network and figure out your robot's IP address.
+:::
+
+</TabItem>
+
+<TabItem value="macos" label="MacOS" default>
+
+Open a terminal window and type the following command:
+
+```bash
+gedit ~/.ssh/config # This will open your .ssh/config
+# Here we're using gedit as our text manager, feel free to choose another one (e.g., vi, nano)
+```
+
+Hit **Enter** and then add the following lines to your file:
+
+```bash
+Host <robot-name>
+  HostName <ip-address>
+  User farm-ng-user-<username>
+  ```
+
+Replace `<robot-name>` with your robot name (e.g., element-vegetable) and
+`<ip-address>` the robot's local IP address.
+
+Replace `<username>` with your username (e.g., john-doe).
+Make sure to save the file before you close it!
+
+:::tip TIP
+You can download [**Fing**](https://www.fing.com/products/fing-app) to scan
+all devices connected to your network and figure out your robot's IP address.
+:::
+</TabItem>
+
 <TabItem value="vscode" label="VS Code">
 
 #### 1. Click on the "Open a Remote Window" (blue button on the bottom left corner of your VS Code screen)
@@ -158,7 +259,7 @@ all devices connected to your network and figure out your robot's IP address.
 
 ### Accessing the brain
 
-You can access the brain via a terminal or VS Code.
+You can access the brain via a terminal (**Linux, Windows or MacOS**) or VS Code.
 
 <Tabs>
 <TabItem value="terminal" label="Terminal" default>
@@ -177,7 +278,7 @@ you can connect to the robot by simply typing:
 
 ```bash
 ssh <robot-name>
-# Make sure to replace <robot-name> with your actual robot name
+# Make sure to replace <robot-name> (including the < >) with your actual robot name
 ```
 
 :::
@@ -185,6 +286,7 @@ ssh <robot-name>
 You should now be connected to your robot!
 
 </TabItem>
+
 <TabItem value="vscode" label="VS Code">
 
 #### 1. Click on the "Open a Remote Window" (blue button on the bottom left corner of your VS Code)
