@@ -89,4 +89,5 @@ This is crucial for tasks that require precise navigation or environment mapping
 
 3. **Calibration on Demand**:
 Environmental changes or operational demands may necessitate recalibration.
-The /calibrate command simplifies this, enabling users to quickly recalibrate the IMU, ensuring continued accuracy in state estimation.
+The /calibrate command simplifies this, enabling users to quickly recalibrate the IMU, ensuring
+continued accuracy in state estimation.
