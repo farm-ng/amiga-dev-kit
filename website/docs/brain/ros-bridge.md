@@ -72,7 +72,7 @@ For: **`[Method 1]`**
 If you would like run the `amiga_ros_bridge` on the Amiga,
 you will need to gain access to the ROS bridge docker container.
 
-Please contact `info@farm-ng.com` for instructions and credentials.
+Please contact `support@farm-ng.com` for instructions and credentials.
 
 ### Install dependencies
 
@@ -215,7 +215,7 @@ and that you know both the IP address of the Amiga and of your PC.
 
 Launch the `amiga_ros_bridge` on the Amiga by `ssh`-ing into the ros bridge docker container on the Amiga.
 
-Please contact `info@farm-ng.com` for instructions and credentials.
+Please contact `support@farm-ng.com` for instructions and credentials.
 
 ```bash
 source ~/catkin_ws/devel/setup.bash
