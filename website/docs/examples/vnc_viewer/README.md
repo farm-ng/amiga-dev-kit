@@ -60,4 +60,4 @@ If you have tailscale enabled, you may be able to use the Amiga name instead of 
 
 - Finally enter the password when prompted
 
-> Contact us by e-mail at `info@farm-ng.com` for the VNC access password.
+> Contact us by e-mail at `support@farm-ng.com` for the VNC access password.
