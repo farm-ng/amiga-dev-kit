@@ -33,7 +33,8 @@ velocity, time, and other relevant GPS data.
 :::info INFO
 There are two types of GPS messages: **PVT** and **RELPOSNED**.
 
-**PVT** (Position, Velocity, and Time) messages provide the all-in-one solution: position, velocity, and time.
+**PVT** (Position, Velocity, and Time) messages provide the all-in-one solution: position, velocity,
+and time.
 It contains details like longitude, latitude, altitude, speed, and UTC time.
 
 **RELPOSNED** (Relative Positioning) messages provide relative position information in a
@@ -54,7 +55,7 @@ The required credentials include:
   - NTRIP MOUNTPOINT: Specific mount point on the NTRIP server.
   - USER: Username for accessing the base station.
   - PASSWORD: Corresponding password for the above username.
-  
+
 :::info NTRIP (Network Transport of RTCM via Internet Protocol)
 NTRIP is a protocol for streaming differential GPS (DGPS) data over the internet, enabling RTK
 corrections in areas with cellular coverage.
