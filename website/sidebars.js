@@ -117,6 +117,7 @@ const sidebars = {
     {
       "Service Overviews": [
         "concepts/controller_service/controller-overview",
+        "concepts/filter_service/filter-overview",
       ],
     },
   ],
