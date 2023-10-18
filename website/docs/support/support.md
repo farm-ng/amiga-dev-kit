@@ -29,7 +29,7 @@ you will need to create an account using your email address.
 
 ## Send us an e-mail
 
-You can also get in touch with us by e-mail at: info@farm-ng.com
+You can also get in touch with us by e-mail at: support@farm-ng.com
 
 > This is ideal for specific / private support requests.
 > If we feel your question is better suited for the public Discourse forum,
