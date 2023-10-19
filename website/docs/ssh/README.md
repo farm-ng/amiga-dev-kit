@@ -180,24 +180,6 @@ gedit ~/.ssh/config # This will open your .ssh/config
 # Here we're using gedit as our text manager, feel free to choose another one (e.g., vi, nano)
 ```
 
-Hit **Enter** and then add the following lines to your file:
-
-```bash
-Host <robot-name>
-  HostName <ip-address>
-  User farm-ng-user-<username>
-  ```
-
-Replace `<robot-name>` with your robot name (e.g., element-vegetable) and
-`<ip-address>` the robot's local IP address.
-
-Replace `<username>` with your username (e.g., john-doe).
-Make sure to save the file before you close it!
-
-:::tip TIP
-You can download [**Fing**](https://www.fing.com/products/fing-app) to scan
-all devices connected to your network and figure out your robot's IP address.
-:::
 </TabItem>
 
 <TabItem value="windows" label="Windows" default>
@@ -216,24 +198,7 @@ c. Hit **Enter**
 
 d. This will create a file named config and open the folder it's stored.
 
-e. Open the file using a text editor such as notepad and paste the following:
-
-```bash
-Host <robot-name>
-  HostName <ip-address>
-  User farm-ng-user-<username>
-  ```
-
-Replace `<robot-name>` with your robot name (e.g., element-vegetable) and
-`<ip-address>` the robot's local IP address.
-
-Replace `<username>` with your username (e.g., john-doe).
-Make sure to save the file before you close it!
-
-:::tip TIP
-You can download [**Fing**](https://www.fing.com/products/fing-app) to scan
-all devices connected to your network and figure out your robot's IP address.
-:::
+e. Open the file using a text editor such as notepad.
 
 </TabItem>
 
@@ -246,24 +211,6 @@ gedit ~/.ssh/config # This will open your .ssh/config
 # Here we're using gedit as our text manager, feel free to choose another one (e.g., vi, nano)
 ```
 
-Hit **Enter** and then add the following lines to your file:
-
-```bash
-Host <robot-name>
-  HostName <ip-address>
-  User farm-ng-user-<username>
-  ```
-
-Replace `<robot-name>` with your robot name (e.g., element-vegetable) and
-`<ip-address>` the robot's local IP address.
-
-Replace `<username>` with your username (e.g., john-doe).
-Make sure to save the file before you close it!
-
-:::tip TIP
-You can download [**Fing**](https://www.fing.com/products/fing-app) to scan
-all devices connected to your network and figure out your robot's IP address.
-:::
 </TabItem>
 
 <TabItem value="vscode" label="VS Code">
@@ -284,27 +231,32 @@ all devices connected to your network and figure out your robot's IP address.
 
 ![Screenshot from 2023-10-05 13-58-05](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/6a577080-a052-4a90-9ffb-491d7bb7c2ed)
 
-#### 5. Add the following lines to your file
+</TabItem>
+</Tabs>
+
+Add the following lines to your file:
 
 ```bash
 Host <robot-name>
   HostName <ip-address>
   User farm-ng-user-<username>
-  # Replace <robot-name> with your robot name (e.g., element-vegetable).
-  # You should receive your robot name via email
-  # Replace <username> with your username (e.g., john-doe)
-  # and <ip-address> with the robot's local IP address.
-  ```
+```
+
+Replace:
+
+* `<robot-name>` with your robot name (of the form `element-vegetable`).
+* `<ip-address>` with the robot's Tailscale FQDN (or IP address) reported by `tailscale status` in  the previous section.
+  If you have not set up remote access via Tailscale, and your PC and Amiga are connected to the same Wifi network, you
+  may use the Amiga's local IP address instead.
+* `<username>` with the username you chose on your first login to Fleet Manager (e.g., `john-doe`).
+
+Make sure to save the file before you close it!
 
 :::tip TIP
 You can download [**Fing**](https://www.fing.com/products/fing-app) to scan
-all devices connected to your network and figure out your robot's IP address.
+all devices connected to your network and figure out your robot's local IP address.
 :::
 
-#### 6. Save and close the document
-
-</TabItem>
-</Tabs>
 
 ### Accessing the brain
 
