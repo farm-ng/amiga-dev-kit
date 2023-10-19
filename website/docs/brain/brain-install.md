@@ -9,6 +9,36 @@ title: Brain ADK Install
 
 ## Install
 
+:::caution temporary instructions
+The full instructions on this page are temporarily invalid
+during the transition to Amiga Brain OS 2.0.
+
+In the meantime, please use the following instructions
+to build the virtual environment you need to run the `farm-ng-amiga` examples:
+
+```bash
+# Clone farm-ng-core with submodules
+git clone --recursive https://github.com/farm-ng/farm-ng-core.git
+# Clone farm-ng-amiga to main-v2 branch
+git clone -b main-v2 https://github.com/farm-ng/farm-ng-amiga.git
+
+# Create and source a virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+# Upgrade some deps
+pip install --upgrade pip
+pip install --upgrade setuptools wheel
+
+# Install the packages
+pip install -e farm-ng-core
+pip install --no-build-isolation -e farm-ng-amiga
+```
+
+These instructions are based on discourse thread:
+[**Install instructions comment**](https://discourse.farm-ng.com/t/extracting-images-metadata-from-binary-files-exported-in-recorder-v2-app/252/6?u=kylecoble)
+:::
+
 ### [Optional] Make a new directory that will hold all of your farm-ng related files
 
 ```bash
