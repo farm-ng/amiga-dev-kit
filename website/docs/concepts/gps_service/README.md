@@ -45,7 +45,7 @@ It shows the difference in position between a "moving" receiver and a "fixed" re
 
 :::tip TIP
 For a comprehensive understanding of the list of variables available in each GPS message,
-make sure to check their [protobuff definitions](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/gps/gps.proto).
+make sure to check their [protobuf definitions](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/gps/gps.proto).
 :::
 
 ## Requirements
