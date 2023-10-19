@@ -43,6 +43,11 @@ between two receivers, often as a part of Real Time Kinematics (RTK) solutions.
 It shows the difference in position between a "moving" receiver and a "fixed" reference receiver.
 :::
 
+:::tip TIP
+For a comprehensive understanding of the list of variables available in each GPS message,
+make sure to check their [protobuff definitions](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/gps/gps.proto).
+:::
+
 ## Requirements
 
 For the GPS service to function optimally, certain conditions must be met:
