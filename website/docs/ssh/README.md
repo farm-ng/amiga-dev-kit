@@ -10,7 +10,7 @@ The only requirement is to **be connected to the same network of your Amiga**.
 
 #### 1. Request SSH access to our Fleet Customer Support via email
 
-Email [support@farm-ng.com](support@farm-ng.com) to request SSH access.
+Email [support@farm-ng.com](mailto:support@farm-ng.com) to request SSH access.
 Make sure to include your name, email, and robot information on the email
 to expedite the process.
 
@@ -109,7 +109,7 @@ cat ~/.ssh/id_rsa.pub # Copy it with Shift + Ctrl + C
 
 They will grant you access to your robot.
 
-As a reminder, our email is [support@farm-ng.com](support@farm-ng.com)
+As a reminder, our email is [support@farm-ng.com](mailto:support@farm-ng.com)
 
 Congratulations, you're done setting up your account!
 
