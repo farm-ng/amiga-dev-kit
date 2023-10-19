@@ -53,6 +53,8 @@ make sure to check their [protobuff definitions](https://github.com/farm-ng/farm
 For the GPS service to function optimally, certain conditions must be met:
 
 - The robot must have an active Wi-Fi connection, ensuring real-time data communication.
+  - **NOTE**: The robot needs to be connected to Wi-Fi for `relposned` messages.
+ However, an internet connection is not required for `pvt` messages.
 - Users need to input credentials for connecting to an RTK base station, enhancing the GPS accuracy.
 The required credentials include:
   - NTRIP ID: The server address of the base station.
