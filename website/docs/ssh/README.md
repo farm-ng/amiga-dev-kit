@@ -7,7 +7,7 @@ Users can remotely access and start developing on the brain via `SSH` access.
 
 ### Sign up for a farm-ng-user account
 
-#### 1. Request SSH access to our Fleet Customer Support via email (coming up soon)
+#### 1. Email Customer Support (support@farm-ng.com) with subject line "Request device access"
 
 #### 2. You will receive a confirmation email with a link for sign-up along with instructions
 
@@ -17,7 +17,7 @@ If your institution does not use Google accounts, you may be able to create a
 [Google](https://support.google.com/accounts/answer/27441?sjid=986712808663701328-NA#existingemail)
 account using your existing institutional email address.
 
-#### 3. On our fleet manager website, click on **login**
+#### 3. On our Fleet Manager website, click on **login**
 
 ![Screenshot from 2023-10-05 11-37-02](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/16afce2a-f338-44a6-9757-f1eadce9a9bb)
 
@@ -92,7 +92,7 @@ cat ~/.ssh/id_rsa.pub # Copy it with Shift + Ctrl + C
 </TabItem>
 </Tabs>
 
-#### 11. Copy your SSH key (including ssh-rsa) to the fleet manager website (`New SSH Key`)
+#### 11. Copy your SSH key (including ssh-rsa) to the Fleet Manager website (`New SSH Key`)
 
 #### 12. Assign a name to that key (e.g., my-lenovo-pc)
 
@@ -100,16 +100,17 @@ cat ~/.ssh/id_rsa.pub # Copy it with Shift + Ctrl + C
 
 ![Screenshot from 2023-10-05 11-44-09](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/2fe86af2-6156-4fda-bef8-7bb803d5ff52)
 
-#### 14. Email our Fleet Customer Support to inform that you have signed up successfully
-
-They will grant you access to your robot.
-
-Congratulations, you're done setting up your account!
-
 :::info INFO
 Each SSH key corresponds to a single PC.
 If you need to access the Amiga from multiple PCs, you will need to repeat steps 7-13 for each PC.
 :::
+
+#### 14. Inform Customer Support that you have signed up successfully
+
+Reply on the "Request device access" email thread. Provide the Google account email you used to sign up in Fleet Manager.
+
+Customer Support will grant you access to your robot and reply with additional instructions for remote access (see next
+section).
 
 ### (Recommended) Configure cross-network access
 
