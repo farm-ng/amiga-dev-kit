@@ -19,7 +19,7 @@ In essence, the Filter does the intricate work of synthesizing sensor data, enab
 confidently interpret and utilize the Amiga's spatial information without needing extensive expertise
 in robotics or state estimation.
 
-## Subscritions
+## Subscriptions
 
 The `Filter` is a client from the following services:
 
