@@ -17,9 +17,16 @@ However, its data, especially the IMU information, plays a significant role in t
 navigation capabilities, as it's fused with GPS and wheel odometry data in the Filter service
 (using an Unscented Kalman Filter).
 
+# Multiple Instances
+
+Depending on the number of OAK devices connected to the Amiga, there might be multiple instances
+of the OAK service running concurrently.
+For example, with two OAK cameras, there will be an oak0 service and an oak1 service.
+Each instance is responsible for managing the data streams from its respective OAK-D device.
+
 ## Standalone Operation
 
-Unlike other services, the Oak service operates independently and is not a client of any other services.
+Unlike other services, each Oak service operates independently and is not a client of any other services.
 
 ## Message Types
 
