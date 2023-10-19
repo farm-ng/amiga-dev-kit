@@ -4,7 +4,6 @@ title: Access and Develop on the Brain
 ---
 
 Users can remotely access and start developing on the brain via `SSH` access.
-The only requirement is to **be connected to the same network of your Amiga**.
 
 ### Sign up for a farm-ng-user account
 
@@ -112,9 +111,58 @@ Each SSH key corresponds to a single PC.
 If you need to access the Amiga from multiple PCs, you will need to repeat steps 7-13 for each PC.
 :::
 
+### (Recommended) Configure cross-network access
+
+You should now be able to SSH into the Amiga as described in the next sections, but **only if your PC is connected to
+the same Wifi network as your Amiga.** With a small amount of additional setup, you can use
+[Tailscale](https://tailscale.com/) for secure remote access to your Amiga from any network.
+
+#### 1. Create a Tailscale network with your development machines
+
+:::info INFO
+For simplicity, we describe here how an individual user can create their own private Tailscale network (tailnet). If your
+development machines are already on a tailnet, or if you prefer to set up a larger tailnet for your team, you are free to
+do so.
+:::
+
+Follow the [Tailscale quickstart](https://tailscale.com/kb/1017/install/) guide. Note:
+ * Sign up using the same Google account you use to login to Fleet Manager.
+ * You can use Tailscale's free plan to provide remote access to up to three of your machines, for example: a laptop, a
+   workstation, and a mobile phone/tablet. The Amiga will not count against your limit.
+
+#### 2. Add the Amiga to your Tailscale network
+
+In your access confirmation email from farm-ng Support, you should have received an invite link to share the Amiga with
+you via your Tailscale network. Click the link and sign in to your Tailscale account to accept the invite. In the
+[Machines](https://login.tailscale.com/admin/machines) page of the Tailscale admin console, you should see a new machine
+listed with hostname of the form `[element]-[fruit]`. That's your Amiga!
+
+The invite link works for a limited amount of time. If you need a new one, contact support@farm-ng.com.
+
+#### 3. Connect your development machine
+
+In a terminal window, run the following commands:
+
+```bash
+sudo tailscale up
+tailscale status
+```
+
+This will output a list of machines on your Tailscale network, similar to:
+
+```bash
+100.95.129.75   my-laptop            my-username@ linux   -
+100.77.194.143  my-phone             my-username@ android -
+100.127.188.107 [element-fruit].[tailnet-name].ts.net support-username@     linux -
+```
+
+In this example, the bottom row represents your Amiga. You will access it via either:
+ * IP address: a stable IP of the form `100.x.y.z` assigned on your Tailscale network.
+ * Fully qualified domain name (FQDN): of the form `[element-fruit].[tailnet-name].ts.net`.
+
 ### (Recommended) Configure your SSH Connections
 
-Now that you have an `SSH key` and your account is ready, let's configure your SSH connections.
+Now that you have an `SSH` key and remote connectivity to your Amiga, let's configure your SSH connections.
 
 This can be done via the terminal or VS Code.
 
