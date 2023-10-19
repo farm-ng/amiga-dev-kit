@@ -29,6 +29,7 @@ The `Filter` is a client from the following services:
 
 For the Filter service to function correctly, these services must be operational and communicating
 relevant sensor data.
+Since the Filter relies on GPS data, the Amiga must have a GPS connected to an RTK base station.
 
 ## Convergence Requirements
 
