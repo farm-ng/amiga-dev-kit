@@ -107,37 +107,41 @@ If you need to access the Amiga from multiple PCs, you will need to repeat steps
 
 #### 14. Inform Customer Support that you have signed up successfully
 
-Reply on the "Request device access" email thread. Provide the Google account email you used to sign up in Fleet Manager.
+Reply on the "Request device access" email thread. Provide the Google account email you used to sign
+up in Fleet Manager.
 
-Customer Support will grant you access to your robot and reply with additional instructions for remote access (see next
-section).
+Customer Support will grant you access to your robot and reply with additional instructions for
+remote access (see next section).
 
 ### (Recommended) Configure cross-network access
 
-You should now be able to SSH into the Amiga as described in the next sections, but **only if your PC is connected to
-the same Wifi network as your Amiga.** With a small amount of additional setup, you can use
-[Tailscale](https://tailscale.com/) for secure remote access to your Amiga from any network.
+You should now be able to SSH into the Amiga as described in the next sections, but **only if your
+PC is connected to the same Wifi network as your Amiga.** With a small amount of additional setup,
+you can use [Tailscale](https://tailscale.com/) for secure remote access to your Amiga from any
+network.
 
 #### 1. Create a Tailscale network with your development machines
 
 :::info INFO
-For simplicity, we describe here how an individual user can create their own private Tailscale network (tailnet). If your
-development machines are already on a tailnet, or if you prefer to set up a larger tailnet for your team, you are free to
-do so.
+For simplicity, we describe here how an individual user can create their own private Tailscale
+network (tailnet). If your development machines are already on a tailnet, or if you prefer to set
+up a larger tailnet for your team, you are free to do so.
 :::
 
 Follow the [Tailscale quickstart](https://tailscale.com/kb/1017/install/) guide. Note:
 
 * Sign up using the same Google account you use to login to Fleet Manager.
-* You can use Tailscale's free plan to provide remote access to up to three of your machines, for example: a laptop, a
-   workstation, and a mobile phone/tablet. The Amiga will not count against your limit.
+* You can use Tailscale's free plan to provide remote access to up to three of your machines, for
+  example: a laptop, a workstation, and a mobile phone/tablet. The Amiga will not count against your
+  limit.
 
 #### 2. Add the Amiga to your Tailscale network
 
-In your access confirmation email from farm-ng Support, you should have received an invite link to share the Amiga with
-you via your Tailscale network. Click the link and sign in to your Tailscale account to accept the invite. In the
-[Machines](https://login.tailscale.com/admin/machines) page of the Tailscale admin console, you should see a new machine
-listed with hostname of the form `[element]-[fruit]`. That's your Amiga!
+In your access confirmation email from farm-ng Support, you should have received an invite link to
+share the Amiga with you via your Tailscale network. Click the link and sign in to your Tailscale
+account to accept the invite. In the [Machines](https://login.tailscale.com/admin/machines) page of
+the Tailscale admin console, you should see a new machine listed with hostname of the form
+`[element]-[fruit]`. That's your Amiga!
 
 The invite link works for a limited amount of time. If you need a new one, contact support@farm-ng.com.
 
@@ -247,9 +251,9 @@ Host <robot-name>
 Replace:
 
 * `<robot-name>` with your robot name (of the form `element-vegetable`).
-* `<ip-address>` with the robot's Tailscale FQDN (or IP address) reported by `tailscale status` in  the previous section.
-  If you have not set up remote access via Tailscale, and your PC and Amiga are connected to the same Wifi network, you
-  may use the Amiga's local IP address instead.
+* `<ip-address>` with the robot's Tailscale FQDN (or IP address) reported by `tailscale status` in
+  the previous section. If you have not set up remote access via Tailscale, and your PC and Amiga
+  are connected to the same Wifi network, you may use the Amiga's local IP address instead.
 * `<username>` with the username you chose on your first login to Fleet Manager (e.g., `john-doe`).
 
 Make sure to save the file before you close it!
