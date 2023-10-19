@@ -75,7 +75,7 @@ When planning to record a new track, the recommended workflow is as follows:
 
 :::tip TIP
 For a comprehensive understanding of the list of variables available in the filter state messages,
-make sure to check its [protobuff definition](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/filter/filter.proto).
+make sure to check its [protobuf definition](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/filter/filter.proto).
 :::
 
 ## Features
