@@ -127,8 +127,9 @@ do so.
 :::
 
 Follow the [Tailscale quickstart](https://tailscale.com/kb/1017/install/) guide. Note:
- * Sign up using the same Google account you use to login to Fleet Manager.
- * You can use Tailscale's free plan to provide remote access to up to three of your machines, for example: a laptop, a
+
+* Sign up using the same Google account you use to login to Fleet Manager.
+* You can use Tailscale's free plan to provide remote access to up to three of your machines, for example: a laptop, a
    workstation, and a mobile phone/tablet. The Amiga will not count against your limit.
 
 #### 2. Add the Amiga to your Tailscale network
@@ -158,8 +159,9 @@ This will output a list of machines on your Tailscale network, similar to:
 ```
 
 In this example, the bottom row represents your Amiga. You will access it via either:
- * IP address: a stable IP of the form `100.x.y.z` assigned on your Tailscale network.
- * Fully qualified domain name (FQDN): of the form `[element-fruit].[tailnet-name].ts.net`.
+
+* IP address: a stable IP of the form `100.x.y.z` assigned on your Tailscale network.
+* Fully qualified domain name (FQDN): of the form `[element-fruit].[tailnet-name].ts.net`.
 
 ### (Recommended) Configure your SSH Connections
 
@@ -256,7 +258,6 @@ Make sure to save the file before you close it!
 You can download [**Fing**](https://www.fing.com/products/fing-app) to scan
 all devices connected to your network and figure out your robot's local IP address.
 :::
-
 
 ### Accessing the brain
 
