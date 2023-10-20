@@ -7,15 +7,20 @@ Users can remotely access and start developing on the brain via `SSH` access.
 
 ### Sign up for a farm-ng-user account
 
-#### 1. Email Customer Support (support@farm-ng.com) with subject line "Request device access"
+#### 1. Request device access via email
 
-#### 2. You will receive a confirmation email with a link for sign-up along with instructions
+Email Customer Support (support@farm-ng.com) with subject line "Request device access".
+Include your name and robot information on the email to expedite the process.
 
-At this time, we only support Google accounts.
+#### 2. Wait for a sign-up email
+
+Customer Support will reply with a sign-up link to our Fleet Manager website.
+
+At this time, Fleet Manager only supports SSO login for Google accounts.
 While not required, we highly encourage you to sign up using your institutional email.
-If your institution does not use Google accounts, you may be able to create a
-[Google](https://support.google.com/accounts/answer/27441?sjid=986712808663701328-NA#existingemail)
-account using your existing institutional email address.
+If your institution does not use Google accounts, you may be able to [create a Google
+account](https://support.google.com/accounts/answer/27441?sjid=986712808663701328-NA#existingemail)
+using your existing institutional email address.
 
 #### 3. On our Fleet Manager website, click on **login**
 
@@ -137,7 +142,7 @@ Follow the [Tailscale quickstart](https://tailscale.com/kb/1017/install/) guide.
 
 #### 2. Add the Amiga to your Tailscale network
 
-In your access confirmation email from farm-ng Support, you should have received an invite link to
+In your access confirmation email from Customer Support, you should have received an invite link to
 share the Amiga with you via your Tailscale network. Click the link and sign in to your Tailscale
 account to accept the invite. In the [Machines](https://login.tailscale.com/admin/machines) page of
 the Tailscale admin console, you should see a new machine listed with hostname of the form
