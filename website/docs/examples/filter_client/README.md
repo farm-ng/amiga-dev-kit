@@ -3,6 +3,27 @@ id: filter-client
 title: Filter Client
 ---
 
+
+:::info Basic Knowledge Requirements
+
+Before diving into this code, here's a quick heads-up on what you'll need to be familiar with:
+
+1. **Understanding of Kalman Filters, specifically the Unscented Kalman Filter (UKF)**:
+The client in this example is receiving state estimates that are the result of UKF computations.
+It's important to understand how UKFs work, their limitations and functionatilies.
+
+2. **Knowledge of State Estimation and Uncertainty**: The example deals with concepts of state estimation
+(pose, orientation) and the associated uncertainties.
+Understanding these concepts is important for interpreting the received data and how these
+might be used in downstream applications or enhancements.
+
+3. **Python Programming**: It's important to have a good grasp of Python, especially with concepts
+like `functions`, `loops`, and `classes`, since the example utilizes these fundamentals.
+
+4. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
+code using the `async/await` syntax.
+:::
+
 ### [Link to `filter_client/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/filter_client/main.py)
 
 This example streams the results from the state estimation filter running on the Amiga.
