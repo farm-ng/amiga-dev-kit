@@ -8,7 +8,7 @@ title: Camera Client
 Before diving into this code, here's a quick heads-up on what you'll need to be familiar with:
 
 1. **Python Programming**: It's important to have a good grasp of Python, especially with concepts
-like `functions`, `loops`, and `classes`, since the script utilizes these fundamentals.
+like `functions`, `loops`, and `classes`, since the example utilizes these fundamentals.
 
 2. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
 code using the `async/await` syntax.

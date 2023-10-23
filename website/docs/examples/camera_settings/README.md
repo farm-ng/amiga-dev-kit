@@ -8,14 +8,14 @@ title: Camera Settings
 Before diving into this code, here's a quick heads-up on what you'll need to be familiar with:
 
 1. **Python Programming**: It's important to have a good grasp of Python, especially with concepts
-like `functions`, `loops`, and `classes`, since the script utilizes these fundamentals.
+like `functions`, `loops`, and `classes`, since the example utilizes these fundamentals.
 
 2. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
 code using the `async/await` syntax.
 
-3. **Camera Configuration and Control**: While not strictly a programming skill,
-knowledge of camera settings and configurations (possibly specific to the OAK-D camera if used)
-would be beneficial for understanding how the camera settings are manipulated in the code.
+3. **Camera Configuration and Control**: Knowledge of camera settings and configurations
+(possibly specific to the OAK-D camera) would be beneficial for understanding how the camera
+settings are manipulated in the code.
 :::
 
 ## Camera Settings

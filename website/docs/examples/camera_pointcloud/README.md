@@ -8,20 +8,19 @@ title: Camera Pointcloud
 Before diving into this code, here's a quick heads-up on what you'll need to be familiar with:
 
 1. **Python Programming**: It's important to have a good grasp of Python, especially with concepts
-like `functions`, `loops`, and `classes`, since the script utilizes these fundamentals.
+like `functions`, `loops`, and `classes`, since the example utilizes these fundamentals.
 
 2. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
 code using the `async/await` syntax.
 
-3. **3D Point Cloud Data**: Understanding the basics of 3D point cloud data is crucial.
-You should be familiar with concepts like depth maps and disparity maps, as well as how they can be
+3. **3D Point Cloud Data**: Understanding the basics of 3D point cloud data.
+You should be familiar with concepts like depth maps and disparity maps, and how they can be
 converted into 3D representations of a scene.
 Knowledge of methods such as `depth_from_disparity` and `depth_to_3d_v2`, and data structures
-for representing 3D data (like tensors in this case), will be especially helpful.
+for representing 3D data (like tensors), will be especially helpful.
 
-4. **Image Decoding and Tensor Manipulation**: Experience with image data decoding and manipulation,
-particularly using tensors, is necessary since the script handles image data transformation into 3D
-point cloud data.
+4. **Image Decoding and Tensor Manipulation**: Understanding of image data decoding and manipulation,
+particularly using tensors.
 :::
 
 ## Camera Pointcloud
