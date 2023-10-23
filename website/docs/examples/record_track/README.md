@@ -3,6 +3,23 @@ id: record-track
 title: Record a Track
 ---
 
+:::info Basic Knowledge Requirements
+
+Before diving into this code, here's a quick heads-up on what you'll need to be familiar with:
+
+1. **Understanding of Path and States in Autonomous Systems**:
+This example is for recording a "track," which is a series of states to be followed or analyzed later
+by the controller.
+Understanding these states, how they're calculated, and their importance in autonomous navigation
+is important.
+
+2. **Python Programming**: It's important to have a good grasp of Python, especially with concepts
+like `functions`, `loops`, and `classes`, since the example utilizes these fundamentals.
+
+3. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
+code using the `async/await` syntax.
+:::
+
 # Filter Track Recording Example
 
 :::caution Warning
