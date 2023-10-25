@@ -112,8 +112,9 @@ const sidebars = {
       "support/github-101",
     ],
   },
-  "Conepts": [
+  "Concepts": [
     "concepts/concepts-index",
+    "controller_101/controller-101",
     {
       "Service Overviews": [
         "concepts/canbus_service/canbus-overview",
