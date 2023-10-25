@@ -114,7 +114,6 @@ const sidebars = {
   },
   "Concepts": [
     "concepts/concepts-index",
-    "controller_101/controller-101",
     {
       "Service Overviews": [
         "concepts/canbus_service/canbus-overview",
@@ -122,6 +121,7 @@ const sidebars = {
         "concepts/gps_service/gps-overview",
         "concepts/filter_service/filter-overview",
         "concepts/controller_service/controller-overview",
+        "controller_101/controller-101",
       ],
     },
   ],
