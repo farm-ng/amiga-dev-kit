@@ -8,6 +8,7 @@ title: Controller 101
 ## Fundamental Concepts
 
 ### Frames of Reference
+
 In robotics, a frame of reference (often just called a "frame") is a way to describe the
 position and orientation of something in space.
 There are two primary frames you need to be aware of:
@@ -55,7 +56,7 @@ One such option is [MIT OpenCourseWare - Introduction To Robotics](https://ocw.m
 When you want the Amiga to perform a specific movement, you need to provide it with a series
 of poses that describe that movement.
 
-For a better understanding of the `Pose` structure, please refer to our 
+For a better understanding of the `Pose` structure, please refer to our
 [**protobuf definition of a pose**](https://github.com/farm-ng/farm-ng-core/blob/main/protos/farm_ng/core/pose.proto).
 
 Each pose has an `Isometry3F64`, which is a representation of rigid body transformations in 3D space.
@@ -81,7 +82,7 @@ In 3D space, the z-axis typically points upwards, perpendicular to the ground pl
 When you rotate an object about the z-axis, it turns around this vertical line,
 much like how a spinning top rotates around its central axis.
 
-### Example:
+### Example
 
 There are several ways of creating poses and commanding your `Controller` to follow them.
 Let's check how to use the concepts learned here to create poses that represent a `pi turn`
@@ -134,7 +135,7 @@ def create_pi_turn_segment(
     return segment_poses
 ```
 
-### Code Breakdown:
+### Code Breakdown
 
 Since we're in the robot frame, we always command it to drive forward, for this reason the `y` and `z`
 components of our `Isometry3F64` are always zero.
@@ -145,3 +146,11 @@ components of our `Isometry3F64` are always zero.
 
 In essence, by using Isometry3F64, you're able to succinctly describe both the linear and
 angular movements of the robot for each segment of its pi turn.
+
+## Next Steps
+
+Make sure to check the [Concepts](https://amiga.farm-ng.com/docs/concepts/) page
+to know more about all the services available in your Amiga and how they interact with each other.
+
+Make sure to also check our [Brain Controller Examples](https://amiga.farm-ng.com/docs/examples/examples-index)
+to test the `Controller` in your Amiga.
