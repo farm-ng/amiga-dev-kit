@@ -7,54 +7,133 @@ title: Controller 101
 
 ## Fundamental Concepts
 
+Before we can send our robot out to drive a **track** (or **path**),
+we need to understand where our robot is and where we want to send it.
+The following concepts are critical to understand if you wish
+to programmatically define tracks for your robot.
+
 ### Frames of Reference
 
-In robotics, a frame of reference (often just called a "frame") is a way to describe the
-position and orientation of something in space.
-There are two primary frames you need to be aware of:
+In robotics, a **frame of reference**
+(often called a "**frame**", **coordinate frame**, or "**reference frame**")
+is a description of a coordinate system of 3 orthogonal axes (**x**, **y**, & **z**) defined by
+the position and orientation of the object.
 
-**World Frame**: This is a fixed frame, usually representing the environment or the world in which
-the robot operates.
+The two primary frames you need to be aware of are:
+
+**World Frame (`world`)**:
+Conventionally, this is a fixed frame representing the environment in which the robot operates.
 Think of it as an anchor point that doesn't move.
+If using RTK GPS, a typical world frame coordinate system is defined at the location
+of your RTK base station.
 
-**Robot Frame**: This frame is attached to the robot.
+**Robot Frame (`robot`)**: This frame is attached to the robot.
 As the robot moves, this frame moves with it.
-It's used to describe the robot's position and orientation relative to the world frame.
+Considering the robot is not a single point, it is important to define where on the robot
+is considered the center of the `robot` frame axes.
+At farm-ng we choose the center of the robot (in length & width) at ground level.
 
-### Poses
+Additional relevant frames for your Amiga-based robotics applications
+may include the `camera` frame, the `imu` frame, the `gps_antenna` frame, and so on.
 
-A pose describes the position and orientation of the robot in space.
-It's a combination of:
+Each **reference frame** is represented below as a set of red-green-blue axes.
+The frames are connected by 6 degree-of-freedom **transforms**,
+represented below by yellow arrows.
 
-**Position**: Where the robot is. This is usually given as a set of coordinates (x, y, z).
+<!-- ![reference](https://foxglove.dev/images/blog/understanding-ros-transforms/hero.webp) -->
+![image](https://github.com/farm-ng/amiga-dev-kit/assets/53625197/656fff08-0296-4d81-8990-dc65d7f1af16)
 
-**Orientation**: Which way the robot is facing. This can be represented using quaternions,
-which are a way to describe 3D rotations.
-
-### Quaternions
-
-Quaternions are a type of mathematical object used to represent rotations in 3D space.
-They're an alternative to other methods like Euler angles or rotation matrices.
-Quaternions are particularly useful because they avoid certain problems like gimbal lock
-and can be more computationally efficient.
+*Image Credit: [https://foxglove.dev/blog/understanding-ros-transforms](https://foxglove.dev/blog/understanding-ros-transforms)*
 
 ### Transformations
 
-A transformation describes how to move from one frame to another.
-For instance, if you know the robot's pose in the world frame and you want to know its
-pose in another frame (like a camera attached to the robot), you'd use a transformation.
+A **transformation**, or **transform**, describes how to move from one reference frame to another.
 
-:::tip
-The multiplication of coordinate frame transforms is a fundamental concept in robotics!
+Typically in robotics we represent these transforms as an **isometry** transformation in 3D space.
+This is a distance-preserving 6 degree-of-freedom (DOF) transformation
+that includes a translation (3 DOF) and a rotation (the other 3 DOF).
 
-If you wish to learn more, there is an abundance of free online resources and courses covering the topic.
-One such option is [MIT OpenCourseWare - Introduction To Robotics](https://ocw.mit.edu/courses/2-12-introduction-to-robotics-fall-2005/).
-:::
+For instance, we can represent the transformation from the `world` reference frame
+to the `robot` reference frame.
+Our naming convention at farm-ng is to call this the **`world_from_robot`** transformation,
+following a `<parent>_from_<child>` or `<frame_a>_from_<frame_b>` naming convention.
+
+This transform contains the **translation** along the `world` **x, y, z** axes,
+as well as the **rotation** required to align the axes.
+
+The **translation**, a 3-dimensional linear offset,
+is represented as a vector of `[x, y, z]` coordinates in the parent reference frame.
+
+The **rotation**, a 3-dimensional rotation, can be represented in a number of ways,
+but typically is represented as a **quaternion**.
+
+#### Quaternions
+
+Quaternions are a type of mathematical object used to represent rotations in 3D space.
+
+Quaternions consist of four numbers `(x, y, z, w)` (or sometimes in order `(w, x, y, z)`).
+`w` represents the scalar (or real) part of the rotation
+and `x`, `y`, and `z` are the vector (or imaginary) parts.
+
+Quaternions an alternative to other methods like Euler angles or rotation matrices.
+Quaternions are particularly useful because they are compact,
+avoid certain problems like gimbal lock, and can be more computationally efficient.
+
+#### Transform math
+
+**Transforms** can be mathematically manipulated to understand where **coordinate frames**
+are in relation to one another.
+Most commonly, you will **invert** transforms and you will **multiply** transforms.
+
+If you know the transform from the `world` coordinate frame to the `robot` coordinate frame (`world_from_robot`),
+you can **invert** that transform to get the transform from the `robot` coordinate frame
+to the `world` coordinate frame (`robot_from_world`).
+
+```python
+world_from_robot = robot_from_imu^-1
+```
+
+If you know two transforms with a common frame, you can **multiply** them.
+
+Say you know `world_from_robot` and the `robot_from_imu` transform from your
+`robot` frame to your `imu` frame (where the IMU is on your robot).
+You can calculate the transform from the `world` frame to the `imu` frame (`world_from_imu`)
+with transform **multiplication**.
+
+```python
+world_from_robot * robot_from_imu = world_from_imu
+```
+
+### Poses
+
+We tend to think of where our robot is as a **pose**, a combination of **position** and **orientation**.
+The **position** being where the robot is, and the **orientation** being which way the robot is facing.
+
+A pose is, however, undetermined as there needs to be a **frame of reference** the position
+and orientation are in.
+Queue **transforms**!
+
+We can define the **pose** of our robot as the 6-DOF transformation from the `world` frame
+to our `robot` frame (`world_from_robot`).
+
+We are not limited to representing the `world_from_robot` transformation as a pose.
+Any transform can be represented as a pose by correctly specifying the `frame_a` (parent frame)
+and `frame_b` (child frame) in our
+[**`Pose` protobuf definition**](https://github.com/farm-ng/farm-ng-core/blob/main/protos/farm_ng/core/pose.proto).
+
+### Resources
+
+The use and multiplication of coordinate frame transforms is a fundamental concept in robotics!
+As such, there is an abundance of quality, free resources on the topic.
+
+For a slightly-less-brief introduction you can refer to [Understanding ROS Transforms](https://foxglove.dev/blog/understanding-ros-transforms).
+
+If you wish to dive deeper on this topic, one option is [MIT OpenCourseWare - Introduction To Robotics](https://ocw.mit.edu/courses/2-12-introduction-to-robotics-fall-2005/).
 
 ## Creating and Propagating Poses for the Controller
 
 When you want the Amiga to perform a specific movement, you need to provide it with a series
-of poses that describe that movement.
+of poses, called **waypoints** when in a **track**, that describe that movement.
 
 For a better understanding of the `Pose` structure, please refer to our
 [**protobuf definition of a pose**](https://github.com/farm-ng/farm-ng-core/blob/main/protos/farm_ng/core/pose.proto).
