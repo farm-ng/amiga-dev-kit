@@ -115,13 +115,16 @@ const sidebars = {
   "Concepts": [
     "concepts/concepts-index",
     {
-      "Service Overviews": [
+      "Fundamental Concepts": [
+        "concepts/transforms_and_poses/transforms-and-poses",
+        "concepts/controller_101/controller-101",
+      ],
+        "Service Overviews": [
         "concepts/canbus_service/canbus-overview",
         "concepts/oak_service/oak-overview",
         "concepts/gps_service/gps-overview",
         "concepts/filter_service/filter-overview",
         "concepts/controller_service/controller-overview",
-        "controller_101/controller-101",
       ],
     },
   ],
