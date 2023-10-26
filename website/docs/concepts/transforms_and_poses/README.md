@@ -73,7 +73,7 @@ Quaternions consist of four numbers `(x, y, z, w)` (or sometimes in order `(w, x
 `w` represents the scalar (or real) part of the rotation
 and `x`, `y`, and `z` are the vector (or imaginary) parts.
 
-Quaternions an alternative to other methods like Euler angles or rotation matrices.
+Quaternions are an alternative to other methods like Euler angles or rotation matrices.
 Quaternions are particularly useful because they are compact,
 avoid certain problems like gimbal lock, and can be more computationally efficient.
 
@@ -99,7 +99,7 @@ You can calculate the transform from the `world` frame to the `imu` frame (`worl
 with transform **multiplication**.
 
 ```python
-world_from_robot * robot_from_imu = world_from_imu
+world_from_imu = world_from_robot * robot_from_imu
 ```
 
 ### Poses
