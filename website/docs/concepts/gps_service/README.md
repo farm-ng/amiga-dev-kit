@@ -52,16 +52,17 @@ make sure to check their [protobuf definitions](https://github.com/farm-ng/farm-
 
 For the GPS service to function optimally, certain conditions must be met:
 
-- The robot must have an active Wi-Fi connection, ensuring real-time data communication.
-  - **NOTE**: The robot needs to be connected to Wi-Fi for `relposned` messages.
- However, an internet connection is not required for `pvt` messages.
-- Users need to input credentials for connecting to an RTK base station, enhancing the GPS accuracy.
+- The robot **must** be connected to an RTK base station.
+- To connect to an RTK base station, users need to input credentials using our GPS app.
 The required credentials include:
   - NTRIP ID: The server address of the base station.
   - NTRIP PORT: The port used by the NTRIP server.
   - NTRIP MOUNTPOINT: Specific mount point on the NTRIP server.
   - USER: Username for accessing the base station.
   - PASSWORD: Corresponding password for the above username.
+- The robot must have an active Wi-Fi connection, ensuring real-time data communication.
+  - **NOTE**: The robot needs to be connected to Wi-Fi for `relposned` messages.
+ However, an internet connection is not required for `pvt` messages.
 
 :::info NTRIP (Network Transport of RTCM via Internet Protocol)
 NTRIP is a protocol for streaming differential GPS (DGPS) data over the internet, enabling RTK
