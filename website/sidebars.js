@@ -112,14 +112,19 @@ const sidebars = {
       "support/github-101",
     ],
   },
-  "Conepts": [
+  "Concepts": [
     "concepts/concepts-index",
     {
-      "Service Overviews": [
+      "Fundamental Concepts": [
+        "concepts/transforms_and_poses/transforms-and-poses",
+        "concepts/controller_101/create-and-propagate-poses",
+      ],
+        "Service Overviews": [
         "concepts/canbus_service/canbus-overview",
         "concepts/oak_service/oak-overview",
         "concepts/gps_service/gps-overview",
         "concepts/filter_service/filter-overview",
+        "concepts/recorder_service/recorder-overview",
         "concepts/controller_service/controller-overview",
       ],
     },
@@ -181,7 +186,7 @@ const sidebars = {
           "examples/vehicle_twist/vehicle-twist",
           "examples/file_reader_can/file-reader-can",
         ],
-        "label": "CAN bus Examples",
+        "label": "CAN Bus Examples",
         "type": "category"
       },
       {

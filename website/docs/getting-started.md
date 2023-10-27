@@ -10,9 +10,31 @@ title: Introduction
 In this website you will find full context on our
 [**ADK repository**](https://github.com/farm-ng/amiga-dev-kit),
 including documentation, tutorials, & the development kit API.
-:::info
-For a walk through of this website watch the following video!
+
+:::tip documentation guide
+To familiarize yourself and enhance your interaction with the Amiga we recommend the following workflow:
+
+- Start by reading this Introduction, it will give you a good understanding of what the Amiga is.
+- To get acquainted to the base platform and all its components, make sure to check our
+[Quick Start Guide](https://amiga.farm-ng.com/docs/amiga_quick_start/amiga-quick-start).
+- Got an Intelligence Kit and want to know more about it?
+Check our [Intelligence Kit Overview](https://amiga.farm-ng.com/docs/intelligence-kit/overview-intel).
+- How do I access the Brain (SSH) and start developing on it?
+Check out the [Access and Develop on the Brain](https://amiga.farm-ng.com/docs/ssh/) webpage.
+- Which services (e.g., GPS, camera, autonomy) are running on my Amiga and how do they interact
+which each other?
+Check our [Concepts](https://amiga.farm-ng.com/docs/concepts/) tab!
+- What kind of data can I get from the Amiga, and how to organize and manipulate it?
+Check the [Brain Examples](https://amiga.farm-ng.com/docs/examples/examples-index)!
+- I am feeling confident and want to deploy my own Apps to the Amiga. How can I do that?
+Check out the [Developing Custom Applications](https://amiga.farm-ng.com/docs/brain/brain-apps)
+webpage.
 :::
+
+#### Video walkthrough
+
+For a walk through of this website watch the following video!
+
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/E-KLkQRhuyU?list=PLWQmpzk0y9NDXFKSwvCjYtRL8QNWfK4ND"
 title="SDK Tutorial v1" frameborder="0"
