@@ -29,6 +29,13 @@ linked to the GPS antenna via an SMA connector.
 This RTK GPS can deliver centimeter-level location information for real-time
 positioning and navigation applications when combined with a RTK base station.
 
+For further reference, check out the [**datasheet**](https://cdn.sparkfun.com/assets/f/8/d/6/d/ZED-F9P-02B_DataSheet_UBX-21023276.pdf)
+of our GPS module.
+
+**NOTE**: To receive RTK corrections, the robot must be connected to a RTK base station.
+Make sure to read the [requirements of our GPS service](https://amiga.farm-ng.com/docs/concepts/gps_service/#requirements)
+to know more.
+
 ### Cameras
 
 The kit includes a pair of high quality waterproof Luxonis OAK-D cameras in

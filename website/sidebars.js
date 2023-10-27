@@ -112,10 +112,14 @@ const sidebars = {
       "support/github-101",
     ],
   },
-  "Conepts": [
+  "Concepts": [
     "concepts/concepts-index",
     {
-      "Service Overviews": [
+      "Fundamental Concepts": [
+        "concepts/transforms_and_poses/transforms-and-poses",
+        "concepts/controller_101/create-and-propagate-poses",
+      ],
+        "Service Overviews": [
         "concepts/canbus_service/canbus-overview",
         "concepts/oak_service/oak-overview",
         "concepts/recorder_service/recorder-overview",
