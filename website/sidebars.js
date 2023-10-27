@@ -117,7 +117,7 @@ const sidebars = {
     {
       "Fundamental Concepts": [
         "concepts/transforms_and_poses/transforms-and-poses",
-        "concepts/controller_101/controller-101",
+        "concepts/controller_101/create-and-propagate-poses",
       ],
         "Service Overviews": [
         "concepts/canbus_service/canbus-overview",

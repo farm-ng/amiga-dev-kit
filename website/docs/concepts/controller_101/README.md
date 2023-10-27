@@ -1,6 +1,6 @@
 ---
-id: controller-101
-title: Controller 101
+id: create-and-propagate-poses
+title: Create and Propagate Poses
 ---
 
 ## Understanding Transforms and Poses
