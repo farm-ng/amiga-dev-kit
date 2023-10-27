@@ -30,15 +30,24 @@ e.g., oak0, oak1, ...)
 ## Available Topics for Recording
 
 The Recorder Service offers a variety of topics that can be recorded.
-Each topic provides specific data streams from the robot's various services. Here's a breakdown
-of each topic:
+Each topic provides specific data streams from the robot's various services.
+Here's a breakdown of each topic:
+
+:::tip
+Check out the protobuf messages streamed on these topics at:<br/>
+[**`farm-ng-amiga/protos/`**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/protos/farm_ng).
+
+Some of which may inherit from the protobuf messages found at:<br/>
+[**`farm-ng-core/protos/`**](https://github.com/farm-ng/farm-ng-core/tree/main/protos/farm_ng/core)
+:::
 
 ### Canbus Topics
 
 - `canbus/health`: Provides health metrics for the Canbus service, such as publishing frequency.
-- `canbus/raw_messages`: Streams raw Canbus messages, which include details of the motors
-of your amiga like battery voltage, temperature, whether automode is engaged, and other
-pertinent information.
+- `canbus/raw_messages`: Streams all messages received from the CAN bus by the canbus service.
+You can parse and unpack these messages to see details of the motors (e.g., rpm, temperature),
+of your Amiga (e.g., battery voltage, velocity, whether auto-mode is engaged),
+and other pertinent information.
 - `canbus/twist`: Outputs the linear and angular velocities of the robot, offering insights
 into its movement dynamics.
 
@@ -47,10 +56,10 @@ into its movement dynamics.
 - `oak/health`: Delivers health metrics for the Oak service, including publishing frequency.
 - `oak/calibration`: Streams the current calibration settings of the Oak device,
 ensuring the camera's accuracy.
-- `oak/disparity`: Provides the disparity data of the camera, which is crucial for depth
-perception and 3D mapping.
-- `oak/imu`: Streams 3-D accelerometer & gyroscope values, giving insights into the
-robot's orientation and movement.
+- `oak/disparity`: Outputs the disparity image calculated from the left/right stereo images,
+used for depth perception and 3D mapping.
+- `oak/imu`: Streams 3-D accelerometer & gyroscope values from the Oak camera's internal IMU,
+giving insights into the robot's orientation and movement.
 - `oak/left`: Outputs the feed from the stereo left camera of the Oak device.
 - `oak/right`: Outputs the feed from the stereo right camera of the Oak device.
 - `oak/rgb`: Streams the stereo RGB image from the Oak device, providing full-color
@@ -120,7 +129,7 @@ This profile is a JSON file detailing the subscriptions or topics to be recorded
 ```
 
 :::info INFO
-The ***** symbol in the `path` field indicates that all available topics of that specific
+The **`*`** symbol in the `path` field indicates that all available topics of that specific
 subscription (service) should be recorded.
 :::
 
@@ -129,7 +138,7 @@ subscription (service) should be recorded.
 Users can interact with the Recorder Service using the following commands:
 
 - `/start`: Initiates data recording.
-A valid **Recording profile" must be provided as an argument.
+A valid "Recording profile" must be provided as an argument.
 - `/stop`: Halts the data recording process.
 
 ## Data Storage
@@ -152,8 +161,8 @@ For example:
 
 Data can be recorded through the Recorder App, or using the `EventsClient` class.
 
-For a step-by-step guide on using the Recorder App, please refer to this
-[example](https://amiga.farm-ng.com/docs/examples/import_log_file/).
+For a step-by-step guide on using the Recorder App, please refer to the
+[Record and Access Data example](/docs/examples/import_log_file/).
 
-For a step-by-step guide on recording data using the `EventsClient`, please refer to this
-[example](https://amiga.farm-ng.com/docs/examples/events_recorder/).
+For a step-by-step guide on recording data using the `EventsClient`, please refer to the
+[Events Recorder example](/docs/examples/events_recorder/).
