@@ -47,7 +47,7 @@ def get_node_id():
     except OSError:
         node_id = 0x42
 
-    print(f"node_id = 0x{node_id:0x}")
+    print(f"node_id = 0x{node_id: 0x}")
     return node_id
 
 
@@ -114,7 +114,7 @@ class MainLoop:
 
         if self.show_time:
             ticks_now_ms = ticks_ms()
-            debug.write(f"up:{monotonic()-self.t0:.1f}\n")
+            debug.write(f"up: {monotonic() - self.t0: .1f}\n")
         if self.show_can_dts:
             for key, value in sorted(DtTracker._g_trackers.items()):
                 debug.write(f"{key: <20}: {int(value.mean_dt()): <5d} age: {value.age(ticks_now_ms)} \n")
@@ -151,7 +151,7 @@ class MainLoop:
         if self.show_can_dts:
             dt = self.can_id_dts.get(message.id)
             if dt is None:
-                dt = DtTracker(f"can/0x{message.id:03x}")
+                dt = DtTracker(f"can/0x{message.id: 03x}")
                 self.can_id_dts[message.id] = dt
             dt.update()
 
@@ -236,7 +236,7 @@ class MainLoop:
 
         if self.show_time:
             ticks_now_ms = ticks_ms()
-            debug.write(f"up:{monotonic()-self.t0:.1f}\n")
+            debug.write(f"up: {monotonic() - self.t0: .1f}\n")
             for key, value in DtTracker._g_trackers.items():
                 if key.startswith("can/"):
                     continue
