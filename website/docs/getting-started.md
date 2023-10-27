@@ -11,7 +11,7 @@ In this website you will find full context on our
 [**ADK repository**](https://github.com/farm-ng/amiga-dev-kit),
 including documentation, tutorials, & the development kit API.
 
-:::tip TIP
+:::tip documentation guide
 To familiarize yourself and enhance your interaction with the Amiga we recommend the following workflow:
 
 - Start by reading this Introduction, it will give you a good understanding of what the Amiga is.
@@ -29,12 +29,12 @@ Check the [Brain Examples](https://amiga.farm-ng.com/docs/examples/examples-inde
 - I am feeling confident and want to deploy my own Apps to the Amiga. How can I do that?
 Check out the [Developing Custom Applications](https://amiga.farm-ng.com/docs/brain/brain-apps)
 webpage.
-
 :::
 
-:::info
+#### Video walkthrough
+
 For a walk through of this website watch the following video!
-:::
+
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/E-KLkQRhuyU?list=PLWQmpzk0y9NDXFKSwvCjYtRL8QNWfK4ND"
 title="SDK Tutorial v1" frameborder="0"
