@@ -1,13 +1,13 @@
 ---
-id: create-and-propagate-poses
-title: Create and Propagate Poses
+id: tracks-and-waypoints
+title: Tracks & Waypoints
 ---
 
-## Understanding Transforms and Poses
+## Understanding Transforms & Poses
 
 Before we can send our robot out to drive a **track** (or **path**),
 we need to understand where our robot is and where we want to send it.
-For that purposes, please refer to **[Concepts - Transforms and Poses](/docs/concepts/transforms_and_poses)**
+For that purposes, please refer to **[Concepts - Transforms & Poses](/docs/concepts/transforms_and_poses)**
 before continuing on with this overview.
 
 ## Creating and Propagating Poses for the Controller

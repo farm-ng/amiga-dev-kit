@@ -117,7 +117,7 @@ const sidebars = {
     {
       "Fundamental Concepts": [
         "concepts/transforms_and_poses/transforms-and-poses",
-        "concepts/controller_101/create-and-propagate-poses",
+        "concepts/controller_101/tracks-and-waypoints",
       ],
         "Service Overviews": [
         "concepts/canbus_service/canbus-overview",
@@ -174,8 +174,8 @@ const sidebars = {
           "examples/camera_client/camera-client",
           "examples/camera_settings/camera-settings",
           "examples/camera_calibration/camera-calibration",
-          "examples/camera_pointcloud/camera-pointcloud",
           "examples/camera_aruco_detector/camera-aruco-detector",
+          "examples/camera_pointcloud/camera-pointcloud",
         ],
         "label": "Camera Examples",
         "type": "category"

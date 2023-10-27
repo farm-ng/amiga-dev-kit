@@ -3,6 +3,29 @@ id: filter-client
 title: Filter Client
 ---
 
+
+:::info Basic Knowledge Requirements
+
+Before diving into this code, here's a quick heads-up on what you'll need to be familiar with:
+
+1. **Python Programming**: It's important to have a good grasp of Python, especially with concepts
+like `functions`, `loops`, and `classes`, since the example utilizes these fundamentals.
+2. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
+code using the `async/await` syntax.
+3. **[farm-ng Filter Service Overview](/docs/concepts/filter_service/)**:
+This overview provides a base understanding of the gRPC service the client you create will connect to.
+4. [**farm-ng Transforms & Poses Overview**](/docs/concepts/transforms_and_poses/):
+This overview provides insight into coordinate frames, transforms,
+and poses as they pertain to autonomous systems and autonomous navigation.
+5. **Knowledge of State Estimation and Uncertainty**: The example deals with concepts of state estimation
+(pose, orientation) and the associated uncertainties.
+Understanding these concepts is important for interpreting the received data and how these
+might be used in downstream applications or enhancements.
+6. **Understanding of Kalman Filters, specifically the Unscented Kalman Filter (UKF)**:
+The client in this example is receiving state estimates that are the result of UKF computations.
+It may be helpful to understand how UKFs work, their limitations and functionalities.
+:::
+
 ### [Link to `filter_client/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/filter_client/main.py)
 
 This example streams the results from the state estimation filter running on the Amiga.

@@ -1,6 +1,6 @@
 ---
 id: transforms-and-poses
-title: Transforms and Poses
+title: Transforms & Poses
 ---
 
 ## Fundamental Concepts
