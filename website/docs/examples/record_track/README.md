@@ -7,17 +7,18 @@ title: Record a Track
 
 Before diving into this code, here's a quick heads-up on what you'll need to be familiar with:
 
-1. **Understanding of Path and States in Autonomous Systems**:
-This example is for recording a "track," which is a series of states to be followed or analyzed later
-by the controller.
-Understanding these states, how they're calculated, and their importance in autonomous navigation
-is important.
-
-2. **Python Programming**: It's important to have a good grasp of Python, especially with concepts
+1. **Python Programming**: It's important to have a good grasp of Python, especially with concepts
 like `functions`, `loops`, and `classes`, since the example utilizes these fundamentals.
-
-3. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
+2. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
 code using the `async/await` syntax.
+3. **[farm-ng Filter Service Overview](/docs/concepts/filter_service/)**:
+This overview provides a base understanding of the gRPC service the client you create will connect to.
+4. [**farm-ng Transforms & Poses Overview**](/docs/concepts/transforms_and_poses/):
+This overview provides insight into coordinate frames, transforms,
+and poses as they pertain to autonomous systems and autonomous navigation.
+5. [**farm-ng Tracks & Waypoints Overview**](/docs/concepts/controller_101/):
+This overview provides insight into compiling poses as waypoints into a Track
+that can be followed by the Amiga.
 :::
 
 # Filter Track Recording Example
