@@ -5,80 +5,11 @@ title: Developing Custom Applications
 
 # Developing Custom Applications
 
-:::caution deprecation warning
-This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
-This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
-Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
-:::
-
-:::tip
-We now have a set of tutorials that walk you through creating custom applications that interact with cameras and drive your Amiga from the brain!
-
-Check them out at [**Brain App Tutorials**](/docs/examples/examples-index#brain-app-tutorials).
-:::
-
-## Quick Tips
-
-* The Amiga user is able to install APT packages.
-  * Edit the "entry.sh" script in the sample git repository.
-* We leverage a venv per application.
-  * The contents of requirements.txt will be installed by the bootstrap.sh script.
-* If you've updated the requirements remove the hidden ".lock" before relaunching the app from the Brain UI.
-* You may use VSCode remote development/containers to edit directly on the Amiga brain as well.
-
-## Prerequisites
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-<TabItem value="linux" label="Linux/WSL" default>
-
-```bash
-apt install wget
-```
-
-</TabItem>
-<TabItem value="macos" label="MacOs" default>
-
-```bash
-brew install wget
-```
-
-</TabItem>
-</Tabs>
-
-## Prepare an app
-
-Follow the instructions below to select a [**Brain App Example**](/docs/examples/examples-index#brain-app-tutorials)
-prepared by **farm-ng** or create an app from the
-[**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template) repository.
-
-### Select an app
-
-To test the app deployment process of a fully made app developed by farm-ng, you can choose either the [**camera-streamer**](https://github.com/farm-ng/camera-streamer)
-example or the [**virtual-joystick**](https://github.com/farm-ng/virtual-joystick) example from [**Brain App Example**](/docs/examples/examples-index#brain-app-tutorials). To clone one
-of the examples click on one of the links in the previous sentence and click the green code button in GitHub and then copy the text highlighted in yellow.
-![Create a new templated repository](https://user-images.githubusercontent.com/66448234/223195510-2160a0b1-115e-4e36-bff1-c1560a4a6b2f.png)
-
-Now in the terminal enter the following commands, but where it says `git clone http...` and replace the `https..` part with your copied text.
-```bash
-cd <to-your-base-directory>
-git clone https://github.com/farm-ng/camera-streamer.git # To clone the camera-streamer repo or other.
-```
-Now you can follow the instructions below as though you were developing a custom application
-and simply replace any `<YOUR-USERNAME/YOUR-REPOSITORY>` placeholder with that of the
-path to the prepared app's Git repository, e.g., `farm-ng/virtual-joystick`.
-
-You can skip any sections specific to setting up a new project,
-including [**Create an app**](#create-an-app) and [**Customizing an app**](#customizing-an-app).
-
 ### Create an app
-
 
 #### Create a repository from the template
 
-To create your own custom application navigate to the [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template) repository on GitHub.
+To create your own custom application navigate to the [**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template-v2) repository on GitHub.
 :::tip
 You need to be signed into your GitHub account to see the option to `Use this template`.
 :::
@@ -111,293 +42,133 @@ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
 
 ## Project structure
 
+### Understand the structure of an app
+
+Every modern app typically consists of two main parts: the backend and the frontend.
+Let's dive into what each of these components does and how they interact with each other.
+
+#### Backend:
+
+The backend is like the brain of your app. It processes data, makes calculations,
+communicates with databases, and performs all the logical operations. When you hear
+terms like "server," "API," or "database," they're usually related to the backend.
+
+In our example, we're using FastAPI to build our backend. FastAPI is a modern,
+high-performance web framework for building APIs. Coupled with the farm-ng brain services,
+ our backend will fetch and serve data efficiently and securely to the frontend.
+
+**Key Points:**
+
+1. Handles data processing, storage, and retrieval.
+2. Communicates with other services and databases.
+3. Secures data and ensures only authorized users can access it.
+
+#### Frontend:
+
+The frontend is the part of the app users see and interact with.
+Think of it as the face of your app which includes everything that you can touch, click,
+or interact with: buttons, images, text inputs, animations, and more.
+
+For our frontend, we're using ReactJS. ReactJS is a popular JavaScript library for building user interfaces.
+It allows developers to create responsive and interactive UI components easily.
+
+### Repository structure
+
 In vs-code, you can see the project structure on the left side in the `EXPLORER`:
 
-Below are listed the most important components.
+Below are listed the most important components:
 
 ```bash
 repository-name/  # Root level of the project.
-├── libs/ # Contains private libraries.
-|   └── project_name/
-|       ├── ops.py  # e.g a operators submodule
-|       └── project_name_subpackage/
-|           └── utils.py  # e.g a utilities submodule
-├── src/ # Contains all code needed to run the main gui application.
-|   ├── assets/  # Contains files needed to run the application
-|   |   └── app_logo.png  # static images or images for buttons.
-|   ├── res/  # Contains the layout files and UI strings.
-|   |   └── main.kv  # main ui layout in Kivy languague
-|   └── main.py  # Is the main entry point for the gui application.
-├── test/  # Contains code for test of the private libs.
-|   └── test_dummy.py  # sets of unit test.
-├── entry.sh
-|    # The script to setup the project, create a virtual env. and install dependencies.
-└── setup.cfg
-    # The file containing the metadata of the package, including the name, versioning, etc. Learn more here: https://setuptools.pypa.io/en/latest/userguide/declarative_config.html
-
+├── ts/ # Contains ReactJS frontend code.
+|   ├── index.html  # The HTML template of the app frontend.
+|   ├── package.json  # The file containing the dependencies of the project frontend.
+|   └── src/
+|       ├── components/  # Contains ReactJS components.
+|       |   ├── TopicMonitor.tsx  # The component that displays the topic monitor.
+|       |   └── App.tsx  # The main entry point of the app frontend.
+|       └── main.tsx  # The main entry point of the app frontend.
+├── main.py
+|   # The main entry point of the app backend.
+├── manifest.json
+|   # The file containing the metadata of the project.
+├── install.sh
+|   # The script to register the app in the launcher.
+├── uninstall.sh
+|   # The script to unregister the app from the launcher.
+└── requirements.txt
+    # The file containing the dependencies of the project backend.
 ```
+
+#### The `manifest.json` file
+
+In this file, you can find the metadata of the app. This file is used by the launcher
+and has the following structure:
+
+```json
+{
+   "services": {
+        "example-app": {
+            "type": "app",
+            "python": true,
+            "args": [
+                "main.py --config /opt/farmng/config.json --port 8042"
+            ],
+            "http_gui_port": 8042,
+            "display_name": "Example App"
+        }
+    }
+}
+```
+
+:::note
+For now we just support python apps, and a single app per manifest file.
+:::
 
 ## How to setup the project
 
-Before any changes, lets see if we can run this app locally on your system.
+1. Prepare the frontend and compile the typescript code to javascript
 
 ```bash
-cd YOUR_REPOSITORY/
-./entry.sh  # install and run
+cd ts/
+npm install  # install dependencies
+npm run build  # build the frontend
 ```
 
-When running the above script, a virtual environment `venv` will be created and any dependencies will be installed.
+2. Prepare the backend
 
-If all goes well, you'll see an dummy kivy application on your screen.
-
-## Customizing an app
-
-In order to customize an app we leverage the `setup.cfg` that contains all the metadata and package configuration.
-More can be found [here](https://setuptools.pypa.io/en/latest/userguide/declarative_config.html)!
-
-The most important first steps are to modify the metadata of the project and dependencies:
-
-1. Inside the `setup.cfg` file, adjust the fields under the tag `[metadata]`
-    * For basic users, the package name (`project_name` in the project structure above) goes in the `name` field, and must match with the directory name right under the `libs/` directory.
-      * I.e., change both the `name` field and the directory name under `libs/` to your new app name.
-      * VScode should prompt you to change the import names in `test_dummy.py` once you change the directory name.
-        * If not, manually change:
-            ```
-            from amiga_package import __version__
-            from amiga_package import ops
-            ```
-        * To:
-            ```
-            from <project_name> import __version__
-            from <project_name> import ops
-            ```
-    * For advanced users, you can modify as much is compliant with Python `setuptools`.
-2. Adjust the package dependencies
-    * Include whatever extra dependency you need in the `install_requires` field.
-    * Our only requirements are:
-        * `wheel`: for packaging the app.
-        * `kivy`: to generate the graphical user interface (GUI).
-        * `farm-ng-amiga`: the Farm-ng Amiga public SDK.
-
-In case you face issues, connect with us and the community on [Discourse](https://discourse.farm-ng.com/c/support/5)
-
-
-
-## Development and Debug an app
-
-The workflow for development is pretty much the same as any standard gui application.
-
-1. Make changes in the code.
-2. Run the code with the play button in vs-code.
-    - [Optionally] Add a breakpoint to any line and use the Debug Console to interact.
-3. Go to step 1)
-
-
-## [Optional] Test your application
-
-In order to validate your functionality, we suggest to add test cases for the internal `libs/[package_name]`
-located under `test/test_[test_name].py`.
-
-To launch the tests: `pytest test/`
-To run specific tests: `pytest test/test_dummy.py::TestDummy::test_add`
-
-
-
-## How to SSH into the Amiga
-If this is your very first time ssh into Amiga follow the instructions under `Initial SSH set up` otherwise follow the steps at [**SSH Configuration**](#ssh-configuration).
-
-### Initial SSH set up
-Follow the steps listed below and then continue on to **SSH Configuration**
-to complete the process.
-
-- To set up ssh, make sure the Amiga and your computer are on the same network (check the Wifi on the Amiga and adjust accordingly).
-
-- Then check if a file `~/.ssh/config` exists on your workstation with the steps below.
-`~/` is the home folder on your workstation.
-
-:::info
-
-1. To check if this file exists put the commands below in your terminal. If this file does not exist, you'll have to create it.
+Install the dependencies of the backend
 
 ```bash
-cd ~ # Navigate to your home folder
-ls -a # Check for a folder called `.ssh/`
+cd ..
+python3 -m venv venv  # create a virtual environment
+source venv/bin/activate  # activate the virtual environment
+pip install -r requirements.txt  # install dependencies
 ```
 
-2. If `~/.ssh/` does not exist, run:
+## How to run the project
+
+### Run the backend in a terminal
 
 ```bash
-ssh-keygen # create ~/.ssh/ folder
+python main.py --config /opt/farmng/config.json
 ```
 
-3. Create a file called `config` (no extension) in `~/.ssh`
-
-<Tabs>
-<TabItem value="linux" label="Linux/WSL" default>
+Optionally, you can run into debug mode to use the local frontend instead of
+the one served by the launcher.
 
 ```bash
-touch ~/.ssh/config
+python main.py --config /opt/farmng/config.json --debug
 ```
-</TabItem>
-<TabItem value="macos" label="MacOs" default>
+
+To visualize the app in your browser, go to http://localhost:8042
+
+### Run the app in the launcher
+
+1. Register the app in the launcher
 
 ```bash
-cd .ssh
-cat > config # Then press control D on your keyboard
+./install.sh
 ```
 
-</TabItem>
-</Tabs>
-
-:::
-
-### SSH Configuration
-
-Now it is time to configure your *config* file to *ssh* into your Amiga.
-
-
-<Tabs>
-<TabItem value="linux" label="Linux/WSL" default>
-
-```bash
-gedit ~/.ssh/config
-```
-</TabItem>
-<TabItem value="macos" label="MacOs" default>
-
-```bash
-cd .ssh
-open config # Then edit directly in the text editor that pops up and save your changes
-```
-
-</TabItem>
-</Tabs>
-
-Edit your *.ssh/config* file to include the below information.
-
-```
-Host amiga
-    HostName <ip address>
-    Port 22
-    User amiga
-    StrictHostKeyChecking no
-```
-
-:::tip tips
-
-* `<ip address>` can be found on the bottom right of the Amiga Brain screen
-* Remove the `<` & `>` symbols.
-* Your development station and your Amiga should be on the same network.
-:::
-This utilizes the IP address displayed on the bottom right of the brain display:
-
-Let’s copy our keys to the robot as well (you may need to do this any time you are working with a new robot)
-
-```bash
-ssh-copy-id amiga
-```
-
-Now you are all set up to ssh into the Amiga
-
-#### SSH Amiga
-
-```bash
-ssh amiga
-# When prompted for a user name and password enter the following :
-#    password: amiga
-exit # If you want to exit the ssh
-```
-
-:::caution troubleshooting
-If, after a docker image update, you cannot `ssh` into your amiga or run the `sync.sh` script,
-you may have an error similar to:
-
-```bash
-# $ ssh amiga
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
-Someone could be eavesdropping on you right now (man-in-the-middle attack)!
-It is also possible that a host key has just been changed.
-The fingerprint for the ECDSA key sent by the remote host is
-SHA256:QsdOvROYuKMa5NqaPTFHwF3kfPCwKaTzgBAj9N/eKCI.
-Please contact your system administrator.
-Add correct host key in /home/<YOUR_NAME>/.ssh/known_hosts to get rid of this message.
-Offending ECDSA key in /home/<YOUR_NAME>/.ssh/known_hosts:29
-  remove with:
-  ssh-keygen -f "/home/<YOUR_NAME>/.ssh/known_hosts" -R "192.168.XX.XX"
-ECDSA host key for 192.168.XX.XX has changed and you have requested strict checking.
-Host key verification failed.
-```
-
-Follow the instructions they provide and run:
-
-```bash
-# With correct values for <YOUR_NAME> and IP Address XX.XX
-ssh-keygen -f "/home/<YOUR_NAME>/.ssh/known_hosts" -R "192.168.XX.XX"
-```
-
-You should now be able to `ssh` into your amiga and/or run the `sync.sh` script
-:::
-
-## Develop and test in the robot
-
-In order to test your app in the robot, we require to push the changes to the remote repository created before and clone it to the robot.
-
-We recommend to follow the next steps:
-:::tip
-Make sure you are on the **Linux** tab when you go to the GitHub docs (links below). The page defaults to the system you are on and doesn't know you are SSH'd into a Linux machine, which the Amiga is.
-:::
-1. ssh to robot `ssh amiga` (if have not configured ssh do so [here](#ssh-configuration))
-2. Create an ssh key for github on the amiga `ssh-keygen`
-    - See: [GitHub Docs: Generate an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-3. Copy and add the key to your github user
-    - See: [GitHub Docs: Add an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
-4. Set your username in git config
-
-```bash
-git config --global user.email "YOUR_EMAIL"
-git config --global user.name "YOUR-USERNAME"
-```
-
-5. Clone your repository
-
-```bash
-cd apps/
-# Replace 'YOUR-USERNAME/YOUR-REPOSITORY' below with the correct link to your new repo
-# You can get this path from the SSH tab on the green '<> code' button of your new repo
-git clone git@github.com:YOUR-USERNAME/YOUR-REPOSITORY.git
-```
-:::tip
-If you cannot clone with SSH, you can try https:
-```
-# You can get this path from the HTTPS tab on the green '<> code' button of your new repo
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
-```
-:::
-
-6. Run the app on your Amiga
-
-:::info
-The first time you launch will take a while, as the requirements have to install.
-:::
-
-If your brain is on the launcher screen, your new app should appear!
-You can launch it by clicking your the app on the screen, and it should begin loading.
-
-Alternatively, you can launch from the command line:
-
-```bash
-cd YOUR_REPOSITORY/
-./entry.sh  # install and run
-```
-
-:::caution
-If you launch your app with the command line,
-it is currently possible to have touch interactions with the launcher behind.
-This will cause other installed apps to unexpectedly launch over the app you are trying to use.
-
-Please see instructions for a workaround under:
-[**FAQ - Brain App Development**](/docs/reference/faq#brain-app-development)
-:::
+2. Now you should be able to see the app in the launcher and run it.
