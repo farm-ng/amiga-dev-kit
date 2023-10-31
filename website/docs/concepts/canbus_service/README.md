@@ -3,7 +3,7 @@ id: canbus-overview
 title: CANBUS
 ---
 
-# Canbus Service Concepts
+# Canbus Service Overview
 
 The Canbus service is an integral component of the Amiga platform.
 This service offers direct control over the robot's motors, allowing users to both
