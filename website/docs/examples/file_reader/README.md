@@ -5,9 +5,29 @@ title: File Reader
 
 # File Reader Example
 
+:::info Basic Knowledge Requirements
+
+Before diving into this example, here's a quick overview of what you'll need to be familiar with:
+
+1. **Python Programming**: Mastery of Python is essential, as the example employs foundational
+concepts such as functions, conditional statements, and working with third-party libraries.
+
+2. **File Handling**: Proficiency in reading from and processing files in Python, particularly binary
+log files.
+The essence of this example is to demonstrate how to navigate through and interpret data from a log file.
+
+3. **OpenCV**: A foundational understanding of the OpenCV library, particularly functions related to
+image decoding and display, as the example showcases how to visualize camera images from the log file.
+
+4. **Log File Manipulation**: Insight into how log files work, especially reading and parsing them,
+is crucial.
+This example emphasizes the playback mode, wherein data from a previously recorded log file is
+processed for review.
+:::
+
 In this example you will learn how to upload a given log file and
 use it to run the
-[**file_reader example**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/py/examples/file_reader/main.py).
+[**File Reader Example**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/py/examples/file_reader/main.py).
 
 ## Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 

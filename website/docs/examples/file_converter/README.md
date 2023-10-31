@@ -3,11 +3,31 @@ id: file-converter
 title: File Converter
 ---
 
-
 # File Converter Example
 
-> [This example](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/file_converter/main.py)
-will take the `*.bin` log file for a given Oak Camera Stream or snapshot
+:::info Basic Knowledge Requirements
+
+Before diving into this example, here's a quick overview of what you'll need to be familiar with:
+
+1. **Python Programming**: This example is based in Python, making use of various foundational
+constructs like functions, conditional statements, and object-oriented techniques.
+
+2. **File Handling**: The central operation in this example is reading from a `.bin` file and writing
+data to either `.mp4` video files or `.jpg` image files.
+Therefore, understanding how file I/O works in Python, especially with binary files, is crucial.
+
+3. **OpenCV**: The OpenCV library is leveraged extensively in this example, especially for operations
+related to image decoding, processing, and video writing.
+A basic understanding of these aspects of OpenCV is necessary.
+
+4. **File Conversion and Visualization**: The primary goal of this example is to convert data
+from a log file into a visual format, either as a video or a series of images.Knowledge about the
+basics of multimedia formats, especially videos and images, is beneficial.
+
+:::
+
+> The [**File Converter example**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/file_converter/main.py)
+  will take the `*.bin` log file for a given Oak Camera Stream or snapshot
 > captured by the Recorder app on an Amiga brain and convert it to either
 > `*.mp4` videos or `*.jpg` images for each view stream.
 
