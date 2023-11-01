@@ -13,11 +13,7 @@ Before diving into this example, here's a quick heads-up on what you'll need to 
 concepts such as functions, conditional statements, and command-line argument parsing using the
 argparse module.
 
-2. **Asynchronous Programming with asyncio**: A good understanding of Python's asyncio library is
-crucial since the example employs asynchronous functions and tasks, denoted by the `async/await` syntax.
-
-3. **Protocol Buffers (protobuf)**: Familiarity with Protocol Buffers and how they work in Python,
-especially since the example uses protobuf messages like EventServiceConfig and methods such as proto_from_json_file.
+2. **Recorder Concepts**: We also recommend you check our [Recorder Service webpage](../../concepts/recorder_service)
 :::
 
 In the [**Events Recorder**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/event_recorder/main.py)
