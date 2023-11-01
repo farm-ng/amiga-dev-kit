@@ -215,6 +215,14 @@ const sidebars = {
       },
       {
         "items": [
+            "examples/multi_client_subscriber/multi-client-subscriber",
+            "examples/multi_client_geoimage/multi-client-geoimage",
+        ],
+      "label": "Multi Client Examples",
+      "type": "category"
+      },
+      {
+        "items": [
           "examples/service_client/service-client",
           "examples/service_counter/service-counter",
           "examples/service_propagation/service-propagation",
