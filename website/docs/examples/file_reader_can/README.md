@@ -5,8 +5,26 @@ title: File Reader CAN
 
 # File Reader CAN Example
 
-This [**file_reader_can example**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/py/examples/file_reader_can/main.py)
-parses the CAN data from a recorded log and prints the `AmigaTpdo1` parsed
+:::info Basic Knowledge Requirements
+
+Before diving into this example, here's a quick overview of what you'll need to be familiar with:
+
+1. **Python Programming**: This code is written in Python.
+Basic constructs such as functions, conditional statements, loops, and more are utilized.
+
+2. **File Handling**: The code reads from a .bin file, specifically a log file containing
+recorded CAN data.
+Understanding file I/O, especially with binary files, is essential.
+
+3. **CAN Protocol**: CAN (Controller Area Network) is a robust communication protocol used mainly
+in automotive and industrial applications.
+In this example, the log file contains recorded CAN messages, and the goal is to parse and
+display specific message types.
+Familiarity with the basics of CAN is beneficial.
+:::
+
+This [**File Reader Can**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/py/examples/file_reader_can/main.py)
+example parses the CAN data from a recorded log and prints the `AmigaTpdo1` parsed
 values. The `AmigaTpdo1` can packet contains
 the `state`, `speed`, and `angular rate` of the Amiga, as
 reported by the vehicle control unit (VCU).
