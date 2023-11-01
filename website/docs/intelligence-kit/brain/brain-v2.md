@@ -31,7 +31,7 @@ frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 allowfullscreen></iframe>
 
-### CAN/Power Input
+### M12 NMEA 2000 standard pinout
 
 <table>
   <tr>
@@ -77,7 +77,7 @@ allowfullscreen></iframe>
   <tr>
    <td>4
    </td>
-   <td>Can_High
+   <td>CAN_High
    </td>
    <td>White
    </td>
@@ -95,6 +95,12 @@ allowfullscreen></iframe>
    </td>
   </tr>
 </table>
+
+#### NMEA 2000 standard pinout for M12 and Deutsch DT connectors
+
+These are the NMEA 2000 standard pinout for M12 and Deutsch DT connectors that are utilized by farm-ng.
+
+![nmea_pinout](https://github.com/farm-ng/amiga-dev-kit/assets/53625197/49377b9d-bf1a-43f6-97f4-df7d19b72c3f)
 
 ### Specifications
 
