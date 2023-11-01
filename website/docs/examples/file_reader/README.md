@@ -18,11 +18,6 @@ The essence of this example is to demonstrate how to navigate through and interp
 
 3. **OpenCV**: A foundational understanding of the OpenCV library, particularly functions related to
 image decoding and display, as the example showcases how to visualize camera images from the log file.
-
-4. **Log File Manipulation**: Insight into how log files work, especially reading and parsing them,
-is crucial.
-This example emphasizes the playback mode, wherein data from a previously recorded log file is
-processed for review.
 :::
 
 In this example you will learn how to upload a given log file and
