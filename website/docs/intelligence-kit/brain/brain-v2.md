@@ -31,7 +31,7 @@ frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 allowfullscreen></iframe>
 
-### CAN/Power Input
+### M12 NMEA 2000 standard pinout
 
 <table>
   <tr>
@@ -77,7 +77,7 @@ allowfullscreen></iframe>
   <tr>
    <td>4
    </td>
-   <td>Can_High
+   <td>CAN_High
    </td>
    <td>White
    </td>
