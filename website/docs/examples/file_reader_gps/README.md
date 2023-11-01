@@ -5,8 +5,19 @@ title: File Reader GPS
 
 # File Reader GPS Example
 
-This [**file_reader_gps_example**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/file_reader_gps/main.py)
-provides a utility for reading and parsing GPS messages from the event file.
+:::info Basic Knowledge Requirements
+
+1. **Python Programming**: Understanding basic Python programming concepts such as functions, loops,
+conditional statements, and type-checking.
+
+2. **File Handling**: Familiarity with reading binary files in Python.
+
+3. **GPS Data**: Knowledge of GPS-related metrics, such as latitude, longitude, altitude,
+and ground speed.
+:::
+
+This [**File Reader Gps**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/file_reader_gps/main.py)
+example provides a utility for reading and parsing GPS messages from the event file.
 It can process two types of GPS messages: `relposned` and `pvt`.
 The user specifies the type of GPS message to parse, and the script reads the corresponding data,
 unpacks it, and prints it to the console.
