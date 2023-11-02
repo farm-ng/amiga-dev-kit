@@ -11,10 +11,6 @@ Before diving into this example, here's a quick overview of what you'll need to 
 
 1. **Python Programming**: This example is based in Python, making use of various foundational
 constructs like functions, conditional statements, and object-oriented techniques.
-
-2. **File Conversion and Visualization**: The primary goal of this example is to convert data
-from a log file into a visual format, either as a video or a series of images.Knowledge about the
-basics of multimedia formats, especially videos and images, is beneficial.
 :::
 
 > The [**File Converter example**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/file_converter/main.py)
