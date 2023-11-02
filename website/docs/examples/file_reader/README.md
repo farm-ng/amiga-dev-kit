@@ -12,11 +12,7 @@ Before diving into this example, here's a quick overview of what you'll need to 
 1. **Python Programming**: Mastery of Python is essential, as the example employs foundational
 concepts such as functions, conditional statements, and working with third-party libraries.
 
-2. **File Handling**: Proficiency in reading from and processing files in Python, particularly binary
-log files.
-The essence of this example is to demonstrate how to navigate through and interpret data from a log file.
-
-3. **OpenCV**: A foundational understanding of the OpenCV library, particularly functions related to
+2. **OpenCV**: A foundational understanding of the OpenCV library, particularly functions related to
 image decoding and display, as the example showcases how to visualize camera images from the log file.
 :::
 
