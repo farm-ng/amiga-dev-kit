@@ -27,6 +27,22 @@ motors accordingly.
 A float value indicating the battery's state of charge, ranging [0.0, 1.0].
 If no motors are connected, it returns -1.0.
 
+# Data Streams
+
+- `/twist`: The commanded linear velocity of the vehicle in the x direction in meters per second.
+ Check the protobuf definition for more details:
+ [canbus_pb2.Twist2d](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto#L58-L61)
+
+- `/raw_messages`:A representation of raw CAN bus messages with timestamps, node IDs, error
+flags, remote transmission indicators, and encoded payloads.
+Check the protobuf definition for more details:
+[canbus_pb2.RawCanbusMessages](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto#L95-L107)
+
+- `/state`: State of the Amiga CAN bus.
+  Encapsulates key information required to evaluate the state of the Amiga robot.
+  Check the protobuf definition for more details:
+  [amiga_v6_pb2.AmigaV6CanbusState](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/canbus/amiga_v6.proto)
+
 ## Safety and Operation
 
 - **Operating Mode**: The robot should be in automode (activated via the dashboard)
