@@ -83,9 +83,7 @@ This screen is where the autonomous control of the amiga comes to life. Here you
 
 If you are controlling the Amiga with a brain or other micro-controller,
 here is where you will enable & monitor the auto control commands sent to your Amiga.
-Auto control examples include the
-[Virtual Joystick Example](/docs/tutorials/virtual_joystick/virtual-joystick-overview) (brain)
-and the [FPV example](/docs/examples/FPV/) (micro-controller).
+Auto control examples include the [FPV example](/docs/examples/FPV/) (micro-controller).
 
 ## General Settings Tab
 
