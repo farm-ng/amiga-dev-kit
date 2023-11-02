@@ -5,8 +5,20 @@ title: Events Recorder
 
 ## Events Recorder
 
-In [this example](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/event_recorder/main.py)
-we show how to record events from farm-ng-brain using
+:::info Basic Knowledge Requirements
+
+Before diving into this example, here's a quick heads-up on what you'll need to be familiar with:
+
+1. **Python Programming**: It's essential to be well-versed in Python, as the example leverages foundational
+concepts such as functions, conditional statements, and command-line argument parsing using the
+argparse module.
+
+2. **[farm-ng Recorder Service Overview](/docs/concepts/recorder_service/)**:
+This overview provides a base understanding of the gRPC service the client you create will connect to.
+:::
+
+In the [**Events Recorder**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/event_recorder/main.py)
+example we show how to record events from farm-ng-brain using
 the `EventClient` class.
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)

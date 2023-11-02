@@ -5,8 +5,19 @@ title: File Reader CAN
 
 # File Reader CAN Example
 
-This [**file_reader_can example**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/py/examples/file_reader_can/main.py)
-parses the CAN data from a recorded log and prints the `AmigaTpdo1` parsed
+:::info Basic Knowledge Requirements
+
+Before diving into this example, here's a quick overview of what you'll need to be familiar with:
+
+1. **Python Programming**: This code is written in Python.
+Basic constructs such as functions, conditional statements, loops, and more are utilized.
+
+2. **[farm-ng Canbus Service Overview](/docs/concepts/canbus_service/)**:
+This overview provides a base understanding of the gRPC service the client you create will connect to.
+:::
+
+This [**File Reader Can**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/py/examples/file_reader_can/main.py)
+example parses the CAN data from a recorded log and prints the `AmigaTpdo1` parsed
 values. The `AmigaTpdo1` can packet contains
 the `state`, `speed`, and `angular rate` of the Amiga, as
 reported by the vehicle control unit (VCU).

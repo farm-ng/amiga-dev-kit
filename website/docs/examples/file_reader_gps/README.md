@@ -5,24 +5,20 @@ title: File Reader GPS
 
 # File Reader GPS Example
 
-This [**file_reader_gps_example**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/file_reader_gps/main.py)
-provides a utility for reading and parsing GPS messages from the event file.
+:::info Basic Knowledge Requirements
+
+1. **Python Programming**: Understanding basic Python programming concepts such as functions, loops,
+conditional statements, and type-checking.
+
+2. **[farm-ng GPS Service Overview](/docs/concepts/gps_service/)**:
+This overview provides a base understanding of the gRPC service the client you create will connect to.
+:::
+
+This [**File Reader GPS**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/file_reader_gps/main.py)
+example provides a utility for reading and parsing GPS messages from the event file.
 It can process two types of GPS messages: `relposned` and `pvt`.
 The user specifies the type of GPS message to parse, and the script reads the corresponding data,
 unpacks it, and prints it to the console.
-
-:::info
-There are two types of GPS messages: **PVT** and **RELPOSNED**.
-
-**PVT** (Position, Velocity, and Time) messages provide the all-in-one solution: position, velocity,
-and time.
-It contains details like longitude, latitude, altitude, speed, and UTC time.
-
-**RELPOSNED** (Relative Positioning) messages provide relative position
-information in a North, East, Down (N-E-D) frame. It's mainly used for applications requiring relative
-positioning between two receivers, often as a part of Real Time Kinematics (RTK) solutions.
-It shows the difference in position between a "moving" receiver and a "fixed" reference receiver.
-:::
 
 ## Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
