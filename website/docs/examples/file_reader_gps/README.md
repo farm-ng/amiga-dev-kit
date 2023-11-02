@@ -10,7 +10,8 @@ title: File Reader GPS
 1. **Python Programming**: Understanding basic Python programming concepts such as functions, loops,
 conditional statements, and type-checking.
 
-2. **GPS Concepts**: We also recommend you check our [GPS Service webpage](../../concepts/gps_service)
+2. **[farm-ng GPS Service Overview](/docs/concepts/gps_service/)**:
+This overview provides a base understanding of the gRPC service the client you create will connect to.
 :::
 
 This [**File Reader GPS**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/file_reader_gps/main.py)
