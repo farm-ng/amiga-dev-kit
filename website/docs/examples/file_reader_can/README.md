@@ -12,7 +12,8 @@ Before diving into this example, here's a quick overview of what you'll need to 
 1. **Python Programming**: This code is written in Python.
 Basic constructs such as functions, conditional statements, loops, and more are utilized.
 
-2. **Canbus Concepts**: We also recommend you check our [Canbus Service webpage](../../concepts/canbus_service)
+2. **[farm-ng Canbus Service Overview](/docs/concepts/canbus_service/)**:
+This overview provides a base understanding of the gRPC service the client you create will connect to.
 :::
 
 This [**File Reader Can**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/py/examples/file_reader_can/main.py)
