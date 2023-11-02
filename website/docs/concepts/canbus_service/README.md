@@ -13,7 +13,7 @@ publish motor states and send specific commands to manipulate the robot's moveme
 
 - **Purpose**: Control and manage the motors on the Amiga, handling command reception,
 processing, and motor instruction.
-- **Communication**: Direct interface with motors via Canbus, a communication standard
+- **Communication**: Direct interface with motors via CAN bus, a communication standard
 or microcontrollers and devices.
 - **Dependencies**: Standalone service, but pivotal for many autonomous operations.
 Notably, the Controller service is heavily reliant on the Canbus service.
