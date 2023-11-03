@@ -31,6 +31,25 @@ For the Filter service to function correctly, these services must be operational
 relevant sensor data.
 Since the Filter relies on GPS data, the Amiga must have a GPS connected to an RTK base station.
 
+# Data Streams
+
+- `/state`: A filter's state detailing pose, convergence, calibration, uncertainty, innovation, and heading.
+ Check the protobuf definition for more details:
+ [filter_pb2.FilterState](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/filter/filter.proto#L26-L37)
+
+## API
+
+Users can interact with the filter service using these commands through an EventClient of
+the filter service:
+
+- `/calibrate`: Triggers the calibration process, adjusting the IMU orientation relative to the robot
+and calculating gyroscope biases.
+- `/get_state`: Retrieves a protobuf message of type FilterState, containing the robot’s pose,
+heading (in radians), convergence status, and pose uncertainty.
+- `/get_track`: Returns the current track of the robot, essentially the path that the robot has traveled.
+- `/clear_track`: Clears the current track, useful when initiating a new tracking sequence or
+recalibrating the system.
+
 ## Convergence Requirements
 
 For the state estimation to be considered valid and the results to be reliable, certain criteria
@@ -49,25 +68,6 @@ State estimation is a dynamic process, and environmental factors or sensor issue
 Regular calibration and adherence to the recommended workflows are essential for maintaining accurate
 state estimation.
 :::
-
-## API
-
-Users can interact with the filter service using these commands through an EventClient of
-the filter service:
-
-- `/calibrate`: Triggers the calibration process, adjusting the IMU orientation relative to the robot
-and calculating gyroscope biases.
-- `/get_state`: Retrieves a protobuf message of type FilterState, containing the robot’s pose,
-heading (in radians), convergence status, and pose uncertainty.
-- `/get_track`: Returns the current track of the robot, essentially the path that the robot has traveled.
-- `/clear_track`: Clears the current track, useful when initiating a new tracking sequence or
-recalibrating the system.
-
-# Data Streams
-
-- `/state`: A filter's state detailing pose, convergence, calibration, uncertainty, innovation, and heading.
- Check the protobuf definition for more details:
- [filter_pb2.FilterState](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/filter/filter.proto#L26-L37)
 
 ## Filter Service in Practice
 

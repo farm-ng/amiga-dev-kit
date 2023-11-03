@@ -31,16 +31,13 @@ The State estimation filter service is a client of the following services:
 For this reason, all of the above-mentioned services must be up and running for the `Controller`
 to work.
 
-## Requirements
+# Data Streams
 
-There are a few requirements on the `/state` output of the state estimation filter
-for the controller service to consider the results valid and allow for following a track.
-These include:
-
-- GPS service is connected to an RTK base station
-- State estimation is receiving all required sensor data
-- State estimation results have converged
-  - Requires a few seconds of driving around after starting the filter service
+- `/state`: The Controller state is a combination of information from the various tasks
+performed by the Controller.
+It cannot be defined by a single protobuf definition, but instead, a combination of them.
+ Check the protobuf definitions for the Controller service for more details:
+ [control_pb2.](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/control/control.proto)
 
 ## API
 
@@ -52,13 +49,16 @@ an `EventClient` of the controller service.
 - `/follow_track`: Instruct the Amiga to commence following the previously set track.
 - `/stop`: Instruct the Amiga to halt all movements immediately.
 
-# Data Streams
+## Requirements
 
-- `/state`: The Controller state is a combination of information from the various tasks
-performed by the Controller.
-It cannot be defined by a single protobuf definition, but instead, a combination of them.
- Check the protobuf definitions for the Controller service for more details:
- [control_pb2.](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/control/control.proto)
+There are a few requirements on the `/state` output of the state estimation filter
+for the controller service to consider the results valid and allow for following a track.
+These include:
+
+- GPS service is connected to an RTK base station
+- State estimation is receiving all required sensor data
+- State estimation results have converged
+  - Requires a few seconds of driving around after starting the filter service
 
 ## The Controller in practice
 

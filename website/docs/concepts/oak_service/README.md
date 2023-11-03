@@ -38,14 +38,27 @@ These messages can include various data types such as:
 - Accelerometer data
 - Gyroscope data
 
-The specifics of these messages, including their data structures and formats, are defined in the
-service's [protobuf definitions](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/oak/oak.proto),
-which users can refer to for detailed information.
+# Data Streams
 
-## Requirements
+- `/calibration`: Intrinsic parameters of the cameras.
+ Check the protobuf definition for more details:
+ [oak_pb2.OakCalibration](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/oak/oak.proto#L139-L154)
 
-For the Oak service to function, there's only a single requirement:
-the oak camera(s) need to be powered via the POE Switch.
+- `/disparity`: Disparity (depth image).
+
+- `/left`: Left stereo image.
+
+- `/right`: Right stereo image.
+
+- `/rgb`: RGB image.
+
+The disparity, left, right, and rgb images all have the same structure.
+Check their protobuf definition for more details:
+[oak_pb2.OakFrame](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/oak/oak.proto#L38-L41)
+
+- `/imu`: Accelerometer and Gyroscope data.
+Check the protobuf definition for more details:
+[oak_pb2.OakImuPackets](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/oak/oak.proto#L43-L68)
 
 ## API
 
@@ -65,6 +78,11 @@ the mono camera settings or retrieve them if no new configurations are specified
 While the specifics of these configurations are found in the protobuf definitions, they offer users
 the ability to customize the camera performance as per their application requirements,
 potentially adjusting parameters like exposure, focus, and white balance.
+
+## Requirements
+
+For the Oak service to function, there's only a single requirement:
+the oak camera(s) need to be powered via the POE Switch.
 
 ## Practical Applications
 
