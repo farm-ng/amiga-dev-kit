@@ -3,7 +3,18 @@ id: service-propagation
 title: Service Propagation
 ---
 
-In this example, we will show how create a subsystem of services that can be
+:::info Basic Knowledge Requirements
+
+Before diving into this code, here's a quick heads-up on what you'll need to be familiar with:
+
+1. **Python Programming**: It's important to have a good grasp of Python, especially with concepts
+like `functions`, `loops`, and `classes`, since the example utilizes these fundamentals.
+2. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
+code using the `async/await` syntax.
+:::
+
+In the [**Service Propagation**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/py/examples/service_propagation)
+example, we will show how create a subsystem of services that can be
 composed together to create a more complex system and leverage bidirectional
 communication between services to propagate information.
 

@@ -3,7 +3,18 @@ id: service-counter
 title: Service Counter
 ---
 
-This is a subsequent example of the [**`service_client`**](/docs/examples/service_client/) example
+:::info Basic Knowledge Requirements
+
+Before diving into this code, here's a quick heads-up on what you'll need to be familiar with:
+
+1. **Python Programming**: It's important to have a good grasp of Python, especially with concepts
+like `functions`, `loops`, and `classes`, since the example utilizes these fundamentals.
+2. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
+code using the `async/await` syntax.
+:::
+
+The [**Service Counter**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/py/examples/service_counter)
+is a subsequent example of the [**`service_client`**](/docs/examples/service_client/) example
 where we will show how to use the `publish` method from `EventServiceGrpc` to publish messages
 to later use the `EventClient` to interact with the service.
 

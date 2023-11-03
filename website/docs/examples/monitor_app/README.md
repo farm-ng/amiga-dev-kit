@@ -3,6 +3,18 @@ id: monitor-app
 title: Monitor App
 ---
 
+:::info Basic Knowledge Requirements
+
+Before diving into this code, here's a quick heads-up on what you'll need to be familiar with:
+
+1. **Python Programming**: It's important to have a good grasp of Python, especially with concepts
+like `functions`, `loops`, and `classes`, since the example utilizes these fundamentals.
+2. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
+code using the `async/await` syntax.
+3. **HTML/CSS**: Knowledge of HTML and CSS for creating and styling web pages.
+4. **JavaScript/TypeScript**: Understanding of JavaScript and TypeScript for writing type-safe code.
+:::
+
 ## Building an App: Understanding the Basics
 
 Every modern app typically consists of two main parts: the backend and the frontend.
