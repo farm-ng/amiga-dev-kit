@@ -70,6 +70,7 @@ All these services run on the powerful Brain, allowing for efficient and concurr
 ## Architectural Diagram
 
 Below is the architectural diagram that visually represents how these services interact:
+![Screenshot from 2023-11-02 16-18-10](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/50e6c6ad-bb95-4d57-80ae-c97c8c4400dd)
 
 This introduction is designed to be a primer.
 Each service has its depths and intricacies, which you'll uncover as you dive deeper into Amiga development.
