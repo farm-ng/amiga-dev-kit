@@ -43,10 +43,15 @@ between two receivers, often as a part of Real Time Kinematics (RTK) solutions.
 It shows the difference in position between a "moving" receiver and a "fixed" reference receiver.
 :::
 
-:::tip TIP
-For a comprehensive understanding of the list of variables available in each GPS message,
-make sure to check their [protobuf definitions](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/gps/gps.proto).
-:::
+# Data Streams
+
+- `/pvt`: PVT message.
+ Check the protobuf definition for more details:
+ [gps_pb2.GpsFrame](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/gps/gps.proto#L50-L71)
+
+- `/relposned`:RELPOSNED message.
+Check the protobuf definition for more details:
+[gps_pb2.RelativePositionFrame](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/gps/gps.proto#L73-L97)
 
 ## Requirements
 
