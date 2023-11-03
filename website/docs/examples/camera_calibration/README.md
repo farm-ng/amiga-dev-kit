@@ -17,10 +17,8 @@ and why it's important, will help you understand the context and the results ret
 This overview provides a base understanding of the gRPC service the client you create will connect to.
 :::
 
-## Camera Calibration
-
-This [example](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/camera_calibration/main.py)
-operates as a standalone Python script,
+The [**Camera Calibration**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/camera_calibration/main.py)
+example operates as a standalone Python script,
 in which an `EventClient` to an Oak camera service running on an Amiga brain is created.
 The calibration of the Oak camera is printed in the terminal.
 
