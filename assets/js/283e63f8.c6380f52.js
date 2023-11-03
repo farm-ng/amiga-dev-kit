@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkamiga_developers_website=self.webpackChunkamiga_developers_website||[]).push([[4157],{2844:e=>{e.exports=JSON.parse('{"label":"announcement","permalink":"/blog/tags/announcement","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
