@@ -3,6 +3,8 @@ id: gps-client
 title: GPS Client
 ---
 
+# GPS Client Example
+
 :::info Basic Knowledge Requirements
 
 Before diving into this code, here's a quick heads-up on what you'll need to be familiar with:
@@ -15,8 +17,6 @@ code using the `async/await` syntax.
 This overview provides a base understanding of the gRPC service the client you create will connect to.
 This includes **GPS** (as PVT) & **RTK** (as RELPOSNED) messages.
 :::
-
-# GPS Client Example
 
 The [**GPS Client example**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/gps_client/main.py)
 operates as a standalone Python script,

@@ -21,7 +21,6 @@ This overview provides insight into compiling poses as waypoints into a Track
 that can be followed by the Amiga.
 :::
 
-
 :::caution Warning
 The controller examples will cause the Amiga to drive when the dashboard is in auto mode.
 Make sure the area is clear before running examples.
