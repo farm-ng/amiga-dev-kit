@@ -63,6 +63,12 @@ heading (in radians), convergence status, and pose uncertainty.
 - `/clear_track`: Clears the current track, useful when initiating a new tracking sequence or
 recalibrating the system.
 
+# Data Streams
+
+- `/state`: A filter's state detailing pose, convergence, calibration, uncertainty, innovation, and heading.
+ Check the protobuf definition for more details:
+ [filter_pb2.FilterState](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/filter/filter.proto#L26-L37)
+
 ## Filter Service in Practice
 
 When planning to record a new track, the recommended workflow is as follows:
