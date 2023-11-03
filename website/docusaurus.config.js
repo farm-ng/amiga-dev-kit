@@ -1,8 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const {themes} = require('prism-react-renderer');
+const lightTheme = themes.github;
+const darkTheme = themes.dracula;
 
 async function createConfig() {
     const mdxMermaid = await import('mdx-mermaid')
@@ -235,8 +236,8 @@ async function createConfig() {
 	copyright: `Copyright © ${new Date().getFullYear()} Farm-ng, Inc. Built with Docusaurus.`,
       },
       prism: {
-	theme: lightCodeTheme,
-	darkTheme: darkCodeTheme,
+	theme: lightTheme,
+	darkTheme: darkTheme,
       },
     }),
 }}

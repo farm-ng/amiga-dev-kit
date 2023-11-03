@@ -50,7 +50,7 @@ The farm-ng Dash display is a Beta early release product, specification and rati
 | Specifications       |                                                                                                                       |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | Input Power          | 12/24 volts (9-28vdc)                                                                                                 |
-| Power consumption    | ~2.5 watts, <5watts (depending usage, wifi, and brightness)                                                           |
+| Power consumption    | ~2.5 watts, < 5watts (depending usage, wifi, and brightness)                                                           |
 | Screen               | 4.3" High brightness (850cd/m2) optically bonded IPS display, 480x272 resolution                                      |
 | Touch                | Industrial capacitive touch screen controller, tunable for gloves and wet environment (Tuning requires customization) |
 | Microcontroller      | Microchip SAM ATSAME51 32-Bit Arm Cortex M4 running at 120MHz                                                         |
