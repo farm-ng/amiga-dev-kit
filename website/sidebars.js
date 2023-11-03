@@ -116,6 +116,7 @@ const sidebars = {
     "concepts/concepts-index",
     {
       "Fundamental Concepts": [
+        "concepts/system_overview/amiga-dev",
         "concepts/transforms_and_poses/transforms-and-poses",
         "concepts/controller_101/tracks-and-waypoints",
       ],
