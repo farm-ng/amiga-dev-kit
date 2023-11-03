@@ -52,6 +52,14 @@ an `EventClient` of the controller service.
 - `/follow_track`: Instruct the Amiga to commence following the previously set track.
 - `/stop`: Instruct the Amiga to halt all movements immediately.
 
+# Data Streams
+
+- `/state`: The Controller state is a combination of information from the various tasks
+performed by the Controller.
+It cannot be defined by a single protobuf definition, but instead, a combination of them.
+ Check the protobuf definitions for the Controller service for more details:
+ [control_pb2.](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/control/control.proto)
+
 ## The Controller in practice
 
 Before the controller can drive the Amiga autonomously, users must set a predefined track
