@@ -292,9 +292,9 @@ pip3 install -r requirements.txt
 
 ### 3. Install the frontend dependencies
 
-Recommendation: Use [**Node Version Manager**](
-  <https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04>
-  #option-3-installing-node-using-the-node-version-manager) to install Node.js 18.x.
+<!-- markdownlint-enable MD013 -->
+Recommendation: Use [**Node Version Manager**](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04#option-3-installing-node-using-the-node-version-manager)
+to install Node.js 18.x.
 
 ```bash
 cd ts/

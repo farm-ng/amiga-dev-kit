@@ -90,7 +90,6 @@ lift the amiga from both crossbars.
 
 - In the past, we've run to Home Depot and purchased: [**Eoslift 770 lb double scissor lift**](https://www.homedepot.com/p/Eoslift-Industrial-Grade-Heavy-Duty-TAD35-Manual-Double-Scissor-Lift-Table-Cart-770-lbs-Cap-20-5-in-x-39-7in-Swivel-Casters-TAD35/301884311
 )
-- And we've ordered from Uline: [**Uline 770 lb double scissor lift**](
-<https://www.uline.com/Product/Detail/H-1784/Lift-Tables/Uline-Manual-Lift-Table-Double-Scissor-770-lb-36-x-20>)
+- And we've ordered from Uline: [**Uline 770 lb double scissor lift**](https://www.uline.com/Product/Detail/H-1784/Lift-Tables/Uline-Manual-Lift-Table-Double-Scissor-770-lb-36-x-20)
 
 ![IMG_7757](https://user-images.githubusercontent.com/53625197/201174553-ea75745c-4a0e-47b6-8d62-bf94760e97b5.JPG)

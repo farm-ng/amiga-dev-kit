@@ -399,7 +399,7 @@ This is done by properly setting `ROS_MASTER_URI` & `ROS_IP` on all devices, as 
   launch files / nodes / examples you want to use
 - It is up to you to read their docs to configure / interact with the cameras how you want. E.g.,
   - Specify `MxId` of the camera you want to stream
-  - Configure for PoE cameras to reduce expected throughput compared to USB (See: <https://github.com/luxonis/depthai-ros#poe-cameras>)
+  - Configure for PoE cameras to reduce expected throughput compared to USB (See: [https://github.com/luxonis/depthai-ros#poe-cameras](https://github.com/luxonis/depthai-ros#poe-cameras))
   - Get camera calibrations
   - Pass a Neural Network to run on the Oak
   - Etc.

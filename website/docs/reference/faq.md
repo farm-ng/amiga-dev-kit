@@ -196,12 +196,13 @@ title: Frequently Asked Questions
 ## CAN bus
 
 <details>
-  <summary>What is the baud rate of the CAN bus the Amiga runs on?
+  <summary>
+    What is the baud rate of the CAN bus the Amiga runs on?
   </summary>
   <div>
      The Amiga CAN bus runs at 250 kbps (250,000 bits per second).
     <br/><br/>
-    </div>
+  </div>
 </details>
 
 ## Brain App Development
@@ -219,7 +220,8 @@ title: Frequently Asked Questions
 </details>
 
 <details>
-  <summary>Why are other apps launching over the app I'm currently using?
+  <summary>
+    Why are other apps launching over the app I'm currently using?
   </summary>
   <div>
     **deprecation warning**<br/>
