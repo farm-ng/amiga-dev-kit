@@ -1,6 +1,6 @@
 ---
 id: canbus-overview
-title: CANBUS
+title: Canbus
 ---
 
 # Canbus Service Overview
