@@ -3,7 +3,6 @@ id: filter-client
 title: Filter Client
 ---
 
-
 :::info Basic Knowledge Requirements
 
 Before diving into this code, here's a quick heads-up on what you'll need to be familiar with:

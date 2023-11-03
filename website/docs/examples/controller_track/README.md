@@ -1,6 +1,6 @@
 ---
 id: controller-track
-title: Follow a track
+title: Follow Track
 ---
 
 :::info Basic Knowledge Requirements
@@ -21,7 +21,6 @@ This overview provides insight into compiling poses as waypoints into a Track
 that can be followed by the Amiga.
 :::
 
-# Controller Follow Track Example
 
 :::caution Warning
 The controller examples will cause the Amiga to drive when the dashboard is in auto mode.
