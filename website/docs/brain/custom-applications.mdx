@@ -33,10 +33,12 @@ Now that you have created a new git repository, you have two options:
 1. Work in your local workspace (for development)
 2. Work in a Remote-SSH session on your robot (deployment on a brain)
 
+If you have not yet established a Remote-SSH connection, refer to this documentation:
+https://amiga.farm-ng.com/docs/ssh/
+
 For this example, we recommend option 2 and clone the repository directly onto the brain.
 
-If you have not yet established a Remote-SSH connection, refer to this documentation:
-NEED PUBLIC DOCS ON FLEET MANAGER. LINK HERE
+After you have established connection:
 
 ```bash
 cd <to-your-base-directory>
@@ -158,8 +160,6 @@ You should see a version >= 0.34.0.
 3. Prepare the frontend and compile the typescript code to javascript
 
 ```bash
-sudo apt update
-sudo apt upgrade
 nvm install --lts
 npm run build  # build the frontend
 ```
