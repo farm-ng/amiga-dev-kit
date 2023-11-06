@@ -3,7 +3,18 @@ id: service-client
 title: Service Client
 ---
 
-This example is the hello world of the farm-ng-core Event Service framework.
+:::info Basic Knowledge Requirements
+
+Before diving into this code, here's a quick heads-up on what you'll need to be familiar with:
+
+1. **Python Programming**: It's important to have a good grasp of Python, especially with concepts
+like `functions`, `loops`, and `classes`, since the example utilizes these fundamentals.
+2. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
+code using the `async/await` syntax.
+:::
+
+The [**Service Client**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/py/examples/service_client)
+example is the hello world of the farm-ng-core Event Service framework.
 
 The Event Service is a publish-subscribe service that allows to stream
 data from the farm-ng-core services to its respective clients. The central piece

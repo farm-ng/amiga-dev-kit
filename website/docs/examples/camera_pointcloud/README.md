@@ -22,10 +22,8 @@ particularly using tensors.
 This overview provides a base understanding of the gRPC service the client you create will connect to.
 :::
 
-## Camera Pointcloud
-
-The requirements to run [this example](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/camera_pointcloud/main.py)
-are to have a
+The requirements to run the [**Camera Pointcloud**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/camera_pointcloud/main.py)
+ example are to have a
 [**farm-ng brain**](/docs/brain/) running Oak cameras and that
 your PC is on the same local network as the brain.
 

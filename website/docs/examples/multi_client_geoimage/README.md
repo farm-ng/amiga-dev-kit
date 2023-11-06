@@ -3,9 +3,18 @@ id: multi-client-geoimage
 title: Multi Client GeoImage
 ---
 
-### [Link to `multi_client_geoimage/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/multi_client_geoimage/main.py)
+:::info Basic Knowledge Requirements
 
-This example shows how to leverage a multi client application to create a geoimage
+Before diving into this code, here's a quick heads-up on what you'll need to be familiar with:
+
+1. **Python Programming**: It's important to have a good grasp of Python, especially with concepts
+like `functions`, `loops`, and `classes`, since the example utilizes these fundamentals.
+2. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
+code using the `async/await` syntax.
+:::
+
+The [**Multi Client Geoimage**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/multi_client_geoimage/main.py)
+example shows how to leverage a multi client application to create a geoimage
 from the `oak` and `gps` services. We show how to implement a simple technique to
 synchronize the images and the gps data.
 

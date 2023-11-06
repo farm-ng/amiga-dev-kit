@@ -3,6 +3,18 @@ id: monitor-app
 title: Monitor App
 ---
 
+:::info Basic Knowledge Requirements
+
+Before diving into this code, here's a quick heads-up on what you'll need to be familiar with:
+
+1. **Python Programming**: It's important to have a good grasp of Python, especially with concepts
+like `functions`, `loops`, and `classes`, since the example utilizes these fundamentals.
+2. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
+code using the `async/await` syntax.
+3. **HTML/CSS**: Knowledge of HTML and CSS for creating and styling web pages.
+4. **JavaScript/TypeScript**: Understanding of JavaScript and TypeScript for writing type-safe code.
+:::
+
 ## Building an App: Understanding the Basics
 
 Every modern app typically consists of two main parts: the backend and the frontend.
@@ -48,9 +60,8 @@ Key Points:
 - Once the data is retrieved, the backend sends it back to the frontend.
 - The frontend then displays this data to the user in a readable and interactive manner.
 
-### [Link to `monitor_app/`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/monitor_app/)
-
-In this example we will show how to create a simple web application to stream and monitor
+In the [**Monitor App**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/monitor_app/)
+example we will show how to create a simple web application to stream and monitor
 the data from the [**farm-ng brain**](/docs/brain/) services.
 
 The tutorial is divided in two parts:
@@ -75,8 +86,6 @@ We strongly recommend go through the FastAPI tutorials to get familiar with the 
 You can start here [**FastAPI Tutorial**](https://fastapi.tiangolo.com/tutorial/).
 
 :::
-
-### [Link to `monitor_app/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/monitor_app/main.py)
 
 ### Topics discoverability
 
@@ -129,12 +138,10 @@ async def subscribe(websocket: WebSocket, service_name: str, uri_path: str, ever
     await websocket.close()
 ```
 
-::: note
-
+:::note
 In this example we use the `every_n` parameter to reduce the number of messages sent to the frontend.
 We also send the message as a json string, but we could also send the message as a binary string
 and decode the protobuf message in the frontend.
-
 :::
 
 ## Frontend
@@ -162,11 +169,9 @@ The structure of the frontend is the following:
 For simplicity we will explain only the `TopicMonitor` component, since the other components are
 just boilerplate code.
 
-::: tip
-
+:::tip
 For this example we recommend to get familiar with React Hooks, in particular `useEffect` and `useState`.
 You can find more information here [**React Hooks**](https://reactjs.org/docs/hooks-intro.html).
-
 :::
 
 We designed the `TopicMonitor` component to be as simple as possible to have a selector to choose
@@ -408,7 +413,7 @@ cd ts/
 npm run dev
 ```
 
-you should see the following output:
+You should see the following output:
 
 ```bash
 
@@ -423,8 +428,6 @@ Now you can open the browser and go to `http://localhost:5173/` and you should s
 
 ![Screenshot from 2023-10-04 15-40-28](https://github.com/farm-ng/amiga-dev-kit/assets/5157099/ff25d6c5-aa51-49a4-b8e0-398e12d5f00a)
 
-::: tip
-
+:::tip
 Switch between the different topics to see the data from the different services.
-
 :::

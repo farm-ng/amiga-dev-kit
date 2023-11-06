@@ -3,9 +3,18 @@ id: multi-client-subscriber
 title: Multi Client Subscriber
 ---
 
-### [Link to `multi_client_subscriber/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/multi_client_subscriber/main.py)
+:::info Basic Knowledge Requirements
 
-This is example shows how to create a multi client application that can be subscribed concurrently
+Before diving into this code, here's a quick heads-up on what you'll need to be familiar with:
+
+1. **Python Programming**: It's important to have a good grasp of Python, especially with concepts
+like `functions`, `loops`, and `classes`, since the example utilizes these fundamentals.
+2. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
+code using the `async/await` syntax.
+:::
+
+The [**Multi Client Subscriber**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/multi_client_subscriber/main.py)
+example shows how to create a multi client application that can be subscribed concurrently
 to different services.
 
 You can either run this example directly on a brain by `ssh`'ing in, or use your local PC.

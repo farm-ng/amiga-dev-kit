@@ -21,8 +21,6 @@ This overview provides insight into compiling poses as waypoints into a Track
 that can be followed by the Amiga.
 :::
 
-# Filter Track Recording Example
-
 :::caution Warning
 The controller examples will cause the Amiga to drive when the dashboard is in auto mode.
 Make sure the area is clear before running examples.
@@ -31,8 +29,8 @@ You can also run the examples when the Amiga dashboard is not in `AUTO READY` or
 and see the commands being sent with the red needle on the auto page without the Amiga actually moving.
 :::
 
-This [example](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/record_track/main.py)
-operates as a standalone Python script,
+The [**Record a Track**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/record_track/main.py)
+example operates as a standalone Python script,
 in which an `EventClient` to the filter running on an Amiga brain is created.
 This example records the filter track from the state estimation filter running on the Amiga.
 When recording a track for the controller to later follow,

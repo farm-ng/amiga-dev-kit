@@ -18,10 +18,8 @@ settings are manipulated in the code.
 This overview provides a base understanding of the gRPC service the client you create will connect to.
 :::
 
-## Camera Settings
-
-[This example](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/camera_settings/main.py)
-operates as a standalone Python script,
+The [**Camera Settings**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/camera_settings/main.py)
+ example operates as a standalone Python script,
 in which an `EventClient` to an Oak camera service running on an Amiga brain is created.
 The settings of an Oak camera camera are set,
 and the returned result is printed in the terminal.

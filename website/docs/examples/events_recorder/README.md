@@ -3,8 +3,6 @@ id: events-recorder
 title: Events Recorder
 ---
 
-## Events Recorder
-
 :::info Basic Knowledge Requirements
 
 Before diving into this example, here's a quick heads-up on what you'll need to be familiar with:

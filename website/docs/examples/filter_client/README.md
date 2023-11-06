@@ -3,7 +3,6 @@ id: filter-client
 title: Filter Client
 ---
 
-
 :::info Basic Knowledge Requirements
 
 Before diving into this code, here's a quick heads-up on what you'll need to be familiar with:
@@ -26,9 +25,8 @@ The client in this example is receiving state estimates that are the result of U
 It may be helpful to understand how UKFs work, their limitations and functionalities.
 :::
 
-### [Link to `filter_client/main.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/filter_client/main.py)
-
-This example streams the results from the state estimation filter running on the Amiga.
+The [**Filter Client**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/filter_client/main.py)
+example streams the results from the state estimation filter running on the Amiga.
 
 The requirements to run this example are to have a
 [**farm-ng brain**](/docs/brain/) running the `filter service`.
