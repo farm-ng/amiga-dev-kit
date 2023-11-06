@@ -35,12 +35,13 @@ Now that you have created a new git repository, you have two options:
 
 For this example, we recommend option 2 and clone the repository directly onto the brain.
 
+If you have not yet established a Remote-SSH connection, refer to this documentation:
+NEED PUBLIC DOCS ON FLEET MANAGER. LINK HERE
+
 ```bash
 cd <to-your-base-directory>
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
 ```
-
-
 
 
 ## Project structure
@@ -129,16 +130,41 @@ For now we just support python apps, and a single app per manifest file.
 :::
 
 ## How to setup the project
-
-1. Prepare the frontend and compile the typescript code to javascript
+1. Begin by installing node version manager (nvm) in the /ts directory.
 
 ```bash
 cd ts/
-npm install  # install dependencies
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+```
+
+Once this has finished running, you should see the following message:
+```bash
+=> Close and reopen your terminal to start using nvm or run the following to use it now:
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+```
+
+
+2. Verify installation by closing and re-opening the terminal and running:
+```bash
+nvm --version
+    0.34.0
+```
+You should see a version >= 0.34.0.
+
+
+3. Prepare the frontend and compile the typescript code to javascript
+
+```bash
+sudo apt update
+sudo apt upgrade
+nvm install --lts
 npm run build  # build the frontend
 ```
 
-2. Prepare the backend
+4. Prepare the backend
 
 Install the dependencies of the backend
 
