@@ -74,6 +74,7 @@ its operational environment and physical characteristics.
 For precise calibration of the robotic platform, all measurements are taken in meters (m)
 and should originate from the central axis of the robot.
 Please follow the indicated measurement guide to maintain consistency and reliability in data collection.
+![Screenshot from 2023-11-07 14-48-47](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/8c63569f-2439-45be-88a2-16b23cab553d)
 :::
 
 3. **Apply or Reset Settings**:
