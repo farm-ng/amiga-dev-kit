@@ -128,6 +128,11 @@ const sidebars = {
         "concepts/recorder_service/recorder-overview",
         "concepts/controller_service/controller-overview",
       ],
+      "Apps Overviews": [
+        "apps/filter_app/filter-app",
+        "apps/controller_app/controller-app",
+
+      ],
     },
   ],
   "api": [
