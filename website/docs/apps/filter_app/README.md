@@ -46,7 +46,6 @@ issues that suggest recalibration is necessary.
 4. **Calibration Complete**: The status will update to "Calibrated," and the last calibration
 date will refresh.
 
-
 ## Fine-Tuning Settings
 
 Adjust GPS antenna offsets, track width, and wheelbase to tailor the Amiga's movement to
@@ -70,13 +69,6 @@ its operational environment and physical characteristics.
 
     ![Screenshot from 2023-11-07 13-52-02](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/2df60c70-7c37-4919-ac32-fc895eb77b6d)
 
-:::note NOTE
-For precise calibration of the robotic platform, all measurements are taken in meters (m)
-and should originate from the central axis of the robot.
-Please follow the indicated measurement guide to maintain consistency and reliability in data collection.
-![Screenshot from 2023-11-07 14-48-47](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/8c63569f-2439-45be-88a2-16b23cab553d)
-:::
-
 3. **Apply or Reset Settings**:
 
     a. Click "Apply" to save new settings.
@@ -84,6 +76,13 @@ Please follow the indicated measurement guide to maintain consistency and reliab
     b. Click "Reset To Factory Settings" if necessary.
 
 4. **Close Settings**: After adjustments, close the panel to return to the main view.
+
+:::note NOTE
+For precise calibration of the robotic platform, all measurements are taken in meters (m)
+and should originate from the central axis of the robot.
+Please follow the indicated measurement guide to maintain consistency and reliability in data collection.
+![Screenshot from 2023-11-07 14-48-47](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/8c63569f-2439-45be-88a2-16b23cab553d)
+:::
 
 Remember, calibration and fine-tuning are key to the seamless operation of your Amiga.
 Ensure these steps are completed before engaging in autonomous operations to maximize
