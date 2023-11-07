@@ -27,7 +27,6 @@ issues that suggest recalibration is necessary.
 
     ![Screenshot from 2023-11-07 13-51-18](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/61b489c4-8b2d-41fd-8ff6-7df3228a4fef)
 
-
 2. **Begin Calibration**:
 
     a. Click "Recalibrate" if needed.
@@ -37,17 +36,16 @@ issues that suggest recalibration is necessary.
     ![Screenshot from 2023-11-07 13-51-25](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/c49d41fb-7109-44a3-a8f2-9d1db3ac2ba4)
 
 3. **Perform Calibration**:
-    
+
     a. Confirm the correct positioning and start the calibration process.
-    
+
     b. The app will display a progress indicator and notify you upon completion.
 
-    ![Calibration in Progress]
+    ![Screenshot from 2023-11-07 13-51-35](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/a0f5be38-2a3a-480e-9fd6-bae6f68419f8)
 
 4. **Calibration Complete**: The status will update to "Calibrated," and the last calibration
 date will refresh.
 
-    ![Screenshot from 2023-11-07 13-51-35](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/a0f5be38-2a3a-480e-9fd6-bae6f68419f8)
 
 ## Fine-Tuning Settings
 
@@ -72,10 +70,16 @@ its operational environment and physical characteristics.
 
     ![Screenshot from 2023-11-07 13-52-02](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/2df60c70-7c37-4919-ac32-fc895eb77b6d)
 
+:::note NOTE
+For precise calibration of the robotic platform, all measurements are taken in meters (m)
+and should originate from the central axis of the robot.
+Please follow the indicated measurement guide to maintain consistency and reliability in data collection.
+:::
+
 3. **Apply or Reset Settings**:
 
     a. Click "Apply" to save new settings.
-    
+
     b. Click "Reset To Factory Settings" if necessary.
 
 4. **Close Settings**: After adjustments, close the panel to return to the main view.
