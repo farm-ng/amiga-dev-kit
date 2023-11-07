@@ -25,7 +25,8 @@ modifications, or when environmental factors could have affected sensor readings
 If it shows as "Calibrated" with a recent date, no further action is needed unless you've encountered
 issues that suggest recalibration is necessary.
 
-    ![Calibration Status Indicator]
+    ![Screenshot from 2023-11-07 13-51-18](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/61b489c4-8b2d-41fd-8ff6-7df3228a4fef)
+
 
 2. **Begin Calibration**:
 
@@ -33,7 +34,7 @@ issues that suggest recalibration is necessary.
 
     b. Position the Amiga on flat ground, as indicated by the app's visual guide.
 
-    ![Begin Calibration Illustration]
+    ![Screenshot from 2023-11-07 13-51-25](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/c49d41fb-7109-44a3-a8f2-9d1db3ac2ba4)
 
 3. **Perform Calibration**:
     
@@ -46,7 +47,7 @@ issues that suggest recalibration is necessary.
 4. **Calibration Complete**: The status will update to "Calibrated," and the last calibration
 date will refresh.
 
-    ![Calibration Complete]
+    ![Screenshot from 2023-11-07 13-51-35](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/a0f5be38-2a3a-480e-9fd6-bae6f68419f8)
 
 ## Fine-Tuning Settings
 
@@ -63,15 +64,13 @@ its operational environment and physical characteristics.
 
 1. **Access Settings Panel**: Click the "Settings" gear icon in the Filter App.
 
-    ![Settings Gear Icon]
-
 2. **Adjust Parameters**:
 
     a. Change GPS and IMU offsets to match your robot's setup.
 
     b. Input the correct track width and wheelbase.
 
-    ![Filter Settings Panel]
+    ![Screenshot from 2023-11-07 13-52-02](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/2df60c70-7c37-4919-ac32-fc895eb77b6d)
 
 3. **Apply or Reset Settings**:
 
@@ -80,8 +79,6 @@ its operational environment and physical characteristics.
     b. Click "Reset To Factory Settings" if necessary.
 
 4. **Close Settings**: After adjustments, close the panel to return to the main view.
-
-    ![Settings Applied Confirmation]
 
 Remember, calibration and fine-tuning are key to the seamless operation of your Amiga.
 Ensure these steps are completed before engaging in autonomous operations to maximize
