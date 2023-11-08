@@ -6,7 +6,11 @@ title: Autoplot App
 # Autoplot App Guide
 
 The Autoplot app is an advanced control interface for your Amiga, offering multiple modes of
-operation such as teach-and-repeat, WASD control, and remote access through a web browser.
+operation:
+
+- **Direct control**: Manually drive the robot with simple controls for straight, turn, and backwards.
+- **Teach-and-repeat**: Manually drive the robot along a desired path, save it, and then command the robot to repeat the path autonomously.
+- **Remote teleoperation**: Control the robot through any web browser.
 
 ## How to Use the Autoplot App
 
