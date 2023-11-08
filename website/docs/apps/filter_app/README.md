@@ -49,7 +49,7 @@ or the robot goes significantly off the path when performing an autonomous task.
 
 #### 4. Calibration Complete: The status will update to "Calibrated"
 
-![Screenshot from 2023-11-08 11-55-43](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/5a5e720b-c4a0-4f45-86f7-de2ce98f0efc)
+![image](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/2f80d8f4-d0d7-4560-b97d-3ab68129c074)
 
 ## Fine-Tuning Settings
 
