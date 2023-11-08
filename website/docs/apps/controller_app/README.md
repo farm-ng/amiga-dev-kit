@@ -9,8 +9,27 @@ The Autoplot app is an advanced control interface for your Amiga, offering multi
 operation:
 
 - **Direct control**: Manually drive the robot with simple controls for straight, turn, and backwards.
-- **Teach-and-repeat**: Manually drive the robot along a desired path, save it, and then command the robot to repeat the path autonomously.
-- **Remote teleoperation**: Control the robot through any web browser.
+- **Teach-and-repeat**: Manually drive the robot along a desired path, save it, and then command the
+robot to repeat the path autonomously.
+- **Remote teleoperation**: Control the robot through any web browser using a keyboard.
+
+## Autonomy Requirements
+
+Before starting any operation, make sure to check the following:
+
+- [ ] The robot is calibrated through the [**Filter App**](/docs/apps/filter_app).
+- [ ] The GPS antenna offsets are correctly set in the [**Filter App**](/docs/apps/filter_app).
+- [ ] Ensure the robot is connected to an RTK base station for enhanced GPS accuracy.
+- [ ] Set your Amiga to `automode`.
+This is done through the dashboard in the [**automation screen**](https://www.youtube.com/watch?v=PKOhI4hbGUs&t=258s).
+
+:::tip RTK-GPS Configuration
+For precision in autonomous operations, configuring the RTK-GPS is essential.
+This high-accuracy GPS configuration is critical for tasks that require precise geolocation capabilities.
+
+For detailed information on setting up and configuring RTK-GPS with your Amiga, please refer
+to the [**farm-ng GPS Service Overview**](/docs/concepts/gps_service#Requirements).
+:::
 
 ## How to Use the Autoplot App
 
@@ -26,46 +45,68 @@ and then have the robot repeat the path autonomously.
 
 ### Remote Access via Web Browser
 
-The Autoplot is a web-app, and can be access through any web browser, such as Google Chrome.
-To view it in your browser, navigate to: `<element-vegetable>:8008`
+The Autoplot app is designed as a web-app, enabling seamless access from any standard web browser
+like Google Chrome, Firefox, or Safari.
+To open the Autoplot interface in your browser, simply enter the following address:
 
-:::note NOTE
-Make sure to rename `<element-vegetable>` with your actual robot name.
+```bash
+<your-robot-name>:8008
+```
+
+:::note Remote Control Requirements
+To remotely control your Amiga:
+
+- Ensure you are connected to the same network as your Amiga robot.
+- For access across different networks, configure [**cross-network access**](/docs/ssh#recommended-configure-cross-network-access)
+by adding your Amiga to your Tailscale network.
+
+For Tailscale users, access the app using your Amiga's Fully Qualified Domain Name (FQDN):
+
+```bash
+<element-fruit>.<tailnet-name>.ts.net:8008
+```
+
+Replace `<element-fruit>` and `<tailnet-name>` with the respective names configured in your
+Tailscale network.
 :::
 
-You can control your Amiga from a web browser at any time, even when the Autoplot app is not active on the Brain display.
+You can control your Amiga from a web browser at any time, even when the Autoplot app is not active
+on the Brain display.
 
-### WASD Control
+#### Remote Keyboard Control
 
-WASD is possible on web browsers.
-When your robot is in `automode`, you can take direct control with simple keyboard commands.
+Experience direct control of your Amiga robot from any web browser.
+Similar to video game controls, this feature allows you to command the robot using simple keyboard inputs.
 
-- **W**: Move forward
-- **A**: Turn counterclockwise in place
-- **D**: Turn clockwise in place
-- **S**: Disabled for safety
+- **W**: Propels the robot forward
+- **A**: Rotates the robot counter-clockwise on the spot
+- **D**: Rotates the robot clockwise on the spot
+- **S**: Disabled to prevent accidental reverse movements for safety
 
-Pressing these keys in your web browser will send commands directly to the robot, allowing for
-immediate control.
+These commands engage the robot's autonomy systems to perform the actions safely and precisely,
+setting incremental goals for the robot to achieve.
 
-:::info
-Using WASD control will override any ongoing autonomous tasks.
+:::info Autonomy Required for Remote Control
+Remote Keyboard Control requires the robot to be in `automode`.
+This mode ensures that all movements are managed safely by the robot's autonomous systems.
 :::
 
-## Autonomy Requirements
+## Manual vs. Remote Control
 
-Before starting any operation, make sure to check the following:
+You can control your Amiga robot in two ways:
 
-- [ ] The robot is calibrated through the [**Filter App**](/docs/apps/filter_app).
-- [ ] The GPS antenna offsets are correctly set in the [**Filter App**](/docs/apps/filter_app).
-- [ ] Ensure the robot is connected to an RTK base station for enhanced GPS accuracy.
+**Manual Control**: Use the pendant or dashboard while physically present with the robot,
+ideal for teaching the robot new tracks.
 
-:::tip RTK-GPS Configuration
-For precision in autonomous operations, configuring the RTK-GPS is essential.
-This high-accuracy GPS configuration is critical for tasks that require precise geolocation capabilities.
+**Remote Control**: From your web browser, you can remotely operate the robot without needing
+to be in the same physical location.
 
-For detailed information on setting up and configuring RTK-GPS with your Amiga, please refer
-to the [**farm-ng GPS Service Overview**](/docs/concepts/gps_service#Requirements).
+Both methods allow for track recording; however, remote control enables you to operate the
+robot from any location with internet access.
+
+:::tip Teaching Tracks Remotely or On-Site
+Tracks can be taught to the robot whether you're using the on-site pendant or the Remote Keyboard
+Control feature via a web browser.
 :::
 
 ## Status Bar Icons
@@ -84,7 +125,8 @@ Always monitor this, especially before starting long tasks.
 ## Tips for Optimal Autonomy
 
 - Before engaging in autonomous operations, always perform a safety check of the environment.
-- When operating the robot via WASD control in the web app, ensure a stable and responsive network connection.
+- When operating the robot via remote keyboard control in the web app, ensure a stable and
+responsive network connection.
 - Monitor the robot's battery status via the Autoplot app to avoid interruptions in longer operations.
 
 ## Troubleshooting
