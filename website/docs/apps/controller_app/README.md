@@ -33,8 +33,7 @@ To view it in your browser, navigate to: `<element-vegetable>:8008`
 Make sure to rename `<element-vegetable>` with your actual robot name.
 :::
 
-This app runs persistently in the background, even when not active on the robot's display,
-ensuring that you can control your Amiga from any web browser at any time.
+You can control your Amiga from a web browser at any time, even when the Autoplot app is not active on the Brain display.
 
 ### WASD Control
 
