@@ -76,17 +76,16 @@ its operational environment and physical characteristics.
     b. Click "Reset To Factory Settings" if necessary.
 
 4. **Close Settings**: After adjustments, close the panel to return to the main view.
+![Screenshot from 2023-11-08 11-55-43](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/5a5e720b-c4a0-4f45-86f7-de2ce98f0efc)
 
 :::note NOTE
 For precise calibration of the robotic platform, all measurements are taken in meters (m)
 and should originate from the central axis of the robot.
 Please follow the indicated measurement guide to maintain consistency and reliability in data collection.
+
 ![Group 4 (7)](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/28fa7805-75e2-4b99-9b8e-7c9961b392a8)
-![image](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/cfb64d74-a70c-42d3-aee5-c304afed2d45)
 ![image](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/4ca99130-db62-415f-a82c-3211fa7d9c5c)
-
-
-
+![image](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/cfb64d74-a70c-42d3-aee5-c304afed2d45
 :::
 
 Remember, calibration and fine-tuning are key to the seamless operation of your Amiga.
