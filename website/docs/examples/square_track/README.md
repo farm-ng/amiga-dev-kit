@@ -1,5 +1,5 @@
 ---
-id: controller-square
+id: square-track
 title: Drive a Square
 ---
 
@@ -29,7 +29,7 @@ You can also run the examples when the Amiga dashboard is not in `AUTO READY` or
 and see the commands being sent with the red needle on the auto page without the Amiga actually moving.
 :::
 
-The [**Controller Drive a Square Example**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/controller_square/main.py)
+The [**Controller Drive a Square Example**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/square_track/main.py)
 operates as a standalone Python script,
 in which an `EventClient` to the farm-ng Controller service running on an Amiga brain is created.
 
@@ -80,7 +80,7 @@ source venv/bin/activate
 ### Install
 
 ```bash
-cd py/examples/controller_square
+cd py/examples/square_track
 pip install -r requirements.txt
 ```
 
@@ -135,12 +135,12 @@ python main.py --help
 And see:
 
 ```bash
-usage: amiga-controller-square [-h] --service-config SERVICE_CONFIG [--side-length SIDE_LENGTH] [--clockwise]
+usage: amiga-track_follower-square [-h] --service-config SERVICE_CONFIG [--side-length SIDE_LENGTH] [--clockwise]
 
 optional arguments:
   -h, --help            show this help message and exit
   --service-config SERVICE_CONFIG
-                        The controller service config.
+                        The service config.
   --side-length SIDE_LENGTH
                         The side length of the square.
   --clockwise           Set to drive the square clockwise (right hand turns).
