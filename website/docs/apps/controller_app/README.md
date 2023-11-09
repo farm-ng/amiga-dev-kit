@@ -43,6 +43,9 @@ and then have the robot repeat the path autonomously.
 3. Click "Save" and name your track to use it later.
 4. Load the track when needed and click "Start Track" to initiate autonomous follow.
 
+![Screenshot from 2023-11-08 16-15-51](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/a23646f6-26e3-49c9-b70f-d8faab3ae159)
+![Screenshot from 2023-11-08 16-20-21](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/13bbbec5-f66f-47a4-b064-8e98be59e43f)
+
 ### Remote Access via Web Browser
 
 The Autoplot app is designed as a web-app, enabling seamless access from any standard web browser
@@ -121,6 +124,8 @@ Autonomy will not engage if the filter has not converged.
 - **WiFi**: This shows if the robot is connected to Wifi, which is necessary for autonomous operations.
 - **Battery**: Displays the current battery level.
 Always monitor this, especially before starting long tasks.
+
+![image](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/044304e6-1ae5-4724-845f-da4a9ebe4def)
 
 ## Tips for Optimal Autonomy
 
