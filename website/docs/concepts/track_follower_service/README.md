@@ -37,7 +37,7 @@ to work.
 performed by the Controller.
 It cannot be defined by a single protobuf definition, but instead, a combination of them.
  Check the protobuf definitions for the Controller service for more details:
- [control_pb2.](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/control/control.proto)
+ [track.proto](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/track/track.proto)
 
 ## API
 
@@ -46,7 +46,7 @@ an `EventClient` of the controller service.
 
 - `/get_pose`: Retrieve the current position and orientation of the Amiga.
 - `/set_track`: Provide a specific track (series of waypoints) for the Amiga to follow.
-- `/follow_track`: Instruct the Amiga to commence following the previously set track.
+- `/start`: Instruct the Amiga to commence following the previously set track.
 - `/stop`: Instruct the Amiga to halt all movements immediately.
 
 ## Requirements
@@ -66,7 +66,7 @@ Before the controller can drive the Amiga autonomously, users must set a predefi
 for the robot to follow using the `/set_track` API.
 
 Once a track is set, the next step is to command the controller to make the robot follow it.
-This is done using the `/follow_track` API.
+This is done using the `/start` request.
 The controller will then navigate the robot through each waypoint in the sequence, ensuring it follows
 the predefined path.
 

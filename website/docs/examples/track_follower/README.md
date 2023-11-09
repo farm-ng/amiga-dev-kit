@@ -22,16 +22,16 @@ that can be followed by the Amiga.
 :::
 
 :::caution Warning
-The controller examples will cause the Amiga to drive when the dashboard is in auto mode.
+The track follower examples will cause the Amiga to drive when the dashboard is in auto mode.
 Make sure the area is clear before running examples.
 
 You can also run the examples when the Amiga dashboard is not in `AUTO READY` or `AUTO ACTIVE`
 and see the commands being sent with the red needle on the auto page without the Amiga actually moving.
 :::
 
-The [**Controller Follow Track Example**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/track_follower/main.py)
+The [**Track Follower Example**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/track_follower/main.py)
 operates as a standalone Python script,
-in which an `EventClient` to the farm-ng Controller service running on an Amiga brain is created.
+in which an `EventClient` to the farm-ng Track Follower service running on an Amiga brain is created.
 
 This script takes in a pre-recorded track and commands the Amiga to follow it.
 
@@ -40,14 +40,14 @@ If using your local PC, it should be either connected to the same local network 
 or linked to it through tailscale.
 
 Ensure that a [**farm-ng brain**](/docs/brain/), with a GPS receiver and Oak cameras,
-is actively running the controller service.
+is actively running the track follower service.
 
 :::info
 It is **highly recommended** to read through the [Track Follower Service Overview](/docs/concepts/track_follower_service/)
 before running this example.
 
 This will provide insight into the requirements and API
-for using the controller service to follow a path.
+for using the track follower service to follow a path.
 :::
 
 ## 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
@@ -101,14 +101,14 @@ you can change the `host` field in `service_config.json` from localhost to your 
 
 ```json
 {
-    "name": "controller",
+    "name": "track_follower",
     "port": 20101,
     "host": "element-vegetable",
     "subscriptions": [
         {
             "uri": {
             "path": "/state",
-            "query": "service_name=controller"
+            "query": "service_name=track_follower"
             },
             "every_n": 1
         }
@@ -121,88 +121,82 @@ you can change the `host` field in `service_config.json` from localhost to your 
 
 In this example we use the `EventClient` with the `request_reply` method to set a track
 (`/set_track`) to be followed.
-We then command the controller to follow the set track (`/follow_track`).
+We then command the track follower to follow the set track (`/start`).
 
 ```python
-async def set_track(service_config: EventServiceConfig, filter_track: FilterTrack) -> None:
-    """Set the track of the controller.
-
-    WARNING: This API will change in the future.
-    The controller service currently expects a FilterTrack proto message,
-    but this will change in the future to a more general message type.
+async def set_track(service_config: EventServiceConfig, track: Track) -> None:
+    """Set the track of the track_follower.
 
     Args:
-        service_config (EventServiceConfig): The controller service config.
-        filter_track (FilterTrack): The track for the controller to follow.
+        service_config (EventServiceConfig): The track_follower service config.
+        track (Track): The track for the track_follower to follow.
     """
-    print(f"Setting track:\n{filter_track}")
-    await EventClient(service_config).request_reply("/set_track", filter_track)
+    print(f"Setting track:\n{track}")
+    await EventClient(service_config).request_reply("/set_track", TrackFollowRequest(track=track))
 
 
-async def follow_track(service_config: EventServiceConfig) -> None:
+async def start(service_config: EventServiceConfig) -> None:
     """Follow the track.
 
     Args:
-        service_config (EventServiceConfig): The controller service config.
+        service_config (EventServiceConfig): The track_follower service config.
     """
-    print("Following track...")
-    await EventClient(service_config).request_reply("/follow_track",
-        StringValue(value="my_custom_track"))
+    print("Sending request to start following the track...")
+    await EventClient(service_config).request_reply("/start", Empty())
 
 
 async def main(service_config_path: Path, track_path: Path) -> None:
-    """Run the controller track example. The robot will drive the pre-recorded track.
+    """Run the track_follower track example. The robot will drive the pre-recorded track.
 
     Args:
-        service_config_path (Path): The path to the controller service config.
+        service_config_path (Path): The path to the track_follower service config.
     """
 
-    # Extract the controller service config from the JSON file
-    service_config: EventServiceConfig = proto_from_json_file(service_config_path,
-        EventServiceConfig())
+    # Extract the track_follower service config from the JSON file
+    service_config: EventServiceConfig = proto_from_json_file(service_config_path, EventServiceConfig())
 
-    # Build the track and package in a FilterTrack proto message
-    filter_track: FilterTrack = proto_from_json_file(track_path, FilterTrack())
+    # Read the track and package in a Track proto message
+    track: Track = proto_from_json_file(track_path, Track())
 
-    # Send the track to the controller
-    await set_track(service_config, filter_track)
+    # Send the track to the track_follower
+    await set_track(service_config, track)
 
     # Follow the track
-    await follow_track(service_config)
+    await start(service_config)
 ```
 
-We also use the `subscribe` method to receive and stream the controller state.
+We also use the `subscribe` method to receive and stream the track follower state.
 
 ```python
-async def stream_controller_state(service_config_path: Path) -> None:
-    """Stream the controller state.
+async def stream_track_state(service_config_path: Path) -> None:
+    """Stream the track_follower state.
 
     Args:
-        service_config_path (Path): The path to the controller service config.
+        service_config_path (Path): The path to the track_follower service config.
     """
 
-    # Brief wait to allow the controller to start (not necessary in practice)
+    # Brief wait to allow the track_follower to start (not necessary in practice)
     await asyncio.sleep(1)
-    print("Streaming controller state...")
+    print("Streaming track_follower state...")
 
-    # Create a client to the Controller service
+    # create a client to the camera service
     config: EventServiceConfig = proto_from_json_file(service_config_path, EventServiceConfig())
 
-    message: ControllerState
+    message: TrackFollowerState
     async for event, message in EventClient(config).subscribe(config.subscriptions[0], decode=True):
         print("###################")
         print(message)
 ```
 
 We use the `asyncio.gather` method to allow running the two tasks,
-(1) setting the controller to follow the track and (2) streaming the controller state,
+(1) setting the track follower to follow the track and (2) streaming the track follower state,
 simultaneously and asynchronously.
 
 ```python
 async def run(args) -> None:
     tasks: list[asyncio.Task] = [
         asyncio.create_task(main(args.service_config, args.track)),
-        asyncio.create_task(stream_controller_state(args.service_config)),
+        asyncio.create_task(stream_track_state(args.service_config)),
     ]
     await asyncio.gather(*tasks)
 
@@ -210,7 +204,7 @@ async def run(args) -> None:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog="amiga-track-follower")
     parser.add_argument("--service-config", type=Path, required=True,
-        help="The controller service config.")
+        help="The track_follower service config.")
     parser.add_argument("--track", type=Path, required=True,
         help="The filepath of the track to follow.")
     args = parser.parse_args()
