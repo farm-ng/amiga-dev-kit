@@ -16,7 +16,7 @@ This overview provides a base understanding of the gRPC service the client you c
 4. [**farm-ng Transforms & Poses Overview**](/docs/concepts/transforms_and_poses/):
 This overview provides insight into coordinate frames, transforms,
 and poses as they pertain to autonomous systems and autonomous navigation.
-5. [**farm-ng Tracks & Waypoints Overview**](/docs/concepts/controller_101/):
+5. [**farm-ng Tracks & Waypoints Overview**](/docs/concepts/tracks_and_waypoints/):
 This overview provides insight into compiling poses as waypoints into a Track
 that can be followed by the Amiga.
 :::

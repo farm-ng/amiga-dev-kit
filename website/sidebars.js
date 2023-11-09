@@ -118,7 +118,7 @@ const sidebars = {
       "Fundamental Concepts": [
         "concepts/system_overview/amiga-dev",
         "concepts/transforms_and_poses/transforms-and-poses",
-        "concepts/controller_101/tracks-and-waypoints",
+        "concepts/tracks_and_waypoints/tracks-and-waypoints",
       ],
         "Service Overviews": [
         "concepts/canbus_service/canbus-overview",
