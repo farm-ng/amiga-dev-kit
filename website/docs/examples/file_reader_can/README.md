@@ -16,7 +16,7 @@ Basic constructs such as functions, conditional statements, loops, and more are 
 This overview provides a base understanding of the gRPC service the client you create will connect to.
 :::
 
-This [**File Reader Can**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/py/examples/file_reader_can/main.py)
+This [**File Reader Can**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader_can/main.py)
 example parses the CAN data from a recorded log and prints the `AmigaTpdo1` parsed
 values. The `AmigaTpdo1` can packet contains
 the `state`, `speed`, and `angular rate` of the Amiga, as

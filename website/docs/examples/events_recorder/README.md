@@ -15,7 +15,7 @@ argparse module.
 This overview provides a base understanding of the gRPC service the client you create will connect to.
 :::
 
-In the [**Events Recorder**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/event_recorder/main.py)
+In the [**Events Recorder**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/event_recorder/main.py)
 example we show how to record events from farm-ng-brain using
 the `EventClient` class.
 

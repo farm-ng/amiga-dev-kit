@@ -17,7 +17,7 @@ image data, including functions like `imdecode`, `applyColorMap`, and `imshow`.
 This overview provides a base understanding of the gRPC service the client you create will connect to.
 :::
 
-The [**Camera Client**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/camera_client/main.py)
+The [**Camera Client**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/camera_client/main.py)
 example operates as a standalone Python script,
 in which an `EventClient` to an Oak camera service running on an Amiga brain is created.
 The selected stream is displayed in a popup window.

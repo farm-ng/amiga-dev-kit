@@ -14,7 +14,7 @@ conditional statements, and type-checking.
 This overview provides a base understanding of the gRPC service the client you create will connect to.
 :::
 
-This [**File Reader GPS**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/file_reader_gps/main.py)
+This [**File Reader GPS**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/file_reader_gps/main.py)
 example provides a utility for reading and parsing GPS messages from the event file.
 It can process two types of GPS messages: `relposned` and `pvt`.
 The user specifies the type of GPS message to parse, and the script reads the corresponding data,

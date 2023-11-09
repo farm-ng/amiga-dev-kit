@@ -28,7 +28,7 @@ tasks, as the example involves converting images to grayscale for marker.
 This overview provides a base understanding of the gRPC service the client you create will connect to.
 :::
 
-In the [**Camera ArUco**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/camera_aruco_detector/main.py)
+In the [**Camera ArUco**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/camera_aruco_detector/main.py)
 example we are going show how to implement a simple Aruco marker detector
 using the [**OpenCV**](https://opencv.org/) library and the Camera service to
 detect and estimate the 6DoF pose of an Aruco marker useful for robot localization.

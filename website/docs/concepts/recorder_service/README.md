@@ -35,7 +35,7 @@ Here's a breakdown of each topic:
 
 :::tip
 Check out the protobuf messages streamed on these topics at:<br/>
-[**`farm-ng-amiga/protos/`**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/protos/farm_ng).
+[**`farm-ng-amiga/protos/`**](https://github.com/farm-ng/farm-ng-amiga/tree/main/protos/farm_ng).
 
 Some of which may inherit from the protobuf messages found at:<br/>
 [**`farm-ng-core/protos/`**](https://github.com/farm-ng/farm-ng-core/tree/main/protos/farm_ng/core)

@@ -47,11 +47,11 @@ It shows the difference in position between a "moving" receiver and a "fixed" re
 
 - `/pvt`: PVT message.
  Check the protobuf definition for more details:
- [gps_pb2.GpsFrame](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/gps/gps.proto#L50-L71)
+ [gps_pb2.GpsFrame](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/gps/gps.proto#L50-L71)
 
 - `/relposned`:RELPOSNED message.
 Check the protobuf definition for more details:
-[gps_pb2.RelativePositionFrame](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/gps/gps.proto#L73-L97)
+[gps_pb2.RelativePositionFrame](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/gps/gps.proto#L73-L97)
 
 ## Requirements
 

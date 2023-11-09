@@ -60,7 +60,7 @@ Key Points:
 - Once the data is retrieved, the backend sends it back to the frontend.
 - The frontend then displays this data to the user in a readable and interactive manner.
 
-In the [**Monitor App**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/monitor_app/)
+In the [**Monitor App**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/monitor_app/)
 example we will show how to create a simple web application to stream and monitor
 the data from the [**farm-ng brain**](/docs/brain/) services.
 

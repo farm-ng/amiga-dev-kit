@@ -17,7 +17,7 @@ and poses as they pertain to autonomous systems and autonomous navigation.
 This overview provides a base understanding of the gRPC service the client you create will connect to.
 :::
 
-The [**Amiga Motor State Stream**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/motor_states_stream/main.py)
+The [**Amiga Motor State Stream**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/motor_states_stream/main.py)
 example is a basic way of showing how to access and decode the
 `MotorState` values streamed by the canbus service.
 

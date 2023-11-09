@@ -30,7 +30,7 @@ Check the protobuf definition for more details:
 - `/state`: State of the Amiga CAN bus.
   Encapsulates key information required to evaluate the state of the Amiga robot.
   Check the protobuf definition for more details:
-  [amiga_v6_pb2.AmigaV6CanbusState](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/canbus/amiga_v6.proto)
+  [amiga_v6_pb2.AmigaV6CanbusState](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/amiga_v6.proto)
 
 ## API
 

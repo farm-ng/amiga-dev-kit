@@ -13,7 +13,7 @@ like `functions`, `loops`, and `classes`, since the example utilizes these funda
 code using the `async/await` syntax.
 :::
 
-The [**Multi Client Subscriber**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/multi_client_subscriber/main.py)
+The [**Multi Client Subscriber**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/multi_client_subscriber/main.py)
 example shows how to create a multi client application that can be subscribed concurrently
 to different services.
 

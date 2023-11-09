@@ -37,7 +37,7 @@ to work.
 performed by the Controller.
 It cannot be defined by a single protobuf definition, but instead, a combination of them.
  Check the protobuf definitions for the Controller service for more details:
- [control_pb2.](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/control/control.proto)
+ [control_pb2.](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/control/control.proto)
 
 ## API
 

@@ -42,7 +42,7 @@ These messages can include various data types such as:
 
 - `/calibration`: Intrinsic parameters of the cameras.
  Check the protobuf definition for more details:
- [oak_pb2.OakCalibration](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/oak/oak.proto#L139-L154)
+ [oak_pb2.OakCalibration](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/oak/oak.proto#L139-L154)
 
 - `/disparity`: Disparity (depth image).
 
@@ -54,11 +54,11 @@ These messages can include various data types such as:
 
 The disparity, left, right, and rgb images all have the same structure.
 Check their protobuf definition for more details:
-[oak_pb2.OakFrame](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/oak/oak.proto#L38-L41)
+[oak_pb2.OakFrame](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/oak/oak.proto#L38-L41)
 
 - `/imu`: Accelerometer and Gyroscope data.
 Check the protobuf definition for more details:
-[oak_pb2.OakImuPackets](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/oak/oak.proto#L43-L68)
+[oak_pb2.OakImuPackets](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/oak/oak.proto#L43-L68)
 
 ## API
 

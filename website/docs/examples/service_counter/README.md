@@ -13,7 +13,7 @@ like `functions`, `loops`, and `classes`, since the example utilizes these funda
 code using the `async/await` syntax.
 :::
 
-The [**Service Counter**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/py/examples/service_counter)
+The [**Service Counter**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/service_counter)
 is a subsequent example of the [**`service_client`**](/docs/examples/service_client/) example
 where we will show how to use the `publish` method from `EventServiceGrpc` to publish messages
 to later use the `EventClient` to interact with the service.
@@ -41,9 +41,9 @@ and [**`protobuf`**](https://developers.google.com/protocol-buffers/docs/pythont
 
 ### Create the service
 
-We first create a [service](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/service_counter/client.py)
+We first create a [service](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/service_counter/client.py)
 that will publish the counter value at a certain
-rate. For this, we will create a [`counter.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/service_counter/counter.py)
+rate. For this, we will create a [`counter.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/service_counter/counter.py)
 program that will
 instantiate the `EventServiceGrpc` and will run the service leveraging
 the `serve` method with the `asyncio` event loop.

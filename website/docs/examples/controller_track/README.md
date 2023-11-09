@@ -29,7 +29,7 @@ You can also run the examples when the Amiga dashboard is not in `AUTO READY` or
 and see the commands being sent with the red needle on the auto page without the Amiga actually moving.
 :::
 
-The [**Controller Follow Track Example**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/controller_track/main.py)
+The [**Controller Follow Track Example**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/controller_track/main.py)
 operates as a standalone Python script,
 in which an `EventClient` to the farm-ng Controller service running on an Amiga brain is created.
 

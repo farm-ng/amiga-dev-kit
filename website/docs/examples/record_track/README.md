@@ -29,7 +29,7 @@ You can also run the examples when the Amiga dashboard is not in `AUTO READY` or
 and see the commands being sent with the red needle on the auto page without the Amiga actually moving.
 :::
 
-The [**Record a Track**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/record_track/main.py)
+The [**Record a Track**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/record_track/main.py)
 example operates as a standalone Python script,
 in which an `EventClient` to the filter running on an Amiga brain is created.
 This example records the filter track from the state estimation filter running on the Amiga.

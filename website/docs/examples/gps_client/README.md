@@ -18,7 +18,7 @@ This overview provides a base understanding of the gRPC service the client you c
 This includes **GPS** (as PVT) & **RTK** (as RELPOSNED) messages.
 :::
 
-The [**GPS Client example**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/gps_client/main.py)
+The [**GPS Client example**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/gps_client/main.py)
 operates as a standalone Python script,
 in which an `EventClient` to the farm-ng GPS service running on an Amiga brain is created.
 
