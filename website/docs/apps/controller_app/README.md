@@ -38,13 +38,28 @@ to the [**farm-ng GPS Service Overview**](/docs/concepts/gps_service#Requirement
 The teach-and-repeat functionality allows you to manually drive the robot along a desired path
 and then have the robot repeat the path autonomously.
 
-1. Click "Record" to start mapping your path.
-2. Drive the robot as desired.
-3. Click "Save" and name your track to use it later.
-4. Load the track when needed and click "Start Track" to initiate autonomous follow.
+#### 1. Click "Record" to start mapping your path
 
 ![Screenshot from 2023-11-08 16-15-51](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/a23646f6-26e3-49c9-b70f-d8faab3ae159)
+
+#### 2. Drive the robot as desired, blue dots will pop up on the screen indicating the robot's trace
+
 ![Screenshot from 2023-11-08 16-20-21](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/13bbbec5-f66f-47a4-b064-8e98be59e43f)
+
+#### 3. Click "Save" and name your track to use it later
+
+![image](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/7be15197-ced2-4f07-aa23-453dff7a0835)
+
+#### 4. Load the track when needed and click "Start Track" to initiate autonomous follow
+
+![image](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/72fcf1e5-5152-419b-a74a-78c0ef66b062)
+
+:::info
+After starting to follow the track, the `Start Track` button will switch to `Stop`,
+which can be used to interrupt the autonomous task.
+Additionally, users can press the `○` button on the pendant to disengage `automode`,
+which will automatically cancel the autonomous operation.
+:::
 
 ### Remote Access via Web Browser
 
@@ -84,7 +99,6 @@ Similar to video game controls, this feature allows you to command the robot usi
 - **W**: Propels the robot forward
 - **A**: Rotates the robot counter-clockwise on the spot
 - **D**: Rotates the robot clockwise on the spot
-- **S**: Disabled to prevent accidental reverse movements for safety
 
 These commands engage the robot's autonomy systems to perform the actions safely and precisely,
 setting incremental goals for the robot to achieve.
@@ -125,7 +139,10 @@ Autonomy will not engage if the filter has not converged.
 - **Battery**: Displays the current battery level.
 Always monitor this, especially before starting long tasks.
 
-![image](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/044304e6-1ae5-4724-845f-da4a9ebe4def)
+<div align="center">
+  <img src="https://github.com/farm-ng/amiga-dev-kit/assets/39603677/044304e6-1ae5-4724-845f-da4a9ebe4def"
+  alt="image" />
+</div>
 
 ## Tips for Optimal Autonomy
 
