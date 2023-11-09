@@ -162,7 +162,7 @@ Now that you have a good understanding of how the controller works, try some of 
 controller examples:
 
 - [Record a Track](/docs/examples/record_track)
-- [Follow a Track](/docs/examples/controller_track)
+- [Follow a Track](/docs/examples/track_follower)
 - [Drive a Square](/docs/examples/square_track)
 :::caution Warning
 The controller examples will cause the Amiga to drive when the dashboard is in auto mode.

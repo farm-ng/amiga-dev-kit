@@ -52,7 +52,7 @@ This will provide insight into the requirements and API
 for using the controller service to follow a path.
 
 It is also recommended you go through the simpler
-[Follow a Track](/docs/examples/controller_track/) example first.
+[Follow a Track](/docs/examples/track_follower/) example first.
 :::
 
 ## 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
@@ -347,7 +347,7 @@ Additionally, this example:
   - Streaming the state of the controller service
 
 For more details on these, please review the simpler
-[Follow a Track](/docs/examples/controller_track/) example.
+[Follow a Track](/docs/examples/track_follower/) example.
 
 **Congrats you are done!**
 
