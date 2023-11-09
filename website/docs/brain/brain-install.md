@@ -19,8 +19,8 @@ to build the virtual environment you need to run the `farm-ng-amiga` examples:
 ```bash
 # Clone farm-ng-core with submodules
 git clone --recursive https://github.com/farm-ng/farm-ng-core.git
-# Clone farm-ng-amiga to main-v2 branch
-git clone -b main-v2 https://github.com/farm-ng/farm-ng-amiga.git
+# Clone farm-ng-amiga
+git clone https://github.com/farm-ng/farm-ng-amiga.git
 
 # Create and source a virtual environment
 python3 -m venv venv
