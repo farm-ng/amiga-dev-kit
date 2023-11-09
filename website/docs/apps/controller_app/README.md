@@ -13,10 +13,12 @@ operation:
 robot to repeat the path autonomously.
 - **Remote teleoperation**: Control the robot through any web browser using a keyboard.
 
-:::caution Compute-Intensive Application
-The Autoplot app is a resource-intensive application.
-As such, it is not recommended to run it simultaneously with recording features or custom user applications.
-Doing so may affect the performance of the Autoplot app and other system operations.
+:::caution Resource Intensive Operation
+The Autoplot app requires significant computational resources when run directly on the robot's screen.
+To ensure optimal performance, it is recommended not to use the Autoplot app in conjunction with the
+recorder or other custom user applications on the brain's display itself.
+However, running the Autoplot app and the recorder app through a web browser on a separate device is
+acceptable and should not impact performance.
 :::
 
 ## Autonomy Requirements
