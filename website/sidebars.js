@@ -124,14 +124,13 @@ const sidebars = {
         "concepts/canbus_service/canbus-overview",
         "concepts/oak_service/oak-overview",
         "concepts/gps_service/gps-overview",
-        "concepts/filter_service/filter-overview",
         "concepts/recorder_service/recorder-overview",
+        "concepts/filter_service/filter-overview",
         "concepts/track_follower_service/track-follower-overview",
       ],
       "Apps Overviews": [
         "apps/filter_app/filter-app",
-        "apps/controller_app/controller-app",
-
+        "apps/autoplot_app/autoplot-app",
       ],
     },
   ],

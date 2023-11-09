@@ -1,6 +1,6 @@
 ---
 id: track-follower-overview
-title: Controller
+title: Track Follower
 ---
 
 # Track Follower Service Overview
