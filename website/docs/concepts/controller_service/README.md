@@ -161,7 +161,7 @@ Here's an example of what a single pose looks like:
 Now that you have a good understanding of how the controller works, try some of the
 controller examples:
 
-- [Record a Track](/docs/examples/record_track)
+- [Record a Track](/docs/examples/track_recorder)
 - [Follow a Track](/docs/examples/track_follower)
 - [Drive a Square](/docs/examples/square_track)
 :::caution Warning

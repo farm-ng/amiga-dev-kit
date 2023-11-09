@@ -87,7 +87,7 @@ python main.py --service-config service_config.json --track <path-to-your-track>
 ```
 
 :::tip Tip
-There's an example to teach you how to [**record your own track here**](/docs/examples/record_track).
+There's an example to teach you how to [**record your own track here**](/docs/examples/track_recorder).
 :::
 
 If everything worked correctly you should now see a large stream

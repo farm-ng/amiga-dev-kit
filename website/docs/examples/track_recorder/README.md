@@ -1,5 +1,5 @@
 ---
-id: record-track
+id: track-recorder
 title: Record a Track
 ---
 
@@ -134,7 +134,7 @@ in which your track file will be saved.
 ```bash
 python3 main.py --help
 
-usage: amiga-record-track [-h] --service-config SERVICE_CONFIG --track-name TRACK_NAME
+usage: amiga-track-recorder [-h] --service-config SERVICE_CONFIG --track-name TRACK_NAME
                           [--output-dir OUTPUT_DIR]
 
 optional arguments:
@@ -196,7 +196,7 @@ async def main(service_config_path: Path, track_name: str, output_dir: Path) -> 
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(prog="amiga-record-track")
+    parser = argparse.ArgumentParser(prog="amiga-track-recorder")
     parser.add_argument("--service-config", type=Path, required=True, help="The filter service config.")
     parser.add_argument("--track-name", type=str, required=True, help="The name of the track.")
     parser.add_argument(
