@@ -126,7 +126,7 @@ const sidebars = {
         "concepts/gps_service/gps-overview",
         "concepts/filter_service/filter-overview",
         "concepts/recorder_service/recorder-overview",
-        "concepts/controller_service/controller-overview",
+        "concepts/track_follower_service/track-follower-overview",
       ],
       "Apps Overviews": [
         "apps/filter_app/filter-app",

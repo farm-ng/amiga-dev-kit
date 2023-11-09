@@ -11,7 +11,7 @@ Before diving into this code, here's a quick heads-up on what you'll need to be 
 like `functions`, `loops`, and `classes`, since the example utilizes these fundamentals.
 2. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
 code using the `async/await` syntax.
-3. **[farm-ng Controller Service Overview](/docs/concepts/controller_service/)**:
+3. **[farm-ng Track Follower Service Overview](/docs/concepts/track_follower_service/)**:
 This overview provides a base understanding of the gRPC service the client you create will connect to.
 4. [**farm-ng Transforms & Poses Overview**](/docs/concepts/transforms_and_poses/):
 This overview provides insight into coordinate frames, transforms,
@@ -43,7 +43,7 @@ Ensure that a [**farm-ng brain**](/docs/brain/), with a GPS receiver and Oak cam
 is actively running the controller service.
 
 :::info
-It is **highly recommended** to read through the [Controller Service Overview](/docs/concepts/controller_service/)
+It is **highly recommended** to read through the [Track Follower Service Overview](/docs/concepts/track_follower_service/)
 before running this example.
 
 This will provide insight into the requirements and API

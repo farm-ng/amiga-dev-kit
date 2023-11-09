@@ -1,9 +1,9 @@
 ---
-id: controller-overview
+id: track-follower-overview
 title: Controller
 ---
 
-# Controller Service Overview
+# Track Follower Service Overview
 
 The Controller is the autonomy hub of the Amiga.
 It takes in user commands and turns them into actions the robot can perform.

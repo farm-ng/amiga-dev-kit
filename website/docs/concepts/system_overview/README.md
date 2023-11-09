@@ -35,18 +35,18 @@ platforms like the Brain.
 
 ## The Heartbeat of Amiga: Key Services
 
-- [**Canbus**](../canbus_service/): Manages the robot's motors.
+- [**Canbus**](/docs/concepts/canbus_service/): Manages the robot's motors.
 It's like the nervous system, transmitting movement commands and receiving feedback.
-- [**Oak**](../oak_service/): The eyes and balance of the robot.
+- [**Oak**](/docs/concepts/oak_service/): The eyes and balance of the robot.
 It streams imagery and provides IMU data, crucial for services like Filter and Controller.
-- [**GPS**](../gps_service/): The robot's global positioning sense.
+- [**GPS**](/docs/concepts/gps_service/): The robot's global positioning sense.
 It knows where the Amiga is in the world.
-- [**Filter (UKF)**](../filter_service/): Acts as the robot's sense of self-awareness.
+- [**Filter (UKF)**](/docs/concepts/filter_service/): Acts as the robot's sense of self-awareness.
 By using IMU data from the OAK service, wheel odometry from CANBUS, and global positioning from GPS,
 it estimates the state of the robot.
-- [**Recorder**](../recorder_service/): The memory of the robot.
+- [**Recorder**](/docs/concepts/recorder_service/): The memory of the robot.
 It logs data, ensuring we can revisit past operations or analyze performance.
-- [**Controller**](../controller_service/): The brain of the operation.
+- [**Track Follower**](/docs/concepts/track_follower_service/): The brain of the operation.
 It uses algorithms like pure pursuit and PID to guide the Amiga.
 It makes decisions based on data from other services.
 
