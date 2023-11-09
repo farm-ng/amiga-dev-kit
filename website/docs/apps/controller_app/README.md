@@ -166,7 +166,7 @@ If you encounter issues with autonomy or control:
 - Verify all status indicators in the Autoplot app's top bar are active and showing the expected states.
 - Check the [**Filter App**](/docs/apps/filter_app)
 to confirm that calibration and GPS settings are up-to-date.
-- If the robot does not respond to WASD commands, ensure that no other tasks are running and that
-the robot is in automode.
+- If the robot does not respond to WAD keyboard commands, ensure that no other tasks are running and
+that the robot is in automode.
 
 For further assistance, reach out to the [support team](mailto:support@farm-ng.com).
