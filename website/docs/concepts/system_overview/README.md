@@ -72,6 +72,31 @@ All these services run on the powerful Brain, allowing for efficient and concurr
 Below is the architectural diagram that visually represents how these services interact:
 ![amiga_brain-1](https://github.com/farm-ng/amiga-dev-kit/assets/5157099/a7d5d95f-a94d-40a9-8df0-3c0c9084c2fa)
 
+```mermaid
+  flowchart TB;
+    subgraph Start_Up
+        Boot-- Warm up -->Manual_Ready
+    end
+
+    subgraph Active___states__
+        direction LR
+        Manual_Active <-- O / CRUISE --> Cruise_Control
+        subgraph Auto
+            direction TB
+            Auto_Ready <-- AmigaRpdo1 --> Auto_Active
+        end
+        Manual_Active-- Auto mode tab -->Auto
+        Manual_Active <-. X / BRAKE .- Auto
+        Manual_Active <-. X / BRAKE .- Cruise_Control
+    end
+
+    Manual_Ready -- Start / Vamos --> Manual_Active
+    Active___states__ -- E-stop condition --> E-stopped
+    Start_Up -- E-stop condition --> E-stopped
+    Manual_Ready <-. Clear E-stop condition .- E-stopped
+
+```
+
 This introduction is designed to be a primer.
 Each service has its depths and intricacies, which you'll uncover as you dive deeper into Amiga development.
 Enjoy the journey!

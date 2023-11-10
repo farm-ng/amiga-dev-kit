@@ -60,7 +60,7 @@ async function createConfig() {
 	  anonymizeIP: true,
 	},
       }),
-    ],
+    ]
   ],
 
   themeConfig:
