@@ -46,10 +46,15 @@ Check out the protobuf definitions for the Track Follower service for more detai
 These are the commands you can use to interact with the track follower service with
 an `EventClient` of the track follower service.
 
-- `/get_pose`: Retrieve the current position and orientation of the Amiga.
-- `/set_track`: Provide a specific track (series of waypoints) for the Amiga to follow.
-- `/start`: Instruct the Amiga to commence following the previously set track.
-- `/stop`: Instruct the Amiga to halt all movements immediately.
+- **`/set_track`**: Provide a specific `Track` (series of waypoints) for the Amiga to follow.
+- **`/start`**: Instruct the Amiga to start following the recently set `Track``.
+- **`/pause`**: Pause following the track, but maintain knowledge of the progress along the `Track`.
+- **`/resume`**: Continue following the track from where a `/pause` was called.
+- **`/cancel`**: Instruct the Amiga to halt all movements immediately and clear the set Track.
+- **`/get_track`**: Return the `Track` that was set with `/set_track`
+- **`/get_state`**: Return a single instance of the `TrackFollowerState` streamed on the `/state` topic.
+- **`/go_to_goal`**: Send a single `Pose` as a waypoint for the controller to drive to.
+  - Must be within a few meters and 180 degrees of the robot's current pose and orientation.
 
 ## Requirements
 
