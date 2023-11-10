@@ -13,7 +13,7 @@ like `functions`, `loops`, and `classes`, since the example utilizes these funda
 code using the `async/await` syntax.
 :::
 
-The [**Service Client**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/py/examples/service_client)
+The [**Service Client**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/service_client)
 example is the hello world of the farm-ng-core Event Service framework.
 
 The Event Service is a publish-subscribe service that allows to stream
@@ -23,8 +23,8 @@ class encapsulating the gRPC server.
 
 In the following example, we will explain how to define your own service
 and how to use the `EventClient` to subscribe to the service.
-You will need a file to create the [service](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/service_client/service.py)
-and another one to create the [client](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/service_client/client.py)
+You will need a file to create the [service](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/service_client/service.py)
+and another one to create the [client](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/service_client/client.py)
 
 ### Requirements
 

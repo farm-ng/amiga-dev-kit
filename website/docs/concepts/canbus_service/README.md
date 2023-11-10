@@ -14,7 +14,7 @@ processing, and motor instruction.
 - **Communication**: Direct interface with motors via CAN bus, a communication standard
 or microcontrollers and devices.
 - **Dependencies**: Standalone service, but pivotal for many autonomous operations.
-Notably, the Controller service is heavily reliant on the Canbus service.
+Notably, the Track Follower service is heavily reliant on the Canbus service.
 
 # Data Streams
 
@@ -30,7 +30,7 @@ Check the protobuf definition for more details:
 - `/state`: State of the Amiga CAN bus.
   Encapsulates key information required to evaluate the state of the Amiga robot.
   Check the protobuf definition for more details:
-  [amiga_v6_pb2.AmigaV6CanbusState](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/canbus/amiga_v6.proto)
+  [amiga_v6_pb2.AmigaV6CanbusState](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/amiga_v6.proto)
 
 ## API
 
@@ -51,5 +51,5 @@ commands will induce movement, ensuring safe operation.
 ## Common Use-Cases
 
 The Canbus service is foundational for many of Amiga's autonomous functionalities.
-For instance, the Controller service is a prominent client of the Canbus service, making the
+For instance, the Track Follower service is a prominent client of the Canbus service, making the
 Canbus service pivotal for any autonomous motion or activity undertaken by the Amiga.

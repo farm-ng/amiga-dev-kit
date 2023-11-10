@@ -1,5 +1,5 @@
 ---
-id: controller-square
+id: square-track
 title: Drive a Square
 ---
 
@@ -11,30 +11,32 @@ Before diving into this code, here's a quick heads-up on what you'll need to be 
 like `functions`, `loops`, and `classes`, since the example utilizes these fundamentals.
 2. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
 code using the `async/await` syntax.
-3. **[farm-ng Controller Service Overview](/docs/concepts/controller_service/)**:
+3. **[farm-ng Filter Service Overview](/docs/concepts/filter_service/)**:
 This overview provides a base understanding of the gRPC service the client you create will connect to.
-4. [**farm-ng Transforms & Poses Overview**](/docs/concepts/transforms_and_poses/):
+4. **[farm-ng Track Follower Service Overview](/docs/concepts/track_follower_service/)**:
+This overview provides a base understanding of the gRPC service the client you create will connect to.
+5. [**farm-ng Transforms & Poses Overview**](/docs/concepts/transforms_and_poses/):
 This overview provides insight into coordinate frames, transforms,
 and poses as they pertain to autonomous systems and autonomous navigation.
-5. [**farm-ng Tracks & Waypoints Overview**](/docs/concepts/controller_101/):
+6. [**farm-ng Tracks & Waypoints Overview**](/docs/concepts/tracks_and_waypoints/):
 This overview provides insight into compiling poses as waypoints into a Track
 that can be followed by the Amiga.
 :::
 
 :::caution Warning
-The controller examples will cause the Amiga to drive when the dashboard is in auto mode.
+The track follower examples will cause the Amiga to drive when the dashboard is in auto mode.
 Make sure the area is clear before running examples.
 
 You can also run the examples when the Amiga dashboard is not in `AUTO READY` or `AUTO ACTIVE`
 and see the commands being sent with the red needle on the auto page without the Amiga actually moving.
 :::
 
-The [**Controller Drive a Square Example**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/controller_square/main.py)
+The [**Square Track Example**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/square_track/main.py)
 operates as a standalone Python script,
-in which an `EventClient` to the farm-ng Controller service running on an Amiga brain is created.
+in which an `EventClient` to the farm-ng track follower service running on an Amiga brain is created.
 
 This script requests the current pose of the robot,
-creates a square track from the current pose for the controller,
+creates a square track from the current pose for the track follower,
 and commands the Amiga to follow the square track.
 
 You can either run this example directly on a brain by `ssh`'ing in, or use your local PC.
@@ -42,17 +44,17 @@ If using your local PC, it should be either connected to the same local network 
 or linked to it through tailscale.
 
 Ensure that a [**farm-ng brain**](/docs/brain/), with a GPS receiver and Oak cameras,
-is actively running the controller service.
+is actively running the track follower service.
 
 :::info
-It is **highly recommended** to read through the [Controller Service Overview](/docs/concepts/controller_service/)
+It is **highly recommended** to read through the [Track Follower Service Overview](/docs/concepts/track_follower_service/)
 before running this example.
 
 This will provide insight into the requirements and API
-for using the controller service to follow a path.
+for using the track follower service to follow a path.
 
 It is also recommended you go through the simpler
-[Follow a Track](/docs/examples/controller_track/) example first.
+[Follow a Track](/docs/examples/track_follower/) example first.
 :::
 
 ## 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
@@ -80,7 +82,7 @@ source venv/bin/activate
 ### Install
 
 ```bash
-cd py/examples/controller_square
+cd py/examples/square_track
 pip install -r requirements.txt
 ```
 
@@ -103,19 +105,18 @@ you can change the `host` field in `service_config.json` from localhost to your 
 
 ```json
 {
-    "name": "controller",
-    "port": 20101,
-    "host": "element-vegetable",
-    "subscriptions": [
-        {
-            "uri": {
-            "path": "/state",
-            "query": "service_name=controller"
-            },
-            "every_n": 1
-        }
-    ],
-    "log_level": "INFO"
+  "configs": [
+    {
+      "name": "track_follower",
+      "port": 20101,
+      "host": "localhost"
+    },
+    {
+      "name": "filter",
+      "port": 20001,
+      "host": "localhost"
+    }
+  ]
 }
 ```
 
@@ -135,12 +136,12 @@ python main.py --help
 And see:
 
 ```bash
-usage: amiga-controller-square [-h] --service-config SERVICE_CONFIG [--side-length SIDE_LENGTH] [--clockwise]
+usage: amiga-track_follower-square [-h] --service-config SERVICE_CONFIG [--side-length SIDE_LENGTH] [--clockwise]
 
 optional arguments:
   -h, --help            show this help message and exit
   --service-config SERVICE_CONFIG
-                        The controller service config.
+                        The service config.
   --side-length SIDE_LENGTH
                         The side length of the square.
   --clockwise           Set to drive the square clockwise (right hand turns).
@@ -156,15 +157,16 @@ to get the current pose of the Amiga robot.
 This pose becomes the first pose in the square track we will define programmatically.
 
 ```python
-async def get_pose(service_config: EventServiceConfig) -> Pose3F64:
-    """Get the current pose of the robot in the world frame, from the controller service.
+async def get_pose(clients: dict[str, EventClient]) -> Pose3F64:
+    """Get the current pose of the robot in the world frame, from the filter service.
 
     Args:
-        service_config (EventServiceConfig): The controller service config.
+        clients (dict[str, EventClient]): A dictionary of EventClients.
     """
-    reply = await EventClient(service_config).request_reply("/get_pose", Empty(), decode=True)
-    print(f"Current pose:\n{reply}")
-    return Pose3F64.from_proto(reply)
+    # We use the FilterState as the best source of the current pose of the robot
+    state: FilterState = await clients["filter"].request_reply("/get_state", Empty(), decode=True)
+    print(f"Current filter state:\n{state}")
+    return Pose3F64.from_proto(state.pose)
 ```
 
 ### Track creation
@@ -193,30 +195,30 @@ or a small angular rotation to the right of the previous pose along the track.
 
 :::tip
 The multiplication of coordinate frame transforms is a fundamental concept in robotics!
-
-Covering this topic is out of the scope of this example.
-If you wish to learn more, there is an abundance of free online resources and courses covering the topic.
-One such option is [MIT OpenCourseWare - Introduction To Robotics](https://ocw.mit.edu/courses/2-12-introduction-to-robotics-fall-2005/).
+If you would like more insight into this topic, please see the
+[**farm-ng Transforms & Poses Overview**](/docs/concepts/transforms_and_poses/).
 :::
 
 Because this example is a square, the transform between each waypoint
 represents either driving straight forward or turning in place.
-But this is not a constraint for the controller!
+But this is not a constraint for the track follower!
 Your tracks can reflect a combination of rotation and translation (a 3d Isometry) between track waypoints.
 
 ```python
-async def build_square(service_config: EventServiceConfig, side_length: float, clockwise: bool) -> FilterTrack:
+async def build_square(clients: dict[str, EventClient], side_length: float, clockwise: bool) -> Track:
     """Build a square track, from the current pose of the robot.
 
     Args:
-        service_config (EventServiceConfig): The controller service config.
-        side_length (float): The side length of the square.
+        clients (dict[str, EventClient]): A dictionary of EventClients.
+        side_length (float): The side length of the square, in meters.
         clockwise (bool): True will drive the square clockwise (right hand turns).
                         False is counter-clockwise (left hand turns).
+    Returns:
+        Track: The track for the track_follower to follow.
     """
 
-    # Query the controller for the current pose of the robot in the world frame
-    world_pose_robot: Pose3F64 = await get_pose(service_config)
+    # Query the state estimation filter for the current pose of the robot in the world frame
+    world_pose_robot: Pose3F64 = await get_pose(clients)
 
     # Create a container to store the track waypoints
     track_waypoints: list[Pose3F64] = []
@@ -247,8 +249,7 @@ async def build_square(service_config: EventServiceConfig, side_length: float, c
     track_waypoints.extend(create_straight_segment(track_waypoints[-1], "goal7", side_length))
     track_waypoints.extend(create_turn_segment(track_waypoints[-1], "goal8", angle))
 
-    # Return the list of waypoints as a FilterTrack proto message
-    # This is the format currently expected by the controller service
+    # Return the list of waypoints as a Track proto message
     return format_track(track_waypoints)
 
 
@@ -260,7 +261,7 @@ def create_straight_segment(
     Args:
         previous_pose (Pose3F64): The previous pose.
         next_frame_b (str): The name of the child frame of the next pose.
-        distance (float): The side length of the square.
+        distance (float): The side length of the square, in meters.
         spacing (float): The spacing between waypoints, in meters.
 
     Returns:
@@ -340,14 +341,14 @@ def create_turn_segment(
 Additionally, this example:
 
 - formats the created track
-- Sets the track for the controller to follow ( `/set_track`)
-- Sends the controller to follow the track (`/follow_track`)
+- Sets the track for the track follower to follow ( `/set_track`)
+- Sends the request to start following the track (`/start`)
 - Creates multiple `asyncio.Task`'s and runs them simultaneously
   - Creating, setting, and following the path
-  - Streaming the state of the controller service
+  - Streaming the state of the track follower service
 
 For more details on these, please review the simpler
-[Follow a Track](/docs/examples/controller_track/) example.
+[Follow a Track](/docs/examples/track_follower/) example.
 
 **Congrats you are done!**
 

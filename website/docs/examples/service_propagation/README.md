@@ -13,7 +13,7 @@ like `functions`, `loops`, and `classes`, since the example utilizes these funda
 code using the `async/await` syntax.
 :::
 
-In the [**Service Propagation**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/py/examples/service_propagation)
+In the [**Service Propagation**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/service_propagation)
 example, we will show how create a subsystem of services that can be
 composed together to create a more complex system and leverage bidirectional
 communication between services to propagate information.

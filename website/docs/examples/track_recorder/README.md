@@ -1,5 +1,5 @@
 ---
-id: record-track
+id: track-recorder
 title: Record a Track
 ---
 
@@ -16,24 +16,24 @@ This overview provides a base understanding of the gRPC service the client you c
 4. [**farm-ng Transforms & Poses Overview**](/docs/concepts/transforms_and_poses/):
 This overview provides insight into coordinate frames, transforms,
 and poses as they pertain to autonomous systems and autonomous navigation.
-5. [**farm-ng Tracks & Waypoints Overview**](/docs/concepts/controller_101/):
+5. [**farm-ng Tracks & Waypoints Overview**](/docs/concepts/tracks_and_waypoints/):
 This overview provides insight into compiling poses as waypoints into a Track
 that can be followed by the Amiga.
 :::
 
 :::caution Warning
-The controller examples will cause the Amiga to drive when the dashboard is in auto mode.
+The track follower examples will cause the Amiga to drive when the dashboard is in auto mode.
 Make sure the area is clear before running examples.
 
 You can also run the examples when the Amiga dashboard is not in `AUTO READY` or `AUTO ACTIVE`
 and see the commands being sent with the red needle on the auto page without the Amiga actually moving.
 :::
 
-The [**Record a Track**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/record_track/main.py)
+The [**Record a Track**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/track_recorder/main.py)
 example operates as a standalone Python script,
 in which an `EventClient` to the filter running on an Amiga brain is created.
 This example records the filter track from the state estimation filter running on the Amiga.
-When recording a track for the controller to later follow,
+When recording a track for the track follower to later follow,
 we use the `/track` output stream from the filter service.
 
 The requirements to run this example are to have a
@@ -56,7 +56,7 @@ The filter service will add to the track whenever a sufficient distance,
 as a combination of linear and angular difference from the last track pose,
 has passed (e.g., `0.1` meters or radians).
 
-A valid path for the existing controller is one with motion that is either turn-in-place or forwards.
+A valid path for the existing track follower is one with motion that is either turn-in-place or forwards.
 Forward motion can be either straight or curved.
 The filter service will **NOT** add to the track under certain conditions
 that would make following this track difficult or undesirable.
@@ -81,7 +81,7 @@ example in the brain ADK virtual environment.
 
 ```bash
 # assuming you're already in the amiga-dev-kit/ directory
-cd farm-ng-amiga/py/examples/record_track
+cd farm-ng-amiga/py/examples/track_recorder
 ```
 
 ```bash
@@ -99,10 +99,10 @@ By default, the host address is assumed to be `localhost`.
 :::
 
 Once you've started the script,
-drive your Amiga along the route you wish to record as a track for the controller to later follow.
+drive your Amiga along the route you wish to record as a track for the track follower to later follow.
 When you are done driving the track, kill the script with `ctrl` + `C`.
 You can then set the Amiga to follow this track by following the
-[**Controller Follow Track Example**](/docs/examples/controller_track).
+[**Track Follower Example**](/docs/examples/track_follower).
 
 ## 4. Customize the run
 
@@ -134,7 +134,7 @@ in which your track file will be saved.
 ```bash
 python3 main.py --help
 
-usage: amiga-record-track [-h] --service-config SERVICE_CONFIG --track-name TRACK_NAME
+usage: amiga-track-recorder [-h] --service-config SERVICE_CONFIG --track-name TRACK_NAME
                           [--output-dir OUTPUT_DIR]
 
 optional arguments:
@@ -196,7 +196,7 @@ async def main(service_config_path: Path, track_name: str, output_dir: Path) -> 
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(prog="amiga-record-track")
+    parser = argparse.ArgumentParser(prog="amiga-track-recorder")
     parser.add_argument("--service-config", type=Path, required=True, help="The filter service config.")
     parser.add_argument("--track-name", type=str, required=True, help="The name of the track.")
     parser.add_argument(

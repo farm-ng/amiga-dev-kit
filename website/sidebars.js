@@ -118,20 +118,19 @@ const sidebars = {
       "Fundamental Concepts": [
         "concepts/system_overview/amiga-dev",
         "concepts/transforms_and_poses/transforms-and-poses",
-        "concepts/controller_101/tracks-and-waypoints",
+        "concepts/tracks_and_waypoints/tracks-and-waypoints",
       ],
         "Service Overviews": [
         "concepts/canbus_service/canbus-overview",
         "concepts/oak_service/oak-overview",
         "concepts/gps_service/gps-overview",
-        "concepts/filter_service/filter-overview",
         "concepts/recorder_service/recorder-overview",
-        "concepts/controller_service/controller-overview",
+        "concepts/filter_service/filter-overview",
+        "concepts/track_follower_service/track-follower-overview",
       ],
       "Apps Overviews": [
         "apps/filter_app/filter-app",
-        "apps/controller_app/controller-app",
-
+        "apps/autoplot_app/autoplot-app",
       ],
     },
   ],
@@ -212,11 +211,11 @@ const sidebars = {
       },
       {
         "items": [
-          "examples/record_track/record-track",
-          "examples/controller_track/controller-track",
-          "examples/controller_square/controller-square",
+          "examples/track_recorder/track-recorder",
+          "examples/track_follower/track-follower",
+          "examples/square_track/square-track",
         ],
-        "label": "Controller Examples",
+        "label": "Track Follower Examples",
         "type": "category"
       },
       {

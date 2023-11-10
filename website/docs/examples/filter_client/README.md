@@ -25,7 +25,7 @@ The client in this example is receiving state estimates that are the result of U
 It may be helpful to understand how UKFs work, their limitations and functionalities.
 :::
 
-The [**Filter Client**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/filter_client/main.py)
+The [**Filter Client**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/filter_client/main.py)
 example streams the results from the state estimation filter running on the Amiga.
 
 The requirements to run this example are to have a

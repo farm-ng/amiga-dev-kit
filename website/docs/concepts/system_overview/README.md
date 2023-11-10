@@ -35,32 +35,32 @@ platforms like the Brain.
 
 ## The Heartbeat of Amiga: Key Services
 
-- [**Canbus**](../canbus_service/): Manages the robot's motors.
+- [**Canbus**](/docs/concepts/canbus_service/): Manages the robot's motors.
 It's like the nervous system, transmitting movement commands and receiving feedback.
-- [**Oak**](../oak_service/): The eyes and balance of the robot.
-It streams imagery and provides IMU data, crucial for services like Filter and Controller.
-- [**GPS**](../gps_service/): The robot's global positioning sense.
+- [**Oak**](/docs/concepts/oak_service/): The eyes and balance of the robot.
+It streams imagery and provides IMU data, crucial for services like Filter and Track Follower.
+- [**GPS**](/docs/concepts/gps_service/): The robot's global positioning sense.
 It knows where the Amiga is in the world.
-- [**Filter (UKF)**](../filter_service/): Acts as the robot's sense of self-awareness.
+- [**Filter (UKF)**](/docs/concepts/filter_service/): Acts as the robot's sense of self-awareness.
 By using IMU data from the OAK service, wheel odometry from CANBUS, and global positioning from GPS,
 it estimates the state of the robot.
-- [**Recorder**](../recorder_service/): The memory of the robot.
+- [**Recorder**](/docs/concepts/recorder_service/): The memory of the robot.
 It logs data, ensuring we can revisit past operations or analyze performance.
-- [**Controller**](../controller_service/): The brain of the operation.
+- [**Track Follower**](/docs/concepts/track_follower_service/): The brain of the operation.
 It uses algorithms like pure pursuit and PID to guide the Amiga.
 It makes decisions based on data from other services.
 
 ## How Do Services Talk to Each Other?
 
 Imagine a bustling city where everyone has a job. The mail carrier brings letters (data),
-the traffic cop (Controller) guides vehicles (services), and everyone communicates to ensure the city
-runs smoothly.
+the traffic cop (Track Follower) guides vehicles (services),
+and everyone communicates to ensure the city runs smoothly.
 Similarly, in the Amiga ecosystem:
 
 - The **OAK** service streams visual and IMU data.
 - The **Filter** service uses IMU data from OAK, wheel odometry from CANBUS, and global positioning
 data from GPS to understand how the robot is moving.
-- The **Controller** takes this movement data, combines it with its algorithms, and decides
+- The **Track Follower** takes this movement data, combines it with its algorithms, and decides
 the best way to move the robot.
 - This decision is then passed to **CANBUS**, which communicates with the robot's motors to
 execute the movement.

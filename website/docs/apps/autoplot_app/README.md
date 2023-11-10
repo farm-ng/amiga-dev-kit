@@ -1,5 +1,5 @@
 ---
-id: controller-app
+id: autoplot-app
 title: Autoplot App
 ---
 

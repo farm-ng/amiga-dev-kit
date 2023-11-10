@@ -17,7 +17,7 @@ and poses as they pertain to autonomous systems and autonomous navigation.
 This overview provides a base understanding of the gRPC service the client you create will connect to.
 :::
 
-The [**Amiga Vehicle Twist**](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/py/examples/vehicle_twist/main.py)
+The [**Amiga Vehicle Twist**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/vehicle_twist/main.py)
 example is a basic way of showing how to send `Twist2d` proto messages
 to the canbus service to control the amiga.
 

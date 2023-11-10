@@ -18,7 +18,7 @@ image decoding and display, as the example showcases how to visualize camera ima
 
 In this example you will learn how to upload a given log file and
 use it to run the
-[**File Reader Example**](https://github.com/farm-ng/farm-ng-amiga/tree/main-v2/py/examples/file_reader/main.py).
+[**File Reader Example**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader/main.py).
 
 ## Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 

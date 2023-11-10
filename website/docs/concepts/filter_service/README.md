@@ -35,7 +35,7 @@ Since the Filter relies on GPS data, the Amiga must have a GPS connected to an R
 
 - `/state`: A filter's state detailing pose, convergence, calibration, uncertainty, innovation, and heading.
  Check the protobuf definition for more details:
- [filter_pb2.FilterState](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/filter/filter.proto#L26-L37)
+ [filter_pb2.FilterState](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/filter/filter.proto#L26-L37)
 
 ## API
 
@@ -81,7 +81,7 @@ When planning to record a new track, the recommended workflow is as follows:
 
 :::tip TIP
 For a comprehensive understanding of the list of variables available in the filter state messages,
-make sure to check its [protobuf definition](https://github.com/farm-ng/farm-ng-amiga/blob/main-v2/protos/farm_ng/filter/filter.proto).
+make sure to check its [protobuf definition](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/filter/filter.proto).
 :::
 
 ## Features
