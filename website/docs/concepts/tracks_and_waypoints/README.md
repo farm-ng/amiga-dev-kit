@@ -10,7 +10,7 @@ we need to understand where our robot is and where we want to send it.
 For that purposes, please refer to **[Concepts - Transforms & Poses](/docs/concepts/transforms_and_poses)**
 before continuing on with this overview.
 
-## Creating and Propagating Poses for the Controller
+## Creating and Propagating Poses for the Track Follower
 
 When you want the Amiga to perform a specific movement, you need to provide it with a series
 of poses that describe that movement.
@@ -21,7 +21,7 @@ For a better understanding of the `Pose` structure, please refer to our
 
 ### Example
 
-There are several ways of creating poses and commanding your `Controller` to follow them.
+There are several ways of creating poses and commanding your `track_follower` to follow them.
 Let's check how to use the concepts learned here to create poses that represent a `pi turn`
 (also know as a U turn) using the `pose` structure:
 
@@ -89,5 +89,5 @@ angular movements of the robot for each segment of its pi turn.
 Make sure to check the [Concepts](https://amiga.farm-ng.com/docs/concepts/) page
 to know more about all the services available in your Amiga and how they interact with each other.
 
-Make sure to also check our [Brain Controller Examples](https://amiga.farm-ng.com/docs/examples/examples-index)
-to test the `Controller` in your Amiga.
+Make sure to also check our [Track Follower Examples](https://amiga.farm-ng.com/docs/examples/examples-index)
+to test the `track_follower` on your Amiga.

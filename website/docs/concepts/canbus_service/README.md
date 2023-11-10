@@ -14,7 +14,7 @@ processing, and motor instruction.
 - **Communication**: Direct interface with motors via CAN bus, a communication standard
 or microcontrollers and devices.
 - **Dependencies**: Standalone service, but pivotal for many autonomous operations.
-Notably, the Controller service is heavily reliant on the Canbus service.
+Notably, the Track Follower service is heavily reliant on the Canbus service.
 
 # Data Streams
 
@@ -51,5 +51,5 @@ commands will induce movement, ensuring safe operation.
 ## Common Use-Cases
 
 The Canbus service is foundational for many of Amiga's autonomous functionalities.
-For instance, the Controller service is a prominent client of the Canbus service, making the
+For instance, the Track Follower service is a prominent client of the Canbus service, making the
 Canbus service pivotal for any autonomous motion or activity undertaken by the Amiga.

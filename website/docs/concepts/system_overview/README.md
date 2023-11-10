@@ -38,7 +38,7 @@ platforms like the Brain.
 - [**Canbus**](/docs/concepts/canbus_service/): Manages the robot's motors.
 It's like the nervous system, transmitting movement commands and receiving feedback.
 - [**Oak**](/docs/concepts/oak_service/): The eyes and balance of the robot.
-It streams imagery and provides IMU data, crucial for services like Filter and Controller.
+It streams imagery and provides IMU data, crucial for services like Filter and Track Follower.
 - [**GPS**](/docs/concepts/gps_service/): The robot's global positioning sense.
 It knows where the Amiga is in the world.
 - [**Filter (UKF)**](/docs/concepts/filter_service/): Acts as the robot's sense of self-awareness.
@@ -53,14 +53,14 @@ It makes decisions based on data from other services.
 ## How Do Services Talk to Each Other?
 
 Imagine a bustling city where everyone has a job. The mail carrier brings letters (data),
-the traffic cop (Controller) guides vehicles (services), and everyone communicates to ensure the city
-runs smoothly.
+the traffic cop (Track Follower) guides vehicles (services),
+and everyone communicates to ensure the city runs smoothly.
 Similarly, in the Amiga ecosystem:
 
 - The **OAK** service streams visual and IMU data.
 - The **Filter** service uses IMU data from OAK, wheel odometry from CANBUS, and global positioning
 data from GPS to understand how the robot is moving.
-- The **Controller** takes this movement data, combines it with its algorithms, and decides
+- The **Track Follower** takes this movement data, combines it with its algorithms, and decides
 the best way to move the robot.
 - This decision is then passed to **CANBUS**, which communicates with the robot's motors to
 execute the movement.

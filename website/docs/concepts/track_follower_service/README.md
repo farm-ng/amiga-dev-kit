@@ -53,7 +53,7 @@ an `EventClient` of the track follower service.
 - **`/cancel`**: Instruct the Amiga to halt all movements immediately and clear the set Track.
 - **`/get_track`**: Return the `Track` that was set with `/set_track`
 - **`/get_state`**: Return a single instance of the `TrackFollowerState` streamed on the `/state` topic.
-- **`/go_to_goal`**: Send a single `Pose` as a waypoint for the controller to drive to.
+- **`/go_to_goal`**: Send a single `Pose` as a waypoint for the Track Follower to drive to.
   - Must be within a few meters and 180 degrees of the robot's current pose and orientation.
 
 ## Requirements
