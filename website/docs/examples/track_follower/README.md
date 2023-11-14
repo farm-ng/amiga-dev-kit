@@ -1,6 +1,6 @@
 ---
 id: track-follower
-title: Follow Track
+title: Follow a Track
 ---
 
 :::info Basic Knowledge Requirements
@@ -83,7 +83,7 @@ pip install -r requirements.txt
 
 ```bash
 python main.py --service-config service_config.json --track <path-to-your-track>
-# Replace <path-to-your-track> to the actual path to your track
+# Replace <path-to-your-track> to the actual file path to your track
 ```
 
 :::tip Tip
