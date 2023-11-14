@@ -68,9 +68,49 @@ source venv/bin/activate # re-enter, assuming you're in the root
 
 Now install the package with `pip`
 
+:::warning notice
+Currently the `farm-ng-core` wheel must be built from source on MacOS.
+Please use the correct tab for your OS.
+For Amiga Brains, please follow the `Linux` instructions.
+:::
+
+<Tabs>
+<TabItem value="linux" label="Linux" default>
+
 ```bash
 pip3 install farm-ng-amiga
 ```
+
+</TabItem>
+<TabItem value="macos" label="MacOs">
+
+```bash
+# Clone the farm-ng-core repo
+git clone https://github.com/farm-ng/farm-ng-core.git
+
+# Checkout the correct release and update submodules
+cd farm-ng-core/
+git checkout v2.0.0
+git submodule update --init --recursive
+cd ../
+
+# [Optional] Upgrade some deps
+pip install --upgrade pip
+pip install --upgrade setuptools wheel
+
+# Build farm-ng-core from source
+cd farm-ng-core/
+pip install .
+cd ../
+
+# Install farm-ng-amiga wheel, using farm-ng-core built from source
+pip install --no-build-isolation farm-ng-amiga
+```
+
+</TabItem>
+</Tabs>
+
+#### Check installed version
 
 You can check the installed version
 
