@@ -76,10 +76,31 @@ its operational environment and physical characteristics.
     ![image](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/4ca99130-db62-415f-a82c-3211fa7d9c5c)
     ![image](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/cfb64d74-a70c-42d3-aee5-c304afed2d45)
 
-:::note NOTE
-For precise calibration of your Amiga, all measurements are taken in meters (m)
-and should originate from the central axis of the robot.
-Please follow the indicated measurement guide to maintain consistency and reliability in data collection.
+:::info INFO
+**Amiga Calibration Guide**
+
+To ensure accurate calibration of your Amiga robot, please adhere to the following measurement guidelines:
+
+1. **Unit of Measurement**: All measurements must be taken in meters (m).
+
+2. **Reference Point**: Begin all measurements from the central axis of the robot.
+
+3. **Axis Coordination**:
+
+    a. *X-Axis Coordination*:
+
+        - Positive X Value: Assign this to anything located ahead of the robot's center.
+
+        - Negative X Value: Use this for anything situated behind the robot's center.
+
+    b. *Y-Axis Coordination*:
+
+        - Positive Y Value: This applies to objects on the left-hand side of the robot's center.
+
+        - Negative Y Value: Assign this to objects on the right-hand side of the robot's center.
+
+Adhering to these guidelines ensures consistent and reliable data collection during your Amiga's
+calibration process.
 :::
 
     b. Input the correct track width and wheelbase.
