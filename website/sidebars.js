@@ -212,6 +212,7 @@ const sidebars = {
       {
         "items": [
           "examples/track_recorder/track-recorder",
+          "examples/track_plotter/track-plotter",
           "examples/track_follower/track-follower",
           "examples/square_track/square-track",
         ],
