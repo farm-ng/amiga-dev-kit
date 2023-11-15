@@ -83,7 +83,8 @@ To ensure accurate calibration of your Amiga robot, please adhere to the followi
 
 1. **Unit of Measurement**: All measurements must be taken in meters (m).
 
-2. **Reference Point**: Begin all measurements from the central axis of the robot.
+2. **Reference Point**: Begin all measurements from the central axis of the robot
+(center of the robot (in length & width) at ground level).
 
 3. **Axis Coordination**:
 
