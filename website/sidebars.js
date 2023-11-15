@@ -72,6 +72,7 @@ const sidebars = {
       },
 {
   "items": [
+    "release-notes/release-02",
     "release-notes/release-01",
   ],
   "label": "Release Notes",
