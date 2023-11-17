@@ -220,7 +220,7 @@ async function createConfig() {
 	    items: [
 	      {
 		label: 'Release Notes',
-		to: '/blog',
+		to: '/docs/release-notes/release-02',
 	      },
 	      {
 		label: 'GitHub',
