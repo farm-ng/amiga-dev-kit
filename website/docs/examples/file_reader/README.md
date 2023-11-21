@@ -102,7 +102,6 @@ driving in a field
 [(click to download)](https://farm-ng-dev-auto-plot-mvp.s3.us-west-2.amazonaws.com/datasets/jacobs_freedom_1013/events_10132022112259.bin)
 
 :::tip
-There is another tutorial that walks you through getting data
-directly from the Amiga
-[**here**](docs/examples/import_log_file/README.md).
+The **[Recorder App Guide](/docs/apps/recorder_app/)** walks you through how to record data on your
+own Brain.
 :::

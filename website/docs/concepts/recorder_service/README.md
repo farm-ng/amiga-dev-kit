@@ -161,8 +161,8 @@ For example:
 
 Data can be recorded through the Recorder App, or using the `EventsClient` class.
 
-For a step-by-step guide on using the Recorder App, please refer to the
-[Record and Access Data example](/docs/examples/import_log_file/).
+To record data through the UI on the Brain display, see the
+[Recorder App Guide](/docs/apps/recorder_app/).
 
-For a step-by-step guide on recording data using the `EventsClient`, please refer to the
+To record data using the Recorder Service API from your own application, see the
 [Events Recorder example](/docs/examples/events_recorder/).

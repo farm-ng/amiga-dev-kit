@@ -106,7 +106,6 @@ rate 0.000 @ time 1513.076998664
 
 Congrats you are done!
 :::tip
-There is another tutorial that walks you through getting data
-directly from the Amiga
-[**here**](docs/examples/import_log_file/README.md).
+The **[Recorder App Guide](/docs/apps/recorder_app/)** walks you through how to record data on your
+own Brain.
 :::

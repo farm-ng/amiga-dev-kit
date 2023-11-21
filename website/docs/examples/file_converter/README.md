@@ -44,8 +44,7 @@ pip install -r requirements.txt
 **Specify the file (download before)**
 :::
 
-See **[How to Record and Access data on the Amiga](/docs/examples/import_log_file/)**
-for instructions.
+See the **[Recorder App Guide](/docs/apps/recorder_app/)** for instructions.
 
 ```bash
 python main.py --file-name <path-to-file>/2023_09_29_17_52_35_070804_dubnium-durian.0000.bin

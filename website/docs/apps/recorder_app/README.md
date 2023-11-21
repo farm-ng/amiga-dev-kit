@@ -1,11 +1,11 @@
 ---
-id: import-log-file
-title: Record and Access data
+id: recorder-app
+title: Recorder App
 ---
 
-# How to Record and Access data on the Amiga
+# Recorder App Guide
 
-This tutorial will walk you through how to record field data and
+This guide will walk you through how to record field data and
 transfer that data from the Amiga to your local machine.
 
 ## Record data with the Recorder App
@@ -14,15 +14,9 @@ The first step in this tutorial is to record some field data. To
 do this, you are going to use the handy Recorder app on the
 Amiga.
 
-:::caution deprecation warning
-There are two recorder apps, one of them is deprecated and will soon be removed.
-Make sure you select the **Recorder** app as seen on the picture below.
-:::
-
-![Screenshot from 2023-10-04 11-46-02](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/f26485f5-d71b-4aa6-adc8-986216b5b761)
-
 On the **Recorder** app, select what data you want to record by checking
 the boxes under the column `Include URI` to indicate which topics to record.
+The [Recorder Service Overview](/docs/concepts/recorder_service/) describes the available topics.
 
 Then use the `Start` and `Stop` buttons to start/stop collecting data.
 
