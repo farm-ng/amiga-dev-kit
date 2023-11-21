@@ -132,6 +132,7 @@ const sidebars = {
       "Apps Overviews": [
         "apps/filter_app/filter-app",
         "apps/autoplot_app/autoplot-app",
+        "apps/recorder_app/recorder-app",
       ],
     },
   ],
@@ -159,7 +160,6 @@ const sidebars = {
     "Brain Examples" : [
       {
         "items": [
-            "examples/import_log_file/import-log-file",
             "examples/events_recorder/events-recorder",
         ],
         "label": "Data Recording Examples",

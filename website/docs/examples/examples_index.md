@@ -104,16 +104,11 @@ install the
 [**farm-ng Brain ADK package**](/docs/brain/brain-install).
 :::
 
-### [Record and Access data](/docs/examples/import_log_file/README.md)
+### [Events Recorder](/docs/examples/events_recorder/README.md)
 
-:::caution deprecation warning
-This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
-This example only applies to brains running Amiga OS `v1.x` versions.<br/>
-Please check back for an updated example for brains running `v2.x` Amiga OS software.
-:::
+[**Link to `event_recorder/main.py`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/event_recorder/main.py)
 
-This tutorial walks you through recording field data and
-offloading it to your local machine.
+This example records events from the Brain using the `EventClient` class.
 
 ### [File Reader](/docs/examples/file_reader/README.md)
 

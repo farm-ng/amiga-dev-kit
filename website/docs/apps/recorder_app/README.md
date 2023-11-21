@@ -1,11 +1,11 @@
 ---
-id: import-log-file
-title: Record and Access data
+id: recorder-app
+title: Recorder App
 ---
 
-# How to Record and Access data on the Amiga
+# Recorder App Guide
 
-This tutorial will walk you through how to record field data and
+This guide will walk you through how to record field data and
 transfer that data from the Amiga to your local machine.
 
 ## Record data with the Recorder App

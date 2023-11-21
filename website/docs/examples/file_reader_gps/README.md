@@ -30,9 +30,8 @@ this example.
 [**Click here to download**](https://farm-ng-dev-auto-plot-mvp.s3.us-west-2.amazonaws.com/datasets/examples_log_file/2023_09_29_17_52_35_070804_dubnium-durian.0000.bin)
 
 :::tip
-If you want to use your own log file, there is another tutorial
-that walks you through getting data directly from the Amiga
-[**here**](docs/examples/import_log_file/README.md)
+If you want to use your own log file, the **[Recorder App Guide](/docs/apps/recorder_app/)** walks
+you through how to record data directly on the Brain.
 :::
 
 ## Setup
