@@ -129,7 +129,7 @@ const sidebars = {
         "concepts/filter_service/filter-overview",
         "concepts/track_follower_service/track-follower-overview",
       ],
-      "Apps Overviews": [
+      "App Overviews": [
         "apps/filter_app/filter-app",
         "apps/autoplot_app/autoplot-app",
         "apps/recorder_app/recorder-app",
