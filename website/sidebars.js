@@ -248,7 +248,8 @@ const sidebars = {
     ],
     "Amiga Brain Development": [
       "brain/brain-apps",
-      "brain/ros-bridge"
+      "brain/ros-bridge",
+      "brain/sdk-barley-migration"
     ]
     }
   ],
