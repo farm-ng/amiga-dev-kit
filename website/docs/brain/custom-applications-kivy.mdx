@@ -191,7 +191,7 @@ and has the following structure:
 {
    "services": {
         "example-app": {
-            "type": "app",
+            "type": "app_third_party",
             "python": false,
             "args": [
                 "entry.sh"
@@ -201,6 +201,16 @@ and has the following structure:
     }
 }
 ```
+
+:::warning
+
+- `type` is `app_third_party`.
+- `python` is `false`.
+- `display_name` must be unique across all apps.
+
+You can modify the `entry.sh` script but is a requirement that you start the app with a bash script.
+
+:::
 
 In case you face issues, connect with us and the community on [Discourse](https://discourse.farm-ng.com/c/support/5)
 
