@@ -248,6 +248,7 @@ const sidebars = {
     ],
     "Amiga Brain Development": [
       "brain/brain-apps",
+      "brain/brain-apps-kivy",
       "brain/ros-bridge"
     ]
     }

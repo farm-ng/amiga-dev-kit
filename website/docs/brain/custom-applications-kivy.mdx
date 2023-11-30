@@ -1,0 +1,223 @@
+---
+id: brain-apps-kivy
+title: Custom Applications (Kivy)
+---
+
+# Developing Custom Applications
+
+In this tutorial we will show you how to develop a custom [**Kivy**](https://kivy.org/) application for the Amiga Brain.
+
+## Prerequisites
+
+:::tip
+
+Make sure that you have ssh access to the brain. If you don't have ssh access, please follow the [**SSH Access**](/docs/ssh) tutorial.
+
+:::
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="linux" label="Linux/WSL" default>
+
+```bash
+apt install wget
+```
+
+</TabItem>
+<TabItem value="macos" label="MacOs" default>
+
+```bash
+brew install wget
+```
+
+</TabItem>
+</Tabs>
+
+
+Follow the instructions below to select a [**Kivy**](https://kivy.org/) app
+prepared by **farm-ng** or create an app from the
+[**`amiga-app-template-kivy`**](https://github.com/farm-ng/amiga-app-template-kivy) repository.
+
+## Select an existing app
+
+To test the app deployment process of a fully made app developed by farm-ng, e.g you can choose the [**camera-streamer-kivy**](https://github.com/farm-ng/camera-streamer-kivy)
+example.
+
+To clone the example click on one of the links in the previous sentence and click the green code button in GitHub and then copy the text highlighted in yellow.
+
+![Create a new templated repository](https://user-images.githubusercontent.com/66448234/223195510-2160a0b1-115e-4e36-bff1-c1560a4a6b2f.png)
+
+### Run from the command line
+
+Open a terminal and navigate to the directory where you cloned the [**amiga-app-template-kivy**](https://github.com/farm-ng/amiga-app-template-kivy) repository.
+
+```bash
+cd <to-your-app-directory>
+DISPLAY=:0 ./entry.sh  # install and run
+```
+
+If all goes well, you'll see an dummy Kivy application on your brain screen.
+
+### Run from the brain screen
+
+In order to run the app from the brain screen, you need to copy the app to the brain.
+To do so, you need to navigate to your app directory and run the `install.sh` script.
+
+```bash
+cd <to-your-app-directory>
+./install.sh
+```
+
+You should now see your app on the brain screen. Click on it to launch it.
+
+
+## Create a new app
+
+To create your own custom application navigate to the [**`amiga-app-template-kivy`**](https://github.com/farm-ng/amiga-app-template-kivy) repository on GitHub.
+:::tip
+You need to be signed into your GitHub account to see the option to `Use this template`.
+:::
+
+
+![Create a new templated repository](https://user-images.githubusercontent.com/5157099/205272492-356c1540-948e-43dc-8f60-8992caa8d511.gif)
+
+Written instructions (same as video above):
+1. Click on green *Use this template* button (top right) to create a new repository based on this repo
+2. Fill out:
+    - Owner: (your_username)
+    - Repository Name: whatever-you-want
+        - Should be between between 4-17 characters, and
+        - Use underscores (_) or dashes (-) for separating words (no spaces!)
+    -Select Public box
+    -Click [Create repository from template]
+Done!
+
+Now that you are done creating your repository, you have two options:
+
+1. Work in your local workspace.
+2. Work in a remote Remote-SSH session using in vs-code.
+
+In both cases you will have to clone the repository you created above by following the commands below.
+
+```bash
+cd <to-your-base-directory>
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+```
+
+### Project structure
+
+In vs-code, you can see the project structure on the left side in the `EXPLORER`:
+
+Below are listed the most important components.
+
+```bash
+repository-name/  # Root level of the project.
+├── libs/ # Contains private libraries.
+|   └── project_name/
+|       ├── ops.py  # e.g a operators submodule
+|       └── project_name_subpackage/
+|           └── utils.py  # e.g a utilities submodule
+├── src/ # Contains all code needed to run the main gui application.
+|   ├── assets/  # Contains files needed to run the application
+|   |   └── app_logo.png  # static images or images for buttons.
+|   ├── res/  # Contains the layout files and UI strings.
+|   |   └── main.kv  # main ui layout in Kivy languague
+|   └── main.py  # Is the main entry point for the gui application.
+├── test/  # Contains code for test of the private libs.
+|   └── test_dummy.py  # sets of unit test.
+├── install.sh
+|    # The script to install the app on the brain.
+├── uninstall.sh
+|    # The script to uninstall the app from the brain.
+├── manifest.json
+|    # The file containing the metadata of the app to register it on the brain.
+├── entry.sh
+|    # The script to setup the project, create a virtual env. and install dependencies.
+└── setup.cfg
+    # The file containing the metadata of the package, including the name, versioning, etc. Learn more here: https://setuptools.pypa.io/en/latest/userguide/declarative_config.html
+
+```
+
+### How to setup the project
+
+Before any changes, lets see if we can run this app locally on your system.
+
+```bash
+cd YOUR_REPOSITORY/
+./entry.sh  # install and run
+```
+
+When running the above script, a virtual environment `venv` will be created and any dependencies will be installed.
+
+If all goes well, you'll see an dummy kivy application on your screen.
+
+## Customizing an app
+
+In order to customize an app we leverage the `setup.cfg` that contains all the metadata and package configuration.
+More can be found [here](https://setuptools.pypa.io/en/latest/userguide/declarative_config.html)!
+
+The most important first steps are to modify the metadata of the project and dependencies:
+
+1. Inside the `setup.cfg` file, adjust the fields under the tag `[metadata]`
+    * For basic users, the package name (`project_name` in the project structure above) goes in the `name` field, and must match with the directory name right under the `libs/` directory.
+      * I.e., change both the `name` field and the directory name under `libs/` to your new app name.
+      * VScode should prompt you to change the import names in `test_dummy.py` once you change the directory name.
+        * If not, manually change:
+            ```
+            from amiga_package import __version__
+            from amiga_package import ops
+            ```
+        * To:
+            ```
+            from <project_name> import __version__
+            from <project_name> import ops
+            ```
+    * For advanced users, you can modify as much is compliant with Python `setuptools`.
+2. Adjust the package dependencies
+    * Include whatever extra dependency you need in the `install_requires` field.
+    * Our only requirements are:
+        * `wheel`: for packaging the app.
+        * `kivy`: to generate the graphical user interface (GUI).
+        * `farm-ng-amiga`: the Farm-ng Amiga public SDK.
+
+### Update the `manifest.json`
+
+In this file, you can find the metadata of the app. This file is used by the launcher
+and has the following structure:
+
+```json
+{
+   "services": {
+        "example-app": {
+            "type": "app",
+            "python": false,
+            "args": [
+                "entry.sh"
+            ],
+            "display_name": "Example App"
+        }
+    }
+}
+```
+
+In case you face issues, connect with us and the community on [Discourse](https://discourse.farm-ng.com/c/support/5)
+
+## Development and Debug an app
+
+The workflow for development is pretty much the same as any standard gui application.
+
+1. Make changes in the code.
+2. Run the code with the play button in vs-code.
+    - [Optionally] Add a breakpoint to any line and use the Debug Console to interact.
+3. Go to step 1)
+
+
+## [Optional] Test your application
+
+In order to validate your functionality, we suggest to add test cases for the internal `libs/[package_name]`
+located under `test/test_[test_name].py`.
+
+To launch the tests: `pytest test/`
+To run specific tests: `pytest test/test_dummy.py::TestDummy::test_add`
