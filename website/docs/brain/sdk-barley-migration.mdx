@@ -50,7 +50,7 @@ In this example we will show you how to migrate the [**Kivy camera streamer**](h
 #### Update the package
 
 In order to use the new application within the brain, we have to include
-the `install.sh`, `uninstall.sh` and `manifest.json` files in the root of the package.
+the [`install.sh`](https://github.com/farm-ng/camera-streamer-kivy/blob/2d701d8e79ca331e1afe0c9838a562a43371e2f4/install.sh), [`uninstall.sh`](https://github.com/farm-ng/camera-streamer-kivy/blob/main/uninstall.sh) and [`manifest.json`](https://github.com/farm-ng/camera-streamer-kivy/blob/main/manifest.json) files in the root of the package.
 
 We suggest to follow the [**Amiga Brain SDK**](/docs/brain/brain-apps-kivy) guide to learn more about how to create a package for the Amiga Brain.
 
@@ -70,6 +70,17 @@ pip list | grep farm-ng
 # farm-ng-core 2.0.0
 ```
 
+Alternatively, make sure that in the [`setup.cfg`](https://github.com/farm-ng/camera-streamer-kivy/blob/2d701d8e79ca331e1afe0c9838a562a43371e2f4/setup.cfg), the `farm_ng_core` and `farm_ng_amiga` packages are pointing to the latest version:
+
+```ini
+install_requires =
+    wheel
+    kivy
+    farm_ng_amiga>=2.0.0
+    farm_ng_core>=2.0.0
+    kornia-rs
+```
+
 #### Update the code
 
 In the [`main.py`](https://github.com/farm-ng/camera-streamer-kivy/blob/2d701d8e79ca331e1afe0c9838a562a43371e2f4/src/main.py) file we have to import the new service API:
@@ -83,7 +94,9 @@ from farm_ng.core.events_file_reader import proto_from_json_file
 from farm_ng.core.uri_pb2 import Uri
 ```
 
-Later, in the implementation of the coroutine [`stream_camera`](https://github.com/farm-ng/camera-streamer-kivy/blob/2d701d8e79ca331e1afe0c9838a562a43371e2f4/src/main.py#L85C3-L102C25), we have to create a new `EventClient` to leverege the new `subscribe` API to subscribe to the camera events asynchronosly:
+Later, in the implementation of the coroutine [`stream_camera`](https://github.com/farm-ng/camera-streamer-kivy/blob/2d701d8e79ca331e1afe0c9838a562a43371e2f4/src/main.py#L85C3-L102C25), we have to create a new `EventClient` to leverage the new `subscribe` API to subscribe to the camera events asynchronosly.
+
+The block below should reflect how to use the new `EventClient` API:
 
 ```python
   async def stream_camera(
