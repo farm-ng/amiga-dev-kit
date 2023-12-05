@@ -1,0 +1,125 @@
+---
+id: sdk-barley-migration
+title: Migration Guide to Amiga OS 2.0
+---
+
+# Migration Guide to Amiga OS 2.0
+
+## Preamble
+
+On November 2023, we released **Amiga OS 2.0 Barley**, which is a major update to the Amiga OS 1.0 Artichoke. This update includes a number of breaking changes to the Amiga OS 1.0 Artichoke API.
+
+This guide will help you migrate your code from Amiga OS 1.0 Artichoke to Amiga OS 2.0 Barley. For more information about the Amiga OS 2.0 Barley release, please see the [**release notes**](/docs/release-notes/release-02).
+
+
+## Prerequisites
+
+This guide assumes that:
+
+- You have knowledge of the Amiga OS 1.0 Artichoke API.
+- You have an Amiga Brain running Amiga OS 2.0 Barley.
+
+## Migration Steps
+
+### Update the Amiga Brain SDK
+
+With the release of Amiga OS 2.0 Barley, we have also released a new version of the Amiga Brain SDK. This new version of the SDK contains the new Amiga OS 2.0 Barley API including new features and breaking changes for the following python packages:
+
+- [`farm_ng_core`](https://github.com/farm-ng/farm-ng-core/releases/tag/v2.0.0)  latest version is `2.0.0`
+- [`farm_ng_amiga`](https://github.com/farm-ng/farm-ng-amiga/releases/tag/v2.0.0) latest version is `2.0.0`
+
+### Service API
+
+In `farm-ng-core` we have introduced a new service API. This API is used to communicate with the Amiga Brain services. The service API is a framework that allows you to create service clients and service servers and share protobuf messages between them.
+
+In particular, we have introduced the new main classes:
+
+- [`EventServiceGrpc`](https://github.com/farm-ng/farm-ng-core/blob/75c13325a156613f6c60b9c517f1ef8b87e8cace/py/farm_ng/core/event_service.py#L67) This class is used to publish events to the Amiga Brain network.
+- [`EventClient`](https://github.com/farm-ng/farm-ng-core/blob/75c13325a156613f6c60b9c517f1ef8b87e8cace/py/farm_ng/core/event_client.py#L66) This class is used to subscribe to events from the Amiga Brain network.
+
+We recommend to visit the following tutorials to learn more about the new service API:
+
+- [**Service Client**](/docs/examples/service_client): This tutorial will show you how to create a service client to communicate with the Amiga Brain services.
+- [**Service Counter**](/docs/examples/service_counter): A bit more advanced tutorial that will show you how to create a service client to create a service that counts the number of times it has been called.
+
+
+### Example: Kivy camera streamer api
+
+In this example we will show you how to migrate the [**Kivy camera streamer**](https://github.com/farm-ng/camera-streamer-kivy) example using the new service API.
+
+#### Update the package
+
+In order to use the new application within the brain, we have to include
+the [`install.sh`](https://github.com/farm-ng/camera-streamer-kivy/blob/2d701d8e79ca331e1afe0c9838a562a43371e2f4/install.sh), [`uninstall.sh`](https://github.com/farm-ng/camera-streamer-kivy/blob/main/uninstall.sh) and [`manifest.json`](https://github.com/farm-ng/camera-streamer-kivy/blob/main/manifest.json) files in the root of the package.
+
+We suggest to follow the [**Amiga Brain SDK**](/docs/brain/brain-apps-kivy) guide to learn more about how to create a package for the Amiga Brain.
+
+#### Update the dependencies
+
+As mentioned before, we have to update the dependencies to use the new version of the `farm_ng_core` and `farm_ng_amiga` packages:
+
+```bash
+pip install -U farm_ng_core farm_ng_amiga
+```
+
+check the version of the packages:
+
+```bash
+pip list | grep farm-ng
+# farm-ng-amiga 2.0.0
+# farm-ng-core 2.0.0
+```
+
+Alternatively, make sure that in the [`setup.cfg`](https://github.com/farm-ng/camera-streamer-kivy/blob/2d701d8e79ca331e1afe0c9838a562a43371e2f4/setup.cfg), the `farm_ng_core` and `farm_ng_amiga` packages are pointing to the latest version:
+
+```ini
+install_requires =
+    wheel
+    kivy
+    farm_ng_amiga>=2.0.0
+    farm_ng_core>=2.0.0
+    kornia-rs
+```
+
+#### Update the code
+
+In the [`main.py`](https://github.com/farm-ng/camera-streamer-kivy/blob/2d701d8e79ca331e1afe0c9838a562a43371e2f4/src/main.py) file we have to import the new service API:
+
+```python
+from farm_ng.core.event_client import EventClient
+from farm_ng.core.event_service_pb2 import EventServiceConfig
+from farm_ng.core.event_service_pb2 import EventServiceConfigList
+from farm_ng.core.event_service_pb2 import SubscribeRequest
+from farm_ng.core.events_file_reader import proto_from_json_file
+from farm_ng.core.uri_pb2 import Uri
+```
+
+Later, in the implementation of the coroutine [`stream_camera`](https://github.com/farm-ng/camera-streamer-kivy/blob/2d701d8e79ca331e1afe0c9838a562a43371e2f4/src/main.py#L85C3-L102C25), we have to create a new `EventClient` to leverage the new `subscribe` API to subscribe to the camera events in an asynchronous fashion.
+
+Note that we can configure the subscription via the `SubscribeRequest` message. In this case, we are subscribing to the `/rgb` topic and we are requesting to receive every `n` messages.
+
+The block below should reflect how to use the new `EventClient` API:
+
+```python
+  async def stream_camera(
+        self, view_name: Literal["rgb", "disparity", "left", "right"] = "rgb"
+    ) -> None:
+        while self.root is None:
+            await asyncio.sleep(0.01)
+
+        async for _, message in EventClient(self.service_config).subscribe(
+            SubscribeRequest(
+                uri=Uri(path=f"/{view_name}"), every_n=self.stream_every_n
+            ),
+            decode=True,
+        ):
+            try:
+                img = self.image_decoder.decode(message.image_data)
+            except Exception as e:
+                logger.exception(f"Error decoding image: {e}")
+                continue
+```
+
+Once you are done and launch the app, you should see the following:
+
+![Screenshot from 2023-12-01 17-50-01](https://github.com/farm-ng/amiga-dev-kit/assets/5157099/16ae3485-66c2-4b28-8f44-e8457f235689)
