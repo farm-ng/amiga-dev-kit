@@ -94,7 +94,9 @@ from farm_ng.core.events_file_reader import proto_from_json_file
 from farm_ng.core.uri_pb2 import Uri
 ```
 
-Later, in the implementation of the coroutine [`stream_camera`](https://github.com/farm-ng/camera-streamer-kivy/blob/2d701d8e79ca331e1afe0c9838a562a43371e2f4/src/main.py#L85C3-L102C25), we have to create a new `EventClient` to leverage the new `subscribe` API to subscribe to the camera events asynchronosly.
+Later, in the implementation of the coroutine [`stream_camera`](https://github.com/farm-ng/camera-streamer-kivy/blob/2d701d8e79ca331e1afe0c9838a562a43371e2f4/src/main.py#L85C3-L102C25), we have to create a new `EventClient` to leverage the new `subscribe` API to subscribe to the camera events in an asynchronous fashion.
+
+Note that we can configure the subscription via the `SubscribeRequest` message. In this case, we are subscribing to the `/rgb` topic and we are requesting to receive every `n` messages.
 
 The block below should reflect how to use the new `EventClient` API:
 
