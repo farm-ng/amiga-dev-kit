@@ -11,7 +11,6 @@ the log files created by our [Recorder App](../recorder_app).
 
 ![Screenshot from 2023-12-07 16-22-41](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/37e712b1-31cf-42d7-a4ff-fcf6136649ed)
 
-
 ## Key Features
 
 ### Visualize Log Files
