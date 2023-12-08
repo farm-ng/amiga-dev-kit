@@ -20,9 +20,7 @@ The app provides a live feed from each connected oak camera, allowing users to s
 camera sees.
 This real-time visualization aids in making informed adjustments to camera settings for optimal
 recording quality.
-
 ![Screenshot from 2023-12-08 11-38-03](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/7c630193-68fb-4916-ae3c-fbfb16c33992)
-
 
 ### Camera Configuration
 
@@ -34,8 +32,6 @@ The following settings can be adjusted directly within the app:
 - **Lens Position**: Fine-tune the focus of the camera lens to capture sharp images.
 
 ![Screenshot from 2023-12-08 11-43-07](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/e50a1425-9274-4c3b-ba95-e8c18e1a6c4e)
-
-
 For convenience, users may also opt for:
 
 - **Auto Exposure**: The camera automatically adjusts the exposure settings for the best image quality.
