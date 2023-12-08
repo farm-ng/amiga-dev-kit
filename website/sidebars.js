@@ -134,6 +134,7 @@ const sidebars = {
         "apps/autoplot_app/autoplot-app",
         "apps/recorder_app/recorder-app",
         "apps/file_manager_app/file-manager-app",
+        "apps/camera_app/camera-app",
       ],
     },
   ],
