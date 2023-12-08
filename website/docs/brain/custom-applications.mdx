@@ -1,6 +1,6 @@
 ---
 id: brain-apps
-title: Developing Custom Applications
+title: Custom Applications (ReactJS)
 ---
 
 # Developing Custom Applications
@@ -115,10 +115,11 @@ and has the following structure:
 {
    "services": {
         "example-app": {
+            "name": "example-app",
             "type": "app",
-            "python": true,
+            "exec_cmd": "main.py",
             "args": [
-                "main.py --config /opt/farmng/config.json --port 8042"
+                "--config /opt/farmng/config.json --port 8042"
             ],
             "http_gui_port": 8042,
             "display_name": "Example App"
@@ -128,7 +129,7 @@ and has the following structure:
 ```
 
 :::note
-For now we just support python apps, and a single app per manifest file.
+Learn more about the manifest file [here](/docs/brain/brain-apps-manifest).
 :::
 
 ## How to setup the project

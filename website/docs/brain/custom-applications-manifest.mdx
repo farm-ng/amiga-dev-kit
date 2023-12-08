@@ -1,0 +1,103 @@
+---
+id: brain-apps-manifest
+title: Custom Applications Manifest
+---
+
+# Custom Applications Manifest
+
+As explained in the [brain apps](/docs/brain/brain-apps) section, the brain apps and services are a way to extend the functionality of the brain.
+
+In this section we will learn how to register the apps in the system into the launcher.
+
+## Introduction
+
+Each application can be defined in what we call a manifest file. This file contains the metadata of the app and is used by the launcher to display the app in the UI.
+The manifest file is a JSON which in internally parsed by the launcher and automatically register each app and service as a [systemd service](https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html).
+
+The manifest file is located in the root directory of the `farm-ng-user-[<your_username>]` and is called `manifest.json` with the following
+basic structure:
+
+```json
+{
+   "services": {
+        "example-service": {
+            "name": "example-service",
+            "type": "service",
+            "exec_cmd": "/farm_ng_image/venv/bin/python3 example_service.py",
+            "autostart": true
+        },
+   }
+}
+```
+
+See next sections for a detailed description of each field and advanced usage to include multiple services and apps in the same manifest file.
+
+## Manifest file format
+
+The manifest file must be a valid JSON file that contains a `services` field with a list of services and apps to register in the system.
+
+Each service or app is defined by a unique name and a set of fields that describe the service or app. For educational purposes, we will use the following example showing
+all the supported fields and values:
+
+```json
+{
+   "services": {
+        "example-service": {
+            "name": "example-service",
+            "type": "service",
+            "exec_cmd": "/farm_ng_image/venv/bin/python3 example_service.py",
+            "args": [
+                "--config",
+                "/opt/farmng/config.json",
+                "--port",
+                "8042"
+            ],
+            "autostart": true,
+            "http_gui_port": 8042,
+            "display_name": "Example Service"
+        },
+   }
+}
+```
+
+### Supported fields
+
+The following fields are supported for services:
+
+- `name`: The name of the service. This name must be unique and cannot be repeated in the same manifest file. It will be used as the name of the systemd service.
+- `type`: The type of the service. This field must be set to `service` or `app`.
+- `exec_cmd`: The command to execute to start the service. Usually the absolute path to the executable and could include your own virtual environment.
+- `args`: Optional, list of arguments to pass to the executable.
+- `autostart`: Whether the service should be started automatically when the brain boots. Default is `false`.
+- `http_gui_port`: Optional, port where the service will serve the GUI in case of the webapps.
+- `display_name`: Optional, name of the service to display in the launcher.
+
+
+## Advanced usage
+
+The manifest file can support multiple services and apps in the same file. This is useful to group related services and apps together with a list of dependencies.
+
+One example is the `farm-ng-user-[<your_username>]` manifest file which contains all the services and apps that are installed by default in the brain.
+
+```json
+{
+  "services": {
+    "example-service": {
+      "name": "example-service",
+      "type": "service",
+      "exec_cmd": "/farm_ng_image/venv/bin/python3 example_service.py",
+      "autostart": true
+    },
+    "example-app": {
+      "name": "example-app",
+      "type": "app",
+      "exec_cmd": "/farm_ng_image/venv/bin/python3 example_app.py",
+      "deps": [
+        "example-service"
+      ],
+      "http_gui_port": 8042,
+      "display_name": "Example App"
+    }
+  }
+}
+```

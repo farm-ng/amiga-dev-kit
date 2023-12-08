@@ -3,19 +3,28 @@ id: concepts-index
 title: Concepts Index
 ---
 
-:::caution Coming soon
-Visual representation of the services and devices running on your Amiga brain.
-:::
+## Fundamental Concepts
 
-## Service overviews
+Please start with the Fundamental Concepts,
+especially the [Amiga Development 101 guide](/docs/concepts/system_overview)
+that provides an overview of "**Services**" on your brain and their interactions.
 
-We provide overviews of  services running on your brain and high-level instructions
-on interacting with them.
+## Service Overviews
+
+We provide overviews of each service running on your brain and high-level instructions
+for interacting with them.
 
 :::tip
 These overviews are useful context before going through the related
 [Brain ADK Examples](/docs/examples/examples-index#brain-adk-examples).
 :::
+
+![amiga_brain-1](https://github.com/farm-ng/amiga-dev-kit/assets/5157099/a7d5d95f-a94d-40a9-8df0-3c0c9084c2fa)
+
+## App Overviews
+
+We provide overviews of each app available on your brain and high-level instructions
+for using them.
 
 ## Not seeing what you need?
 
