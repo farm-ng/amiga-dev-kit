@@ -149,7 +149,6 @@ Consider `03`.
 
 ![pendant error-2](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/3a9b63de-7c0a-48c8-970a-fbdfdacf3b12)
 
-
 Convert Hexadecimal to Binary:
 
 - The hexadecimal code 03 needs to be converted to binary.
@@ -173,7 +172,6 @@ Match with Pendant Error Descriptions:
 Consider `Motor 12: 13 (1000 r 21 f 00.0020 w 0022)`.
 
 ![motor error](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/b04b5319-7b7f-410a-8dbe-51c06c15a3ec)
-
 
 Breaking Down the Error Message:
 
