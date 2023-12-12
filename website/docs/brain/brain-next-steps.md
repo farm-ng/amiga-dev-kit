@@ -27,7 +27,7 @@ to read through details of the various services running on your Amiga's brain.
 Either navigate to the `Examples` tab located at the top of this page,
 or go directly to the [Examples Index](/docs/examples/examples-index),
 to get started on running one of the available brain ADK examples
-or CircuitPython examples.
+or Microcontroller examples.
 
 ## 3. Tutorials
 

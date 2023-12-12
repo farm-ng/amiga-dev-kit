@@ -5,11 +5,13 @@ title: Examples Index
 
 # Amiga SDK Examples
 
-## CircuitPython Examples
+## Microcontroller Examples
 
 :::info
 These are the examples for developing programs for the
 [**farm-ng microcontroller kit**](../mcu_kit/).
+
+These examples are programmed in [**CircuitPython**](https://circuitpython.org/).
 :::
 
 Before attempting any of these examples make sure you have
