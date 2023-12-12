@@ -45,6 +45,7 @@ const sidebars = {
         "dashboard/dashboard-user-guide",
         "dashboard/control-states",
         "dashboard/dashboard-fw",
+        "dashboard/dashboard-debugging",
       ],
       "label": "Dashboard",
       "type": "category"
