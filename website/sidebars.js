@@ -73,6 +73,7 @@ const sidebars = {
       },
 {
   "items": [
+    "release-notes/release-021",
     "release-notes/release-02",
     "release-notes/release-01",
   ],
@@ -142,7 +143,7 @@ const sidebars = {
   "api": [
     "api/api-index",
     {
-      "CircuitPython ADK": [
+      "Microcontroller ADK": [
         require("./docs/reference/circuitpy/sidebar.json")
       ],
     },
@@ -155,7 +156,7 @@ const sidebars = {
   "examples": [
     "examples/examples-index",
     {
-    "CircuitPython Examples" : [
+    "Microcontroller Examples" : [
         "examples/hello_main_loop/hello-world",
         "examples/cansniffer/cansniffer",
         "examples/FPV/fpv",
