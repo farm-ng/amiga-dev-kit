@@ -5,6 +5,11 @@ title: Debugging error codes
 
 # Debugging Error Codes
 
+:::warning Deprecation Warning
+This section is intended to the dash firmware v0.3.0.
+The error codes are human-readable in the dash v0.4.0.
+:::
+
 ## Pendant Error
 
 Pendant error codes are formatted as: `0x00`
@@ -175,16 +180,16 @@ Consider `Motor 12: 13 (1000 r 21 f 00.0020 w 0022)`.
 
 Breaking Down the Error Message:
 
-- 1000 r: This is the EMCY code indicating a specific error or emergency condition.
-- 21 f: This is the error registry or status code.
-- 00.0020 w: This is a Faults1 error code in hexadecimal.
-- 0022 w: This is a Warnings code in hexadecimal.
+- 1000: This is the EMCY code indicating a specific error or emergency condition.
+- r 21: This is the error registry or status code.
+- f 00 and 0020: These are the Faults error code in hexadecimal.
+- w 0022: This is a Warnings code in hexadecimal.
 
-Let's convert 00.0020 from hexadecimal to binary and match it against the Faults1 Bits dictionary.
+Let's convert 00.0020 from hexadecimal to binary and match it against the Faults1 Bits guide.
 
 - Hexadecimal 0020 converts to binary 0000 0000 0010 0000.
 - The bit set is in position 5, counting from 0 (sixth bit).
-- Referring to the Faults1 dictionary, position 5 corresponds to MOTOR_HALL_SENSOR_FAULT.
+- Referring to the Faults1 guide, position 5 corresponds to MOTOR_HALL_SENSOR_FAULT.
 
 Interpreting Warnings (0022):
 
