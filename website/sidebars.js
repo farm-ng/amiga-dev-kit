@@ -45,6 +45,7 @@ const sidebars = {
         "dashboard/dashboard-user-guide",
         "dashboard/control-states",
         "dashboard/dashboard-fw",
+        "dashboard/dashboard-debugging",
       ],
       "label": "Dashboard",
       "type": "category"
@@ -72,6 +73,7 @@ const sidebars = {
       },
 {
   "items": [
+    "release-notes/release-021",
     "release-notes/release-02",
     "release-notes/release-01",
   ],
@@ -141,7 +143,7 @@ const sidebars = {
   "api": [
     "api/api-index",
     {
-      "CircuitPython ADK": [
+      "Microcontroller ADK": [
         require("./docs/reference/circuitpy/sidebar.json")
       ],
     },
@@ -154,7 +156,7 @@ const sidebars = {
   "examples": [
     "examples/examples-index",
     {
-    "CircuitPython Examples" : [
+    "Microcontroller Examples" : [
         "examples/hello_main_loop/hello-world",
         "examples/cansniffer/cansniffer",
         "examples/FPV/fpv",
@@ -173,6 +175,7 @@ const sidebars = {
         "examples/file_converter/file-converter",
         "examples/file_reader_can/file-reader-can",
         "examples/file_reader_gps/file-reader-gps",
+        "examples/file_reader_headers/file-reader-headers",
         ],
         "label": "Playback Examples",
         "type": "category"

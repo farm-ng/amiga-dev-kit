@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-# generate the python markdown for the CircuitPython API
+# generate the python markdown for the Microcontroller API
 pydoc-markdown '{
     loaders: [
         {
