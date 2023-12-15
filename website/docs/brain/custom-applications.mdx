@@ -205,3 +205,56 @@ To visualize the app in your browser, go to http://localhost:8042
 2. Now you should be able to see the app in the launcher and run it.
 
 ![app view](https://user-images.githubusercontent.com/5157099/279948050-31df3a3f-59f4-47ed-bc6a-cb39d95b07da.png)
+
+3. If for some reason you need to remove your app from the launcher
+
+```bash
+./uninstall.sh
+```
+
+### Debugging the App on the Launcher
+
+#### Viewing Logs and Outputs
+
+Once your project is launched through the farm-ng-launcher, it will no longer be runnable as a
+standalone Python script.
+Instead, you can monitor and debug it using the `journalctl` tool.
+This tool allows you to view logs and outputs from your project in real-time.
+
+To see a list of all running services, use:
+
+```bash
+journalctl -f --user-unit
+```
+
+Press Tab twice to auto-complete and view a list of all available services.
+Look for your application, which will be named in the format `<your-app-name>.service`.
+
+To view the outputs of your application, complete the `journalctl` command like this:
+
+```bash
+journalctl -f --user-unit <your-app-name>.service
+```
+
+#### Managing Your Application
+
+If you make changes to the backend code, you'll need to restart your application for these changes to take effect.
+This can be done using systemctl, which manages the application processes.
+
+- To start your application:
+
+```bash
+systemctl --user start <your-app-name>.service
+```
+
+- To stop your application:
+
+```bash
+systemctl --user stop <your-app-name>.service
+```
+
+- To restart your application:
+
+```bash
+systemctl --user restart <your-app-name>.service
+```
