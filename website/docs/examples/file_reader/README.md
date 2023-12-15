@@ -20,6 +20,9 @@ In this example you will learn how to upload a given log file and
 use it to run the
 [**File Reader Example**](https://github.com/farm-ng/farm-ng-amiga/tree/main/py/examples/file_reader/main.py).
 
+To successfully run this example, you must use your local PC, as the example won't
+work if executed directly from a brain (because of the popup window).
+
 ## Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
 ## Download the log file
@@ -48,7 +51,8 @@ pwd # the output of this is your <path>
 
 cd ~ # navigate to home directory
 cd Downloads
-mv events_12052022115852.bin <path-to-where-data-file-is-above> # moving the data to to data-folder
+# Move the data to to data-folder
+mv 2023_09_29_17_52_35_070804_dubnium-durian.0000.bin <path-to-where-data-file-is-above>
 ```
 
  Now that you have your log file in the correct place, in your
@@ -91,15 +95,6 @@ Congratulations two videos should now pop up and play! One should
 be RGB and one should be disparity (it might be hidden behind the
 RGB window so try moving the RGB window). You have now finished
 running this example!
-
-:::caution deprecation warning
-This log file comes from a brain running Amiga OS `v1.x` versions.<br/>
-Please check back for an updated log file from a brain running `v2.x` Amiga OS software.
-:::
-
-If you want another log file to run here is an example of Amiga
-driving in a field
-[(click to download)](https://farm-ng-dev-auto-plot-mvp.s3.us-west-2.amazonaws.com/datasets/jacobs_freedom_1013/events_10132022112259.bin)
 
 :::tip
 The **[Recorder App Guide](/docs/apps/recorder_app/)** walks you through how to record data on your
