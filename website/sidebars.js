@@ -45,6 +45,7 @@ const sidebars = {
         "dashboard/dashboard-user-guide",
         "dashboard/control-states",
         "dashboard/dashboard-fw",
+        "dashboard/dashboard-debugging",
       ],
       "label": "Dashboard",
       "type": "category"
@@ -174,6 +175,7 @@ const sidebars = {
         "examples/file_converter/file-converter",
         "examples/file_reader_can/file-reader-can",
         "examples/file_reader_gps/file-reader-gps",
+        "examples/file_reader_headers/file-reader-headers",
         ],
         "label": "Playback Examples",
         "type": "category"
