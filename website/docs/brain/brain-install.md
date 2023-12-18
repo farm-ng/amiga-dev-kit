@@ -10,7 +10,7 @@ title: Brain ADK Install
 ## Install from pip [recommended]
 
 :::tip
-We recommend running the brain SDK applications in a virtual
+We strongly recommend running the brain SDK applications in a virtual
 environment to avoid conflicts with other packages / versions
 installed on your system.
 Though this is not a requirement and you are welcome to decide
@@ -78,6 +78,8 @@ For Amiga Brains, please follow the `Linux` instructions.
 <TabItem value="linux" label="Linux" default>
 
 ```bash
+pip install --upgrade pip
+pip install --upgrade setuptools
 pip3 install farm-ng-amiga
 ```
 
@@ -174,8 +176,9 @@ git pull
 - Create and install the ``farm-ng-amiga`` Python package
 
 ```bash
-cd farm-ng-amiga/py/
 # install to system
+pip install --upgrade pip
+pip install --upgrade setuptools
 pip3 install .
 ```
 
