@@ -1,0 +1,68 @@
+---
+id: camera-streamer-overview
+title: 00 - Camera Streamer Overview
+---
+
+# Camera Streamer Overview
+
+:::caution deprecation warning
+This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
+Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
+:::
+
+:::tip
+This tutorial builds off of the
+[**Tutorial Introduction**](/docs/tutorials/introduction/tutorial-introduction),
+so please check that out if you have not already.
+:::
+
+## [Link to `camera-streamer`](https://github.com/farm-ng/camera-streamer)
+
+This example application and tutorial is designed to get you
+started developing your own basic applications and deploying them
+to the Amiga brain.
+
+On the brain, there are multiple gRPC services running in the
+background, including an oak camera service per camera device on
+your Amiga.
+You will see how to interact with one of these services through
+the camera client in a basic kivy application,
+using gRPC and asyncio in that application.
+
+The topics covered in this tutorial include:
+
+- Creating kivy applications
+- GRPC / asyncio application development
+- Streaming an Oak camera with the camera client
+
+## Block diagram
+
+```mermaid
+  flowchart BT;
+
+    subgraph kivy_window
+        direction LR
+        ImageTexture
+    end
+
+    subgraph AmigaOS
+        OakCameraServices
+        CanbusService
+    end
+
+    subgraph CameraStreamerApp
+        OakCameraClient -- decoded jpeg --> ImageTexture
+    end
+
+    subgraph OakCameraServices
+        direction LR
+        Oak0
+        Oak1
+        Oak2
+        Oak3
+    end
+
+    Oak0 -- streamFrames rpc --> OakCameraClient
+
+```
