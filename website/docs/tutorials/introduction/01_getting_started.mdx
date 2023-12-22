@@ -1,0 +1,117 @@
+---
+id: getting-started-kivy
+title: 01 - Installing Templates
+---
+
+# Developing Custom Applications
+
+In this tutorial we will show you how to develop a custom [**Kivy**](https://kivy.org/) application for the Amiga Brain.
+
+## Prerequisites
+
+:::tip
+
+Make sure that you have ssh access to the brain. If you don't have ssh access, please follow the [**SSH Access**](/docs/ssh) tutorial.
+
+:::
+
+## Create a new app
+
+To create your own custom application navigate to the [**`amiga-app-template-kivy`**](https://github.com/farm-ng/amiga-app-template-kivy) repository on GitHub.
+:::tip
+You need to be signed into your GitHub account to see the option:  `Use this template`.
+:::
+
+
+![Create a new templated repository](https://user-images.githubusercontent.com/5157099/205272492-356c1540-948e-43dc-8f60-8992caa8d511.gif)
+
+:::info
+For [**01 - Camera Streamer Tutorial**](/docs/tutorials/camera_streamer/01_template_starter.md) we assume the repository name `camera_tutorial`.
+
+For [**02 - Virtual Joystick Tutorial**](/docs/tutorials/virtual_joystick/01_template_starter.md) we assume the repository name `virtual_joystick`.
+:::
+Written instructions (same as video above):
+1. Click on green *Use this template* button (top right) to create a new repository based on this repo
+2. Fill out:
+    - Owner: (your_username)
+    - Repository Name: whatever-you-want
+        - Should be between between 4-17 characters, and
+        - Use underscores (_) or dashes (-) for separating words (no spaces!)
+    -Select Public box
+    -Click [Create repository from template]
+Done!
+
+Now that you are done creating your repository, you have two options:
+
+1. Work in your local workspace.
+2. Work in a remote Remote-SSH session using in vs-code.
+
+In both cases you will have to clone the repository you created above by following the commands below.
+
+```bash
+cd <to-your-base-directory>
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+```
+
+### Project structure
+
+In vs-code, you can see the project structure on the left side in the `EXPLORER`:
+
+Below are listed the most important components.
+
+```bash
+repository-name/  # Root level of the project.
+├── libs/ # Contains private libraries.
+|   └── project_name/
+|       ├── ops.py  # e.g a operators submodule
+|       └── project_name_subpackage/
+|           └── utils.py  # e.g a utilities submodule
+├── src/ # Contains all code needed to run the main gui application.
+|   ├── assets/  # Contains files needed to run the application
+|   |   └── app_logo.png  # static images or images for buttons.
+|   ├── res/  # Contains the layout files and UI strings.
+|   |   └── main.kv  # main ui layout in Kivy languague
+|   └── main.py  # Is the main entry point for the gui application.
+├── test/  # Contains code for test of the private libs.
+|   └── test_dummy.py  # sets of unit test.
+├── install.sh
+|    # The script to install the app on the brain.
+├── uninstall.sh
+|    # The script to uninstall the app from the brain.
+├── manifest.json
+|    # The file containing the metadata of the app to register it on the brain.
+├── entry.sh
+|    # The script to setup the project, create a virtual env. and install dependencies.
+└── setup.cfg
+    # The file containing the metadata of the package, including the name, versioning, etc. Learn more here: https://setuptools.pypa.io/en/latest/userguide/declarative_config.html
+
+```
+
+## Brain setup
+
+The following commands will compile on the brain from an un-modified clone or template of this repository.
+If there are problems with running these scripts, please try to clone the repository once again.
+
+### Run from the command line
+
+Open a terminal and navigate to the directory where you cloned the [**amiga-app-template-kivy**](https://github.com/farm-ng/amiga-app-template-kivy) repository.
+
+```bash
+cd <to-your-app-directory>
+DISPLAY=:0 ./entry.sh  # install and run
+```
+
+If all goes well, you'll see an dummy Kivy application on your brain screen.
+
+### Add custom app to brain screen
+
+To add your custom app to the app page on the barin, run the `install.sh` script.
+
+```bash
+cd <to-your-app-directory>
+./install.sh
+```
+
+You should now see your app on the brain screen. Click on it to launch it.
+
+![Screenshot from 2023-12-01 17-43-59](https://github.com/farm-ng/amiga-dev-kit/assets/5157099/aac51d8a-ec34-4b85-9e73-f151c008e64c)

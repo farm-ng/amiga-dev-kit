@@ -5,21 +5,16 @@ title: 00 - Camera Streamer Overview
 
 # Camera Streamer Overview
 
-:::caution deprecation warning
-This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
-This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
-Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
-:::
-
 :::tip
 This tutorial builds off of the
 [**Tutorial Introduction**](/docs/tutorials/introduction/tutorial-introduction),
 so please check that out if you have not already.
 :::
 
-## [Link to `camera-streamer`](https://github.com/farm-ng/camera-streamer)
+This tutorial will walk you through building the [**camera-streamer-kivy**](https://github.com/farm-ng/camera-streamer)
+from the [**amiga-app-template-kivy**](https://github.com/farm-ng/amiga-app-template-kivy).
 
-This example application and tutorial is designed to get you
+It is designed to get you
 started developing your own basic applications and deploying them
 to the Amiga brain.
 
@@ -36,10 +31,11 @@ The topics covered in this tutorial include:
 - GRPC / asyncio application development
 - Streaming an Oak camera with the camera client
 
+<!--
 ## Block diagram
 
 ```mermaid
-  flowchart BT;
+flowchart BT;
 
     subgraph kivy_window
         direction LR
@@ -52,7 +48,7 @@ The topics covered in this tutorial include:
     end
 
     subgraph CameraStreamerApp
-        OakCameraClient -- decoded jpeg --> ImageTexture
+        OakCameraClient -- decoded jpeg -- ImageTexture
     end
 
     subgraph OakCameraServices
@@ -63,6 +59,5 @@ The topics covered in this tutorial include:
         Oak3
     end
 
-    Oak0 -- streamFrames rpc --> OakCameraClient
-
-```
+    Oak0 -- streamFrames rpc -- OakCameraClient
+```-->

@@ -251,10 +251,10 @@ const sidebars = {
       "type": "category"
       },
     ],
-    "Brain App Tutorials" : {
+    "Kivy App Tutorials" : {
       "00 - Tutorial Introduction" :[
           "tutorials/introduction/tutorial-introduction",
-          "tutorials/introduction/background-knowledge",
+          "tutorials/introduction/getting-started-kivy",
           "tutorials/introduction/template-overview",
       ],
       "01 - Camera Streamer Tutorial" :[

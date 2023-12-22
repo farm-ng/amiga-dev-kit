@@ -4,22 +4,17 @@ title: 02 - Template Overview
 ---
 # Template Overview
 
-:::caution deprecation warning
-This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
-This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
-Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
-:::
-
 This section explains all of the Python and kivy code in the
-[**`amiga-app-template`**](https://github.com/farm-ng/amiga-app-template),
+[**`amiga-app-template-kivy`**](https://github.com/farm-ng/amiga-app-template-kivy),
 to help understand the base before you add anything custom.
 
 :::info
-This corresponds to the state of the `amiga-app-template` on
-January 31, 2023.
+This corresponds to the state of the `amiga-app-template-kivy` in December, 2023.
 Some details of the implementation may have changed slightly by
 the time you are reading.
 :::
+
+Documentation for developing a front end in ReactJS can be found here: [**`ReactJS Tutorial`**](/docs/brain/custom-applications.mdx)
 
 ## Imports
 

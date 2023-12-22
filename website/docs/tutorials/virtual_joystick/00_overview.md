@@ -18,7 +18,7 @@ This tutorial builds off of the
 so please check those out if you have not already.
 :::
 
-## [Link to `virtual-joystick`](https://github.com/farm-ng/virtual-joystick)
+## [Link to `virtual-joystick`](https://github.com/farm-ng/virtual-joystick-v2)
 
 This example application and tutorial is designed to enable you
 to develop your own custom applications and deploy them to the
