@@ -4,23 +4,17 @@ title: 01 - Template Starter
 ---
 # Template Starter
 
-## Set up your Amiga brain template
-
-:::tip
-For the purpose of this tutorial, we will assume the name of this custom app is "camera_tutorial"
-:::
-
-## Rename the `TemplateApp`
-
-Now that you've created the template, it's time to rename it for
-your app.
-In this tutorial, we'll go with `CameraApp`.
-
-Navigate to `main.py` in your app and open it with a text editor.
-
 :::tip
 We recommend [**Visual Studio Code**](https://code.visualstudio.com/)!
 :::
+
+## Clone the [`TemplateApp`](https://github.com/farm-ng/amiga-app-template-kivy)
+
+Now that you've created the template, it's time to rename it for
+your app.
+In this tutorial, we'll go with app name: `CameraApp`.
+
+Navigate to `main.py` in your app and open it with a text editor.
 
 There's 3 places to change the templated name:
 
@@ -48,7 +42,7 @@ except asyncio.CancelledError:
 ### Run the app - template
 
 Now sync the app to the Brain and launch it with the
-[**Deploy Instructions**](/docs/brain/brain-apps#develop-and-test-in-the-robot)
+[**Deploy Instructions**](/docs/tutorials/introduction/getting-started-kivy#brain-setup)
 for syncing the app onto the Amiga Brain!
 
 After the requirements install, you should see the template kivy

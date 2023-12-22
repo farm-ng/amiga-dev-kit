@@ -4,12 +4,6 @@ title: 02 - Kivy Definition
 ---
 # Kivy Definition
 
-:::caution deprecation warning
-This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
-This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
-Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
-:::
-
 :::info
 In the [**`src/res/main.kv`**](https://github.com/farm-ng/camera-streamer/blob/main/src/res/main.kv)
 file of the
@@ -28,9 +22,9 @@ for exiting the app
 
 ## Starting with the template
 
-The [**`src/res/main.kv`**](https://github.com/farm-ng/amiga-app-template/blob/main/src/res/main.kv)
+The [**`src/res/main.kv`**](https://github.com/farm-ng/amiga-app-template-kivy/blob/main/src/res/main.kv)
 file of the
-[**amiga-app-template**](https://github.com/farm-ng/amiga-app-template)
+[**amiga-app-template-kivy**](https://github.com/farm-ng/amiga-app-template)
 defines a root of a `RelativeLayout`, with a
 `Button`, and a `Label`,
 as explained in [**kivy app definition**](/docs/tutorials/introduction/template-overview#kivy-app-definition).
@@ -63,14 +57,39 @@ This will allow us to set the correct image stream to the correct
 tab, so the `rgb` image stream is shown on the `rgb` panel and
 the `left` stereo camera stream is displayed on the `left` tab.
 
-In the Python app, we can access a `Widget` directly using the
-widget `id` in two ways:
+```python
+RelativeLayout:
+    TabbedPanel:
+        pos_hint: {"x": 0.0, "top": 1.0}
+        do_default_tab: False
+        TabbedPanelItem:
+            text: "Rgb"
+            Image:
+                id: rgb
+        TabbedPanelItem:
+            text: "Disparity"
+            Image:
+                id: disparity
+        TabbedPanelItem:
+            text: "Left"
+            Image:
+                id: left
+        TabbedPanelItem:
+            text: "Right"
+            Image:
+                id: right
+    Button:
+        id: back_btn_layout
+        pos_hint: {"x": 0.0, "top": 0.925}
+        background_color: 0, 0, 0, 0
+        size_hint: 0.1, 0.1
+        background_normal: "assets/back_button.png"
+        on_release: app.on_exit_btn()
+        Image:
+            source: "assets/back_button_normal.png" if self.parent.state == "normal" else "assets/back_button_down.png"
+            pos: self.parent.pos
+            size: self.parent.size
 
-```Python
-# As a dictionary
-FOO_WIDGET = self.root.ids['FOO_WIDGET_ID']
-# As an attribute
-FOO_WIDGET = self.root.ids.FOO_WIDGET_ID
 ```
 
 - Reference: [**TabbedPanel**](https://kivy.org/doc/stable/api-kivy.uix.tabbedpanel.html)

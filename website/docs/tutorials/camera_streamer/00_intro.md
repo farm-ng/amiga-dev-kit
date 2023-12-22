@@ -31,6 +31,15 @@ The topics covered in this tutorial include:
 - GRPC / asyncio application development
 - Streaming an Oak camera with the camera client
 
+## Tutorial Outline
+
+This tutorial will follow the following structure:
+
+1. Clone and name your custom app repository
+2. Build the kivy image widgets
+3. Subsrcibe to the oak (camera) service
+4. Connect front-end image viewer (kivy) to backend image stream (oak service)
+
 <!--
 ## Block diagram
 
