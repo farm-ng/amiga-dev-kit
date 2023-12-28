@@ -14,10 +14,13 @@ You should open that file for reference as you follow along.
 
 ## Imports
 
-This app is app will be the first real taste of the Amiga SDK. In addition to the imports required to building kivy applications,
-we will now need to import farm-ng libraries to access the oak camera streams.
+This app is app will be the first real taste of the Amiga SDK.
+In addition to the imports required to building kivy applications,
+we will now need to import farm-ng libraries to access the oak
+camera streams.
 
-These imports will make more sense as we continue the tutorial, so don't worry if they don't make sense at first glance.
+These imports will make more sense as we continue the tutorial,
+so don't worry if they don't make sense at first glance.
 
 ```python
 from __future__ import annotations
@@ -82,15 +85,25 @@ class CameraApp(App):
         App.get_running_app().stop()
 ```
 
-The EventServiceConfig is the custom configuration used to specify which specific services your custom application will need to access.
+The EventServiceConfig is the custom configuration used to
+specify which specific services your custom application
+ will need to access.
 
-Variable, STREAM_NAMES is a class level variable or a variable that is constant throughout all instances of a class. Depending on your use case, this might become important later, otherwise, no worries.
+Variable, STREAM_NAMES is a class level variable or a variable
+that is constant throughout all instances of a class. Depending
+on your use case, this might become important later, otherwise,
+ no worries.
 
-def **init**() is responsible for setting the instance variables. Useful in situations where multiple insatnces of a class have different characteristics.
+def **init**() is responsible for setting the instance variables.
+ Useful in situations where multiple insatnces of a class have
+ different characteristics.
 
-def build() is responsible for building the kivy app while def on_exit_btn() is responsible closing our app and taking us back to the home screen.
+def build() is responsible for building the kivy app while def
+ on_exit_btn() is responsible closing our app and taking us
+  back to the home screen.
 
-These functions should feel a little familear after the tic-toc tutorial.
+These functions should feel a little familear after
+ the tic-toc tutorial.
 
 ## App Functions
 
@@ -112,9 +125,13 @@ These functions should feel a little familear after the tic-toc tutorial.
         return await asyncio.gather(run_wrapper(), *self.image_subscription_tasks)
 ```
 
-The block of code, self.image_subscription_tasks: creates 4 asyncio tasks, one for each of the available camera streams.
+The block of code, self.image_subscription_tasks:
+creates 4 asyncio tasks, one for each of the available
+camera streams.
 
-Essentially, each of these tasks will be listening to the oak0 service for messages that are labeled by that stream name.
+Essentially, each of these tasks will be listening to the
+ oak0 service for messages that are labeled by that
+ stream name.
 
 ## Subscribing to Streams
 
@@ -168,15 +185,24 @@ async for _, message in EventClient(self.service_config).subscribe(
 ):
 ```
 
-The EventClient is listening to all of the messages being sent by each of the services on the Amiga.
+The EventClient is listening to all of the messages being sent
+by each of the services on the Amiga.
 
-This class is the "on-ramp" used to access the Amigas communication highway. All the other vehicles on the highway are messages from the other services. The, oaks, canbus, trackfollower, etc... can all be accessed from this EventClient.
+This class is the "on-ramp" used to access the Amigas communication
+highway. All the other vehicles on the highway are messages from the
+other services. The, oaks, canbus, trackfollower, etc... can all be
+accessed from this EventClient.
 
-The service_config will be discuessed in greater detail in the [**Virtual-Joystick**](/docs/tutorials/virtual_joystick/05_further_exercises.md) tutorial. For this tutorial, it will only be the oak camera service.
+The service_config will be discuessed in greater detail in the
+[**Virtual-Joystick**](/docs/tutorials/virtual_joystick/05_further_exercises.md)
+tutorial. For this tutorial, it will only be the oak camera service.
 
-More details on the .subscribe() method can be found here: [**event_client.py**](https://github.com/farm-ng/farm-ng-core/blob/main/py/farm_ng/core/event_client.py)
+More details on the .subscribe() method can be found here:
+[**event_client.py**](https://github.com/farm-ng/farm-ng-core/blob/main/py/farm_ng/core/event_client.py)
 
-SubscribeRequest accepts an uri and a relative frequency (every_n). This is considered a relative frequency because the oak service operates at 10hz while the canbus operates at 50.
+SubscribeRequest accepts an uri and a relative frequency (every_n). This
+is considered a relative frequency because the oak service operates at
+10hz while the canbus operates at 50.
 
 ### Decode and display
 
@@ -222,11 +248,13 @@ def find_config_by_name(
     return None
 ```
 
-Should you only provide the name of the service in the configuration file, this will return a complete configuration for your custom application.
+Should you only provide the name of the service in the configuration
+file, this will return a complete configuration for your custom application.
 
 ## Setting Parameters and main
 
-This example is used to demonstrate how you could specify specific services to subscribe to from the command line.
+This example is used to demonstrate how you could specify
+specific services to subscribe to from the command line.
 
 ```python
 if __name__ == "__main__":
@@ -261,7 +289,8 @@ if __name__ == "__main__":
     loop.close()
 ```
 
-service_config_list is a list of each of the services you've requested for you application, in this case, coming from the command line.
+service_config_list is a list of each of the services you've requested
+for you application, in this case, coming from the command line.
 
 ## Other notes
 
@@ -323,7 +352,8 @@ DISPLAY=:0 ./entry.sh --stream-every-n 2
 :::caution
 If you launch the `Camera Streamer` app with the command line,
 it is currently possible to have touch interactions with the launcher behind.
-This will cause other installed apps to unexpectedly launch over the app you are trying to use.
+This will cause other installed apps to unexpectedly launch over
+the app you are trying to use.
 
 Please see instructions for a workaround under:
 [**FAQ - Brain App Development**](/docs/reference/faq#brain-app-development)

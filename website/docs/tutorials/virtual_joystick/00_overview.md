@@ -5,12 +5,6 @@ title: 00 - Virtual Joystick Overview
 
 # Virtual Joystick Overview
 
-:::caution deprecation warning
-This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
-This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
-Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
-:::
-
 :::tip
 This tutorial builds off of the
 [**Tutorial Introduction**](/docs/tutorials/introduction/tutorial-introduction) and the
@@ -18,33 +12,34 @@ This tutorial builds off of the
 so please check those out if you have not already.
 :::
 
-## [Link to `virtual-joystick`](https://github.com/farm-ng/virtual-joystick-v2)
+## Link to [**`virtual-joystick`**](https://github.com/farm-ng/virtual-joystick-v2)
 
-This example application and tutorial is designed to enable you
-to develop your own custom applications and deploy them to the
-Amiga brain.
-The goal of this tutorial is to take you step-by-step from the
-template repository to the full
-[**`virtual-joystick`**](https://github.com/farm-ng/virtual-joystick) example.
+This tutorial is intended to introduce you to the canbus API. The previous
+tutorial demonstrated accessing the camera streams, and this one is
+intended to teach you to make the Amiga move! This tutorial builds off
+and adjusts the [**`camera-streamer`**](https://github.com/farm-ng/camera-streamer-kivy)
+to develop the [**`virtual-joystick`**](https://github.com/farm-ng/virtual-joystick-v2) example.
 Then you can mirror what you've done here in your own custom app
 development!
 
-On the brain, there are multiple gRPC services running in the
-background, including the oak camera service and the canbus
-service.
-We will teach you how to interact with these two services through
+This tutorial will walk you through how to interact with these two services through
 the camera client and canbus client, respectively.
-We will also show you how to create a basic kivy application, a
-custom kivy widget, and use gRPC and asyncio in that application.
+It will also walk through creating a basic kivy application, and
+custom kivy widget but is primarily focused on developing some familiearity with the farm-ng API.
 
-The topics covered in this tutorial include:
+From the previous tutorials the following should feel familiear:
 
-- Creating kivy applications
-- Custom kivy widgets
-- GRPC / asyncio application development
-- Streaming an Oak camera with the camera client
-- Streaming Amiga state information with the canbus client
-- Auto control mode of Amiga robot with the canbus client
+1. Clone and name your custom app repository
+2. Build the kivy image widgets
+3. Subsrcibe to the oak (camera) service
+4. Connect front-end image viewer (kivy) to backend image stream (oak service)
+
+This tutorial will build on the previous and introduce:
+
+1. Importing custom kivy widgets
+2. Subscribing to the canbus service
+3. Introduce requestReply for sending canbus messages
+4. Configuring the setup.cfg and service_config.json file for your own custom apps
 
 :::info
 We hope that after completing this tutorial, and the
@@ -56,7 +51,7 @@ can help you through it and add it to the tutorial for everyone
 else to benefit from!
 :::
 
-## Block diagram
+<!--- ## Block diagram -->
 
 ```mermaid
   flowchart BT;

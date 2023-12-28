@@ -1,14 +1,8 @@
 ---
 id: virtual-joystick-widget
-title: 03 - Virtual Joystick Widget
+title: 02 - Virtual Joystick Widget
 ---
 # Virtual Joystick Widget
-
-:::caution deprecation warning
-This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
-This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
-Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
-:::
 
 We will now define a custom widget, the `VirtualJoystickWidget`,
 in kivy and Python to give an introduction to kivy drawing.
@@ -21,8 +15,8 @@ The driving behavior is modelled after the behavior of driving
 with the joystick on the pendant.
 
 :::info
-In the [**`libs/virtual_joystick/res/joystick.kv`**](https://github.com/farm-ng/virtual-joystick/blob/main/libs/virtual_joystick/res/joystick.kv)
-and [**`libs/virtual_joystick/joystick.py`**](https://github.com/farm-ng/virtual-joystick/blob/main/libs/virtual_joystick/joystick.py)
+In the [**`joystick.kv`**](https://github.com/farm-ng/virtual-joystick-v2/blob/main/libs/virtual_joystick/res/joystick.kv)
+and [**`joystick.py`**](https://github.com/farm-ng/virtual-joystick-v2/blob/main/libs/virtual_joystick/joystick.py)
 files of the
 [**virtual-joystick**](https://github.com/farm-ng/virtual-joystick)
 app we define the custom widget in kivy and Python.
@@ -128,15 +122,4 @@ and import this into `joystick.py`.
 - Import this widget in [**`src/main.py`**](https://github.com/farm-ng/virtual-joystick/blob/main/src/main.py)
 - Add the `VirtualJoystickWidget` next to the `TabbedPanel` in
 the `BoxLayout` of app's kivy definition in
-[**`src/res/main.kv`**](https://github.com/farm-ng/virtual-joystick/blob/main/src/res/main.kv)
-
-## Run it
-
-Now sync the app to the Brain and launch it.
-
-You should now see the virtual joystick between the camera stream
-(far right) and the `AmigaTpdo1` values from the canbus (left).
-Try moving the joystick around with your finger and releasing it,
-but note: It won't drive yet!
-
-![joystick](https://user-images.githubusercontent.com/53625197/200641720-c722fa9f-f6a3-4918-a4f0-d7270b73fd43.png)
+[**`src/res/main.kv`**](https://github.com/farm-ng/virtual-joystick-v2/blob/main/src/res/main.kv)
