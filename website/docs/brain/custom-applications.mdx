@@ -212,7 +212,43 @@ To visualize the app in your browser, go to http://localhost:8042
 ./uninstall.sh
 ```
 
-### Debugging the App on the Launcher
+## Managing App Ownership and Access
+
+When a custom application is registered, it is associated with a single user account.
+This account is considered the "owner" of the application, and it's the only one that
+can directly view service and app statuses or make changes to the application's code.
+
+### Understanding the Single Owner Model
+The single owner model ensures that only one user has control over the app's critical functions.
+This model helps in maintaining the integrity and security of the application but can pose challenges
+in collaborative environments.
+
+### Switching Users
+In scenarios where multiple users need to debug or modify the app, switching to the owner's user
+account is necessary.
+Here's how you can switch users:
+
+1. Suppose `farm-ng-user-kyle` is the owner who registered the app.
+2. Another user, `farm-ng-user-edgar`, needs to make changes to the app.
+3. Edgar can switch to Kyle's account by running the following command in the terminal:
+    ```bash
+    sudo -su farm-ng-user-kyle
+    ```
+4. This command switches Edgar to Kyle's user account, granting him the necessary control.
+
+### Best Practices for Collaborative Environments
+In collaborative settings, it's essential to have clear communication and understanding of who
+the app owner is and the protocol for making changes.
+Regularly updating documentation and maintaining a log of changes can help keep everyone on the same page.
+
+## Debugging the App on the Launcher
+
+:::warning
+**Single Owner Limitation:** When a custom App is registered via the `manifest.json`,
+it has a "single owner".
+Only the app's owner can view service statuses and modify the code.
+Other users must switch to the owner's account to gain these capabilities.
+:::
 
 #### Viewing Logs and Outputs
 
