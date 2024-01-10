@@ -13,7 +13,7 @@ The first is updating the manifest.json file:
         "TEMPLATE_NAME": {
             "name": "TEMPLATE_NAME",
             "type": "app",
-            "exec_cmd": "/mnt/managed_home/YOUR_USER_HERE/camera-streamer-kivy/entry.sh",
+            "exec_cmd": "/mnt/managed_home/farm-ng-user-YOUR_USER_HERE/camera-streamer-kivy/entry.sh",
             "display_name": "My Custom App",
             "autostart": false
         }
@@ -26,3 +26,5 @@ This name should not have spaces, we recommend using the same name as the reposi
 
 Second, "YOUR_USER_HERE" should be updated to the name of the user who initially installed the application.
 This is the user name from fleet manager.
+
+For example:
