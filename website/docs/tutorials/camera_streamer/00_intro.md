@@ -11,7 +11,7 @@ This tutorial builds off of the
 so please check that out if you have not already.
 :::
 
-This tutorial will walk you through building the [**camera-streamer-kivy**](https://github.com/farm-ng/camera-streamer)
+This tutorial will walk you through building the [**camera-streamer-kivy**](https://github.com/farm-ng/camera-streamer-kivy)
 from the [**amiga-app-template-kivy**](https://github.com/farm-ng/amiga-app-template-kivy).
 
 It is designed to get you

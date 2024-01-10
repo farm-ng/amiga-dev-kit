@@ -83,7 +83,7 @@ and has the following structure:
 ```json
 {
    "services": {
-        "example-app": {
+        "example-app-kivy": {
             "name": "example-app-kivy",
             "type": "app",
             "exec_cmd": "entry.sh",

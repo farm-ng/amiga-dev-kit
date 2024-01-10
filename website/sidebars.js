@@ -270,6 +270,9 @@ const sidebars = {
           "tutorials/virtual_joystick/device-streams",
           "tutorials/virtual_joystick/further-exercises",
       ],
+      "03 - Installing to Brain" : [
+          "tutorials/installation/overview"
+      ],
   },
     "Amiga Brain Development": [
       "brain/brain-apps",
