@@ -16,7 +16,7 @@ In this tutorial, we'll go with app name: `CameraApp`.
 
 Navigate to `main.py` in your app and open it with a text editor.
 
-There's 3 places to change the templated name:
+There are 3 places to change the templated name:
 
 ```Python
 # 1. Rename the class

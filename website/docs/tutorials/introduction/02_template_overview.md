@@ -4,19 +4,103 @@ title: 02 - Template Overview
 ---
 # Template Overview
 
-This section explains all of the Python and kivy code in the
+This section describes the Python and kivy code in the
 [**`amiga-app-template-kivy`**](https://github.com/farm-ng/amiga-app-template-kivy),
-to help understand the base before you add anything custom.
+to help understand the basics before we get into more complicated examples.
 
-:::info
-This corresponds to the state of the `amiga-app-template-kivy` in December, 2023.
-Some details of the implementation may have changed slightly by
-the time you are reading.
+:::tip
+Throughout this tutorial we'll explain the kivy app created in
+this example, but this is not intended as a thorough introduction
+to using kivy. Try the [**kivy tutorials**](https://kivy.org/doc/stable/tutorials-index.html)
+and use the [**kivy API**](https://kivy.org/doc/stable/api-index.html)
+for more information on creating custom applications with kivy.
 :::
 
-Documentation for developing a front end in ReactJS can be found here: [**`ReactJS Tutorial`**](/docs/brain/custom-applications.mdx)
+For understanding this turotial, there are two main files that we will be looking at,
+[**res/main.kv**](https://github.com/farm-ng/amiga-app-template-kivy/tree/main/src/res) and
+[**main.py**](https://github.com/farm-ng/amiga-app-template-kivy/tree/main/src). main.kv includes
+the kivy language definition of our user interface and main.py includes the executable python logic
+of the application.
 
-## Imports
+## Kivy
+
+[**res/main.kv**](https://github.com/farm-ng/amiga-app-template-kivy/tree/main/src/res)
+is where we define our kivy string. There is one component of this application,
+the RelativeLayout that contains two elements, a Button and a Label. The back button
+is critical to the functionality of these templates as they are used to return to the app
+screen, the label is a textbox that we will update from main.py.
+
+```Python
+RelativeLayout:
+    Button:
+        id: back_btn_layout
+        pos_hint: {"x": 0.0, "top": 1.0}
+        background_color: 0, 0, 0, 0
+        size_hint: 0.1, 0.1
+        background_normal: "assets/back_button.png"
+        on_release: app.on_exit_btn()
+        Image:
+            source: "assets/back_button_normal.png" if self.
+            parent.state == "normal" else "assets/
+            back_button_down.png"
+            pos: self.parent.pos
+            size: self.parent.size
+    Label:
+        id: counter_label
+        text: "Tic: 0"
+        font_size: 40
+```
+
+Next we define our application in the Kv language.
+This definition can be a `"""` string at the top of a `.py` file
+or can be defined in a separate `.kv` file.
+Either can be imported by the
+[**kivy Builder**](https://kivy.org/doc/stable/api-kivy.lang.builder.html).
+Here we use a separate .kv file
+[**`res/main.py`**](https://github.com/farm-ng/amiga-app-template/blob/main/src/res/main.kv).
+
+### RelativeLayout
+
+Two key components of kivy are
+[**`Layouts`**](https://kivy.org/doc/stable/gettingstarted/layouts.html#) and
+[**`Widgets`**](https://kivy.org/doc/stable/api-kivy.uix.html).
+The root of our template app is a `RelativeLayout`, which
+contains a `Button` and a `Label` widget.
+The `RelativeLayout` allows us to position the
+[**Back button**](#back-button) (and any widgets or nested
+layouts we may add in the future) in relative coordinates.
+
+- Reference: [**Relative Layout**](https://kivy.org/doc/stable/api-kivy.uix.relativelayout.html)
+
+### Back button
+
+This `Button` is used to exit the app when it is pressed, by
+calling the [**`TemplateApp.on_exit_btn()`**](#on_exit_button)
+method.
+
+:::info
+To be precise it's actually when the button is released due to
+using the `on_release:` keyword.
+:::
+
+Since the `TemplateApp` inherits from the kivy `App` class,
+methods and variables of the `TemplateApp` can be linked with the
+`app.foo_variable` or `app.bar_method()`. In this example, the Button is
+linked to `on_exit_btn()` method to exit the application.
+We define the `Button` with two images, one that shows most of
+the time, and another that shows while the button is pressed down.
+You can also define a button with a string, if you want to
+quickly add buttons without finding an icon.
+
+:::tip
+[**Material Icons**](https://github.com/google/material-design-icons)
+is a nice place to find symbols to use for app buttons / UI
+features.
+:::
+
+- Reference: [**Button**](https://kivy.org/doc/stable/api-kivy.uix.button.html)
+
+## Python
 
 ```Python
 # Copyright (c) farm-ng, inc. Amiga Development Kit License,
@@ -65,88 +149,7 @@ Finally we import the remaining kivy modules with the
 `# noqa: E402` flag, so any `pre-commit` formatters don't move
 these imports above the kivy configuration setting.
 
-## kivy app definition
-
-Contents of `res/main.kv`
-
-```Python
-RelativeLayout:
-    Button:
-        id: back_btn_layout
-        pos_hint: {"x": 0.0, "top": 1.0}
-        background_color: 0, 0, 0, 0
-        size_hint: 0.1, 0.1
-        background_normal: "assets/back_button.png"
-        on_release: app.on_exit_btn()
-        Image:
-            source: "assets/back_button_normal.png" if self.
-            parent.state == "normal" else "assets/
-            back_button_down.png"
-            pos: self.parent.pos
-            size: self.parent.size
-    Label:
-        id: counter_label
-        text: "Tic: 0"
-        font_size: 40
-```
-
-Next we define our application in the Kv language.
-This definition can be a `"""` string at the top of a `.py` file
-or can be defined in a separate `.kv` file.
-Either can be imported by the
-[**kivy Builder**](https://kivy.org/doc/stable/api-kivy.lang.builder.html).
-Here we use a separate .kv file
-[**`res/main.py`**](https://github.com/farm-ng/amiga-app-template/blob/main/src/res/main.kv).
-
-:::tip
-Throughout this tutorial we'll explain the kivy app created in
-this example, but this is not intended as a thorough introduction
-to using kivy. Try the [**kivy tutorials**](https://kivy.org/doc/stable/tutorials-index.html)
-and use the [**kivy API**](https://kivy.org/doc/stable/api-index.html)
-for more information on creating custom applications with kivy.
-:::
-
-### RelativeLayout
-
-Two key components of kivy are
-[**`Layouts`**](https://kivy.org/doc/stable/gettingstarted/layouts.html#) and
-[**`Widgets`**](https://kivy.org/doc/stable/api-kivy.uix.html).
-The root of our template app is a `RelativeLayout`, which
-contains a `Button` and a `Label` widget.
-The `RelativeLayout` allows us to position the
-[**Back button**](#back-button) (and any widgets or nested
-layouts we may add in the future) in relative coordinates.
-
-- Reference: [**Relative Layout**](https://kivy.org/doc/stable/api-kivy.uix.relativelayout.html)
-
-### Back button
-
-This `Button` is used to exit the app when it is pressed, by
-calling the [**`TemplateApp.on_exit_btn()`**](#on_exit_button)
-method.
-
-:::info
-To be precise it's actually when the button is released due to
-using the `on_release:` keyword.
-:::
-
-Since the `TemplateApp` inherits from the kivy `App` class,
-methods and variables of the `TemplateApp` can be linked with the
-`app.foo_variable` or `app.bar_method()`
-We define the `Button` with two images, one that shows most of
-the time, and another that shows while the button is pressed down.
-You can also define a button with a string, if you want to
-quickly add buttons without finding an icon.
-
-:::tip
-[**Material Icons**](https://github.com/google/material-design-icons)
-is a nice place to find symbols to use for app buttons / UI
-features.
-:::
-
-- Reference: [**Button**](https://kivy.org/doc/stable/api-kivy.uix.button.html)
-
-## TemplateApp
+## TemplateApp Class
 
 ```Python
 class TemplateApp(App):
@@ -167,23 +170,15 @@ add to it.
 All we add here is a placeholder for the `TemplateApp` class
 methods that will each be added as an `asyncio.Task`.
 
-### build
+### Building Kivy Frontend
 
 ```Python
 def build(self):
     return Builder.load_file("res/main.kv")
-
 ```
 
 `build` is a default kivy `App` method that we must overwrite
 with our app's details.
-
-To load the `.kv` definition of our app, we use the built-in
-method:
-
-```Python
-Builder.load_file(KV_FILE)
-```
 
 ### on_exit_button
 
@@ -283,8 +278,10 @@ if __name__ == "__main__":
 ```
 
 Finally we run the app!
-There is infrastructure in place for defining command line args,
+This is infrastructure in place for defining command line args,
 which you'll likely want in your apps so you don't have to hard
-code configurations.
-The last six lines are a useful pattern for cleanly running your
-app with `asyncio`.
+code configurations, we will get into some alternatives in the
+next templates.
+
+To run the app, either run .```/install.sh``` with the updated manifest.json, or run it locally using
+```DISPLAY=:0 ./entry.sh``` from your app directory.

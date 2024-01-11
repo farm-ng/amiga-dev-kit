@@ -2,23 +2,23 @@
 id: kivy-definition
 title: 02 - Kivy Definition
 ---
-# Kivy Definition
+# Kivy
 
-:::info
-In the [**`src/res/main.kv`**](https://github.com/farm-ng/camera-streamer/blob/main/src/res/main.kv)
-file of the
-[**camera-streamer**](https://github.com/farm-ng/camera-streamer)
-app we define the kivy app.
-You should open that file for reference as you follow along.
-:::
+In this tutorial, we will be adding a few new elements to our app, a Tabbed Panel and Images
+to make an app that looks like this:
+![camera-streamer](https://user-images.githubusercontent.com/53625197/216075393-6e578a01-677e-4279-b224-70fd3f73ce5f.png)
 
-Our app will have two components:
+This app is constructed using four tabbed panels to represent
+each of the available streams from the oak camera.
+These are rgb (color image), disparity (depth), and left and right streams.
 
-1. A [**`TabbedPanel`**](https://kivy.org/doc/stable/api-kivy.uix.tabbedpanel.html) of
-[**`Image`**](https://kivy.org/doc/stable/api-kivy.uix.image.html)
+1. [**`TabbedPanel`**](https://kivy.org/doc/stable/api-kivy.uix.tabbedpanel.html)
+for selecting camera stream
+2. [**`Image`**](https://kivy.org/doc/stable/api-kivy.uix.image.html)
 widgets for displaying the camera streams
-2. A [**`Button`**](https://kivy.org/doc/stable/api-kivy.uix.button.html)
-for exiting the app
+
+And we will continue using a [**`Button`**](https://kivy.org/doc/stable/api-kivy.uix.button.html)
+for exiting the app.
 
 ## Starting with the template
 
@@ -62,20 +62,28 @@ RelativeLayout:
     TabbedPanel:
         pos_hint: {"x": 0.0, "top": 1.0}
         do_default_tab: False
+RelativeLayout:
+    TabbedPanel:
+        pos_hint: {"x": 0.0, "top": 1.0}
+        do_default_tab: False
         TabbedPanelItem:
             text: "Rgb"
+            on_press: app.update_view('rgb')
             Image:
                 id: rgb
         TabbedPanelItem:
             text: "Disparity"
+            on_press: app.update_view('disparity')
             Image:
                 id: disparity
         TabbedPanelItem:
             text: "Left"
+            on_press: app.update_view('left')
             Image:
                 id: left
         TabbedPanelItem:
             text: "Right"
+            on_press: app.update_view('right')
             Image:
                 id: right
     Button:
@@ -86,11 +94,16 @@ RelativeLayout:
         background_normal: "assets/back_button.png"
         on_release: app.on_exit_btn()
         Image:
-            source: "assets/back_button_normal.png" if self.parent.state == "normal" else "assets/back_button_down.png"
+            source: "assets/back_button_normal.png" if
+                self.parent.state == "normal" else "assets/back_button_down.png"
             pos: self.parent.pos
             size: self.parent.size
 
 ```
 
-- Reference: [**TabbedPanel**](https://kivy.org/doc/stable/api-kivy.uix.tabbedpanel.html)
-- Reference: [**Image**](https://kivy.org/doc/stable/api-kivy.uix.image.html)
+`app.update_view()` method is used to update a class
+level variable which stores which tab is currently being viewed.
+There are alternatives using kivy variables, however, this method is reliable.
+
+Next, we will get into [main.py](https://github.com/farm-ng/camera-streamer-kivy/tree/main/src)
+and break down how to send images from the oak service to be visualized on the brain.

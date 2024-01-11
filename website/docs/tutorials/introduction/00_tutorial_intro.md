@@ -5,9 +5,8 @@ title: 00 - Introduction
 # Kivy Tutorial Introduction
 
 This is a three part tutorial designed to walk you throuhg the process of
- devleoping your custom application on the brain. We support two main user
- interface development environments, ReactJS and Kivy. This tutorial will
- walk you through building a UI in kivy and connecting the Kivy front-end to the farm-ng backend.
+ devleoping your custom kivy application on the brain. We support two main user
+ interface development environments, ReactJS and Kivy.
 
 Part 1 will walk you through cloneing a template repository onto the
 brain. [**Amiga-app-template-kivy**](https://github.com/farm-ng/amiga-app-template-kivy/tree/main)
@@ -40,12 +39,6 @@ as well as a few publicly available libraries developed by the **farm-ng** team:
 2. [**asyncio**](https://docs.python.org/3/library/asyncio.html)
 3. [**kivy**](https://kivy.org/)
 4. [**farm-ng libraries**](#farm-ng-libraries)
-
-:::info
-Currently we are only supporting Python app development, but our
-infrastructure allows for C++ app development support in the near
-future.
-:::
 
 ## gRPC
 
