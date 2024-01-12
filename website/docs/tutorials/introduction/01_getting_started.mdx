@@ -92,16 +92,32 @@ repository-name/  # Root level of the project.
 The following commands will compile on the brain from an un-modified clone or template of this repository.
 If there are problems with running these scripts, please try to clone the repository once again.
 
-### Run from the command line
+### Update manifest.json
 
-Open a terminal and navigate to the directory where you cloned the [**amiga-app-template-kivy**](https://github.com/farm-ng/amiga-app-template-kivy) repository.
+This step is required in order to have your custom application appear on the app screen.
+The file stores the path to your code base to direct the brain when your app icon is selected.
 
-```bash
-cd <to-your-app-directory>
-DISPLAY=:0 ./entry.sh  # install and run
+There are two edits to be made to the file, both are in CAPS. TEMPLATE_NAME and YOUR_USER_HERE
+
+```json
+{
+    "services": {
+        "TEMPLATE_NAME": {
+            "name": "TEMPLATE_NAME",
+            "type": "app",
+            "exec_cmd": "/mnt/managed_home/farm-ng-user-YOUR_USER_HERE/camera-streamer-kivy/entry.sh",
+            "display_name": "My Custom App",
+            "autostart": false
+        }
+    }
+}
 ```
 
-If all goes well, you'll see an dummy Kivy application on your brain screen.
+Begin by updating both instances of TEMPLATE_NAME to a unique name.
+This name should not have spaces, we recommend using the same name as the repository name.
+
+Second, "YOUR_USER_HERE" should be updated to the name of the user who initially installed the application.
+This is the user name from fleet manager.
 
 ### Add custom app to brain screen
 
@@ -115,3 +131,20 @@ cd <to-your-app-directory>
 You should now see your app on the brain screen. Click on it to launch it.
 
 ![Screenshot from 2023-12-01 17-43-59](https://github.com/farm-ng/amiga-dev-kit/assets/5157099/aac51d8a-ec34-4b85-9e73-f151c008e64c)
+
+
+### Run from the command line
+
+Alternatively, while developing, you can run your app from the terminal.
+
+To do this, open a terminal and navigate to the directory where you cloned the
+[**amiga-app-template-kivy**](https://github.com/farm-ng/amiga-app-template-kivy) repository.
+
+```bash
+cd <to-your-app-directory>DISPLAY=:0 ./entry.sh  # install and run
+```
+and run:
+
+```bash
+DISPLAY=:0 ./entry.sh  # to run
+```
