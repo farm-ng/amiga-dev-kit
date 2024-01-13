@@ -5,7 +5,7 @@ title: Dashboard User Guide
 :::caution
 This is subject for change with new updates to the Dashboard.
 The user guide represents Dashboard Firmware release `v0.1.9`.
-The latest version is Dashboard Firmware release `v0.3.0`.
+The latest version is Dashboard Firmware release `v0.4.0`.
 :::
 ![DSCF6570-2-16x9-aspect-reduced](https://user-images.githubusercontent.com/11846963/186734463-aa149b3a-7510-4d5a-99ea-f9a8a96775d2.jpg)
 
