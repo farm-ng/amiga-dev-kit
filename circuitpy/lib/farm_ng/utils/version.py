@@ -20,13 +20,16 @@
 """
 from os import uname as os_uname
 
+# 0.4.0 == Jan 12, 2024
+
 MAJOR = 0
-MINOR = 0
-PATCH = 4
+MINOR = 4
+PATCH = 0
 DEV = False
 
 
 def asserts():
+    """Enforces version."""
     assert isinstance(MAJOR, int) and MAJOR >= 0 and MAJOR <= 255
     assert isinstance(MINOR, int) and MINOR >= 0 and MINOR <= 255
     assert isinstance(PATCH, int) and PATCH >= 0 and PATCH <= 255
@@ -60,7 +63,7 @@ class BoardType:
 def get_board_type():
     """Return the Board type based on the operating system."""
     uname = os_uname()
-    print(uname)
+    print('get_board_type()', uname.machine)
     if "Amiga_DispV0" in uname.machine:
         return BoardType.AMIGA_DISPV0
     if "Adafruit Feather M4 CAN" in uname.machine:
