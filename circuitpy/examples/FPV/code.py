@@ -15,7 +15,7 @@ import board
 import busio
 import canio
 from farm_ng.utils.cobid import CanOpenObject
-from farm_ng.utils.general import Axis
+from farm_ng.utils.io import Axis
 from farm_ng.utils.main_loop import MainLoop
 from farm_ng.utils.packet import AmigaControlState
 from farm_ng.utils.packet import AmigaRpdo1

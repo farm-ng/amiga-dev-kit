@@ -17,11 +17,11 @@ from os import listdir
 from os import mkdir
 from os import remove
 from os import rmdir
-from os import sep as os_sep
 from os import stat
 
-from microcontroller import reset
-from supervisor import reload
+import microcontroller
+
+os_sep = '/'
 
 
 def path_dirname(p: str):
@@ -92,6 +92,7 @@ def remove_all(name):
     try:
         dir_list = listdir(name)
     except OSError as e:
+        dir_list = []
         if e.errno == ENOENT:
             pass
         else:
@@ -112,41 +113,72 @@ def remove_all(name):
         print(f"rmdir {name} e: {e}")
 
 
-def clip(x, min_value, max_value):
+def clip(x, min_value=0, max_value=1):
     """Return value, within bounds [min,max]"""
     return max(min(x, max_value), min_value)
 
 
-def rescale(x, x0, x1, y0, y1):
+def rescale01(x: float, x0: float, x1: float):
+    """Rescale x from (x0, x1) to (0, 1), with clipping."""
+    return clip((x - x0) / (x1 - x0))
+
+
+def rescale(x: float, x0: float, x1: float, y0: float, y1: float):
     """Rescale x from (x0, x1) to (y0, y1), with clipping."""
-    t = clip((x - x0) / (x1 - x0), 0, 1)
-    return y0 + (y1 - y0) * t
+    return y0 + (y1 - y0) * rescale01(x, x0, x1)
 
 
-def trigger_soft_reset():
-    """Equivalent of CTRL+D."""
-    reload()
+def avg(iterable):
+    """Returns the average of a list or tuple.
 
-
-def trigger_hard_reset():
-    """Equivalent of power cycle / reset button."""
-    reset()
-
-
-class Axis:
-    """Used for mapping joysticks."""
-
-    def __init__(self, min, dz_neg, dz_pos, max):
-        """min, -deadzone, +deadzone, max."""
-        self.v0 = min
-        self.v1 = dz_neg
-        self.v2 = dz_pos
-        self.v3 = max
-
-    def map(self, v):
-        """returns value mapped to range [-1, +1]"""
-        if v < self.v1:
-            return -1 + (v - self.v0) / (self.v1 - self.v0)
-        elif v > self.v2:
-            return (v - self.v2) / (self.v3 - self.v2)
+    Returns 0 if empty.
+    """
+    assert isinstance(iterable, list) or isinstance(iterable, tuple)
+    if len(iterable) == 0:
         return 0
+    return sum(iterable) / len(iterable)
+
+
+def avg_min_max(iterable):
+    """Returns a tuple with the (average, min, max) of a list or tuple.
+
+    Returns (0, 0, 0) if empty.
+    """
+    assert isinstance(iterable, list) or isinstance(iterable, tuple)
+    if len(iterable) == 0:
+        return (0, 0, 0)
+    return (sum(iterable) / len(iterable), min(iterable), max(iterable))
+
+
+def mount_circuitpy():
+    import os
+    import storage
+
+    try:
+        storage.remount("/", False)
+    except OSError:
+        print('Cannot remount /')
+    if 'boot.py' in os.listdir():
+        os.rename('boot.py', '_boot.py')
+    microcontroller.reset()
+
+
+def reset_to_bootloader():
+    microcontroller.on_next_reset(microcontroller.RunMode.BOOTLOADER)
+    microcontroller.reset()
+
+
+def current_write_state() -> bool:
+    """Returns True if the microcontroller is currently booted into a writeable state.
+
+    Returns False otherwise.
+    """
+    try:
+        with open("foobarbaz", "w"):
+            pass
+        from os import remove
+
+        remove("foobarbaz")
+        return True
+    except OSError:
+        return False
