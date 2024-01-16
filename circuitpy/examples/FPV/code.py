@@ -16,12 +16,12 @@ import busio
 import canio
 from farm_ng.utils.cobid import CanOpenObject
 from farm_ng.utils.general import Axis
-from farm_ng.utils.general import TickRepeater
 from farm_ng.utils.main_loop import MainLoop
 from farm_ng.utils.packet import AmigaControlState
 from farm_ng.utils.packet import AmigaRpdo1
 from farm_ng.utils.packet import AmigaTpdo1
 from farm_ng.utils.packet import DASHBOARD_NODE_ID
+from farm_ng.utils.ticks import TickRepeater
 
 
 def parse_packet(packet):

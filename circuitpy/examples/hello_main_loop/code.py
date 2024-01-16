@@ -13,12 +13,12 @@
 # limitations under the License.
 from canio import Message
 from farm_ng.utils.cobid import CanOpenObject
-from farm_ng.utils.general import TickRepeater
 from farm_ng.utils.main_loop import MainLoop
 from farm_ng.utils.packet import AmigaControlState
 from farm_ng.utils.packet import AmigaRpdo1
 from farm_ng.utils.packet import AmigaTpdo1
 from farm_ng.utils.packet import DASHBOARD_NODE_ID
+from farm_ng.utils.ticks import TickRepeater
 from usb_cdc import console
 
 

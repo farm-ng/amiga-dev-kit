@@ -11,8 +11,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-from farm_ng.utils.general import TickRepeater
 from farm_ng.utils.main_loop import MainLoop
+from farm_ng.utils.ticks import TickRepeater
 
 
 class CansnifferApp:

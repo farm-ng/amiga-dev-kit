@@ -12,15 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 from farm_ng.utils.cobid import CanOpenObject
-from farm_ng.utils.general import TickRepeater
-from farm_ng.utils.general import ticks_fresh
 from farm_ng.utils.main_loop import MainLoop
 from farm_ng.utils.packet import AmigaControlState
 from farm_ng.utils.packet import AmigaTpdo1
 from farm_ng.utils.packet import DASHBOARD_NODE_ID
 from farm_ng.utils.packet import EstopReply
 from farm_ng.utils.packet import EstopRequest
-from supervisor import ticks_ms
+from farm_ng.utils.ticks import TickRepeater
+from farm_ng.utils.ticks import ticks_fresh
+from farm_ng.utils.ticks import ticks_ms
 from usb_cdc import console
 
 # This was just created as a convenience for developing the safety device concept

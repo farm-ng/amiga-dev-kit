@@ -21,10 +21,10 @@ import board
 import digitalio
 from canio import Message
 from farm_ng.utils.cobid import CanOpenObject
-from farm_ng.utils.general import TickRepeater
 from farm_ng.utils.main_loop import MainLoop
 from farm_ng.utils.packet import BumperState
 from farm_ng.utils.packet import EstopReply
+from farm_ng.utils.ticks import TickRepeater
 
 # from farm_ng.utils.packet import EstopRequest
 
