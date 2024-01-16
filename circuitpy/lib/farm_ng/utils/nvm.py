@@ -18,7 +18,8 @@ from struct import pack
 from struct import unpack
 
 from microcontroller import nvm as mc_nvm
-from supervisor import ticks_ms
+
+from .ticks import ticks_ms
 
 
 class ValueStore:
