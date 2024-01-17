@@ -284,12 +284,32 @@ class AmigaTpdo1(Packet):
 
 
 class AmigaPdo2(Packet):
-    """Contains a request or reply of RPM for each in individual motor (0xA - 0xD).
+    """### AmigaPdo2
 
-    Identical packet for RPDO (request) & TPDO (reply (measured)).
-    Should be used in conjunction with AmigaRpdo1 / AmigaTpdo1 for auto control.
+    Contains a request or reply of RPM for each in individual motor (0xA - 0xD).
 
-    Introduced in fw version v0.2.0
+    Identical packet for RPDO (request) & TPDO (reply/measured).
+    Should be used in conjunction with `AmigaRpdo1` / `AmigaTpdo1` for auto control.
+
+    Introduced in fw version v0.2.0.
+
+    #### Usage
+    To send individual motor rpm commands:
+    - Send an `AmigaRpdo1` with:
+        - `state_req` = `STATE_AUTO_ACTIVE`
+        - `cmd_speed` = 0.0
+        - `cmd_ang_rate` = 0.0
+    - Send an `AmigaPdo2` on `cob_id_req` with:
+        - `a_rpm`, `b_rpm`, `c_rpm`, `d_rpm` = desired rpm for each motor
+
+    **Warning**: If you send any `cmd_speed` or `cmd_ang_rate` in your `AmigaRpdo1`
+    while sending individual motor rpm commands, the Amiga may go into an error state.
+
+    To switch back to `AmigaRpdo1` only control, stop sending `AmigaPdo2` messages and wait ~1 second.
+
+    #### Tip
+    RPM is signed based on the direction of your motors.
+    Check your dashboard to see which direction each of your motors spin for forward/reverse motion.
     """
 
     cob_id_req = 0x300  # RPDO2
