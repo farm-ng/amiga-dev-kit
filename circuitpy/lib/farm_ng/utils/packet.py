@@ -1,31 +1,30 @@
+# Copyright (c) farm-ng, inc.
+#
+# Licensed under the Amiga Development Kit License (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://github.com/farm-ng/amiga-dev-kit/blob/main/LICENSE
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 # Python imports
 from struct import pack
 from struct import unpack
 
 from canio import Message
-from supervisor import ticks_ms
 
-from .general import clip
-from .general import ticks_diff
+from .ticks import ticks_ms
 
 
+# Constants for node IDs
 DASHBOARD_NODE_ID = 0xE
 PENDANT_NODE_ID = 0xF
 BRAIN_NODE_ID = 0x1F
 SDK_NODE_ID = 0x2A
-
-
-class ReqRepIds:
-    NA = 0
-    SUPERVISOR = 1
-
-
-class SupervisorReqRepIds:
-    NOP = 0
-    DISABLE_USB = 1
-    ENABLE_USB_DRIVE = 2
-    REGISTER_SAFETY_DEVICE = 3
-    # DISABLE_SAFETY_DEVICE = 4
 
 
 class PendantButtons:
@@ -42,7 +41,7 @@ class PendantButtons:
 
 
 class AmigaControlState:
-    """State of the Amiga vehicle control unit (VCU)"""
+    """State of the Amiga vehicle control unit (VCU)."""
 
     STATE_BOOT = 0
     STATE_MANUAL_READY = 1
@@ -60,6 +59,31 @@ class NodeState:
     STOPPED = 0x04  # Stopped
     OPERATIONAL = 0x05  # Operational
     PRE_OPERATIONAL = 0x7F  # Pre-Operational
+
+
+class ActuatorCommands:
+    """Defines commands for actuators."""
+
+    passive = 0x0
+    forward = 0x1
+    stopped = 0x2
+    reverse = 0x3
+
+
+def actuator_bits_cmd(
+    a0=ActuatorCommands.passive, a1=ActuatorCommands.passive, a2=ActuatorCommands.passive, a3=ActuatorCommands.passive
+):
+    """Performs bit shifting to return a single byte representing command of 4 actuators."""
+    return a0 + (a1 << 2) + (a2 << 4) + (a3 << 6)
+
+
+def actuator_bits_read(bits):
+    """Reads and returns individual actuator states from a bit pattern."""
+    a0 = bits & 0x3
+    a1 = (bits >> 2) & 0x3
+    a2 = (bits >> 4) & 0x3
+    a3 = (bits >> 6) & 0x3
+    return (a0, a1, a2, a3)
 
 
 class Packet:
@@ -83,7 +107,21 @@ class Packet:
 
     def age(self):
         """Age of the most recent message."""
-        return ticks_diff(ticks_ms(), self.ticks_ms)
+        return ticks_ms() - self.ticks_ms
+
+    def encode(self):
+        """Encodes the packet data for transmission.
+
+        Must be implemented by subclasses.
+        """
+        raise NotImplementedError
+
+    def decode(self, data):
+        """Decodes the packet data from transmission.
+
+        Must be implemented by subclasses.
+        """
+        raise NotImplementedError
 
 
 class PendantState(Packet):
@@ -102,6 +140,7 @@ class PendantState(Packet):
 
     def decode(self, data):
         """Decodes CAN message data and populates the values of the class."""
+
         (xi, yi, self.buttons) = unpack(self.format, data)
         self.x = xi / 32767
         self.y = yi / 32767
@@ -244,62 +283,87 @@ class AmigaTpdo1(Packet):
         ) + " PTO bits 0x{:x} h-bridge bits 0x{:x}".format(self.pto_bits, self.hbridge_bits)
 
 
-class SupervisorReq(Packet):
-    """Supervisor request."""
+class AmigaPdo2(Packet):
+    """### AmigaPdo2
 
-    cob_id = 0x600  # SDO command
+    Contains a request or reply of RPM for each in individual motor (0xA - 0xD).
 
-    format = "<BB6s"
+    Identical packet for RPDO (request) & TPDO (reply/measured).
+    Should be used in conjunction with `AmigaRpdo1` / `AmigaTpdo1` for auto control.
 
-    def __init__(self, id=SupervisorReqRepIds.NOP, payload=bytes(6)) -> None:
-        self.id = id
-        self.payload = payload
+    Introduced in fw version v0.2.0.
+
+    #### Usage
+    To send individual motor rpm commands:
+    - Send an `AmigaRpdo1` with:
+        - `state_req` = `STATE_AUTO_ACTIVE`
+        - `cmd_speed` = 0.0
+        - `cmd_ang_rate` = 0.0
+    - Send an `AmigaPdo2` on `cob_id_req` with:
+        - `a_rpm`, `b_rpm`, `c_rpm`, `d_rpm` = desired rpm for each motor
+
+    **Warning**: If you send any `cmd_speed` or `cmd_ang_rate` in your `AmigaRpdo1`
+    while sending individual motor rpm commands, the Amiga may go into an error state.
+
+    To switch back to `AmigaRpdo1` only control, stop sending `AmigaPdo2` messages and wait ~1 second.
+
+    #### Tip
+    RPM is signed based on the direction of your motors.
+    Check your dashboard to see which direction each of your motors spin for forward/reverse motion.
+    """
+
+    cob_id_req = 0x300  # RPDO2
+    cob_id_rep = 0x280  # TPDO2
+
+    def __init__(self, a_rpm: int = 0, b_rpm: int = 0, c_rpm: int = 0, d_rpm: int = 0):
+        self.format = "<4h"
+        self.a_rpm: int = a_rpm
+        self.b_rpm: int = b_rpm
+        self.c_rpm: int = c_rpm
+        self.d_rpm: int = d_rpm
+        self.stamp()
 
     def encode(self):
         """Returns the data contained by the class encoded as CAN message data."""
-        return pack(self.format, ReqRepIds.SUPERVISOR, self.id, self.payload)
+        return pack(self.format, self.a_rpm, self.b_rpm, self.c_rpm, self.d_rpm)
 
     def decode(self, data):
         """Decodes CAN message data and populates the values of the class."""
-        (id, self.id, self.payload) = unpack(self.format, data)
-        assert id == ReqRepIds.SUPERVISOR
-
-    @classmethod
-    def make_message(cls, node_id, id, payload=bytes(6)):
-        return Message(id=(cls.cob_id | node_id), data=SupervisorReq(id=id, payload=payload).encode())
+        (self.a_rpm, self.b_rpm, self.c_rpm, self.d_rpm) = unpack(self.format, data)
 
     def __str__(self):
-        return "superviser req {} payload {}".format(self.id, self.payload)
+        return "AMIGA PDO2 Motor RPMs | A {} B {} C {} D {}".format(self.a_rpm, self.b_rpm, self.c_rpm, self.d_rpm)
 
 
-class SupervisorRep(Packet):
-    """Supervisor response."""
+class FarmngHeartbeat(Packet):
+    """Custom Heartbeat message = status sent regularly by farm-ng components"""
 
-    cob_id = 0x580  # SDO reply
-    format = "<BB6s"
+    format = "<BI3s"
+    cob_id = 0x700
 
-    def __init__(self, id=SupervisorReqRepIds.NOP, payload=bytes(6)) -> None:
-        self.id = id
-        self.payload = payload
+    def __init__(self, node_state: int = 0, ticks_ms: int = 0, serial_number=bytes()):
+        self.node_state = node_state
+        self.ticks_ms = ticks_ms
+        # assert len(data) <= 5
+        self.serial_number = serial_number
 
     def encode(self):
         """Returns the data contained by the class encoded as CAN message data."""
-        return pack(self.format, ReqRepIds.SUPERVISOR, self.id, self.payload)
+        return pack(self.format, self.node_state, self.ticks_ms, self.serial_number[:3])
 
     def decode(self, data):
         """Decodes CAN message data and populates the values of the class."""
-        (id, self.id, self.payload) = unpack(self.format, data)
-        assert id == ReqRepIds.SUPERVISOR
+        (self.node_state, self.ticks_ms, self.serial_number) = unpack(self.format, data)
 
     def __str__(self):
-        return "supervisor rep  id {} payload {} ".format(self.id, self.payload)
+        return f"node_state: {self.node_state} ticks_ms: {self.ticks_ms} serial_number: {self.serial_number}"
 
 
 class EstopRequest(Packet):
     """An 8 byte packet that requests an e-stop.
 
-    We only care about the first byte and throw the rest away (for now). The other bytes can be used as a message state
-    unique to the device requesting the e-stop.
+    We only care about the first byte and ignore the rest for now. The other bytes can be used as a message state unique
+    to the device requesting the e-stop.
     """
 
     cob_id = 0x180  # TPDO1
@@ -320,6 +384,7 @@ class EstopRequest(Packet):
 
     @classmethod
     def make_message(cls, node_id, request_estop):
+        """Returns a CAN message with the e-stop request encoded."""
         return Message(id=(cls.cob_id | node_id), data=EstopRequest(request_estop=request_estop).encode())
 
     def __str__(self):
@@ -329,7 +394,7 @@ class EstopRequest(Packet):
 class EstopReply(Packet):
     """An 8 byte packet that responds with registered e-stop devices.
 
-    We only care about the first 4 bytes and throw the rest away (for now).
+    We only care about the first 4 bytes and ignore the rest for now.
     """
 
     cob_id = 0x200  # RPDO1
@@ -347,13 +412,6 @@ class EstopReply(Packet):
     def decode(self, data):
         """Decodes CAN message data and populates the values of the class."""
         self.registered_devices, self.estop_devices = unpack(self.format, data)
-
-    @classmethod
-    def make_message(cls, node_id, registered_devices, estop_devices):
-        return Message(
-            id=(cls.cob_id | node_id),
-            data=EstopReply(registered_devices=registered_devices, estop_devices=estop_devices).encode(),
-        )
 
     def __str__(self):
         # TODO: Parse the bit masking
@@ -401,236 +459,3 @@ class BumperState(Packet):
         return "pins on adafuit D10: {}, D11: {}, D12: {}, D13:{}".format(
             bool(self.buttons & 0x1), bool(self.buttons & 0x2), bool(self.buttons & 0x4), bool(self.buttons & 0x8)
         )
-
-
-class FirmwareVersion(Packet):
-    """Firmware version running on device."""
-
-    def __init__(self, version_tuple):
-        assert len(version_tuple) == 4
-        self.major = version_tuple[0]
-        self.minor = version_tuple[1]
-        self.patch = version_tuple[2]
-        self.dev_bool = version_tuple[3]
-
-        self.format = "<HHHB"
-
-    def encode(self):
-        """Returns the data contained by the class encoded as CAN message data."""
-        return pack(self.format, self.major, self.minor, self.patch, self.dev_bool)
-
-    def decode(self, data):
-        """Decodes CAN message data and populates the values of the class."""
-        (self.major, self.minor, self.patch, self.dev_bool) = unpack(self.format, data)
-        self.dev_bool = bool(self.dev_bool)
-
-    def __str__(self):
-        s = "Firmware version: v{}.{}.{}".format(self.major, self.minor, self.patch)
-        if self.dev_bool:
-            s += "-dev"
-        return s
-
-
-class CanTapeTransferTPDO(Packet):
-    """Iterative response for file transfers over CAN."""
-
-    class State:
-        """Current state of file transfer over CAN."""
-
-        IDLE = 1
-        TRANSFERRING = 2
-        CRC_COMPUTING = 3
-        CRC_GOOD = 4
-        CRC_BAD = 5
-        TAPE_READING = 6
-        TAPE_SUCCESS = 7
-        TAPE_FAIL = 8
-        TRANSFERRING_FAILED = 9  # out of order messages
-        NA = 0
-
-    format = "<BHBL"
-    cob_id = 0x480
-
-    def __init__(self, page: int = 0, block: int = 0, state: int = State.NA, crc32: int = 0):
-        self.page = page
-        self.block = block
-        self.state = state
-        self.crc32 = crc32
-
-    def encode(self):
-        """Returns the data contained by the class encoded as CAN message data."""
-        return pack(self.format, self.page, self.block, self.state, self.crc32)
-
-    def decode(self, data):
-        """Decodes CAN message data and populates the values of the class."""
-        (self.page, self.block, self.state, self.crc32) = unpack(self.format, data)
-
-    def __str__(self):
-        return f"page: {self.page} block: {self.block} state: {self.state} crc: {self.crc32}"
-
-
-class CanTapeTransferRPDO(Packet):
-    """Packet containing 5 bytes of file for file transfers over CAN."""
-
-    format = "<BH5s"
-    cob_id = 0x500
-
-    class State:
-        COMPLETE = 255
-        RESET = 254
-
-    def __init__(self, page: int = 0, block: int = 0, data=bytes()):
-        self.page = page
-        self.block = block
-        assert len(data) <= 5
-        self.data = data
-
-    def encode(self):
-        """Returns the data contained by the class encoded as CAN message data."""
-        return pack(self.format, self.page, self.block, self.data)
-
-    def decode(self, data):
-        """Decodes CAN message data and populates the values of the class."""
-        (self.page, self.block, self.data) = unpack(self.format, data)
-
-    def __str__(self):
-        return f"page: {self.page} block: {self.block} data: {self.data}"
-
-
-class FarmngHeartbeat(Packet):
-    """Custom Heartbeat message = status sent regularly by farm-ng components"""
-
-    format = "<BI3s"
-    cob_id = 0x700
-
-    def __init__(self, node_state: int = 0, ticks_ms: int = 0, serial_number=bytes()):
-        self.node_state = node_state
-        self.ticks_ms = ticks_ms
-        # assert len(data) <= 5
-        self.serial_number = serial_number
-
-    def encode(self):
-        """Returns the data contained by the class encoded as CAN message data."""
-        return pack(self.format, self.node_state, self.ticks_ms, self.serial_number[:3])
-
-    def decode(self, data):
-        """Decodes CAN message data and populates the values of the class."""
-        (self.node_state, self.ticks_ms, self.serial_number) = unpack(self.format, data)
-
-    def __str__(self):
-        return f"node_state: {self.node_state} ticks_ms: {self.ticks_ms} serial_number: {self.serial_number}"
-
-
-class RmdSpeedCommand(Packet):
-    """Speed command to RMD servo motor (controlled with PTO)"""
-
-    format = "<4Bi"
-    cmd_byte = 0xA2
-
-    def __init__(self, rpm: int = 0):
-        self.rpm = rpm
-
-    def encode(self):
-        """Returns the data contained by the class encoded as CAN message data."""
-        return pack(self.format, self.cmd_byte, 0x0, 0x0, 0x0, int(self.rpm * 6000))
-
-    def decode(self, data):
-        """Decodes CAN message data and populates the values of the class."""
-        assert data[0] == self.cmd_byte
-        (_, _, _, _, dphs) = unpack(self.format, data)
-        self.rpm = dphs / 6000
-
-    def __str__(self):
-        return f"RmdSpeedCommand rpm: {self.rpm}"
-
-
-class RmdSpeedResponse(Packet):
-    """Response from RMD servo motor to speed command (controlled with PTO)"""
-
-    format = "<2b3h"
-    cmd_byte = 0xA2
-
-    def __init__(self, temp: int = 0, current: int = 0, rpm: int = 0, encoder_pos: int = 0):
-        self.temp = temp
-        self.current = current
-        self.rpm = rpm
-        self.encoder_pos = encoder_pos
-        self.ticks_ms = ticks_ms()
-
-    def encode(self):
-        """Returns the data contained by the class encoded as CAN message data."""
-        return pack(
-            self.format, self.cmd_byte, self.temp, int(self.current * 2048 / 33), int(self.rpm * 60), self.encoder_pos
-        )
-
-    def decode(self, data):
-        """Decodes CAN message data and populates the values of the class."""
-        assert data[0] == self.cmd_byte
-        (_, self.temp, amps, dps, self.encoder_pos) = unpack(self.format, data)
-        self.current = amps * 33 / 2048
-        self.rpm = dps / 60
-
-    def __str__(self):
-        s = f"RmdSpeedResponse temp: {self.temp} current: {self.current}"
-        s += f"rpm: {self.rpm} encoder_pos: {self.encoder_pos}"
-        return s
-
-
-class FarmngDebugTimer(Packet):
-    """To be used for tracking the time of up to 8 dt time steps."""
-
-    format = "<8b"
-    cob_id = 0x480  # TPDO4
-
-    def __init__(self, dt_list: list = []):
-        self.dt_list = dt_list
-
-    def encode(self):
-        """Returns the data contained by the class encoded as CAN message data."""
-        # self.dt_list = [clip(int(x), 0, 255) for x in self.dt_list[:8]]
-        self.dt_list = [clip(int(x), -127, 127) for x in self.dt_list[:8]]
-
-        while len(self.dt_list) < 8:
-            self.dt_list.append(0)
-        return pack(self.format, *self.dt_list)
-
-    def decode(self, data):
-        """Decodes CAN message data and populates the values of the class."""
-        self.dt_list = list(unpack(self.format, data))
-
-    def __str__(self):
-        s = "("
-        for x in self.dt_list:
-            s += "{:3d},".format(x)
-
-        s += ")"
-        return s
-
-
-class FarmngDebugMemory(Packet):
-    """To be used for tracking the memory of up to 4 spots in the iter loop."""
-
-    format = "<4H"
-    cob_id = 0x500  # RPDO4
-
-    def __init__(self, mem_list: list = []):
-        self.mem_list = mem_list
-
-    def encode(self):
-        """Returns the data contained by the class encoded as CAN message data."""
-        self.mem_list = [clip(int(x), 0, 65536) for x in self.mem_list[:4]]
-
-        while len(self.mem_list) < 4:
-            self.mem_list.append(0)
-        return pack(self.format, *self.mem_list)
-
-    def decode(self, data):
-        """Decodes CAN message data and populates the values of the class."""
-        self.mem_list = list(unpack(self.format, data))
-
-    def __str__(self):
-        s = "("
-        for x in self.mem_list:
-            s += "{:5d},".format(x)
-        s += ")"
-        return s

@@ -1,3 +1,16 @@
+# Copyright (c) farm-ng, inc.
+#
+# Licensed under the Amiga Development Kit License (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://github.com/farm-ng/amiga-dev-kit/blob/main/LICENSE
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 """Update values following semantic versioning convention.
 
 - MAJOR: Major version
@@ -7,13 +20,16 @@
 """
 from os import uname as os_uname
 
+# 0.4.0 == Jan 12, 2024
+
 MAJOR = 0
-MINOR = 0
-PATCH = 4
+MINOR = 4
+PATCH = 0
 DEV = False
 
 
 def asserts():
+    """Enforces version."""
     assert isinstance(MAJOR, int) and MAJOR >= 0 and MAJOR <= 255
     assert isinstance(MINOR, int) and MINOR >= 0 and MINOR <= 255
     assert isinstance(PATCH, int) and PATCH >= 0 and PATCH <= 255
@@ -47,7 +63,7 @@ class BoardType:
 def get_board_type():
     """Return the Board type based on the operating system."""
     uname = os_uname()
-    print(uname)
+    print('get_board_type()', uname.machine)
     if "Amiga_DispV0" in uname.machine:
         return BoardType.AMIGA_DISPV0
     if "Adafruit Feather M4 CAN" in uname.machine:
