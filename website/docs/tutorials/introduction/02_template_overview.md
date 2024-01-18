@@ -102,33 +102,7 @@ features.
 
 ## Python
 
-```Python
-# Copyright (c) farm-ng, inc. Amiga Development Kit License,
-# Version 0.1
-import argparse
-import asyncio
-import os
-from typing import List
-
-from amiga_package import ops
-
-# Must come before kivy imports
-os.environ["KIVY_NO_ARGS"] = "1"
-
-# gui configs must go before any other kivy import
-from kivy.config import Config  # noreorder # noqa: E402
-
-Config.set("graphics", "resizable", False)
-Config.set("graphics", "width", "1280")
-Config.set("graphics", "height", "800")
-Config.set("graphics", "fullscreen", "false")
-Config.set("input", "mouse", "mouse,disable_on_activity")
-Config.set("kivy", "keyboard_mode", "systemanddock")
-
-# kivy imports
-from kivy.app import App  # noqa: E402
-from kivy.lang.builder import Builder  # noqa: E402
-```
+In this tutorial, we will break down the major components of main.py
 
 The template starts with generic Python imports that are used in
 the app, followed by the custom lib imports, then kivy imports
@@ -163,7 +137,8 @@ class TemplateApp(App):
         self.async_tasks: List[asyncio.Task] = []
 ```
 
-We define the `TemplateApp` to inherit from the kivy `App` class,
+We define the `TemplateApp` to inherit from the kivy
+[**`App`**](https://kivy.org/doc/stable/api-kivy.app.html) class,
 so it has all the features of a generic `App`, plus anything we
 add to it.
 

@@ -14,7 +14,7 @@ Now that you've created the template, it's time to rename it for
 your app.
 In this tutorial, we'll go with app name: `CameraApp`.
 
-Navigate to `main.py` in your app and open it with a text editor.
+Navigate to `src/main.py` in your app and open it with a text editor.
 
 There are 3 places to change the templated name:
 

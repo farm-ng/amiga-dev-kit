@@ -4,21 +4,9 @@ title: 00 - Introduction
 ---
 # Kivy Tutorial Introduction
 
-This is a three part tutorial designed to walk you throuhg the process of
+This is a three part tutorial designed to walk you through the process of
  devleoping your custom kivy application on the brain. We support two main user
  interface development environments, ReactJS and Kivy.
-
-Part 1 will walk you through cloneing a template repository onto the
-brain. [**Amiga-app-template-kivy**](https://github.com/farm-ng/amiga-app-template-kivy/tree/main)
- includes all the files required to begin developing a custom application.
-
-Part 2 ([**camera-streamer-kivy**](https://github.com/farm-ng/camera-streamer-kivy))
-will walk you through building a simple kivy interface to allow you to visualize the
- oak camera streams from the brain.
-
-Part 3 ([**virtual-joystick**](https://github.com/farm-ng/virtual-joystick-v2)) will
-walk you through a more complicated kivy interface, sending movement controls and
-customizing app requirements.
 
 This first tutorial is designed to provide you with:
 
@@ -94,3 +82,15 @@ brain services
 See: [**farm_ng_core**](https://github.com/farm-ng/farm-ng-core)
 
 See: [**farm_ng_amiga**](https://github.com/farm-ng/farm-ng-amiga)
+
+Part 1 will walk you through cloneing a template repository onto the
+brain. [**Amiga-app-template-kivy**](https://github.com/farm-ng/amiga-app-template-kivy/tree/main)
+ includes all the files required to begin developing a custom application.
+
+Part 2 ([**camera-streamer-kivy**](https://github.com/farm-ng/camera-streamer-kivy))
+will walk you through building a simple kivy interface to allow you to visualize the
+ oak camera streams from the brain.
+
+Part 3 ([**virtual-joystick**](https://github.com/farm-ng/virtual-joystick-v2)) will
+walk you through a more complicated kivy interface, sending movement controls and
+customizing app requirements.

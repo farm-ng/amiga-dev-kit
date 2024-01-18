@@ -25,11 +25,6 @@ You need to be signed into your GitHub account to see the option:  `Use this tem
 
 ![Create a new templated repository](https://user-images.githubusercontent.com/5157099/205272492-356c1540-948e-43dc-8f60-8992caa8d511.gif)
 
-:::info
-For [**01 - Camera Streamer Tutorial**](/docs/tutorials/camera_streamer/01_template_starter.md) we assume the repository name `camera_tutorial`.
-
-For [**02 - Virtual Joystick Tutorial**](/docs/tutorials/virtual_joystick/01_template_starter.md) we assume the repository name `virtual_joystick`.
-:::
 Written instructions (same as video above):
 1. Click on green *Use this template* button (top right) to create a new repository based on this repo
 2. Fill out:
@@ -41,23 +36,33 @@ Written instructions (same as video above):
     -Click [Create repository from template]
 Done!
 
-Now that you are done creating your repository, you have two options:
+Now that you are done creating your repository, the development flow is up to you. However, we recommend option 2 and
+will develop dircetly on the brain.
 
 1. Work in your local workspace.
+    - Develop on your personal computer and pull repository changes onto the brain
 2. Work in a remote Remote-SSH session using in vs-code.
+    - Develop push file changes from the brain
 
-In both cases you will have to clone the repository you created above by following the commands below.
+:::info
+If you are unfamiliar with git phrases such as 'push' and 'pull' we reading over our [**Github 101**](/docs/support/github-101)
+:::
+
+Once you have established [**SSH connection**](/docs/ssh) with your robot. Clone the repository in your root directory:
 
 ```bash
-cd <to-your-base-directory>
+cd ~
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
 ```
 
 ### Project structure
 
-In vs-code, you can see the project structure on the left side in the `EXPLORER`:
+We recommend using [**VS-code**](https://code.visualstudio.com/docs/introvideos/basics) as the IDE for developing.
 
-Below are listed the most important components.
+Once you have established SSH connection with the robot, on the VS-code home page, select "Open folder" and navigate to
+the repository of your custom application.
+
+On the left side of the screen, you should see:
 
 ```bash
 repository-name/  # Root level of the project.
@@ -89,15 +94,15 @@ repository-name/  # Root level of the project.
 
 ## Brain setup
 
-The following commands will compile on the brain from an un-modified clone or template of this repository.
-If there are problems with running these scripts, please try to clone the repository once again.
+Once you are able to see the file tree on the left side of the VS-code window. There are a few final steps
+to show the app on the screen.
 
 ### Update manifest.json
+In the file tree, you should see a file named, manifest.json.
 
-This step is required in order to have your custom application appear on the app screen.
-The file stores the path to your code base to direct the brain when your app icon is selected.
+The file is the bridge between your custom app and the brain.
 
-There are two edits to be made to the file, both are in CAPS. TEMPLATE_NAME and YOUR_USER_HERE
+There are three edits to be made to the file, in "name", "exec_cmd", "display_name"
 
 ```json
 {
@@ -112,6 +117,11 @@ There are two edits to be made to the file, both are in CAPS. TEMPLATE_NAME and 
     }
 }
 ```
+Both instances of TEMPLATE_NAME should be the same
+    1. no spaces
+    2. use of "-" or "_"
+
+farm-ng-user-YOUR_USER_NAME
 
 Begin by updating both instances of TEMPLATE_NAME to a unique name.
 This name should not have spaces, we recommend using the same name as the repository name.
@@ -137,14 +147,8 @@ You should now see your app on the brain screen. Click on it to launch it.
 
 Alternatively, while developing, you can run your app from the terminal.
 
-To do this, open a terminal and navigate to the directory where you cloned the
-[**amiga-app-template-kivy**](https://github.com/farm-ng/amiga-app-template-kivy) repository.
+To do this, open a terminal and navigate to your cusom app directory
 
 ```bash
-cd <to-your-app-directory>DISPLAY=:0 ./entry.sh  # install and run
-```
-and run:
-
-```bash
-DISPLAY=:0 ./entry.sh  # to run
+DISPLAY=:0 ./entry.sh  # install and run
 ```

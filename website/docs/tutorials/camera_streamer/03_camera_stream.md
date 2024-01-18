@@ -2,10 +2,11 @@
 id: camera-stream
 title: 03 - Python Implementation
 ---
-The code blocks in this example are intended to be added to the
-[**`amiga-app-template-kivy`**](https://github.com/farm-ng/amiga-app-template-kivy).
 
 # Python Implementation
+
+Similar to the last tutorial, this will give a break down of the most important features of the
+[**camera-streamer**](https://github.com/farm-ng/camera-streamer) repository
 
 :::info
 The Python implementation of the
@@ -21,50 +22,17 @@ This app is app will be the first real taste of the Amiga SDK.
 We will now need to import farm-ng libraries to access the oak
 camera streams.
 
-These imports will make more sense as we continue the tutorial,
-so don't worry if they don't make sense at first glance.
+The primary addition for this application is the use of TurboJPEG.
 
 ```python
-from __future__ import annotations
-
-import argparse
-import asyncio
-import logging
-import os
-from pathlib import Path
-from typing import Literal
-
-from farm_ng.core.event_client import EventClient
-from farm_ng.core.event_service_pb2 import EventServiceConfig
-from farm_ng.core.event_service_pb2 import EventServiceConfigList
-from farm_ng.core.event_service_pb2 import SubscribeRequest
-from farm_ng.core.events_file_reader import payload_to_protobuf
-from farm_ng.core.events_file_reader import proto_from_json_file
-from farm_ng.core.uri_pb2 import Uri
 from turbojpeg import TurboJPEG
-
-os.environ["KIVY_NO_ARGS"] = "1"
-
-from kivy.config import Config  # noreorder # noqa: E402
-
-Config.set("graphics", "resizable", False)
-Config.set("graphics", "width", "1280")
-Config.set("graphics", "height", "800")
-Config.set("graphics", "fullscreen", "false")
-Config.set("input", "mouse", "mouse,disable_on_activity")
-Config.set("kivy", "keyboard_mode", "systemanddock")
-
-from kivy.app import App  # noqa: E402
-from kivy.lang.builder import Builder  # noqa: E402
-from kivy.graphics.texture import Texture  # noqa: E402
-
-
-logger = logging.getLogger("amiga.apps.camera")
 ```
 
 ## Camera App Class
 
 The camera app will generally follow the same format as the template tic-toc app.
+However, will also subscribe to a farm-ng service, in the case of this application,
+it will be the oak camer service.
 
 ```python
 class CameraApp(App):
@@ -76,7 +44,7 @@ class CameraApp(App):
         self.view_name = "rgb"
 ```
 
-The EventServiceConfig is the custom configuration used to
+The EventServiceConfig contains the custom configuration used to
 specify which specific services your custom application
 will need to access.
 
@@ -146,47 +114,6 @@ We make all four instances as opposed to only one because rather
 than changing the async tasks, we can conditionally display
 the image streams.
 
-```python
-    async def stream_camera(
-        self,
-        oak_client: EventClient,
-        view_name: Literal["rgb", "disparity", "left", "right"] = "rgb",
-    ) -> None:
-        """Subscribes to the camera service and populates the tabbed panel with all 4 image streams."""
-        while self.root is None:
-            await asyncio.sleep(0.01)
-
-        rate = oak_client.config.subscriptions[0].every_n
-
-        async for event, payload in oak_client.subscribe(
-            SubscribeRequest(uri=Uri(path=f"/{view_name}"), every_n=rate),
-            decode=False,
-        ):
-            if view_name == self.view_name:
-                print(self.view_name)
-                message = payload_to_protobuf(event, payload)
-                try:
-                    img = self.image_decoder.decode(message.image_data)
-                except Exception as e:
-                    logger.exception(f"Error decoding image: {e}")
-                    continue
-
-                # create the opengl texture and set it to the image
-                texture = Texture.create(
-                    size=(img.shape[1], img.shape[0]), icolorfmt="bgr"
-                )
-                texture.flip_vertical()
-                texture.blit_buffer(
-                    bytes(img.data),
-                    colorfmt="bgr",
-                    bufferfmt="ubyte",
-                    mipmap_generation=False,
-                )
-                self.root.ids[view_name].texture = texture
-```
-
-Lets break down this code a little bit more...
-
 ### Event Client
 
 The client-service framework used here is vital to communicate with the Amiga.
@@ -207,6 +134,9 @@ This class is the "on-ramp" used to access the Amigas communication
 highway. All the other vehicles on the highway are messages from the
 other services. The, oaks, canbus, trackfollower, etc... can all be
 accessed from this EventClient.
+
+It can also be used for subsrbibing to all other services that might be used
+by your custom application.
 
 More details on the .subscribe() method can be found here:
 [**event_client.py**](https://github.com/farm-ng/farm-ng-core/blob/main/py/farm_ng/core/event_client.py)

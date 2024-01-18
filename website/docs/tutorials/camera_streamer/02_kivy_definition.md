@@ -6,6 +6,7 @@ title: 02 - Kivy Definition
 
 In this tutorial, we will be adding a few new elements to our app, a Tabbed Panel and Images
 to make an app that looks like this:
+
 ![camera-streamer](https://user-images.githubusercontent.com/53625197/216075393-6e578a01-677e-4279-b224-70fd3f73ce5f.png)
 
 This app is constructed using four tabbed panels to represent
