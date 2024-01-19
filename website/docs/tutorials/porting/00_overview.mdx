@@ -1,0 +1,150 @@
+---
+id: overview
+title: 00 - Porting Kivy Applications
+---
+
+# Porting Applications
+
+This tutorial will walk you though porting form Amiga OS 1.0 Artichoke to Amiga OS 2.0 Barley
+
+Before we begin, for the smoothest porting experience, we recommend starting from the
+[**`virtual-joystick`**](https://github.com/farm-ng/virtual-joystick-v2). This repository
+includes all of the necessary files.
+
+In this example, we will walk through porting the virtual joystick from the OS 1.0 to OS 2.0
+
+### Imports
+
+<div align="center">
+    <table >
+     <tr>
+        <td><b>OS 1.0</b></td>
+        <td><b>OS 2.0</b></td>
+     </tr>
+     <tr>
+       <td> <div align="left">
+```python
+import grpc
+from farm_ng.canbus import canbus_pb2
+from farm_ng.canbus.canbus_client import CanbusClient
+from farm_ng.canbus.packet import AmigaControlState
+from farm_ng.canbus.packet import AmigaTpdo1
+from farm_ng.canbus.packet import make_amiga_rpdo1_proto
+from farm_ng.canbus.packet import parse_amiga_tpdo1_proto
+from farm_ng.oak import oak_pb2
+from farm_ng.oak.camera_client import OakCameraClient
+from farm_ng.service import service_pb2
+from farm_ng.service.service_client import ClientConfig
+from turbojpeg import TurboJPEG
+```
+       </div></td>
+        <td> <div align="left">
+```python
+from farm_ng.canbus.canbus_pb2 import Twist2d
+from farm_ng.canbus.packet import AmigaControlState
+from farm_ng.canbus.packet import AmigaTpdo1
+from farm_ng.core.event_client import EventClient
+from farm_ng.core.event_service_pb2 import EventServiceConfig
+from farm_ng.core.event_service_pb2 import EventServiceConfigList
+from farm_ng.core.event_service_pb2 import SubscribeRequest
+from farm_ng.core.events_file_reader import payload_to_protobuf
+from farm_ng.core.events_file_reader import proto_from_json_file
+from farm_ng.core.uri_pb2 import Uri
+```
+        </div></td>
+     </tr>
+    </table>
+    </div>
+With this update, farm-ng-core was largely refactored to make subscribing to services more simple.
+
+### Defining Clients
+<div align="center">
+    <table >
+     <tr>
+        <td><b>OS 1.0</b></td>
+        <td><b>OS 2.0</b></td>
+     </tr>
+     <tr>
+       <td> <div align="left">
+```python
+  def __init__(
+      self,
+        address: str,
+        camera_port: int,
+        canbus_port: int,
+        stream_every_n: int
+  ) -> None:
+      super().__init__()
+      self.address: str = address
+
+      self.camera_port: int = camera_port
+      self.canbus_port: int = canbus_port
+      self.stream_every_n: int = stream_every_n
+      self.amiga_tpdo1: AmigaTpdo1 = AmigaTpdo1()
+```
+       </div></td>
+        <td> <div align="left">
+```python
+  def __init__(
+      self,
+      service_config: EventServiceConfig,
+  ) -> None:
+      super().__init__()
+
+      self.counter: int = 0
+      self.service_config = service_config
+```
+        </div></td>
+     </tr>
+    </table>
+    </div>
+  Now, rather than spcifying the ports for the camera and canbus through command line arguments,
+  they are included in a file called service_config.json. This file contains all the metadata for
+  the individual services. The [**`service_config.json`**](https://github.com/farm-ng/virtual-joystick-v2/blob/main/service_config.json)
+  encapsulates all of the services used by your custom application.
+
+  ## Creating Clients
+
+  <div align="center">
+    <table >
+     <tr>
+        <td><b>OS 1.0</b></td>
+        <td><b>OS 2.0</b></td>
+     </tr>
+     <tr>
+       <td> <div align="left">
+```python
+camera_config: ClientConfig = ClientConfig(
+    address=self.address, port=self.camera_port
+)
+camera_client: OakCameraClient = OakCameraClient(camera_config)
+
+# configure the canbus client
+canbus_config: ClientConfig = ClientConfig(
+    address=self.address, port=self.canbus_port
+)
+canbus_client: CanbusClient = CanbusClient(canbus_config)
+```
+       </div></td>
+        <td> <div align="left">
+```python
+config_list = proto_from_json_file(
+    self.service_config, EventServiceConfigList()
+)
+
+oak0_client: EventClient | None = None
+canbus_client: EventClient | None = None
+
+for config in config_list.configs:
+    if config.name == "oak0":
+        oak0_client = EventClient(config)
+    elif config.name == "canbus":
+        canbus_client = EventClient(config)
+```
+        </div></td>
+     </tr>
+    </table>
+    </div>
+
+Rather than accepting metadata for each service as parameters to the class, all of the clients are
+defined by the config file.
