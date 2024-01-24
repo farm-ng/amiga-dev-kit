@@ -61,15 +61,10 @@ def __init__(
     super().__init__()
 
     self.counter: int = 0
-
     self.service_config = service_config
-
     self.async_tasks: list[asyncio.Task] = []
-
     self.image_decoder = ImageDecoder()
-
     self.view_name = "rgb"
-
     self.max_speed: float = 1.0
     self.max_angular_rate: float = 1.0
 ```

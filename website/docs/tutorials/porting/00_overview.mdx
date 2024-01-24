@@ -55,7 +55,8 @@ from farm_ng.core.uri_pb2 import Uri
      </tr>
     </table>
     </div>
-With this update, farm-ng-core was largely refactored to make subscribing to services more simple.
+With this update, [**`farm-ng-core`**](https://github.com/farm-ng/farm-ng-core) was largely
+refactored to make subscribing to services more simple.
 
 ### Defining Clients
 <div align="center">
@@ -103,7 +104,7 @@ With this update, farm-ng-core was largely refactored to make subscribing to ser
   the individual services. The [**`service_config.json`**](https://github.com/farm-ng/virtual-joystick-v2/blob/main/service_config.json)
   encapsulates all of the services used by your custom application.
 
-  ## Creating Clients
+  ### Creating Clients
 
   <div align="center">
     <table >
@@ -148,3 +149,389 @@ for config in config_list.configs:
 
 Rather than accepting metadata for each service as parameters to the class, all of the clients are
 defined by the config file.
+
+### asyncio Tasks
+
+  <div align="center">
+    <table >
+     <tr>
+        <td><b>OS 1.0</b></td>
+        <td><b>OS 2.0</b></td>
+     </tr>
+     <tr>
+       <td> <div align="left">
+```python
+self.async_tasks.append(
+    asyncio.ensure_future(self.stream_camera(camera_client))
+)
+
+# Canbus task(s)
+self.async_tasks.append(
+    asyncio.ensure_future(self.stream_canbus(canbus_client))
+)
+self.async_tasks.append(
+    asyncio.ensure_future(self.send_can_msgs(canbus_client))
+)
+```
+       </div></td>
+        <td> <div align="left">
+```python
+self.tasks: list[asyncio.Task] = [
+    asyncio.create_task(self.stream_camera(oak0_client, view_name))
+    for view_name in self.STREAM_NAMES
+]
+
+self.tasks.append(asyncio.create_task(self.pose_generator(canbus_client)))
+
+```
+        </div></td>
+     </tr>
+    </table>
+    </div>
+
+In this example, we subscribe to each of the camera streams, however, if you only need one,
+the for loop ```for view_name om self.STREAM_NAMES``` is not required.
+
+### Streaming Cameras
+
+  <div align="center">
+    <table >
+     <tr>
+        <td><b>OS 1.0</b></td>
+        <td><b>OS 2.0</b></td>
+     </tr>
+     <tr>
+       <td> <div align="left">
+```python
+async def stream_camera(self, client: OakCameraClient) -> None:
+    """This task listens to the camera client's stream and
+    populates the tabbed panel with all 4 image streams
+    from the oak camera."""
+    while self.root is None:
+        await asyncio.sleep(0.01)
+
+    response_stream = None
+
+    while True:
+        # check the state of the service
+        state = await client.get_state()
+
+        if state.value not in [
+            service_pb2.ServiceState.IDLE,
+            service_pb2.ServiceState.RUNNING,
+        ]:
+            # Cancel existing stream, if it exists
+            if response_stream is not None:
+                response_stream.cancel()
+                response_stream = None
+            print("Camera service is not streaming or ready to stream")
+            await asyncio.sleep(0.1)
+            continue
+
+        # Create the stream
+        if response_stream is None:
+            response_stream = client.stream_frames(every_n=1)
+
+        try:
+            # try/except so app doesn't crash on killed service
+            response: oak_pb2.StreamFramesReply = await response_stream.read()
+            assert response and response != grpc.aio.EOF, "End of stream"
+        except Exception as e:
+            print(e)
+            response_stream.cancel()
+            response_stream = None
+            continue
+
+        # get the sync frame
+        frame: oak_pb2.OakSyncFrame = response.frame
+
+        # get image and show
+        for view_name in ["rgb", "disparity", "left", "right"]:
+            # Skip if view_name was not included in frame
+            try:
+                # Decode the image and render it in the correct kivy texture
+                img = self.image_decoder.decode(
+                    getattr(frame, view_name).image_data
+                )
+```
+       </div></td>
+        <td> <div align="left">
+```python
+async def stream_camera(
+    self,
+    oak_client: EventClient,
+    view_name: Literal["rgb", "disparity", "left", "right"] = "rgb",
+) -> None:
+
+    while self.root is None:
+        await asyncio.sleep(0.01)
+
+    rate = oak_client.config.subscriptions[0].every_n
+
+    async for event, payload in oak_client.subscribe(
+        SubscribeRequest(
+            uri=Uri(path=f"/{view_name}"), every_n=rate
+        ),
+        decode=False,
+    ):
+        if view_name == self.view_name:
+            message = payload_to_protobuf(event, payload)
+            try:
+                img = self.image_decoder.decode(message.image_data)
+            except Exception as e:
+                logger.exception(f"Error decoding image: {e}")
+                continue
+```
+        </div></td>
+     </tr>
+    </table>
+    </div>
+
+In OS 2.0, the method .subscribe() from the
+[**`EventClient`**](https://github.com/farm-ng/farm-ng-core/blob/main/py/farm_ng/core/event_client.py#L68)
+class to subscribe to various services.
+
+### Sending CAN Messages
+
+  <div align="center">
+    <table >
+     <tr>
+        <td><b>OS 1.0</b></td>
+        <td><b>OS 2.0</b></td>
+     </tr>
+     <tr>
+       <td> <div align="left">
+```python
+async def stream_canbus(self, client: CanbusClient) -> None:
+    """This task:
+    - listens to the canbus client's stream
+    - filters for AmigaTpdo1 messages
+    - extracts useful values from AmigaTpdo1 messages
+    """
+    while self.root is None:
+        await asyncio.sleep(0.01)
+
+    response_stream = None
+
+    while True:
+        # check the state of the service
+        state = await client.get_state()
+
+        if state.value not in [
+            service_pb2.ServiceState.IDLE,
+            service_pb2.ServiceState.RUNNING,
+        ]:
+            if response_stream is not None:
+                response_stream.cancel()
+                response_stream = None
+
+            print("Canbus service is not streaming or ready to stream")
+            await asyncio.sleep(0.1)
+            continue
+
+        if (
+            response_stream is None
+            and state.value != service_pb2.ServiceState.UNAVAILABLE
+        ):
+            # get the streaming object
+            response_stream = client.stream()
+
+        try:
+            # try/except so app doesn't crash on killed service
+            response: canbus_pb2.StreamCanbusReply = await response_stream.read()
+            assert response and response != grpc.aio.EOF, "End of stream"
+        except Exception as e:
+            print(e)
+            response_stream.cancel()
+            response_stream = None
+            continue
+
+        for proto in response.messages.messages:
+            amiga_tpdo1: Optional[AmigaTpdo1] = parse_amiga_tpdo1_proto(proto)
+            if amiga_tpdo1:
+                # Store the value for possible other uses
+                self.amiga_tpdo1 = amiga_tpdo1
+
+                # Update the Label values as they are received
+                self.amiga_state = AmigaControlState(amiga_tpdo1.state).name[6:]
+                self.amiga_speed = str(amiga_tpdo1.meas_speed)
+                self.amiga_rate = str(amiga_tpdo1.meas_ang_rate)
+
+async def send_can_msgs(self, client: CanbusClient) -> None:
+    """This task ensures the canbus client sendCanbusMessage
+    method has the pose_generator it will use to send
+    messages on the CAN bus to control the Amiga robot."""
+    while self.root is None:
+        await asyncio.sleep(0.01)
+
+    response_stream = None
+    while True:
+        # check the state of the service
+        state = await client.get_state()
+
+        # Wait for a running CAN bus service
+        if state.value != service_pb2.ServiceState.RUNNING:
+            # Cancel existing stream, if it exists
+            if response_stream is not None:
+                response_stream.cancel()
+                response_stream = None
+            print("Waiting for running canbus service...")
+            await asyncio.sleep(0.1)
+            continue
+
+        if response_stream is None:
+            print("Start sending CAN messages")
+            response_stream = client.stub.sendCanbusMessage(self.pose_generator())
+
+        try:
+            async for response in response_stream:
+                # Sit in this loop and wait until canbus service reports back it is not sending
+                assert response.success
+        except Exception as e:
+            print(e)
+            response_stream.cancel()
+            response_stream = None
+            continue
+
+        await asyncio.sleep(0.1)
+
+async def pose_generator(self, period: float = 0.02):
+    """The pose generator yields an AmigaRpdo1
+    (auto control command) for the canbus client
+    to send on the bus at the specified period
+    (recommended 50hz) based on the onscreen joystick
+    position."""
+    while self.root is None:
+        await asyncio.sleep(0.01)
+
+    joystick: VirtualJoystickWidget = self.root.ids["joystick"]
+    while True:
+        msg: canbus_pb2.RawCanbusMessage = make_amiga_rpdo1_proto(
+            state_req=AmigaControlState.STATE_AUTO_ACTIVE,
+            cmd_speed=self.max_speed * joystick.joystick_pose.y,
+            cmd_ang_rate=self.max_angular_rate * -joystick.joystick_pose.x,
+        )
+        yield canbus_pb2.SendCanbusMessageRequest(message=msg)
+        await asyncio.sleep(period)
+```
+       </div></td>
+        <td> <div align="left">
+```python
+async def pose_generator(self, canbus_client: EventClient, period: float = 0.02):
+    """The pose generator yields an AmigaRpdo1 (auto control command)
+    for the canbus client to send on the bus
+    at the specified period (recommended 50hz)
+    based on the onscreen joystick position."""
+    while self.root is None:
+        await asyncio.sleep(0.01)
+
+    twist = Twist2d()
+
+    joystick: VirtualJoystickWidget = self.root.ids["joystick"]
+
+    rate = canbus_client.config.subscriptions[0].every_n
+
+    async for event, payload in canbus_client.subscribe(
+        SubscribeRequest(uri=Uri(path="/state"), every_n=rate),
+        decode=False,
+    ):
+        message = payload_to_protobuf(event, payload)
+        tpdo1 = AmigaTpdo1.from_proto(message.amiga_tpdo1)
+
+        twist.linear_velocity_x = self.max_speed * joystick.joystick_pose.y
+        twist.angular_velocity = self.max_angular_rate * -joystick.joystick_pose.x
+
+        self.amiga_state = tpdo1.state.name
+        self.amiga_speed = "{:.4f}".format(twist.linear_velocity_x)
+        self.amiga_rate = "{:.4f}".format(twist.angular_velocity)
+
+        await canbus_client.request_reply("/twist", twist)
+        await asyncio.sleep(period)
+```
+        </div></td>
+     </tr>
+    </table>
+    </div>
+In OS 2.0, receiving and sending CAN messages might have the biggest simplification.
+Rather than using the two methods, stream_canbus() and send_can_msgs() in OS 1.0,
+in OS 2.0, we use request_reply() method to send twist2d() messages. More info
+about the new canbus service can be found here: [**`canbus service`**](/docs/concepts/canbus_service/)
+
+### Running the program
+
+  <div align="center">
+    <table >
+     <tr>
+        <td><b>OS 1.0</b></td>
+        <td><b>OS 2.0</b></td>
+     </tr>
+     <tr>
+       <td> <div align="left">
+```python
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(prog="virtual-joystick")
+    parser.add_argument(
+        "--address", type=str, default="localhost", help="The server address"
+    )
+    parser.add_argument(
+        "--camera-port",
+        type=int,
+        required=True,
+        help="The grpc port where the camera service is running.",
+    )
+    parser.add_argument(
+        "--canbus-port",
+        type=int,
+        required=True,
+        help="The grpc port where the canbus service is running.",
+    )
+    parser.add_argument(
+        "--stream-every-n",
+        type=int,
+        default=1,
+        help="Streaming frequency (used to skip frames)",
+    )
+
+    args = parser.parse_args()
+
+    loop = asyncio.get_event_loop()
+    try:
+        loop.run_until_complete(
+            VirtualJoystickApp(
+                args.address, args.camera_port, args.canbus_port, args.stream_every_n
+            ).app_func()
+        )
+    except asyncio.CancelledError:
+        pass
+    loop.close()
+```
+       </div></td>
+        <td> <div align="left">
+```python
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(prog="template-app")
+
+    # Add additional command line arguments here
+    parser.add_argument("--service-config", type=Path, default="service_config.json")
+
+    args = parser.parse_args()
+
+    loop = asyncio.get_event_loop()
+
+    try:
+        loop.run_until_complete(KivyVirtualJoystick(args.service_config).app_func())
+    except asyncio.CancelledError:
+        pass
+    loop.close()
+```
+        </div></td>
+     </tr>
+    </table>
+    </div>
+
+Using the [**`service_config.json`**](https://github.com/farm-ng/virtual-joystick-v2/blob/main/service_config.json)
+file allows us to specify all of the service metadata within the .json file rather than from the command line.
+
+### [service_config.json](https://github.com/farm-ng/virtual-joystick-v2/blob/main/service_config.json)
+
+By editing the this .json file to include the [**`services`**](/docs/concepts/) required by your application.

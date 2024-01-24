@@ -15,7 +15,7 @@ Make sure that you have ssh access to the brain. If you don't have ssh access, p
 
 :::
 
-## Create a new app
+## Create a new app repository
 
 To create your own custom application navigate to the [**`amiga-app-template-kivy`**](https://github.com/farm-ng/amiga-app-template-kivy) repository on GitHub.
 :::tip
@@ -36,24 +36,33 @@ Written instructions (same as video above):
     -Click [Create repository from template]
 Done!
 
-Now that you are done creating your repository, the development flow is up to you. However, we recommend option 2 and
-will develop dircetly on the brain.
+Now that you are done creating your repository, let the development begin!! :))
 
-1. Work in your local workspace.
-    - Develop on your personal computer and pull repository changes onto the brain
-2. Work in a remote Remote-SSH session using in vs-code.
-    - Develop push file changes from the brain
+## Cloning Repository onto Brain
 
-:::info
-If you are unfamiliar with git phrases such as 'push' and 'pull' we reading over our [**Github 101**](/docs/support/github-101)
+These next steps will be a challenge the first few times.
+
+If you don't already have VsCode installed, begind by downloading it to your computer.
+
+:::note
+Download [**Visual Studio Code**](https://code.visualstudio.com/Download)
 :::
 
+VsCode is a very powerful tool and we recommend reading through some of their docs.
+
+
 Once you have established [**SSH connection**](/docs/ssh) with your robot. Clone the repository in your root directory:
+
+
 
 ```bash
 cd ~
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
 ```
+:::info
+If you are unfamiliar with git phrases such as 'push' and 'pull' we recommend reading over our [**Github 101**](/docs/support/github-101)
+:::
+
 
 ### Project structure
 
@@ -106,15 +115,15 @@ There are three edits to be made to the file, in "name", "exec_cmd", "display_na
 
 ```json
 {
-    "services": {
-        "TEMPLATE_NAME": {
-            "name": "TEMPLATE_NAME",
-            "type": "app",
-            "exec_cmd": "/mnt/managed_home/farm-ng-user-YOUR_USER_HERE/camera-streamer-kivy/entry.sh",
-            "display_name": "My Custom App",
-            "autostart": false
-        }
+  "services": {
+    "example-app-kivy": {
+      "name": "example-app-kivy",
+      "type": "app",
+      "exec_cmd": "/mnt/managed_home/farm-ng-user-YOUR_USER_HERE/YOUR_REPOSITORY_NAME/entry.sh",
+      "display_name": "Kivy Example App",
+      "autostart": false
     }
+  }
 }
 ```
 Both instances of TEMPLATE_NAME should be the same
@@ -128,6 +137,8 @@ This name should not have spaces, we recommend using the same name as the reposi
 
 Second, "YOUR_USER_HERE" should be updated to the name of the user who initially installed the application.
 This is the user name from fleet manager.
+
+Update "display_name" to whatever you'd like for the brain to display
 
 ### Add custom app to brain screen
 
