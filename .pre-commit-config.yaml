@@ -18,6 +18,15 @@ repos:
       - id: check-yaml
       - id: check-json
 
+  - repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.1.13
+    hooks:
+      - id: insert-license
+        files: circuitpy/.*\.(py)$
+        args:
+          - --license-filepath
+          - license_header.txt
+
   - repo: https://github.com/asottile/reorder_python_imports
     rev: v3.8.2
     hooks:
