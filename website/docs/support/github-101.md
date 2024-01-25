@@ -57,9 +57,8 @@ git clone https://github.com/farm-ng/farm-ng-amiga.git
 
 To set up an ssh key, follow the instructions from GitHub:
 
-1. [Create a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
-2. [Connect to GitHub with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
-3. Clone with e.g.: `git clone git@github.com:farm-ng/farm-ng-amiga.git`
+1. [Connect to GitHub with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+2. Clone with e.g.: `git clone git@github.com:farm-ng/farm-ng-amiga.git`
 
 This will allow you to `pull`, `branch`, `push`, etc. to your heart's content on public
 and your personal and team's private repos.

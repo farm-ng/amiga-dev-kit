@@ -2,11 +2,13 @@
 id: template-starter
 title: 01 - Template Starter
 ---
-# Template Starter
+# Getting Started
 
-:::tip
-We recommend [**Visual Studio Code**](https://code.visualstudio.com/)!
-:::
+## Prerequisites
+
+You must have cloned the [`TemplateApp`](https://github.com/farm-ng/amiga-app-template-kivy)
+onto your brain. This tutorial assumes that when you click your app icon on the screen you see:
+![app-template](https://user-images.githubusercontent.com/53625197/217021857-aede9e9b-0f85-4b15-971f-c45944a3813c.png)
 
 ## Clone the [`TemplateApp`](https://github.com/farm-ng/amiga-app-template-kivy)
 
@@ -37,16 +39,4 @@ try:
     loop.run_until_complete(CameraApp().app_func())
 except asyncio.CancelledError:
     pass
-```
-
-### Run the app - template
-
-Now sync the app to the Brain and launch it with the
-[**Deploy Instructions**](/docs/tutorials/introduction/getting-started-kivy#brain-setup)
-for syncing the app onto the Amiga Brain!
-
-After the requirements install, you should see the template kivy
-app pop up.
-Try out the `Back` button to exit the app.
-
-![app-template](https://user-images.githubusercontent.com/53625197/217021857-aede9e9b-0f85-4b15-971f-c45944a3813c.png)
+``````

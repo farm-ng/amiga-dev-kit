@@ -9,7 +9,7 @@ In this tutorial we will show you how to develop a custom [**Kivy**](https://kiv
 
 ## Prerequisites
 
-:::tip
+:::warning
 
 Make sure that you have ssh access to the brain. If you don't have ssh access, please follow the [**SSH Access**](/docs/ssh) tutorial.
 
@@ -42,27 +42,16 @@ Now that you are done creating your repository, let the development begin!! :))
 
 These next steps will be a challenge the first few times.
 
-If you don't already have VsCode installed, begind by downloading it to your computer.
-
-:::note
-Download [**Visual Studio Code**](https://code.visualstudio.com/Download)
+:::info
+Please refer to [**GitHub-101**](/docs/support/github-101#set-up-an-ssh-key) for specific instructions on creating an ssh key on your brain
 :::
-
-VsCode is a very powerful tool and we recommend reading through some of their docs.
-
 
 Once you have established [**SSH connection**](/docs/ssh) with your robot. Clone the repository in your root directory:
 
-
-
 ```bash
 cd ~
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+git clone https://github.com/YOUR-USERNAME/YOUR_REPOSITORY_NAME.git
 ```
-:::info
-If you are unfamiliar with git phrases such as 'push' and 'pull' we recommend reading over our [**Github 101**](/docs/support/github-101)
-:::
-
 
 ### Project structure
 
@@ -74,7 +63,7 @@ the repository of your custom application.
 On the left side of the screen, you should see:
 
 ```bash
-repository-name/  # Root level of the project.
+YOUR_REPOSITORY_NAME/  # Root level of the project.
 ├── libs/ # Contains private libraries.
 |   └── project_name/
 |       ├── ops.py  # e.g a operators submodule
@@ -101,55 +90,68 @@ repository-name/  # Root level of the project.
 
 ```
 
-## Brain setup
+## Customizing manifest.json file
 
-Once you are able to see the file tree on the left side of the VS-code window. There are a few final steps
-to show the app on the screen.
+The manifest.json file is the bridge between your custom app and the brain.
 
-### Update manifest.json
-In the file tree, you should see a file named, manifest.json.
-
-The file is the bridge between your custom app and the brain.
-
-There are three edits to be made to the file, in "name", "exec_cmd", "display_name"
+There are three edits to be made to the file all in CAPS, in "name", "exec_cmd", "display_name"
 
 ```json
 {
   "services": {
-    "example-app-kivy": {
-      "name": "example-app-kivy",
+    "TEMPLATE_NAME": {
+      "name": "TEMPLATE_NAME",
       "type": "app",
-      "exec_cmd": "/mnt/managed_home/farm-ng-user-YOUR_USER_HERE/YOUR_REPOSITORY_NAME/entry.sh",
-      "display_name": "Kivy Example App",
+      "exec_cmd": "/mnt/managed_home/farm-ng-user-YOUR_USER_HERE/YOUR-REPOSITORY-NAME/entry.sh",
+      "display_name": "APP NAME",
       "autostart": false
     }
   }
 }
 ```
-Both instances of TEMPLATE_NAME should be the same
+Begin by updating both instances of "TEMPLATE_NAME" to a unique name.
+This name should not have spaces, we recommend using the same name as the repository name.
+
+Both instances of "TEMPLATE_NAME" should be the same
     1. no spaces
     2. use of "-" or "_"
-
-farm-ng-user-YOUR_USER_NAME
-
-Begin by updating both instances of TEMPLATE_NAME to a unique name.
-This name should not have spaces, we recommend using the same name as the repository name.
 
 Second, "YOUR_USER_HERE" should be updated to the name of the user who initially installed the application.
 This is the user name from fleet manager.
 
-Update "display_name" to whatever you'd like for the brain to display
+Finally, "APP NAME" to whatever you'd like for the brain to display for your custom app.
 
-### Add custom app to brain screen
+:::info
+Example manifest.json
+:::
+
+```json
+{
+  "services": {
+    "template-app": {
+      "name": "template-app",
+      "type": "app",
+      "exec_cmd": "/mnt/managed_home/farm-ng-user-aoc/our-template-app/entry.sh",
+      "display_name": "Template App",
+      "autostart": false
+    }
+  }
+}
+```
+
+### Add app to brain screen
 
 To add your custom app to the app page on the barin, run the `install.sh` script.
 
 ```bash
-cd <to-your-app-directory>
 ./install.sh
 ```
 
-You should now see your app on the brain screen. Click on it to launch it.
+You should now see your app on the brain screen.
+
+If the manifest.json was correctly configured, after about 30 seconds the application will launch.
+
+It takes some time because the virtual environment needs to install all the dependencies.
 
 ![Screenshot from 2023-12-01 17-43-59](https://github.com/farm-ng/amiga-dev-kit/assets/5157099/aac51d8a-ec34-4b85-9e73-f151c008e64c)
 
@@ -161,5 +163,6 @@ Alternatively, while developing, you can run your app from the terminal.
 To do this, open a terminal and navigate to your cusom app directory
 
 ```bash
-DISPLAY=:0 ./entry.sh  # install and run
+./entry.sh  # install and run
 ```
+Using this method will also allow you to see file outputs in the terminal.

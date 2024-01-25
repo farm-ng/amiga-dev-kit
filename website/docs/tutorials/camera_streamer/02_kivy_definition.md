@@ -1,6 +1,6 @@
 ---
 id: kivy-definition
-title: 02 - Kivy Definition
+title: 01 - Kivy Definition
 ---
 # Kivy
 
@@ -23,9 +23,8 @@ for exiting the app.
 
 ## Starting with the template
 
-The [**`src/res/main.kv`**](https://github.com/farm-ng/amiga-app-template-kivy/blob/main/src/res/main.kv)
-file of the
-[**amiga-app-template-kivy**](https://github.com/farm-ng/amiga-app-template)
+Right now our file, [**`src/res/main.kv`**](https://github.com/farm-ng/amiga-app-template-kivy/blob/main/src/res/main.kv)
+file
 defines a root of a `RelativeLayout`, with a
 `Button`, and a `Label`,
 as explained in [**kivy app definition**](/docs/tutorials/introduction/template-overview#kivy-app-definition).
@@ -43,6 +42,14 @@ visible and usable.
 
 ## TabbedPanel of Image widgets
 
+:::info
+The Python implementation of the
+[**camera-streamer**](https://github.com/farm-ng/camera-streamer)
+app can be found at
+[**`src/res/main.kv`**](https://github.com/farm-ng/camera-streamer/blob/main/src/res/main.kv).
+You should open that file for reference as you follow along.
+:::
+
 To conveniently package the 4 image streams from the oak camera
 in the kivy `Window`, we will add the `Image` widgets as a
 `TabbedPanel`.
@@ -58,33 +65,28 @@ This will allow us to set the correct image stream to the correct
 tab, so the `rgb` image stream is shown on the `rgb` panel and
 the `left` stereo camera stream is displayed on the `left` tab.
 
+Adjust "src/res/main.kv":
+
 ```python
 RelativeLayout:
     TabbedPanel:
         pos_hint: {"x": 0.0, "top": 1.0}
         do_default_tab: False
-RelativeLayout:
-    TabbedPanel:
-        pos_hint: {"x": 0.0, "top": 1.0}
-        do_default_tab: False
+        id: tab_root
         TabbedPanelItem:
-            text: "Rgb"
-            on_press: app.update_view('rgb')
+            text: "rgb"
             Image:
                 id: rgb
         TabbedPanelItem:
-            text: "Disparity"
-            on_press: app.update_view('disparity')
+            text: "disparity"
             Image:
                 id: disparity
         TabbedPanelItem:
-            text: "Left"
-            on_press: app.update_view('left')
+            text: "left"
             Image:
                 id: left
         TabbedPanelItem:
-            text: "Right"
-            on_press: app.update_view('right')
+            text: "right"
             Image:
                 id: right
     Button:
@@ -95,16 +97,48 @@ RelativeLayout:
         background_normal: "assets/back_button.png"
         on_release: app.on_exit_btn()
         Image:
-            source: "assets/back_button_normal.png" if
-                self.parent.state == "normal" else "assets/back_button_down.png"
+            source: "assets/back_button_normal.png" if self.parent.state == "normal" else "assets/back_button_down.png"
             pos: self.parent.pos
             size: self.parent.size
 
 ```
 
-`app.update_view()` method is used to update a class
-level variable which stores which tab is currently being viewed.
-There are alternatives using kivy variables, however, this method is reliable.
+Now, we'd like to test if the changes we made to the kivy string compile.
 
-Next, we will get into [main.py](https://github.com/farm-ng/camera-streamer-kivy/tree/main/src)
-and break down how to send images from the oak service to be visualized on the brain.
+You'll see if you run
+```./entry.sh``` you get an error:
+:::warning
+ Traceback (most recent call last):
+   File "kivy/properties.pyx", line 961, in kivy.properties.ObservableDict.**getattr**
+ KeyError: 'counter_label'
+:::
+
+If we update our template_function():
+
+```python
+    async def template_function(self) -> None:
+        """Placeholder forever loop."""
+        while self.root is None:
+            await asyncio.sleep(0.01)
+
+        while True:
+            print(self.root.ids["tab_root"].current_tab.text)
+            await asyncio.sleep(1.0)
+```
+
+With this modification, when we run ```./entry.sh``` the terminal will start printing
+the text attribute of the current tab.
+
+```python
+rgb
+rgb
+rgb
+left
+right
+right
+right
+```
+
+Since we haven't connected to the oak service yet, each of the tabs will be blank, but
+this test proves to us that we have created the tabbed panels and can read which one
+we're looking at:)

@@ -75,31 +75,6 @@ The most important first steps are to modify the metadata of the project and dep
         * `kivy`: to generate the graphical user interface (GUI).
         * `farm-ng-amiga`: the Farm-ng Amiga public SDK.
 
-### Update the `manifest.json`
-
-In this file, you can find the metadata of the app. This file is used by the launcher
-and has the following structure:
-
-```json
-{
-   "services": {
-        "example-app-kivy": {
-            "name": "example-app-kivy",
-            "type": "app",
-            "exec_cmd": "entry.sh",
-            "display_name": "Example App"
-            "autostart": false
-        }
-    }
-}
-```
-
-:::note
-Learn more about the manifest file [here](/docs/brain/brain-apps-manifest).
-:::
-
-In case you face issues, connect with us and the community on [Discourse](https://discourse.farm-ng.com/c/support/5)
-
 ## Development and Debug an app
 
 The workflow for development is pretty much the same as any standard gui application.

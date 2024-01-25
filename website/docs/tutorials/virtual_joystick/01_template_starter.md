@@ -7,14 +7,9 @@ title: 01 - Template Starter
 ## Set up your Amiga brain template
 
 This tutorial will build upon the
-[**camera streamer**](/docs/tutorials/camera_streamer/01_template_starter.md) tutorial.
-
-To begin, clone the [**camera streamer**](https://github.com/farm-ng/camera-streamer-kivy/tree/main)
-and continue with this tutorial.
-
-If you don't feel confident about the camera-streamer app, clone
-[**amiga-template-kivy**](https://github.com/farm-ng/amiga-app-template-kivy/tree/main)
-and go back to [**camera-streamer**](/docs/tutorials/camera_streamer/01_template_starter.md).
+[**camera streamer**](/docs/tutorials/camera_streamer/01_template_starter.md) tutorial. However,
+it will also work for the repository you created in the
+[**`first tutorial`**](/docs/tutorials/introduction/getting-started-kivy).
 
 :::tip
 Feel free to choose any repository name, but it's recommended to
@@ -76,3 +71,5 @@ Try out the `Back` button to exit the app.
 This tutorial will walk you through going from the camera-streamer (above) to the virtual joystick (below)
 
 ![Virtual-joystick-template](https://user-images.githubusercontent.com/53625197/200641720-c722fa9f-f6a3-4918-a4f0-d7270b73fd43.png)
+
+![joystick](https://user-images.githubusercontent.com/53625197/200641720-c722fa9f-f6a3-4918-a4f0-d7270b73fd43.png)

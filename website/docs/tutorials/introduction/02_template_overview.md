@@ -259,4 +259,4 @@ code configurations, we will get into some alternatives in the
 next templates.
 
 To run the app, either run .```/install.sh``` with the updated manifest.json, or run it locally using
-```DISPLAY=:0 ./entry.sh``` from your app directory.
+```./entry.sh``` from your app directory.
