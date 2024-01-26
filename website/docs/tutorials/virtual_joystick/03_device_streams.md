@@ -28,7 +28,7 @@ TabbedPanel:
 ```
 
 When we run the code now, we should see:
-IMAGE HERE OF ONLY JOYSTICK
+![Screenshot from 2024-01-26 13-52-50](https://github.com/farm-ng/amiga-dev-kit/assets/53889589/2d1f0f03-fd47-4b31-a5e6-73189f3802cd)
 
 ## Adding Text
 
@@ -77,7 +77,7 @@ Before the VirtualJoystickWidget, we will add a vertical stack of text boxes:
 Please refer to the [`src/res/main.kv`](https://github.com/farm-ng/virtual-joystick-v2/blob/main/src/res/main.kv)
 if the placement is confusing.
 
-INSERT INFO OF TEXT
+![Screenshot from 2024-01-26 13-53-24](https://github.com/farm-ng/amiga-dev-kit/assets/53889589/59207d68-f78e-42a3-ad67-9ea73c6dbcd4)
 
 :::info
 In the
@@ -96,6 +96,7 @@ You should open these files for reference as you follow along.
 ## Imports
 
 :::info
+
 You should have already gone through the
 [**Camera Streamer Tutorial**](/docs/tutorials/camera_streamer/camera-streamer-overview)
 based on the
