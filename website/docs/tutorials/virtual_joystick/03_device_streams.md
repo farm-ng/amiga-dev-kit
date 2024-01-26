@@ -184,11 +184,6 @@ we do not need to update the text field of the `Label` explicitly.
 
 ### Other notes
 
-#### `farm_ng` Imports
-
-We import the necessary `farm_ng` libraries for creating the
-camera and canbus clients and interacting with both services.
-
 #### service_config.json
 
 The [service_config](https://github.com/farm-ng/virtual-joystick-v2/blob/main/service_config.json)
@@ -211,28 +206,6 @@ This will cause other installed apps to unexpectedly launch over the app you are
 
 Please see instructions for a workaround under:
 [**FAQ - Brain App Development**](/docs/reference/faq#brain-app-development)
-:::
-
-#### App icon
-
-We replace the `app_logo.png` with an icon from '[text](<https://fonts.google.com/icons>)'.
-When developing your own app, you can:
-
-1. Choose a suitable symbol or icon for your app
-2. Tweak the appearance parameters, including moving to the
-largest 'Optical Size' available
-3. Export it as a `.png` file
-
-For following along with this tutorial, feel free to download the
-image from [src/assets/app_logo.png](https://github.com/farm-ng/virtual-joystick/blob/main/src/assets/app_logo.png).
-
-:::info note
-The brain may not display the app icon immediately when it is
-cloned onto your machine.
-You can trigger a `Refresh App Buttons` on the settings screen to
-apply the newly downloaded app icon.
-This also is applicable if you change the app icon and want to
-display the new icon.
 :::
 
 ### References

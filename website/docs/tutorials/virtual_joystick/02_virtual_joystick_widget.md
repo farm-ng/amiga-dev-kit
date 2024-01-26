@@ -2,12 +2,10 @@
 id: virtual-joystick-widget
 title: 02 - Virtual Joystick Widget
 ---
-# Virtual Joystick Widget
+# Building Virtual Joystick Widget
 
-We will now define a custom widget, the `VirtualJoystickWidget`,
-in kivy and Python to give an introduction to kivy drawing.
-We define the custom widget such that it can be imported just
-like a kivy API widget!
+We will begin by defining a custom widget, the `VirtualJoystickWidget`,
+by following the kivy API to add widgets to our application!
 
 This widget will be used to drive the robot by moving the virtual
 joystick on the Brain screen.
@@ -15,16 +13,53 @@ The driving behavior is modelled after the behavior of driving
 with the joystick on the pendant.
 
 :::info
-In the [**`joystick.kv`**](https://github.com/farm-ng/virtual-joystick-v2/blob/main/libs/virtual_joystick/res/joystick.kv)
-and [**`joystick.py`**](https://github.com/farm-ng/virtual-joystick-v2/blob/main/libs/virtual_joystick/joystick.py)
-files of the
-[**virtual-joystick**](https://github.com/farm-ng/virtual-joystick)
-app we define the custom widget in kivy and Python.
-
-You should open these files for reference as you follow along.
+If you ever feel lost, please refer to the [`Virtual-Joystick Repository`](https://github.com/farm-ng/virtual-joystick-v2/tree/main).
 :::
 
-## kivy Definition
+## Virtual Joystick App Structure
+
+In this tutorial, it is expected that you are familiear with the previous camera-streamer example.
+
+We will be adding files to libs/ to build our custom kivy widget. By the end of this tutorial,
+your file tree should look like this.
+
+```bash
+Virtual-Joystick-v2/  # Root level of the project.
+├── libs/ # Contains private libraries.
+|   ├── amiga_packages/ # placeholder for other template packages
+|   └── virtual_joystick/ # virtual joystick package we'll build
+|       ├── res/
+|       |   └── virtual_joystick.kv # kivy virtual joystick frontend
+|       ├── joystick.py # kivy virtual joystick backend
+|       └── utils.py # helper functions for joystick
+├── src/ # Contains all code needed to run the main gui application.
+|   ├── assets/  # Contains files needed to run the application
+|   |   └── app_logo.png  # static images or images for buttons.
+|   ├── res/  # Contains the layout files and UI strings.
+|   |   └── main.kv  # main ui layout in Kivy languague
+|   └── main.py  # Is the main entry point for the gui application.
+├── test/  # Contains code for test of the private libs.
+|   └── test_dummy.py  # sets of unit test.
+├── install.sh
+|    # The script to install the app on the brain.
+├── uninstall.sh
+|    # The script to uninstall the app from the brain.
+├── manifest.json
+|    # The file containing the metadata of the app to register it on the brain.
+├── entry.sh
+|    # The script to setup the project, create a virtual env. and install dependencies.
+└── setup.cfg
+    # The file containing the metadata of the package, including the name, versioning,
+    # etc. Learn more here: https://setuptools.pypa.io/en/latest/userguide/declarative_config.html
+
+```
+
+## Building the widget in libs/virtual_joystick
+
+### New File: virtual_joystick/res/virtual_joystick.kv
+
+Within the folder libs/virtual_joystick/res, create a file called virtual_joystick.kv.
+This file will include all of the code to build the user interface of the virutal_joystick.
 
 We first define a few custom arguments for defining the drawn
 `joystick` that are linked to the
