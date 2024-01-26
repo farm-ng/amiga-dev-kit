@@ -7,6 +7,8 @@ title: 02 - Virtual Joystick Widget
 We will begin by defining a custom widget, the `VirtualJoystickWidget`,
 by following the kivy API to add widgets to our application!
 
+![virtualJoystick](https://github.com/farm-ng/amiga-dev-kit/assets/53889589/e574c53a-39bf-4784-b010-8a0e24e3dfd9)
+
 This widget will be used to drive the robot by moving the virtual
 joystick on the Brain screen.
 The driving behavior is modelled after the behavior of driving
@@ -39,7 +41,8 @@ Virtual-Joystick-v2/  # Root level of the project.
 |   |   └── main.kv  # main ui layout in Kivy languague
 |   └── main.py  # Is the main entry point for the gui application.
 ├── test/  # Contains code for test of the private libs.
-|   └── test_dummy.py  # sets of unit test.
+|   └── test_dummy.py  # sets of unit test
+.
 ├── install.sh
 |    # The script to install the app on the brain.
 ├── uninstall.sh
