@@ -196,6 +196,7 @@ const sidebars = {
         "items": [
           "examples/motor_state/motor-state",
           "examples/vehicle_twist/vehicle-twist",
+          "examples/tool_control/tool-control",
           "examples/file_reader_can/file-reader-can",
         ],
         "label": "CAN Bus Examples",
