@@ -35,9 +35,6 @@ The tool control example will cause any tools connected to the Amiga to actuate 
 is in auto mode.
 This includes H-bridges and PTOs.
 Make sure the area is clear before running examples.
-
-Unlike autonomous motion control, you cannot visualize the tool commands when the Amiga dashboard
-is not in the `AUTO_ACTIVE` state.
 :::
 
 The [**Tool Control Example**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/tool_control/main.py)
