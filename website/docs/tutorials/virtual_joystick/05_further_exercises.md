@@ -4,12 +4,6 @@ title: 04 - Further Exercises
 ---
 # Further Exercises
 
-:::caution deprecation warning
-This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
-This tutorial only applies to brains running Amiga OS `v1.x` versions.<br/>
-Please check back for an updated tutorial for brains running `v2.x` Amiga OS software.
-:::
-
 Optionally, go beyond the tutorial and try to add features to this example.
 Two options are:
 
@@ -29,16 +23,6 @@ true max speed doesn't reflect the slider.
 Try to add a kivy `Button` widget that toggles the requested
 `AmigaControlState` so the brain is not constantly trying to take
 control of the dashboard while running.
-
-Or more advanced, add a button that starts/stops the sending of
-canbus messages.
-This could require stopping the stream of messages from the
-generator, signalling to the `sendCanbusMessage` to stop, and
-re-initializing the `sendCanbusMessage` RPC later.
-
-:::tip possible hint
-sending `grpc.aio.EOF` might do it...
-:::
 
 ## Customizing an app
 
@@ -83,11 +67,3 @@ The workflow for development is pretty much the same as any standard gui applica
 2. Run the code with the play button in vs-code.
     * [Optionally] Add a breakpoint to any line and use the Debug Console to interact.
 3. Go to step 1
-
-## [Optional] Test your application
-
-In order to validate your functionality, we suggest to add test cases for the internal `libs/[package_name]`
-located under `test/test_[test_name].py`.
-
-To launch the tests: `pytest test/`
-To run specific tests: `pytest test/test_dummy.py::TestDummy::test_add`

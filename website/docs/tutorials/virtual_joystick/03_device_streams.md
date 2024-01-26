@@ -1,8 +1,83 @@
 ---
 id: device-streams
-title: 03 - Python Implementation
+title: 03 - Main Implementation
 ---
-# Python Implementation
+# Kivy Implementation
+
+Now that we have the finished our custom widget we need to first add it to our applications kivy string.
+Navigating back to `src/res/main.kv` we need to import our newly defined widget.
+
+## Adding the Widget
+
+To do this, all we need to do is add an instance of our VirtualJoystickWidget to the same level as the
+images tabbed panel.
+TabbedPanel:
+
+```python
+    BoxLayout:
+        orientation: 'horizontal'
+        VirtualJoystickWidget:
+            id: joystick
+        TabbedPanel:
+            do_default_tab: False
+            id: tab_root
+            TabbedPanelItem:
+                text: "rgb"
+                Image:
+                    id: rgb
+```
+
+When we run the code now, we should see:
+IMAGE HERE OF ONLY JOYSTICK
+
+## Adding Text
+
+One additional feature we felt was important was to read information about
+the dashboard state of the Amiga, this could MANUAL_READY, AUTO_ACIVE, or AUTO_READY, etc.
+
+This will be the final update to our kivy string.
+Before the VirtualJoystickWidget, we will add a vertical stack of text boxes:
+
+```python
+    BoxLayout:
+        orientation: 'horizontal'
+        BoxLayout:
+            size_hint_x: 0.3
+            orientation: 'vertical'
+            Widget:
+                size_hint_y: 2.0
+            Label:
+                text: "Amiga State:"
+                font_size: 18
+                size_hint_y: 0.5
+            Label:
+                text: app.amiga_state
+                font_size: 18
+            Widget: # Empty placeholder
+            Label:
+                text: "Speed [m/s]:"
+                font_size: 18
+                size_hint_y: 0.5
+            Label:
+                text: app.amiga_speed
+                font_size: 18
+            Widget: # Empty placeholder
+            Label:
+                text: "Angular Rate [rad/s]:"
+                font_size: 18
+                size_hint_y: 0.5
+            Label:
+                text: app.amiga_rate
+                font_size: 18
+            Widget:
+                size_hint_y: 2.0
+        VirtualJoystickWidget:
+```
+
+Please refer to the [`src/res/main.kv`](https://github.com/farm-ng/virtual-joystick-v2/blob/main/src/res/main.kv)
+if the placement is confusing.
+
+INSERT INFO OF TEXT
 
 :::info
 In the
@@ -15,6 +90,8 @@ app we define the kivy app and Python implementation of the
 
 You should open these files for reference as you follow along.
 :::
+
+# Python Implementation
 
 ## Imports
 
@@ -192,21 +269,11 @@ that your custom application will use in one place. Here you can specify
 which cameras you will be using and at what relative frequency (every_n) and port.
 We suggest adjusting the every_n of the oak and canbus client and
 evaluate the performance of the app.
+We will add the
 
-#### entry.sh
+#### Local Development
 
-The entry.sh was greatly simplified from AmigaOS 1.0 to 2.0
-and now the file is build the virtual environment and run the app.
-In order to see the app running on the brain, you must use "DISPLAY:=0 ./entry.sh".
-
-:::caution
-If you launch the `Virtual Joystick` app with the command line,
-it is currently possible to have touch interactions with the launcher behind.
-This will cause other installed apps to unexpectedly launch over the app you are trying to use.
-
-Please see instructions for a workaround under:
-[**FAQ - Brain App Development**](/docs/reference/faq#brain-app-development)
-:::
+To run while developing, you can run ```./entry.sh``` to compile and run the code.
 
 ### References
 
