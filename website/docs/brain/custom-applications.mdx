@@ -111,22 +111,31 @@ repository-name/  # Root level of the project.
 In this file, you can find the metadata of the app. This file is used by the launcher
 and has the following structure:
 
+In order to run the application, you will need to update YOUR_USER_HERE to reflect your user from fleet manager.
+
 ```json
 {
-   "services": {
-        "example-app": {
-            "name": "example-app",
-            "type": "app",
-            "exec_cmd": "main.py",
-            "args": [
-                "--config /opt/farmng/config.json --port 8042"
-            ],
-            "http_gui_port": 8042,
-            "display_name": "Example App"
-        }
+  "services": {
+    "example-app": {
+      "name": "example-app",
+      "type": "app",
+      "exec_cmd": "/mnt/managed_home/farm-ng-user-YOUR_USER_HERE/amiga-app-template/venv/bin/python3
+                   /mnt/managed_home/farm-ng-user-YOUR_USER_HERE/amiga-app-template/main.py",
+      "args": [
+        "--config /opt/farmng/config.json", "--port 8042"
+      ],
+      "autostart": true,
+      "http_gui_port": 8042,
+      "display_name": "Monitor App"
     }
+  }
 }
 ```
+This might look something like:
+```
+/mnt/managed_home/farm-ng-user-jane/...
+```
+
 
 :::note
 Learn more about the manifest file [here](/docs/brain/brain-apps-manifest).
@@ -158,9 +167,10 @@ nvm --version
 You should see a version >= 0.34.0.
 
 
-3. Prepare the frontend and compile the typescript code to javascript
+3. Prepare the frontend and compile the typescript code to javascript within the ts/ folder of your custom app
 
 ```bash
+cd ts/
 nvm install --lts
 npm install
 npm run build  # build the frontend
@@ -174,6 +184,7 @@ Install the dependencies of the backend
 cd ..
 python3 -m venv venv  # create a virtual environment
 source venv/bin/activate  # activate the virtual environment
+python -m pip install --upgrade pip # make sure pip is updated
 pip install -r requirements.txt  # install dependencies
 ```
 
@@ -191,6 +202,17 @@ the one served by the launcher.
 ```bash
 python main.py --config /opt/farmng/config.json --debug
 ```
+:::info
+If when running main.py, a port error occurs:
+
+```
+[Errno 98] error while attempting to bind on address ('0.0.0.0', 8042): address already in use
+```
+This can occur while developing and can be resolved with:
+```
+sudo reboot
+```
+:::
 
 To visualize the app in your browser, go to http://localhost:8042
 

@@ -253,6 +253,24 @@ const sidebars = {
       "type": "category"
       },
     ],
+    "Kivy App Tutorials" : {
+      "00 - Tutorial Introduction" :[
+          "tutorials/introduction/tutorial-introduction",
+          "tutorials/introduction/getting-started-kivy",
+          "tutorials/introduction/template-overview",
+      ],
+      "01 - Camera Streamer Tutorial" :[
+          "tutorials/camera_streamer/camera-streamer-overview",
+          "tutorials/camera_streamer/kivy-definition",
+          "tutorials/camera_streamer/camera-stream",
+      ],
+      "02 - Virtual Joystick Tutorial" :[
+          "tutorials/virtual_joystick/virtual-joystick-overview",
+          "tutorials/virtual_joystick/virtual-joystick-widget",
+          "tutorials/virtual_joystick/device-streams",
+          "tutorials/virtual_joystick/further-exercises",
+      ],
+  },
     "Amiga Brain Development": [
       "brain/brain-apps",
       "brain/brain-apps-kivy",

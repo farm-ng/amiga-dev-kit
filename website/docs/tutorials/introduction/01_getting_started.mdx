@@ -1,0 +1,159 @@
+---
+id: getting-started-kivy
+title: 01 - Installing Templates
+---
+
+# Developing Custom Applications
+
+In this tutorial we will show you how to develop a custom [**Kivy**](https://kivy.org/) application for the Amiga Brain.
+
+:::warning Prerequisites
+
+1. [**SSH Access**](/docs/ssh): ensure that you have ssh access to the brain and a user account
+2. [**GitHub-101**](/docs/support/github-101#set-up-an-ssh-key): ensure that you have an ssh key for your user account
+on your brain.
+:::
+
+## Create a new app repository
+
+To create your own custom application navigate to the [**`amiga-app-template-kivy`**](https://github.com/farm-ng/amiga-app-template-kivy) repository on GitHub.
+:::tip
+You need to be signed into your GitHub account to see the option:  `Use this template`.
+:::
+
+
+![Create a new templated repository](https://user-images.githubusercontent.com/5157099/205272492-356c1540-948e-43dc-8f60-8992caa8d511.gif)
+
+Written instructions (same as video above):
+1. Click on green *Use this template* button (top right) to create a new repository based on this repo
+2. Fill out:
+    - Owner: (your_username)
+    - Repository Name: whatever-you-want
+        - Should be between between 4-17 characters, and
+        - Use underscores (_) or dashes (-) for separating words (no spaces!)
+    -Select Public box
+    -Click [Create repository from template]
+Done!
+
+Now that you are done creating your repository, let the development begin!! :))
+
+## Cloning Repository onto Brain
+
+Once you have established [**SSH connection**](/docs/ssh) with your robot and setup your ssh key, clone the repository in your root directory:
+
+```bash
+cd ~
+git clone https://github.com/YOUR-USERNAME/YOUR_REPOSITORY_NAME.git
+```
+
+### Project structure
+
+We recommend using [**VS-code**](https://code.visualstudio.com/docs/introvideos/basics) as the IDE for developing.
+
+Once you have established SSH connection with the robot, on the VS-code home page, select "Open folder" and navigate to
+the repository of your custom application.
+
+On the left side of the screen, you should see:
+
+```bash
+YOUR_REPOSITORY_NAME/  # Root level of the project.
+├── libs/ # Contains private libraries.
+|   └── project_name/
+|       ├── ops.py  # e.g a operators submodule
+|       └── project_name_subpackage/
+|           └── utils.py  # e.g a utilities submodule
+├── src/ # Contains all code needed to run the main gui application.
+|   ├── assets/  # Contains files needed to run the application
+|   |   └── app_logo.png  # static images or images for buttons.
+|   ├── res/  # Contains the layout files and UI strings.
+|   |   └── main.kv  # main ui layout in Kivy languague
+|   └── main.py  # Is the main entry point for the gui application.
+├── test/  # Contains code for test of the private libs.
+|   └── test_dummy.py  # sets of unit test.
+├── install.sh
+|    # The script to install the app on the brain.
+├── uninstall.sh
+|    # The script to uninstall the app from the brain.
+├── manifest.json
+|    # The file containing the metadata of the app to register it on the brain.
+├── entry.sh
+|    # The script to setup the project, create a virtual env. and install dependencies.
+└── setup.cfg
+    # The file containing the metadata of the package, including the name, versioning, etc. Learn more here: https://setuptools.pypa.io/en/latest/userguide/declarative_config.html
+
+```
+
+## Customizing manifest.json file
+
+The manifest.json file is the bridge between your custom app and the brain.
+
+There are three edits to be made to the file all in CAPS, in "name", "exec_cmd", "display_name"
+
+```json
+{
+  "services": {
+    "TEMPLATE_NAME": {
+      "name": "TEMPLATE_NAME",
+      "type": "app",
+      "exec_cmd": "/mnt/managed_home/farm-ng-user-YOUR_USER_HERE/YOUR-REPOSITORY-NAME/entry.sh",
+      "display_name": "APP NAME",
+      "autostart": false
+    }
+  }
+}
+```
+Begin by updating both instances of "TEMPLATE_NAME" to a unique name.
+This name should not have spaces, we recommend using the same name as the repository name.
+
+Both instances of "TEMPLATE_NAME" should be the same
+    1. no spaces
+    2. use of "-" or "_"
+
+Second, "YOUR_USER_HERE" should be updated to the name of the user who initially installed the application.
+This is the user name from fleet manager.
+
+Finally, "APP NAME" to whatever you'd like for the brain to display for your custom app.
+
+:::info
+Example manifest.json
+:::
+
+```json
+{
+  "services": {
+    "template-app": {
+      "name": "template-app",
+      "type": "app",
+      "exec_cmd": "/mnt/managed_home/farm-ng-user-aoc/our-template-app/entry.sh",
+      "display_name": "Template App",
+      "autostart": false
+    }
+  }
+}
+```
+
+### Add app to brain screen
+
+To add your custom app to the app page on the barin, run the `install.sh` script.
+
+```bash
+./install.sh
+```
+
+You should now see your app card on the app screen.
+
+If the manifest.json was correctly configured, after a few seconds the application will appear.
+It takes some time because the virtual environment needs to install all the dependencies.
+
+![Screenshot from 2023-12-01 17-43-59](https://github.com/farm-ng/amiga-dev-kit/assets/5157099/aac51d8a-ec34-4b85-9e73-f151c008e64c)
+
+### Run from the command line
+
+Alternatively, while developing, you can run your app from the terminal.
+
+To do this, open a terminal and navigate to your cusom app directory
+
+```bash
+./entry.sh  # install and run
+```
+Using this method will also allow you to see file outputs in the terminal.
