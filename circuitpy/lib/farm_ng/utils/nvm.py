@@ -1,3 +1,16 @@
+# Copyright (c) farm-ng, inc.
+#
+# Licensed under the Amiga Development Kit License (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://github.com/farm-ng/amiga-dev-kit/blob/main/LICENSE
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 from random import choice
 from random import seed
 from struct import calcsize
@@ -5,7 +18,8 @@ from struct import pack
 from struct import unpack
 
 from microcontroller import nvm as mc_nvm
-from supervisor import ticks_ms
+
+from .ticks import ticks_ms
 
 
 class ValueStore:
@@ -32,7 +46,7 @@ class Value:
 
     def read_name(self):
         name, val_addr = unpack(self.name_format, mc_nvm[self.name_address : self.name_address + self.name_size])
-        return name.decode("ascii"), val_addr
+        return (name, val_addr)
 
     def write_default(self):
         try:
@@ -60,54 +74,59 @@ class Value:
 def random_string(length):
     chars = [
         # "0", # Remove 0 vs O ambiguity
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "F",
-        "G",
-        "H",
-        "I",
-        "J",
-        "K",
-        "L",
-        "M",
-        "N",
-        # "O", # Remove 0 vs O ambiguity
-        "P",
-        "Q",
-        "R",
-        "S",
-        "T",
-        "U",
-        "V",
-        "W",
-        "X",
-        "Y",
-        "Z",
+        b"1",
+        b"2",
+        b"3",
+        b"4",
+        b"5",
+        b"6",
+        b"7",
+        b"8",
+        b"9",
+        b"A",
+        b"B",
+        b"C",
+        b"D",
+        b"E",
+        b"F",
+        b"G",
+        b"H",
+        b"I",
+        b"J",
+        b"K",
+        b"L",
+        b"M",
+        b"N",
+        # b"O", # Remove 0 vs O ambiguity
+        b"P",
+        b"Q",
+        b"R",
+        b"S",
+        b"T",
+        b"U",
+        b"V",
+        b"W",
+        b"X",
+        b"Y",
+        b"Z",
     ]
     seed(ticks_ms())
-    return "".join(choice(chars) for i in range(length))
+    return b"".join([choice(chars) for i in range(length)])
+
+
+def random_wifi_password():
+    return random_string(32)
 
 
 # up to a 100 character string
-nvm_serial_number = Value("sn", "<100s", random_string(100))
-nvm_node_id = Value("canid", "<I", 0x42)  # Canbus id
+nvm_serial_number = Value(b"sn", "<100s", random_string(100))
+nvm_node_id = Value(b"canid", "<I", 0x42)  # Canbus id
 # Total uptime in minutes, unsigned integer is enough for 7990 years...
-nvm_minutes = Value("minutes", "<I", 0)
+nvm_minutes = Value(b"minutes", "<I", 0)
+nvm_wifi_password = Value(b"wifi_pass", "<32s", b"")
 # Calibration of the joystick (x,y) on [-1, 1]
-nvm_joystick_calib = Value("joystick_calib", "<2h", (0, 0))
+nvm_joystick_calib = Value(b"joystick_calib", "<2h", (0, 0))
 
 # Unstable -- not actually in use
 _n_battery_samples = 121
-nvm_battery_history = Value("battery_history", "<" + "H" * _n_battery_samples, [0] * _n_battery_samples)
+nvm_battery_history = Value(b"battery_history", "<" + "H" * _n_battery_samples, [0] * _n_battery_samples)

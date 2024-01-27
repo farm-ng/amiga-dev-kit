@@ -6,8 +6,8 @@ title: Debugging error codes
 # Debugging Error Codes
 
 :::warning Deprecation Warning
-This section is intended to the dash firmware v0.3.0.
-The error codes are human-readable in the dash v0.4.0.
+This section is intended for the dashboard firmware v0.3.0 and older.
+The error codes are human-readable in the dashboard firmware v0.4.0+.
 :::
 
 ## Pendant Error

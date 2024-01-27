@@ -1,11 +1,24 @@
+# Copyright (c) farm-ng, inc.
+#
+# Licensed under the Amiga Development Kit License (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://github.com/farm-ng/amiga-dev-kit/blob/main/LICENSE
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 from canio import Message
 from farm_ng.utils.cobid import CanOpenObject
-from farm_ng.utils.general import TickRepeater
 from farm_ng.utils.main_loop import MainLoop
 from farm_ng.utils.packet import AmigaControlState
 from farm_ng.utils.packet import AmigaRpdo1
 from farm_ng.utils.packet import AmigaTpdo1
 from farm_ng.utils.packet import DASHBOARD_NODE_ID
+from farm_ng.utils.ticks import TickRepeater
 from usb_cdc import console
 
 

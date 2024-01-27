@@ -1,4 +1,16 @@
-# Python imports
+# Copyright (c) farm-ng, inc.
+#
+# Licensed under the Amiga Development Kit License (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://github.com/farm-ng/amiga-dev-kit/blob/main/LICENSE
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 from gc import collect as gc_collect
 from gc import mem_alloc
 from gc import mem_free
@@ -7,20 +19,17 @@ from time import monotonic
 
 from canio import BusState
 from canio import Message
-from supervisor import ticks_ms
 
 from .can import setup_can_default
-from .general import DtTracker
-from .general import TickRepeater
+from .debug_packet import FarmngDebugMemory
+from .debug_packet import FarmngDebugTimer
 from .nvm import nvm_serial_number
-from .packet import FarmngDebugMemory
-from .packet import FarmngDebugTimer
 from .packet import FarmngHeartbeat
 from .packet import NodeState
-from .packet import SupervisorReq
+from .ticks import DtTracker
+from .ticks import TickRepeater
+from .ticks import ticks_ms
 
-# CircuitPython modules
-# Local imports
 
 try:
     from farm_ng.display import Display, amiga_graphics, TAG_DEBUG, TAG_CUSTOM_START
@@ -98,7 +107,7 @@ class MainLoop:
         self.dt_list = []
         self.dt_repl_time = DtTracker("debug_mainloop")
 
-        self.command_handlers = {int(SupervisorReq.cob_id | self.node_id): self.handle_supervisor_req}
+        self.command_handlers = {}
 
         self.AppClass = AppClass
         self.app = None
@@ -140,11 +149,6 @@ class MainLoop:
         """Initialize the app loaded on the mcu."""
         gc_collect()
         self.app = self.AppClass(main_loop=self, can=self.can, node_id=self.node_id)
-
-    def handle_supervisor_req(self, message):
-        """Handle supervisor request CAN message."""
-        req = SupervisorReq.from_can_data(message.data)
-        print(req)
 
     def handle_message(self, message):
         """Process each received CAN message."""

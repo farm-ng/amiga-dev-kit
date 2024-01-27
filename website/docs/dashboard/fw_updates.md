@@ -95,9 +95,9 @@ when connecting to the debug or service cable.
 #### Access the files
 
 1. Download the latest application zip file
-[amiga-dash-v0.3.0.zip](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.3.0/amiga-dash-v0.3.0.zip)
+[amiga-dash-v0.4.0.zip](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.4.0/amiga-dash-v0.4.0.zip)
 2. For more details on the git latest release navigate to
-[Release: amiga-dash-v0.3.0](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.3.0)
+[Release: amiga-dash-v0.4.0](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.4.0)
 3. Extract the files from the zipped folder
 
 :::tip
