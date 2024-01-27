@@ -105,12 +105,15 @@ RelativeLayout:
 
 Now, we'd like to test if the changes we made to the kivy string compile.
 
-You'll see if you run
-```./entry.sh``` you get an error:
 :::warning
+You'll see if you run `./entry.sh` you get an error:
+
+```bash
  Traceback (most recent call last):
    File "kivy/properties.pyx", line 961, in kivy.properties.ObservableDict.**getattr**
  KeyError: 'counter_label'
+```
+
 :::
 
 If we update our template_function():

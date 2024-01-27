@@ -89,7 +89,7 @@ class CameraApp(App) looks like the list above.
 
 The camera app will generally follow the same format as the template tic-toc app.
 However, will also subscribe to a farm-ng service, in the case of this application,
-it will be the oak camer service.
+it will be the oak camera service.
 
 ```python
 class CameraApp(App):
@@ -112,6 +112,8 @@ will need to access. It will be stored in the variable **`self.service_config`**
 **`image_decoder`** is responsible for taking the raw bit
 stream from the oak service and packing them to
 make python interpretable image frames.
+We will use `TurboJPEG` as the image decoder (it is much faster
+than kivy's default image decoder).
 
 ### Update: on_exit_btn(self)
 
@@ -124,7 +126,7 @@ make python interpretable image frames.
 ```
 
 This method is similar to the [**`amiga-app-template-kivy`**](https://github.com/farm-ng/amiga-app-template-kivy)
-however, this time we also need to cancel the async tasks that a running.
+however, this time we also need to cancel the async tasks that are running.
 
 ### Update: app_func(self)
 
@@ -154,9 +156,10 @@ however, this time we also need to cancel the async tasks that a running.
 ```
 
 More information can be found here:
-[**`farm-ng-core`**](https://github.com/farm-ng/farm-ng-core/tree/e872fbe1aebd26fabfabefd77054ef9774301d67/py/farm_ng/core)
+[**`farm-ng-core`**](https://github.com/farm-ng/farm-ng-core/blob/main/py/farm_ng/core/event_client.py)
+and the [**`Oak Camera Client`**](/docs/examples/camera_client/) example.
 
-Within this repository you can see how **`config_list`** and **`oak0_client`** are made.
+Within this repository and example, you can see how **`config_list`** and **`oak0_client`** are made.
 
 Finally, once the oak0_client is made, it can be used to subscribe to the camera streams.
 
@@ -336,10 +339,7 @@ but it could modified to add more cameras or canbus for example.
 
 ### Update setup.cfg
 
-We will use `TurboJPEG` as the image decoder (it is much faster
-than kivy's default image decoder).
-
-In order to import this, we must add the library `PyTurboJPEG` to
+In order to import everything we need, we must add the library `PyTurboJPEG` to
 the
 [**`setup.cfg`**](https://github.com/farm-ng/camera-streamer/blob/main/setup.cfg)
 file so the dependency installs.
@@ -352,10 +352,11 @@ install_requires =
     PyTurboJPEG
 ```
 
-## Running from command line
+## Running the app
 
-```Python
-./entry.sh
-```
+To run the app:
+
+1. run the command ```./install.sh``` and click the icon on the brain screen
+2. run the command ```./entry.sh```
 
 ![camera-streamer](https://user-images.githubusercontent.com/53625197/216075393-6e578a01-677e-4279-b224-70fd3f73ce5f.png)

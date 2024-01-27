@@ -1,13 +1,15 @@
 ---
 id: device-streams
-title: 03 - Main Implementation
+title: 02 - Main Implementation
 ---
-# Kivy Implementation
+# Main Implementation
+
+## Kivy
 
 Now that we have the finished our custom widget we need to first add it to our applications kivy string.
 Navigating back to `src/res/main.kv` we need to import our newly defined widget.
 
-## Adding the Widget
+### Adding the Widget
 
 To do this, all we need to do is add an instance of our VirtualJoystickWidget to the same level as the
 images tabbed panel.
@@ -30,7 +32,7 @@ TabbedPanel:
 When we run the code now, we should see:
 ![Screenshot from 2024-01-26 13-52-50](https://github.com/farm-ng/amiga-dev-kit/assets/53889589/2d1f0f03-fd47-4b31-a5e6-73189f3802cd)
 
-## Adding Text
+### Adding Text
 
 One additional feature we felt was important was to read information about
 the dashboard state of the Amiga, this could MANUAL_READY, AUTO_ACIVE, or AUTO_READY, etc.
@@ -91,12 +93,11 @@ app we define the kivy app and Python implementation of the
 You should open these files for reference as you follow along.
 :::
 
-# Python Implementation
+## Python Implementation
 
-## Imports
+### Imports
 
 :::info
-
 You should have already gone through the
 [**Camera Streamer Tutorial**](/docs/tutorials/camera_streamer/camera-streamer-overview)
 based on the
@@ -117,7 +118,7 @@ from farm_ng.canbus.packet import AmigaTpdo1
 
 These imports are a part of the canbus API which will make more sense in application.
 
-## Kivy String Variables
+### Kivy String Variables
 
 To update the kivy string for the amigas, state, linear and angual velocity, we need to add:
 
@@ -127,7 +128,7 @@ amiga_speed = StringProperty("???")
 amiga_rate = StringProperty("???")
 ```
 
-## Class Initialization
+### Class Initialization
 
 In this tutorial, we introduce the service_config.json file.
 
@@ -147,7 +148,7 @@ def __init__(
     self.max_angular_rate: float = 1.0
 ```
 
-## Client Configurations
+### Client Configurations
 
 The app function looks a little different in this example vs the camera streamer.
 Here, we are using the EventServiceConfigList() function to create a list of services our custom application
@@ -198,7 +199,7 @@ async def app_func(self):
 We create two clients in this example, the oak0_client and the canbus_client from the EventClient().
 Here is more information about the [event_service](https://github.com/farm-ng/farm-ng-core) framework.
 
-## Sending CAN Messages
+### Sending CAN Messages
 
 This function has two main purposes, sending can messages and reading messages from the dashboard.
 The dashboards tpd01 messages contains information about the state of the robot (manual, auto) and
@@ -260,9 +261,9 @@ These are bound to the corresponding `Label` widget text fields,
 so we only need to update the value of the `StringProperty` and
 we do not need to update the text field of the `Label` explicitly.
 
-### Other notes
+## Other notes
 
-#### service_config.json
+### service_config.json
 
 The [service_config](https://github.com/farm-ng/virtual-joystick-v2/blob/main/service_config.json)
 is used to store all the services
@@ -272,12 +273,11 @@ We suggest adjusting the every_n of the oak and canbus client and
 evaluate the performance of the app.
 We will add the
 
-#### Local Development
+### Local Development
 
 To run while developing, you can run ```./entry.sh``` to compile and run the code.
 
-### References
+## References
 
-- [**farm_ng.canbus.canbus_client**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/canbus_client.py)
 - [**farm_ng.canbus.packet**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py)
 - [**canbus.proto**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto)

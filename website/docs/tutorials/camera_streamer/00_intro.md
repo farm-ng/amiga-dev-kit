@@ -5,9 +5,7 @@ title: 00 - Camera Streamer Overview
 
 # Camera Streamer Overview
 
-## Prerequisites
-
-:::warning
+:::warning Prerequisites
 This tutorial builds off of the
 [**Tutorial Introduction**](/docs/tutorials/introduction/tutorial-introduction)
 :::

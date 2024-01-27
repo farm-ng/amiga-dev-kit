@@ -102,7 +102,7 @@ features.
 
 ## Python
 
-In this tutorial, we will break down the major components of main.py
+In this tutorial, we will break down the major components of [**main.py**](https://github.com/farm-ng/amiga-app-template-kivy/blob/main/src/main.py)
 
 The template starts with generic Python imports that are used in
 the app, followed by the custom lib imports, then kivy imports

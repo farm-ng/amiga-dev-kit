@@ -259,20 +259,15 @@ const sidebars = {
       ],
       "01 - Camera Streamer Tutorial" :[
           "tutorials/camera_streamer/camera-streamer-overview",
-          "tutorials/camera_streamer/template-starter",
           "tutorials/camera_streamer/kivy-definition",
           "tutorials/camera_streamer/camera-stream",
       ],
       "02 - Virtual Joystick Tutorial" :[
           "tutorials/virtual_joystick/virtual-joystick-overview",
-          "tutorials/virtual_joystick/template-starter",
           "tutorials/virtual_joystick/virtual-joystick-widget",
           "tutorials/virtual_joystick/device-streams",
           "tutorials/virtual_joystick/further-exercises",
       ],
-      "03 - Porting to new OS" :[
-          'tutorials/porting/overview'
-      ]
   },
     "Amiga Brain Development": [
       "brain/brain-apps",

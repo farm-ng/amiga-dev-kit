@@ -7,12 +7,11 @@ title: 01 - Installing Templates
 
 In this tutorial we will show you how to develop a custom [**Kivy**](https://kivy.org/) application for the Amiga Brain.
 
-## Prerequisites
+:::warning Prerequisites
 
-:::warning
-
-Make sure that you have ssh access to the brain. If you don't have ssh access, please follow the [**SSH Access**](/docs/ssh) tutorial.
-
+1. [**SSH Access**](/docs/ssh): ensure that you have ssh access to the brain and a user account
+2. [**GitHub-101**](/docs/support/github-101#set-up-an-ssh-key): ensure that you have an ssh key for your user account
+on your brain.
 :::
 
 ## Create a new app repository
@@ -40,13 +39,7 @@ Now that you are done creating your repository, let the development begin!! :))
 
 ## Cloning Repository onto Brain
 
-These next steps will be a challenge the first few times.
-
-:::info
-Please refer to [**GitHub-101**](/docs/support/github-101#set-up-an-ssh-key) for specific instructions on creating an ssh key on your brain
-:::
-
-Once you have established [**SSH connection**](/docs/ssh) with your robot. Clone the repository in your root directory:
+Once you have established [**SSH connection**](/docs/ssh) with your robot and setup your ssh key, clone the repository in your root directory:
 
 ```bash
 cd ~
@@ -147,14 +140,12 @@ To add your custom app to the app page on the barin, run the `install.sh` script
 ./install.sh
 ```
 
-You should now see your app on the brain screen.
+You should now see your app card on the app screen.
 
-If the manifest.json was correctly configured, after about 30 seconds the application will launch.
-
+If the manifest.json was correctly configured, after a few seconds the application will appear.
 It takes some time because the virtual environment needs to install all the dependencies.
 
 ![Screenshot from 2023-12-01 17-43-59](https://github.com/farm-ng/amiga-dev-kit/assets/5157099/aac51d8a-ec34-4b85-9e73-f151c008e64c)
-
 
 ### Run from the command line
 
