@@ -115,7 +115,7 @@ issues with manifest.json. This approach helps in identifying specific error mes
 To begin debugging, open a terminal window on the robot and execute the following command:
 
 ```bash
-journalctl -xef | grep -E 'Type must be a ManifestServiceType or string|JSON data was not parsable|JSON data is not a dictionary|Invalid service type|Services is not a dictionary|Service dep for|depends on itself|, a non-existent service|, which is not a service|Directory state file not found, no users loaded|Directory state file failed to parse JSON|Directory state JSON file is not dictionary, does not contain users dictionary'
+sudo -su adminfarmng journalctl -f --user-unit farmng-launcher-backend | grep -v INFO
 ```
 
 This command filters the system logs in real-time, highlighting key phrases that typically indicate issues related to
