@@ -101,3 +101,27 @@ One example is the `farm-ng-user-[<your_username>]` manifest file which contains
   }
 }
 ```
+
+## Troubleshooting
+
+A correctly formatted manifest.json is crucial for the successful loading of your application/service
+in the launcher backend.
+While adhering to best practices and thoroughly checking your manifest file is recommended to prevent errors,
+there are occasions when you might encounter issues with a malformed manifest file.
+
+If your application does not appear on the launcher screen, you can utilize journalctl to debug potential
+issues with manifest.json. This approach helps in identifying specific error messages related to the manifest file processing.
+
+To begin debugging, open a terminal window on the robot and execute the following command:
+
+```bash
+sudo -su adminfarmng journalctl -f --user-unit farmng-launcher-backend | grep -v INFO
+```
+
+This command filters the system logs in real-time, highlighting key phrases that typically indicate issues related to
+manifest.json. By examining the output, you can pinpoint the exact nature of the problem, such as type mismatches,
+JSON parsing errors, or invalid service types.
+This targeted approach significantly reduces the time and effort required for troubleshooting.
+
+Remember, the correct structure and content of manifest.json are vital for the seamless operation of your application
+within the launcher environment. Regularly reviewing and validating your manifest file can prevent many common issues.
