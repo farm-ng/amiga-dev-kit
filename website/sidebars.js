@@ -30,85 +30,6 @@ const sidebars = {
     "Introduction": [
       "getting-started",
     ],
-    "Getting Started": [
-      "amiga_quick_start/amiga-quick-start",
-      "ssh/ssh",
-      "brain/brain-install",
-      "brain/next-steps",
-    ],
-
-
-    "Amiga Rover": [
-      {
-        "items": [
-        "dashboard/dashboard",
-        "dashboard/dashboard-user-guide",
-        "dashboard/control-states",
-        "dashboard/dashboard-fw",
-        "dashboard/dashboard-debugging",
-      ],
-      "label": "Dashboard",
-      "type": "category"
-    },
-    {
-      "items": [
-        "pendant/pendant"
-
-      ],
-      "label": "Pendant",
-      "type": "category"
-    },
-
-    ],
-    "Intelligence Kit": [
-      "intelligence-kit/overview-intel",
-{
-        "items": [
-          "brain/brain",
-          "intelligence-kit/brain/brain-v2",
-        ],
-        "label": "Brain",
-        "type": "category"
-
-      },
-{
-  "items": [
-    "release-notes/release-022",
-    "release-notes/release-021",
-    "release-notes/release-02",
-    "release-notes/release-01",
-  ],
-  "label": "Release Notes",
-  "type": "category"
-},
-    ],
-    "Farm Tools":[
-      {
-        "items": [
-          "farm-tools/three-point",
-        ],
-        "label": "Three Point",
-        "type": "category"
-      },
-  ],
-    "Development Tools": [
-      {
-        "items": [
-            "debug_cable/debug-cable",
-            "debug_cable/service-cable"
-      ],
-      "label": "Cables",
-      "type": "category"
-    },
-    {
-      "items": [
-        "mcu_kit/microcontroller-kit",
-      ],
-      "label": "Microcontroller Kit",
-      "type": "category"
-    },
-  ],
-
     "Resources/Support": [
       "hardware-tools/recommended-tools",
       "reference/faq",
@@ -116,52 +37,75 @@ const sidebars = {
       "support/github-101",
     ],
   },
-  "Concepts": [
-    "concepts/concepts-index",
+  "Amiga Rover": [
+    "amiga_quick_start/amiga-quick-start",
     {
-      "Fundamental Concepts": [
-        "concepts/system_overview/amiga-dev",
-        "concepts/transforms_and_poses/transforms-and-poses",
-        "concepts/tracks_and_waypoints/tracks-and-waypoints",
-      ],
-        "Service Overviews": [
-        "concepts/canbus_service/canbus-overview",
-        "concepts/oak_service/oak-overview",
-        "concepts/gps_service/gps-overview",
-        "concepts/recorder_service/recorder-overview",
-        "concepts/filter_service/filter-overview",
-        "concepts/track_follower_service/track-follower-overview",
-      ],
-      "App Overviews": [
-        "apps/filter_app/filter-app",
-        "apps/autoplot_app/autoplot-app",
-        "apps/recorder_app/recorder-app",
-        "apps/file_manager_app/file-manager-app",
-        "apps/camera_app/camera-app",
-      ],
-    },
-  ],
-  "api": [
-    "api/api-index",
-    {
-      "Microcontroller ADK": [
-        require("./docs/reference/circuitpy/sidebar.json")
-      ],
-    },
-    {
-      "Brain ADK": [
-        require("./docs/reference/brain/sidebar.json")
-      ],
-    }
-  ],
-  "examples": [
-    "examples/examples-index",
-    {
-    "Microcontroller Examples" : [
-        "examples/hello_main_loop/hello-world",
-        "examples/cansniffer/cansniffer",
-        "examples/FPV/fpv",
+      "items": [
+      "dashboard/dashboard",
+      "dashboard/dashboard-user-guide",
+      "dashboard/control-states",
+      "dashboard/dashboard-fw",
+      "dashboard/dashboard-debugging",
     ],
+    "label": "Dashboard",
+    "type": "category"
+  },
+  {
+    "items": [
+      "pendant/pendant"
+
+    ],
+    "label": "Pendant",
+    "type": "category"
+  },
+    {
+      "items": [
+        "farm-tools/three-point",
+      ],
+      "label": "Three Point",
+      "type": "category"
+    },
+  ],
+  "Intelligence Kit": [
+    "intelligence-kit/overview-intel",
+      {
+        "items": [
+          "brain/brain",
+          "intelligence-kit/brain/brain-v2",
+        ],
+        "label": "Brain",
+        "type": "category"
+      },
+      {
+        "items":[
+          "ssh/ssh",
+          "brain/brain-install",
+          "brain/next-steps",
+        ],
+        'label': "Getting Started",
+        "type": "category"
+      },
+      {
+      "items": [
+        "release-notes/release-022",
+        "release-notes/release-021",
+        "release-notes/release-02",
+        "release-notes/release-01",
+      ],
+      "label": "Release Notes",
+      "type": "category"
+      },
+    // {
+    //   "Microcontroller ADK": [
+    //     require("./docs/reference/circuitpy/sidebar.json")
+    //   ],
+    // },
+    // {
+    //   "Brain ADK": [
+    //     require("./docs/reference/brain/sidebar.json")
+    //   ],
+    // },
+    {
     "Brain Examples" : [
       {
         "items": [
@@ -278,8 +222,45 @@ const sidebars = {
       "brain/app-ownership",
       "brain/sdk-barley-migration",
       "brain/ros-bridge",
-    ]
+    ],
+    "Fundamental Concepts": [
+      "concepts/system_overview/amiga-dev",
+      "concepts/transforms_and_poses/transforms-and-poses",
+      "concepts/tracks_and_waypoints/tracks-and-waypoints",
+    ],
+      "Service Overviews": [
+      "concepts/canbus_service/canbus-overview",
+      "concepts/oak_service/oak-overview",
+      "concepts/gps_service/gps-overview",
+      "concepts/recorder_service/recorder-overview",
+      "concepts/filter_service/filter-overview",
+      "concepts/track_follower_service/track-follower-overview",
+    ],
+    "App Overviews": [
+      "apps/filter_app/filter-app",
+      "apps/autoplot_app/autoplot-app",
+      "apps/recorder_app/recorder-app",
+      "apps/file_manager_app/file-manager-app",
+      "apps/camera_app/camera-app",
+    ],
     }
+  ],
+  'Microcontroller Kit':[
+    'mcu_kit/microcontroller-kit',{
+      "Microcontroller Examples" : [
+        "examples/hello_main_loop/hello-world",
+        "examples/cansniffer/cansniffer",
+        "examples/FPV/fpv",
+      ],
+    },
+    {
+      "items": [
+          "debug_cable/debug-cable",
+          "debug_cable/service-cable"
+    ],
+    "label": "Cables",
+    "type": "category"
+  },
   ],
   "contribute": [
     "contribute/contribute-website"

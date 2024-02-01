@@ -88,27 +88,26 @@ async function createConfig() {
 	    position: 'left',
 	  },
 	  {
-	    label: 'Concepts',
+	    label: 'Amiga Rover',
 	    type: 'doc',
-	    docId: 'concepts/concepts-index',
+	    docId: 'amiga_quick_start/amiga-quick-start',
 	    position: 'left',
 	  },
 	  {
-	    label: 'Examples',
+	    label: 'Intelligence Kit',
 	    type: 'doc',
-	    docId: 'examples/examples-index',
+	    docId: 'intelligence-kit/overview-intel',
 	    position: 'left',
 	  },
 	  {
-	    label: 'API',
+	    label: 'Microcontroller Kit',
 	    type: 'doc',
-	    docId: 'api/api-index',
+	    docId: 'mcu_kit/microcontroller-kit',
 	    position: 'left',
 	  },
 	  {
-
+		label: 'About Us',
     	to: 'https://farm-ng.com/pages/about-farm-ng',
-    	label: 'About Us',
     	position: 'left',
 },
 
