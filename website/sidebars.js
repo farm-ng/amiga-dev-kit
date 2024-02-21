@@ -195,6 +195,7 @@ const sidebars = {
       {
         "items": [
           "examples/motor_state/motor-state",
+          "examples/pendant_state/pendant-state",
           "examples/vehicle_twist/vehicle-twist",
           "examples/tool_control/tool-control",
           "examples/file_reader_can/file-reader-can",
