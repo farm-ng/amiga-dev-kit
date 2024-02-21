@@ -55,23 +55,22 @@ is actively running the canbus service.
 
 ## 2. Install the example's dependencies
 
-:::tip
-
-It is recommended to also install these dependencies and run the
-example in the brain ADK virtual environment.
-
-:::
-
 ### Setup
 
-:::important Recommended
+```bash
+cd farm-ng-amiga/
+```
+
+:::tip Recommended
+
 Create a virtual environment
-:::
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
+
+:::
 
 ### Install
 

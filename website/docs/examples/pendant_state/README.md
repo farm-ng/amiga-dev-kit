@@ -19,6 +19,10 @@ The [**Amiga Pendant State**](https://github.com/farm-ng/farm-ng-amiga/blob/main
 example is a basic way of showing how to access and decode the
 `PendantState` values streamed by the canbus service.
 
+You can either run this example directly on a brain by `ssh`'ing in, or use your local PC.
+If using your local PC, it should be either connected to the same local network as the brain
+or linked to it through tailscale.
+
 The requirements to run this example are to have a
 [**farm-ng brain**](/docs/brain/) running the `canbus service`, with a pendant attached to your Amiga.
 There will be no `/pendant` stream if your amiga does not have a wired pendant connected.
@@ -95,11 +99,11 @@ pip install -r requirements.txt
 You can skip this if running the example `ssh`'d into your brain.
 :::
 
-To stream the `PendantState` to your laptop, by connecting with a `gRPC` client over Wifi,
+To connect with a `gRPC` client over Wifi,
 you must change the `host` field in `service_config.json` from localhost to your robot's name
 (e.g., `element-vegetable`).
 
-As a debugging step, ensure you can ping the amiga at that IP address.
+As a debugging step, ensure you can ping the amiga at that IP address or tailscale name with `ping element-vegetable`.
 
 ```json
 {
@@ -127,5 +131,5 @@ python main.py --service-config service_config.json
 
 ## Expected output
 
-You should see a printed stream of the current `PendantState`,
+You should see a printed stream of  `PendantState`,
 with additional printout of any pressed buttons.
