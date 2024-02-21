@@ -35,12 +35,11 @@ bus for pendant alternatives, including Kartech wireless remotes and the on-scre
 :::tip
 Check out [`farm-ng-amiga/py/farm_ng/canbus/packet.py`](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/farm_ng/canbus/packet.py)
 or the auto-generated [**`canbus.packet` API docs**](/docs/reference/brain/canbus/packet) for the latest.
-for the latest
 :::
 
 - `x`: Joystick `[left, right]`, on range `[-1.0, 1.0]`
 - `y`: Joystick `[reverse, forward]`, on range `[-1.0, 1.0]`
-- `buttons`: Bit masked integer representing which buttons are
+- `buttons`: Bit masked integer representing which buttons are pressed
 
 ```python
 class PendantButtons(IntEnum):
