@@ -28,6 +28,10 @@ It may be helpful to understand how UKFs work, their limitations and functionali
 The [**Filter Client**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/filter_client/main.py)
 example streams the results from the state estimation filter running on the Amiga.
 
+You can either run this example directly on a brain by `ssh`'ing in, or use your local PC.
+If using your local PC, it should be either connected to the same local network as the brain
+or linked to it through tailscale.
+
 The requirements to run this example are to have a
 [**farm-ng brain**](/docs/brain/) running the `filter service`.
 The filter service will output the state, even if state estimation results are poor,
@@ -39,29 +43,38 @@ The state estimation filter service is a client of the following services:
 - canbus
 - gps
 - oak0
-:::
-
-### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
-
-### 2. Install the example's dependencies
-
-:::tip
-
-It is recommended to also install these dependencies and run the
-example in the brain ADK virtual environment.
 
 :::
 
-```bash
-# assuming you're already in the amiga-dev-kit/ directory
-cd farm-ng-amiga/py/examples/filter_client
-```
+## 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
+
+## 2. Install the example's dependencies
+
+### Setup
 
 ```bash
-pip3 install -r requirements.txt
+cd farm-ng-amiga/
 ```
 
-### 3. Execute the Python script
+:::tip Recommended
+
+Create a virtual environment
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+:::
+
+### Install
+
+```bash
+cd py/examples/filter_client
+pip install -r requirements.txt
+```
+
+## 3. Execute the Python script
 
 ```bash
 python3 main.py --service-config service_config.json
@@ -71,7 +84,7 @@ python3 main.py --service-config service_config.json
 By default, the host address is assumed to be `localhost`.
 :::
 
-### 4. Customize the run
+## 4. Customize the run
 
 Let's have some fun and stream the state to your laptop over the Wifi,
 using the gRPC client.
@@ -95,7 +108,7 @@ python3 main.py --help
 To customize the run, you need to update the `service_config.json`
 by modifying the `host` and `port` fields.
 
-### 5. Code overview
+## 5. Code overview
 
 In this example we use the `EventClient` with the `subscribe` method to receive the filter state stream.
 
@@ -149,7 +162,6 @@ if __name__ == "__main__":
     asyncio.run(main(args.service_config))
 ```
 
-:::tip
-We highly recommend to have some basic knowledge about
-[**`asyncio`**](https://docs.python.org/3/library/asyncio.html).
-:::
+## Expected output
+
+You should see a printed stream of key details from the `FilterState`.
