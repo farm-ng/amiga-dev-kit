@@ -185,7 +185,14 @@ make sure to check this [link](/docs/examples/file_reader_gps/).
 }
 ```
 
-## 4. Run the client
+## 4. [Optional] Customize the run
+
+To run this script from your PC, you need to update the `service_config.json`
+by modifying the `host` field with your Amiga brain name.
+Please check out the [Amiga Development 101](../../concepts/system_overview/README.md#where-to-run-the-examples)
+for more details.
+
+## 5. Run the client
 
 In a terminal, run the client:
 

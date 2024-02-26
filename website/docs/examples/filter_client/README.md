@@ -86,15 +86,16 @@ By default, the host address is assumed to be `localhost`.
 
 ## 4. Customize the run
 
-If you want to stream the state on your laptop, by connecting with a gRPC client over Wifi,
-you can change the `host` field in `service_config.json` from `localhost`
-to your robot's name (e.g., `element-vegetable.tail0be07.ts.net`).
+To run this script from your PC, you need to update the `service_config.json`
+by modifying the `host` field with your Amiga brain name.
+Please check out the [Amiga Development 101](../../concepts/system_overview/README.md#where-to-run-the-examples)
+for more details.
 
 ```json
 {
     "name": "filter",
     "port": 20001,
-    "host": "element-vegetable.tail0be07.ts.net",
+    "host": "localhost",
     "log_level": "INFO",
     "subscriptions": [
         {
@@ -107,9 +108,6 @@ to your robot's name (e.g., `element-vegetable.tail0be07.ts.net`).
     ]
 }
 ```
-
-To customize the run, you need to update the `service_config.json`
-by modifying the `host` and `port` fields.
 
 ## 5. Code overview
 

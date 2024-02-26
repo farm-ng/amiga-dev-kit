@@ -62,13 +62,10 @@ name (e.g., `element-vegetable.tail0be07.ts.net` - only supported if connected v
 
 ### 4. Customize the run
 
-Let's have some fun and stream the camera to your laptop over the
-Wifi.
-
-:::tip
-You need to discover the WiFi address of your Amiga Brain using
-the `WifiClient` (coming soon)
-:::
+To run this script from your PC, you need to update the `service_config.json`
+by modifying the `host` field with your Amiga brain name.
+Please check out the [Amiga Development 101](../../concepts/system_overview/README.md#where-to-run-the-examples)
+for more details.
 
 ```bash
 python3 main.py --help
@@ -81,10 +78,8 @@ python3 main.py --help
 #                         The camera config.
 ```
 
-To customize the run, you need to update the `service_config.json`
-by modifying the `host` and `port` fields.
-You can also stream the stereo left or right images or the camera's
-disparity by changing the `path` field (e.g., /left).
+Moreover, you can also stream the stereo left or right images or the camera's
+disparity by changing the `path` field (e.g., /left) in the `service_config.json` file.
 
 ### 5. Code overview
 

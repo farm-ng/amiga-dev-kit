@@ -83,9 +83,10 @@ python main.py --service-config service_config.json
 
 ### 4. Customize the run
 
-If you want to stream the GPS messages on your laptop, by connecting with a gRPC client over Wifi,
-you can change the `host` field in `service_config.json` from `localhost`
-to your robot's name (e.g., `element-vegetable.tail0be07.ts.net`).
+To run this script from your PC, you need to update the `service_config.json`
+by modifying the `host` field with your Amiga brain name.
+Please check out the [Amiga Development 101](../../concepts/system_overview/README.md#where-to-run-the-examples)
+for more details.
 
 Moreover, you can also specify a gps interface (`/relposned` or `/pvt`) to read by
 modifying the `uri.path` in the `service_config.json` file.
@@ -97,7 +98,7 @@ For example:
 {
     "name": "gps",
     "port": 3001,
-    "host": "element-vegetable.tail0be07.ts.net",
+    "host": "localhost",
     "log_level": "INFO",
     "subscriptions": [
         {

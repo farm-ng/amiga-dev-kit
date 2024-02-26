@@ -81,15 +81,16 @@ pip install -r requirements.txt
 
 ## 3. Modify the Service Config
 
-To command the robot tools from your laptop, by connecting with a `gRPC` client over Wifi,
-you must change the `host` field in `service_config.json` from localhost to your robot's name
-(e.g., `element-vegetable.tail0be07.ts.net`).
+To run this script from your PC, you need to update the `service_config.json`
+by modifying the `host` field with your Amiga brain name.
+Please check out the [Amiga Development 101](../../concepts/system_overview/README.md#where-to-run-the-examples)
+for more details.
 
 ```json
 {
     "name": "canbus",
     "port": 6001,
-    "host": "element-vegetable.tail0be07.ts.net",
+    "host": "localhost",
     "subscriptions": [
         {
             "uri": {

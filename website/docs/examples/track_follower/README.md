@@ -95,15 +95,16 @@ of text come up in your terminal!
 
 ## 4. Customize the run
 
-If you want to command the robot from your laptop, by connecting with a `gRPC` client over Wifi,
-you can change the `host` field in `service_config.json` from localhost to your robot's name
-(e.g., `element-vegetable.tail0be07.ts.net`).
+To run this script from your PC, you need to update the `service_config.json`
+by modifying the `host` field with your Amiga brain name.
+Please check out the [Amiga Development 101](../../concepts/system_overview/README.md#where-to-run-the-examples)
+for more details.
 
 ```json
 {
     "name": "track_follower",
     "port": 20101,
-    "host": "element-vegetable.tail0be07.ts.net",
+    "host": "localhost",
     "subscriptions": [
         {
             "uri": {

@@ -3,8 +3,6 @@ id: amiga-dev
 title: Amiga Development 101
 ---
 
-# Amiga Development 101
-
 Welcome to the world of Amiga robot development!
 If you're excited about harnessing the power of the Brain and the Amiga platform,
 you've come to the right place.
@@ -75,3 +73,27 @@ Below is the architectural diagram that visually represents how these services i
 This introduction is designed to be a primer.
 Each service has its depths and intricacies, which you'll uncover as you dive deeper into Amiga development.
 Enjoy the journey!
+
+## Open Source Code Examples
+
+Diving into Amiga robot development is made significantly easier with our collection of over
+30 open source Python code examples.
+These examples are meticulously designed to cater to a wide range of skill levels, from beginners
+to advanced developers, ensuring that everyone can find a suitable starting point for their journey.
+By exploring these examples, you'll gain hands-on experience with our API, learning how to effectively
+communicate with and leverage the robot's diverse sensors.
+
+### Where to Run the Examples
+
+Each code example is accompanied by specific instructions detailing how to execute it.
+While these instructions vary depending on the example, a general guideline is that all examples can
+be run from your local machine, not just from the Amiga's brain.
+This setup is crucial for developers who prefer to work in their own development
+environments or need to manage multiple robots.
+
+To facilitate communication between your local machine and the Amiga robot over Wifi,
+a slight modification in the `service_config.json` (or its equivalent) file is necessary.
+Specifically, you need to change the `host` field from localhost to your robot's unique name
+(e.g., `element-vegetable.tail0be07.ts.net`).
+This adjustment ensures that your gRPC client can successfully connect to the Amiga robot,
+allowing for seamless interaction and data exchange.

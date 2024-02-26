@@ -65,17 +65,18 @@ pip install -r requirements.txt
 You can skip this if running the example `ssh`'d into your brain.
 :::
 
-To connect with a `gRPC` client over Wifi,
-you must change the `host` field in `service_config.json` from localhost to your robot's name
-(e.g., `element-vegetable`).
+To run this script from your PC, you need to update the `service_config.json`
+by modifying the `host` field with your Amiga brain name.
+Please check out the [Amiga Development 101](../../concepts/system_overview/README.md#where-to-run-the-examples)
+for more details.
 
-As a debugging step, ensure you can ping the amiga at that IP address or tailscale name with `ping element-vegetable`.
+As a debugging step, ensure you can ping the amiga at that IP address or tailscale name with `ping element-vegetable.tail0be07.ts.net`.
 
 ```json
 {
     "name": "canbus",
     "port": 6001,
-    "host": "element-vegetable",
+    "host": "localhost",
     "log_level": "INFO",
     "subscriptions": [
       {
