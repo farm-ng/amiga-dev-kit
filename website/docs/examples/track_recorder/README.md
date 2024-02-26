@@ -108,13 +108,13 @@ You can then set the Amiga to follow this track by following the
 
 If you want to record the track on your laptop, by connecting with a gRPC client over Wifi,
 you can change the `host` field in `service_config.json` from `localhost`
-to your robot's name (e.g., `element-vegetable`).
+to your robot's name (e.g., `element-vegetable.tail0be07.ts.net`).
 
 ```json
 {
     "name": "filter",
     "port": 20001,
-    "host": "element-vegetable",
+    "host": "element-vegetable.tail0be07.ts.net",
     "log_level": "INFO",
     "subscriptions": [
         {

@@ -70,7 +70,7 @@ python3 main.py --service-config service_config.json --camera-settings camera_se
 By default, the camera `host` is assumed to be `localhost` (service_config.json).
 If running the example from your local PC, you should replace `localhost` with
 your brain's IP address (e.g., 100.67.32.5) or your Amiga's name
-(e.g., `element-vegetable` - only supported if connected via tailscale).
+(e.g., `element-vegetable.tail0be07.ts.net` - only supported if connected via tailscale).
 :::
 
 ### 5. Customize run

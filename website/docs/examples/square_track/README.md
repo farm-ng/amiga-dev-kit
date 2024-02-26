@@ -101,7 +101,7 @@ of text come up in your terminal!
 
 If you want to command the robot from your laptop, by connecting with a `gRPC` client over Wifi,
 you can change the `host` field in `service_config.json` from localhost to your robot's name
-(e.g., `element-vegetable`).
+(e.g., `element-vegetable.tail0be07.ts.net`).
 
 ```json
 {

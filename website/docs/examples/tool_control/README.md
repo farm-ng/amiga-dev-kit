@@ -83,13 +83,13 @@ pip install -r requirements.txt
 
 To command the robot tools from your laptop, by connecting with a `gRPC` client over Wifi,
 you must change the `host` field in `service_config.json` from localhost to your robot's name
-(e.g., `element-vegetable`).
+(e.g., `element-vegetable.tail0be07.ts.net`).
 
 ```json
 {
     "name": "canbus",
     "port": 6001,
-    "host": "element-vegetable",
+    "host": "element-vegetable.tail0be07.ts.net",
     "subscriptions": [
         {
             "uri": {

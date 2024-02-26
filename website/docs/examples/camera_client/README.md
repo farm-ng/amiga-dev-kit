@@ -57,7 +57,7 @@ python3 main.py --service-config service_config.json
 :::info
 By default, the camera `host` is assumed to be `localhost` (`service_config.json`).
 You should replace `localhost` with your brain's IP address (e.g.,100.67.32.5) or your amiga's
-name (e.g., `element-vegetable` - only supported if connected via tailscale).
+name (e.g., `element-vegetable.tail0be07.ts.net` - only supported if connected via tailscale).
 :::
 
 ### 4. Customize the run
