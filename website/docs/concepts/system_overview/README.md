@@ -85,15 +85,28 @@ communicate with and leverage the robot's diverse sensors.
 
 ### Where to Run the Examples
 
-Each code example is accompanied by specific instructions detailing how to execute it.
-While these instructions vary depending on the example, a general guideline is that all examples can
-be run from your local machine, not just from the Amiga's brain.
-This setup is crucial for developers who prefer to work in their own development
-environments or need to manage multiple robots.
+Every code example comes with detailed instructions on how to run it, tailored to the specifics of
+the example.
+A key feature of our development environment is its flexibility; examples can be executed on your
+local machine as well as directly on the Amiga's brain.
+This adaptability is essential for developers who wish to work within their own environments or
+need to manage operations across multiple robots.
 
-To facilitate communication between your local machine and the Amiga robot over Wifi,
-a slight modification in the `service_config.json` (or its equivalent) file is necessary.
-Specifically, you need to change the `host` field from localhost to your robot's unique name
+#### Running Examples on Your Local Machine
+
+To run examples from your local machine and communicate with the Amiga robot over Wifi, you must
+modify the `service_config.json` file (or its equivalent).
+Specifically, the `host` field should be changed from `localhost` to your robot's unique tailscale name
 (e.g., `element-vegetable.tail0be07.ts.net`).
-This adjustment ensures that your gRPC client can successfully connect to the Amiga robot,
-allowing for seamless interaction and data exchange.
+This ensures that your gRPC client can successfully connect to the robot, facilitating seamless
+interaction and data exchange.
+
+#### Running Examples Directly on the Amiga's Brain
+
+Most examples are also designed to run directly on the Amiga's brain, offering a straightforward
+approach for developers working closely with the robot.
+For these instances, the `host` field in the `service_config.json` file should remain as `localhost`.
+It's important to note that examples requiring a user interface, such as the "track_plotter" example,
+cannot be run on the brain due to its headless nature.
+These exceptions are clearly stated; unless otherwise mentioned, you can assume that an example is
+compatible with both local PC and the brain execution.
