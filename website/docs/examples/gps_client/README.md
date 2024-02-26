@@ -83,7 +83,11 @@ python main.py --service-config service_config.json
 
 ### 4. Customize the run
 
-You can also specify a gps interface (`/relposned` or `/pvt`) to read by
+If you want to stream the GPS messages on your laptop, by connecting with a gRPC client over Wifi,
+you can change the `host` field in `service_config.json` from `localhost`
+to your robot's name (e.g., `element-vegetable.tail0be07.ts.net`).
+
+Moreover, you can also specify a gps interface (`/relposned` or `/pvt`) to read by
 modifying the `uri.path` in the `service_config.json` file.
 The default value (**'*'**) will stream all messages published by the service.
 
@@ -93,7 +97,7 @@ For example:
 {
     "name": "gps",
     "port": 3001,
-    "host": "localhost",
+    "host": "element-vegetable.tail0be07.ts.net",
     "log_level": "INFO",
     "subscriptions": [
         {

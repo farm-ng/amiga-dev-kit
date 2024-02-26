@@ -86,23 +86,26 @@ By default, the host address is assumed to be `localhost`.
 
 ## 4. Customize the run
 
-Let's have some fun and stream the state to your laptop over the Wifi,
-using the gRPC client.
+If you want to stream the state on your laptop, by connecting with a gRPC client over Wifi,
+you can change the `host` field in `service_config.json` from `localhost`
+to your robot's name (e.g., `element-vegetable.tail0be07.ts.net`).
 
-:::tip
-You need to discover the WiFi address of your Amiga Brain using
-the `WifiClient` (coming soon)
-:::
-
-```bash
-python3 main.py --help
-
-# usage: amiga-filter-stream [-h] --service-config SERVICE_CONFIG
-
-# optional arguments:
-#   -h, --help            show this help message and exit
-#   --service-config SERVICE_CONFIG
-#                         The filter service config.
+```json
+{
+    "name": "filter",
+    "port": 20001,
+    "host": "element-vegetable.tail0be07.ts.net",
+    "log_level": "INFO",
+    "subscriptions": [
+        {
+            "uri": {
+                "path": "/state",
+                "query": "service_name=filter"
+            },
+            "every_n": 1
+        }
+    ]
+}
 ```
 
 To customize the run, you need to update the `service_config.json`
