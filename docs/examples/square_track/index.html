@@ -12,7 +12,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Farm-ng Developers" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.c29cff4a.css">
-<script src="/assets/js/runtime~main.15d2cee5.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.5c68c89e.js" defer="defer"></script>
 <script src="/assets/js/main.c7f80a1d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -65,10 +65,10 @@ example in the brain ADK virtual environment.</p></div></div>
 of text come up in your terminal!</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="4-customize-the-run">4. Customize the run<a href="#4-customize-the-run" class="hash-link" aria-label="Direct link to 4. Customize the run" title="Direct link to 4. Customize the run">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="run-remotely">Run remotely<a href="#run-remotely" class="hash-link" aria-label="Direct link to Run remotely" title="Direct link to Run remotely">​</a></h3>
-<p>If you want to command the robot from your laptop, by connecting with a <code>gRPC</code> client over Wifi,
-you can change the <code>host</code> field in <code>service_config.json</code> from localhost to your robot&#x27;s name
-(e.g., <code>element-vegetable</code>).</p>
-<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">{</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  &quot;configs&quot;: [</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      &quot;name&quot;: &quot;track_follower&quot;,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      &quot;port&quot;: 20101,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      &quot;host&quot;: &quot;localhost&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    },</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      &quot;name&quot;: &quot;filter&quot;,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      &quot;port&quot;: 20001,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      &quot;host&quot;: &quot;localhost&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  ]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>To run this script from your PC, you need to update the <code>service_config.json</code>
+by modifying the <code>host</code> field with your Amiga brain name.
+Please check out <a href="/docs/concepts/system_overview/#where-to-run-the-examples">Amiga Development 101</a>
+for more details.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="modify-the-square">Modify the square<a href="#modify-the-square" class="hash-link" aria-label="Direct link to Modify the square" title="Direct link to Modify the square">​</a></h3>
 <p>If you wish to modify the square, you can either:</p>
 <ul>
