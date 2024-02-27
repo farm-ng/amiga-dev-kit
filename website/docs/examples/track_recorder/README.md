@@ -108,26 +108,8 @@ You can then set the Amiga to follow this track by following the
 
 To run this script from your PC, you need to update the `service_config.json`
 by modifying the `host` field with your Amiga brain name.
-Please check out the [Amiga Development 101](../../concepts/system_overview/README.md#where-to-run-the-examples)
+Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#where-to-run-the-examples)
 for more details.
-
-```json
-{
-    "name": "filter",
-    "port": 20001,
-    "host": "localhost",
-    "log_level": "INFO",
-    "subscriptions": [
-        {
-            "uri": {
-                "path": "/track",
-                "query": "service_name=filter"
-            },
-            "every_n": 1
-        }
-    ]
-}
-```
 
 You can optionally specify the `--output-dir` to change the default directory
 in which your track file will be saved.

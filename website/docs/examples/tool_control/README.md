@@ -83,26 +83,8 @@ pip install -r requirements.txt
 
 To run this script from your PC, you need to update the `service_config.json`
 by modifying the `host` field with your Amiga brain name.
-Please check out the [Amiga Development 101](../../concepts/system_overview/README.md#where-to-run-the-examples)
+Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#where-to-run-the-examples)
 for more details.
-
-```json
-{
-    "name": "canbus",
-    "port": 6001,
-    "host": "localhost",
-    "subscriptions": [
-        {
-            "uri": {
-            "path": "/tool_statuses",
-            "query": "service_name=canbus"
-            },
-            "every_n": 1
-        }
-    ],
-    "log_level": "INFO"
-}
-```
 
 ## 4. Execute the Python script
 

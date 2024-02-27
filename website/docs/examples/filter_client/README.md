@@ -88,26 +88,8 @@ By default, the host address is assumed to be `localhost`.
 
 To run this script from your PC, you need to update the `service_config.json`
 by modifying the `host` field with your Amiga brain name.
-Please check out the [Amiga Development 101](../../concepts/system_overview/README.md#where-to-run-the-examples)
+Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#where-to-run-the-examples)
 for more details.
-
-```json
-{
-    "name": "filter",
-    "port": 20001,
-    "host": "localhost",
-    "log_level": "INFO",
-    "subscriptions": [
-        {
-            "uri": {
-                "path": "/state",
-                "query": "service_name=filter"
-            },
-            "every_n": 1
-        }
-    ]
-}
-```
 
 ## 5. Code overview
 

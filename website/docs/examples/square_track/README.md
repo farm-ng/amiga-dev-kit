@@ -101,25 +101,8 @@ of text come up in your terminal!
 
 To run this script from your PC, you need to update the `service_config.json`
 by modifying the `host` field with your Amiga brain name.
-Please check out the [Amiga Development 101](../../concepts/system_overview/README.md#where-to-run-the-examples)
+Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#where-to-run-the-examples)
 for more details.
-
-```json
-{
-  "configs": [
-    {
-      "name": "track_follower",
-      "port": 20101,
-      "host": "localhost"
-    },
-    {
-      "name": "filter",
-      "port": 20001,
-      "host": "localhost"
-    }
-  ]
-}
-```
 
 ### Modify the square
 

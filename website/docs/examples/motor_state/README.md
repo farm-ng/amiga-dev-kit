@@ -67,28 +67,8 @@ You can skip this if running the example `ssh`'d into your brain.
 
 To run this script from your PC, you need to update the `service_config.json`
 by modifying the `host` field with your Amiga brain name.
-Please check out the [Amiga Development 101](../../concepts/system_overview/README.md#where-to-run-the-examples)
+Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#where-to-run-the-examples)
 for more details.
-
-As a debugging step, ensure you can ping the amiga at that IP address or tailscale name with `ping element-vegetable.tail0be07.ts.net`.
-
-```json
-{
-    "name": "canbus",
-    "port": 6001,
-    "host": "localhost",
-    "log_level": "INFO",
-    "subscriptions": [
-      {
-          "uri": {
-              "path": "/motor_states",
-              "query": "service_name=canbus"
-          },
-          "every_n": 1
-      }
-  ]
-}
-```
 
 ## 4. Execute the Python script
 
