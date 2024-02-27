@@ -106,27 +106,10 @@ You can then set the Amiga to follow this track by following the
 
 ## 4. Customize the run
 
-If you want to record the track on your laptop, by connecting with a gRPC client over Wifi,
-you can change the `host` field in `service_config.json` from `localhost`
-to your robot's name (e.g., `element-vegetable`).
-
-```json
-{
-    "name": "filter",
-    "port": 20001,
-    "host": "element-vegetable",
-    "log_level": "INFO",
-    "subscriptions": [
-        {
-            "uri": {
-                "path": "/track",
-                "query": "service_name=filter"
-            },
-            "every_n": 1
-        }
-    ]
-}
-```
+To run this script from your PC, you need to update the `service_config.json`
+by modifying the `host` field with your Amiga brain name.
+Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#where-to-run-the-examples)
+for more details.
 
 You can optionally specify the `--output-dir` to change the default directory
 in which your track file will be saved.

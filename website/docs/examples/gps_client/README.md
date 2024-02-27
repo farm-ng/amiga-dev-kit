@@ -83,7 +83,12 @@ python main.py --service-config service_config.json
 
 ### 4. Customize the run
 
-You can also specify a gps interface (`/relposned` or `/pvt`) to read by
+To run this script from your PC, you need to update the `service_config.json`
+by modifying the `host` field with your Amiga brain name.
+Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#where-to-run-the-examples)
+for more details.
+
+Moreover, you can also specify a gps interface (`/relposned` or `/pvt`) to read by
 modifying the `uri.path` in the `service_config.json` file.
 The default value (**'*'**) will stream all messages published by the service.
 

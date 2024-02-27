@@ -54,21 +54,12 @@ pip3 install -r requirements.txt
 python3 main.py --service-config service_config.json
 ```
 
-:::info
-By default, the camera `host` is assumed to be `localhost` (`service_config.json`).
-You should replace `localhost` with your brain's IP address (e.g.,100.67.32.5) or your amiga's
-name (e.g., `element-vegetable` - only supported if connected via tailscale).
-:::
-
 ### 4. Customize the run
 
-Let's have some fun and stream the camera to your laptop over the
-Wifi.
-
-:::tip
-You need to discover the WiFi address of your Amiga Brain using
-the `WifiClient` (coming soon)
-:::
+To run this script from your PC, you need to update the `service_config.json`
+by modifying the `host` field with your Amiga brain name.
+Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#where-to-run-the-examples)
+for more details.
 
 ```bash
 python3 main.py --help
@@ -81,10 +72,8 @@ python3 main.py --help
 #                         The camera config.
 ```
 
-To customize the run, you need to update the `service_config.json`
-by modifying the `host` and `port` fields.
-You can also stream the stereo left or right images or the camera's
-disparity by changing the `path` field (e.g., /left).
+Moreover, you can also stream the stereo left or right images or the camera's
+disparity by changing the `path` field (e.g., /left) in the `service_config.json` file.
 
 ### 5. Code overview
 

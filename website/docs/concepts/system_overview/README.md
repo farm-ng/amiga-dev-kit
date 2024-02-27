@@ -3,8 +3,6 @@ id: amiga-dev
 title: Amiga Development 101
 ---
 
-# Amiga Development 101
-
 Welcome to the world of Amiga robot development!
 If you're excited about harnessing the power of the Brain and the Amiga platform,
 you've come to the right place.
@@ -75,3 +73,68 @@ Below is the architectural diagram that visually represents how these services i
 This introduction is designed to be a primer.
 Each service has its depths and intricacies, which you'll uncover as you dive deeper into Amiga development.
 Enjoy the journey!
+
+## Open Source Code Examples
+
+Diving into Amiga robot development is made significantly easier with our collection of over
+30 open source Python code examples.
+These examples are meticulously designed to cater to a wide range of skill levels, from beginners
+to advanced developers, ensuring that everyone can find a suitable starting point for their journey.
+By exploring these examples, you'll gain hands-on experience with our API, learning how to effectively
+communicate with and leverage the robot's diverse sensors.
+
+### Where to Run the Examples
+
+Every code example comes with detailed instructions on how to run it, tailored to the specifics of
+the example.
+A key feature of our development environment is its flexibility; examples can be executed on your
+local machine as well as directly on the Amiga's brain.
+This adaptability is essential for developers who wish to work within their own environments or
+need to manage operations across multiple robots.
+
+#### Running Examples on Your Local Machine
+
+To run examples on your local PC you need to either be connected to the same Wifi network of your Amiga
+or set up [**Tailscale**](/docs/ssh/README.md#recommended-configure-cross-network-access)
+for cross-network access.
+
+For either case, you must modify the `host` field on the `service_config.json` file (or its equivalent).
+
+If you're on the same Wifi network of your Amiga, you can change the `host` field from `localhost` to
+your Amiga's local IP address (e.g., 192.168.1.29).
+Make sure to check your Amiga's local IP address on the "Wifi" menu on the brain.
+
+On the other hand, if you're on a different Wifi network, the `host` field should be changed from
+`localhost` to your robot's unique tailscale name (e.g., `element-vegetable.tail0be07.ts.net`).
+This ensures that your gRPC client can successfully connect to the robot, facilitating seamless
+interaction and data exchange.
+
+Notice how we change the `host` field here from `localhost` to `element-vegetable.tail0be07.ts.net`:
+
+```json
+{
+    "name": "filter",
+    "port": 20001,
+    "host": "element-vegetable.tail0be07.ts.net",
+    "log_level": "INFO",
+    "subscriptions": [
+        {
+            "uri": {
+                "path": "/state",
+                "query": "service_name=filter"
+            },
+            "every_n": 1
+        }
+    ]
+}
+```
+
+#### Running Examples Directly on the Amiga's Brain
+
+Most examples are also designed to run directly on the Amiga's brain, offering a straightforward
+approach for developers working closely with the robot.
+For these instances, the `host` field in the `service_config.json` file should remain as `localhost`.
+It's important to note that examples requiring a user interface, such as the "track_plotter" example,
+cannot be run on the brain due to its headless nature.
+These exceptions are clearly stated; unless otherwise mentioned, you can assume that an example is
+compatible with both local PC and the brain execution.

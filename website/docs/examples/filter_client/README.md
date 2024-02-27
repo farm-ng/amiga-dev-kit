@@ -86,27 +86,10 @@ By default, the host address is assumed to be `localhost`.
 
 ## 4. Customize the run
 
-Let's have some fun and stream the state to your laptop over the Wifi,
-using the gRPC client.
-
-:::tip
-You need to discover the WiFi address of your Amiga Brain using
-the `WifiClient` (coming soon)
-:::
-
-```bash
-python3 main.py --help
-
-# usage: amiga-filter-stream [-h] --service-config SERVICE_CONFIG
-
-# optional arguments:
-#   -h, --help            show this help message and exit
-#   --service-config SERVICE_CONFIG
-#                         The filter service config.
-```
-
-To customize the run, you need to update the `service_config.json`
-by modifying the `host` and `port` fields.
+To run this script from your PC, you need to update the `service_config.json`
+by modifying the `host` field with your Amiga brain name.
+Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#where-to-run-the-examples)
+for more details.
 
 ## 5. Code overview
 
