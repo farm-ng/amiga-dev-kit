@@ -94,12 +94,40 @@ need to manage operations across multiple robots.
 
 #### Running Examples on Your Local Machine
 
-To run examples from your local machine and communicate with the Amiga robot over Wifi, you must
-modify the `service_config.json` file (or its equivalent).
-Specifically, the `host` field should be changed from `localhost` to your robot's unique tailscale name
-(e.g., `element-vegetable.tail0be07.ts.net`).
+To run examples on your local PC you need to either be connected to the same Wifi network of your Amiga
+or set up [**Tailscale**](/docs/ssh/README.md#recommended-configure-cross-network-access)
+for cross-network access.
+
+For either case, you must modify the `host` field on the `service_config.json` file (or its equivalent).
+
+If you're on the same Wifi network of your Amiga, you can change the `host` field from `localhost` to
+your Amiga's local IP address (e.g., 192.168.1.29).
+Make sure to check your Amiga's local IP address on the "Wifi" menu on the brain.
+
+On the other hand, if you're on a different Wifi network, the `host` field should be changed from
+`localhost` to your robot's unique tailscale name (e.g., `element-vegetable.tail0be07.ts.net`).
 This ensures that your gRPC client can successfully connect to the robot, facilitating seamless
 interaction and data exchange.
+
+Notice how we change the `host` field here from `localhost` to `element-vegetable.tail0be07.ts.net`:
+
+```json
+{
+    "name": "filter",
+    "port": 20001,
+    "host": "element-vegetable.tail0be07.ts.net",
+    "log_level": "INFO",
+    "subscriptions": [
+        {
+            "uri": {
+                "path": "/state",
+                "query": "service_name=filter"
+            },
+            "every_n": 1
+        }
+    ]
+}
+```
 
 #### Running Examples Directly on the Amiga's Brain
 
