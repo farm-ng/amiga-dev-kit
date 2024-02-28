@@ -64,13 +64,11 @@ pip install -r requirements.txt
 
 ```bash
 python main.py --service_config service_config.json
-# Replace <path-to-your-track> to the actual file path to your track
 ```
 
 You should now see a `matplotlib` popup with a plot of your `Track`.
 
 ![track](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/4193007c-4246-4d1f-a620-43aacd92813f)
-
 
 ## 4. Customize the run
 
