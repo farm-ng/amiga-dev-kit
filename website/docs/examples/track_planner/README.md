@@ -1,6 +1,6 @@
 ---
 id: track-planner
-title: Track Planner Example
+title: Track Planner
 ---
 
 :::info Basic Knowledge Requirements
@@ -25,7 +25,7 @@ The [**Track Planner Example**](https://github.com/farm-ng/farm-ng-amiga/blob/ma
 operates as a standalone Python script,
 in which a [**`Track`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/track/track.proto)
 proto message is generated using the [TrackPlanner](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/track_planner/track_planner.py#L27)
-class. To make our life easier, we use [`matplotlib`](https://matplotlib.org/) library to visualize
+class. We use the [`matplotlib`](https://matplotlib.org/) library to visualize
 the Track we created.
 
 We used this example to generate a virtual strawberry field at the 2024 World Ag. Expo!
@@ -65,6 +65,14 @@ pip install -r requirements.txt
 ```bash
 python main.py --service_config service_config.json
 ```
+
+:::info
+Since this example must be run from your local PC, you will need update the `service_config.json`
+by modifying the `host` field with your Amiga brain name.
+
+Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#running-examples-on-your-local-machine)
+for more details.
+:::
 
 You should now see a `matplotlib` popup with a plot of your `Track`.
 
