@@ -69,7 +69,8 @@ python main.py --service_config service_config.json
 
 You should now see a `matplotlib` popup with a plot of your `Track`.
 
-![full_track](https://github.com/farm-ng/amiga-dev-kit/assets/53625197/d22590eb-92fd-421a-9e72-865a9edfcd4b)
+![track](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/4193007c-4246-4d1f-a620-43aacd92813f)
+
 
 ## 4. Customize the run
 
