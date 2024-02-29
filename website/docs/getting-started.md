@@ -43,7 +43,7 @@ a comprehensive toolset of hardware and software developed by farm-ng to empower
 applications.
 
 :::info
-We love making tools and support a community of customizations and expansions which we will maintain forever. We will support you and hopefully inspire you to make the Amiga uniquely yours. 
+We love making tools and support a community of customizations and expansions which we will maintain forever. We will support you and hopefully inspire you to make the Amiga uniquely yours.
 
 Please visit the [**farm-ng website**](<https://farm-ng.com/>),
 to schedule a demo or to purchase the [**Amiga**](<https://farm-ng.com/products/la-maquina-amiga>) robot.
@@ -62,9 +62,8 @@ The [**Amiga Microcontroller Kit**](https://farm-ng.com/products/microcontroller
 ![microcontroller-kit-16x9-reduced](https://user-images.githubusercontent.com/53625197/187550507-c52d2666-846c-47d5-a4c2-8685d184c3a6.jpg)
 
 We have a constantly expanding library of thorough examples
-covering both software and hardware. For guidance and inspiration on your next project, visit our code examples repository on Github 
-[**farm-ng/amiga-dev-kit**](https://github.com/farm-ng/amiga-dev-kit). 
-
+covering both software and hardware. For guidance and inspiration on your next project, visit our code examples repository on Github
+[**farm-ng/amiga-dev-kit**](https://github.com/farm-ng/amiga-dev-kit).
 
 <!-- ## What is the Amiga?
 (Components Overview)
