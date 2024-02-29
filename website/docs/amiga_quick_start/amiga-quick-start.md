@@ -5,16 +5,16 @@ title: Quick Start Guide
 
 ### Welcome to the Amiga Quick Start Guide
 
-Here will be the guide to everything you will need to know to start using your Amiga as soon as possible!
+This guide will get you started using your Amiga as soon as possible!
 
-Below you can find a quick video overview of the Amiga that gives you everything you need to know!
+Click on the video below to get an overview of the Amiga robot.
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/J_-m0ZgxgFk"
 title="YouTube video player" frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 allowfullscreen></iframe>
 
-Things that will be included with Amiga
+Your purchase of an Amiga robot will include the following items:
 
 - Two batteries
 - Battery charging kit
