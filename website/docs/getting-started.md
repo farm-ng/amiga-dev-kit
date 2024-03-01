@@ -74,7 +74,8 @@ is the best entry point to get started building custom applications for their Am
 ![microcontroller-kit-16x9-reduced](https://user-images.githubusercontent.com/53625197/187550507-c52d2666-846c-47d5-a4c2-8685d184c3a6.jpg)
 
 We have a constantly expanding library of thorough examples
-covering both software and hardware. For guidance and inspiration on your next project, visit our code examples repository on Github
+covering both software and hardware.
+For guidance and inspiration on your next project, visit our code examples repository on Github
 [**farm-ng/amiga-dev-kit**](https://github.com/farm-ng/amiga-dev-kit).
 
 <!-- ## What is the Amiga?
