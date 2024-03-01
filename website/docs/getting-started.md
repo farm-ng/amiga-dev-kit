@@ -61,14 +61,15 @@ to schedule a demo or to purchase the [**Amiga**](<https://farm-ng.com/products/
 
 If you would like to purchase additional hardware components for your Amiga, please visit our
 [**attachments page**](https://farm-ng.com/collections/amiga-attachments).
-Additional products can be found on our [**`Developers`**](https://farm-ng.com/collections/for-developers) page.
+Additional products can be found on our
+[**`Developers`**](https://farm-ng.com/collections/for-developers) page.
 
 ![amiga](https://user-images.githubusercontent.com/53625197/187559379-b7b8fcf3-5fe7-4e14-aa47-fa0022f3801b.JPG)
 
 ## The Amiga Development Kit
 
-The [**Amiga Microcontroller Kit**](https://farm-ng.com/products/microcontroller-kit),is the best entry point
-to get started building custom applications for their Amiga robot.
+The [**Amiga Microcontroller Kit**](https://farm-ng.com/products/microcontroller-kit),
+is the best entry point to get started building custom applications for their Amiga robot.
 
 ![microcontroller-kit-16x9-reduced](https://user-images.githubusercontent.com/53625197/187550507-c52d2666-846c-47d5-a4c2-8685d184c3a6.jpg)
 
