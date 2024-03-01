@@ -223,6 +223,7 @@ const sidebars = {
           "examples/track_recorder/track-recorder",
           "examples/track_plotter/track-plotter",
           "examples/track_follower/track-follower",
+          "examples/track_planner/track-planner",
           "examples/square_track/square-track",
         ],
         "label": "Track Follower Examples",
