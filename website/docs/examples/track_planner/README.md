@@ -58,12 +58,13 @@ source venv/bin/activate
 ```bash
 cd py/examples/track_plotter
 pip install -r requirements.txt
+sudo apt-get install python3-tk
 ```
 
 ## 3. Execute the Python script
 
 ```bash
-python main.py --service_config service_config.json
+python main.py --service-config service_config.json
 ```
 
 :::info
@@ -103,5 +104,30 @@ The `TrackPlanner` class contains several methods for primitive motion planning 
 - `create_ab_segment`: Use this method to connect your last position to a know location (ab line).
 - `create_turn_segment`: Use this method to make the robot turn in place.
 - `create_arc_segment`: Use this method to create smooth turns such as a U-turn.
+
+## 5. [Optional] Use your custom track on Autoplot
+
+To use your custom track on Autoplot, all you have to do is copy it to `/mnt/data/tracks`
+inside your robot.
+
+First, let's copy your custom track to your home directory on the robot:
+
+```bash
+cd <to your custom track> # e.g., cd /Documents/
+scp <track-name> farm-ng-user-<username>@<your-brain>: # e.g., scp my_track.json farm-ng-user-jdoe@element-vegetable:
+```
+
+`scp` will copy the track from your local computer to your robot.
+The next step is to SSH into your robot and move your track to the correct destination
+
+```bash
+ssh <your-brain>
+sudo mv <track-name> /mnt/data/tracks # e.g., sudo mv my_track.json /mnt/data/tracks
+```
+
+:::info SSH access
+Make sure to check [Access and Development on the Brain](/docs/ssh) to learn how to
+SSH into your brain
+:::
 
 **Congrats you are done!**
