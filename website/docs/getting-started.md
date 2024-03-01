@@ -39,11 +39,16 @@ allowfullscreen>
 ## The Amiga
 
 The [**Amiga**](https://farm-ng.com/products/la-maquina-amiga) is
-a comprehensive toolset of hardware and software developed by farm-ng to empower farmers, hackers, engineers, roboticists, and anyone with a vision to create ruggedized, waterproof, outdoor robotic rover
+a comprehensive toolset of hardware and software developed by farm-ng 
+to empower farmers, hackers, engineers, roboticists, 
+and anyone with a vision to create ruggedized, waterproof,
+outdoor robotic rover
 applications.
 
 :::info
-We love making tools and support a community of customizations and expansions which we will maintain forever. We will support you and hopefully inspire you to make the Amiga uniquely yours.
+We love making tools and support a community of customizations and expansions
+which we will maintain forever. 
+We will support you and hopefully inspire you to make the Amiga uniquely yours.
 
 Please visit the [**farm-ng website**](<https://farm-ng.com/>),
 to schedule a demo or to purchase the [**Amiga**](<https://farm-ng.com/products/la-maquina-amiga>) robot.
