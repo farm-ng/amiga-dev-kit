@@ -24,7 +24,7 @@ that can be followed by the Amiga.
 The [**Track Planner Example**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/track_planner/main.py)
 operates as a standalone Python script,
 in which a [**`Track`**](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/track/track.proto)
-proto message is generated using the [TrackPlanner](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/track_planner/track_planner.py#L27)
+proto message is generated using the [TrackPlanner](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/track_planner/track_planner.py)
 class. We use the [`matplotlib`](https://matplotlib.org/) library to visualize
 the Track we created.
 
