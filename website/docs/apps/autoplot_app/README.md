@@ -100,23 +100,6 @@ Tailscale network.
 You can control your Amiga from a web browser at any time, even when the Autoplot app is not active
 on the Brain display.
 
-<!-- #### Remote Keyboard Control
-
-Experience direct control of your Amiga robot from any web browser.
-Similar to video game controls, this feature allows you to command the robot using simple keyboard inputs.
-
-- **W**: Propels the robot forward
-- **A**: Rotates the robot counter-clockwise on the spot
-- **D**: Rotates the robot clockwise on the spot
-
-These commands engage the robot's autonomy systems to perform the actions safely and precisely,
-setting incremental goals for the robot to achieve.
-
-:::info Autonomy Required for Remote Control
-Remote Keyboard Control requires the robot to be in `automode`.
-This mode ensures that all movements are managed safely by the robot's autonomous systems.
-::: -->
-
 ## How to Control your Amiga
 
 You can control your Amiga robot in two ways:
@@ -140,6 +123,11 @@ Here are instructions for using both options:
 
 ![keyboard](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/6d81ee6c-6f9b-4395-ab4b-aaaa01b17565)
 ![joystick](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/6bf57701-f241-4855-a675-d174084637b4)
+
+:::info Autonomy Required for Remote Control
+Remote Control requires the robot to be in `automode`.
+This mode ensures that all movements are managed safely by the robot's autonomous systems.
+:::
 
 Both methods allow for track recording; however, remote control enables you to operate the
 robot from any location with internet access.
