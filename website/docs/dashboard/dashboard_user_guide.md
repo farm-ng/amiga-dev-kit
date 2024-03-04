@@ -18,9 +18,9 @@ allowfullscreen></iframe>
 
 ## Entry Screen
 
-This is the entry screen of the dashboard. This screen will appear when you first turn on the Amiga.
+This is the start page on the dashboard; it will appear when you first turn on the Amiga.
 “Amiga is ready” and “Amiga esta lista” will appear and once you touch the "START" / "VAMOS" button
-you will be taken to the home screen.
+and you will be taken to the home screen.
 
 <img src="https://user-images.githubusercontent.com/64480560/233126363-7aee7937-d308-4d79-a424-33a1fe531bae.jpg"
      width="320"
@@ -172,7 +172,7 @@ please visit [Dashboard Firmware Update](https://amiga.farm-ng.com/docs/dashboar
 
 ### H-bridge settings
 
-<img src="https://user-images.githubusercontent.com/64480560/233127456-1f294f6f-69ac-4563-a070-9b25c2e78ac3.jpg"
+<img src="https://user-images.githubusercontent.com/64480560/233127456-1f294f6f-69ac-4563-a070-9b2git push --set-upstream origin dashchanges5c2e78ac3.jpg"
      width="320"
      height="300" />
 
