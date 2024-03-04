@@ -128,8 +128,8 @@ while physically present with the robot, ideal for teaching the robot new tracks
 
 Here are instructions for using the pendant and the kartech:
 
-![pendant](../../../build/assets/images/autoplot-teleop-legend/pendant.png)
-![kartech](../../../build/assets/images/autoplot-teleop-legend/kartech.png)
+![pendant](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/4a8fbe60-7780-4f32-b92f-6ce895a706e0)
+![kartech](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/99aee18e-e7d2-41c5-888b-6d38365c699e)
 
 **Remote Control**: From your web browser, you can remotely operate the robot without needing
 to be in the same physical location.
@@ -138,8 +138,8 @@ Sn30](https://shop.8bitdo.com/products/8bitdo-sn30-pro-bluetooth-gamepad) joysti
 
 Here are instructions for using both options:
 
-![keyboard](../../../build/assets/images/autoplot-teleop-legend/keyboard.png)
-![joystick](../../../build/assets/images/autoplot-teleop-legend/joystick.png)
+![keyboard](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/6d81ee6c-6f9b-4395-ab4b-aaaa01b17565)
+![joystick](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/6bf57701-f241-4855-a675-d174084637b4)
 
 Both methods allow for track recording; however, remote control enables you to operate the
 robot from any location with internet access.
