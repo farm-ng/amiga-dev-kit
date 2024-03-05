@@ -129,6 +129,8 @@ If you do not press the physical E-stop, the wheels will brake until it is press
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/b0232548-6f36-480c-900f-0faeeb236b65"/>
 
+<img source="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/80c5dce0-5766-49da-86d9-30b7442627aa"/>
+
 
 This page is the hub for the pendant. Here is where you will go to calibrate it,
 and to ensure all of the functions of the pendant are operational.
