@@ -63,9 +63,8 @@ On this screen you can:
 
 ## Auto Control Screen
 
-<img src="https://user-images.githubusercontent.com/64480560/233127552-3a6f2f56-cddd-4b48-b947-bbd9292e2843.jpg"
-     width="320"
-     height="300" />
+<img src="file:///home/agustin/Downloads/ss_en_auto_0.png" />
+
 
 This screen is where the autonomous control of the amiga comes to life. Here you will be able to :
 
