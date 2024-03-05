@@ -22,14 +22,14 @@ This is the start page on the dashboard; it will appear when you first turn on t
 “Amiga is ready” and “Amiga esta lista” will appear and once you touch the "START" / "VAMOS" button
 and you will be taken to the home screen.
 
-<img src="https://user-images.githubusercontent.com/64480560/233126363-7aee7937-d308-4d79-a424-33a1fe531bae.jpg"
-     width="320"
-     height="300" />
+<img src="/home/agustin/amiga-dev-kit/website/docs/brain/assets/ss_en_aaready.png"/>
 
 Alternatively if you receive the "Check pendant calibration" page,
 this means that either you have defective pendant or your pendant needs to be calibrated.
 
-<Start page img src="file:///home/agustin/Downloads/ss_en_aaready.png"
+<img src="https://user-images.githubusercontent.com/64480560/233126475-5416e312-9d77-4552-876c-f4129d30f244.jpg"
+     width="400"
+     height="500" />
 
 :::tip
 This button will take you to the same page as the `pendant` section of the Settings tab.
