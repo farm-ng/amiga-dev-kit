@@ -163,9 +163,9 @@ please visit [Dashboard Firmware Update](https://amiga.farm-ng.com/docs/dashboar
 
 ### H-bridge settings
 
-<img src="https://user-images.githubusercontent.com/64480560/233127456-1f294f6f-69ac-4563-a070-9b2git push --set-upstream origin dashchanges5c2e78ac3.jpg"
-     width="320"
-     height="300" />
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/93f1e736-9796-4959-a32c-fdd7bd7457b8"/>
+
+
 
 This page shows the status of the H-bridge linear actuators on your Amiga.
 The H-bridge actuators are controlled with the arrow keys on the pendant.
