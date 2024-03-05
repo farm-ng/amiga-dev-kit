@@ -40,7 +40,7 @@ please contact the Farm-ng Support immediately by visiting [our Support page](ht
 
 ## Home Screen
 
-<img src="file:///home/agustin/Downloads/ss_en_speedo_0.png" />
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/954a66d5-2155-48f1-9830-25428374fa2a"/>
 
 
 This is the home screen of the dashboard. On this screen you will find:
@@ -63,7 +63,7 @@ On this screen you can:
 
 ## Auto Control Screen
 
-<img src="file:///home/agustin/Downloads/ss_en_auto_0.png"/>
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/9a8dcddf-cb5d-4e3c-95e0-0224f521ae6d"/>
 
 
 This screen is where the autonomous control of the amiga comes to life. Here you will be able to :
@@ -81,7 +81,7 @@ Auto control examples include the [FPV example](/docs/examples/FPV/) (micro-cont
 Now we have the settings tab, which may be the most important tab.
 Here on the settings tab you have a few options. Here you can find:
 
-<img src="file:///home/agustin/Downloads/ss_en_choices_0.png"/>
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6dbb13d1-679b-4b7a-8c8c-8c97f6c5b585"/> 
 
 
 ### The General Settings Tab
