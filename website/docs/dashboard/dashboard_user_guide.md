@@ -16,13 +16,12 @@ title="YouTube video player" frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 allowfullscreen></iframe>
 
-## Entry Screen
+## Start Page
 
-This is the start page on the dashboard; it will appear when you first turn on the Amiga.
-“Amiga is ready” and “Amiga esta lista” will appear and once you touch the "START" / "VAMOS" button
-and you will be taken to the home screen.
+This is the start page on the dashboard. It will appear when you first turn on your Amiga. Here you select the display's language. You may choose between English, Spanish, French. Pressing the START button will take you to the home screen.
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/fccbf6aa-95ae-41cb-bb65-fb816451c011"/>
+
 
 
 Alternatively if you receive the "Check pendant calibration" page,
