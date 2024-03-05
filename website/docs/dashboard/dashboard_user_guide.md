@@ -136,9 +136,8 @@ This including the buttons, joystick, and data reception.
 
 ### Advanced settings
 
-<img src="https://user-images.githubusercontent.com/64480560/233129573-9df7f43f-14ea-49e0-a4e0-8efbfcf3e36f.jpg"
-     width="320"
-     height="300" />
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/55e969d6-1a83-4e4d-a5cc-135f27475af0"/> 
+
 
 This page are for specific function of the dashboard firmware.
 The options under `Advance Settings` are:
