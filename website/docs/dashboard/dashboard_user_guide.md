@@ -40,9 +40,8 @@ please contact the Farm-ng Support immediately by visiting [our Support page](ht
 
 ## Home Screen
 
-<img src="https://user-images.githubusercontent.com/64480560/233131301-372ac33f-1a21-4aa9-999e-5093eaa53360.jpg"
-     width="400"
-     height="500" />
+<img src="file:///home/agustin/Downloads/ss_en_speedo_0.png" />
+
 
 This is the home screen of the dashboard. On this screen you will find:
 
