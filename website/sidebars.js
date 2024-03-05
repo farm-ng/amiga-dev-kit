@@ -248,10 +248,9 @@ const sidebars = {
       },
       {
       "items": [
-        "examples/vnc_viewer/vnc-viewer",
         "examples/monitor_app/monitor-app",
       ],
-      "label": "Miscellaneous Examples",
+      "label": "App Examples",
       "type": "category"
       },
     ],
@@ -274,6 +273,7 @@ const sidebars = {
       ],
   },
     "Amiga Brain Development": [
+      "examples/vnc_viewer/vnc-viewer",
       "brain/brain-apps",
       "brain/brain-apps-kivy",
       "brain/brain-apps-manifest",

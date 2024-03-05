@@ -81,6 +81,14 @@ pip install -r requirements.txt
 
 ## 3. Execute the Python script
 
+:::info
+To run this script from your PC, you need to update the `service_config.json`
+by modifying the `host` field with your Amiga brain name.
+
+Please check out [Amiga Development 101](/docs/concepts/system_overview/README.md#where-to-run-the-examples)
+for more details.
+:::
+
 ```bash
 python main.py --service-config service_config.json --track <path-to-your-track>
 # Replace <path-to-your-track> to the actual file path to your track
@@ -93,14 +101,7 @@ There's an example to teach you how to [**record your own track here**](/docs/ex
 If everything worked correctly you should now see a large stream
 of text come up in your terminal!
 
-## 4. Customize the run
-
-To run this script from your PC, you need to update the `service_config.json`
-by modifying the `host` field with your Amiga brain name.
-Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#where-to-run-the-examples)
-for more details.
-
-## 5. Code Overview
+## 4. Code Overview
 
 In this example we use the `EventClient` with the `request_reply` method to set a track
 (`/set_track`) to be followed.
