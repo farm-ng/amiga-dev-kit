@@ -9,6 +9,8 @@ The latest version is Dashboard Firmware release `v0.4.0`.
 :::
 ![DSCF6570-2-16x9-aspect-reduced](https://user-images.githubusercontent.com/11846963/186734463-aa149b3a-7510-4d5a-99ea-f9a8a96775d2.jpg)
 
+![dash 6570-2-16x9-aspect-redicedf](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/54c93d90-eb55-4de0-b944-882e40c278e7)
+
 ## Dashboard overview video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PKOhI4hbGUs"
