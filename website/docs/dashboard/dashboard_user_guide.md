@@ -7,7 +7,6 @@ This is subject for change with new updates to the Dashboard.
 The user guide represents Dashboard Firmware release `v0.1.9`.
 The latest version is Dashboard Firmware release `v0.4.0`.
 :::
-![DSCF6570-2-16x9-aspect-reduced](https://user-images.githubusercontent.com/11846963/186734463-aa149b3a-7510-4d5a-99ea-f9a8a96775d2.jpg)
 
 ![IMG6570-2-16x9-aspect-rediced](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6d3b25ee-cd16-4878-adbc-0e23ffd8d84b)
 
