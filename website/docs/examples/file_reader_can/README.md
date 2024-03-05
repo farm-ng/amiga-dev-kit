@@ -48,9 +48,7 @@ cd <data-dir>
 mv ~/Download/2023_09_29_17_52_35_070804_dubnium-durian.0000.bin
 ```
 
-Now that you have your log file in the correct place, in your
-terminal navigate to where the repository `farm-ng-amiga` is and
-open Visual Studio Code.
+Now you should navigate (in your terminal) to the `farm-ng-amiga` repository.
 
 ## 2. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
