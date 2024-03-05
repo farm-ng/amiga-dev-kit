@@ -11,7 +11,6 @@ Before diving into this example, here's a quick overview of what you'll need to 
 
 1. **Python Programming**: Mastery of Python is essential, as the example employs foundational
 concepts such as functions, conditional statements, and working with third-party libraries.
-
 2. **OpenCV**: A foundational understanding of the OpenCV library, particularly functions related to
 image decoding and display, as the example showcases how to visualize camera images from the log file.
 :::
@@ -23,64 +22,68 @@ use it to run the
 To successfully run this example, you must use your local PC, as the example won't
 work if executed directly from a brain (because of the popup window).
 
-## Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
+## 1. Obtain a log file
 
-## Download the log file
+### Record your own
 
-:::tip
-If you already have the log file you want to run with this
-example you can skip to [**set up**](#setup)
-:::
+See the **[Recorder App Guide](/docs/apps/recorder_app/)** for instructions.
 
-Now you are going to download the log file that you will use in
-this example.
+### Download the log file
+
+You can also download a pre-recorded log file to run this example with.
+
 [**Click here to download**](https://farm-ng-dev-auto-plot-mvp.s3.us-west-2.amazonaws.com/datasets/examples_log_file/2023_09_29_17_52_35_070804_dubnium-durian.0000.bin)
 
-## [Optional] Make a Data folder
+#### [Optional] Make a Data folder
 
 We are going to make a folder that will store all of our log
 files, including the one you just downloaded.
 
 ```bash
 cd <to-your-base-directory>
-mkdir <data-file>
-cd <data-file>
-pwd # the output of this is your <path>
-
-# Now that the file is downloaded you will do the following
-
-cd ~ # navigate to home directory
-cd Downloads
-# Move the data to to data-folder
-mv 2023_09_29_17_52_35_070804_dubnium-durian.0000.bin <path-to-where-data-file-is-above>
+mkdir <data-dir>
+cd <data-dir>
+mv ~/Download/2023_09_29_17_52_35_070804_dubnium-durian.0000.bin
 ```
 
- Now that you have your log file in the correct place, in your
- terminal navigate to where the repository `farm-ng-amiga` is and
- open Visual Studio Code.
+Now that you have your log file in the correct place, in your
+terminal navigate to where the repository `farm-ng-amiga` is and
+open Visual Studio Code.
 
-## Setup
+## 2. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
-Create first a virtual environment
+## 3. Install the example's dependencies
+
+### Setup
+
+```bash
+cd farm-ng-amiga/
+```
+
+:::tip Recommended
+
+Create a virtual environment
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-## Install
+:::
+
+### Install
 
 ```bash
 cd py/examples/file_reader
 pip install -r requirements.txt
 ```
 
-## Run example
+## 4. Execute the Python script
 
-Specify the file (download before)
+Specify the log file, e.g.:
 
 ```bash
-python main.py --file-name <path-from-above>/events_12052022115852.bin
+python main.py --file-name <path-from-above>/2023_09_29_17_52_35_070804_dubnium-durian.0000.bin
 ```
 
 Optionally, you can change the camera that is played back from
@@ -95,8 +98,3 @@ Congratulations two videos should now pop up and play! One should
 be RGB and one should be disparity (it might be hidden behind the
 RGB window so try moving the RGB window). You have now finished
 running this example!
-
-:::tip
-The **[Recorder App Guide](/docs/apps/recorder_app/)** walks you through how to record data on your
-own Brain.
-:::
