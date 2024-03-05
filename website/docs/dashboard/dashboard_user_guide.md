@@ -52,13 +52,7 @@ This is the home screen of the dashboard. On this screen you will find:
 
 ## Motor Status Screen
 
-<img src="https://user-images.githubusercontent.com/64480560/232093032-cd99e871-5f09-41bb-9485-6e3cf1c3871b.jpg"
-     width="330"
-     height="300" />
-
-<img src="https://user-images.githubusercontent.com/64480560/232093025-48b6792e-08a3-48f8-b83e-52d4813d84e9.jpg"
-     width="330"
-     height="300" />
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/d0cc17f2-3cdf-49c5-ab02-e412cbec56bd"/>
 
 This screen for monitoring each motor in much more detail than that of the home screen.
 On this screen you can:
