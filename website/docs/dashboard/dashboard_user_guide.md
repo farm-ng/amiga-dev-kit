@@ -81,9 +81,8 @@ Auto control examples include the [FPV example](/docs/examples/FPV/) (micro-cont
 Now we have the settings tab, which may be the most important tab.
 Here on the settings tab you have a few options. Here you can find:
 
-<img src="https://user-images.githubusercontent.com/64480560/233127789-39f05f32-e17e-4e7b-8118-91500a4bc75f.jpg"
-     width="320"
-     height="300" />
+<img src="file:///home/agustin/Downloads/ss_en_choices_0.png" />
+
 
 ### The General Settings Tab
 
