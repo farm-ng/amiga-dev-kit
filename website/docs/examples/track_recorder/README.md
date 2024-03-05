@@ -72,31 +72,43 @@ These include:
 
 ## 2. Install the example's dependencies
 
-:::tip
+### Setup
 
-It is recommended to also install these dependencies and run the
-example in the brain ADK virtual environment.
+```bash
+cd farm-ng-amiga/
+```
+
+:::tip Recommended
+
+Create a virtual environment
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
 :::
 
-```bash
-# assuming you're already in the amiga-dev-kit/ directory
-cd farm-ng-amiga/py/examples/track_recorder
-```
+### Install
 
 ```bash
-pip3 install -r requirements.txt
+cd py/examples/track_recorder
+pip install -r requirements.txt
 ```
 
 ## 3. Execute the Python script
 
+:::info
+To run this script from your PC, you need to update the `service_config.json`
+by modifying the `host` field with your Amiga brain name.
+
+Please check out [Amiga Development 101](/docs/concepts/system_overview/README.md#where-to-run-the-examples)
+for more details.
+:::
+
 ```bash
 python3 main.py --service-config service_config.json --track-name my_new_track
 ```
-
-:::info
-By default, the host address is assumed to be `localhost`.
-:::
 
 Once you've started the script,
 drive your Amiga along the route you wish to record as a track for the track follower to later follow.
@@ -105,11 +117,6 @@ You can then set the Amiga to follow this track by following the
 [**Track Follower Example**](/docs/examples/track_follower).
 
 ## 4. Customize the run
-
-To run this script from your PC, you need to update the `service_config.json`
-by modifying the `host` field with your Amiga brain name.
-Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#where-to-run-the-examples)
-for more details.
 
 You can optionally specify the `--output-dir` to change the default directory
 in which your track file will be saved.

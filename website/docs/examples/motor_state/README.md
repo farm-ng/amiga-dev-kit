@@ -11,7 +11,9 @@ Before diving into this code, here's a quick heads-up on what you'll need to be 
 
 1. **Python Programming**: It's important to have a good grasp of Python, especially with concepts
 like `functions`, and `loops`, since the example utilizes these fundamentals.
-2. [**farm-ng Canbus Service Overview**](/docs/concepts/canbus_service):
+2. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
+code using the `async/await` syntax.
+3. [**farm-ng Canbus Service Overview**](/docs/concepts/canbus_service):
 This overview provides a base understanding of the gRPC service the client you create will connect to.
 :::
 
@@ -59,18 +61,15 @@ cd py/examples/motor_states_stream
 pip install -r requirements.txt
 ```
 
-## 3. [Optional] Modify the Service Config
+## 3. Execute the Python script
 
 :::info
-You can skip this if running the example `ssh`'d into your brain.
-:::
-
 To run this script from your PC, you need to update the `service_config.json`
 by modifying the `host` field with your Amiga brain name.
-Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#where-to-run-the-examples)
-for more details.
 
-## 4. Execute the Python script
+Please check out [Amiga Development 101](/docs/concepts/system_overview/README.md#where-to-run-the-examples)
+for more details.
+:::
 
 ```bash
 python main.py --service-config service_config.json

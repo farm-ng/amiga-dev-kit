@@ -11,6 +11,11 @@ Before diving into this code, here's a quick heads-up on what you'll need to be 
 like `functions`, `loops`, and `classes`, since the example utilizes these fundamentals.
 2. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
 code using the `async/await` syntax.
+3. **[farm-ng Oak Service Overview](/docs/concepts/oak_service/)**:
+This overview provides a base understanding of the gRPC service the client you create will connect to.
+4. **[farm-ng GPS Service Overview](/docs/concepts/gps_service/)**:
+This overview provides a base understanding of the gRPC service the client you create will connect to.
+This includes **GPS** (as PVT) & **RTK** (as RELPOSNED) messages.
 :::
 
 The [**Multi Client Geoimage**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/multi_client_geoimage/main.py)
@@ -19,9 +24,10 @@ from the `oak` and `gps` services. We show how to implement a simple technique t
 synchronize the images and the gps data.
 
 You can either run this example directly on a brain by `ssh`'ing in, or use your local PC.
-To successfully run this example, ensure that a [**farm-ng brain**](/docs/brain/) running
-Oak cameras and GPS is active. Your local PC should be either connected to the same local
- network as the brain or linked to it through tailscale.
+To successfully run this example,
+ensure that a [**farm-ng brain**](/docs/brain/) running Oak cameras and GPS service is active.
+Your local PC should be either connected to the same local
+network as the brain or linked to it through tailscale.
 
 :::tip
 
@@ -185,14 +191,15 @@ make sure to check this [link](/docs/examples/file_reader_gps/).
 }
 ```
 
-## 4. [Optional] Customize the run
+## 4. Run the client
 
+:::info
 To run this script from your PC, you need to update the `service_config.json`
 by modifying the `host` field with your Amiga brain name.
-Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#where-to-run-the-examples)
-for more details.
 
-## 5. Run the client
+Please check out [Amiga Development 101](/docs/concepts/system_overview/README.md#where-to-run-the-examples)
+for more details.
+:::
 
 In a terminal, run the client:
 

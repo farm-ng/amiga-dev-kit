@@ -63,17 +63,17 @@ sudo apt-get install python3-tk
 
 ## 3. Execute the Python script
 
-```bash
-python main.py --service-config service_config.json
-```
-
 :::info
 Since this example must be run from your local PC, you will need update the `service_config.json`
 by modifying the `host` field with your Amiga brain name.
 
-Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#running-examples-on-your-local-machine)
+Please check out [Amiga Development 101](/docs/concepts/system_overview/README.md#running-examples-on-your-local-machine)
 for more details.
 :::
+
+```bash
+python main.py --service-config service_config.json
+```
 
 You should now see a `matplotlib` popup with a plot of your `Track`.
 

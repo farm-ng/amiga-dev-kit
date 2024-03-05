@@ -10,14 +10,20 @@ Before diving into this example, here's a quick heads-up on what you'll need to 
 1. **Python Programming**: It's essential to be well-versed in Python, as the example leverages foundational
 concepts such as functions, conditional statements, and command-line argument parsing using the
 argparse module.
-
-2. **[farm-ng Recorder Service Overview](/docs/concepts/recorder_service/)**:
+2. **Asynchronous Programming with asyncio**: Familiarity with Python's asyncio for writing concurrent
+code using the `async/await` syntax.
+3. **[farm-ng Recorder Service Overview](/docs/concepts/recorder_service/)**:
 This overview provides a base understanding of the gRPC service the client you create will connect to.
 :::
 
 In the [**Events Recorder**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/event_recorder/main.py)
 example we show how to record events from farm-ng-brain using
 the `EventClient` class.
+
+You can either run this example directly on a brain by `ssh`'ing in,
+or use your local PC.
+If using your local PC, it should be either connected to the same local network as the brain
+or linked to it through tailscale.
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
@@ -48,7 +54,7 @@ cd farm-ng-amiga/py/examples/events_recorder
 pip3 install -r requirements.txt
 ```
 
-### 4. Execute the Python script
+### 4. Code overview
 
 In the provided example, we show how to implement the `/start` and `/stop`
 requests to start and stop the recording of events. We also provide two example profiles
@@ -101,6 +107,16 @@ if __name__ == "__main__":
     if args.command == "stop_recording":
         asyncio.run(stop_recording(service_config))
 ```
+
+### 5. Execute the Python script
+
+:::info
+To run this script from your PC, you need to update the `service_config.json`
+by modifying the `host` field with your Amiga brain name.
+
+Please check out [Amiga Development 101](/docs/concepts/system_overview/README.md#where-to-run-the-examples)
+for more details.
+:::
 
 To start recording the camera events, run the following command:
 
