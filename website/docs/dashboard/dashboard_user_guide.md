@@ -185,8 +185,8 @@ You will see a message that no PTO is detected if there is not a detected PTO de
 > If you see the "No PTO" message and expect a PTO device, contact farm-ng for support by visiting
 > [our Support page](https://amiga.farm-ng.com/docs/support/).
 
-<img src="https://user-images.githubusercontent.com/53625197/233201899-59ddb864-75dd-45d3-86c9-bdb7b3c4a358.jpg"
-     width="320" />
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/bf3d2a67-d10b-41ca-b35b-89fc0f3a1199"/>
+
 
 If there is detected a PTO device, you will see the following features:
 
@@ -195,17 +195,16 @@ If there is detected a PTO device, you will see the following features:
   - The default, min, & max values of this slider can be configured on the settings page.
 - A graph of PTO set-point & measured rpm values.
 
-<img src="https://user-images.githubusercontent.com/53625197/233201446-d6ef777f-3650-4b69-bdce-7f61e10075ac.jpg"
-     width="320" />
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e08dd594-e229-4820-904c-9e4f9aeb2bc1"/>
+
 
 Note that the PTO rpm values are the output RPM.
 The PTO gear ratio can also be configured on the settings page.
 
 ### ID settings
 
-<img src="https://user-images.githubusercontent.com/64480560/233126613-838261d6-a3ee-4f7c-b126-8f26162551c4.jpg"
-     width="320"
-     height="300" />
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e01028c1-cccd-4cff-b2db-62fef69cd9d5"/>
+
 
 On this page, you will find important information about your Amiga, including the
 `Tractor Hardware ID`, `Dashboard Firmware` version number, and the `Updator App`.
