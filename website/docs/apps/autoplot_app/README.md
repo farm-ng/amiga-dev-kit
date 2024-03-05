@@ -11,7 +11,8 @@ operation:
 - **Direct control**: Manually drive the robot with simple controls for straight, turn, and backwards.
 - **Teach-and-repeat**: Manually drive the robot along a desired path, save it, and then command the
 robot to repeat the path autonomously.
-- **Remote teleoperation**: Control the robot through any web browser using a keyboard.
+- **Remote teleoperation**: Control the robot through any web browser using a keyboard or an [8Bitdo
+Sn30](https://shop.8bitdo.com/products/8bitdo-sn30-pro-bluetooth-gamepad) joystick.
 
 :::caution Resource Intensive Operation
 The Autoplot app requires significant computational resources when run directly on the robot's screen.
@@ -99,32 +100,35 @@ Tailscale network.
 You can control your Amiga from a web browser at any time, even when the Autoplot app is not active
 on the Brain display.
 
-#### Remote Keyboard Control
-
-Experience direct control of your Amiga robot from any web browser.
-Similar to video game controls, this feature allows you to command the robot using simple keyboard inputs.
-
-- **W**: Propels the robot forward
-- **A**: Rotates the robot counter-clockwise on the spot
-- **D**: Rotates the robot clockwise on the spot
-
-These commands engage the robot's autonomy systems to perform the actions safely and precisely,
-setting incremental goals for the robot to achieve.
-
-:::info Autonomy Required for Remote Control
-Remote Keyboard Control requires the robot to be in `automode`.
-This mode ensures that all movements are managed safely by the robot's autonomous systems.
-:::
-
-## Manual vs. Remote Control
+## How to Control your Amiga
 
 You can control your Amiga robot in two ways:
 
-**Manual Control**: Use the pendant or dashboard while physically present with the robot,
-ideal for teaching the robot new tracks.
+**Manual Control**: Use the [pendant](/docs/pendant),
+the [kartech](https://kar-tech.com/single-axis-joystick-universal-mega-system.html)
+or [dashboard](/docs/dashboard/dashboard-user-guide)
+while physically present with the robot, ideal for teaching the robot new tracks.
+
+Here are instructions for using the pendant and the kartech as of dashboard firmware
+release [**`v0.0.5`**](https://github.com/farm-ng/amiga-dev-kit/releases):
+
+![pendant](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/4a8fbe60-7780-4f32-b92f-6ce895a706e0)
+![kartech](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/99aee18e-e7d2-41c5-888b-6d38365c699e)
 
 **Remote Control**: From your web browser, you can remotely operate the robot without needing
 to be in the same physical location.
+For that, you can use a keyboard for driving your Amiga, or use an
+[8Bitdo Sn30](https://shop.8bitdo.com/products/8bitdo-sn30-pro-bluetooth-gamepad) joystick.
+
+Here are instructions for using both options:
+
+![keyboard](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/6d81ee6c-6f9b-4395-ab4b-aaaa01b17565)
+![joystick](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/6bf57701-f241-4855-a675-d174084637b4)
+
+:::info Autonomy Required for Remote Control
+Remote Control requires the robot to be in `automode`.
+This mode ensures that all movements are managed safely by the robot's autonomous systems.
+:::
 
 Both methods allow for track recording; however, remote control enables you to operate the
 robot from any location with internet access.
