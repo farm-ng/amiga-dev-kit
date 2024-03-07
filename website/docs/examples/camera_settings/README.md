@@ -62,16 +62,17 @@ pip3 install -r requirements.txt
 
 ### 4. Execute the Python script
 
-```bash
-python3 main.py --service-config service_config.json --camera-settings camera_settings.json
-```
-
 :::info
 To run this script from your PC, you need to update the `service_config.json`
 by modifying the `host` field with your Amiga brain name.
-Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#where-to-run-the-examples)
+
+Please check out [Amiga Development 101](/docs/concepts/system_overview/README.md#where-to-run-the-examples)
 for more details.
 :::
+
+```bash
+python3 main.py --service-config service_config.json --camera-settings camera_settings.json
+```
 
 ### 5. Customize run
 

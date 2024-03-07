@@ -56,10 +56,13 @@ python3 main.py --service-config service_config.json
 
 ### 4. Customize the run
 
-To run this script from your PC, you need to update the `service_config.json`
+:::info
+Since this example must be run from your local PC, you will need update the `service_config.json`
 by modifying the `host` field with your Amiga brain name.
-Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#where-to-run-the-examples)
+
+Please check out [Amiga Development 101](/docs/concepts/system_overview/README.md#running-examples-on-your-local-machine)
 for more details.
+:::
 
 ```bash
 python3 main.py --help
