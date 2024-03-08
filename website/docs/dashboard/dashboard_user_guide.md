@@ -158,6 +158,9 @@ These are the button configurations for those of you who purchased a Kartech con
 
 ### H-bridge settings
 
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/bd24caf0-01c7-4647-b6ba-9ce6c55c47aa"/>
+
+
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/93f1e736-9796-4959-a32c-fdd7bd7457b8"/>
 
 
@@ -175,6 +178,9 @@ There are three states you will see for the H-bridge actuators.
 
 
 ### ID settings
+
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/4ea758d8-5a1e-47fc-ae93-567306267af1"/>
+
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e01028c1-cccd-4cff-b2db-62fef69cd9d5"/>
 
@@ -196,6 +202,8 @@ please visit [Dashboard Firmware Update](https://amiga.farm-ng.com/docs/dashboar
 
 
 ### PTO settings
+
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/40511d77-a07a-4344-a532-2118d0e61b62"/>
 
 Currently only 1 PTO (power take-off) device is supported.
 You will see a message that no PTO is detected if there is not a detected PTO device.
@@ -219,6 +227,9 @@ Note that the PTO rpm values are the output RPM.
 The PTO gear ratio can also be configured on the settings page.
 
 ### Advanced settings
+
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/33a4aa3c-ac1f-436b-89c7-b5ef84a66004"/>
+
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/55e969d6-1a83-4e4d-a5cc-135f27475af0"/> 
 
