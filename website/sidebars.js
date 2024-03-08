@@ -279,6 +279,7 @@ const sidebars = {
       "brain/brain-apps-kivy",
       "brain/brain-apps-manifest",
       "brain/app-ownership",
+      "brain/custom-troubleshooting",
       "brain/sdk-barley-migration",
       "brain/ros-bridge",
     ]
