@@ -22,10 +22,14 @@ particularly using tensors.
 This overview provides a base understanding of the gRPC service the client you create will connect to.
 :::
 
-The requirements to run the [**Camera Pointcloud**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/camera_pointcloud/main.py)
- example are to have a
-[**farm-ng brain**](/docs/brain/) running Oak cameras and that
-your PC is on the same local network as the brain.
+The requirements to run the
+[**Camera Pointcloud**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/camera_pointcloud/main.py)
+example are to have a [**farm-ng brain**](/docs/brain/) running at least one Oak camera.
+
+You can either run this example directly on a brain by `ssh`'ing in,
+or use your local PC.
+If using your local PC, it should be either connected to the same local network as the brain
+or linked to it through tailscale.
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
@@ -58,16 +62,17 @@ pip3 install -r requirements.txt
 
 ### 4. Execute the Python script
 
-```bash
-python3 main.py --service-config service_config.json
-```
-
 :::info
 To run this script from your PC, you need to update the `service_config.json`
 by modifying the `host` field with your Amiga brain name.
-Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#where-to-run-the-examples)
+
+Please check out [Amiga Development 101](/docs/concepts/system_overview/README.md#where-to-run-the-examples)
 for more details.
 :::
+
+```bash
+python3 main.py --service-config service_config.json
+```
 
 ### 5. Customize run
 

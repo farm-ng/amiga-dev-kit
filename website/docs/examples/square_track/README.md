@@ -88,6 +88,14 @@ pip install -r requirements.txt
 
 ## 3. Execute the Python script
 
+:::info
+To run this script from your PC, you need to update the `service_config.json`
+by modifying the `host` field with your Amiga brain name.
+
+Please check out [Amiga Development 101](/docs/concepts/system_overview/README.md#where-to-run-the-examples)
+for more details.
+:::
+
 ```bash
 python main.py --service-config service_config.json
 ```
@@ -96,13 +104,6 @@ If everything worked correctly you should now see a large stream
 of text come up in your terminal!
 
 ## 4. Customize the run
-
-### Run remotely
-
-To run this script from your PC, you need to update the `service_config.json`
-by modifying the `host` field with your Amiga brain name.
-Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#where-to-run-the-examples)
-for more details.
 
 ### Modify the square
 

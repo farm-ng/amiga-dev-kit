@@ -79,14 +79,15 @@ cd py/examples/tool_control
 pip install -r requirements.txt
 ```
 
-## 3. Modify the Service Config
+## 3. Execute the Python script
 
-To run this script from your PC, you need to update the `service_config.json`
+:::info
+Since this example must be run from your local PC, you will need update the `service_config.json`
 by modifying the `host` field with your Amiga brain name.
-Please check out [Amiga Development 101](docs/concepts/system_overview/README.md#where-to-run-the-examples)
-for more details.
 
-## 4. Execute the Python script
+Please check out [Amiga Development 101](/docs/concepts/system_overview/README.md#running-examples-on-your-local-machine)
+for more details.
+:::
 
 ```bash
 python main.py --service-config service_config.json
@@ -95,7 +96,7 @@ python main.py --service-config service_config.json
 If everything worked correctly you should now see a stream
 of the statuses of all connected tools come up in your terminal!
 
-## 5. Using the example
+## 4. Using the example
 
 :::caution Reminder
 To control tools using this example,
@@ -148,7 +149,7 @@ The **[Canbus Service](/docs/concepts/canbus_service/)**
 will synchronize the `Twist2d` commands with the `ActuatorCommands`
 for simultaneous driving and tool control!
 
-## 6. Code Overview
+## 5. Code Overview
 
 ### `KeyboardListener`
 

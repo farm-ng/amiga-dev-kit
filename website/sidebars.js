@@ -198,6 +198,7 @@ const sidebars = {
           "examples/pendant_state/pendant-state",
           "examples/vehicle_twist/vehicle-twist",
           "examples/tool_control/tool-control",
+          "examples/dashboard_settings/dashboard-settings",
           "examples/file_reader_can/file-reader-can",
         ],
         "label": "CAN Bus Examples",
@@ -248,10 +249,9 @@ const sidebars = {
       },
       {
       "items": [
-        "examples/vnc_viewer/vnc-viewer",
         "examples/monitor_app/monitor-app",
       ],
-      "label": "Miscellaneous Examples",
+      "label": "App Examples",
       "type": "category"
       },
     ],
@@ -274,6 +274,7 @@ const sidebars = {
       ],
   },
     "Amiga Brain Development": [
+      "examples/vnc_viewer/vnc-viewer",
       "brain/brain-apps",
       "brain/brain-apps-kivy",
       "brain/brain-apps-manifest",

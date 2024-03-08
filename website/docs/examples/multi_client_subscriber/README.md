@@ -20,7 +20,7 @@ to different services.
 You can either run this example directly on a brain by `ssh`'ing in, or use your local PC.
 To successfully run this example, ensure that a [**farm-ng brain**](/docs/brain/) running
 the Canbus and Filter services. Your local PC should be either connected to the same local
- network as the brain or linked to it through tailscale.
+network as the brain or linked to it through tailscale.
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
@@ -132,6 +132,14 @@ service. The `config.json` file contains the following fields:
 ```
 
 ## 4. Run the client
+
+:::info
+To run this script from your PC, you need to update the `service_config.json`
+by modifying the `host` field with your Amiga brain name.
+
+Please check out [Amiga Development 101](/docs/concepts/system_overview/README.md#where-to-run-the-examples)
+for more details.
+:::
 
 In a terminal, run the client:
 
