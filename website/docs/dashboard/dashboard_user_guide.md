@@ -32,13 +32,6 @@ This is the start page on the dashboard. It will appear when you first turn on y
 
 This is the home screen of the dashboard. In the center sits the spedometer,
  where you can adjust to the travel speed of your Amiga. You can switch between metric and standard units by pressing the center button 
-
- ![Untitled (1)](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/7619900f-678d-4ccf-a317-b65218bd1395)
-
- ![ss_en_speedo_5](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/337e3e03-68ac-4cf9-9331-8e6b7fa6c3cd)
-
-![ss_en_speedo_0](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f242c932-c8d3-4a85-9163-cb60265f391f)
-
  
  On the right side of the screen you will see several icons displaying: 
  
@@ -101,7 +94,8 @@ In this screen, you can make configutation changes to your Amiga's:
 
 ### The General Settings Tab
 
-<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a6ed5324-11fa-4c39-9fcd-6d3c974f9062"/>
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/7d9867c9-76f3-43fa-94da-f5a3802c3b8d"/>  
+
 
 This page is where all of the general configuration settings are located.
 The configuration changes you can make on this page are:
@@ -135,18 +129,27 @@ If you do not press the physical E-stop, the wheels will brake until it is press
 
 ### The Pendant Settings
 
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/b458227f-3422-4c43-8602-58c56b1c0dba"/>
+
+
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a73710af-f00e-4c34-a492-c487f7380e22"/>
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/b0232548-6f36-480c-900f-0faeeb236b65"/>
 
 <img source="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/80c5dce0-5766-49da-86d9-30b7442627aa"/>
 
+<img source="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/5ef411dc-bff6-410c-86e0-ba908f6dec8b"/>
+
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/0f880f2a-3958-4066-989d-d68b68547665"/>
 
 This page is the hub for the pendant. Here is where you will go to calibrate it,
 and to ensure all of the functions of the pendant are operational.
 This including the buttons, joystick, and data reception.
 
 ### Advanced settings
+
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/448effb1-2d1f-403b-8d39-608d0cc95a3a"/>
+
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/55e969d6-1a83-4e4d-a5cc-135f27475af0"/> 
 
@@ -173,6 +176,9 @@ please visit [Dashboard Firmware Update](https://amiga.farm-ng.com/docs/dashboar
 
 ### H-bridge settings
 
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/b1c09367-91b5-4583-9e42-1015065ae90c"/>
+
+
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/93f1e736-9796-4959-a32c-fdd7bd7457b8"/>
 
 
@@ -189,6 +195,9 @@ There are three states you will see for the H-bridge actuators.
 - Green: `Active` (detected and selected)
 
 ### PTO settings
+
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/fa0631dc-e24e-4c90-8888-9fad0b6f099c"/>
+
 
 Currently only 1 PTO (power take-off) device is supported.
 You will see a message that no PTO is detected if there is not a detected PTO device.
@@ -213,6 +222,9 @@ The PTO gear ratio can also be configured on the settings page.
 
 ### ID settings
 
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/807fa5cf-170b-4684-ac19-e824217e6a00"/>
+
+
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e01028c1-cccd-4cff-b2db-62fef69cd9d5"/>
 
 
@@ -220,6 +232,7 @@ On this page, you will find important information about your Amiga, including th
 `Tractor Hardware ID`, `Dashboard Firmware` version number, and the `Updator App`.
 
 #### Updator App
+
 
 On the `Updator App`, you will be able to update your Amiga dashboard and Updator app itself
 through here. You can use the `Updator App` to perform an Over-the-air update.
