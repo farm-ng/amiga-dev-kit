@@ -3,9 +3,9 @@ id: dashboard-user-guide
 title: Dashboard User Guide
 ---
 :::caution
-This is subject for change with new updates to the Dashboard.
-The user guide represents Dashboard Firmware release `v0.1.9`.
-The latest version is Dashboard Firmware release `v0.4.0`.
+This guide is subject to change with each new update to the Dashboard.
+
+The latest version is Dashboard Firmware release `v0.4.2`.
 :::
 
 ![IMG6570-2-16x9-aspect-rediced](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6d3b25ee-cd16-4878-adbc-0e23ffd8d84b)
@@ -20,83 +20,85 @@ allowfullscreen></iframe>
 
 ## Start Page
 
-This is the start page on the dashboard. It will appear when you first turn on your Amiga. Here you select the display's language. You may choose between English, Spanish, French. Pressing the START button will take you to the home screen.
-
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/fccbf6aa-95ae-41cb-bb65-fb816451c011"/>
 
+This is the start page on the dashboard. It will appear when you first turn on your Amiga. Here is where you can change the display's language. You may choose between English, Spanish, and French. Pressing the START button will take you to the home screen.
 
-
-Alternatively if you receive the "Check pendant calibration" page,
-this means that either you have defective pendant or your pendant needs to be calibrated.
-
-<img src="https://user-images.githubusercontent.com/64480560/233126475-5416e312-9d77-4552-876c-f4129d30f244.jpg"
-     width="400"
-     height="500" />
-
-:::tip
-This button will take you to the same page as the `pendant` section of the Settings tab.
-:::
-
-If your pendant is not being detected at all and if it says `No Pendant Detected`
-please contact the Farm-ng Support immediately by visiting [our Support page](https://amiga.farm-ng.com/docs/support/).
 
 ## Home Screen
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/954a66d5-2155-48f1-9830-25428374fa2a"/>
 
 
-This is the home screen of the dashboard. On this screen you will find:
-
-- The speedometer
-- A preview of motor health
+This is the home screen of the dashboard. In the center sits the spedometer,
+ where you can adjust to the travel speed of your Amiga. You can switch between metric and standard units by pressing the center button 
+ 
+ 
+ On the right side of the screen you will see several icons displaying: 
+ 
+- Battery Level
 - Average motor temperature
-- Battery level of the amiga
+- Connection to Pendant
+- Preview of each motor's health
+
+You can always come back to this screen by pressing the upper left icon on the dashboard.
+
 
 ## Motor Status Screen
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/d0cc17f2-3cdf-49c5-ab02-e412cbec56bd"/>
 
-This screen for monitoring each motor in much more detail than that of the home screen.
-On this screen you can:
+In this screen you can see the control state of your Amiga:
+- Active
+- Cruise
+- Auto Ready/Active
+- E-Stopped
 
-- Monitor the control state of the Amiga
-- Voltage, RPM, temperature, and current of each motor / motor controller
-- State of the CAN bus
+ You will also see details on each motor's:
+- Voltage
+- RPM
+- Temperature
+- Current draw for each motor/controller
+
+Lastly, CANbus states appear on the right side of the display. Follow this link for an indepth description of your Amiga's
+[Canbus Service](https://amiga.farm-ng.com/docs/concepts/canbus_service/)
+
 
 ## Auto Control Screen
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/9a8dcddf-cb5d-4e3c-95e0-0224f521ae6d"/>
 
+If you have an [Intelligence Kit](/docs/intelligence-kit/overview-intel)
+ mounted on your Amiga and have some tracks recorded in
+[Autoplot](https://amiga.farm-ng.com/docs/apps/autoplot_app/), it is here where autonomous control comes to life.
+From this screen, you will be able to:
 
-This screen is where the autonomous control of the amiga comes to life. Here you will be able to :
 
 - Enable and disable Auto Control
-- Monitor the auto control state
-- Monitor the commanded & measured speed and turning rates of the amiga
+- Monitor the Auto Control state
+- Monitor the commanded & measured speed of your Amiga
 
-If you are controlling the Amiga with a brain or other micro-controller,
-here is where you will enable & monitor the auto control commands sent to your Amiga.
-Auto control examples include the [FPV example](/docs/examples/FPV/) (micro-controller).
+You can use other micro-controllers to command your Amiga. For an example of how to do so, please follow the instructions in this [FPV example](/docs/examples/FPV/)
 
-## General Settings Tab
-
-Now we have the settings tab, which may be the most important tab.
-Here on the settings tab you have a few options. Here you can find:
+## General Settings
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6dbb13d1-679b-4b7a-8c8c-8c97f6c5b585"/> 
 
+In this screen, you can make configutation changes to your Amiga's: 
+
+- Settings
+- Pendant
+- H Bridge
+- ID
+- PTO
+- Avanced 
 
 ### The General Settings Tab
 
-<img src="https://user-images.githubusercontent.com/64480560/233127855-eafd4df9-555f-4154-a238-48c8a2961e3c.jpg"
-     width="320"
-     height="300" />
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a6ed5324-11fa-4c39-9fcd-6d3c974f9062"/>
 
-This page is where all of the general settings are located.
-Here you will be able to set the total `wheel_track` of the Amiga,
-or even motor you would like to disable or enable.
-
-The settings you can set on this page are:
+This page is where all of the general configuration settings are located.
+The configuration changes you can make on this page are:
 
 - `wheel_track`
 - `v_max_default`
