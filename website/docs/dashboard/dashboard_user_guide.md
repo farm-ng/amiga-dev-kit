@@ -88,9 +88,7 @@ Here on the settings tab you have a few options. Here you can find:
 
 ### The General Settings Tab
 
-<img src="https://user-images.githubusercontent.com/64480560/233127855-eafd4df9-555f-4154-a238-48c8a2961e3c.jpg"
-     width="320"
-     height="300" />
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a6ed5324-11fa-4c39-9fcd-6d3c974f9062"/>
 
 This page is where all of the general settings are located.
 Here you will be able to set the total `wheel_track` of the Amiga,
