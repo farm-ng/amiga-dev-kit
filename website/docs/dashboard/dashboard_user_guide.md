@@ -83,9 +83,6 @@ Auto control examples include the [FPV example](/docs/examples/FPV/) (micro-cont
 Now we have the settings tab, which may be the most important tab.
 Here on the settings tab you have a few options. Here you can find:
 
-<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/5a500398-6f71-4af6-b589-83560975638f"/> 
-
-
 ### The General Settings Tab
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a6ed5324-11fa-4c39-9fcd-6d3c974f9062"/>
