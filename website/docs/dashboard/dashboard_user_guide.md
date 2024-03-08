@@ -32,7 +32,13 @@ This is the start page on the dashboard. It will appear when you first turn on y
 
 This is the home screen of the dashboard. In the center sits the spedometer,
  where you can adjust to the travel speed of your Amiga. You can switch between metric and standard units by pressing the center button 
- 
+
+ ![Untitled (1)](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/7619900f-678d-4ccf-a317-b65218bd1395)
+
+ ![ss_en_speedo_5](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/337e3e03-68ac-4cf9-9331-8e6b7fa6c3cd)
+
+![ss_en_speedo_0](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f242c932-c8d3-4a85-9163-cb60265f391f)
+
  
  On the right side of the screen you will see several icons displaying: 
  
