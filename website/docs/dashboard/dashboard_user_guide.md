@@ -31,9 +31,10 @@ This is the start page on the dashboard. It will appear when you first turn on y
 
 
 This is the home screen of the dashboard. In the center sits the spedometer,
- where you can adjust to the travel speed of your Amiga. You can switch between metric and standard units by pressing the center button 
+ where you can switch between metric and standard units and adjust to the travel speed of your Amiga.
+
  
- On the right side of the screen you will see several icons displaying: 
+git  On the right side of the screen you will see several icons displaying: 
  
 - Battery Level
 - Average motor temperature
@@ -92,12 +93,11 @@ In this screen, you can make configutation changes to your Amiga's:
 - PTO
 - Avanced 
 
-### The General Settings Tab
+### Configuration Settings
 
-<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/7d9867c9-76f3-43fa-94da-f5a3802c3b8d"/>  
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a6ed5324-11fa-4c39-9fcd-6d3c974f9062"/>
 
-
-This page is where all of the general configuration settings are located.
+General configuration settings are located in this tab. 
 The configuration changes you can make on this page are:
 
 - `wheel_track`
@@ -121,65 +121,42 @@ The configuration changes you can make on this page are:
 - `m13_on` (motor D on)
 
 :::caution
-You should press the physical E-stop prior to turning the motors on / off
+You should press the E-stop button prior to turning the motors on / off
 (with `m10_on`, `m11_on`, `m12_on`, `m13_on`).
-
-If you do not press the physical E-stop, the wheels will brake until it is pressed -> released.
+Failure to do so will brake the wheels until it is pressed -> released.
 :::
 
 ### The Pendant Settings
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/b458227f-3422-4c43-8602-58c56b1c0dba"/>
 
-<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/8bc4980b-d6f4-445b-b772-0b7e46b7eb1a"/>
+This is the hub for the pendant. Here is where you can confirm data reception and overall functionality. 
+Pressing on the icon will take you to the calibration screen. 
 
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a73710af-f00e-4c34-a492-c487f7380e22"/>
 
+A green square around the center dot indicates that the your pendant is properly calibrated.
+
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/b0232548-6f36-480c-900f-0faeeb236b65"/>
 
-<img source="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/80c5dce0-5766-49da-86d9-30b7442627aa"/>
+A purple square indicates the need to re-calibrate your pendant. 
 
-<img source="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/5ef411dc-bff6-410c-86e0-ba908f6dec8b"/>
+:::caution 
+If your Amiga begins to move on its own at start up, chances are that your pendant needs to be calibrated. 
+With the above image in mind (purple square around the white dot), your Amiga would move forwards and towards the right at start up.
+:::
+
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/8bc4980b-d6f4-445b-b772-0b7e46b7eb1a"/>
+
+Pressing the Pendant image on the right will show the latest button configurations. 
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/0f880f2a-3958-4066-989d-d68b68547665"/>
 
-This page is the hub for the pendant. Here is where you will go to calibrate it,
-and to ensure all of the functions of the pendant are operational.
-This including the buttons, joystick, and data reception.
+These are the button configurations for those of you who purchased a Kartech control.  
 
-### Advanced settings
-
-<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/448effb1-2d1f-403b-8d39-608d0cc95a3a"/>
-
-
-<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/55e969d6-1a83-4e4d-a5cc-135f27475af0"/> 
-
-
-This page are for specific function of the dashboard firmware.
-The options under `Advance Settings` are:
-
-- `Reboot Dashboard`: This will give a soft reboot to the dashboard
-  without having to power cycle your Amiga.
-- `Factory Setting Reset`: This setting will revert the general settings such as
-`wheel_track`, `max_turn_rate`, and more, back to the factory default values.
-  - NOTE: These may not match the values when you first received your Amiga
-    if you do not have the standard configuration.
-- `Mount CIRCUITPY`: When you would like to Mount CIRCUITPY to update the Dashboard Firmware,
-  here is where you will do that in order for your computer to communicate with your Dashboard.
-- `Bootloader Mode`: Similar to `Mount CIRCUITPY`,
-  when you would like to update the UF2 file on the dashboard you will need to
-  place it in a `Bootloader` state. With this button you can perform that action.
-
-:::tip
-For more information about Firmware Updates or how to perform an update,
-please visit [Dashboard Firmware Update](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)
-:::
 
 ### H-bridge settings
-
-<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/b1c09367-91b5-4583-9e42-1015065ae90c"/>
-
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/93f1e736-9796-4959-a32c-fdd7bd7457b8"/>
 
@@ -196,10 +173,29 @@ There are three states you will see for the H-bridge actuators.
 - Yellow: `Idle` (detected, but not selected)
 - Green: `Active` (detected and selected)
 
+
+### ID settings
+
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e01028c1-cccd-4cff-b2db-62fef69cd9d5"/>
+
+
+On this page, you will find important information about your Amiga, including the
+`Tractor Hardware ID`, `Dashboard Firmware` version number, and the `Updator App`.
+
+
+
+#### Updator App
+
+On the `Updator App`, you will be able to update your Amiga dashboard and Updator app itself
+through here. You can use the `Updator App` to perform an Over-the-air update.
+
+:::tip
+For more information about Firmware Updates or how to perform an update,
+please visit [Dashboard Firmware Update](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)
+:::
+
+
 ### PTO settings
-
-<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/fa0631dc-e24e-4c90-8888-9fad0b6f099c"/>
-
 
 Currently only 1 PTO (power take-off) device is supported.
 You will see a message that no PTO is detected if there is not a detected PTO device.
@@ -222,22 +218,25 @@ If there is detected a PTO device, you will see the following features:
 Note that the PTO rpm values are the output RPM.
 The PTO gear ratio can also be configured on the settings page.
 
-### ID settings
+### Advanced settings
 
-<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/807fa5cf-170b-4684-ac19-e824217e6a00"/>
-
-
-<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e01028c1-cccd-4cff-b2db-62fef69cd9d5"/>
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/55e969d6-1a83-4e4d-a5cc-135f27475af0"/> 
 
 
-On this page, you will find important information about your Amiga, including the
-`Tractor Hardware ID`, `Dashboard Firmware` version number, and the `Updator App`.
+This page are for specific function of the dashboard firmware.
+The options under `Advance Settings` are:
 
-#### Updator App
-
-
-On the `Updator App`, you will be able to update your Amiga dashboard and Updator app itself
-through here. You can use the `Updator App` to perform an Over-the-air update.
+- `Reboot Dashboard`: This will give a soft reboot to the dashboard
+  without having to power cycle your Amiga.
+- `Factory Setting Reset`: This setting will revert the general settings such as
+`wheel_track`, `max_turn_rate`, and more, back to the factory default values.
+  - NOTE: These may not match the values when you first received your Amiga
+    if you do not have the standard configuration.
+- `Mount CIRCUITPY`: When you would like to Mount CIRCUITPY to update the Dashboard Firmware,
+  here is where you will do that in order for your computer to communicate with your Dashboard.
+- `Bootloader Mode`: Similar to `Mount CIRCUITPY`,
+  when you would like to update the UF2 file on the dashboard you will need to
+  place it in a `Bootloader` state. With this button you can perform that action.
 
 :::tip
 For more information about Firmware Updates or how to perform an update,
