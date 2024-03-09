@@ -151,6 +151,10 @@ With the above image in mind (purple square around the white dot), your Amiga wo
 
 Pressing the Pendant image on the right will show the latest button configurations. 
 
+:::tip 
+The arrows (up/down/left/right) in the center of the pendant are used to select and engage with the H-Bridge(s). 
+:::
+
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/0f880f2a-3958-4066-989d-d68b68547665"/>
 
 These are the button configurations for those of you who purchased a Kartech control.  
@@ -161,33 +165,39 @@ These are the button configurations for those of you who purchased a Kartech con
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/bd24caf0-01c7-4647-b6ba-9ce6c55c47aa"/>
 
 
+
+An H bridge circuit allows you to apply a voltage across a load (i.e. a linear actuator) 
+in either direction. We currently support up to four h bridge modules on the Amiga. They can be engaged momertarily or lached. 
+The `up` - `down` arrows are used to `Active` the H bridge
+and the `left` - `right` arrow keys are used to select between H-bridge devices. 
+As of this writting only one H-bridge device can be actuated at a time.
+
+:::tip
+Our [3 point hitch](https://farm-ng.com/products/cat-zero-3-point-lift-kit)
+is temporarily engaged by the [H bridge](https://farm-ng.com/products/h-bridge-for-canbus-accessory-control) 
+to lift and lower the [A frame](https://farm-ng.com/products/cat-0-a-frame-kit)
+which you can use to engage a [seeder](https://farm-ng.com/products/mounted-6-line-seeder). 
+Alternatively, you can use the laching function in a sprayer system. 
+:::
+
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/93f1e736-9796-4959-a32c-fdd7bd7457b8"/>
 
+By default, the first H-bridge that is connected will fill the 0 position in green. 
+You can switch between MOMENTARY and LATCHING states by tapping on the desired state on the Dashboard. 
 
-
-This page shows the status of the H-bridge linear actuators on your Amiga.
-The H-bridge actuators are controlled with the arrow keys on the pendant.
-Only one H-bridge can be actuated at a time,
-so the `left` - `right` arrow keys are to select the active H-bridge device
-and the `up` - `down` arrows are to move an `Active` actuator.
-There are three states you will see for the H-bridge actuators.
-
-- Red: `Not detected`
-- Yellow: `Idle` (detected, but not selected)
-- Green: `Active` (detected and selected)
-
+If you expect a H-bridge device but it is not showing up,
+ please reach out to us via farm-ng's
+[Support](https://amiga.farm-ng.com/docs/support/) page.
 
 ### ID settings
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/4ea758d8-5a1e-47fc-ae93-567306267af1"/>
 
+This page displays your `Tractor Hardware ID`, `Dashboard Firmware` version, and enables you to launch the `Updator App`
+where you can carry out Over-the-Air updates.  
+
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e01028c1-cccd-4cff-b2db-62fef69cd9d5"/>
-
-
-On this page, you will find important information about your Amiga, including the
-`Tractor Hardware ID`, `Dashboard Firmware` version number, and the `Updator App`.
-
 
 
 #### Updator App
@@ -205,37 +215,37 @@ please visit [Dashboard Firmware Update](https://amiga.farm-ng.com/docs/dashboar
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/40511d77-a07a-4344-a532-2118d0e61b62"/>
 
-Currently only 1 PTO (power take-off) device is supported.
-You will see a message that no PTO is detected if there is not a detected PTO device.
-> If you see the "No PTO" message and expect a PTO device, contact farm-ng for support by visiting
-> [our Support page](https://amiga.farm-ng.com/docs/support/).
+The PTO (power take-off) screen allows you to select between devices (PTO0 &PTO1), fine tune their settings and monitor their performance. 
+We currently support up to two PTO's running at the same time. 
 
-<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/bf3d2a67-d10b-41ca-b35b-89fc0f3a1199"/>
+When you connect a PTO device, you will have access to the following features:
 
+- A slider control that enables you to increade or decrease the PTO's RPM.
+- Directional control by means of a toggle switch on the touchscreen.
 
-If there is detected a PTO device, you will see the following features:
+On the left side of the screen you will see a graph displaying the current PTO set-point & measured rpm values.
 
-- A direction toggle
-- A PTO rpm slider
-  - The default, min, & max values of this slider can be configured on the settings page.
-- A graph of PTO set-point & measured rpm values.
+:::tip
+The default, min, & max values for the RPM slider can be configured on the settings page. The PTO gear ratio can also be configured on the settings page.
+:::
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e08dd594-e229-4820-904c-9e4f9aeb2bc1"/>
 
 
-Note that the PTO rpm values are the output RPM.
-The PTO gear ratio can also be configured on the settings page.
+Ocassionaly a message stating that no PTO device has been detected will be accompanied by the following image. Inspect all cables and make sure they are properly connected.
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/bf3d2a67-d10b-41ca-b35b-89fc0f3a1199"/>
+
+If you expect a PTO device but it is not showing up,
+ please reach out to us via farm-ng's
+[Support](https://amiga.farm-ng.com/docs/support/) page.
+
+
 
 ### Advanced settings
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/33a4aa3c-ac1f-436b-89c7-b5ef84a66004"/>
 
-
-<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/55e969d6-1a83-4e4d-a5cc-135f27475af0"/> 
-
-
-This page are for specific function of the dashboard firmware.
-The options under `Advance Settings` are:
+This page allows you to deep dive into the dashboard's firmware
 
 - `Reboot Dashboard`: This will give a soft reboot to the dashboard
   without having to power cycle your Amiga.
@@ -249,7 +259,11 @@ The options under `Advance Settings` are:
   when you would like to update the UF2 file on the dashboard you will need to
   place it in a `Bootloader` state. With this button you can perform that action.
 
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/55e969d6-1a83-4e4d-a5cc-135f27475af0"/> 
+
+
 :::tip
+
 For more information about Firmware Updates or how to perform an update,
 please visit [Dashboard Firmware Update](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)
 :::
