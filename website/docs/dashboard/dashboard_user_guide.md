@@ -5,7 +5,7 @@ title: Dashboard User Guide
 :::caution
 This guide is subject to change with each new update to the Dashboard.
 
-The latest version is Dashboard Firmware release `v0.4.2`.
+The latest version is Dashboard Firmware release `v0.4.0`.
 :::
 
 ![IMG6570-2-16x9-aspect-rediced](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6d3b25ee-cd16-4878-adbc-0e23ffd8d84b)
@@ -34,7 +34,7 @@ Pressing the START button will take you to the home screen.
 This is the home screen of the dashboard. In the center sits the spedometer,
  where you can switch between metric and standard units and adjust to the travel speed of your Amiga.
 
-git  On the right side of the screen you will see several icons displaying:
+On the right side of the screen you will see several icons displaying:
 
 - Battery Level
 - Average motor temperature
@@ -54,16 +54,14 @@ In this screen you can see the control state of your Amiga:
 - Auto Ready/Active
 - E-Stopped
 
- You will also see details on each motor's:
+ You will also see details on each motor / motor controller's:
 
 - Voltage
 - RPM
 - Temperature
-- Current draw for each motor/controller
+- Current draw
 
-Lastly, CANbus states appear on the right side of the display.
-Follow this link for an indepth description of your Amiga's
-[Canbus Service](https://amiga.farm-ng.com/docs/concepts/canbus_service/)
+Lastly, CAN bus states will appear on the right side of the display.
 
 ## Auto Control Screen
 
@@ -71,15 +69,16 @@ Follow this link for an indepth description of your Amiga's
 
 If you have an [Intelligence Kit](/docs/intelligence-kit/overview-intel)
  mounted on your Amiga and have some tracks recorded in
-[Autoplot](https://amiga.farm-ng.com/docs/apps/autoplot_app/), it is here where autonomous control
-comes to life.
+[Autoplot](https://amiga.farm-ng.com/docs/apps/autoplot_app/), activating the
+auto mode on this screen is what brings autonomous control into action.
+
 From this screen, you will be able to:
 
 - Enable and disable Auto Control
 - Monitor the Auto Control state
 - Monitor the commanded & measured speed of your Amiga
 
-You can use other micro-controllers to command your Amiga.
+You can also use micro-controllers to command your Amiga.
 For an example of how to do so, please follow the instructions in this [FPV example](/docs/examples/FPV/)
 
 ## General Settings
@@ -167,10 +166,11 @@ These are the button configurations for those of you who purchased a Kartech con
 
 An H bridge circuit allows you to apply a voltage across a load (i.e. a linear actuator)
 in either direction. We currently support up to four h bridge modules on the Amiga.
-They can be engaged momertarily or lached.
-The `up` - `down` arrows are used to `Active` the H bridge
-and the `left` - `right` arrow keys are used to select between H-bridge devices.
-As of this writing only one H-bridge device can be actuated at a time.
+They can be engaged momentarily or latched.
+The `up` - `down` arrows are used to control the selected H bridge device(s)
+and the `
+left` - `right` arrow keys are used to select between H-bridge devices.
+Two H-bridge devices (0 & 1 or 2 & 3) can be coupled with the **coupler** button and actuated together.
 
 :::tip
 Our [3 point hitch](https://farm-ng.com/products/cat-zero-3-point-lift-kit)
@@ -237,7 +237,7 @@ Inspect all cables and make sure they are properly connected.
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/bf3d2a67-d10b-41ca-b35b-89fc0f3a1199"/>
 
 If you expect a PTO device but it is not showing up,
- please reach out to us via farm-ng's
+please reach out to us via farm-ng's
 [Support](https://amiga.farm-ng.com/docs/support/) page.
 
 ### Advanced settings
