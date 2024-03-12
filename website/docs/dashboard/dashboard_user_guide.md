@@ -3,11 +3,12 @@ id: dashboard-user-guide
 title: Dashboard User Guide
 ---
 :::caution
-This is subject for change with new updates to the Dashboard.
-The user guide represents Dashboard Firmware release `v0.1.9`.
+This guide is subject to change with each new update to the Dashboard.
+
 The latest version is Dashboard Firmware release `v0.4.0`.
 :::
-![DSCF6570-2-16x9-aspect-reduced](https://user-images.githubusercontent.com/11846963/186734463-aa149b3a-7510-4d5a-99ea-f9a8a96775d2.jpg)
+
+![IMG6570-2-16x9-aspect-rediced](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6d3b25ee-cd16-4878-adbc-0e23ffd8d84b)
 
 ## Dashboard overview video
 
@@ -16,96 +17,89 @@ title="YouTube video player" frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 allowfullscreen></iframe>
 
-## Entry Screen
+## Start Page
 
-This is the entry screen of the dashboard. This screen will appear when you first turn on the Amiga.
-“Amiga is ready” and “Amiga esta lista” will appear and once you touch the "START" / "VAMOS" button
-you will be taken to the home screen.
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/fccbf6aa-95ae-41cb-bb65-fb816451c011"/>
 
-<img src="https://user-images.githubusercontent.com/64480560/233126363-7aee7937-d308-4d79-a424-33a1fe531bae.jpg"
-     width="320"
-     height="300" />
-
-Alternatively if you receive the "Check pendant calibration" page,
-this means that either you have defective pendant or your pendant needs to be calibrated.
-
-<img src="https://user-images.githubusercontent.com/64480560/233126475-5416e312-9d77-4552-876c-f4129d30f244.jpg"
-     width="400"
-     height="500" />
-
-:::tip
-This button will take you to the same page as the `pendant` section of the Settings tab.
-:::
-
-If your pendant is not being detected at all and if it says `No Pendant Detected`
-please contact the Farm-ng Support immediately by visiting [our Support page](https://amiga.farm-ng.com/docs/support/).
+This is the start page on the dashboard.
+It will appear when you first turn on your Amiga.
+Here is where you can change the display's language.
+You may choose between English, Spanish, and French.
+Pressing the START button will take you to the home screen.
 
 ## Home Screen
 
-<img src="https://user-images.githubusercontent.com/64480560/233131301-372ac33f-1a21-4aa9-999e-5093eaa53360.jpg"
-     width="400"
-     height="500" />
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/954a66d5-2155-48f1-9830-25428374fa2a"/>
 
-This is the home screen of the dashboard. On this screen you will find:
+This is the home screen of the dashboard. In the center sits the spedometer,
+ where you can switch between metric and standard units and adjust to the travel speed of your Amiga.
 
-- The speedometer
-- A preview of motor health
+On the right side of the screen you will see several icons displaying:
+
+- Battery Level
 - Average motor temperature
-- Battery level of the amiga
+- Connection to Pendant
+- Preview of each motor's health
+
+You can always come back to this screen by pressing the upper left icon on the dashboard.
 
 ## Motor Status Screen
 
-<img src="https://user-images.githubusercontent.com/64480560/232093032-cd99e871-5f09-41bb-9485-6e3cf1c3871b.jpg"
-     width="330"
-     height="300" />
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/d0cc17f2-3cdf-49c5-ab02-e412cbec56bd"/>
 
-<img src="https://user-images.githubusercontent.com/64480560/232093025-48b6792e-08a3-48f8-b83e-52d4813d84e9.jpg"
-     width="330"
-     height="300" />
+In this screen you can see the control state of your Amiga:
 
-This screen for monitoring each motor in much more detail than that of the home screen.
-On this screen you can:
+- Active
+- Cruise
+- Auto Ready/Active
+- E-Stopped
 
-- Monitor the control state of the Amiga
-- Voltage, RPM, temperature, and current of each motor / motor controller
-- State of the CAN bus
+ You will also see details on each motor / motor controller's:
+
+- Voltage
+- RPM
+- Temperature
+- Current draw
+
+Lastly, CAN bus states will appear on the right side of the display.
 
 ## Auto Control Screen
 
-<img src="https://user-images.githubusercontent.com/64480560/233127552-3a6f2f56-cddd-4b48-b947-bbd9292e2843.jpg"
-     width="320"
-     height="300" />
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/9a8dcddf-cb5d-4e3c-95e0-0224f521ae6d"/>
 
-This screen is where the autonomous control of the amiga comes to life. Here you will be able to :
+If you have an [Intelligence Kit](/docs/intelligence-kit/overview-intel)
+ mounted on your Amiga and have some tracks recorded in
+[Autoplot](https://amiga.farm-ng.com/docs/apps/autoplot_app/), activating the
+auto mode on this screen is what brings autonomous control into action.
+
+From this screen, you will be able to:
 
 - Enable and disable Auto Control
-- Monitor the auto control state
-- Monitor the commanded & measured speed and turning rates of the amiga
+- Monitor the Auto Control state
+- Monitor the commanded & measured speed of your Amiga
 
-If you are controlling the Amiga with a brain or other micro-controller,
-here is where you will enable & monitor the auto control commands sent to your Amiga.
-Auto control examples include the [FPV example](/docs/examples/FPV/) (micro-controller).
+You can also use micro-controllers to command your Amiga.
+For an example of how to do so, please follow the instructions in this [FPV example](/docs/examples/FPV/)
 
-## General Settings Tab
+## General Settings
 
-Now we have the settings tab, which may be the most important tab.
-Here on the settings tab you have a few options. Here you can find:
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6dbb13d1-679b-4b7a-8c8c-8c97f6c5b585"/>
 
-<img src="https://user-images.githubusercontent.com/64480560/233127789-39f05f32-e17e-4e7b-8118-91500a4bc75f.jpg"
-     width="320"
-     height="300" />
+In this screen, you can make configuration changes to your Amiga's:
 
-### The General Settings Tab
+- Settings
+- Pendant
+- H Bridge
+- ID
+- PTO
+- Advanced
 
-<img src="https://user-images.githubusercontent.com/64480560/233127855-eafd4df9-555f-4154-a238-48c8a2961e3c.jpg"
-     width="320"
-     height="300" />
+### Configuration Settings
 
-This page is where all of the general settings are located.
-Here you will be able to set the total `wheel_track` of the Amiga,
-or even motor you would like to disable or enable.
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a6ed5324-11fa-4c39-9fcd-6d3c974f9062"/>
 
-The settings you can set on this page are:
+General configuration settings are located in this tab.
+The configuration changes you can make on this page are:
 
 - `wheel_track`
 - `v_max_default`
@@ -128,30 +122,128 @@ The settings you can set on this page are:
 - `m13_on` (motor D on)
 
 :::caution
-You should press the physical E-stop prior to turning the motors on / off
+You should press the E-stop button prior to turning the motors on / off
 (with `m10_on`, `m11_on`, `m12_on`, `m13_on`).
-
-If you do not press the physical E-stop, the wheels will brake until it is pressed -> released.
+Failure to do so will brake the wheels until it is pressed -> released.
 :::
 
 ### The Pendant Settings
 
-<img src="https://user-images.githubusercontent.com/64480560/231795336-43477c82-db0d-4fa7-9cfc-638af2e11ede.GIF"
-     width="320"
-     height="300" />
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/b458227f-3422-4c43-8602-58c56b1c0dba"/>
 
-This page is the hub for the pendant. Here is where you will go to calibrate it,
-and to ensure all of the functions of the pendant are operational.
-This including the buttons, joystick, and data reception.
+This is the hub for the pendant. Here is where you can confirm data reception and overall functionality.
+Pressing on the icon will take you to the calibration screen.
+
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a73710af-f00e-4c34-a492-c487f7380e22"/>
+
+A green square around the center dot indicates that the your pendant is properly calibrated.
+
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/b0232548-6f36-480c-900f-0faeeb236b65"/>
+
+A purple square indicates the need to re-calibrate your pendant.
+
+:::caution
+If your Amiga begins to move on its own at start up, chances are that your pendant needs to be calibrated.
+With the above image in mind (purple square around the white dot), your Amiga would move forwards
+and towards the right at start up.
+:::
+
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/8bc4980b-d6f4-445b-b772-0b7e46b7eb1a"/>
+
+Pressing the Pendant image on the right will show the latest button configurations.
+
+:::tip
+The arrows (up/down/left/right) in the center of the pendant are used to select and engage with the H-Bridge(s).
+:::
+
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/0f880f2a-3958-4066-989d-d68b68547665"/>
+
+These are the button configurations for those of you who purchased a Kartech control.
+
+### H-bridge settings
+
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/bd24caf0-01c7-4647-b6ba-9ce6c55c47aa"/>
+
+An H bridge circuit allows you to apply a voltage across a load (i.e. a linear actuator)
+in either direction. We currently support up to four h bridge modules on the Amiga.
+They can be engaged momentarily or latched.
+The `up` - `down` arrows are used to control the selected H bridge device(s)
+and the `left` - `right` arrow keys are used to select between H-bridge devices.
+Two H-bridge devices (0 & 1 or 2 & 3) can be coupled with the **coupler** button and actuated together.
+
+:::tip
+Our [3 point hitch](https://farm-ng.com/products/cat-zero-3-point-lift-kit)
+is temporarily engaged by the [H bridge](https://farm-ng.com/products/h-bridge-for-canbus-accessory-control)
+to lift and lower the [A frame](https://farm-ng.com/products/cat-0-a-frame-kit)
+which you can use to engage a [seeder](https://farm-ng.com/products/mounted-6-line-seeder).
+Alternatively, you can use the laching function in a sprayer system.
+:::
+
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/93f1e736-9796-4959-a32c-fdd7bd7457b8"/>
+
+By default, the first H-bridge that is connected will fill the 0 position in green.
+You can switch between MOMENTARY and LATCHING states by tapping on the desired state on the Dashboard.
+
+If you expect a H-bridge device but it is not showing up,
+ please reach out to us via farm-ng's
+[Support](https://amiga.farm-ng.com/docs/support/) page.
+
+### ID settings
+
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/4ea758d8-5a1e-47fc-ae93-567306267af1"/>
+
+This page displays your `Tractor Hardware ID`, `Dashboard Firmware` version,
+and enables you to launch the `Updator App` where you can carry out Over-the-Air updates.
+
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e01028c1-cccd-4cff-b2db-62fef69cd9d5"/>
+
+#### Updator App
+
+On the `Updator App`, you will be able to update your Amiga dashboard and Updator app itself
+through here. You can use the `Updator App` to perform an Over-the-air update.
+
+:::tip
+For more information about Firmware Updates or how to perform an update,
+please visit [Dashboard Firmware Update](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)
+:::
+
+### PTO settings
+
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/40511d77-a07a-4344-a532-2118d0e61b62"/>
+
+The PTO (power take-off) screen allows you to select between devices (PTO0 &PTO1), fine tune their
+settings and monitor their performance.
+We currently support up to two PTO's running at the same time.
+
+When you connect a PTO device, you will have access to the following features:
+
+- A slider control that enables you to increade or decrease the PTO's RPM.
+- Directional control by means of a toggle switch on the touchscreen.
+
+On the left side of the screen you will see a graph displaying the current PTO set-point &
+measured rpm values.
+
+:::tip
+The default, min, & max values for the RPM slider can be configured on the settings page.
+The PTO gear ratio can also be configured on the settings page.
+:::
+
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e08dd594-e229-4820-904c-9e4f9aeb2bc1"/>
+
+Occasionally a message stating that no PTO device has been detected will be accompanied by the
+following image.
+Inspect all cables and make sure they are properly connected.
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/bf3d2a67-d10b-41ca-b35b-89fc0f3a1199"/>
+
+If you expect a PTO device but it is not showing up,
+please reach out to us via farm-ng's
+[Support](https://amiga.farm-ng.com/docs/support/) page.
 
 ### Advanced settings
 
-<img src="https://user-images.githubusercontent.com/64480560/233129573-9df7f43f-14ea-49e0-a4e0-8efbfcf3e36f.jpg"
-     width="320"
-     height="300" />
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/33a4aa3c-ac1f-436b-89c7-b5ef84a66004"/>
 
-This page are for specific function of the dashboard firmware.
-The options under `Advance Settings` are:
+This page allows you to deep dive into the dashboard's firmware
 
 - `Reboot Dashboard`: This will give a soft reboot to the dashboard
   without having to power cycle your Amiga.
@@ -165,66 +257,10 @@ The options under `Advance Settings` are:
   when you would like to update the UF2 file on the dashboard you will need to
   place it in a `Bootloader` state. With this button you can perform that action.
 
-:::tip
-For more information about Firmware Updates or how to perform an update,
-please visit [Dashboard Firmware Update](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)
-:::
-
-### H-bridge settings
-
-<img src="https://user-images.githubusercontent.com/64480560/233127456-1f294f6f-69ac-4563-a070-9b25c2e78ac3.jpg"
-     width="320"
-     height="300" />
-
-This page shows the status of the H-bridge linear actuators on your Amiga.
-The H-bridge actuators are controlled with the arrow keys on the pendant.
-Only one H-bridge can be actuated at a time,
-so the `left` - `right` arrow keys are to select the active H-bridge device
-and the `up` - `down` arrows are to move an `Active` actuator.
-There are three states you will see for the H-bridge actuators.
-
-- Red: `Not detected`
-- Yellow: `Idle` (detected, but not selected)
-- Green: `Active` (detected and selected)
-
-### PTO settings
-
-Currently only 1 PTO (power take-off) device is supported.
-You will see a message that no PTO is detected if there is not a detected PTO device.
-> If you see the "No PTO" message and expect a PTO device, contact farm-ng for support by visiting
-> [our Support page](https://amiga.farm-ng.com/docs/support/).
-
-<img src="https://user-images.githubusercontent.com/53625197/233201899-59ddb864-75dd-45d3-86c9-bdb7b3c4a358.jpg"
-     width="320" />
-
-If there is detected a PTO device, you will see the following features:
-
-- A direction toggle
-- A PTO rpm slider
-  - The default, min, & max values of this slider can be configured on the settings page.
-- A graph of PTO set-point & measured rpm values.
-
-<img src="https://user-images.githubusercontent.com/53625197/233201446-d6ef777f-3650-4b69-bdce-7f61e10075ac.jpg"
-     width="320" />
-
-Note that the PTO rpm values are the output RPM.
-The PTO gear ratio can also be configured on the settings page.
-
-### ID settings
-
-<img src="https://user-images.githubusercontent.com/64480560/233126613-838261d6-a3ee-4f7c-b126-8f26162551c4.jpg"
-     width="320"
-     height="300" />
-
-On this page, you will find important information about your Amiga, including the
-`Tractor Hardware ID`, `Dashboard Firmware` version number, and the `Updator App`.
-
-#### Updator App
-
-On the `Updator App`, you will be able to update your Amiga dashboard and Updator app itself
-through here. You can use the `Updator App` to perform an Over-the-air update.
+<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/55e969d6-1a83-4e4d-a5cc-135f27475af0"/>
 
 :::tip
+
 For more information about Firmware Updates or how to perform an update,
 please visit [Dashboard Firmware Update](https://amiga.farm-ng.com/docs/dashboard/dashboard-fw)
 :::
