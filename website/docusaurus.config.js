@@ -75,20 +75,20 @@ async function createConfig() {
         isCloseable: false,
 	},
       navbar: {
-	title: 'Amiga SDK',
+	title: 'Amiga Docs',
 	logo: {
 	  alt: 'Amiga Logo',
 	  src: 'img/farm-ng_favicon.png',
 	},
 	items: [
 	  {
-	    label: 'Introduction',
+	    label: 'Introductionerreee',
 	    type: 'doc',
 	    docId: 'getting-started',
 	    position: 'left',
 	  },
 	  {
-	    label: 'Concepts',
+	    label: 'Developers',
 	    type: 'doc',
 	    docId: 'concepts/concepts-index',
 	    position: 'left',
@@ -99,18 +99,6 @@ async function createConfig() {
 	    docId: 'examples/examples-index',
 	    position: 'left',
 	  },
-	  {
-	    label: 'API',
-	    type: 'doc',
-	    docId: 'api/api-index',
-	    position: 'left',
-	  },
-	  {
-
-    	to: 'https://farm-ng.com/pages/about-farm-ng',
-    	label: 'About Us',
-    	position: 'left',
-},
 
 	//   {
 	//     label: 'Contribute',
@@ -129,7 +117,7 @@ async function createConfig() {
     	position: 'left',
 	  },
 	  {
-	    to: 'https://farm-ng.com/',
+	    to: 'https://farm-ng.com/products/la-maquina-amiga',
 	    label: 'Shop',
 	    position: 'left'
 	  },

@@ -29,8 +29,6 @@ const sidebars = {
   "Documentation": {
     "Introduction": [
       "getting-started",
-    ],
-    "Getting Started": [
       "amiga_quick_start/amiga-quick-start",
       "ssh/ssh",
       "brain/brain-install",
@@ -38,7 +36,7 @@ const sidebars = {
     ],
 
 
-    "Amiga Rover": [
+    "User Guides": [
       {
         "items": [
         "dashboard/dashboard",
@@ -58,30 +56,28 @@ const sidebars = {
       "label": "Pendant",
       "type": "category"
     },
+    {
+      "items": [
+        "intelligence-kit/overview-intel",
+        "brain/brain",
+        "intelligence-kit/brain/brain-v2",
+      ],
+      "label": "Brain",
+      "type": "category"
 
+    },
+    {
+      "items": [
+        "release-notes/release-022",
+        "release-notes/release-021",
+        "release-notes/release-02",
+        "release-notes/release-01",
+      ],
+      "label": "Release Notes",
+      "type": "category"
+    },
     ],
-    "Intelligence Kit": [
-      "intelligence-kit/overview-intel",
-{
-        "items": [
-          "brain/brain",
-          "intelligence-kit/brain/brain-v2",
-        ],
-        "label": "Brain",
-        "type": "category"
 
-      },
-{
-  "items": [
-    "release-notes/release-022",
-    "release-notes/release-021",
-    "release-notes/release-02",
-    "release-notes/release-01",
-  ],
-  "label": "Release Notes",
-  "type": "category"
-},
-    ],
     "Farm Tools":[
       {
         "items": [
@@ -116,10 +112,10 @@ const sidebars = {
       "support/github-101",
     ],
   },
-  "Concepts": [
+  "Developer": [
     "concepts/concepts-index",
     {
-      "Fundamental Concepts": [
+      "Fundamentalllllll ll Concepts": [
         "concepts/system_overview/amiga-dev",
         "concepts/transforms_and_poses/transforms-and-poses",
         "concepts/tracks_and_waypoints/tracks-and-waypoints",

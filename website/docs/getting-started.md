@@ -1,6 +1,6 @@
 ---
 id: getting-started
-title: Introduction
+title: Introductionnn
 ---
 
 ### Welcome to the Amiga Development Kit
