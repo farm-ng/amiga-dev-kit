@@ -168,8 +168,7 @@ An H bridge circuit allows you to apply a voltage across a load (i.e. a linear a
 in either direction. We currently support up to four h bridge modules on the Amiga.
 They can be engaged momentarily or latched.
 The `up` - `down` arrows are used to control the selected H bridge device(s)
-and the `
-left` - `right` arrow keys are used to select between H-bridge devices.
+and the `left` - `right` arrow keys are used to select between H-bridge devices.
 Two H-bridge devices (0 & 1 or 2 & 3) can be coupled with the **coupler** button and actuated together.
 
 :::tip
