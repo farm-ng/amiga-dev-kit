@@ -64,7 +64,6 @@ const sidebars = {
       ],
       "label": "Brain",
       "type": "category"
-
     },
     {
       "items": [
@@ -76,6 +75,13 @@ const sidebars = {
       "label": "Release Notes",
       "type": "category"
     },
+    {      "App Overviews": [
+      "apps/filter_app/filter-app",
+      "apps/autoplot_app/autoplot-app",
+      "apps/recorder_app/recorder-app",
+      "apps/file_manager_app/file-manager-app",
+      "apps/camera_app/camera-app",
+    ],}
     ],
 
     "Farm Tools":[
@@ -87,9 +93,10 @@ const sidebars = {
         "type": "category"
       },
   ],
-    "Development Tools": [
+    "Hardware Tools": [
       {
         "items": [
+            "hardware-tools/recommended-tools",
             "debug_cable/debug-cable",
             "debug_cable/service-cable"
       ],
@@ -106,7 +113,6 @@ const sidebars = {
   ],
 
     "Resources/Support": [
-      "hardware-tools/recommended-tools",
       "reference/faq",
       "support/support",
       "support/github-101",
@@ -127,13 +133,6 @@ const sidebars = {
         "concepts/recorder_service/recorder-overview",
         "concepts/filter_service/filter-overview",
         "concepts/track_follower_service/track-follower-overview",
-      ],
-      "App Overviews": [
-        "apps/filter_app/filter-app",
-        "apps/autoplot_app/autoplot-app",
-        "apps/recorder_app/recorder-app",
-        "apps/file_manager_app/file-manager-app",
-        "apps/camera_app/camera-app",
       ],
     },
   ],

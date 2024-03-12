@@ -99,7 +99,12 @@ async function createConfig() {
 	    docId: 'examples/examples-index',
 	    position: 'left',
 	  },
-
+	  {
+	    label: 'kfhfjhfjhfjfk',
+	    type: 'doc',
+	    docId: 'reference/faq',
+	    position: 'left',
+	  },
 	//   {
 	//     label: 'Contribute',
 	//     type: 'doc',
