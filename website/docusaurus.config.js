@@ -82,7 +82,7 @@ async function createConfig() {
 	},
 	items: [
 	  {
-	    label: 'Introductionerreee',
+	    label: 'User Guides',
 	    type: 'doc',
 	    docId: 'getting-started',
 	    position: 'left',

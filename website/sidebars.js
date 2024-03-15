@@ -27,61 +27,9 @@ const sidebars = {
   ],
    */
   "Documentation": {
-    "Introduction": [
+    "Getting Started": [
       "getting-started",
       "amiga_quick_start/amiga-quick-start",
-      "ssh/ssh",
-      "brain/brain-install",
-      "brain/next-steps",
-    ],
-
-
-    "User Guides": [
-      {
-        "items": [
-        "dashboard/dashboard",
-        "dashboard/dashboard-user-guide",
-        "dashboard/control-states",
-        "dashboard/dashboard-fw",
-        "dashboard/dashboard-debugging",
-      ],
-      "label": "Dashboard",
-      "type": "category"
-    },
-    {
-      "items": [
-        "pendant/pendant"
-
-      ],
-      "label": "Pendant",
-      "type": "category"
-    },
-    {
-      "items": [
-        "intelligence-kit/overview-intel",
-        "brain/brain",
-        "intelligence-kit/brain/brain-v2",
-      ],
-      "label": "Brain",
-      "type": "category"
-    },
-    {
-      "items": [
-        "release-notes/release-022",
-        "release-notes/release-021",
-        "release-notes/release-02",
-        "release-notes/release-01",
-      ],
-      "label": "Release Notes",
-      "type": "category"
-    },
-    {      "App Overviews": [
-      "apps/filter_app/filter-app",
-      "apps/autoplot_app/autoplot-app",
-      "apps/recorder_app/recorder-app",
-      "apps/file_manager_app/file-manager-app",
-      "apps/camera_app/camera-app",
-    ],}
     ],
 
     "Farm Tools":[
@@ -118,10 +66,59 @@ const sidebars = {
       "support/github-101",
     ],
   },
+  "User Manual": [
+    {
+      "items": [
+      "dashboard/dashboard-user-guide",
+      "dashboard/control-states",
+      "dashboard/dashboard-fw",
+      "dashboard/dashboard-debugging",
+    ],
+    "label": "Dashboard",
+    "type": "category"
+  },
+  {
+    "items": [
+      "pendant/pendant"
+
+    ],
+    "label": "Pendant",
+    "type": "category"
+  },
+  {
+    "items": [
+      "intelligence-kit/overview-intel",
+      "brain/brain",
+      "intelligence-kit/brain/brain-v2",
+    ],
+    "label": "Brain",
+    "type": "category"
+  },
+  {      "App Overviews": [
+    "apps/filter_app/filter-app",
+    "apps/autoplot_app/autoplot-app",
+    "apps/recorder_app/recorder-app",
+    "apps/file_manager_app/file-manager-app",
+    "apps/camera_app/camera-app",
+  ],}
+  ],
   "Developer": [
     "concepts/concepts-index",
     {
+      "items": [
+        "release-notes/release-022",
+        "release-notes/release-021",
+        "release-notes/release-02",
+        "release-notes/release-01",
+      ],
+      "label": "Release Notes",
+      "type": "category"
+    },
+    {
       "Fundamentalllllll ll Concepts": [
+        "ssh/ssh",
+        "brain/brain-install",
+        "brain/next-steps",
         "concepts/system_overview/amiga-dev",
         "concepts/transforms_and_poses/transforms-and-poses",
         "concepts/tracks_and_waypoints/tracks-and-waypoints",
