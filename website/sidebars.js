@@ -69,6 +69,7 @@ const sidebars = {
   "User Manual": [
     {
       "items": [
+      "dashboard/dashboard-overview",
       "dashboard/dashboard-user-guide",
       "dashboard/control-states",
       "dashboard/dashboard-fw",

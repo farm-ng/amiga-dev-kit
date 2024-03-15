@@ -82,9 +82,9 @@ async function createConfig() {
 	},
 	items: [
 	  {
-	    label: 'User Guides',
+	    label: 'User Manual',
 	    type: 'doc',
-	    docId: 'getting-started',
+	    docId: 'dashboard/dashboard-overview',
 	    position: 'left',
 	  },
 	  {
@@ -99,12 +99,7 @@ async function createConfig() {
 	    docId: 'examples/examples-index',
 	    position: 'left',
 	  },
-	  {
-	    label: 'kfhfjhfjhfjfk',
-	    type: 'doc',
-	    docId: 'reference/faq',
-	    position: 'left',
-	  },
+
 	//   {
 	//     label: 'Contribute',
 	//     type: 'doc',
@@ -118,7 +113,7 @@ async function createConfig() {
 	//   },
 	  {
 		to: 'https://discourse.farm-ng.com/',
-    	label: 'Discuss',
+    	label: 'Discourse',
     	position: 'left',
 	  },
 	  {
@@ -126,7 +121,6 @@ async function createConfig() {
 	    label: 'Shop',
 	    position: 'left'
 	  },
-
 	  {
 	    href: 'https://www.youtube.com/channel/UCczyy8tyLbqxjtLE1_8YW3w',
 	    position: 'right',
@@ -134,7 +128,7 @@ async function createConfig() {
 		'aria-label': 'Youtube',
 	  },
 	  {
-	    href: 'https://github.com/farm-ng/amiga-dev-kit',
+	    href: 'https://github.com/farm-ng',
 	    position: 'right',
 	    className: 'header-github-link',
 	    'aria-label': 'GitHub repository',
@@ -152,35 +146,49 @@ async function createConfig() {
 	  {
 	    title: 'Documentation',
 	    items: [
-	      {
-		label: 'Getting Started',
-		to: 'docs/getting-started',
-	      },
-	      {
-		label: 'Examples',
-		to: '/docs/examples/examples-index',
-	      },
-	      {
-		label: 'API Reference',
-		to: '/docs/api',
-	      },
+			{
+				label: 'Contribute',
+				to: '/docs/contribute/contribute-website',
+				  },
 	    ],
 	  },
 	  {
 	    title: 'Community',
 	    items: [
+			{
+				to: 'https://discourse.farm-ng.com/',
+				label: 'Discourse',
+				position: 'left',
+			  },
 	      //{
 	      //  label: 'Stack Overflow',
 	      //  href: 'https://stackoverflow.com/questions/tagged/docusaurus',
 	      //},
-	      {
-		label: 'Forum',
-		href: 'https://discourse.farm-ng.com',
-	      },
-	      {
-		label: 'Contribute',
-		to: '/docs/contribute/contribute-website',
-	      },
+	      // {
+	      //   label: 'Twitter',
+	      //   href: 'https://twitter.com/docusaurus',
+	      // },
+	    ],
+	  },	  {
+	    title: 'Farm-ng',
+	    items: [
+			{
+				label: 'farm-ng-amiga',
+				href: 'https://github.com/farm-ng/farm-ng-amiga'
+
+			  },
+			{
+                label: 'farm-ng-core',
+                href: 'https://farm-ng.github.io/farm-ng-core/',
+              },
+			  {
+                label: 'farm-ng-amiga-ros-bridge',
+                href: 'https://github.com/farm-ng/amiga-ros-bridge-v1',
+              },
+	      //{
+	      //  label: 'Stack Overflow',
+	      //  href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+	      //},
 	      // {
 	      //   label: 'Twitter',
 	      //   href: 'https://twitter.com/docusaurus',
@@ -188,23 +196,19 @@ async function createConfig() {
 	    ],
 	  },
           {
-            title: 'farm-ng and sister projects',
+            title: 'Sister projects',
             items: [
-              {
-                label: 'farm-ng-core',
-                href: 'https://farm-ng.github.io/farm-ng-core/',
-              },
-              {
+				{
+					label: 'Kornia',
+					href: 'https://github.com/kornia',
+				  },
+				  {
+					label: 'Pangolin',
+					href: 'https://github.com/stevenlovegrove/Pangolin',
+				  },
+			    {
                 label: 'Sophus',
                 href: 'https://strasdat.github.io/Sophus/latest/',
-              },
-              {
-                label: 'Pangolin',
-                href: 'https://github.com/stevenlovegrove/Pangolin',
-              },
-              {
-                label: 'Amiga Development Kit',
-                href: 'https://amiga.farm-ng.com/docs/getting-started',
               },
             ],
           },
@@ -212,12 +216,8 @@ async function createConfig() {
 	    title: 'More',
 	    items: [
 	      {
-		label: 'Release Notes',
-		to: '/docs/release-notes/release-02',
-	      },
-	      {
 		label: 'GitHub',
-		href: 'https://github.com/farm-ng/amiga-dev-kit',
+		href: 'https://github.com/farm-ng',
 	      },
 	      {
 		label: 'License',
