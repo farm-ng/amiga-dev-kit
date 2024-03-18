@@ -19,6 +19,7 @@ These overviews are useful context before going through the related
 [Brain ADK Examples](/docs/examples/examples-index#brain-adk-examples).
 :::
 
+![amiga_brain-1](https://github.com/farm-ng/amiga-dev-kit/assets/5157099/a7d5d95f-a94d-40a9-8df0-3c0c9084c2fa)
 
 ## App Overviews
 
