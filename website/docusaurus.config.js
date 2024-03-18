@@ -94,6 +94,12 @@ async function createConfig() {
 	    position: 'left',
 	  },
 	  {
+		label: 'Reference',
+		type: 'doc',
+		docId: 'reference/faq',
+		position: 'left',
+	  },
+	  {
 	    label: 'Examples',
 	    type: 'doc',
 	    docId: 'examples/examples-index',
@@ -115,6 +121,12 @@ async function createConfig() {
 		to: 'https://discourse.farm-ng.com/',
     	label: 'Discourse',
     	position: 'left',
+	  },
+	  {
+		label:'Support',
+		type:'doc',
+		docId:'support/support',
+		position:'left'
 	  },
 	  {
 	    to: 'https://farm-ng.com/products/la-maquina-amiga',

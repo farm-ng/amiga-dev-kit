@@ -59,12 +59,6 @@ const sidebars = {
       "type": "category"
     },
   ],
-
-    "Resources/Support": [
-      "reference/faq",
-      "support/support",
-      "support/github-101",
-    ],
   },
   "User Manual": [
     {
@@ -116,7 +110,7 @@ const sidebars = {
       "type": "category"
     },
     {
-      "Fundamentalllllll ll Concepts": [
+      "Fundamental Concepts": [
         "ssh/ssh",
         "brain/brain-install",
         "brain/next-steps",
@@ -147,6 +141,10 @@ const sidebars = {
       ],
     }
   ],
+  "Resources/Support": [
+    "reference/faq",
+    "support/github-101",
+],
   "examples": [
     "examples/examples-index",
     {
