@@ -84,7 +84,7 @@ async function createConfig() {
 						{
 							label: 'User Manual',
 							type: 'doc',
-							docId: 'dashboard/dashboard-overview',
+							docId: 'amiga_quick_start/amiga-quick-start',
 							position: 'left',
 						},
 						{

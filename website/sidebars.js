@@ -26,13 +26,11 @@ const sidebars = {
     },
   ],
    */
-  "Documentation": {
-    "Getting Started": [
-      "getting-started",
-      "amiga_quick_start/amiga-quick-start",
-    ],
-  },
+  // "Documentation": [
+  //   "getting-started",
+  // ],
   "User Manual": [
+    "amiga_quick_start/amiga-quick-start",
     {
       "items": [
         "dashboard/dashboard-overview",
