@@ -19,7 +19,6 @@ These overviews are useful context before going through the related
 [Brain ADK Examples](/docs/examples/examples-index#brain-adk-examples).
 :::
 
-
 ## App Overviews
 
 We provide overviews of each app available on your brain and high-level instructions
