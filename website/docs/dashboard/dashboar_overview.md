@@ -1,5 +1,5 @@
 ---
-id: dashboard
+id: dashboard-overview
 title: Dashboard Overview
 ---
 

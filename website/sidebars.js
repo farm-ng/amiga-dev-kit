@@ -26,22 +26,14 @@ const sidebars = {
     },
   ],
    */
-  "Documentation": {
-    "Introduction": [
-      "getting-started",
-    ],
-    "Getting Started": [
-      "amiga_quick_start/amiga-quick-start",
-      "ssh/ssh",
-      "brain/brain-install",
-      "brain/next-steps",
-    ],
-
-
-    "Amiga Rover": [
-      {
-        "items": [
-        "dashboard/dashboard",
+  // "Documentation": [
+  //   "getting-started",
+  // ],
+  "User Manual": [
+    "amiga_quick_start/amiga-quick-start",
+    {
+      "items": [
+        "dashboard/dashboard-overview",
         "dashboard/dashboard-user-guide",
         "dashboard/control-states",
         "dashboard/dashboard-fw",
@@ -58,80 +50,15 @@ const sidebars = {
       "label": "Pendant",
       "type": "category"
     },
-
-    ],
-    "Intelligence Kit": [
-      "intelligence-kit/overview-intel",
-{
-        "items": [
-          "brain/brain",
-          "intelligence-kit/brain/brain-v2",
-        ],
-        "label": "Brain",
-        "type": "category"
-
-      },
-{
-  "items": [
-    "release-notes/release-022",
-    "release-notes/release-021",
-    "release-notes/release-02",
-    "release-notes/release-01",
-  ],
-  "label": "Release Notes",
-  "type": "category"
-},
-    ],
-    "Farm Tools":[
-      {
-        "items": [
-          "farm-tools/three-point",
-        ],
-        "label": "Three Point",
-        "type": "category"
-      },
-  ],
-    "Development Tools": [
-      {
-        "items": [
-            "debug_cable/debug-cable",
-            "debug_cable/service-cable"
-      ],
-      "label": "Cables",
-      "type": "category"
-    },
     {
       "items": [
-        "mcu_kit/microcontroller-kit",
+        "intelligence-kit/overview-intel",
+        "intelligence-kit/brain/brain-v2",
       ],
-      "label": "Microcontroller Kit",
+      "label": "Intelligence Kit",
       "type": "category"
     },
-  ],
-
-    "Resources/Support": [
-      "hardware-tools/recommended-tools",
-      "reference/faq",
-      "support/support",
-      "support/github-101",
-    ],
-  },
-  "Concepts": [
-    "concepts/concepts-index",
     {
-      "Fundamental Concepts": [
-        "concepts/system_overview/amiga-dev",
-        "concepts/transforms_and_poses/transforms-and-poses",
-        "concepts/tracks_and_waypoints/tracks-and-waypoints",
-      ],
-        "Service Overviews": [
-        "concepts/canbus_service/canbus-overview",
-        "concepts/oak_service/oak-overview",
-        "concepts/gps_service/gps-overview",
-        "concepts/recorder_service/recorder-overview",
-        "concepts/filter_service/filter-overview",
-        "concepts/track_follower_service/track-follower-overview",
-      ],
       "App Overviews": [
         "apps/filter_app/filter-app",
         "apps/autoplot_app/autoplot-app",
@@ -140,149 +67,203 @@ const sidebars = {
         "apps/camera_app/camera-app",
       ],
     },
-  ],
-  "api": [
-    "api/api-index",
     {
-      "Microcontroller ADK": [
-        require("./docs/reference/circuitpy/sidebar.json")
+      "Farm Tools": [
+        {
+          "items": [
+            "farm-tools/three-point",
+          ],
+          "label": "Three Point Hitch",
+          "type": "category"
+        },
+      ],
+    },
+  ],
+  "Developer": [
+    "concepts/concepts-index",
+    {
+      "Getting Started": [
+        "ssh/ssh",
+        "brain/brain-install",
+        "brain/next-steps",
       ],
     },
     {
-      "Brain ADK": [
-        require("./docs/reference/brain/sidebar.json")
+      "Fundamental Concepts": [
+
+        "concepts/system_overview/amiga-dev",
+        "concepts/transforms_and_poses/transforms-and-poses",
+        "concepts/tracks_and_waypoints/tracks-and-waypoints",
       ],
-    }
+
+      "Custom Applications": [
+        "brain/brain-apps",
+        "brain/brain-apps-kivy",
+        "brain/brain-apps-manifest",
+        "brain/app-ownership",
+        "brain/custom-troubleshooting",
+      ],
+    },
+    "brain/sdk-barley-migration",
+    "brain/ros-bridge",
+    "examples/vnc_viewer/vnc-viewer",
+    {
+      "Service Overviews": [
+        "concepts/canbus_service/canbus-overview",
+        "concepts/oak_service/oak-overview",
+        "concepts/gps_service/gps-overview",
+        "concepts/recorder_service/recorder-overview",
+        "concepts/filter_service/filter-overview",
+        "concepts/track_follower_service/track-follower-overview",
+      ],
+    },
+    {
+      "items": [
+        "mcu_kit/microcontroller-kit",
+        "debug_cable/debug-cable",
+        "debug_cable/service-cable"
+      ],
+      "label": "Microcontroller Kit",
+      "type": "category"
+    },
+  ],
+
+  "Resources/Support": [
+    "hardware-tools/recommended-tools",
+    "reference/faq",
+    "support/github-101",
+    "api/api-index",
+    "brain/brain",
+    {
+      "items": [
+        "release-notes/release-022",
+        "release-notes/release-021",
+        "release-notes/release-02",
+        "release-notes/release-01",
+      ],
+      "label": "Release Notes",
+      "type": "category"
+    },
   ],
   "examples": [
     "examples/examples-index",
     {
-    "Microcontroller Examples" : [
+      "Microcontroller Examples": [
         "examples/hello_main_loop/hello-world",
         "examples/cansniffer/cansniffer",
         "examples/FPV/fpv",
-    ],
-    "Brain Examples" : [
-      {
-        "items": [
+      ],
+      "Brain Examples": [
+        {
+          "items": [
             "examples/events_recorder/events-recorder",
-        ],
-        "label": "Data Recording Examples",
-        "type": "category"
-      },
-      {
-        "items": [
-        "examples/file_reader/file-reader",
-        "examples/file_converter/file-converter",
-        "examples/file_reader_can/file-reader-can",
-        "examples/file_reader_gps/file-reader-gps",
-        "examples/file_reader_headers/file-reader-headers",
-        ],
-        "label": "Playback Examples",
-        "type": "category"
-      },
-      {
-        "items": [
-          "examples/camera_client/camera-client",
-          "examples/camera_settings/camera-settings",
-          "examples/camera_calibration/camera-calibration",
-          "examples/camera_aruco_detector/camera-aruco-detector",
-          "examples/camera_pointcloud/camera-pointcloud",
-        ],
-        "label": "Camera Examples",
-        "type": "category"
-      },
-      {
-        "items": [
-          "examples/motor_state/motor-state",
-          "examples/pendant_state/pendant-state",
-          "examples/vehicle_twist/vehicle-twist",
-          "examples/tool_control/tool-control",
-          "examples/dashboard_settings/dashboard-settings",
-          "examples/file_reader_can/file-reader-can",
-        ],
-        "label": "CAN Bus Examples",
-        "type": "category"
-      },
-      {
-        "items": [
-          "examples/gps_client/gps-client",
-          "examples/file_reader_gps/file-reader-gps",
-        ],
-        "label": "GPS Examples",
-        "type": "category"
-      },
-      {
-        "items": [
-          "examples/filter_client/filter-client",
-        ],
-        "label": "State Estimation Examples",
-        "type": "category"
-      },
-      {
-        "items": [
-          "examples/track_recorder/track-recorder",
-          "examples/track_plotter/track-plotter",
-          "examples/track_follower/track-follower",
-          "examples/track_planner/track-planner",
-          "examples/square_track/square-track",
-        ],
-        "label": "Track Follower Examples",
-        "type": "category"
-      },
-      {
-        "items": [
+          ],
+          "label": "Data Recording Examples",
+          "type": "category"
+        },
+        {
+          "items": [
+            "examples/file_reader/file-reader",
+            "examples/file_converter/file-converter",
+            "examples/file_reader_can/file-reader-can",
+            "examples/file_reader_gps/file-reader-gps",
+            "examples/file_reader_headers/file-reader-headers",
+          ],
+          "label": "Playback Examples",
+          "type": "category"
+        },
+        {
+          "items": [
+            "examples/camera_client/camera-client",
+            "examples/camera_settings/camera-settings",
+            "examples/camera_calibration/camera-calibration",
+            "examples/camera_aruco_detector/camera-aruco-detector",
+            "examples/camera_pointcloud/camera-pointcloud",
+          ],
+          "label": "Camera Examples",
+          "type": "category"
+        },
+        {
+          "items": [
+            "examples/motor_state/motor-state",
+            "examples/pendant_state/pendant-state",
+            "examples/vehicle_twist/vehicle-twist",
+            "examples/tool_control/tool-control",
+            "examples/dashboard_settings/dashboard-settings",
+            "examples/file_reader_can/file-reader-can",
+          ],
+          "label": "CAN Bus Examples",
+          "type": "category"
+        },
+        {
+          "items": [
+            "examples/gps_client/gps-client",
+            "examples/file_reader_gps/file-reader-gps",
+          ],
+          "label": "GPS Examples",
+          "type": "category"
+        },
+        {
+          "items": [
+            "examples/filter_client/filter-client",
+          ],
+          "label": "State Estimation Examples",
+          "type": "category"
+        },
+        {
+          "items": [
+            "examples/track_recorder/track-recorder",
+            "examples/track_plotter/track-plotter",
+            "examples/track_follower/track-follower",
+            "examples/track_planner/track-planner",
+            "examples/square_track/square-track",
+          ],
+          "label": "Track Follower Examples",
+          "type": "category"
+        },
+        {
+          "items": [
             "examples/multi_client_subscriber/multi-client-subscriber",
             "examples/multi_client_geoimage/multi-client-geoimage",
-        ],
-      "label": "Multi Client Examples",
-      "type": "category"
-      },
-      {
-        "items": [
-          "examples/service_client/service-client",
-          "examples/service_counter/service-counter",
-          "examples/service_propagation/service-propagation",
-        ],
-      "label": "Custom Service Examples",
-      "type": "category"
-      },
-      {
-      "items": [
-        "examples/monitor_app/monitor-app",
+          ],
+          "label": "Multi Client Examples",
+          "type": "category"
+        },
+        {
+          "items": [
+            "examples/service_client/service-client",
+            "examples/service_counter/service-counter",
+            "examples/service_propagation/service-propagation",
+          ],
+          "label": "Custom Service Examples",
+          "type": "category"
+        },
+        {
+          "items": [
+            "examples/monitor_app/monitor-app",
+          ],
+          "label": "App Examples",
+          "type": "category"
+        },
       ],
-      "label": "App Examples",
-      "type": "category"
-      },
-    ],
-    "Kivy App Tutorials" : {
-      "00 - Tutorial Introduction" :[
+      "Kivy App Examples": {
+        "00 -Introduction": [
           "tutorials/introduction/tutorial-introduction",
           "tutorials/introduction/getting-started-kivy",
           "tutorials/introduction/template-overview",
-      ],
-      "01 - Camera Streamer Tutorial" :[
+        ],
+        "01 - Camera Streamer Example": [
           "tutorials/camera_streamer/camera-streamer-overview",
           "tutorials/camera_streamer/kivy-definition",
           "tutorials/camera_streamer/camera-stream",
-      ],
-      "02 - Virtual Joystick Tutorial" :[
+        ],
+        "02 - Virtual Joystick Example": [
           "tutorials/virtual_joystick/virtual-joystick-overview",
           "tutorials/virtual_joystick/virtual-joystick-widget",
           "tutorials/virtual_joystick/device-streams",
           "tutorials/virtual_joystick/further-exercises",
-      ],
-  },
-    "Amiga Brain Development": [
-      "examples/vnc_viewer/vnc-viewer",
-      "brain/brain-apps",
-      "brain/brain-apps-kivy",
-      "brain/brain-apps-manifest",
-      "brain/app-ownership",
-      "brain/custom-troubleshooting",
-      "brain/sdk-barley-migration",
-      "brain/ros-bridge",
-    ]
+        ],
+      },
     }
   ],
   "contribute": [
