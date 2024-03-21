@@ -73,7 +73,7 @@ const sidebars = {
           "items": [
             "farm-tools/three-point",
           ],
-          "label": "Three Point",
+          "label": "Three Point Hitch",
           "type": "category"
         },
       ],
