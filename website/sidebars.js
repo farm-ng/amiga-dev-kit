@@ -53,10 +53,9 @@ const sidebars = {
     {
       "items": [
         "intelligence-kit/overview-intel",
-        "brain/brain",
         "intelligence-kit/brain/brain-v2",
       ],
-      "label": "Brain",
+      "label": "Intelligence Kit",
       "type": "category"
     },
     {
@@ -83,14 +82,32 @@ const sidebars = {
   "Developer": [
     "concepts/concepts-index",
     {
-      "Fundamental Concepts": [
+      "Getting Started": [
         "ssh/ssh",
         "brain/brain-install",
         "brain/next-steps",
+      ],
+    },
+    {
+      "Fundamental Concepts": [
+
         "concepts/system_overview/amiga-dev",
         "concepts/transforms_and_poses/transforms-and-poses",
         "concepts/tracks_and_waypoints/tracks-and-waypoints",
       ],
+
+      "Custom Applications": [
+        "brain/brain-apps",
+        "brain/brain-apps-kivy",
+        "brain/brain-apps-manifest",
+        "brain/app-ownership",
+        "brain/custom-troubleshooting",
+      ],
+    },
+    "brain/sdk-barley-migration",
+    "brain/ros-bridge",
+    "examples/vnc_viewer/vnc-viewer",
+    {
       "Service Overviews": [
         "concepts/canbus_service/canbus-overview",
         "concepts/oak_service/oak-overview",
@@ -116,6 +133,7 @@ const sidebars = {
     "reference/faq",
     "support/github-101",
     "api/api-index",
+    "brain/brain",
     {
       "items": [
         "release-notes/release-022",
@@ -228,34 +246,24 @@ const sidebars = {
           "type": "category"
         },
       ],
-      "Kivy App Tutorials": {
-        "00 - Tutorial Introduction": [
+      "Kivy App Examples": {
+        "00 -Introduction": [
           "tutorials/introduction/tutorial-introduction",
           "tutorials/introduction/getting-started-kivy",
           "tutorials/introduction/template-overview",
         ],
-        "01 - Camera Streamer Tutorial": [
+        "01 - Camera Streamer Example": [
           "tutorials/camera_streamer/camera-streamer-overview",
           "tutorials/camera_streamer/kivy-definition",
           "tutorials/camera_streamer/camera-stream",
         ],
-        "02 - Virtual Joystick Tutorial": [
+        "02 - Virtual Joystick Example": [
           "tutorials/virtual_joystick/virtual-joystick-overview",
           "tutorials/virtual_joystick/virtual-joystick-widget",
           "tutorials/virtual_joystick/device-streams",
           "tutorials/virtual_joystick/further-exercises",
         ],
       },
-      "Amiga Brain Development": [
-        "examples/vnc_viewer/vnc-viewer",
-        "brain/brain-apps",
-        "brain/brain-apps-kivy",
-        "brain/brain-apps-manifest",
-        "brain/app-ownership",
-        "brain/custom-troubleshooting",
-        "brain/sdk-barley-migration",
-        "brain/ros-bridge",
-      ]
     }
   ],
   "contribute": [
