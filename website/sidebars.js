@@ -126,13 +126,28 @@ const sidebars = {
       "label": "Microcontroller Kit",
       "type": "category"
     },
+    {
+      "items": [
+        "api/api-index",
+        {
+          "CircuitPython API": [
+            require("./docs/reference/circuitpy/sidebar.json")
+          ],
+        },
+        {
+          "Brain API": [
+            require("./docs/reference/brain/sidebar.json")
+          ]
+        }
+      ],
+      "label": "APIs",
+      "type": "category"
+    },
   ],
-
   "Resources/Support": [
     "hardware-tools/recommended-tools",
     "reference/faq",
     "support/github-101",
-    "api/api-index",
     "brain/brain",
     {
       "items": [
