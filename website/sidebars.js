@@ -130,7 +130,7 @@ const sidebars = {
       "items": [
         "api/api-index",
         {
-          "CircuitPython API": [
+          "Microcontroller API": [
             require("./docs/reference/circuitpy/sidebar.json")
           ],
         },
@@ -281,10 +281,6 @@ const sidebars = {
       },
     }
   ],
-  "contribute": [
-    "contribute/contribute-website"
-  ],
-
 };
 
 module.exports = sidebars
