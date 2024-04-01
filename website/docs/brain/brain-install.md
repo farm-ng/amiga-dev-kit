@@ -117,7 +117,7 @@ pip install --no-build-isolation farm-ng-amiga
 You can check the installed version
 
 ```bash
-pip3 list | grep farm-ng
+pip list | grep -E 'farm-ng|farm_ng'
 
 # You should see something like:
 # farm-ng-amiga      2.0.0
