@@ -47,13 +47,13 @@ message ConfigRequestReply {
   uint32 node_id = 1;           // Node ID of the receiver (request) == sender (reply)
   double stamp = 2;             // Received time, in host monotonic clock (seconds)
 
-  ConfigOperationIds op_id = 3; // The operation ID of the request/reply. REQUIRED.
-  ConfigValueIds val_id = 4;    // The value ID of the request/reply. REQUIRED.
-  ConfigValueUnits unit = 5;    // The unit of measurement for the value. REQUIRED.
+  ConfigOperationIds op_id = 3; // The operation ID of the request/reply. REQUIRED for all operations.
+  ConfigValueIds val_id = 4;    // The value ID of the request/reply. REQUIRED for READ & WRITE operations.
+  ConfigValueUnits unit = 5;    // The unit of measurement for the value. REQUIRED for READ & WRITE operations.
   bool success = 6;             // For replies, true if the request was successful, false otherwise.
 
   oneof value {                 // Set one of the following fields based on the value ID.
-                                // Can be left unset for READ operations.
+                                // Can be left unset for READ & STORE operations.
     int32 int_value = 7;        // Used for integer values, e.g. PTO_CUR_DEV
     double double_value = 8;    // Used for floating-point values, e.g. VEL_MAX
     bool bool_value = 9;        // Used for boolean values, e.g. M10_ON
@@ -117,7 +117,20 @@ You can't have a max velocity in `VOLTS`!
 You can find the full set of available **`ConfigOperationIds`**, **`ConfigValueIds`**, and **`ConfigValueUnits`**
 directly in the protobufs, at **[amiga_v6.proto](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/amiga_v6.proto)**.
 
-## 5. Expected output
+## 5. Customize run
+
+```bash
+$ python main.py --help
+usage: Query / set dashboard config parameters. [-h] --service-config SERVICE_CONFIG [--store]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --service-config SERVICE_CONFIG
+                        The canbus service config.
+  --store               Store the persistent parameters on the dashboard.
+```
+
+## 6. Expected output
 
 You should see a printed stream of your requests and the corresponding replies.
 For example, here we:
