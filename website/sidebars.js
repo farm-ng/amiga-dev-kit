@@ -78,6 +78,14 @@ const sidebars = {
         },
       ],
     },
+    {
+      "items": [
+        "debug_cable/service-cable",
+        "debug_cable/debug-cable",
+      ],
+      "label": "Service Cables",
+      "type": "category"
+    },
   ],
   "Developer": [
     "concepts/concepts-index",
@@ -117,15 +125,7 @@ const sidebars = {
         "concepts/track_follower_service/track-follower-overview",
       ],
     },
-    {
-      "items": [
-        "mcu_kit/microcontroller-kit",
-        "debug_cable/debug-cable",
-        "debug_cable/service-cable"
-      ],
-      "label": "Microcontroller Kit",
-      "type": "category"
-    },
+    "mcu_kit/microcontroller-kit",
     {
       "items": [
         "api/api-index",
