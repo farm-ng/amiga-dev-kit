@@ -29,7 +29,7 @@ The requirements to run this example are to have a
 [**farm-ng brain**](/docs/brain/) running the `canbus service`, with a pendant attached to your Amiga.
 There will be no `/pendant` stream if your amiga does not have a wired pendant connected.
 
-At the current dashboard firmware release `v0.4.0`, the `PendantState` is not published on the CAN
+At the current dashboard firmware release `v0.5.0`, the `PendantState` is not published on the CAN
 bus for pendant alternatives, including Kartech wireless remotes and the on-screen pendant.
 
 ## `PendantState` details

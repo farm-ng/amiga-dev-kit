@@ -29,8 +29,8 @@ The requirements to run this example are to have a
 [**farm-ng brain**](/docs/brain/) running the `canbus service`, with a dashboard attached to your Amiga.
 The `RequestReply` calls will fail if there is no dashboard to communicate with on the CAN bus.
 
-At the current dashboard firmware release `v0.4.0`, only the `READ` operation is supported.
-The `WRITE` and `STORE` API is implemented and staged for release in dashboard firmware release `v0.5.0`.
+Support for the `READ` operation is added in dashboard firmware release `v0.4.0`.
+Support for the `WRITE` and `STORE` operations is implemented in dashboard firmware release `v0.5.0`.
 
 ## `ConfigRequestReply` details
 
