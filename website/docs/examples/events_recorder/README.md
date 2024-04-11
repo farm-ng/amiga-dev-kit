@@ -45,7 +45,7 @@ source venv/bin/activate
 
 ```bash
 # assuming you're already in the amiga-dev-kit/ directory
-cd farm-ng-amiga/py/examples/events_recorder
+cd farm-ng-amiga/py/examples/event_recorder
 ```
 
 ### 3. Install the example's dependencies
