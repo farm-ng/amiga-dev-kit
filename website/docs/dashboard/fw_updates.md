@@ -18,62 +18,110 @@ To update the Amiga application layer (our frequent
 [**amiga-dash FW releases**](https://github.com/farm-ng/amiga-dev-kit/releases)), you can follow either:
 <!-- no toc -->
 - [**Over-the-air (OTA) Amiga application updates**](#over-the-air-ota-amiga-application-updates)
-  - Simpler, especially for v0.1.5+
-  - Requires v0.1.1+ already installed
-  - No required materials
+  - Simpler, especially for `v0.1.5+`
+  - Requires `v0.1.1+` already installed
+  - Requires a wifi internet connection
+  - Only takes a few minutes, starting with release `v0.5.0`
 - [**Wired Amiga application updates**](#wired-amiga-application-updates)
-  - Faster
+  - Faster than OTA
   - Not dependent upon current installed version
   - Requires a [**debug cable**](/docs/debug_cable/README.md) or
   [**service cable**](/docs/debug_cable/service_cable.md)
 
 To update the (infrequent) CircuitPython build releases, please
-follow [**UF2 bootloader update**](#uf2-bootloader-update).
+follow [**UF2 bootloader update**](#uf2-bootloader-update) instructions.
 
 ### Over-the-air (OTA) Amiga application updates
 
 You can use the over-the-air (OTA) firmware update method to
 wirelessly update your amiga dashboard applications from the
 touchscreen.
-The updator app is installed alongside the dashboard app,
+The `Updator` app is installed alongside the `Dashboard` app,
 starting with the `amiga-dash-v0.1.1` release.
 
-For dashboards with earlier versions of the firmware, one
-additional wired update is required to get to `v0.1.1` or later.
+:::info
+**To begin the Over-the-air (OTA) Amiga application updates,
+navigate to the ID page of the settings tab.**
+
+Please follow the instructions based on the version of
+`Dashboard` and `Updator` apps you have installed.
+
+You should check the versions on the ID page of the settings tab after you update.
+Keep in mind that your `Updator` app version may not match your `Dashboard` app version,
+and that is OK!
+:::
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="v0.5.0+" label="Updator v0.5.0+" default>
+
+You have the latest `Updator` app installed!
+
+:::tip
+You can navigate out of the `Updator` app by power cycling the dashboard.
+
+Just don't power cycle during the final install step!
+During the download is fine.
+:::
+
+</TabItem>
+<TabItem value="v0.1.3+" label="Updator v0.1.3+" default>
+
+You can install any available update for the `Dashboard` and `Updator` apps.
+But you should upgrade the `Updator` app to `v0.5.0+` to unlock faster updates going forward!
+
+:::tip
+If you decide to cancel an update at any step along the
+process, you can always exit the `Updator` app and return to the
+`Dashboard` app by cancelling the current operation, clicking
+back through pages, and returning to the `Dashboard` app from the home page.
+Or you can power cycle the dashboard
+and return to the `Dashboard` app from the home page.
+
+Just don't power cycle during the final install step!
+During the download is fine.
+:::
+
+</TabItem>
+<TabItem value="v0.1.1" label="Updator v0.1.1" default>
+
+**It is important that you start by updating your `Updator` app to `v0.1.3`.**
+
+You can then proceed to updating your `Updator` and `Dashboard` apps
+to the latest and greatest available firmware.
+
+:::tip
+The recommended steps would be:
+
+1. Update the `Updator` app to `v0.1.3`
+2. Update the `Updator` app to `v0.5.0` (or newer)
+3. Update the `Dashboard` to `v0.5.0` (or newer)
+
+If you have trouble updating your  `v0.1.1` `Updator` app to `v0.1.3`, please try again.
+If the update fails during the download,
+it will pick up where it left off when you get back to the download stage.
+If you are not able to complete the update, you should follow
+[**Wired Amiga application updates**](#wired-amiga-application-updates)
+to install the latest release.
+:::
+
+</TabItem>
+<TabItem value="super-old" label="Dashboard v0.1.0 or older" default>
+
+For dashboards with very early versions of the firmware, one
+additional wired update is required to unlock over-the-air updates.
 Grab your [**debug cable**](/docs/debug_cable/README.md) or
 [**service cable**](/docs/debug_cable/service_cable.md),
 and follow the instructions at
 [**Wired Amiga application updates**](#wired-amiga-application-updates)
 to install the latest release.
 
-- For dashboards with the `v0.1.3` `Updator` app installed, you
-- will be able to install any available update.
-- For dashboards with the `v0.1.1` `Updator` app installed, it is
-important that you start by updating your
-`Updator` app to `v0.1.3`.
-  - You can then proceed to updating your `Dashboard` app to
-`v0.1.3` (or later) and your `Updator` app to versions later than
-`v0.1.3`.
-  - If you have trouble updating your  `v0.1.1` `Updator` app to
-  `v0.1.3`, please try again.
-    - If the update fails during the download, it will pick up
-  where it left off when you get back to the download stage.
-  - If you are not able to complete the update, you should follow
-  - [**Wired Amiga application updates**](#wired-amiga-application-updates)
-to install the latest release.
-- For dashboards without any `Updator` app, you should follow
-[**Wired Amiga application updates**](#wired-amiga-application-updates) to install the latest release.
+This will install the latest `Dashboard` and `Updator` apps and get you fully up-to-date!
 
-#### Tips
-
-- To begin the Over-the-air (OTA) Amiga application updates,
-navigate to the ID page of the settings tab.
-- If you decide to cancel and update at any step along the
-process, you can always exit the Updator app and return to the
-dashboard app by cancelling the current operation, and clicking
-back through the home page.
-- Check the versions on the ID page of the settings tab after you
-update
+</TabItem>
+</Tabs>
 
 ### Wired Amiga application updates
 
@@ -95,9 +143,9 @@ when connecting to the debug or service cable.
 #### Access the files
 
 1. Download the latest application zip file
-[amiga-dash-v0.4.0.zip](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.4.0/amiga-dash-v0.4.0.zip)
+[amiga-dash-v0.5.0.zip](https://github.com/farm-ng/amiga-dev-kit/releases/download/amiga-dash-v0.5.0/amiga-dash-v0.5.0.zip)
 2. For more details on the git latest release navigate to
-[Release: amiga-dash-v0.4.0](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.4.0)
+[Release: amiga-dash-v0.5.0](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.5.0)
 3. Extract the files from the zipped folder
 
 :::tip
