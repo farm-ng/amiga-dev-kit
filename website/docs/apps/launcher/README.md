@@ -1,50 +1,49 @@
 ---
-id: launcher-app
-title: Launcher App
+id: launcher
+title: Launcher
 ---
 
-# Launcher App Guide
-
-The Launcher App is subdivided into Apps and Settings.
+# Launcher Guide
+The Launcher is the first page you will see after
+your Amiga Brain has completed its booting process.
+From here you can open Apps and dive deeper into settings.
 
 ![Untitled (2)](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/2acb4ab3-aa5b-4ce8-a2cb-fca627651ac3)
 
 ## Apps
-
-### Autoplot
-
-
-
-### Camera
-
-
-
-### Filemanger
-
-
-
-### Recorder
-
+Please visit the following links for an in-depth 
+exploration of the [Autoplot App](/docs/apps/autoplot_app),
+[Recorder App](/docs/apps/recorder_app),
+[Filemanager App](/docs/apps/file_manager_app),
+and [Camera App](/docs/apps/camera_app).
 
 
 ## Settings
 ### About
+This section presents useful information such as your Brain's name and software versions.
+
 
 ![Screenshot from 2024-04-12 10-20-24](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/0e6892b3-4b99-4f29-8705-cc7ce6cdcd82)
 
+You may also open a terminal window for debugging purposes
+while you are away from your computer. 
 
 ![Screenshot from 2024-04-12 10-20-33](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/64258d28-4d9d-4cb7-b0a4-fa7ff6def6b2)
 
 
-### Wifi
+### WiFi
+The WiFi Manager is where you will select which network you would like to join.
+Upon selecting a given network, you will be prompted to input a password.
+After all the fields have been satisfied your connection to WiFi will be established. 
 
 ![Screenshot from 2024-04-12 10-20-18](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/4eab6af0-fb5f-46f8-aa96-9b974acce051)
 
 
 
 ### Services
+For an in dept exploration of the Amiga Services follow this [link](/docs/concepts/canbus_service/) 
 
-
+By default services will be active, bu you may stop them in order to cycle them on/off. 
 
 ![Screenshot from 2024-04-12 10-20-51](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/29c91c44-1cbb-4877-8832-ed2aee178f90)
 
@@ -55,9 +54,7 @@ The Launcher App is subdivided into Apps and Settings.
 
 ![Screenshot from 2024-04-12 10-21-07](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/bd5b899e-fd39-4e6e-b098-72a19996e1bc)
 
-
-
-![Screenshot from 2024-04-12 10-21-17](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/59d0a15c-2041-4291-a8dd-d3de55348178)
+[Fine Tuning](/docs/apps/filter_app/#fine-tuning-settings)
 
 
 ### Robot Localization

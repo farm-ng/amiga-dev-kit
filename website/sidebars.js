@@ -60,7 +60,7 @@ const sidebars = {
     },
     {
       "App Overviews": [
-        "apps/launcher/launcher-app",
+        "apps/launcher/launcher",
         "apps/autoplot_app/autoplot-app",
         "apps/recorder_app/recorder-app",
         "apps/file_manager_app/file-manager-app",
