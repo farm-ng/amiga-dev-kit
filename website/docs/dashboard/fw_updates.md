@@ -43,6 +43,11 @@ starting with the `amiga-dash-v0.1.1` release.
 **To begin the Over-the-air (OTA) Amiga application updates,
 navigate to the ID page of the settings tab.**
 
+Do not **Mount Circuitpy** or have the [**debug cable**](/docs/debug_cable/README.md) or
+[**service cable**](/docs/debug_cable/service_cable.md)
+plugged into the dashboard when you launch the updator app!
+Please stick to one firmware update method.
+
 Please follow the instructions based on the version of
 `Dashboard` and `Updator` apps you have installed.
 
