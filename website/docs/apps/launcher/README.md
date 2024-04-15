@@ -32,6 +32,7 @@ while you are away from your computer.
 
 ![Screenshot from 2024-04-12 10-20-33](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/64258d28-4d9d-4cb7-b0a4-fa7ff6def6b2)
 
+
 ### WiFi
 
 The WiFi Manager is where you will select which network you would like to join.
@@ -40,15 +41,27 @@ After all the fields have been satisfied your connection to WiFi will be establi
 
 ![Screenshot from 2024-04-12 10-20-18](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/4eab6af0-fb5f-46f8-aa96-9b974acce051)
 
+
 ### Services
 
 For an in dept exploration of the Amiga Services follow this [link](/docs/concepts/canbus_service/)
 
-By default services will be active, bu you may stop them in order to cycle them on/off.
+By default services will be active, but you may cycle them on/off.
 
 ![Screenshot from 2024-04-12 10-20-51](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/29c91c44-1cbb-4877-8832-ed2aee178f90)
 
+
 ### Robot Geometry
+
+Fine-tuning your Amiga's geometry is key to seamless autonomous operation.
+**Begin all measurements from the CENTER OF THE ROBOT (in length & width) at ground level**.
+
+**Positive X** values are located **ahead of center** while 
+**Negative X** values are located **behind center**.
+
+**Positive Y** values apply to objects on the **left-side** of the robot's **center**
+while **Negative Y** valuesare located on the **right-side** of the robot's center.
+
 
 ![Screenshot from 2024-04-12 10-21-07](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/bd5b899e-fd39-4e6e-b098-72a19996e1bc)
 
@@ -62,15 +75,18 @@ By default services will be active, bu you may stop them in order to cycle them 
 
 ![Screenshot from 2024-04-12 10-21-53](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/be8c4b55-6648-4cae-b5fc-2c50ef8d216d)
 
+
 ### IMU Calibration
 
 ![Screenshot from 2024-04-12 10-21-58](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/14d89b5f-dd5d-4ae0-896e-107f24079b8e)
+
 
 ### GPS NTRIP
 
 ![Screenshot from 2024-04-12 10-22-03](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/13b02284-19de-47fe-954e-c673dc4be9f4)
 
 ![Screenshot from 2024-04-12 10-22-06](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/8cdf06a9-2a08-42a8-9ab7-ba734373680b)
+
 
 ### Track Following
 
