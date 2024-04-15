@@ -23,7 +23,7 @@ ruggedized, waterproof, outdoor robotic rover applications.
 
 ### Brain
 
-See [brain/](/brain/) for instructions on building the `farm_ng`
+See [brain/](/docs/intelligence-kit/brain/brain-v2) for instructions on building the `farm_ng`
 lib for the brain and example applications for interacting with
 the [farm-ng brain](https://farm-ng.github.io/amiga-dev-kit/docs/brain/).
 
