@@ -75,6 +75,14 @@ while **Negative Y** values are located on the **right-side** of **center**.
 
 ![Screenshot from 2024-04-12 10-21-58](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/14d89b5f-dd5d-4ae0-896e-107f24079b8e)
 
+![Screenshot from 2024-04-15 14-59-26](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e3c2d168-c360-4952-8f4c-3c193fc7bd91)
+
+![Screenshot from 2024-04-15 14-59-51](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/9f925384-2ee1-4df7-a911-d12a4bff73cb)
+
+
+
+
+
 ### GPS NTRIP
 
 ![Screenshot from 2024-04-12 10-22-03](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/13b02284-19de-47fe-954e-c673dc4be9f4)
