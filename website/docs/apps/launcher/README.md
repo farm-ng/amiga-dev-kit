@@ -27,9 +27,8 @@ This section presents useful information such as your Brain's name and software 
 
 ![Screenshot from 2024-04-12 10-20-24](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/0e6892b3-4b99-4f29-8705-cc7ce6cdcd82)
 
-
-You may also open a terminal window for debugging purposes
-while you are away from your computer.
+You may also open a terminal window for debugging
+ purposes while you are away from your computer.
 
 ![Screenshot from 2024-04-12 10-20-33](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/64258d28-4d9d-4cb7-b0a4-fa7ff6def6b2)
 
