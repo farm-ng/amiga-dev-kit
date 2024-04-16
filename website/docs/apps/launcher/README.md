@@ -42,8 +42,7 @@ After all the fields have been satisfied your connection to WiFi will be establi
 
 ### Services
 
-For an in dept exploration of the Amiga Services follow this [link](/docs/concepts/canbus_service/)
-
+For an in dept exploration of the Amiga Services follow this [link](/docs/concepts/canbus_service/).
 By default services will be active, but you may cycle them on/off.
 
 ![Screenshot from 2024-04-12 10-20-51](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/29c91c44-1cbb-4877-8832-ed2aee178f90)
@@ -66,7 +65,8 @@ The **GPS** value is taken from the center of the antenna, while the **IMU** val
 
 To determine the **wheelbase** and **track width** of your Amiga, see the illustration below.
 
-    ![Group 4 (7)](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/28fa7805-75e2-4b99-9b8e-7c9961b392a8)
+![Group 4 (7)](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/28fa7805-75e2-4b99-9b8e-7c9961b392a8)
+
 ### Robot Localization
 
 ![Screenshot from 2024-04-12 10-21-26](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/713f725f-6707-4880-afda-f84fa178ff9f)
