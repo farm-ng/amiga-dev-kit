@@ -60,8 +60,14 @@ Fine-tuning your Amiga's geometry is key to seamless autonomous operation.
 while **Negative Y** values are located on the **right-side** of **center**.
 
 ![Screenshot from 2024-04-12 10-21-07](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/bd5b899e-fd39-4e6e-b098-72a19996e1bc)
+:::info
+The **GPS** value is taken from the center of the antenna, while the **IMU** value comes from OAK 0.
+:::
 
-[Fine Tuning](/docs/apps/filter_app/#fine-tuning-settings)
+To determine the **wheelbase** and **track width** of your Amiga, see the illustration below.
+
+    ![Group 4 (7)](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/28fa7805-75e2-4b99-9b8e-7c9961b392a8)
+
 
 ### Robot Localization
 
@@ -73,17 +79,31 @@ while **Negative Y** values are located on the **right-side** of **center**.
 
 ### IMU Calibration
 
+Calibrating the Inertial Measurement Unit (IMU) corrects any sensor biases and is essential for precise navigation.
+Carry out this process when setting up your Amiga
+or after making any changes to the Robot's geometry.
 
-![Screenshot from 2024-04-15 14-59-26](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e3c2d168-c360-4952-8f4c-3c193fc7bd91)
-
-![Screenshot from 2024-04-15 14-59-51](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/9f925384-2ee1-4df7-a911-d12a4bff73cb)
+If your Amiga has been calibrated you will see the date/time when this process was last performed
+along with a green tab that reads Calibrated.
 
 ![Screenshot from 2024-04-12 10-21-58](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/14d89b5f-dd5d-4ae0-896e-107f24079b8e)
 
+If you need to calibrate your Amiga, place it on flat ground and press the **Start Calibration** button. Hit **Confirm**
 
+![Screenshot from 2024-04-15 14-59-26](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e3c2d168-c360-4952-8f4c-3c193fc7bd91)
+
+The Calibration will begin and a green bar will move across the screen as the process is completed.
+
+![Screenshot from 2024-04-15 14-59-51](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/9f925384-2ee1-4df7-a911-d12a4bff73cb)
+
+Once the Calibration process is complete
+you will be returned to the initial screen page and a new
+date/time stamp will appear reflecting the latest Calibration performed. 
 
 
 ### GPS NTRIP
+
+The Setup ntrip fields are where you will input your base station and WiFi credentials.
 
 ![Screenshot from 2024-04-12 10-22-03](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/13b02284-19de-47fe-954e-c673dc4be9f4)
 
