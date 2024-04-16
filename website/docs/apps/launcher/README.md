@@ -77,9 +77,11 @@ To determine the **wheelbase** and **track width** of your Amiga, see the illust
 
 ### IMU Calibration
 
-Calibrating the Inertial Measurement Unit (IMU) corrects any sensor biases and is essential for precise navigation.
-Carry out this process when setting up your Amiga
-or after making any changes to the Robot's geometry.
+Calibrating the Inertial Measurement Unit (IMU)
+corrects any sensor biases and is essential for
+precise navigation.
+Carry out this process when setting up your
+Amiga or after making any changes to the Robot's geometry.
 
 If your Amiga has been calibrated you will see the date/time when this process was last performed
 along with a green tab that reads Calibrated.
