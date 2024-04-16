@@ -86,7 +86,9 @@ along with a green tab that reads Calibrated.
 
 ![Screenshot from 2024-04-12 10-21-58](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/14d89b5f-dd5d-4ae0-896e-107f24079b8e)
 
-If you need to calibrate your Amiga, place it on flat ground and press the **Start Calibration** button. Hit **Confirm**
+If you need to calibrate your Amiga,
+place it on flat ground and press the
+ **Start Calibration** button. Hit **Confirm**
 
 ![Screenshot from 2024-04-15 14-59-26](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e3c2d168-c360-4952-8f4c-3c193fc7bd91)
 
@@ -117,7 +119,9 @@ The Setup ntrip fields are where you will input your base station's credentials.
 ![carrsoln](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/c206e401-3fdf-41a8-805c-2f55a90a8c2d)
 
 :::tip
-Managed by UC San Diego, the California Real Time Network offers free access to base stations across the state. Follow this [**link**](http://sopac-csrc.ucsd.edu/index.php/crtn/) and sign up for a free account.
+Managed by UC San Diego,
+the California Real Time Network offers free access to base stations across the state.
+Follow this [**link**](http://sopac-csrc.ucsd.edu/index.php/crtn/) and sign up for a free account.
 :::
 
 ### Track Following
