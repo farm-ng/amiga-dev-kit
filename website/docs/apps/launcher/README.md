@@ -69,11 +69,10 @@ To determine the **wheelbase** and **track width** of your Amiga, see the illust
 
 ### Robot Localization
 
-![Screenshot from 2024-04-12 10-21-26](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/713f725f-6707-4880-afda-f84fa178ff9f)
+![distance](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/dfd3bfe4-90a0-4648-b207-792e814ad5dd)
 
-![Screenshot from 2024-04-12 10-21-48](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/42b2b0b6-bd4a-43a6-80bf-1c6fa4532de9)
+![time](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ccd721ae-1353-436d-b17a-cf004390ea6c)
 
-![Screenshot from 2024-04-12 10-21-53](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/be8c4b55-6648-4cae-b5fc-2c50ef8d216d)
 
 ### IMU Calibration
 
@@ -104,16 +103,13 @@ reflecting the latest Calibration performed.
 
 The Setup ntrip fields are where you will input your base station and WiFi credentials.
 
-![Screenshot from 2024-04-12 10-22-03](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/13b02284-19de-47fe-954e-c673dc4be9f4)
+![carrsoln](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/c206e401-3fdf-41a8-805c-2f55a90a8c2d)
 
-![Screenshot from 2024-04-12 10-22-06](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/8cdf06a9-2a08-42a8-9ab7-ba734373680b)
 
 ### Track Following
 
-![Screenshot from 2024-04-12 10-22-16](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/4b76aa4e-0c7a-472d-9adb-5bf138a590f8)
+![general](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ae450065-9784-415d-9485-ce35212f8ce7)
 
-![Screenshot from 2024-04-12 11-45-42](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/c6d4653f-35b4-452b-98f1-613c4564b1f3)
+![angularspeed](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a30b8b30-7f5c-44f5-b30a-30cae1771c90)
 
-![Screenshot from 2024-04-12 11-46-49](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a1c30075-4e0f-4e77-839c-fcb4873b03fe)
-
-![Screenshot from 2024-04-12 11-46-56](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/3b5f3779-5090-4ea5-aaf4-d321b1779c83)
+![turn](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6425fb5c-7422-472b-863e-dfb192ffa744)
