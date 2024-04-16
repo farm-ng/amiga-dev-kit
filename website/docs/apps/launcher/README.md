@@ -73,7 +73,6 @@ To determine the **wheelbase** and **track width** of your Amiga, see the illust
 
 ![time](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ccd721ae-1353-436d-b17a-cf004390ea6c)
 
-
 ### IMU Calibration
 
 Calibrating the Inertial Measurement Unit (IMU)
@@ -101,10 +100,25 @@ reflecting the latest Calibration performed.
 
 ### GPS NTRIP
 
-The Setup ntrip fields are where you will input your base station and WiFi credentials.
+The Setup ntrip fields are where you will input your base station's credentials.
+
+**Server Name**: The server address of the base station.
+
+**Mountpoint**: Specific mount point on the ntrip server.
+
+**Port**: The port used by the ntrip server.
+
+**User**: Username for accessing the base station.
+
+**Password**: Corresponding password for the above username.
+
+**Serial Interface**:
 
 ![carrsoln](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/c206e401-3fdf-41a8-805c-2f55a90a8c2d)
 
+:::tip
+Managed by UC San Diego, the California Real Time Network offers free access to base stations across the state. Follow this [**link**](http://sopac-csrc.ucsd.edu/index.php/crtn/) and sign up for a free account.
+:::
 
 ### Track Following
 
