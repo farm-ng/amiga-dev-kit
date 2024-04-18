@@ -5,6 +5,18 @@ title: Examples Index
 
 # Amiga SDK Examples
 
+:::caution Version Compatibility
+The examples in this documentation may change with each release of the farm-ng-amiga software.
+Some examples might use methods that are not yet released.
+
+- **To run the latest examples**, you should build the software from the [source](/docs/brain/brain-install#install-from-source-advanced).
+Clone the repository and run `pip install .` within the cloned directory.
+- **To use examples compatible with the stable release**, simply install the released version using
+`pip install farm-ng-amiga`.
+
+For more information, please see [Brain ADK Install](/docs/brain/brain-install)
+:::
+
 ## Microcontroller Examples
 
 :::info
