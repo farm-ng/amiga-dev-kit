@@ -80,6 +80,14 @@ pip install -r requirements.txt
 
 ## 4. Execute the Python script
 
+:::caution Deprecation warning
+
+If you are running `farm_ng_amiga 2.2.x` or earlier, the method`from_raw_canbus_message()` won't work. Replace it by `parse_amiga_tpdo1_proto()`.
+
+Note that `parse_amiga_tpdo1_proto()` was deprecated at `farm_ng_amiga 2.3.0`.
+
+:::
+
 Specify the log file, e.g.:
 
 ```bash
