@@ -72,6 +72,8 @@ To determine the **wheelbase** and **track width** of your Amiga, see the illust
 The modifiable parameters in the `Robot Localization` tab will directly interact with the [Autoplot App](/docs/apps/autoplot_app)
 and how your robot drives autonomously.
 
+![robot-geometry-distance](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/dfd3bfe4-90a0-4648-b207-792e814ad5dd)
+
 #### Breadcrumb Spacing
 
 - Sets the distance between waypoints when a `Track` is recorded.
@@ -100,11 +102,7 @@ which is crucial for autonomous driving.
 Poor GPS accuracy can significantly affect the stability and reliability of the navigation filter,
 leading to potential divergences.
 
-#### Gyroscope and GPS Stale Thresholds
-
-- These thresholds determine how long the robot waits before considering data from the gyroscope or
-GPS as outdated ('stale').
-Stale data can cause the navigation filter to diverge, impacting robot localization.
+![robot-geometry-time](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ccd721ae-1353-436d-b17a-cf004390ea6c)
 
 #### Divergence Delay
 
@@ -112,9 +110,11 @@ Stale data can cause the navigation filter to diverge, impacting robot localizat
 determining that the navigation filter has diverged.
 This setting is crucial for managing the balance between responsive corrections and filter stability.
 
-![robot-geometry-distance](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/dfd3bfe4-90a0-4648-b207-792e814ad5dd)
+#### Gyroscope and GPS Stale Thresholds
 
-![robot-geometry-time](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ccd721ae-1353-436d-b17a-cf004390ea6c)
+- These thresholds determine how long the robot waits before considering data from the gyroscope or
+GPS as outdated ('stale').
+Stale data can cause the navigation filter to diverge, impacting robot localization.
 
 ### IMU Calibration
 
@@ -172,6 +172,8 @@ Follow this [**link**](http://sopac-csrc.ucsd.edu/index.php/crtn/) and sign up f
 
 ### Track Following
 
+![track-following-general](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ae450065-9784-415d-9485-ce35212f8ce7)
+
 #### Lookahead Distance
 
 - Represents how far ahead the robot looks to anticipate and prepare for path changes.
@@ -184,19 +186,18 @@ The distance should be tuned based on the robot's speed and the complexity of th
 for linear movement.
 Higher speeds increase the distance covered in less time but may reduce reaction time to path changes.
 
+
+![track-following-angular-speed](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a30b8b30-7f5c-44f5-b30a-30cae1771c90)
+
 #### Angular Speed
 
 - Governs the maximum angular velocity and the gains in the PID controller (proportional, integral, derivative)
 for turning.
 Tuning these values ensures that turns are handled smoothly and with appropriate responsiveness.
 
+![track-following-turn](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6425fb5c-7422-472b-863e-dfb192ffa744)
+
 #### Turn in Place
 
 - Adjusts the proportional and derivative gains specifically for scenarios where the robot needs to
 turn while stationary.
-
-![track-following-general](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ae450065-9784-415d-9485-ce35212f8ce7)
-
-![track-following-angular-speed](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a30b8b30-7f5c-44f5-b30a-30cae1771c90)
-
-![track-following-turn](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6425fb5c-7422-472b-863e-dfb192ffa744)
