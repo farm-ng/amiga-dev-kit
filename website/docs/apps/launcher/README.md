@@ -20,7 +20,7 @@ exploration of the [Autoplot App](/docs/apps/autoplot_app),
 and [Camera App](/docs/apps/camera_app).
 
 ## Settings
-
+In the `Settings` menu you can make adjustments to the various systems of your Amiga.
 ### About
 
 This section presents useful information such as your Brain's name and software versions.
@@ -42,7 +42,7 @@ After all the fields have been satisfied your connection to WiFi will be establi
 
 ### Services
 
-For an in dept exploration of the Amiga Services follow this [link](/docs/concepts/canbus_service/).
+For an in dept exploration of the Amiga Services, check out these [overviews](/docs/concepts/canbus_service/).
 By default services will be active, but you may cycle them on/off.
 
 ![services](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/29c91c44-1cbb-4877-8832-ed2aee178f90)
@@ -165,9 +165,9 @@ untouched.
 ![gps-ntrip-menu](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/c206e401-3fdf-41a8-805c-2f55a90a8c2d)
 
 :::tip
-Managed by UC San Diego,
-the California Real Time Network offers free access to base stations across the state.
-Follow this [**link**](http://sopac-csrc.ucsd.edu/index.php/crtn/) and sign up for a free account.
+For those of you operating in California,
+[**CRTN**](http://sopac-csrc.ucsd.edu/index.php/crtn/) offers free access to base stations across the state.
+Other states or regions may have similar services available. Always check local resources for the best positioning support in your area.
 :::
 
 ### Track Following

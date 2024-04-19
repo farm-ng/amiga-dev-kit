@@ -5,7 +5,7 @@ title: Filter App
 
 :::warning
 The configuration settings and robot geometry found in this page are now part
-of the launcher app and can be found under the settings tab.
+of the [launcher](docs/apps/launcher/README.md) app and can be found under the settings tab.
 :::
 
 # Filter App Guide
