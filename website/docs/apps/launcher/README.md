@@ -186,7 +186,6 @@ The distance should be tuned based on the robot's speed and the complexity of th
 for linear movement.
 Higher speeds increase the distance covered in less time but may reduce reaction time to path changes.
 
-
 ![track-following-angular-speed](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a30b8b30-7f5c-44f5-b30a-30cae1771c90)
 
 #### Angular Speed
