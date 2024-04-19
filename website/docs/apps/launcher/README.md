@@ -20,10 +20,13 @@ exploration of the [Autoplot App](/docs/apps/autoplot_app),
 and [Camera App](/docs/apps/camera_app).
 
 ## Settings
+
 In the `Settings` menu you can make adjustments to the various systems of your Amiga.
+
 ### About
 
-This section presents useful information such as your Brain's name and software versions.
+This section presents useful information
+such as your Brain's name and software versions.
 
 ![about](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/0e6892b3-4b99-4f29-8705-cc7ce6cdcd82)
 
