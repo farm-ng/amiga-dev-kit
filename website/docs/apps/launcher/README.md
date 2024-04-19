@@ -148,7 +148,7 @@ reflecting the latest Calibration performed.
 
 ### GPS NTRIP
 
-The Setup Ntrip menu is where you will enter your NTRIP caster (base station) credentials.
+The Setup ntrip menu is where you will input your base station's credentials.
 
 - **Server Name**: The server address of the base station.
 This could be an IP address (e.g., 192.168.1.1) or a url (e.g., myrtkservice.com)
