@@ -169,8 +169,10 @@ untouched.
 
 :::tip
 For those of you operating in California,
-[**CRTN**](http://sopac-csrc.ucsd.edu/index.php/crtn/) offers free access to base stations across the state.
-Other states or regions may have similar services available. Always check local resources for the best positioning support in your area.
+[**CRTN**](http://sopac-csrc.ucsd.edu/index.php/crtn/) offers free access to base stations across the
+state.
+Other states or regions may have similar services available. Always check local resources for the best
+positioning support in your area.
 :::
 
 ### Track Following
