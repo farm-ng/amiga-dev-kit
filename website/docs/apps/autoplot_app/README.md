@@ -49,15 +49,20 @@ and then have the robot repeat the path autonomously.
 
 #### 1. Click "Record" to start mapping your path
 
-![Screenshot from 2023-11-08 16-15-51](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/a23646f6-26e3-49c9-b70f-d8faab3ae159)
+![record](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/2f33966c-372e-44ea-a62e-91d2307b3d30)
+
+![record paths](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/86c47778-d759-40a3-834f-93221920b5f5)
+
 
 #### 2. Drive the robot as desired, blue dots will pop up on the screen indicating the robot's trace
 
-![Screenshot from 2023-11-08 16-20-21](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/13bbbec5-f66f-47a4-b064-8e98be59e43f)
+![save path](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f4fa52c4-ddff-4f6b-897c-93303e252f2e)
+
 
 #### 3. Click "Save" and name your track to use it later
 
-![image](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/7be15197-ced2-4f07-aa23-453dff7a0835)
+![load path](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/3a846ca0-902f-457d-9c69-da67564cb452)
+
 
 #### 4. Load the track when needed and click "Start Track" to initiate autonomous follow
 
@@ -69,6 +74,17 @@ which can be used to interrupt the autonomous task.
 Additionally, users can press the `○` button on the pendant to disengage `automode`,
 which will automatically cancel the autonomous operation.
 :::
+
+![gps](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/03744cf3-35a2-4fea-8ed5-05426d9350c6)
+
+![filter](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/317fb625-f4fc-4e77-bd23-d353c624f0fe)
+
+![metadata](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/bc0ce395-da58-4064-848d-a61e66d991d4)
+
+
+![nav bar](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/03e49c43-19fb-449b-9040-bb66b82bc6db)
+
+
 
 ### Remote Access via Web Browser
 
