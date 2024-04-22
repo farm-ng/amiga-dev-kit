@@ -49,19 +49,22 @@ and then have the robot repeat the path autonomously.
 
 #### 1. Click "Record" to start mapping your path
 
-![Screenshot from 2023-11-08 16-15-51](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/a23646f6-26e3-49c9-b70f-d8faab3ae159)
+<img width="953" alt="new path" src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ed3c20f6-9249-4d88-a4c2-a30d0d497da8">
 
 #### 2. Drive the robot as desired, blue dots will pop up on the screen indicating the robot's trace
 
-![Screenshot from 2023-11-08 16-20-21](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/13bbbec5-f66f-47a4-b064-8e98be59e43f)
+<img width="953" alt="record path" src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/9ff60897-5ec0-4b6e-9d50-46d211f42a38">
+
 
 #### 3. Click "Save" and name your track to use it later
 
-![image](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/7be15197-ced2-4f07-aa23-453dff7a0835)
+<img width="956" alt="save path" src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6e817572-38a9-42df-80df-89951e2c68da">
+
 
 #### 4. Load the track when needed and click "Start Track" to initiate autonomous follow
 
-![image](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/72fcf1e5-5152-419b-a74a-78c0ef66b062)
+<img width="953" alt="load path" src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e1eb61e1-6984-40ba-9a41-5a48a2860d39">
+
 
 :::info
 After starting to follow the track, the `Start Track` button will switch to `Stop`,
