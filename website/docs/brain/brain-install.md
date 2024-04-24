@@ -92,7 +92,7 @@ git clone https://github.com/farm-ng/farm-ng-core.git
 
 # Checkout the correct release and update submodules
 cd farm-ng-core/
-git checkout v2.0.0
+git checkout v2.2.0
 git submodule update --init --recursive
 cd ../
 
@@ -120,8 +120,8 @@ You can check the installed version
 pip list | grep -E 'farm-ng|farm_ng'
 
 # You should see something like:
-# farm-ng-amiga      2.0.0
-# farm-ng-core       2.0.0
+# farm-ng-amiga      2.x.x
+# farm-ng-core       2.y.y
 # farm-ng-package    0.1.3
 ```
 

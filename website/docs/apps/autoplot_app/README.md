@@ -47,21 +47,28 @@ to the [**farm-ng GPS Service Overview**](/docs/concepts/gps_service#Requirement
 The teach-and-repeat functionality allows you to manually drive the robot along a desired path
 and then have the robot repeat the path autonomously.
 
-#### 1. Click "Record" to start mapping your path
+#### 1. Click "New Path" to start mapping your path
 
-![Screenshot from 2023-11-08 16-15-51](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/a23646f6-26e3-49c9-b70f-d8faab3ae159)
+![path](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/c77b7681-7113-4e2d-b0fa-5aa0556867aa)
+
 
 #### 2. Drive the robot as desired, blue dots will pop up on the screen indicating the robot's trace
 
-![Screenshot from 2023-11-08 16-20-21](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/13bbbec5-f66f-47a4-b064-8e98be59e43f)
+![dots](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f3dc1a8e-287a-4d7d-ab5a-54d9641143b0)
+
+![remove point](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/8dc66108-2bfd-4318-953d-765224455009)
+
 
 #### 3. Click "Save" and name your track to use it later
 
-![image](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/7be15197-ced2-4f07-aa23-453dff7a0835)
+![save rec](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f458168f-2b7a-47e3-a0dc-61d58b4db29b)
 
 #### 4. Load the track when needed and click "Start Track" to initiate autonomous follow
 
-![image](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/72fcf1e5-5152-419b-a74a-78c0ef66b062)
+![load ](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e76a7341-ec78-472c-8b7b-bfd0d9305590)
+
+![start](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6f250640-a02b-491c-ae5a-0989cded5ca7)
+
 
 :::info
 After starting to follow the track, the `Start Track` button will switch to `Stop`,
