@@ -37,7 +37,7 @@ This script takes in a pre-recorded track and commands the Amiga to follow it.
 
 You can either run this example directly on a brain by `ssh`'ing in, or use your local PC.
 If using your local PC, it should be either connected to the same local network as the brain
-or linked to it through tailscale.
+or linked to it through [**tailscale**.](https://tailscale.com/)
 
 Ensure that a [**farm-ng brain**](/docs/brain/), with a GPS receiver and Oak cameras,
 is actively running the track follower service.

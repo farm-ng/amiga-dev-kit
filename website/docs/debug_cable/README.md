@@ -50,7 +50,7 @@ mode (press on boot)
 
 **For more flashing and operating system documentation go [here](/docs/intelligence-kit/brain/brain-v2/)**
 
-## Pinout
+## Pin-out
 
 Connector M12-8 A code female used to connect to farm-ng products.
 The debug cable connects the IO to two MicroUSB connectors and a reset button.

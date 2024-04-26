@@ -34,7 +34,7 @@ follow [**UF2 bootloader update**](#uf2-bootloader-update) instructions.
 ### Over-the-air (OTA) Amiga application updates
 
 You can use the over-the-air (OTA) firmware update method to
-wirelessly update your amiga dashboard applications from the
+update your amiga dashboard applications from the
 touchscreen.
 The `Updator` app is installed alongside the `Dashboard` app,
 starting with the `amiga-dash-v0.1.1` release.

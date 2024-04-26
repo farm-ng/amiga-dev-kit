@@ -45,7 +45,7 @@ This script commands actuators (H-bridges & PTOs) based on keyboard inputs from 
 on which you run the example.
 
 You should run this example on your local PC, connected to the same local network as the brain
-or linked to it through tailscale.
+or linked to it through [**tailscale**.](https://tailscale.com/)
 
 Ensure that a [**farm-ng brain**](/docs/brain/),
 attached to an Amiga with at least one H-bridge or PTO device,

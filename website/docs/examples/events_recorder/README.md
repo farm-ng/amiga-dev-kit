@@ -23,7 +23,7 @@ the `EventClient` class.
 You can either run this example directly on a brain by `ssh`'ing in,
 or use your local PC.
 If using your local PC, it should be either connected to the same local network as the brain
-or linked to it through tailscale.
+or linked to it through [**tailscale**.](https://tailscale.com/)
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 

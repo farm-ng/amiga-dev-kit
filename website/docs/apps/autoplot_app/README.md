@@ -51,13 +51,11 @@ and then have the robot repeat the path autonomously.
 
 ![path](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/c77b7681-7113-4e2d-b0fa-5aa0556867aa)
 
-
 #### 2. Drive the robot as desired, blue dots will pop up on the screen indicating the robot's trace
 
 ![dots](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f3dc1a8e-287a-4d7d-ab5a-54d9641143b0)
 
 ![remove point](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/8dc66108-2bfd-4318-953d-765224455009)
-
 
 #### 3. Click "Save" and name your track to use it later
 
@@ -68,7 +66,6 @@ and then have the robot repeat the path autonomously.
 ![load ](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e76a7341-ec78-472c-8b7b-bfd0d9305590)
 
 ![start](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6f250640-a02b-491c-ae5a-0989cded5ca7)
-
 
 :::info
 After starting to follow the track, the `Start Track` button will switch to `Stop`,

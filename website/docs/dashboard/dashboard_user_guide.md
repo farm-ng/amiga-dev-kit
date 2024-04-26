@@ -31,7 +31,7 @@ Pressing the START button will take you to the home screen.
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/954a66d5-2155-48f1-9830-25428374fa2a"/>
 
-This is the home screen of the dashboard. In the center sits the spedometer,
+This is the home screen of the dashboard. In the center sits the speedometer,
  where you can switch between metric and standard units and adjust to the travel speed of your Amiga.
 
 On the right side of the screen you will see several icons displaying:
@@ -158,7 +158,7 @@ The arrows (up/down/left/right) in the center of the pendant are used to select 
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/0f880f2a-3958-4066-989d-d68b68547665"/>
 
-These are the button configurations for those of you who purchased a Kartech control.
+These are the button configurations for those of you who purchased a Kar-Tech controller.
 
 ### H-bridge settings
 
@@ -176,7 +176,7 @@ Our [3 point hitch](https://farm-ng.com/products/cat-zero-3-point-lift-kit)
 is temporarily engaged by the [H bridge](https://farm-ng.com/products/h-bridge-for-canbus-accessory-control)
 to lift and lower the [A frame](https://farm-ng.com/products/cat-0-a-frame-kit)
 which you can use to engage a [seeder](https://farm-ng.com/products/mounted-6-line-seeder).
-Alternatively, you can use the laching function in a sprayer system.
+Alternatively, you can use the latching function in a sprayer system.
 :::
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/93f1e736-9796-4959-a32c-fdd7bd7457b8"/>
@@ -217,7 +217,7 @@ We currently support up to two PTO's running at the same time.
 
 When you connect a PTO device, you will have access to the following features:
 
-- A slider control that enables you to increade or decrease the PTO's RPM.
+- A slider control that enables you to increase or decrease the PTO's RPM.
 - Directional control by means of a toggle switch on the touchscreen.
 
 On the left side of the screen you will see a graph displaying the current PTO set-point &
@@ -267,10 +267,10 @@ please visit [Dashboard Firmware Update](https://amiga.farm-ng.com/docs/dashboar
 
 ### State Indicators
 
-The state indicators are for distacting and understanding which control state your Amiga is in.
+The state indicators are for defining and understanding which control state your Amiga is in.
 These states include, but are not limited to, `E-stopped`, `Auto_ready`, and `Cruise Control`.
 
-#### E-stopped
+#### E-Stopped
 
 <img src="https://user-images.githubusercontent.com/64480560/232072807-af5208a0-786f-4ae8-8204-a5eef1999d02.jpg"
      width="320"
