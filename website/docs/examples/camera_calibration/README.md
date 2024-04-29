@@ -1,5 +1,4 @@
-  ---
-
+---
 id: camera-calibration
 title: Camera Calibration
 ---
@@ -30,9 +29,9 @@ or linked to it through [**tailscale**.](https://tailscale.com/)
 
 Ensure that a [**farm-ng brain**](/docs/brain/) running Oak cameras is active.
 
-### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
+### Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
-### 2. Setup
+### Setup
 
 :::tip
 
@@ -53,13 +52,13 @@ source venv/bin/activate
 cd farm-ng-amiga/py/examples/camera_calibration
 ```
 
-### 3. Install the example's dependencies
+### Install the example's dependencies
 
 ```bash
 pip3 install -r requirements.txt
 ```
 
-### 4. Execute the Python script
+### Execute the Python script
 
 :::info
 To run this script from your PC, you need to update the `service_config.json`
@@ -73,7 +72,7 @@ for more details.
 python3 main.py --service-config service_config.json
 ```
 
-### 5. Customize run
+### Customize run
 
 ```bash
 # usage: amiga-camera-calibration [-h] --service-config SERVICE_CONFIG
@@ -84,7 +83,7 @@ python3 main.py --service-config service_config.json
 #                         The camera config.
 ```
 
-### 6. Code overview
+### Code overview
 
 In this example we use the `EventClient` with the `request_reply`
 method to receive the camera camera calibration.
