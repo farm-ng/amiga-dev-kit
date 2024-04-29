@@ -44,7 +44,7 @@ source venv/bin/activate
 ```
 
 ```bash
-# assuming you're already in the amiga-dev-kit/ directory
+# Assuming you're already in the amiga-dev-kit/ directory
 cd farm-ng-amiga/py/examples/events_recorder
 ```
 
@@ -63,7 +63,7 @@ camera and filter events.
 
 ```python
 async def start_recording(
-    service_config: EventServiceConfig, recording_profile: EventServiceConfigList
+    service_config: EventServiceConfig, recording_profile: EventServiceConfig
 ) -> None:
     reply = await EventClient(service_config).request_reply(
         "/start", recording_profile, decode=True
@@ -93,14 +93,14 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    # create a client to the camera service
+    # Create a client to the Recorder service
     service_config: EventServiceConfig = proto_from_json_file(
         args.service_config, EventServiceConfig()
     )
 
     if args.command == "start_recording":
         recording_profile = proto_from_json_file(
-            args.recording_profile, EventServiceConfigList()
+            args.recording_profile, EventServiceConfig()
         )
         asyncio.run(start_recording(service_config, recording_profile))
 
@@ -127,7 +127,7 @@ python main.py --service-config service_config.json start_recording --recording-
 You should see a similar output:
 
 ```bash
-value: "/mnt/data/2023_09_28_10_24_07_212687_lead-mango"
+string_value: "/mnt/data/2023_09_28_10_24_07_212687_lead-mango"
 ```
 
 In order to stop the recording, run the following command:
