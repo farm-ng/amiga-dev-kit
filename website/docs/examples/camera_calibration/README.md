@@ -1,5 +1,4 @@
-  ---
-
+---
 id: camera-calibration
 title: Camera Calibration
 ---
