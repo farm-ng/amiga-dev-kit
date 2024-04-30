@@ -9,7 +9,7 @@ The Launcher is the first page you will see after
 your Amiga Brain has completed its booting process.
 From here you can open Apps and dive deeper into settings.
 
-![launcher](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/2acb4ab3-aa5b-4ce8-a2cb-fca627651ac3)
+![launcher](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/d669c119-91c9-4404-98ba-ce53e5aeaaf9)
 
 ## Apps
 
@@ -33,7 +33,8 @@ such as your Brain's name and software versions.
 You may also open a terminal window for debugging
  purposes while you are away from your computer.
 
-![about-terminal](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/64258d28-4d9d-4cb7-b0a4-fa7ff6def6b2)
+![terminal](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/68c94cfc-8d0a-4e31-8e3e-127413f87485)
+
 
 ### WiFi
 
@@ -41,14 +42,20 @@ The WiFi Manager is where you will select which network you would like to join.
 Upon selecting a given network, you will be prompted to input a password.
 After all the fields have been satisfied your connection to WiFi will be established.
 
-![wifi](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/4eab6af0-fb5f-46f8-aa96-9b974acce051)
+![WiFi](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/0a017037-54c5-43be-ad8a-198377c2588c)
+
 
 ### Services
 
 For an in dept exploration of the Amiga Services, check out these [overviews](/docs/concepts/canbus_service/).
 By default services will be active, but you may cycle them on/off.
 
-![services](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/29c91c44-1cbb-4877-8832-ed2aee178f90)
+![services](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f299d85c-5e26-4feb-bd82-e9387f0b752f)
+
+### Recorder
+
+![recorder](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/cd827067-d6e6-4eb8-8cdc-db9969c02ed5)
+
 
 ### Robot Geometry
 
@@ -61,7 +68,8 @@ Fine-tuning your Amiga's geometry is key to seamless autonomous operation.
 - **Positive Y** values are located **left-side** of **center**
 - **Negative Y** values are located on the **right-side** of **center**
 
-![robot-geometry](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/bd5b899e-fd39-4e6e-b098-72a19996e1bc)
+![geometry](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/c96e07e5-f2c2-4c56-9c43-8bafa1213ab7)
+
 :::info
 The **GPS** value is taken from the center of the antenna, while the **IMU** value comes from OAK 0.
 :::
@@ -75,7 +83,7 @@ To determine the **wheelbase** and **track width** of your Amiga, see the illust
 The modifiable parameters in the `Robot Localization` tab will directly interact with the [Autoplot App](/docs/apps/autoplot_app)
 and how your robot drives autonomously.
 
-![robot-geometry-distance](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/dfd3bfe4-90a0-4648-b207-792e814ad5dd)
+![localize](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/7281c5b1-cec2-4e8d-8871-d523162a1619)
 
 #### Breadcrumb Spacing
 
@@ -105,7 +113,8 @@ which is crucial for autonomous driving.
 Poor GPS accuracy can significantly affect the stability and reliability of the navigation filter,
 leading to potential divergences.
 
-![robot-geometry-time](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ccd721ae-1353-436d-b17a-cf004390ea6c)
+![time](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/23896936-7dfc-4378-9aea-74f2f6b8fc16)
+
 
 #### Divergence Delay
 
@@ -130,7 +139,7 @@ Amiga or after making any changes to the Robot's geometry.
 If your Amiga has been calibrated you will see the date/time when this process was last performed
 along with a green tab that reads Calibrated.
 
-![imu-calibration-1](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/14d89b5f-dd5d-4ae0-896e-107f24079b8e)
+![calibrate](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/874a32d8-a3d9-441b-b8a8-9dc3a4e452a9)
 
 If you need to calibrate your Amiga,
 place it on flat ground and press the
@@ -165,7 +174,8 @@ This could be an IP address (e.g., 192.168.1.1) or a url (e.g., myrtkservice.com
 Unless you need to open the brain and modify its port (strongly not recommended), leave this field
 untouched.
 
-![gps-ntrip-menu](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/c206e401-3fdf-41a8-805c-2f55a90a8c2d)
+![gps](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f5245077-7daa-4611-bf34-1429c6b11cd5)
+
 
 :::tip
 For those of you operating in California,
@@ -177,7 +187,8 @@ positioning support in your area.
 
 ### Track Following
 
-![track-following-general](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ae450065-9784-415d-9485-ce35212f8ce7)
+![track follow](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ab7894a5-0cc2-4ec0-9215-32ef8601b93c)
+
 
 #### Lookahead Distance
 
@@ -191,7 +202,7 @@ The distance should be tuned based on the robot's speed and the complexity of th
 for linear movement.
 Higher speeds increase the distance covered in less time but may reduce reaction time to path changes.
 
-![track-following-angular-speed](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a30b8b30-7f5c-44f5-b30a-30cae1771c90)
+![angular](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/4b12884e-4f86-409a-94b2-de99e35a1588)
 
 #### Angular Speed
 
@@ -199,7 +210,7 @@ Higher speeds increase the distance covered in less time but may reduce reaction
 for turning.
 Tuning these values ensures that turns are handled smoothly and with appropriate responsiveness.
 
-![track-following-turn](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6425fb5c-7422-472b-863e-dfb192ffa744)
+![turn](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/c4a27d79-c03d-430e-9f97-da8fb7deeb55)
 
 #### Turn in Place
 
