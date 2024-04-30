@@ -155,6 +155,13 @@ Once the Calibration process is complete you will be returned
 to the initial screen page and a new date/time stamp will appear
 reflecting the latest Calibration performed.
 
+### PoE
+
+![poe1](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/7ad20a52-c758-4931-8f1a-cc0c0fd06ceb)
+
+![poe2](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/75aa5ef2-a585-48c6-b3df-8dfcb78d7294)
+
+
 ### GPS NTRIP
 
 The Setup ntrip menu is where you will input your base station's credentials.
