@@ -47,7 +47,7 @@ Initiate data recording directly from the Camera App with the same efficacy as u
 This feature is particularly useful for capturing imagery data streams, like RGB, left, right, and
 disparity views, without the need for additional configuration.
 
-![rec](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/d61826b4-007f-40eb-aaf5-283913000a51)
+![record](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ac9ef7c0-f2b7-4183-934f-43e038e03bbf)
 
 
 :::note
