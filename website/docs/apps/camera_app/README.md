@@ -20,7 +20,8 @@ The app provides a live feed from each connected oak camera, allowing users to s
 camera sees.
 This real-time visualization aids in making informed adjustments to camera settings for optimal
 recording quality.
-![Screenshot from 2023-12-08 11-38-03](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/7c630193-68fb-4916-ae3c-fbfb16c33992)
+
+![camera](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6b08d93b-a0b5-419b-9d29-7ca6a098bf8e)
 
 ### Camera Configuration
 
@@ -31,7 +32,9 @@ The following settings can be adjusted directly within the app:
 - **ISO Value**: Adjust the camera's sensitivity to light.
 - **Lens Position**: Fine-tune the focus of the camera lens to capture sharp images.
 
-![Screenshot from 2023-12-08 11-43-07](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/e50a1425-9274-4c3b-ba95-e8c18e1a6c4e)
+ ![x](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/5fd8876f-a1ce-4c7a-9c8b-69ed4b0be99e)
+
+
 For convenience, users may also opt for:
 
 - **Auto Exposure**: The camera automatically adjusts the exposure settings for the best image quality.
@@ -43,6 +46,9 @@ imagery.
 Initiate data recording directly from the Camera App with the same efficacy as using the Recorder App.
 This feature is particularly useful for capturing imagery data streams, like RGB, left, right, and
 disparity views, without the need for additional configuration.
+
+![rec](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/d61826b4-007f-40eb-aaf5-283913000a51)
+
 
 :::note
 Recording from the Camera App is equivalent to recording from the Recorder App, however, the Recorder
@@ -60,3 +66,16 @@ checkboxes for automatic configurations.
 
 With its user-friendly design and comprehensive feature set, the Camera App is an indispensable tool
 for anyone looking to maximize the capabilities of their Amiga robot's camera system.
+
+
+![annotate](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/9c5c4d76-2408-41ad-bc65-bfc6e26cd0a7)
+
+
+![new field](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/185ae7db-4a41-4885-bd3a-e3e0edd6b828)
+
+
+
+
+
+
+
