@@ -9,7 +9,8 @@ The File Manager app is an essential utility for the effective management of log
 Designed for simplicity and ease of use, this app provides users with the necessary tools to handle
 the log files created by our [Recorder App](../recorder_app).
 
-![Screenshot from 2023-12-07 16-22-41](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/37e712b1-31cf-42d7-a4ff-fcf6136649ed)
+![logs](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/1bc8fa63-e542-4a79-8f6d-8daed9d60961)
+
 
 ## Key Features
 
@@ -19,6 +20,9 @@ the log files created by our [Recorder App](../recorder_app).
 view of available data.
 - **File Details**: Alongside each file name, users can view the file size, making it easier to
 gauge the data volume at a glance.
+
+![visualize](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f7f17483-197f-4981-9435-096ee56b8f1e)
+
 
 ### Manage Log Files
 
@@ -30,3 +34,8 @@ This feature is particularly useful for managing storage space and removing outd
 - **USB Copy**: If a USB drive is plugged into the robot, users can easily copy log files from the
 robot's storage to the USB drive.
 This functionality enhances data portability and facilitates easy sharing or backup of important logs.
+
+![transport](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/319473d7-bfd4-4e71-8142-cdf6264893c0)
+
+
+
