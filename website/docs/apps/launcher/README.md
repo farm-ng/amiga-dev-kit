@@ -35,7 +35,6 @@ You may also open a terminal window for debugging
 
 ![terminal](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/68c94cfc-8d0a-4e31-8e3e-127413f87485)
 
-
 ### WiFi
 
 The WiFi Manager is where you will select which network you would like to join.
@@ -43,7 +42,6 @@ Upon selecting a given network, you will be prompted to input a password.
 After all the fields have been satisfied your connection to WiFi will be established.
 
 ![WiFi](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/0a017037-54c5-43be-ad8a-198377c2588c)
-
 
 ### Services
 
@@ -55,7 +53,6 @@ By default services will be active, but you may cycle them on/off.
 ### Recorder
 
 ![recorder](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/cd827067-d6e6-4eb8-8cdc-db9969c02ed5)
-
 
 ### Robot Geometry
 
@@ -115,7 +112,6 @@ leading to potential divergences.
 
 ![time](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/23896936-7dfc-4378-9aea-74f2f6b8fc16)
 
-
 #### Divergence Delay
 
 - Defines the duration the robot's system will wait, considering all the aforementioned factors, before
@@ -161,7 +157,6 @@ reflecting the latest Calibration performed.
 
 ![poe2](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/75aa5ef2-a585-48c6-b3df-8dfcb78d7294)
 
-
 ### GPS NTRIP
 
 The Setup ntrip menu is where you will input your base station's credentials.
@@ -183,7 +178,6 @@ untouched.
 
 ![gps](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f5245077-7daa-4611-bf34-1429c6b11cd5)
 
-
 :::tip
 For those of you operating in California,
 [**CRTN**](http://sopac-csrc.ucsd.edu/index.php/crtn/) offers free access to base stations across the
@@ -195,7 +189,6 @@ positioning support in your area.
 ### Track Following
 
 ![track follow](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ab7894a5-0cc2-4ec0-9215-32ef8601b93c)
-
 
 #### Lookahead Distance
 
