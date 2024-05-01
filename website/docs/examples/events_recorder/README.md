@@ -56,7 +56,7 @@ pip3 install -r requirements.txt
 
 ### 4. Code overview
 
-In the provided example, we show how to implement the `/start` and `/stop`
+In the provided example, we show how to implement the `recorder/start` and `recorder/stop`
 requests to start and stop the recording of events. We also provide two example profiles
 `record_camera_config.json` and `record_fiter_config.json` that can be used to record the
 camera and filter events.
@@ -66,14 +66,14 @@ async def start_recording(
     service_config: EventServiceConfig, recording_profile: EventServiceConfig
 ) -> None:
     reply = await EventClient(service_config).request_reply(
-        "/start", recording_profile, decode=True
+        "recorder/start", recording_profile, decode=True
     )
     print(reply)
 
 
 async def stop_recording(service_config: EventServiceConfig) -> None:
     reply = await EventClient(service_config).request_reply(
-        "/stop", Empty(), decode=True
+        "recorder/stop", Empty(), decode=True
     )
     print(reply)
 
