@@ -9,7 +9,7 @@ The File Manager app is an essential utility for the effective management of log
 Designed for simplicity and ease of use, this app provides users with the necessary tools to handle
 the log files created by our [Recorder App](../recorder_app).
 
-![logs](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/1bc8fa63-e542-4a79-8f6d-8daed9d60961)
+![log](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/47c480d1-6a3f-4ead-a7b1-c23b2b5c44cf)
 
 
 ## Key Features
@@ -21,7 +21,9 @@ view of available data.
 - **File Details**: Alongside each file name, users can view the file size, making it easier to
 gauge the data volume at a glance.
 
-![visualize](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f7f17483-197f-4981-9435-096ee56b8f1e)
+![view](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/35ae5327-d744-48d5-a981-c9c026c52eb7)
+
+![open](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/b51fc808-4d6b-4a6a-b2be-0c9c7b73cdb9)
 
 
 ### Manage Log Files
@@ -37,5 +39,6 @@ This functionality enhances data portability and facilitates easy sharing or bac
 
 ![transport](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/319473d7-bfd4-4e71-8142-cdf6264893c0)
 
+![usb](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/b6479c05-d64c-4af1-a64d-56d239154ca7)
 
 
