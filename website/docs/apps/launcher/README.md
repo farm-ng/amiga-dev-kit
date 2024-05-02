@@ -28,7 +28,8 @@ In the `Settings` menu you can make adjustments to the various systems of your A
 This section presents useful information
 such as your Brain's name and software versions.
 
-![about](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/0e6892b3-4b99-4f29-8705-cc7ce6cdcd82)
+![2](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6fcfcb91-504c-424c-abf3-c1a563614634)
+
 
 You may also open a terminal window for debugging
  purposes while you are away from your computer.
@@ -80,7 +81,8 @@ To determine the **wheelbase** and **track width** of your Amiga, see the illust
 The modifiable parameters in the `Robot Localization` tab will directly interact with the [Autoplot App](/docs/apps/autoplot_app)
 and how your robot drives autonomously.
 
-![localize](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/7281c5b1-cec2-4e8d-8871-d523162a1619)
+![7](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/aa169db8-b494-4da7-b9dd-c5ea58eaa4c4)
+
 
 #### Breadcrumb Spacing
 
@@ -135,17 +137,19 @@ Amiga or after making any changes to the Robot's geometry.
 If your Amiga has been calibrated you will see the date/time when this process was last performed
 along with a green tab that reads Calibrated.
 
-![calibrate](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/874a32d8-a3d9-441b-b8a8-9dc3a4e452a9)
+![calibrate](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a0a29ca5-58dd-4f0e-a608-5546c0f2b50a)
 
 If you need to calibrate your Amiga,
 place it on flat ground and press the
  **Start Calibration** button. Hit **Confirm**
 
-![imu-calibration-2](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e3c2d168-c360-4952-8f4c-3c193fc7bd91)
+![confirm](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6479bde7-6d33-416b-aa7c-8b14a676bbd1)
+
 
 The Calibration will begin and a green bar will move across the screen as the process is completed.
 
-![imu-calibration-3](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/9f925384-2ee1-4df7-a911-d12a4bff73cb)
+![imu](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ab042ccb-13ec-475e-8f2e-bf62e617692e)
+
 
 Once the Calibration process is complete you will be returned
 to the initial screen page and a new date/time stamp will appear
