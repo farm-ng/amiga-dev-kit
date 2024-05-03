@@ -5,20 +5,28 @@ title: Autoplot App
 
 # Autoplot App Guide
 
-The Autoplot app is an advanced control interface for your Amiga, offering multiple modes of
+The Autoplot app is an advanced control interface for your Amiga, 
+offering multiple modes of
 operation:
 
-- **Direct control**: Manually drive the robot with simple controls for straight, turn, and backwards.
-- **Teach-and-repeat**: Manually drive the robot along a desired path, save it, and then command the
+- **Direct control**: Manually drive the robot
+  with simple controls for straight, turn, and backwards.
+- **Teach-and-repeat**: Manually drive the robot along a
+  desired path, save it, and then command the
 robot to repeat the path autonomously.
-- **Remote teleoperation**: Control the robot through any web browser using a keyboard or an [8Bitdo
+- **Remote teleoperation**: Control the robot through any
+  web browser using a keyboard or an [8Bitdo
 Sn30](https://shop.8bitdo.com/products/8bitdo-sn30-pro-bluetooth-gamepad) joystick.
 
 :::caution Resource Intensive Operation
-The Autoplot app requires significant computational resources when run directly on the robot's screen.
-To ensure optimal performance, it is recommended not to use the Autoplot app in conjunction with the
-recorder or other custom user applications on the brain's display itself.
-However, running the Autoplot app and the recorder app through a web browser on a separate device is
+The Autoplot app requires significant computational 
+resources when run directly on the robot's screen.
+To ensure optimal performance, it is recommended 
+not to use the Autoplot app in conjunction with the
+recorder or other custom user 
+applications on the brain's display itself.
+However, running the Autoplot app and the 
+recorder app through a web browser on a separate device is
 acceptable and should not impact performance.
 :::
 
@@ -33,10 +41,13 @@ Before starting any operation, make sure to check the following:
 This is done through the dashboard in the [**automation screen**](https://www.youtube.com/watch?v=PKOhI4hbGUs&t=258s).
 
 :::tip RTK-GPS Configuration
-For precision in autonomous operations, configuring the RTK-GPS is essential.
-This high-accuracy GPS configuration is critical for tasks that require precise geolocation capabilities.
+For precision in autonomous operations, 
+configuring the RTK-GPS is essential.
+This high-accuracy GPS configuration is 
+critical for tasks that require precise geolocation capabilities.
 
-For detailed information on setting up and configuring RTK-GPS with your Amiga, please refer
+For detailed information on setting up and 
+configuring RTK-GPS with your Amiga, please refer
 to the [**farm-ng GPS Service Overview**](/docs/concepts/gps_service#Requirements).
 :::
 
@@ -44,28 +55,33 @@ to the [**farm-ng GPS Service Overview**](/docs/concepts/gps_service#Requirement
 
 ### Teach-and-Repeat
 
-The teach-and-repeat functionality allows you to manually drive the robot along a desired path
+The teach-and-repeat functionality allows you to 
+manually drive the robot along a desired path
 and then have the robot repeat the path autonomously.
 
 #### 1. Click "New Path" to start mapping your path
 
-![path](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/c77b7681-7113-4e2d-b0fa-5aa0556867aa)
+![new path](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/4e338205-6f07-42a7-8131-5ee6522d597b)
 
 #### 2. Drive the robot as desired, blue dots will pop up on the screen indicating the robot's trace
 
-![dots](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f3dc1a8e-287a-4d7d-ab5a-54d9641143b0)
+![recording](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/65c208c2-0685-48b6-ba51-8124747c5e85)
 
-![remove point](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/8dc66108-2bfd-4318-953d-765224455009)
+![remove](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/697f37f8-435b-4d4c-945b-7c12fd22b2dd)
+
+![remove points](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/22cb8ddf-87c7-4d13-b9d6-6d976b1d120f)
 
 #### 3. Click "Save" and name your track to use it later
 
-![save rec](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f458168f-2b7a-47e3-a0dc-61d58b4db29b)
+![saved](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/875d6361-4412-4877-9b66-6781ee54de4d)
+
+![name it](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e31b3e77-4b94-4119-a0cc-2efd260c0fff)
 
 #### 4. Load the track when needed and click "Start Track" to initiate autonomous follow
 
-![load ](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e76a7341-ec78-472c-8b7b-bfd0d9305590)
+![load it](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/deb2daaf-37bf-4a51-9537-1ffcda67464c)
 
-![start](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6f250640-a02b-491c-ae5a-0989cded5ca7)
+![start](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/621eb211-1e2d-4553-a202-fb9e8eac962d)
 
 :::info
 After starting to follow the track, the `Start Track` button will switch to `Stop`,
@@ -74,11 +90,21 @@ Additionally, users can press the `○` button on the pendant to disengage `auto
 which will automatically cancel the autonomous operation.
 :::
 
+### Tool Control 
+
+![Screenshot from 2024-05-02 17-57-53](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/7ea61bf7-d90f-4c06-b98e-bc7f76133213)
+
+![Screenshot from 2024-05-02 18-05-04](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ffb45918-ed86-497d-a72b-5892d75053ab)
+
+
+
 ### Remote Access via Web Browser
 
-The Autoplot app is designed as a web-app, enabling seamless access from any standard web browser
+The Autoplot app is designed as a web-app, 
+enabling seamless access from any standard web browser
 like Google Chrome, Firefox, or Safari.
-To open the Autoplot interface in your browser, simply enter the following address:
+To open the Autoplot interface in your browser, 
+simply enter the following address:
 
 ```bash
 <your-robot-name>:8008
@@ -88,20 +114,24 @@ To open the Autoplot interface in your browser, simply enter the following addre
 To remotely control your Amiga:
 
 - Ensure you are connected to the same network as your Amiga robot.
-- For access across different networks, configure [**cross-network access**](/docs/ssh#recommended-configure-cross-network-access)
+- For access across different networks,
+  configure [**cross-network access**](/docs/ssh#recommended-configure-cross-network-access)
 by adding your Amiga to your Tailscale network.
 
-For Tailscale users, access the app using your Amiga's Fully Qualified Domain Name (FQDN):
+For Tailscale users, access the app using your Amiga's 
+Fully Qualified Domain Name (FQDN):
 
 ```bash
 <element-fruit>.<tailnet-name>.ts.net:8008
 ```
 
-Replace `<element-fruit>` and `<tailnet-name>` with the respective names configured in your
+Replace `<element-fruit>` and `<tailnet-name>` 
+with the respective names configured in your
 Tailscale network.
 :::
 
-You can control your Amiga from a web browser at any time, even when the Autoplot app is not active
+You can control your Amiga from a web browser at any time, 
+even when the Autoplot app is not active
 on the Brain display.
 
 ## How to Control your Amiga
@@ -111,17 +141,21 @@ You can control your Amiga robot in two ways:
 **Manual Control**: Use the [pendant](/docs/pendant),
 the [kartech](https://kar-tech.com/single-axis-joystick-universal-mega-system.html)
 or [dashboard](/docs/dashboard/dashboard-user-guide)
-while physically present with the robot, ideal for teaching the robot new tracks.
+while physically present with the robot, 
+ideal for teaching the robot new tracks.
 
-Here are instructions for using the pendant and the kartech as of dashboard firmware
+Here are instructions for using the pendant 
+and the kartech as of dashboard firmware
 release [**`v0.0.5`**](https://github.com/farm-ng/amiga-dev-kit/releases):
 
 ![pendant](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/4a8fbe60-7780-4f32-b92f-6ce895a706e0)
 ![kartech](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/99aee18e-e7d2-41c5-888b-6d38365c699e)
 
-**Remote Control**: From your web browser, you can remotely operate the robot without needing
+**Remote Control**: From your web browser, 
+you can remotely operate the robot without needing
 to be in the same physical location.
-For that, you can use a keyboard for driving your Amiga, or use an
+For that, you can use a keyboard for 
+driving your Amiga, or use an
 [8Bitdo Sn30](https://shop.8bitdo.com/products/8bitdo-sn30-pro-bluetooth-gamepad) joystick.
 
 Here are instructions for using both options:
@@ -131,27 +165,36 @@ Here are instructions for using both options:
 
 :::info Autonomy Required for Remote Control
 Remote Control requires the robot to be in `automode`.
-This mode ensures that all movements are managed safely by the robot's autonomous systems.
+This mode ensures that all movements 
+are managed safely by the robot's autonomous systems.
 :::
 
-Both methods allow for track recording; however, remote control enables you to operate the
+Both methods allow for track recording; 
+however, remote control enables you to operate the
 robot from any location with internet access.
 
 :::tip Teaching Tracks Remotely or On-Site
-Tracks can be taught to the robot whether you're using the on-site pendant or the Remote Keyboard
+Tracks can be taught to the robot 
+whether you're using the on-site pendant or the Remote Keyboard
 Control feature via a web browser.
 :::
 
 ## Status Bar Icons
 
-The Autoplot app features a status bar with icons that provide critical
+The Autoplot app features a status bar 
+with icons that provide critical
 information for autonomous operation:
 
-- **Automode**: This icon confirms if the robot is in automode, a prerequisite for autonomous tasks.
+![icon bar](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/d69c2611-a3ad-4bb5-9db2-23a77c6a73ec)
+
+- **Automode**: This icon confirms if the robot is in automode,
+  a prerequisite for autonomous tasks.
 - **Filter**: This indicates the status of the UKF filter.
 Autonomy will not engage if the filter has not converged.
-- **GPS**: A visual indicator showing if the GPS service is active and functional.
-- **WiFi**: This shows if the robot is connected to Wifi, which is necessary for autonomous operations.
+- **GPS**: A visual indicator showing if the GPS
+  service is active and functional.
+- **WiFi**: This shows if the robot is connected to Wifi,
+  which is necessary for autonomous operations.
 - **Battery**: Displays the current battery level.
 Always monitor this, especially before starting long tasks.
 
@@ -162,19 +205,29 @@ Always monitor this, especially before starting long tasks.
 
 ## Tips for Optimal Autonomy
 
-- Before engaging in autonomous operations, always perform a safety check of the environment.
-- When operating the robot via remote keyboard control in the web app, ensure a stable and
+- Before engaging in autonomous operations,
+- always perform a safety check of the environment.
+- When operating the robot via remote keyboard control
+in the web app, ensure a stable and
 responsive network connection.
-- Monitor the robot's battery status via the Autoplot app to avoid interruptions in longer operations.
+- Monitor the robot's battery status via the Autoplot app
+to avoid interruptions in longer operations.
 
 ## Troubleshooting
 
 If you encounter issues with autonomy or control:
 
-- Verify all status indicators in the Autoplot app's top bar are active and showing the expected states.
+- Verify all status indicators in the Autoplot app's
+top bar are active and showing the expected states.
 - Check the [**Filter App**](/docs/apps/filter_app)
 to confirm that calibration and GPS settings are up-to-date.
-- If the robot does not respond to WAD keyboard commands, ensure that no other tasks are running and
+- If the robot does not respond to WAD keyboard commands,
+ensure that no other tasks are running and
 that the robot is in automode.
+
+![filter error](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/9e6ab78d-dd52-4d86-9688-53b7ee9bff66)
+
+![gps error](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/c026d6fb-c86e-43d9-b8ca-928bd2ed5515)
+
 
 For further assistance, reach out to the [support team](mailto:support@farm-ng.com).
