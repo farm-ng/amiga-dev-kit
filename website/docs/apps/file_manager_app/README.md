@@ -5,9 +5,9 @@ title: File Manager App
 
 # File Manager App Guide
 
-The File Manager app is an essential utility for the 
+The File Manager app is an essential utility for the
 effective management of log files on your Amiga.
-Designed for simplicity and ease of use, 
+Designed for simplicity and ease of use,
 this app provides users with the necessary tools to handle
 the log files created by our [Recorder App](../recorder_app).
 
@@ -45,5 +45,3 @@ facilitates easy sharing or backup of important logs.
 ![transport](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/319473d7-bfd4-4e71-8142-cdf6264893c0)
 
 ![usb](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/b6479c05-d64c-4af1-a64d-56d239154ca7)
-
-

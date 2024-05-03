@@ -30,30 +30,27 @@ such as your Brain's name and software versions.
 
 ![about](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/3046a543-0888-4827-b4e8-c9c9483ef393)
 
-
-
 You may also open a terminal window for debugging
  purposes while you are away from your computer.
 
 ![debug](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e2f32875-55f5-4ddf-85ce-19208cf2bcea)
 
-
 ### WiFi
 
 The WiFi Manager is where you will select which
 network you would like to join.
-Upon selecting a given network, you will be 
+Upon selecting a given network, you will be
 prompted to input a password.
-After all the fields have been satisfied 
+After all the fields have been satisfied
 your connection to WiFi will be established.
 
 ![wifi](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ad9d1ef7-ec30-4a35-b2cc-d8b4909af6d2)
 
 ### Services
 
-For an in dept exploration of the Amiga Services, 
+For an in dept exploration of the Amiga Services,
 check out these [overviews](/docs/concepts/canbus_service/).
-By default services will be active, 
+By default services will be active,
 but you may cycle them on/off.
 
 ![service](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/7d09f493-dec1-48bd-b284-7e194650ad34)
@@ -64,7 +61,7 @@ but you may cycle them on/off.
 
 ### Robot Geometry
 
-Fine-tuning your Amiga's geometry is key 
+Fine-tuning your Amiga's geometry is key
 to seamless autonomous operation.
 *Begin all measurements from the **center or the robot**
 (in length & width) at ground level.
@@ -78,18 +75,18 @@ to seamless autonomous operation.
 ![geometry](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/5121f89a-9402-4ce2-82d1-cdc8067dbc9d)
 
 :::info
-The **GPS** value is taken from the center of the antenna, 
+The **GPS** value is taken from the center of the antenna,
 while the **IMU** value comes from OAK 0.
 :::
 
-To determine the **wheelbase** and **track width** 
+To determine the **wheelbase** and **track width**
 of your Amiga, see the illustration below.
 
 ![Group 4 (7)](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/28fa7805-75e2-4b99-9b8e-7c9961b392a8)
 
 ### Robot Localization
 
-The modifiable parameters in the `Robot Localization` 
+The modifiable parameters in the `Robot Localization`
 tab will directly interact with the [Autoplot App](/docs/apps/autoplot_app)
 and how your robot drives autonomously.
 
@@ -162,14 +159,13 @@ along with a green tab that reads Calibrated.
 
 ![calibration date](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/25aa7787-c2ea-476c-bb5d-b21bd7b1978b)
 
-
 If you need to calibrate your Amiga,
 place it on flat ground and press the
  **Start Calibration** button. Hit **Confirm**
- 
+
 ![calibration flat](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/c0f45e33-2e57-4ada-8ec2-2bf3b803293d)
 
-The Calibration will begin and a green bar 
+The Calibration will begin and a green bar
 will move across the screen as the process is completed.
 
 ![calibrating](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/81a6201c-f321-4048-ba37-d49c01883968)
@@ -188,7 +184,7 @@ reflecting the latest Calibration performed.
 
 ### GPS NTRIP
 
-The Setup ntrip menu is where you will 
+The Setup ntrip menu is where you will
 input your base station's credentials.
 
 - **Server Name**: The server address of the base station.
@@ -212,10 +208,10 @@ untouched.
 
 :::tip
 For those of you operating in California,
-[**CRTN**](http://sopac-csrc.ucsd.edu/index.php/crtn/) offers free 
+[**CRTN**](http://sopac-csrc.ucsd.edu/index.php/crtn/) offers free
 access to base stations across the
 state.
-Other states or regions may have similar services available. 
+Other states or regions may have similar services available.
 Always check local resources for the best
 positioning support in your area.
 :::
@@ -246,7 +242,7 @@ less time but may reduce reaction time to path changes.
 #### Angular Speed
 
 - Governs the maximum angular velocity and the gains
--  in the PID controller (proportional, integral, derivative)
+- in the PID controller (proportional, integral, derivative)
 for turning.
 Tuning these values ensures that turns are handled
 smoothly and with appropriate responsiveness.
