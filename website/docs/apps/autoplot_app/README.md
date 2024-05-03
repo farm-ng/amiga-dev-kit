@@ -198,11 +198,6 @@ Autonomy will not engage if the filter has not converged.
 - **Battery**: Displays the current battery level.
 Always monitor this, especially before starting long tasks.
 
-<div align="center">
-  <img src="https://github.com/farm-ng/amiga-dev-kit/assets/39603677/044304e6-1ae5-4724-845f-da4a9ebe4def"
-  alt="image" />
-</div>
-
 ## Tips for Optimal Autonomy
 
 - Before engaging in autonomous operations,
@@ -229,5 +224,6 @@ that the robot is in automode.
 
 ![gps error](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/c026d6fb-c86e-43d9-b8ca-928bd2ed5515)
 
+![fail](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/9bd8b212-3286-4bac-9e40-2ec86b9ff11d)
 
 For further assistance, reach out to the [support team](mailto:support@farm-ng.com).
