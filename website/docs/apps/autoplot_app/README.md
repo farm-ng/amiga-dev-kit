@@ -73,8 +73,6 @@ and then have the robot repeat the path autonomously.
 
 #### 3. Click "Save" and name your track to use it later
 
-![saved](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/875d6361-4412-4877-9b66-6781ee54de4d)
-
 ![name it](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e31b3e77-4b94-4119-a0cc-2efd260c0fff)
 
 #### 4. Load the track when needed and click "Start Track" to initiate autonomous follow
