@@ -9,42 +9,32 @@ The Autoplot app is an advanced control interface for your Amiga,
 offering multiple modes of
 operation:
 
-- **Direct control**: Manually drive the robot
-  with simple controls for straight, turn, and backwards.
-- **Teach-and-repeat**: Manually drive the robot along a
-  desired path, save it, and then command the
-robot to repeat the path autonomously.
-- **Remote teleoperation**: Control the robot through any
-  web browser using a keyboard or an [8Bitdo
-Sn30](https://shop.8bitdo.com/products/8bitdo-sn30-pro-bluetooth-gamepad) joystick.
-
 :::caution Resource Intensive Operation
-The Autoplot app requires significant computational
-resources when run directly on the robot's screen.
-To ensure optimal performance, it is recommended
-not to use the Autoplot app in conjunction with the
-recorder or other custom user
-applications on the brain's display itself.
-However, running the Autoplot app and the
-recorder app through a web browser on a separate device is
-acceptable and should not impact performance.
+
+Running the Autoplot app directly on the robot's
+ screen demands considerable computational resources.
+  For optimal performance, avoid using the Autoplot app
+   alongside other custom applications on the brain.
+It is recommended to use the Autoplot app and
+any custom applications through a web browser
+ on a separate device, as this should not impact performance.
 :::
 
 ## Autonomy Requirements
 
-Before starting any operation, make sure to check the following:
+Before engaging autonomy, ensure to verify:
 
-- [ ] The robot is calibrated through the [**Filter App**](/docs/apps/filter_app).
-- [ ] The GPS antenna offsets are correctly set in the [**Filter App**](/docs/apps/filter_app).
-- [ ] Ensure the robot is connected to an RTK base station for enhanced GPS accuracy.
-- [ ] Set your Amiga to `automode`.
-This is done through the dashboard in the [**automation screen**](https://www.youtube.com/watch?v=PKOhI4hbGUs&t=258s).
+- [ ] Accurate [**IMU Calibration**](/docs/apps/launcher/#imu-calibration).
+- [ ] The correct offsets are set in [**Robot Geometry**](/docs/apps/launcher/#robot-geometry).
+- [ ] [**GPS NTRIP**](docs/apps/launcher/#gps-ntrip) requirements have been met.
+- [ ] Robot is connected to [**WiFi**](docs/apps/launcher/#wifi).
+- [ ] Amiga Dashboard is set to [**Auto Control**](docs/dashboard/dashboard-user-guide#auto-control).
 
 :::tip RTK-GPS Configuration
 For precision in autonomous operations,
 configuring the RTK-GPS is essential.
 This high-accuracy GPS configuration is
-critical for tasks that require precise geolocation capabilities.
+critical for tasks that require precise geo-location capabilities.
 
 For detailed information on setting up and
 configuring RTK-GPS with your Amiga, please refer
@@ -56,16 +46,24 @@ to the [**farm-ng GPS Service Overview**](/docs/concepts/gps_service#Requirement
 ### Teach-and-Repeat
 
 The teach-and-repeat functionality allows you to
-manually drive the robot along a desired path
+ drive the robot along a desired path
 and then have the robot repeat the path autonomously.
 
-#### 1. Click "New Path" to start mapping your path
+#### 1. New Path
+
+Click the 'New Path' icon to initiate recording.
 
 ![new path](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/4e338205-6f07-42a7-8131-5ee6522d597b)
 
 #### 2. Drive the robot as desired, blue dots will pop up on the screen indicating the robot's trace
 
 ![recording](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/65c208c2-0685-48b6-ba51-8124747c5e85)
+
+To remove waypoints (blue dots), first click the
+ 'Pause Path' button, then select the 'Remove Point' icon.
+  Each press of the 'Remove Point' icon will delete a single dot.
+   Once you have removed the desired points, click 'Resume Recording'
+    to continue mapping your path.
 
 ![remove](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/697f37f8-435b-4d4c-945b-7c12fd22b2dd)
 
@@ -174,25 +172,6 @@ Tracks can be taught to the robot
 whether you're using the on-site pendant or the Remote Keyboard
 Control feature via a web browser.
 :::
-
-## Status Bar Icons
-
-The Autoplot app features a status bar
-with icons that provide critical
-information for autonomous operation:
-
-![icon bar](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/d69c2611-a3ad-4bb5-9db2-23a77c6a73ec)
-
-- **Automode**: This icon confirms if the robot is in automode,
-  a prerequisite for autonomous tasks.
-- **Filter**: This indicates the status of the UKF filter.
-Autonomy will not engage if the filter has not converged.
-- **GPS**: A visual indicator showing if the GPS
-  service is active and functional.
-- **WiFi**: This shows if the robot is connected to Wifi,
-  which is necessary for autonomous operations.
-- **Battery**: Displays the current battery level.
-Always monitor this, especially before starting long tasks.
 
 ## Tips for Optimal Autonomy
 

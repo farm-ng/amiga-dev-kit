@@ -11,13 +11,35 @@ From here you can open Apps and dive deeper into settings.
 
 ![Apps](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/7cc6cd85-0f9f-47d7-bea8-2d68a3bb9649)
 
+## Status Bar
+
+The status bar provides critical information
+ for robot operation.
+
+![icon bar](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/d69c2611-a3ad-4bb5-9db2-23a77c6a73ec)
+
+- **Record**: Button used to Star and Stop recording.
+- **CPU**: Percentage processing power being used across all cores.
+- **Memory**:Percentage of available RAM being used.
+- **Tack**: This icon shows that a track is loaded. It will disappear if no tracks have been loaded.
+- **Automode**: This icon confirms if the robot is in automode,
+  a prerequisite for autonomous tasks.
+- **Filter**: This indicates the status of the UKF filter.
+Autonomy will not engage if the filter has not converged.
+- **GPS**: A visual indicator showing if the GPS
+  service is active and functional.
+- **WiFi**: This shows if the robot is connected to Wifi,
+  which is necessary for autonomous operations.
+- **Battery**: Displays the current battery level.
+Always monitor this, especially before starting long tasks.
+- **E-Stopped**: This icon shows that the E-stop button on your Amiga is engaged.
+
 ## Apps
 
 Please visit the following links for an in-depth
-exploration of the [Autoplot App](/docs/apps/autoplot_app),
-[Recorder App](/docs/apps/recorder_app),
-[Filemanager App](/docs/apps/file_manager_app),
-and [Camera App](/docs/apps/camera_app).
+exploration of the [Autoplot App](/docs/apps/autoplot_app), the
+[File Manager App](/docs/apps/file_manager_app),
+and the [Camera App](/docs/apps/camera_app).
 
 ## Settings
 
@@ -26,23 +48,27 @@ In the `Settings` menu you can make adjustments to the various systems of your A
 ### About
 
 This section presents useful information
-such as your Brain's name and software versions.
+such as your Robot's name, software version, and apps.
 
 ![about](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/3046a543-0888-4827-b4e8-c9c9483ef393)
 
-You may also open a terminal window for debugging
- purposes while you are away from your computer.
+You can open a terminal window on this page for debugging
+while you are not at your computer. To begin typing,
+you can either click on the "Show Keyboard" icon or
+connect a keyboard to the USB port on the back of the Robot's Brain.
 
 ![debug](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e2f32875-55f5-4ddf-85ce-19208cf2bcea)
 
 ### WiFi
 
-The WiFi Manager is where you will select which
-network you would like to join.
-Upon selecting a given network, you will be
-prompted to input a password.
-After all the fields have been satisfied
-your connection to WiFi will be established.
+The WiFi Manager allows you to choose the network
+ you want to connect to. Once you select a network,
+ you'll be asked to enter a password. After filling
+out all the necessary fields, your WiFi connection will be established.
+
+:::Tip Network Testing
+My Networks lets you manage connections WiFi
+:::
 
 ![wifi](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ad9d1ef7-ec30-4a35-b2cc-d8b4909af6d2)
 
