@@ -223,12 +223,11 @@ The PoE Switch Manager offers network diagnostic
   This is specially useful when anyone of your Oak devices is down.
  It gives you per port PoE function enable/disable verify PoE connected devices.
 
-![poe](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/17fdc04c-5ff7-4e7d-a9aa-a9c857467820)
+![poe](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f0394f2f-3163-42ae-99c7-7d9eaef54a3e)
 
 ![poe4](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/b75f9945-8c6f-4aff-a71b-07bd93dd94bc)
 
 If you choose to reset your PoE Switch you will be prompted with the following message.
-![poe reset2](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a44695a4-5002-4313-a049-1eaad80d8ee0)
 
 ### GPS NTRIP
 
