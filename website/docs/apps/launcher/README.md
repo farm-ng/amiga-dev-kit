@@ -7,9 +7,7 @@ title: Launcher
 
 The Launcher is the first page you will see after
 your Amiga Brain has completed its booting process.
-From here you can open Apps and dive deeper into settings.
-
-![Apps](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/7cc6cd85-0f9f-47d7-bea8-2d68a3bb9649)
+From here you can launch various Apps and dive deeper into Settings.
 
 ## Status Bar
 
@@ -18,11 +16,11 @@ The status bar provides critical information
 
 ![icon bar](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/d69c2611-a3ad-4bb5-9db2-23a77c6a73ec)
 
-- **Record**: Button used to Star and Stop recording.
+- **Record**: Button used to Start and Stop recording.
 - **CPU**: Percentage processing power being used across all cores.
-- **Memory**:Percentage of available RAM being used.
-- **Tack**: This icon shows that a track is loaded. It will disappear if no tracks have been loaded.
-- **Automode**: This icon confirms if the robot is in automode,
+- **Memory**: Percentage of available RAM being used.
+- **Tack**: This icon (specific to Autoplot) shows that a track is loaded. It will disappear if no tracks have been loaded.
+- **Automode**: This icon confirms the robot is in automode,
   a prerequisite for autonomous tasks.
 - **Filter**: This indicates the status of the UKF filter.
 Autonomy will not engage if the filter has not converged.
@@ -32,23 +30,27 @@ Autonomy will not engage if the filter has not converged.
   which is necessary for autonomous operations.
 - **Battery**: Displays the current battery level.
 Always monitor this, especially before starting long tasks.
-- **E-Stopped**: This icon shows that the E-stop button on your Amiga is engaged.
+- **E-Stopped**: This icon shows that the E-stop
+ button on your Amiga is engaged.
 
 ## Apps
 
+![Apps](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/7cc6cd85-0f9f-47d7-bea8-2d68a3bb9649)
+
 Please visit the following links for an in-depth
-exploration of the [Autoplot App](/docs/apps/autoplot_app), the
-[File Manager App](/docs/apps/file_manager_app),
-and the [Camera App](/docs/apps/camera_app).
+exploration of the [Autoplot](/docs/apps/autoplot_app),
+[Camera](/docs/apps/camera_app), and
+ [File Manager](/docs/apps/file_manager_app) Apps.
 
 ## Settings
 
-In the `Settings` menu you can make adjustments to the various systems of your Amiga.
+The Settings menu allows you to make in depth
+ adjustments to the various systems of your Amiga.
 
 ### About
 
 This section presents useful information
-such as your Robot's name, software version, and apps.
+such as your Robot's Name, Software Version, and Apps.
 
 ![about](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/3046a543-0888-4827-b4e8-c9c9483ef393)
 
@@ -66,22 +68,35 @@ The WiFi Manager allows you to choose the network
  you'll be asked to enter a password. After filling
 out all the necessary fields, your WiFi connection will be established.
 
-:::Tip Network Testing
-My Networks lets you manage connections WiFi
-:::
-
 ![wifi](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ad9d1ef7-ec30-4a35-b2cc-d8b4909af6d2)
+
+:::tip Network Connections
+The WiFi switch on the robot allows for quick
+ disconnection from networks during tests,
+  making it easy to control and troubleshoot its functions.
+   Additionally, this switch is crucial for maintaining
+    safety and ensuring that the robot operates
+     correctly under different network conditions.
+:::
 
 ### Services
 
 For an in dept exploration of the Amiga Services,
 check out these [overviews](/docs/concepts/canbus_service/).
 By default services will be active,
-but you may cycle them on/off.
+but you may cycle them on/off to troubleshoot their functions.
 
 ![service](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/7d09f493-dec1-48bd-b284-7e194650ad34)
 
 ### Recorder
+
+The Recorder is the backbone of the Amiga's data
+ logging and playback functionality.
+  It is designed to capture and store raw
+   data from various robot services and
+    [**topics**](/docs/concepts/recorder_service/#available-topics-for-recording),
+    facilitating later analysis, debugging,
+     and model training.
 
 ![recorder](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/42edc61f-b7ef-4a7c-9831-90523a1d83ee)
 
@@ -89,7 +104,7 @@ but you may cycle them on/off.
 
 Fine-tuning your Amiga's geometry is key
 to seamless autonomous operation.
-*Begin all measurements from the **center or the robot**
+Begin all measurements from the **center or the robot**
 (in length & width) at ground level.
 
 - **Positive X** values are located **ahead of center**
@@ -200,12 +215,19 @@ Once the Calibration process is complete you will be returned
 to the initial screen page and a new date/time stamp will appear
 reflecting the latest Calibration performed.
 
-### PoE
+### PoE Switch
+
+The PoE Switch Manager offers network diagnostic
+ capabilities, including the ability to detect
+  potential cabling issues via remote ping.
+  This is specially useful when anyone of your Oak devices is down.
+ It gives you per port PoE function enable/disable verify PoE connected devices.
 
 ![poe](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/17fdc04c-5ff7-4e7d-a9aa-a9c857467820)
 
 ![poe4](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/b75f9945-8c6f-4aff-a71b-07bd93dd94bc)
 
+If you choose to reset your PoE Switch you will be prompted with the following message.
 ![poe reset2](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a44695a4-5002-4313-a049-1eaad80d8ee0)
 
 ### GPS NTRIP

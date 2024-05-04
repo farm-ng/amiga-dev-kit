@@ -10,7 +10,6 @@ offering multiple modes of
 operation:
 
 :::caution Resource Intensive Operation
-
 Running the Autoplot app directly on the robot's
  screen demands considerable computational resources.
   For optimal performance, avoid using the Autoplot app
