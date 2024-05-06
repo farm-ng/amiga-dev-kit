@@ -27,7 +27,7 @@ Before engaging autonomy, ensure to verify:
 - [ ] The correct offsets are set in [**Robot Geometry**](/docs/apps/launcher/#robot-geometry).
 - [ ] [**GPS NTRIP**](docs/apps/launcher/#gps-ntrip) requirements have been met.
 - [ ] Robot is connected to [**WiFi**](docs/apps/launcher/#wifi).
-- [ ] Amiga Dashboard is set to [**Auto Control**](docs/dashboard/dashboard-user-guide#auto-control).
+- [ ] Amiga Dashboard is set to [**Auto Control**](/docs/dashboard/dashboard-user-guide#auto-control).
 
 :::tip RTK-GPS Configuration
 For precision in autonomous operations,

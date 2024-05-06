@@ -7,7 +7,7 @@ title: Launcher
 
 The Launcher is the first page you will see after
 your Amiga Brain has completed its booting process.
-From here you can launch various Apps and dive deeper into Settings.
+From here you can open various Apps and dive deeper into Settings.
 
 ## Status Bar
 
@@ -16,21 +16,22 @@ The status bar provides critical information
 
 ![icon bar](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/d69c2611-a3ad-4bb5-9db2-23a77c6a73ec)
 
-- **Record**: Button used to Start and Stop recording.
+- **Record**: Button used to Start and Stop recording. Recordings are saved in the [**File Manager App**](/docs/apps/file_manager_app/)
 - **CPU**: Percentage processing power being used across all cores.
 - **Memory**: Percentage of available RAM being used.
-- **Tack**: This icon (specific to Autoplot) shows that a track is loaded. It will disappear if no tracks have been loaded.
-- **Automode**: This icon confirms the robot is in automode,
+- **Tack**: When working in [**Autoplot**](/docs/apps/autoplot_app),
+ this icon will show up once a track has been loaded.
+- **Auto**: This icon confirms the robot is in [**Auto Control**](/docs/dashboard/dashboard-user-guide#auto-control),
   a prerequisite for autonomous tasks.
-- **Filter**: This indicates the status of the UKF filter.
+- **Filter**: This indicates the status of the [**UKF filter**](/docs/concepts/filter_service/).
 Autonomy will not engage if the filter has not converged.
-- **GPS**: A visual indicator showing if the GPS
-  service is active and functional.
-- **WiFi**: This shows if the robot is connected to Wifi,
-  which is necessary for autonomous operations.
+- **GPS**: A visual indicator showing if the [**GPS
+  Service**](/docs/concepts/gps_service/) is active and functional.
+- **WiFi**: This icon shows you if the robot is connected to Wifi,
+  a requirement for autonomous operations.
 - **Battery**: Displays the current battery level.
 Always monitor this, especially before starting long tasks.
-- **E-Stopped**: This icon shows that the E-stop
+- **E-Stopped**: This icon will show up whenever the E-stop
  button on your Amiga is engaged.
 
 ## Apps
@@ -38,9 +39,9 @@ Always monitor this, especially before starting long tasks.
 ![Apps](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/7cc6cd85-0f9f-47d7-bea8-2d68a3bb9649)
 
 Please visit the following links for an in-depth
-exploration of the [Autoplot](/docs/apps/autoplot_app),
-[Camera](/docs/apps/camera_app), and
- [File Manager](/docs/apps/file_manager_app) Apps.
+exploration of the [**Autoplot**](/docs/apps/autoplot_app),
+[**Camera**](/docs/apps/camera_app), and
+ [**File Manager**](/docs/apps/file_manager_app) Apps.
 
 ## Settings
 
@@ -64,25 +65,23 @@ connect a keyboard to the USB port on the back of the Robot's Brain.
 ### WiFi
 
 The WiFi Manager allows you to choose the network
- you want to connect to. Once you select a network,
- you'll be asked to enter a password. After filling
-out all the necessary fields, your WiFi connection will be established.
+ you want to connect to. Once you select a network
+and fill out all the necessary fields, your WiFi
+ connection will be established.
 
 ![wifi](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ad9d1ef7-ec30-4a35-b2cc-d8b4909af6d2)
 
 :::tip Network Connections
-The WiFi switch on the robot allows for quick
- disconnection from networks during tests,
+You may disable WiFi on the robot for network tests,
   making it easy to control and troubleshoot its functions.
-   Additionally, this switch is crucial for maintaining
-    safety and ensuring that the robot operates
+It will help you ensure the robot operates
      correctly under different network conditions.
 :::
 
 ### Services
 
 For an in dept exploration of the Amiga Services,
-check out these [overviews](/docs/concepts/canbus_service/).
+check out these [**overviews**](/docs/concepts/canbus_service/).
 By default services will be active,
 but you may cycle them on/off to troubleshoot their functions.
 
@@ -93,7 +92,7 @@ but you may cycle them on/off to troubleshoot their functions.
 The Recorder is the backbone of the Amiga's data
  logging and playback functionality.
   It is designed to capture and store raw
-   data from various robot services and
+   data from various robot [**services**](/docs/concepts/canbus_service/) and
     [**topics**](/docs/concepts/recorder_service/#available-topics-for-recording),
     facilitating later analysis, debugging,
      and model training.
@@ -128,7 +127,7 @@ of your Amiga, see the illustration below.
 ### Robot Localization
 
 The modifiable parameters in the `Robot Localization`
-tab will directly interact with the [Autoplot App](/docs/apps/autoplot_app)
+tab will directly interact with the [**Autoplot App**](/docs/apps/autoplot_app)
 and how your robot drives autonomously.
 
 ![local](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/5be65e1a-bd0f-4ad0-ba64-a213b7581254)
@@ -144,9 +143,11 @@ Increasing the spacing speeds up movement but at the cost of precision.
 #### Path Deviation Threshold
 
 - Determines the maximum allowable deviation
-- from the planned path before the robot is considered off-track,
+from the planned path before the robot is
+ considered off-track,
 which will cancel the track following task.
-A lower threshold ensures the robot is always close to the path,
+A lower threshold ensures the robot
+ is always close to the path,
 preventing it from entering unwanted
 regions.
 A higher threshold allows the track following to resume
@@ -156,7 +157,7 @@ the track, but at the cost of path adherence.
 #### Minimum State Estimation and Heading Accuracy
 
 - Dictates the minimal acceptable levels of accuracy
-- for the robot's position and orientation estimations.
+   for the robot's position and orientation estimations.
 Higher thresholds will prevent the filter to diverge,
 but at the cost of precision state estimation,
 which is crucial for autonomous driving.
@@ -173,7 +174,7 @@ leading to potential divergences.
 #### Divergence Delay
 
 - Defines the duration the robot's system will wait,
-- considering all the aforementioned factors, before
+ considering all the aforementioned factors, before
 determining that the navigation filter has diverged.
 This setting is crucial for managing the balance
  between responsive corrections and filter stability.
@@ -181,7 +182,7 @@ This setting is crucial for managing the balance
 #### Gyroscope and GPS Stale Thresholds
 
 - These thresholds determine how long the robot
-- waits before considering data from the gyroscope or
+ waits before considering data from the gyroscope or
 GPS as outdated ('stale').
 Stale data can cause the navigation filter to diverge,
 impacting robot localization.
@@ -192,7 +193,8 @@ Calibrating the Inertial Measurement Unit (IMU)
 corrects any sensor biases and is essential for
 precise navigation.
 Carry out this process when setting up your
-Amiga or after making any changes to the Robot's geometry.
+Amiga for the first time or after making any
+ changes to the Robot's geometry.
 
 If your Amiga has been calibrated you will see
 the date/time when this process was last performed
@@ -220,14 +222,17 @@ reflecting the latest Calibration performed.
 The PoE Switch Manager offers network diagnostic
  capabilities, including the ability to detect
   potential cabling issues via remote ping.
-  This is specially useful when anyone of your Oak devices is down.
- It gives you per port PoE function enable/disable verify PoE connected devices.
+  This is specially useful when your Oak devices might be down.
+ It gives you per port functionality
+  to enable/disable PoE connected devices.
 
 ![poe](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f0394f2f-3163-42ae-99c7-7d9eaef54a3e)
 
-![poe4](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/b75f9945-8c6f-4aff-a71b-07bd93dd94bc)
+You can also reset your PoE Switch from this tab.
 
-If you choose to reset your PoE Switch you will be prompted with the following message.
+:::info
+Resetting the PoE switch will affect all connected devices.
+:::
 
 ### GPS NTRIP
 
@@ -246,7 +251,7 @@ This could be an IP address (e.g., 192.168.1.1) or a url (e.g., myrtkservice.com
 - **Password**: Corresponding password for the above username.
 
 - **Serial Interface**: This is the USB port to which your GPS
-- module is physically connected.
+ module is physically connected.
 Unless you need to open the brain and modify
 its port (strongly not recommended), leave this field
 untouched.
@@ -270,7 +275,7 @@ positioning support in your area.
 #### Lookahead Distance
 
 - Represents how far ahead the robot
-- looks to anticipate and prepare for path changes.
+ looks to anticipate and prepare for path changes.
 It's essential for enabling the robot to
 smoothly and efficiently navigate bends and turns.
 The distance should be tuned based on the
@@ -279,7 +284,7 @@ robot's speed and the complexity of the path.
 #### Linear Speed
 
 - Controls the maximum linear speed of the
-- robot as well as the proportional gain in the PID controller
+ robot as well as the proportional gain in the PID controller
 for linear movement.
 Higher speeds increase the distance covered in
 less time but may reduce reaction time to path changes.
@@ -289,7 +294,7 @@ less time but may reduce reaction time to path changes.
 #### Angular Speed
 
 - Governs the maximum angular velocity and the gains
-- in the PID controller (proportional, integral, derivative)
+ in the PID controller (proportional, integral, derivative)
 for turning.
 Tuning these values ensures that turns are handled
 smoothly and with appropriate responsiveness.
@@ -299,5 +304,5 @@ smoothly and with appropriate responsiveness.
 #### Turn in Place
 
 - Adjusts the proportional and derivative gains
-- specifically for scenarios where the robot needs to
+ specifically for scenarios where the robot needs to
 turn while stationary.
