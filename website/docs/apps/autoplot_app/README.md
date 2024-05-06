@@ -111,7 +111,8 @@ which will automatically cancel the autonomous operation.
 
 ### Tool Control
 
-![Screenshot from 2024-05-02 17-57-53](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/7ea61bf7-d90f-4c06-b98e-bc7f76133213)
+![gearing](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f09d117f-1026-4036-b2f0-20a557f83c9a)
+
 This feature allows you to control your
  connected hardware devices through
   a browser window. The control panel is accessed by
@@ -125,8 +126,6 @@ Our current Firmware release [**amiga-dash-v0.5.0**](https://github.com/farm-ng/
  up to four H-Bridge devices that can be coupled for
   synchronous operation. It also supports controls for two PTO's.
 :::
-![gearbox](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/3d85fe20-90ff-4cce-a1a2-e6b5f613a296)
-
 
 ![Screenshot from 2024-05-02 18-05-04](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ffb45918-ed86-497d-a72b-5892d75053ab)
 
