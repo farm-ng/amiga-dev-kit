@@ -25,58 +25,82 @@ Before engaging autonomy, ensure to verify:
 
 - [ ] Accurate [**IMU Calibration**](/docs/apps/launcher/#imu-calibration).
 - [ ] The correct offsets are set in [**Robot Geometry**](/docs/apps/launcher/#robot-geometry).
-- [ ] [**GPS NTRIP**](docs/apps/launcher/#gps-ntrip) requirements have been met.
-- [ ] Robot is connected to [**WiFi**](docs/apps/launcher/#wifi).
+- [ ] [**GPS NTRIP**](/docs/apps/launcher/#gps-ntrip) requirements have been met.
+- [ ] Robot is connected to [**WiFi**](/docs/apps/launcher/#wifi).
 - [ ] Amiga Dashboard is set to [**Auto Control**](/docs/dashboard/dashboard-user-guide#auto-control).
 
 :::tip RTK-GPS Configuration
 For precision in autonomous operations,
 configuring the RTK-GPS is essential.
-This high-accuracy GPS configuration is
-critical for tasks that require precise geo-location capabilities.
-
-For detailed information on setting up and
-configuring RTK-GPS with your Amiga, please refer
-to the [**farm-ng GPS Service Overview**](/docs/concepts/gps_service#Requirements).
+This is critical for tasks that require
+ precise geo-location capabilities.
+Detailed RTK-GPS information can be found on the
+ [**GPS Service**](/docs/concepts/gps_service/) overview page.
 :::
 
 ## How to Use the Autoplot App
 
 ### Teach-and-Repeat
 
-The teach-and-repeat functionality allows you to
+The Amiga's teach-and-repeat functionality allows you to
  drive the robot along a desired path
-and then have the robot repeat the path autonomously.
+and then repeat the path autonomously. The process for doing so is as follows:
 
 #### 1. New Path
 
-Click the 'New Path' icon to initiate recording.
+Click the **New Path** icon to initiate recording.
 
 ![new path](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/4e338205-6f07-42a7-8131-5ee6522d597b)
 
-#### 2. Drive the robot as desired, blue dots will pop up on the screen indicating the robot's trace
+#### 2. Map your Path
+
+Drive the robot through the desired path and note
+ the blue dots popping up on the screen indicating
+  the robot's trace.
 
 ![recording](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/65c208c2-0685-48b6-ba51-8124747c5e85)
 
-To remove waypoints (blue dots), first click the
- 'Pause Path' button, then select the 'Remove Point' icon.
-  Each press of the 'Remove Point' icon will delete a single dot.
-   Once you have removed the desired points, click 'Resume Recording'
-    to continue mapping your path.
-
-![remove](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/697f37f8-435b-4d4c-945b-7c12fd22b2dd)
+If you need to remove points along your recorded track,
+ click the **Pause Path** button followed by
+  the **Remove Point** button.
 
 ![remove points](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/22cb8ddf-87c7-4d13-b9d6-6d976b1d120f)
+Each press of the **Remove Point** button will delete a single dot. Deleted points will appear in green.
+  Once you have removed the desired points, click on **Resume Recording**
+    to continue mapping your path.
 
-#### 3. Click "Save" and name your track to use it later
+:::tip Removing Points
+Use this feature when you have deviated
+ slightly from the desired course and
+ need to make some corrections.
+:::
+
+#### 3. Saving a Path
+
+Clicking the **Save** button will prompt you to name
+ your recently recorded track for later use.
 
 ![name it](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e31b3e77-4b94-4119-a0cc-2efd260c0fff)
 
-#### 4. Load the track when needed and click "Start Track" to initiate autonomous follow
+#### 4. Load Path
+
+Clicking the **Load Path** icon enables you to
+ select from any of your previously recorded tracks.
 
 ![load it](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/deb2daaf-37bf-4a51-9537-1ffcda67464c)
 
+:::tip Auto Control
+In order to repeat a pre-recorded path, you must manually
+set the Dashboard to [**Auto Control**](/docs/dashboard/dashboard-user-guide#auto-control), and be sure that all
+other [**Autonomy Requirements**](/docs/apps/autoplot_app/#autonomy-requirements) have been met.
+
+:::
+
 ![start](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/621eb211-1e2d-4553-a202-fb9e8eac962d)
+
+Once you have loaded a track the **Start Path** icon will
+ turn black and you will be ready to deploy
+  autonomous navigation on your Amiga.
 
 :::info
 After starting to follow the track, the `Start Track` button will switch to `Stop`,
@@ -88,6 +112,19 @@ which will automatically cancel the autonomous operation.
 ### Tool Control
 
 ![Screenshot from 2024-05-02 17-57-53](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/7ea61bf7-d90f-4c06-b98e-bc7f76133213)
+This feature allows you to control your
+ connected hardware devices through
+  a browser window. The control panel is accessed by
+   clicking on the gear icon located in the upper
+    right corner of the Autoplot app. Note that you must have
+     your Dashboard set to [**Auto Control**](/docs/dashboard/dashboard-user-guide#auto-control) in order for this feature to work.
+
+H bridge Devices can be latched or momentarily controlled.
+:::tip H-Bridges
+Our current Firmware release [**amiga-dash-v0.5.0**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.5.0) supports
+ up to four H-Bridge devices that can be coupled for
+  synchronous operation. It also supports controls for two PTO's.
+:::
 
 ![Screenshot from 2024-05-02 18-05-04](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ffb45918-ed86-497d-a72b-5892d75053ab)
 
