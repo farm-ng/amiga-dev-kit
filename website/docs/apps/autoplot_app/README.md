@@ -91,7 +91,8 @@ Clicking the **Load Path** icon enables you to
 
 :::tip Auto Control
 In order to repeat a pre-recorded path, you must manually
-set the Dashboard to [**Auto Control**](/docs/dashboard/dashboard-user-guide#auto-control), and be sure that all
+set the Dashboard to [**Auto Control**](/docs/dashboard/dashboard-user-guide#auto-control),
+ and be sure that all
 other [**Autonomy Requirements**](/docs/apps/autoplot_app/#autonomy-requirements) have been met.
 
 :::
@@ -118,7 +119,8 @@ This feature allows you to control your
     right corner.
 ![gearing](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f09d117f-1026-4036-b2f0-20a557f83c9a)
 
-Our current Firmware release [**amiga-dash-v0.5.0**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.5.0) supports
+Our current Firmware release
+ [**amiga-dash-v0.5.0**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.5.0) supports
  up to four H-Bridge devices that can
   be latched or momentarily controlled.
   They can also be coupled for synchronous operation.
@@ -255,7 +257,8 @@ If the robot is not receiving GPS messages the icon
 ![fail](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/9bd8b212-3286-4bac-9e40-2ec86b9ff11d)
 
 Occasionally, track following might fail. An error
- message will appear and the **Start Path** button will switch to **Error:Check status**. In this case make sure that you
+ message will appear and the **Start Path** button
+  will switch to **Error:Check status**. In this case make sure that you
   have properly carried out an [**IMU Calibration**](/docs/apps/launcher/#imu-calibration).
 
 For further assistance, reach out to the [support team](mailto:support@farm-ng.com).
