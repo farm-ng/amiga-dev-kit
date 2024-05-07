@@ -11,7 +11,7 @@ Designed for simplicity and ease of use,
 this app provides users with the necessary tools to handle
 the log files created by our [Recorder App](../recorder_app).
 
-![main](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/dc559dd5-c400-4611-9e2d-7501dadb678a)
+![one](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e1f802a2-debe-4669-8af6-e523d8ba51a1)
 
 ## Key Features
 
@@ -26,7 +26,7 @@ gauge the data volume at a glance.
 
 ![open](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/5165e8a0-7b76-4fe0-9b58-5b6abd4790da)
 
-![view](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/35ae5327-d744-48d5-a981-c9c026c52eb7)
+![playback](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/3ce5bdc4-2f99-4bff-8dc2-24ea870779de)
 
 ### Manage Log Files
 
