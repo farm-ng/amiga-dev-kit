@@ -22,13 +22,19 @@ Log files are generated once a recording has
    **Start Recording** button in the
     [**Camera App**](/docs/apps/camera_app/).
 
+### Manage Log Files
+
 - **File Listing**: The app lists all log files stored
  on the robot, providing users with a clear view of available data.
 - **File Details**: Each file carries a time stamp
 and a file size, making it easier to gauge the data
  volume at a glance.
 
-## Visualize Log Files
+- **Delete**: Users can select and delete any log file.
+This feature is particularly useful for
+managing storage space and removing outdated or unnecessary data.
+
+### Visualize Log Files
 
 Log files can be viewed locally by selecting
  the checkbox next to the desired file and then
@@ -39,13 +45,9 @@ Log files can be viewed locally by selecting
 
 ![playback](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/3ce5bdc4-2f99-4bff-8dc2-24ea870779de)
 
+Transport controls enable you to move through image frames one by one or in multiples of ten.
+
 ![transport](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/319473d7-bfd4-4e71-8142-cdf6264893c0)
-
-### Manage Log Files
-
-- **Delete**: Users can select and delete any log file.
-This feature is particularly useful for
-managing storage space and removing outdated or unnecessary data.
 
 ### Transfer Files to USB Drive
 
