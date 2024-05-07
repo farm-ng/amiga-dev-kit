@@ -5,28 +5,41 @@ title: File Manager App
 
 # File Manager App Guide
 
-The File Manager app is an essential utility for the
-effective management of log files on your Amiga.
-Designed for simplicity and ease of use,
-this app provides users with the necessary tools to handle
-the log files created by our [Recorder App](../recorder_app).
+The File Manager app is crucial for efficiently
+ managing log files on your Amiga. With its user-friendly
+  design, this app equips users with the tools
+   needed to manage recorded log files and
+    topic streams chosen in the
+     [**Recorder**](/docs/apps/launcher/#recorder).
+      Its simplicity and ease of use make it an
+       essential tool for handling these files effectively.
 
 ![one](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e1f802a2-debe-4669-8af6-e523d8ba51a1)
 
-## Key Features
+Log files are generated once a recording has
+ been successfully initiated by pressing the
+  **RECORD** button on the navigation bar or the
+   **Start Recording** button in the
+    [**Camera App**](/docs/apps/camera_app/).
 
-### Visualize Log Files
+- **File Listing**: The app lists all log files stored
+ on the robot, providing users with a clear view of available data.
+- **File Details**: Each file carries a time stamp
+and a file size, making it easier to gauge the data
+ volume at a glance.
 
-- **File Listing**: The app lists all log files stored on the robot,
-  providing users with a clear
-view of available data.
-- **File Details**: Alongside each file name,
-  users can view the file size, making it easier to
-gauge the data volume at a glance.
+## Visualize Log Files
 
-![open](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/5165e8a0-7b76-4fe0-9b58-5b6abd4790da)
+Log files can be viewed locally by selecting
+ the checkbox next to the desired file and then
+  pressing the open button. If the log file includes
+   data from multiple camera streams, these can be
+    chosen from the dropdown menu located at the
+     upper left corner of the screen.
 
 ![playback](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/3ce5bdc4-2f99-4bff-8dc2-24ea870779de)
+
+![transport](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/319473d7-bfd4-4e71-8142-cdf6264893c0)
 
 ### Manage Log Files
 
@@ -41,7 +54,3 @@ managing storage space and removing outdated or unnecessary data.
 robot's storage to the USB drive.
 This functionality enhances data portability and
 facilitates easy sharing or backup of important logs.
-
-![transport](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/319473d7-bfd4-4e71-8142-cdf6264893c0)
-
-![usb](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/b6479c05-d64c-4af1-a64d-56d239154ca7)
