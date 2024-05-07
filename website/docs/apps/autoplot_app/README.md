@@ -111,23 +111,26 @@ which will automatically cancel the autonomous operation.
 
 ### Tool Control
 
-![gearing](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f09d117f-1026-4036-b2f0-20a557f83c9a)
-
 This feature allows you to control your
  connected hardware devices through
   a browser window. The control panel is accessed by
    clicking on the gear icon located in the upper
-    right corner of the Autoplot app. Note that you must have
-     your Dashboard set to [**Auto Control**](/docs/dashboard/dashboard-user-guide#auto-control) in order for this feature to work.
+    right corner.
+![gearing](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f09d117f-1026-4036-b2f0-20a557f83c9a)
 
-H bridge Devices can be latched or momentarily controlled.
-:::tip H-Bridges
 Our current Firmware release [**amiga-dash-v0.5.0**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.5.0) supports
- up to four H-Bridge devices that can be coupled for
-  synchronous operation. It also supports controls for two PTO's.
-:::
+ up to four H-Bridge devices that can
+  be latched or momentarily controlled.
+  They can also be coupled for synchronous operation.
 
 ![Screenshot from 2024-05-02 18-05-04](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ffb45918-ed86-497d-a72b-5892d75053ab)
+
+Two PTO Devices are supported and can be
+ remotely selected for operation. The control
+  panel gives you directional controls for both
+   H-Bridge and PTO connected devices.
+As an added safety measure you may remotely
+ stop all actively engaged tools.
 
 ### Remote Access via Web Browser
 
@@ -138,7 +141,7 @@ To open the Autoplot interface in your browser,
 simply enter the following address:
 
 ```bash
-<your-robot-name>:8008
+<tailscale-name>/
 ```
 
 :::note Remote Control Requirements
@@ -177,7 +180,7 @@ ideal for teaching the robot new tracks.
 
 Here are instructions for using the pendant
 and the kartech as of dashboard firmware
-release [**`v0.0.5`**](https://github.com/farm-ng/amiga-dev-kit/releases):
+release [**amiga-dash-v0.5.0**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.5.0)
 
 ![pendant](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/4a8fbe60-7780-4f32-b92f-6ce895a706e0)
 ![kartech](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/99aee18e-e7d2-41c5-888b-6d38365c699e)
@@ -195,7 +198,8 @@ Here are instructions for using both options:
 ![joystick](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/6bf57701-f241-4855-a675-d174084637b4)
 
 :::info Autonomy Required for Remote Control
-Remote Control requires the robot to be in `automode`.
+Remote Control operation requires the robot's
+Dashboard be set to [**Auto Control**](/docs/dashboard/dashboard-user-guide#auto-control).
 This mode ensures that all movements
 are managed safely by the robot's autonomous systems.
 :::
@@ -206,14 +210,15 @@ robot from any location with internet access.
 
 :::tip Teaching Tracks Remotely or On-Site
 Tracks can be taught to the robot
-whether you're using the on-site pendant or the Remote Keyboard
-Control feature via a web browser.
+by driving it manually with the pendant or Kar-Tech controller.
+Alternatively, you may use the Remote Keyboard
+Controls or the Game Pad controller feature via a web browser.
 :::
 
 ## Tips for Optimal Autonomy
 
-- Before engaging in autonomous operations,
-- always perform a safety check of the environment.
+- Always perform a safety check of the surrounding environment
+   before engaging in autonomous operations.
 - When operating the robot via remote keyboard control
 in the web app, ensure a stable and
 responsive network connection.
@@ -224,18 +229,33 @@ to avoid interruptions in longer operations.
 
 If you encounter issues with autonomy or control:
 
+![icon bar](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/d69c2611-a3ad-4bb5-9db2-23a77c6a73ec)
+
 - Verify all status indicators in the Autoplot app's
 top bar are active and showing the expected states.
-- Check the [**Filter App**](/docs/apps/filter_app)
-to confirm that calibration and GPS settings are up-to-date.
+- Confirm that [**IMU Calibration**](/docs/apps/launcher/#imu-calibration)
+   and [**GPS NTRIP**](/docs/apps/launcher/#gps-ntrip) settings
+   are set correctly and up-to-date.
 - If the robot does not respond to WAD keyboard commands,
 ensure that no other tasks are running and
-that the robot is in automode.
+the robot's Dashboard is set to [**Auto Control**](/docs/dashboard/dashboard-user-guide#auto-control).
 
 ![filter error](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/9e6ab78d-dd52-4d86-9688-53b7ee9bff66)
 
+If the filter is not converged, the icon on the
+ navigation bar will show up with a line cutting across it.
+  Clicking the icon will help you resolve the error's details.
+
 ![gps error](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/c026d6fb-c86e-43d9-b8ca-928bd2ed5515)
 
+If the robot is not receiving GPS messages the icon
+ on the navigation bar will show up with a line cutting across it.
+   Clicking the icon will help you resolve the error's details.
+
 ![fail](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/9bd8b212-3286-4bac-9e40-2ec86b9ff11d)
+
+Occasionally, track following might fail. An error
+ message will appear and the **Start Path** button will switch to **Error:Check status**. In this case make sure that you
+  have properly carried out an [**IMU Calibration**](/docs/apps/launcher/#imu-calibration).
 
 For further assistance, reach out to the [support team](mailto:support@farm-ng.com).
