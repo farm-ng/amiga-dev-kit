@@ -44,7 +44,8 @@ Detailed RTK-GPS information can be found on the
 
 The Amiga's teach-and-repeat functionality allows you to
  drive the robot along a desired path
-and then repeat the path autonomously. The process for doing so is as follows:
+and then repeat the path autonomously.
+ The process for doing so is as follows:
 
 #### 1. New Path
 
@@ -144,6 +145,7 @@ simply enter the following address:
 
 ```bash
 <tailscale-name>/
+E.g., http://aluminum-pineapple.tail0be07.ts.net/
 ```
 
 :::note Remote Control Requirements
@@ -238,7 +240,7 @@ top bar are active and showing the expected states.
 - Confirm that [**IMU Calibration**](/docs/apps/launcher/#imu-calibration)
    and [**GPS NTRIP**](/docs/apps/launcher/#gps-ntrip) settings
    are set correctly and up-to-date.
-- If the robot does not respond to WAD keyboard commands,
+- If the robot does not respond to WASD keyboard commands,
 ensure that no other tasks are running and
 the robot's Dashboard is set to [**Auto Control**](/docs/dashboard/dashboard-user-guide#auto-control).
 
@@ -258,7 +260,7 @@ If the robot is not receiving GPS messages the icon
 
 Occasionally, track following might fail. An error
  message will appear and the **Start Path** button
-  will switch to **Error:Check status**. In this case make sure that you
-  have properly carried out an [**IMU Calibration**](/docs/apps/launcher/#imu-calibration).
+  will switch to **Error-Check status**. If you encounter
+this error message, make sure you Robot meets all the [**Autonomy Requirements**](/docs/apps/autoplot_app/#autonomy-requirements).
 
 For further assistance, reach out to the [support team](mailto:support@farm-ng.com).
