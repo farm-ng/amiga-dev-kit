@@ -5,7 +5,7 @@ title: Canbus
 
 # Canbus Service Overview
 
-The Canbus service is an integral component of the Amiga platform.
+The Canbus sub-service is an integral component of the Amiga platform.
 This service offers direct control over the robot's motors, allowing users to both
 publish motor states and send specific commands to manipulate the robot's movements.
 
@@ -32,6 +32,10 @@ Check the protobuf definition for more details:
   Check the protobuf definition for more details:
   [amiga_v6_pb2.AmigaV6CanbusState](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/amiga_v6.proto)
 
+- `/tool_statuses`: State of the tools (if any) connected to your Amiga.
+  Check the protobuf definition for more details:
+  [tool_control_pb2.ToolStatuses](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/tool_control.proto#L101-L127)
+
 ## API
 
 1. `/twist`: Receives twist commands (linear and angular velocities) and instructs the
@@ -40,6 +44,10 @@ motors accordingly.
 3. `/get_battery_state`: Returns the battery state.
 A float value indicating the battery's state of charge, ranging [0.0, 1.0].
 If no motors are connected, it returns -1.0.
+4. `/control_tools`: Control the tools / actuators based on the ActuatorCommands message.
+5. `stop_all_tools`: Stop all tools and prevent control for a predetermined duration.
+6. `yield_all_tools`: Prevent control for a predetermined duration.
+7. `config_request`: Use the farm-ng SDO protocol to send a config request to the dashboard.
 
 ## Safety and Operation
 

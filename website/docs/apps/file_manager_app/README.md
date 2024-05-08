@@ -1,9 +1,7 @@
 ---
 id: file-manager-app
-title: File Manager App
+title: File Manager App Guide
 ---
-
-# File Manager App Guide
 
 The File Manager app is crucial for efficiently
  managing log files on your Amiga. With its user-friendly

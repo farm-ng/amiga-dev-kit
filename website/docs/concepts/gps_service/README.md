@@ -5,7 +5,7 @@ title: GPS
 
 # GPS Service Overview
 
-The GPS service is an integral component of the Amiga's navigation system, utilizing a
+The GPS sub-service is an integral component of the Amiga's navigation system, utilizing a
 high-precision Ublox module to determine the robot's exact position on Earth.
 This service is indispensable for tasks that require geo-location, from simple
 navigation to complex tasks like field mapping or precision agriculture.
@@ -31,7 +31,7 @@ These messages contain rich data sets that include the robot's current geospatia
 velocity, time, and other relevant GPS data.
 
 :::info INFO
-There are two types of GPS messages: **PVT** and **RELPOSNED**.
+There are three types of GPS messages: **PVT**, **RELPOSNED**, and **ECEF**.
 
 **PVT** (Position, Velocity, and Time) messages provide the all-in-one solution: position, velocity,
 and time.
@@ -41,6 +41,12 @@ It contains details like longitude, latitude, altitude, speed, and UTC time.
 North, East, Down (N-E-D) frame. It's mainly used for applications requiring relative positioning
 between two receivers, often as a part of Real Time Kinematics (RTK) solutions.
 It shows the difference in position between a "moving" receiver and a "fixed" reference receiver.
+
+**ECEF** (Earth-Centered, Earth-Fixed) messages provide coordinates that represent positions
+relative to the earth's center, but fixed to the earth as it rotates.
+ECEF coordinates are expressed in meters in a 3D Cartesian coordinate system.
+These messages are particularly useful for applications
+that require a global reference frame, such as satellite operations and global mapping projects.
 :::
 
 # Data Streams
@@ -52,6 +58,10 @@ It shows the difference in position between a "moving" receiver and a "fixed" re
 - `/relposned`:RELPOSNED message.
 Check the protobuf definition for more details:
 [gps_pb2.RelativePositionFrame](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/gps/gps.proto#L73-L97)
+
+- `/ecef`:ECEF message.
+Check the protobuf definition for more details:
+[gps_pb2.EcefCoordinates](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/gps/gps.proto#L109-L117)
 
 ## Requirements
 
