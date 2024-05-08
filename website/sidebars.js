@@ -62,8 +62,8 @@ const sidebars = {
       "App Overviews": [
         "apps/launcher/launcher",
         "apps/autoplot_app/autoplot-app",
-        "apps/file_manager_app/file-manager-app",
         "apps/camera_app/camera-app",
+        "apps/file_manager_app/file-manager-app",
       ],
     },
     {
