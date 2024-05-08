@@ -44,7 +44,8 @@ For convenience, users may also opt for:
 imagery.
 
 :::tip
-Double click anyone of the auto controls to open up their manual configuration settings. **Single Log File** allows you to set a maximum file size for log recording.
+Double click anyone of the auto controls to open up their manual configuration settings.
+**Single Log File** allows you to set a maximum file size for log recording.
 :::
 
 ### Direct Recording
