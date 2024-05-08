@@ -14,7 +14,7 @@ Log files are generated once a recording has been successfully initiated by pres
 **RECORD** button on the navigation bar or the **Start Recording** button in the
 [**Camera App**](/docs/apps/camera_app/).
 
-## Manage Log Files
+### Manage Log Files
 
 - **File Listing**: The app lists all log files stored on the robot, providing users with a clear
 view of available data.
@@ -24,7 +24,7 @@ data volume at a glance.
 - **Delete**: Users can select and delete any log file.
 This feature is particularly useful for managing storage space and removing outdated or unnecessary data.
 
-## Visualize Log Files
+### Visualize Log Files
 
 Log files can be viewed locally by selecting the checkbox next to the desired file and then
 pressing the open button. If the log file includes data from multiple camera streams, these can be
