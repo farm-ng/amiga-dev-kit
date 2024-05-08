@@ -114,58 +114,62 @@ depending on their specific needs and analysis requirements.
 ## Recording Profile
 
 To initiate recording, a "Recording profile" must be provided as an argument.
-This profile is a JSON file detailing the subscriptions or topics to be recorded. Here's an example:
+This profile is a
+[**EventServiceConfig**](https://github.com/farm-ng/farm-ng-core/blob/main/protos/farm_ng/core/event_service.proto#L80-L107)
+ protobuf, detailing the subscriptions or topics to be recorded.
 
 ```json
 {
-    "config": {
-        "name": "record_default",
-        "subscriptions": [
-            {
-            "uri": {
-                "path": "*",
-                "query": "service_name=canbus"
-            },
-            "every_n": 1
-            },
-            {
-            "uri": {
-                "path": "*",
-                "query": "service_name=gps"
-            },
-            "every_n": 1
-            },
-            {
-            "uri": {
-                "path": "/imu",
-                "query": "service_name=oak0"
-            },
-            "every_n": 1
-            },
-            {
-            "uri": {
-                "path": "*",
-                "query": "service_name=filter"
-            },
-            "every_n": 1
-            }
-        ]
-    }
+    "name": "my_profile",
+    "subscriptions": [
+        {
+        "uri": {
+            "path": "*",
+            "query": "service_name=canbus"
+        },
+        "every_n": 1
+        },
+        {
+        "uri": {
+            "path": "*",
+            "query": "service_name=gps"
+        },
+        "every_n": 1
+        },
+        {
+        "uri": {
+            "path": "/imu",
+            "query": "service_name=oak/0"
+        },
+        "every_n": 1
+        },
+        {
+        "uri": {
+            "path": "*",
+            "query": "service_name=filter"
+        },
+        "every_n": 1
+        }
+    ]
 }
 ```
 
 :::info INFO
 The **`*`** symbol in the `path` field indicates that all available topics of that specific
 subscription (service) should be recorded.
+
+The `every_n` field indicates the ratio of recording frequency.
+For example, if the publishing rate of `oak/0/imu` is 50 ms, an every_n of "2" will yield
+in data being recording every 100 ms (2 * 50 ms).
 :::
 
 ## API
 
 Users can interact with the Recorder Service using the following commands:
 
-- `/start`: Initiates data recording.
+- `recorder/start`: Initiates data recording.
 A valid "Recording profile" must be provided as an argument.
-- `/stop`: Halts the data recording process.
+- `recorder/stop`: Halts the data recording process.
 
 ## Data Storage
 
@@ -185,10 +189,10 @@ For example:
 
 ## How to Use
 
-Data can be recorded through the Recorder App, or using the `EventsClient` class.
+Data can be recorded through the App App, or using the `EventsClient` class.
 
 To record data through the UI on the Brain display, see the
-[Recorder App Guide](/docs/apps/recorder_app/).
+[Launcher Status Bar](/docs/apps/launcher/#status-bar).
 
 To record data using the Recorder Service API from your own application, see the
 [Events Recorder example](/docs/examples/events_recorder/).
