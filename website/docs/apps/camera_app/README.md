@@ -54,26 +54,18 @@ Double click anyone of the auto controls to open up their manual configuration s
 
 ![start rec](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/cb1d2d19-aaf5-4091-9d65-b2bf7b6e7499)
 
-To initiate data recording through the Camera App,
- simply press the **Start Recording** button at
-  the upper right corner. The button will
-   switch from green to red and start flashing,
-    signaling that the recording is underway.
-     This functionality is especially handy
-      for capturing various imagery data
-       streams such as RGB, left, right, and disparity views,
-        all without requiring extra configuration.
+To initiate data recording through the Camera App, simply press the **Start Recording** button at
+the upper right corner. The button will switch from green to red and start flashing,
+signaling that the recording is underway.
+This functionality is especially handy for capturing various imagery data
+streams such as RGB, left, right, and disparity views, all without requiring extra configuration.
 
 :::tip
-By default, all the topic streams in the
- [**Recorder**](/docs/apps/launcher/#recorder)
-are captured when you press the **RECORD** button on the
- navigation bar, or the **Start Recording** button
-  on the camera app. You may select individual topics
-   to record from the [**Recorder**](/docs/apps/launcher/#recorder) tab.
+By default, all the topic streams in the [**Recorder**](/docs/apps/launcher/#recorder)
+are captured when you press the **RECORD** button on the navigation bar, or the **Start Recording** button
+on the camera app. You may select individual topics to record from the
+[**Recorder**](/docs/apps/launcher/#recorder) tab.
 :::
 
-With its user-friendly design and comprehensive
- feature set, the Camera App is an indispensable tool
-for anyone looking to maximize the capabilities
- of their Amiga robot's camera system.
+With its user-friendly design and comprehensive feature set, the Camera App is an indispensable tool
+for anyone looking to maximize the capabilities of their Amiga robot's camera system.
