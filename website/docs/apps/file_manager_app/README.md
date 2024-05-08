@@ -1,9 +1,7 @@
 ---
 id: file-manager-app
-title: File Manager App
+title: File Manager App Guide
 ---
-
-# File Manager App Guide
 
 The File Manager app is crucial for efficiently
  managing log files on your Amiga. With its user-friendly
@@ -22,7 +20,7 @@ Log files are generated once a recording has
    **Start Recording** button in the
     [**Camera App**](/docs/apps/camera_app/).
 
-### Manage Log Files
+## Manage Log Files
 
 - **File Listing**: The app lists all log files stored
  on the robot, providing users with a clear view of available data.
@@ -34,7 +32,7 @@ and a file size, making it easier to gauge the data
 This feature is particularly useful for
 managing storage space and removing outdated or unnecessary data.
 
-### Visualize Log Files
+## Visualize Log Files
 
 Log files can be viewed locally by selecting
  the checkbox next to the desired file and then
