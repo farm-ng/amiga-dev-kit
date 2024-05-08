@@ -92,7 +92,7 @@ git clone https://github.com/farm-ng/farm-ng-core.git
 
 # Checkout the correct release and update submodules
 cd farm-ng-core/
-git checkout v2.2.0
+git checkout v2.3.0
 git submodule update --init --recursive
 cd ../
 
