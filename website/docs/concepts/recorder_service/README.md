@@ -184,15 +184,19 @@ at the recording's start, the robot's name, and the file number in the sequence:
 For example:
 
 ```php
-2023_01_12_16_17_52_134845_element-vegetable.0000.bin
+2024_06_01_12_00_00_134845_element-vegetable.0000.bin
 ```
 
 ## How to Use
 
-Data can be recorded through the App App, or using the `EventsClient` class.
+Data can be recorded through the AppBar, the Camera App, or using the `EventsClient` class
+as in the **Events Recorder example**.
 
-To record data through the UI on the Brain display, see the
-[Launcher Status Bar](/docs/apps/launcher/#status-bar).
+- To record data through the UI on the Brain display, see the
+[Launcher Guide - Status Bar](/docs/apps/launcher/#status-bar).
 
-To record data using the Recorder Service API from your own application, see the
+- To record data through the Camera App on the Brain display, see the
+[Camera App Guider](/docs/apps/camera_app/).
+
+- To record data using the Recorder Service API from your own application, see the
 [Events Recorder example](/docs/examples/events_recorder/).
