@@ -25,7 +25,7 @@ The Recorder Service is a subscriber to the following services:
 - Filter
 - GPS
 - Oak (Multiple Oak topics may be available, depending on the number of Oak cameras connected,
-e.g., oak0, oak1, ...)
+e.g., oak/0, oak/1, ...)
 - System Monitor
 - Track Follower
 
