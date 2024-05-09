@@ -40,8 +40,7 @@ Think of it as the command center from which various specialized functions are c
 navigation and stability.
 - [**GPS**](/docs/concepts/gps_service/): Manages the global positioning system to track the robot's
 location.
-- [**Recorder**](/docs/concepts/recorder_service/): Logs data for analysis, ensuring every operation
-is documented for review and improvement.
+- [**Recorder**](/docs/concepts/recorder_service/): Logs data for analysis.
 
 These sub-services are now components of the larger Amiga service, allowing for streamlined operations
 and more efficient management of resources.
