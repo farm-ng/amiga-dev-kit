@@ -45,9 +45,9 @@ motors accordingly.
 A float value indicating the battery's state of charge, ranging [0.0, 1.0].
 If no motors are connected, it returns -1.0.
 4. `/control_tools`: Control the tools / actuators based on the ActuatorCommands message.
-5. `stop_all_tools`: Stop all tools and prevent control for a predetermined duration.
-6. `yield_all_tools`: Prevent control for a predetermined duration.
-7. `config_request`: Use the farm-ng SDO protocol to send a config request to the dashboard.
+5. `/stop_all_tools`: Stop all tools and prevent control for a predetermined duration.
+6. `/yield_all_tools`: Prevent control for a predetermined duration.
+7. `/config_request`: Use the farm-ng SDO protocol to send a config request to the dashboard.
 
 ## Safety and Operation
 
