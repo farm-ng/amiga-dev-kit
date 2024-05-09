@@ -5,7 +5,7 @@ title: Canbus
 
 # Canbus Service Overview
 
-The Canbus sub-service is an integral component of the Amiga platform.
+The Canbus service is an integral component of the Amiga platform.
 This service offers direct control over the robot's motors, allowing users to both
 publish motor states and send specific commands to manipulate the robot's movements.
 
