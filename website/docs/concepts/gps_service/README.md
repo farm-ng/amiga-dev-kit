@@ -49,7 +49,7 @@ These messages are particularly useful for applications
 that require a global reference frame, such as satellite operations and global mapping projects.
 :::
 
-# Data Streams
+## Data Streams
 
 - `/pvt`: PVT message.
  Check the protobuf definition for more details:

@@ -17,7 +17,7 @@ However, its data, especially the IMU information, plays a significant role in t
 navigation capabilities, as it's fused with GPS and wheel odometry data in the Filter service
 (using an Unscented Kalman Filter).
 
-# Multiple Instances
+## Multiple Instances
 
 Depending on the number of OAK devices connected to the Amiga, there might be multiple instances
 of the OAK service running concurrently.
@@ -38,7 +38,7 @@ These messages can include various data types such as:
 - Accelerometer data
 - Gyroscope data
 
-# Data Streams
+## Data Streams
 
 - `/calibration`: Intrinsic parameters of the cameras.
  Check the protobuf definition for more details:

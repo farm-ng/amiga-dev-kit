@@ -31,7 +31,7 @@ For the Filter service to function correctly, these services must be operational
 relevant sensor data.
 Since the Filter relies on GPS data, the Amiga must have a GPS connected to an RTK base station.
 
-# Data Streams
+## Data Streams
 
 - `/state`: A filter's state detailing pose, convergence, calibration, uncertainty, innovation, and heading.
  Check the protobuf definition for more details:

@@ -43,68 +43,27 @@ Some of which may inherit from the protobuf messages found at:<br/>
 [**`farm-ng-core/protos/`**](https://github.com/farm-ng/farm-ng-core/tree/main/protos/farm_ng/core)
 :::
 
-### Canbus Topics
+- [Canbus Topics](/docs/concepts/canbus_service/#data-streams)
 
-- `canbus/health`: Provides health metrics for the Canbus service, such as publishing frequency.
-- `canbus/motor_states`: Streams state messages from the motors of your Amiga, such as voltage and RPM.
-- `canbus/pendant`: Streams state messages from the pedant of your Amiga, such as buttons pressed.
-- `canbus/raw_messages`: Streams all messages received from the CAN bus by the canbus service.
-You can parse and unpack these messages to see details of the motors (e.g., rpm, temperature),
-of your Amiga (e.g., battery voltage, velocity, whether auto-mode is engaged),
-and other pertinent information.
-- `canbus/state`: Streams state messages from the canbus service, such as measured speed.
-- `canbus/tool_statuses`: Streams tool status messages from the canbus service, such as tool direction.
-- `canbus/twist`: Outputs the linear and angular velocities of the robot, offering insights
-into its movement dynamics.
+- [Filter Topics](/docs/concepts/filter_service/#data-streams)
 
-### Filter Topics
+- [GPS Topics](/docs/concepts/gps_service/#data-streams)
 
-- `filter/health`: Delivers health metrics for the Filter service, including publishing frequency.
-- `filter/state`: Streams the filter state, which combines the robot's pose, orientation,
-filter state uncertainties, and filter convergence status.
-This topic is essential for understanding the robot's current state and its accuracy.
+- [Oak Topics](/docs/concepts/oak_service/#data-streams)
 
-### GPS Topics
+- System Monitor Topics
 
-- `gps/health`: Offers health metrics for the GPS service, such as publishing frequency.
-- `gps/ecef`: Provides GPS positions relative to the earth's center, but fixed to the earth as it rotates.
-- `gps/pvt`: Streams GPS Position, Velocity, and Time (PVT) messages, giving a comprehensive
-view of the robot's location and movement.
-- `gps/relposned`: Provides GPS relative position in North, East, Down (N-E-D) coordinates,
-offering a detailed spatial orientation of the robot.
-
-### Oak Topics
-
-- `oak/health`: Delivers health metrics for the Oak service, including publishing frequency.
-- `oak/calibration`: Streams the current calibration settings of the Oak device,
-ensuring the camera's accuracy.
-- `oak/disparity`: Outputs the disparity image calculated from the left/right stereo images,
-used for depth perception and 3D mapping.
-- `oak/imu`: Streams 3-D accelerometer & gyroscope values from the Oak camera's internal IMU,
-giving insights into the robot's orientation and movement.
-- `oak/left`: Outputs the feed from the stereo left camera of the Oak device.
-- `oak/rgb`: Streams the stereo RGB image from the Oak device, providing full-color
-visuals of the robot's environment.
-- `oak/right`: Outputs the feed from the stereo right camera of the Oak device.
-
-### System Monitor Topics
-
-- `system_monitor/health`: Delivers health metrics for the system_monitor service,
+  - `system_monitor/health`: Delivers health metrics for the system_monitor service,
 including publishing frequency.
-- `system_monitor/auto_mode`: Streams auto mode state (either true or false).
-- `system_monitor/batteries_state`: Streams the percent of battery left.
-- `system_monitor/cpu_usage`: Streams the percent of CPU currently being consumed on the brain.
-- `system_monitor/filter_state`: Streams the filter service state.
-- `system_monitor/wifi_state`: Streams auto mode state (either true or false).
-- `system_monitor/virtual_memory_usage`: Streams athe percent of virtual memory being consumed
+  - `system_monitor/auto_mode`: Streams auto mode state (either true or false).
+  - `system_monitor/batteries_state`: Streams the percent of battery left.
+  - `system_monitor/cpu_usage`: Streams the percent of CPU currently being consumed on the brain.
+  - `system_monitor/filter_state`: Streams the filter service state.
+  - `system_monitor/wifi_state`: Streams auto mode state (either true or false).
+  - `system_monitor/virtual_memory_usage`: Streams athe percent of virtual memory being consumed
 by the brain.
 
-### Track Follower Topics
-
-- `track_follower/health`: Delivers health metrics for the track_follower service,
-including publishing frequency.
-
-- `track_follower/state`: Streams the current state of a track being followed.
+- [Track Follower Topics](/docs/concepts/track_follower_service/#data-streams)
 
 ---
 
