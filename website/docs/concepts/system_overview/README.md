@@ -31,19 +31,34 @@ making troubleshooting easier.
 3. **Efficiency**: Services can run concurrently, utilizing the multi-core capabilities of
 platforms like the Brain.
 
+## The Amiga Service
+
+The Amiga service serves as the central hub for coordinating several critical sub-services.
+Think of it as the command center from which various specialized functions are controlled:
+
+- [**Oak**](/docs/concepts/oak_service/): Handles imagery and provides IMU data, crucial for
+navigation and stability.
+- [**GPS**](/docs/concepts/gps_service/): Manages the global positioning system to track the robot's
+location.
+- [**Recorder**](/docs/concepts/recorder_service/): Logs data for analysis.
+
+These sub-services are now components of the larger Amiga service, allowing for streamlined operations
+and more efficient management of resources.
+
 ## The Heartbeat of Amiga: Key Services
 
+Here is how our services are structured under the Amiga service:
+
+- [**Amiga**](/docs/concepts/system_overview/#the-amiga-service): Acts as the central command.
+Under this service, we have:
+  - OAK
+  - GPS
+  - Recorder
 - [**Canbus**](/docs/concepts/canbus_service/): Manages the robot's motors.
 It's like the nervous system, transmitting movement commands and receiving feedback.
-- [**Oak**](/docs/concepts/oak_service/): The eyes and balance of the robot.
-It streams imagery and provides IMU data, crucial for services like Filter and Track Follower.
-- [**GPS**](/docs/concepts/gps_service/): The robot's global positioning sense.
-It knows where the Amiga is in the world.
 - [**Filter (UKF)**](/docs/concepts/filter_service/): Acts as the robot's sense of self-awareness.
 By using IMU data from the OAK service, wheel odometry from CANBUS, and global positioning from GPS,
 it estimates the state of the robot.
-- [**Recorder**](/docs/concepts/recorder_service/): The memory of the robot.
-It logs data, ensuring we can revisit past operations or analyze performance.
 - [**Track Follower**](/docs/concepts/track_follower_service/): The brain of the operation.
 It uses algorithms like pure pursuit and PID to guide the Amiga.
 It makes decisions based on data from other services.
@@ -55,7 +70,7 @@ the traffic cop (Track Follower) guides vehicles (services),
 and everyone communicates to ensure the city runs smoothly.
 Similarly, in the Amiga ecosystem:
 
-- The **OAK** service streams visual and IMU data.
+- The **OAK** sub-service streams visual and IMU data.
 - The **Filter** service uses IMU data from OAK, wheel odometry from CANBUS, and global positioning
 data from GPS to understand how the robot is moving.
 - The **Track Follower** takes this movement data, combines it with its algorithms, and decides
@@ -68,7 +83,7 @@ All these services run on the powerful Brain, allowing for efficient and concurr
 ## Architectural Diagram
 
 Below is the architectural diagram that visually represents how these services interact:
-![amiga_brain-1](https://github.com/farm-ng/amiga-dev-kit/assets/5157099/a7d5d95f-a94d-40a9-8df0-3c0c9084c2fa)
+![amiga-services-diagram](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/68bff7a0-08df-48d2-b6ae-5155cf7ff1eb)
 
 This introduction is designed to be a primer.
 Each service has its depths and intricacies, which you'll uncover as you dive deeper into Amiga development.

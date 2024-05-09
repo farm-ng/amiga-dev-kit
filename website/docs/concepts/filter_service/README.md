@@ -31,7 +31,7 @@ For the Filter service to function correctly, these services must be operational
 relevant sensor data.
 Since the Filter relies on GPS data, the Amiga must have a GPS connected to an RTK base station.
 
-# Data Streams
+## Data Streams
 
 - `/state`: A filter's state detailing pose, convergence, calibration, uncertainty, innovation, and heading.
  Check the protobuf definition for more details:
@@ -49,6 +49,10 @@ heading (in radians), convergence status, and pose uncertainty.
 - `/get_track`: Returns the current track of the robot, essentially the path that the robot has traveled.
 - `/clear_track`: Clears the current track, useful when initiating a new tracking sequence or
 recalibrating the system.
+- `/pause_track`: Pause adding waypoints to a track.
+- `/resume_track`: Resume adding waypoints to a track.
+- `/pop_track_end`: Removes the last waypoint added to the track.
+Track must be paused first (`/pause_track`).
 
 ## Convergence Requirements
 
@@ -58,7 +62,7 @@ need to be met, including:
 - The robot is connected to Wi-Fi, ensuring communication continuity.
 - The GPS service is receiving messages, with `accuracyNorth` and `accuracyEast` values smaller
 than 0.01, indicating high precision.
-- The oak0 service is active and transmitting IMU data.
+- The oak/0 sub-service is active and transmitting IMU data.
 
 Upon startup or recalibration, the robot needs to be moved slightly to allow the filter to converge
 (indicated by `has_converged` = true).
