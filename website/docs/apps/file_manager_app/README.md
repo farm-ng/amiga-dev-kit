@@ -41,3 +41,10 @@ Transport controls enable you to move through image frames one by one or in mult
 - **USB Copy**: If a USB drive is plugged into the robot, users can easily copy log files from the
 robot's storage to the USB drive.
 This functionality enhances data portability and facilitates easy sharing or backup of important logs.
+
+#### USB Requirements
+
+1. Your USB drive should be formatted as either `ext4` or `exFAT` for the app to detect your drive.
+2. USB drives with multiple partitions may fail to be detected.
+3. You should plug the drive into the brain AFTER booting up the brain and launching the app.
+4. [Recommended] `USB 3.0` devices will transfer files significantly faster than `USB 2.0` devices.
