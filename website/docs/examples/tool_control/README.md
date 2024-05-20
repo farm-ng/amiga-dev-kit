@@ -5,17 +5,6 @@ title: Tool Control
 
 # Amiga Tool Control example
 
-:::danger Pre-release
-Running this example has minimum release versions of:
-
-- brain: `AmigaOS v2.3.0 +`
-- dashboard: `firmware v0.5.0 +`
-- PC: `farm-ng-amiga v2.3.0+`
-
-These may not yet be publicly available and are scheduled for release in early March 2024.
-To request early access, please reach out to us at: [support@farm-ng.com](mailto:support@farm-ng.com)
-:::
-
 :::info Basic Knowledge Requirements
 
 Before diving into this code, here's a quick heads-up on what you'll need to be familiar with:
