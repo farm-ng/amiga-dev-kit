@@ -20,7 +20,7 @@ to different services.
 You can either run this example directly on a brain by `ssh`'ing in, or use your local PC.
 To successfully run this example, ensure that a [**farm-ng brain**](/docs/brain/) running
 the Canbus and Filter services. Your local PC should be either connected to the same local
-network as the brain or linked to it through tailscale.
+network as the brain or linked to it through [**tailscale**.](https://tailscale.com/)
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 

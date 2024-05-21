@@ -16,21 +16,33 @@ or microcontrollers and devices.
 - **Dependencies**: Standalone service, but pivotal for many autonomous operations.
 Notably, the Track Follower service is heavily reliant on the Canbus service.
 
-# Data Streams
+## Data Streams
 
-- `/twist`: The commanded linear velocity of the vehicle in the x direction in meters per second.
- Check the protobuf definition for more details:
- [canbus_pb2.Twist2d](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto#L58-L61)
+- `/motor_states`: Streams state messages from the motors of your Amiga, such as voltage and RPM.
+Check the protobuf definition for more details:
+[canbus_pb2.MotorStates](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto)
+
+- `/pendant`: Streams state messages from the pedant of your Amiga, such as buttons pressed.
+  Check the protobuf definition for more details:
+  [amiga_v6_pb2.PendantState](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/amiga_v6.proto)
 
 - `/raw_messages`:A representation of raw CAN bus messages with timestamps, node IDs, error
 flags, remote transmission indicators, and encoded payloads.
 Check the protobuf definition for more details:
-[canbus_pb2.RawCanbusMessages](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto#L95-L107)
+[canbus_pb2.RawCanbusMessages](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto)
 
 - `/state`: State of the Amiga CAN bus.
   Encapsulates key information required to evaluate the state of the Amiga robot.
   Check the protobuf definition for more details:
   [amiga_v6_pb2.AmigaV6CanbusState](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/amiga_v6.proto)
+
+- `/tool_statuses`: State of the tools (if any) connected to your Amiga.
+  Check the protobuf definition for more details:
+  [tool_control_pb2.ToolStatuses](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/tool_control.proto)
+
+- `/twist`: The commanded linear velocity of the vehicle in the x direction in meters per second.
+ Check the protobuf definition for more details:
+ [canbus_pb2.Twist2d](https://github.com/farm-ng/farm-ng-amiga/blob/main/protos/farm_ng/canbus/canbus.proto)
 
 ## API
 
@@ -40,6 +52,10 @@ motors accordingly.
 3. `/get_battery_state`: Returns the battery state.
 A float value indicating the battery's state of charge, ranging [0.0, 1.0].
 If no motors are connected, it returns -1.0.
+4. `/control_tools`: Control the tools / actuators based on the ActuatorCommands message.
+5. `/stop_all_tools`: Stop all tools and prevent control for a predetermined duration.
+6. `/yield_all_tools`: Prevent control for a predetermined duration.
+7. `/config_request`: Use the farm-ng SDO protocol to send a config request to the dashboard.
 
 ## Safety and Operation
 

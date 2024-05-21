@@ -60,11 +60,10 @@ const sidebars = {
     },
     {
       "App Overviews": [
-        "apps/filter_app/filter-app",
+        "apps/launcher/launcher",
         "apps/autoplot_app/autoplot-app",
-        "apps/recorder_app/recorder-app",
-        "apps/file_manager_app/file-manager-app",
         "apps/camera_app/camera-app",
+        "apps/file_manager_app/file-manager-app",
       ],
     },
     {
@@ -148,9 +147,18 @@ const sidebars = {
     "hardware-tools/recommended-tools",
     "reference/faq",
     "support/github-101",
-    "brain/brain",
     {
       "items": [
+        "brain/brain",
+        "apps/filter_app/filter-app",
+        "apps/recorder_app/recorder-app",
+      ],
+      "label": "Deprecated",
+      "type": "category"
+    },
+    {
+      "items": [
+        "release-notes/release-023",
         "release-notes/release-022",
         "release-notes/release-021",
         "release-notes/release-02",

@@ -23,14 +23,14 @@ example is a basic way of showing how to access and decode the
 
 You can either run this example directly on a brain by `ssh`'ing in, or use your local PC.
 If using your local PC, it should be either connected to the same local network as the brain
-or linked to it through tailscale.
+or linked to it through [**tailscale**.](https://tailscale.com/)
 
 The requirements to run this example are to have a
 [**farm-ng brain**](/docs/brain/) running the `canbus service`, with a pendant attached to your Amiga.
 There will be no `/pendant` stream if your amiga does not have a wired pendant connected.
 
 At the current dashboard firmware release `v0.5.0`, the `PendantState` is not published on the CAN
-bus for pendant alternatives, including Kartech wireless remotes and the on-screen pendant.
+bus for pendant alternatives, including Kar-Tech wireless remotes and the on-screen pendant.
 
 ## `PendantState` details
 

@@ -26,7 +26,7 @@ To successfully run this example, you must use your local PC, as the example won
 work if executed directly from a brain (because of the popup window).
 Ensure that a [**farm-ng brain**](/docs/brain/) running Oak cameras is active.
 Your local PC should be either connected to the same local network as the brain
-or linked to it through tailscale.
+or linked to it through [**tailscale**.](https://tailscale.com/)
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 

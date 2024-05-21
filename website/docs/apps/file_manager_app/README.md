@@ -1,32 +1,50 @@
 ---
 id: file-manager-app
-title: File Manager App
+title: File Manager App Guide
 ---
 
-# File Manager App Guide
+The File Manager app is crucial for efficiently managing log files on your Amiga. With its user-friendly
+design, this app equips users with the tools needed to manage recorded log files and
+topic streams chosen in the [**Recorder**](/docs/apps/launcher/#recorder).
+Its simplicity and ease of use make it an essential tool for handling these files effectively.
 
-The File Manager app is an essential utility for the effective management of log files on your Amiga.
-Designed for simplicity and ease of use, this app provides users with the necessary tools to handle
-the log files created by our [Recorder App](../recorder_app).
+![one](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/e1f802a2-debe-4669-8af6-e523d8ba51a1)
 
-![Screenshot from 2023-12-07 16-22-41](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/37e712b1-31cf-42d7-a4ff-fcf6136649ed)
-
-## Key Features
-
-### Visualize Log Files
-
-- **File Listing**: The app lists all log files stored on the robot, providing users with a clear
-view of available data.
-- **File Details**: Alongside each file name, users can view the file size, making it easier to
-gauge the data volume at a glance.
+Log files are generated once a recording has been successfully initiated by pressing the
+**RECORD** button on the navigation bar or the **Start Recording** button in the
+[**Camera App**](/docs/apps/camera_app/).
 
 ### Manage Log Files
 
+- **File Listing**: The app lists all log files stored on the robot, providing users with a clear
+view of available data.
+- **File Details**: Each file carries a time stamp and a file size, making it easier to gauge the
+data volume at a glance.
+
 - **Delete**: Users can select and delete any log file.
 This feature is particularly useful for managing storage space and removing outdated or unnecessary data.
+
+### Visualize Log Files
+
+Log files can be viewed locally by selecting the checkbox next to the desired file and then
+pressing the open button. If the log file includes data from multiple camera streams, these can be
+chosen from the dropdown menu located at the upper left corner of the screen.
+
+![playback](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/3ce5bdc4-2f99-4bff-8dc2-24ea870779de)
+
+Transport controls enable you to move through image frames one by one or in multiples of ten.
+
+![transport](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/319473d7-bfd4-4e71-8142-cdf6264893c0)
 
 ### Transfer Files to USB Drive
 
 - **USB Copy**: If a USB drive is plugged into the robot, users can easily copy log files from the
 robot's storage to the USB drive.
 This functionality enhances data portability and facilitates easy sharing or backup of important logs.
+
+#### USB Requirements
+
+1. Your USB drive should be formatted as either `ext4` or `exFAT` for the app to detect your drive.
+2. USB drives with multiple partitions may fail to be detected.
+3. You should plug the drive into the brain AFTER booting up the brain and launching the app.
+4. [Recommended] `USB 3.0` devices will transfer files significantly faster than `USB 2.0` devices.

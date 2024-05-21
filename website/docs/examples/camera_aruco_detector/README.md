@@ -29,12 +29,12 @@ This overview provides a base understanding of the gRPC service the client you c
 :::
 
 In the [**Camera ArUco**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/camera_aruco_detector/main.py)
-example we are going show how to implement a simple Aruco marker detector
+example we are going show how to implement a simple ArUco marker detector
 using the [**OpenCV**](https://opencv.org/) library and the Camera service to
-detect and estimate the 6DoF pose of an Aruco marker useful for robot localization.
+detect and estimate the 6DoF pose of an ArUco marker useful for robot localization.
 
-To understand the basics of the Aruco marker detection and pose estimation, please
-refer to the [**OpenCV Aruco tutorial**](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html).
+To understand the basics of the ArUco marker detection and pose estimation, please
+refer to the [**OpenCV ArUco tutorial**](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html).
 
 We also recommend to read first the
 [**`Camera Client`**](/docs/examples/camera_client) and
@@ -44,7 +44,7 @@ To successfully run this example, you must use your local PC, as the example won
 work if executed directly from a brain (because of the popup window).
 Ensure that a [**farm-ng brain**](/docs/brain/) running Oak cameras is active.
 Your local PC should be either connected to the same local network as the brain
-or linked to it through tailscale.
+or linked to it through [**tailscale**.](https://tailscale.com/)
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
@@ -69,16 +69,16 @@ pip3 install -r requirements.txt
 This is will install the following dependencies:
     - `farm-ng-amiga` - the farm-ng python client library
     - `opencv-python` - the OpenCV python library
-    - `opencv-contrib-python` - the OpenCV python library with extra modules (needed for Aruco detection)
+    - `opencv-contrib-python` - the OpenCV python library with extra modules (needed for ArUco detection)
 
-### 3. The Aruco detector
+### 3. The ArUco detector
 
-In order to detect the Aruco markers, we need to create an Aruco detector object and
+In order to detect the ArUco markers, we need to create an ArUco detector object and
 configure it with the desired parameters. To do this, we'll create an auxiliary class
 `ArucoDetector` that will hold the detector object and the configuration parameters.
 
-In this example, we'll use the `DICT_6X6_250` Aruco dictionary type and a marker size of 0.1 meters
-to detect the Aruco markers following the [**OpenCV Aruco tutorial**](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html).
+In this example, we'll use the `DICT_6X6_250` ArUco dictionary type and a marker size of 0.1 meters
+to detect the ArUco markers following the [**OpenCV ArUco tutorial**](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html).
 
 ```python
 class ArucoDetector:
@@ -136,7 +136,7 @@ pose estimation solver.
         )
 ```
 
-As described in the [**Camera to Pointcloud**](/docs/examples/camera_pointcloud)
+As described in the [**Camera to Point Cloud**](/docs/examples/camera_pointcloud)
 tutorial, we need to create a camera intrinsics matrix
 from the camera calibration parameters. We'll create a utility function to do this.
 

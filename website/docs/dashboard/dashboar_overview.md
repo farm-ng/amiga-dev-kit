@@ -17,7 +17,7 @@ allowfullscreen></iframe>
 
 ## Description
 
-Farm-ng's Dashboard is a ruggedized, waterproof, outdoor-visible
+Farm-ng's Dashboard is a rugged, waterproof, outdoor-visible
 touch-screen display and machine controller - customizable
 through our ADK (Amiga-Dev-Kit) toolset!
 

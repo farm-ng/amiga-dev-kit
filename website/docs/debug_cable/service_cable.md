@@ -52,7 +52,7 @@ microcontroller.reset()
 **See flashing and operating system documentation for more**
 **information [here](//docs/intelligence-kit/brain/brain-v2/)**
 
-## Pinout
+## Pin-out
 
 | PIN | Description   | Typical Wire Color | Notes                      |
 | --- | ------------- | ------------------ | -------------------------- |

@@ -73,7 +73,7 @@ on their use.
 Each component has a node ID identifier used to identify either
 the intended recipient or the source component of each message
 sent on the CAN bus.
-In this way, the CAN Id (cobid) encodes both the type of message
+In this way, the CAN Id (COB-ID) encodes both the type of message
 and either the intended recipient or the source of each message.
 
 :::tip

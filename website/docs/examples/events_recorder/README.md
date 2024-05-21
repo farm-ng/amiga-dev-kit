@@ -23,7 +23,7 @@ the `EventClient` class.
 You can either run this example directly on a brain by `ssh`'ing in,
 or use your local PC.
 If using your local PC, it should be either connected to the same local network as the brain
-or linked to it through tailscale.
+or linked to it through [**tailscale**.](https://tailscale.com/)
 
 ### 1. Install the [farm-ng Brain ADK package](/docs/brain/brain-install)
 
@@ -44,7 +44,7 @@ source venv/bin/activate
 ```
 
 ```bash
-# assuming you're already in the amiga-dev-kit/ directory
+# Assuming you're already in the amiga-dev-kit/ directory
 cd farm-ng-amiga/py/examples/events_recorder
 ```
 
@@ -56,24 +56,24 @@ pip3 install -r requirements.txt
 
 ### 4. Code overview
 
-In the provided example, we show how to implement the `/start` and `/stop`
+In the provided example, we show how to implement the `recorder/start` and `recorder/stop`
 requests to start and stop the recording of events. We also provide two example profiles
 `record_camera_config.json` and `record_fiter_config.json` that can be used to record the
 camera and filter events.
 
 ```python
 async def start_recording(
-    service_config: EventServiceConfig, recording_profile: EventServiceConfigList
+    service_config: EventServiceConfig, recording_profile: EventServiceConfig
 ) -> None:
     reply = await EventClient(service_config).request_reply(
-        "/start", recording_profile, decode=True
+        "recorder/start", recording_profile, decode=True
     )
     print(reply)
 
 
 async def stop_recording(service_config: EventServiceConfig) -> None:
     reply = await EventClient(service_config).request_reply(
-        "/stop", Empty(), decode=True
+        "recorder/stop", Empty(), decode=True
     )
     print(reply)
 
@@ -93,14 +93,14 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    # create a client to the camera service
+    # Create a client to the Recorder service
     service_config: EventServiceConfig = proto_from_json_file(
         args.service_config, EventServiceConfig()
     )
 
     if args.command == "start_recording":
         recording_profile = proto_from_json_file(
-            args.recording_profile, EventServiceConfigList()
+            args.recording_profile, EventServiceConfig()
         )
         asyncio.run(start_recording(service_config, recording_profile))
 
@@ -127,7 +127,7 @@ python main.py --service-config service_config.json start_recording --recording-
 You should see a similar output:
 
 ```bash
-value: "/mnt/data/2023_09_28_10_24_07_212687_lead-mango"
+string_value: "/mnt/data/2023_09_28_10_24_07_212687_lead-mango"
 ```
 
 In order to stop the recording, run the following command:
