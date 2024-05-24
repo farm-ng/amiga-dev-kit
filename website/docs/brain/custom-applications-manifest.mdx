@@ -65,12 +65,15 @@ all the supported fields and values:
 The following fields are supported for services:
 
 - `name`: The name of the service. This name must be unique and cannot be repeated in the same manifest file. It will be used as the name of the systemd service.
-- `type`: The type of the service. This field must be set to `service` or `app`.
+- `type`: The type of the service. This field must be set to either:
+  - `app`: An application which can be launched from the launcher.
+  - `service`: A background service.
 - `exec_cmd`: The command to execute to start the service. Usually the absolute path to the executable and could include your own virtual environment.
 - `args`: Optional, list of arguments to pass to the executable.
-- `autostart`: Whether the service should be started automatically when the brain boots. Default is `false`.
-- `http_gui_port`: Optional, port where the service will serve the GUI in case of the webapps.
+- `autostart`: Optional, whether the service should be restarted automatically when it exits. Default is `false`.
+- `app_route`: Optional, port where the service will serve the GUI when launching a web app.
 - `display_name`: Optional, name of the service to display in the launcher.
+- `deps`: Optional, a list of background services in the same manifest that must be started first.
 
 
 ## Advanced usage
@@ -95,7 +98,7 @@ One example is the `farm-ng-user-[<your_username>]` manifest file which contains
       "deps": [
         "example-service"
       ],
-      "http_gui_port": 8042,
+      "app_route": "8042",
       "display_name": "Example App"
     }
   }
