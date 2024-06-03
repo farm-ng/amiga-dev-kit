@@ -33,6 +33,22 @@ const sidebars = {
     "amiga_quick_start/amiga-quick-start",
     {
       "items": [
+        "hardware/mechanics",
+        "hardware/mechanics_otr"
+      ],
+      "label": "Mechanics",
+      "type": "category"
+    },
+    {
+      "items": [
+        "hardware/electronics",
+        "hardware/electronics_brain",
+      ],
+      "label": "Electronics",
+      "type": "category"
+    },
+    {
+      "items": [
         "dashboard/dashboard-overview",
         "dashboard/dashboard-user-guide",
         "dashboard/control-states",

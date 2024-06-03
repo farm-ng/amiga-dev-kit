@@ -212,6 +212,10 @@ untouched.
 
 ![gps ntrip](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/794f06ab-9df2-4a96-91d1-1cfa6aa2e172)
 
+:::caution Virtual Reference Station (vrs) not supported 
+Current AmigaOS GPS service assumes a static base station. If you are using a service that provide RTK corrections referent to a VRS (Virtual Reference Station), your GPS service will recognize it, but coordinates will experience significant offset after every reboot
+:::
+
 :::tip
 For California users, [**CRTN**](http://sopac-csrc.ucsd.edu/index.php/crtn/) offers free
 access to base stations across the state.

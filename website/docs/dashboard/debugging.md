@@ -24,15 +24,51 @@ Pendant error codes are formatted as: `0x00`
 
 ## Motor Error
 
-Motor error messages are formatted as: `motor_10_codes = (0x00, 0x0000, 0x00, 0x00, 0x0000, 0x0000)`
+Motor error messages are formatted as: `motor_10_codes = 0x00 (0x0000 r 0x00 f 0x00.0x0000 w 0x0000)`
 
 The different fields are: **Error_code, EMCY code, Error registry, faults 2, faults 1, warning**
 
 ### Decoding Process
 
-1. Identify the error category (Faults1, Faults2, Error Register, or Warnings).
+1. Identify the error category (Error Code, Faults1, Faults2, Error Register, or Warnings).
 2. Check the bit positions in the error code.
 3. Refer to the respective section for the error description.
+
+### Error Code Bits
+
+- `0`: NOT_OPERATIONAL_HEARTBEAT
+- `1`: FAULT_MOTOR_STATE
+- `2`: HEARTBEAT_TIMEOUT
+- `3`: MOTOR_STATE_TIMEOUT
+- `4`: EMCY_MESSAGE
+- `5`: NEVER_STARTED
+
+### EMCY Code Bits
+
+- `12`: NOT DEFINED (only possible value now. Reserved for future use).
+
+  
+### Error Register Bits (0-7)
+
+- `0`: GENERIC_ERROR
+- `1`: CURRENT
+- `2`: VOLTAGE
+- `3`: TEMPERATURE
+- `4`: COMS_ERROR
+- `5`: DEV_PROFILE_SPECIFIC
+- `6`: RESERVED (ALWAYS 0)
+- `7`: MANU_SPECIFIC
+
+### Faults2 Bits (0-7)
+
+- `0`: PARAMETER_CRC
+- `1`: CURRENT_SCALING
+- `2`: VOLTAGE_SCALING
+- `3`: HEADLIGHT_UNDER_VOLTAGE
+- `4`: TORQUE_SENSOR
+- `5`: CAN_BUS
+- `6`: HALL_STALL
+- `7`: BOOTLOADER
 
 ### Faults1 Bits (0-15)
 
@@ -53,27 +89,6 @@ The different fields are: **Error_code, EMCY code, Error registry, faults 2, fau
 - `14`: POST_DYNAMIC_GATING_TEST
 - `15`: INSTANTANEOUS_UNDER_VOLTAGE
 
-### Faults2 Bits (0-7)
-
-- `0`: PARAMETER_CRC
-- `1`: CURRENT_SCALING
-- `2`: VOLTAGE_SCALING
-- `3`: HEADLIGHT_UNDER_VOLTAGE
-- `4`: TORQUE_SENSOR
-- `5`: CAN_BUS
-- `6`: HALL_STALL
-- `7`: BOOTLOADER
-
-### Error Register Bits (0-7)
-
-- `0`: GENERIC_ERROR
-- `1`: CURRENT
-- `2`: VOLTAGE
-- `3`: TEMPERATURE
-- `4`: COMS_ERROR
-- `5`: DEV_PROFILE_SPECIFIC
-- `6`: RESERVED (ALWAYS 0)
-- `7`: MANU_SPECIFIC
 
 ### Warnings Bits (0-15)
 
@@ -180,24 +195,45 @@ Consider `Motor 12: 13 (1000 r 21 f 00.0020 w 0022)`.
 
 Breaking Down the Error Message:
 
-- 1000: This is the EMCY code indicating a specific error or emergency condition.
+- 13: represents the hexadecimal 0x13.
+- 1000: This is the EMCY code meant for specific emergency messages. We are not currently using it.
 - r 21: This is the error registry or status code.
 - f 00 and 0020: These are the Faults error code in hexadecimal.
 - w 0022: This is a Warnings code in hexadecimal.
 
-Let's convert 00.0020 from hexadecimal to binary and match it against the Faults1 Bits guide.
+Let's convert the error message (13) to Binary and match against Error Codes:
+- In hexadecimal, 1 = 0001 and 3 = 0011, therefore 0x13 = 0001 0011 in binary.
+- Decoding which bits are set (value = 1) we have, from right to left, `2**0`, `2**1`, and `2**4`.
+- Matching with Motor Error Description, we have:
+  - `2**0`: NOT_OPERATIONAL_HEARTBEAT
+  - `2**1`: FAULT_MOTOR_STATE
+  - `2**4`: EMCY_MESSAGE
 
+Now let's convert the Error registry the same way:
+- In hexadecimal, 2 = 0010 and 1 = 0001, therefore 0x21 = 0010 0001 in binary.
+- Decoding which bits are set (value = 1) we have, from right to left, `2**0`, `2**5`.
+- Matching with Motor Error Description, we have:
+  - `2**0`: GENERIC_ERROR
+  - `2**5`: DEV_PROFILE_SPECIFIC
+
+Let's convert 00.0020 from hexadecimal to binary and match it against the Faults2 and Faults1 Bits guide:
+
+- Faults2 is 00, which indicate no bits are set.
 - Hexadecimal 0020 converts to binary 0000 0000 0010 0000.
 - The bit set is in position 5, counting from 0 (sixth bit).
 - Referring to the Faults1 guide, position 5 corresponds to MOTOR_HALL_SENSOR_FAULT.
 
-Interpreting Warnings (0022):
+Finally, Interpreting Warnings (0022):
 
 - Hexadecimal 0022 converts to binary 0000 0000 0010 0010.
 - The bits set are in positions 1 and 5, counting from 0 (second and sixth bits).
 - Referring to the Warnings Bits list:
   - Bit position 1 corresponds to HALL_SENSOR.
   - Bit position 5 corresponds to HALL_ILLEGAL_SECTOR.
+
+Note that hardware errors usually trigger multiple error flags, so you will need to interpret the message as a whole. 
+In our example, therefore, we can see that motor C have a faulty HALL sensor (what actually counts its RPM). 
+In this specific situation we recommend you contact us to replace the motor.
 
 The guide should help in quickly identifying and understanding specific errors based on their categories
 and bit positions.

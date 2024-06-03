@@ -101,25 +101,33 @@ In this screen, you can make configuration changes to your Amiga's:
 General configuration settings are located in this tab.
 The configuration changes you can make on this page are:
 
-- `wheel_track`
-- `v_max_default`
-- `max_turn_rate`
-- `min_turn_rate`
-- `turtle_v`
-- `turtle_turn_rate`
-- `max_accel`
-- `flip_joystick`
-- `steering_gamma`
-- `batt_lo`
-- `batt_hi`
-- `pto_gear_ratio`
-- `default_pto_rpm`
-- `min_pto_rpm`
-- `max_pto_rpm`
+- `wheel_track`: width of your Amiga, from center of A motor to center of B motor.
+- `wheel_front_track`: width of front wheels, from center of C motor to center of D motor. **Use `0` if equal to `wheel_track`**
+- `wheel_back_reverse`: reverse B and C motors rotation. Used only in the very specific case you have all 4 wheels in line.
+- `v_max_default`: default max speed setting when your dashboard reboots.
+- `max_turn_rate`: maximum angular speed (in RPM) when rotating the robot on its center (zero turn).
+- `min_turn_rate`: minimum angular speed (in RPM) when rotating the robot on its center (zero turn).
+- `turtle_v`: maximum linear speed the robot will drive when battery is lower than `batt_hi` threshold.
+- `turtle_turn_rate`: maximum angular speed (in RPM) the robot will turn on its axis when battery is lower than `batt_hi` threshold.
+- `max_accel`: maximum allowed acceleration for all motors
+- `flip_joystick`: reverse joystick controls (useful when user operates facing robots back, for example)
+- `pendant_deadband`: senstivity to centers
+- `steering_gamma`: responsiveness to steering (travel of gas pedal)
+- `batt_lo`: for turtle
+- `batt_hi`: for display only
+- `pto0_gear_ratio`:
+- `pto1_gear_ratio`:
+- `default_pto_rpm`:
+- `min_pto_rpm`:
+- `max_pto_rpm`:
 - `m10_on` (motor A on)
 - `m11_on` (motor B on)
 - `m12_on` (motor C on)
 - `m13_on` (motor D on)
+- `auto_hold_mode`: power 
+- `lang`: 0 for English, 1 for Spanish, 2 for French. Can be changed in Setup page directly.
+- `units_dst`: better change on speedometer
+- `units_temp`: better change on the temperture gauge
 
 :::caution
 You should press the E-stop button prior to turning the motors on / off

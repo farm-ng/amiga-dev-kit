@@ -79,6 +79,10 @@ The required credentials include:
   - **NOTE**: The robot needs to be connected to Wi-Fi for `relposned` messages.
  However, an internet connection is not required for `pvt` messages.
 
+:::caution Virtual Reference Station (vrs) not supported 
+Current AmigaOS GPS service assumes a static base station. If you are using a service that provide RTK corrections referent to a VRS (Virtual Reference Station), your coordinates will experience a significant offset after every reboot. <br/><br/> Consult your service provider and/or support@farm-ng.com for more info.
+:::
+
 :::info NTRIP (Network Transport of RTCM via Internet Protocol)
 NTRIP is a protocol for streaming differential GPS (DGPS) data over the internet, enabling RTK
 corrections in areas with cellular coverage.
