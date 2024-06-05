@@ -43,6 +43,7 @@ const sidebars = {
       "items": [
         "hardware/electronics",
         "hardware/electronics_brain",
+        "hardware/charging",
       ],
       "label": "Electronics",
       "type": "category"

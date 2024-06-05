@@ -7,7 +7,7 @@ title: Base Amiga
 
 Your Amiga is a modular platform designed to adapt to different activities and attachments, and we encourage our customers to experiment with different configurations based on their use case. To achieve maximum performance of your Amiga, there are a few design rules you should observe:
 
-* The ratio between your Amiga's length and width should ideally be 0.6 or less.
+* The ratio between your Amiga's length and width should be 0.6 or less.
   * E.g., a 48" wheelbase Amiga should have a track width of approximately `48 * 0.6 ~ 27 inches`.
 
 ![image of Amiga schematics](./assets/amiga_draw.png)
@@ -25,7 +25,7 @@ Operating with larger ratios will lead to premature overheating of your motors a
 
 ![image of a fork panel open](./assets/open_panel_view.jpeg) ![image of a fork from the top](./assets/fork_top.jpeg)
 
-* When tightening them back, make sure the fork tops are parallel to the ground by tightening the bolts evenly. If the inner clamps that keep the Truck Bars locked are uneven, the wheels will not be perpendicular to the ground. We recommend 23 lb.ft (310 N.m) of torque.
+* When tightening them back, make sure the fork tops are parallel to the ground by tightening the bolts evenly. If the inner clamps that keep the Truck Bars locked are uneven, the wheels will not be perpendicular to the ground.
 
 :::warning Amiga's geometry
 When you change your Amiga's size, remember to change the `wheel_track` parameter on your [dashboard](../dashboard/dashboard-user-guide#configuration-settings) and your [Brain Settings](../apps/launcher/#robot-geometry) (if applicable).<br/><br/>

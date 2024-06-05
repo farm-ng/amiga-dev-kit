@@ -81,6 +81,13 @@ From this screen, you will be able to:
 You can also use micro-controllers to command your Amiga.
 For an example of how to do so, please follow the instructions in this [FPV example](/docs/examples/FPV/)
 
+:::info Tool Control when AUTO CONTROL is ON
+Starting on Dashboard Firmware `v0.5.0` the Brain have tool control capabilities.<br/><br/>
+Therefore, when Auto Control is ENABLED, the pendant commands are bypassed and will not work. Use the software controls in our Autoplot app or your custom application.<br/><br/>
+If manual control is needed, disable Auto Control on E-STOP your Amiga using the physical button.
+:::
+
+
 ## General Settings
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6dbb13d1-679b-4b7a-8c8c-8c97f6c5b585"/>
@@ -101,6 +108,11 @@ In this screen, you can make configuration changes to your Amiga's:
 General configuration settings are located in this tab.
 The configuration changes you can make on this page are:
 
+:::note Engineering units
+Unless stated otherwise, linear engineering units will be determined by your settings, or by pressing the digital speed on your main screen.<br/><br/>
+Similarly, angular units refer to counterclockwise rotation around the Z axis of the [Robot Frame](../concepts/transforms_and_poses/#frames-of-reference) (origin at the ground level at the center of the robot).
+:::
+
 - `wheel_track`: width of your Amiga, from center of A motor to center of B motor.
 - `wheel_front_track`: width of front wheels, from center of C motor to center of D motor. **Use `0` if equal to `wheel_track`**
 - `wheel_back_reverse`: reverse B and C motors rotation. Used only in the very specific case you have all 4 wheels in line.
@@ -109,30 +121,34 @@ The configuration changes you can make on this page are:
 - `min_turn_rate`: minimum angular speed (in RPM) when rotating the robot on its center (zero turn).
 - `turtle_v`: maximum linear speed the robot will drive when battery is lower than `batt_hi` threshold.
 - `turtle_turn_rate`: maximum angular speed (in RPM) the robot will turn on its axis when battery is lower than `batt_hi` threshold.
-- `max_accel`: maximum allowed acceleration for all motors
+- `max_accel`: maximum angular acceleration (in `rad/s**2`)
 - `flip_joystick`: reverse joystick controls (useful when user operates facing robots back, for example)
-- `pendant_deadband`: senstivity to centers
-- `steering_gamma`: responsiveness to steering (travel of gas pedal)
-- `batt_lo`: for turtle
-- `batt_hi`: for display only
-- `pto0_gear_ratio`:
-- `pto1_gear_ratio`:
-- `default_pto_rpm`:
-- `min_pto_rpm`:
-- `max_pto_rpm`:
-- `m10_on` (motor A on)
-- `m11_on` (motor B on)
-- `m12_on` (motor C on)
-- `m13_on` (motor D on)
-- `auto_hold_mode`: power 
+- `pendant_deadband`: sensitivity of the pendant's joystick. Reduce it if you want your pendant to respond to smaller movements. **Too small values may cause unstable behavior.**
+- `steering_gamma`: responsiveness of the pendant's joystick to steering. Larger values lead to steeper curves.
+- `batt_lo`: threshold in % where the robot will switch to turtle mode and be limited to `turtle_v` speed. Used to allow user to drive to a safe location before complete shutdown.
+- `batt_hi`: threshold where the display will show full battery.
+- `pto0_gear_ratio`: gear ratio of your first PTO attachment.
+- `pto1_gear_ratio`: gear ratio of your second PTO attachment.
+- `default_pto_rpm`: default PTO rotation for both PTOs.
+- `min_pto_rpm`: minimum limit for both PTO attachments.
+- `max_pto_rpm`: maximum limit for both PTO attachments.
+- `m10_on`: boolean to turn motor A on
+- `m11_on`: boolean to turn motor B on
+- `m12_on`: boolean to turn motor C on
+- `m13_on`: boolean to turn motor D on
+- `auto_hold_mode`: when ON, increase motor torque on stops, increasing precision when stopped on slopes. **This setting increase power consumption considerably and should be used only in very specific cases. Contact support@farm-ng.com to explore other options.**
 - `lang`: 0 for English, 1 for Spanish, 2 for French. Can be changed in Setup page directly.
-- `units_dst`: better change on speedometer
-- `units_temp`: better change on the temperture gauge
+- `units_dst`: speed units on your main gauge. Press your digital speedometer for verbose options.
+- `units_temp`: temperature units on your dashboard. Press the thermometer on you main display for verbose options.
 
 :::caution
 You should press the E-stop button prior to turning the motors on / off
 (with `m10_on`, `m11_on`, `m12_on`, `m13_on`).
 Failure to do so will brake the wheels until it is pressed -> released.
+:::
+
+:::tip pro tip
+When in question of your Dashboard settings, go to Advanced Settings > Factory Settings Reset, and get the default values set all at once.
 :::
 
 ### The Pendant Settings
