@@ -25,3 +25,4 @@ Finally, the GPS antenna uses an SMA cable to provide RTK corrections to the Bra
 When changing where the Intelligence Kit is mounted in your Amiga, make sure you update the Robot Geometry parameters on your [Brain Settings](../apps/launcher/#robot-geometry).
 :::
 
+

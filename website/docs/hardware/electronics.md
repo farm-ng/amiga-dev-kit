@@ -33,3 +33,4 @@ The ESTOP circuit is crucial for your Amiga, receiving 24 VDC from the Power Buc
 Inside each fork panel, blue M8 Tees allow motor controllers to receive the E-STOP signal. Extra tees can be added for additional E-STOP cables, useful for operating tools. Farm-ng PTOs and H-Bridges require an E-STOP signal to operate.
 
 The STOP button physically opens the circuit, cutting power to the motors. It includes a second connector for adding more buttons; if not in use, this connector should have a termination loop. **Without the termination loop the circuit remains open, leaving the robot in [E-STOP status](../dashboard/control-states#state-descriptions)**.
+

@@ -48,3 +48,4 @@ If you change your Intelligence Kit mount localtion, remember to change the GPS 
 **If there is a mismatch between your physical setup and your geometry settings in your Brain, you will likely experience offsets when following tracks.**
 :::
 
+
