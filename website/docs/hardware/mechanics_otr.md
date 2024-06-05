@@ -14,3 +14,4 @@ Use the support bars marked in the picture to align your suspension kit vertical
 
 :::tip Aligning your amiga suspension
 When changing payloads in your Amiga, remember to balance your robot using the support bars. A well balanced machine reduces stress on your motors, reduce risks of overheating, and improves your machine life spam.
+:::
