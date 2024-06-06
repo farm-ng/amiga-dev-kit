@@ -44,7 +44,7 @@ If you have an Intelligence Kit, remember to change the `wheelbase` parameter on
 * You can move the pendant using the existing U-clamps anywhere on your Amiga. If the cables are not long enough, you can change their connections to any of the forks or order extensions from our [online shop](https://farm-ng.com/products/la-maquina-amiga).
 * If you move the pendant to the reverse side of the robot, you can use the `flip_joystick` parameter on your [dashboard](../dashboard/dashboard-user-guide#configuration-settings).
 :::info Amiga's Geometry when using Intelligence Kit
-If you change your Intelligence Kit mount localtion, remember to change the GPS and IMU offset parameter on your [Brain Settings](../apps/launcher/#robot-geometry).<br/><br/>
+If you change your Intelligence Kit mount location, remember to change the GPS and IMU offset parameter on your [Brain Settings](../apps/launcher/#robot-geometry).<br/><br/>
 **If there is a mismatch between your physical setup and your geometry settings in your Brain, you will likely experience offsets when following tracks.**
 :::
 
