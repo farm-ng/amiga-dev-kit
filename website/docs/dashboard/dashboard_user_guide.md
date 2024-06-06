@@ -83,10 +83,10 @@ For an example of how to do so, please follow the instructions in this [FPV exam
 
 :::info Tool Control when AUTO CONTROL is ON
 Starting on Dashboard Firmware `v0.5.0` the Brain have tool control capabilities.<br/><br/>
-Therefore, when Auto Control is ENABLED, the pendant commands are bypassed and will not work. Use the software controls in our Autoplot app or your custom application.<br/><br/>
+Therefore, when Auto Control is ENABLED, the pendant commands are bypassed and will not work. Use
+the software controls in our Autoplot app or your custom application.<br/><br/>
 If manual control is needed, disable Auto Control on E-STOP your Amiga using the physical button.
 :::
-
 
 ## General Settings
 
@@ -109,23 +109,34 @@ General configuration settings are located in this tab.
 The configuration changes you can make on this page are:
 
 :::note Engineering units
-Unless stated otherwise, linear engineering units will be determined by your settings, or by pressing the digital speed on your main screen.<br/><br/>
-Similarly, angular units refer to counterclockwise rotation around the Z axis of the [Robot Frame](../concepts/transforms_and_poses/#frames-of-reference) (origin at the ground level at the center of the robot).
+Unless stated otherwise, linear engineering units will be determined by your settings, or by
+pressing the digital speed on your main screen.<br/><br/>
+Similarly, angular units refer to counterclockwise rotation around the Z axis of the
+[Robot Frame](../concepts/transforms_and_poses/#frames-of-reference) (origin at the ground level
+at the center of the robot).
 :::
 
 - `wheel_track`: width of your Amiga, from center of A motor to center of B motor.
-- `wheel_front_track`: width of front wheels, from center of C motor to center of D motor. **Use `0` if equal to `wheel_track`**
-- `wheel_back_reverse`: reverse B and C motors rotation. Used only in the very specific case you have all 4 wheels in line.
+- `wheel_front_track`: width of front wheels, from center of C motor to center of D motor.
+**Use `0` if equal to `wheel_track`**
+- `wheel_back_reverse`: reverse B and C motors rotation. Used only in the very specific case you
+have all 4 wheels in line.
 - `v_max_default`: default max speed setting when your dashboard reboots.
 - `max_turn_rate`: maximum angular speed (in RPM) when rotating the robot on its center (zero turn).
 - `min_turn_rate`: minimum angular speed (in RPM) when rotating the robot on its center (zero turn).
-- `turtle_v`: maximum linear speed the robot will drive when battery is lower than `batt_hi` threshold.
-- `turtle_turn_rate`: maximum angular speed (in RPM) the robot will turn on its axis when battery is lower than `batt_hi` threshold.
+- `turtle_v`: maximum linear speed the robot will drive when battery is lower than `batt_hi`
+threshold.
+- `turtle_turn_rate`: maximum angular speed (in RPM) the robot will turn on its axis when battery
+is lower than `batt_hi` threshold.
 - `max_accel`: maximum angular acceleration (in `rad/s**2`)
-- `flip_joystick`: reverse joystick controls (useful when user operates facing robots back, for example)
-- `pendant_deadband`: sensitivity of the pendant's joystick. Reduce it if you want your pendant to respond to smaller movements. **Too small values may cause unstable behavior.**
-- `steering_gamma`: responsiveness of the pendant's joystick to steering. Larger values lead to steeper curves.
-- `batt_lo`: threshold in % where the robot will switch to turtle mode and be limited to `turtle_v` speed. Used to allow user to drive to a safe location before complete shutdown.
+- `flip_joystick`: reverse joystick controls (useful when user operates facing robots back, for
+example)
+- `pendant_deadband`: sensitivity of the pendant's joystick. Reduce it if you want your pendant to
+respond to smaller movements. **Too small values may cause unstable behavior.**
+- `steering_gamma`: responsiveness of the pendant's joystick to steering. Larger values lead to
+steeper curves.
+- `batt_lo`: threshold in % where the robot will switch to turtle mode and be limited to `turtle_v`
+speed. Used to allow user to drive to a safe location before complete shutdown.
 - `batt_hi`: threshold where the display will show full battery.
 - `pto0_gear_ratio`: gear ratio of your first PTO attachment.
 - `pto1_gear_ratio`: gear ratio of your second PTO attachment.
@@ -136,10 +147,13 @@ Similarly, angular units refer to counterclockwise rotation around the Z axis of
 - `m11_on`: boolean to turn motor B on
 - `m12_on`: boolean to turn motor C on
 - `m13_on`: boolean to turn motor D on
-- `auto_hold_mode`: when ON, increase motor torque on stops, increasing precision when stopped on slopes. **This setting increase power consumption considerably and should be used only in very specific cases. Contact support@farm-ng.com to explore other options.**
+- `auto_hold_mode`: when ON, increase motor torque on stops, increasing precision when stopped on
+slopes. **This setting increase power consumption considerably and should be used only in very
+specific cases. Contact support@farm-ng.com to explore other options.**
 - `lang`: 0 for English, 1 for Spanish, 2 for French. Can be changed in Setup page directly.
 - `units_dst`: speed units on your main gauge. Press your digital speedometer for verbose options.
-- `units_temp`: temperature units on your dashboard. Press the thermometer on you main display for verbose options.
+- `units_temp`: temperature units on your dashboard. Press the thermometer on you main display for
+verbose options.
 
 :::caution
 You should press the E-stop button prior to turning the motors on / off
@@ -148,15 +162,16 @@ Failure to do so will brake the wheels until it is pressed -> released.
 :::
 
 :::tip pro tip
-When in question of your Dashboard settings, go to Advanced Settings > Factory Settings Reset, and get the default values set all at once.
+When in question of your Dashboard settings, go to Advanced Settings > Factory Settings Reset, and
+get the default values set all at once.
 :::
 
 ### The Pendant Settings
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/b458227f-3422-4c43-8602-58c56b1c0dba"/>
 
-This is the hub for the pendant. Here is where you can confirm data reception and overall functionality.
-Pressing on the icon will take you to the calibration screen.
+This is the hub for the pendant. Here is where you can confirm data reception and overall
+functionality. Pressing on the icon will take you to the calibration screen.
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/a73710af-f00e-4c34-a492-c487f7380e22"/>
 
@@ -167,9 +182,9 @@ A green square around the center dot indicates that the your pendant is properly
 A purple square indicates the need to re-calibrate your pendant.
 
 :::caution
-If your Amiga begins to move on its own at start up, chances are that your pendant needs to be calibrated.
-With the above image in mind (purple square around the white dot), your Amiga would move forwards
-and towards the right at start up.
+If your Amiga begins to move on its own at start up, chances are that your pendant needs to be
+calibrated. With the above image in mind (purple square around the white dot), your Amiga would
+move forwards and towards the right at start up.
 :::
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/8bc4980b-d6f4-445b-b772-0b7e46b7eb1a"/>
@@ -177,7 +192,8 @@ and towards the right at start up.
 Pressing the Pendant image on the right will show the latest button configurations.
 
 :::tip
-The arrows (up/down/left/right) in the center of the pendant are used to select and engage with the H-Bridge(s).
+The arrows (up/down/left/right) in the center of the pendant are used to select and engage with the
+H-Bridge(s).
 :::
 
 <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/0f880f2a-3958-4066-989d-d68b68547665"/>

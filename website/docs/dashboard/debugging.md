@@ -88,7 +88,6 @@ The different fields are: **Error_code, EMCY code, Error registry, faults 2, fau
 - `14`: POST_DYNAMIC_GATING_TEST
 - `15`: INSTANTANEOUS_UNDER_VOLTAGE
 
-
 ### Warnings Bits (0-15)
 
 - `0`: COMMUNICATION_TIMEOUT
@@ -201,6 +200,7 @@ Breaking Down the Error Message:
 - w 0022: This is a Warnings code in hexadecimal.
 
 Let's convert the error message (13) to Binary and match against Error Codes:
+
 - In hexadecimal, 1 = 0001 and 3 = 0011, therefore 0x13 = 0001 0011 in binary.
 - Decoding which bits are set (value = 1) we have, from right to left, `2**0`, `2**1`, and `2**4`.
 - Matching with Motor Error Description, we have:
@@ -209,6 +209,7 @@ Let's convert the error message (13) to Binary and match against Error Codes:
   - `2**4`: EMCY_MESSAGE
 
 Now let's convert the Error registry the same way:
+
 - In hexadecimal, 2 = 0010 and 1 = 0001, therefore 0x21 = 0010 0001 in binary.
 - Decoding which bits are set (value = 1) we have, from right to left, `2**0`, `2**5`.
 - Matching with Motor Error Description, we have:
@@ -230,10 +231,10 @@ Finally, Interpreting Warnings (0022):
   - Bit position 1 corresponds to HALL_SENSOR.
   - Bit position 5 corresponds to HALL_ILLEGAL_SECTOR.
 
-Note that hardware errors usually trigger multiple error flags, so you will need to interpret the message as a whole.
-In our example, therefore, we can see that motor C have a faulty HALL sensor (what actually counts its RPM).
-In this specific situation we recommend you contact us to replace the motor.
+Note that hardware errors usually trigger multiple error flags, so you will need to interpret the
+message as a whole.
+In our example, therefore, we can see that motor C have a faulty HALL sensor (what actually counts
+its RPM). In this specific situation we recommend you contact us to replace the motor.
 
-The guide should help in quickly identifying and understanding specific errors based on their categories
-and bit positions.
-
+The guide should help in quickly identifying and understanding specific errors based on their
+categories and bit positions.

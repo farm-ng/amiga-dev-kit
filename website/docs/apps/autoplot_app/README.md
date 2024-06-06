@@ -195,12 +195,15 @@ Click on the icon to visualize error's details.
 
 ![fail](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/9bd8b212-3286-4bac-9e40-2ec86b9ff11d)
 
-- If the robot is following tracks but with an small offset (up to 30 cm or 12 inches), your RTK service may need extra time to
-improve the accuracy of its connection. This is prone to happen when more than 12 km (8 miles) of your base station, when operting under
-cloudy conditions, and/or local topography. Driving the robot around for a few minutes tends to minimize the problem.
+- If the robot is following tracks but with an small offset (up to 30 cm or 12 inches), your RTK
+service may need extra time to improve the accuracy of its connection. This is prone to happen when
+more than 12 km (8 miles) of your base station, when operating under cloudy conditions, and/or
+local topography. Driving the robot around for a few minutes tends to minimize the problem.
 
-- If you see tracks with an expressive offset (larger than 0.5 m or 2 feet), verify if your RTK-correction service provider is
-using a VRS (Virtual Reference Station). These stations change their reference system after every reboot and are not supported at this moment. We recommend switching to a service that use statical base stations or recording new paths after every reboot.
+- If you see tracks with an expressive offset (larger than 0.5 m or 2 feet), verify if your
+RTK-correction service provider is using a VRS (Virtual Reference Station). These stations change
+their reference system after every reboot and are not supported at this moment. We recommend
+switching to a service that use statical base stations or recording new paths after every reboot.
 
 Occasionally, track following might fail.
 An error message will appear and the **Start Path** button will switch to **Error-Check status**.
