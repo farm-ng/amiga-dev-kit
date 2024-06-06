@@ -18,11 +18,15 @@ Each fork also includes an additional Anderson connector for charging or connect
 
 ## CAN Bus
 
-Your Amiga uses a CAN network to send control messages between the dashboard, pendant, motors, and tools (if available). This network operates at 24 VDC provided by the Power Buck installed in one of the forks (typically fork B). To prevent overloads on the CAN Bus 
+Your Amiga uses a CAN network to send control messages between the dashboard, pendant, motors, and tools (if available). This network operates at 24 VDC provided by the Power Buck installed in one of the forks (typically fork B). To prevent current surges on the CAN Bus (and on the ESTOP circuit), there is a fuse box right out of the Power Buck. It uses 10 Amps automotive fuses.
 
 ![schematics of CAN Bus](./assets/can.png)
 
 Inside each fork panel, NMEA-2000 hubs connect motor controllers to the CAN network. Extra ports can be used to connect the Dashboard, Pendant, or other CAN devices without needing longer cables. Termination connectors are present at the end of the CAN network and are essential for proper system function and network debugging.
+
+:::tip pro tip
+When you can't detect power on your CAN bus (red and black wires), there is a high chance you have a blown fuse. Inspect your fuse visually  and/or using a multimeter before proceeding with troubleshooting.
+:::
 
 ## ESTOP Circuit
 The ESTOP circuit is crucial for your Amiga, receiving 24 VDC from the Power Buck and distributing it via M8 connectors to the motor controllers and the physical STOP button.

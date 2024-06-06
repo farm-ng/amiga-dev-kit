@@ -15,7 +15,7 @@ To charge your batteries, remove them from the robot, lift the handle and connec
 Your charger can output power at 2 A (max), which will charge your 15 Ah in around 6 hours, depending on the buffer you leave (using `batt-lo` parameter on your [dashboard settings](../dashboard/dashboard-user-guide#configuration-settings))
 :::
 
-Alternatively, you can use a in-vehicle charging connected directly to your spare Anderson connectors. 
+Alternatively, you can use a in-vehicle charging connected directly to your spare Anderson connectors.
 
 ![Amiga's in vehicle charging](../hardware/assets/charger.jpg)
 
