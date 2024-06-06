@@ -47,7 +47,6 @@ The different fields are: **Error_code, EMCY code, Error registry, faults 2, fau
 
 - `12`: NOT DEFINED (only possible value now. Reserved for future use).
 
-  
 ### Error Register Bits (0-7)
 
 - `0`: GENERIC_ERROR
@@ -231,9 +230,10 @@ Finally, Interpreting Warnings (0022):
   - Bit position 1 corresponds to HALL_SENSOR.
   - Bit position 5 corresponds to HALL_ILLEGAL_SECTOR.
 
-Note that hardware errors usually trigger multiple error flags, so you will need to interpret the message as a whole. 
-In our example, therefore, we can see that motor C have a faulty HALL sensor (what actually counts its RPM). 
+Note that hardware errors usually trigger multiple error flags, so you will need to interpret the message as a whole.
+In our example, therefore, we can see that motor C have a faulty HALL sensor (what actually counts its RPM).
 In this specific situation we recommend you contact us to replace the motor.
 
 The guide should help in quickly identifying and understanding specific errors based on their categories
 and bit positions.
+
