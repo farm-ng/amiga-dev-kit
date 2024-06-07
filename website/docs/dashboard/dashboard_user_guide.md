@@ -137,9 +137,10 @@ example)
 respond to smaller movements. **Too small values may cause unstable behavior.**
 - `steering_gamma`: responsiveness of the pendant's joystick to steering. Larger values lead to
 steeper curves.
-- `batt_lo`: threshold in % where the robot will switch to turtle mode and be limited to `turtle_v`
+- `batt_lo`: threshold in VDC where the robot will switch to turtle mode and be limited to `turtle_v`
 speed. Used to allow user to drive to a safe location before complete shutdown.
-- `batt_hi`: threshold where the display will show full battery.
+Default value is 40 VDC.
+- `batt_hi`: threshold where the display will show full battery. Default value is 50 VDC.
 - `pto0_gear_ratio`: gear ratio of your first PTO attachment.
 - `pto1_gear_ratio`: gear ratio of your second PTO attachment.
 - `default_pto_rpm`: default PTO rotation for both PTOs.
