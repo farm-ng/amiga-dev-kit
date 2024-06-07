@@ -198,12 +198,14 @@ Click on the icon to visualize error's details.
 - If the robot is following tracks but with an small offset (up to 30 cm or 12 inches), your RTK
 service may need extra time to improve the accuracy of its connection. This is prone to happen when
 more than 12 km (8 miles) of your base station, when operating under cloudy conditions, and/or
-local topography. Driving the robot around for a few minutes tends to minimize the problem.
+local topography. In some cases, this problem is reduced within 5 to 30 minutes of the system boot.
+Moving the robot on your operational area can reduce this time.
 
-- If you see tracks with an expressive offset (larger than 0.5 m or 2 feet), verify if your
-RTK-correction service provider is using a VRS (Virtual Reference Station). These stations change
-their reference system after every reboot and are not supported at this moment. We recommend
-switching to a service that use statical base stations or recording new paths after every reboot.
+- If you see tracks with an expressive offset (larger than 0.5 m or 2 feet), verify that your
+RTK-correction service provider is NOT using a VRS (Virtual Reference Station).These stations
+change their reference system after every reboot and are not currently supported. We recommend
+switching to a service provider that uses a static base station or that you record new paths after
+every reboot.
 
 Occasionally, track following might fail.
 An error message will appear and the **Start Path** button will switch to **Error-Check status**.

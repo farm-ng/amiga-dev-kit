@@ -82,9 +82,11 @@ You can also use micro-controllers to command your Amiga.
 For an example of how to do so, please follow the instructions in this [FPV example](/docs/examples/FPV/)
 
 :::info Tool Control when AUTO CONTROL is ON
-Starting on Dashboard Firmware `v0.5.0` the Brain have tool control capabilities.<br/><br/>
-Therefore, when Auto Control is ENABLED, the pendant commands are bypassed and will not work. Use
-the software controls in our Autoplot app or your custom application.<br/><br/>
+Starting on Dashboard Firmware `v0.5.0` and AmigaOS `v2.3.0` the Brain have tool control
+capabilities.<br/><br/>
+TTherefore, when Auto Control is ENABLED, a blue outline will appear around the Dashboard and the
+pendant commands will be bypassed. Tool control is thus carried out in the Autoplot app, a browser
+window, or your custom application.<br/><br/>
 If manual control is needed, disable Auto Control on E-STOP your Amiga using the physical button.
 :::
 

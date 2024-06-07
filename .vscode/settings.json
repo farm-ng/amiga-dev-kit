@@ -8,6 +8,7 @@
     "python.formatting.provider": "black",
     "cmake.configureOnOpen": false,
     "cSpell.words": [
+        "Autoplot",
         "CRTN",
         "NMEA"
     ]

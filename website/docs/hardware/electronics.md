@@ -16,6 +16,10 @@ harnesses via Anderson connectors.
 
 ![schematics of power circuit](./assets/circuit48.png)
 
+To help communication, we use the motor names to identify the harnesses, the A-D harness is secured
+to the truck bars as it is also the case for the B-C harness on the other side. The cross harness \
+that links the two sides is secured using fir tree fasteners and zip ties.
+
 Each fork also includes an additional Anderson connector for charging or connecting other 48V
 accessories.
 
@@ -28,29 +32,40 @@ circuit), there is a fuse box right out of the Power Buck. It uses 10 Amps autom
 
 ![schematics of CAN Bus](./assets/can.png)
 
-Inside each fork panel, NMEA-2000 hubs connect motor controllers to the CAN network. Extra ports
-can be used to connect the Dashboard, Pendant, or other CAN devices without needing longer cables.
-Termination connectors are present at the end of the CAN network and are essential for proper
-system function and network debugging.
+Inside each fork panel, NMEA-2000 CAN hubs connect provide a connection point to tie the motor
+controllers to the CAN network. Extra ports are available to connect additional CAN devices.
+Termination resistors are placed at either end of the CAN network to ensure that the CAN signals
+are not reflected from the cable ends. For best results, the CAN bus termination should match the
+nominal impedance of the cables, which for ISO 11898-2 (high speed CAN) is specified at 120 Ohm.
 
 :::tip pro tip
-When you can't detect power on your CAN bus (red and black wires), there is a high chance you have
-a blown fuse. Inspect your fuse visually  and/or using a multimeter before proceeding with
+When you can't detect power on your CAN bus, there is a high chance you have
+a blown fuse. Inspect your fuse integrity visually and/or using a multimeter before proceeding with
 troubleshooting.
 :::
 
 ## ESTOP Circuit
 
-The ESTOP circuit is crucial for your Amiga, receiving 24 VDC from the Power Buck and distributing
-it via M8 connectors to the motor controllers and the physical STOP button.
+The primary role of the E-stop circuit is to cut power from the motor controllers at start up
+(preventing any possibility that the Amiga would simply take off) as well as in emergency
+situations when the Amiga must be stopped. This circuit also receives 24 VDC from the power buck
+and distributes via M8 connectors to the motor controllers, tools, and the physical STOP button.
+
+:::warning ESTOP button at inclined terrain
+Engaging the E-stop button cuts power to the motor controllers but it does not provide a braking
+system. Be prepare for the Amiga to roll over if the button is engaged while the robot sits at an
+incline.
+:::
 
 ![schematics of E-STOP circuit](./assets/estop.png)
 
-Inside each fork panel, blue M8 Tees allow motor controllers to receive the E-STOP signal. Extra
-tees can be added for additional E-STOP cables, useful for operating tools. Farm-ng PTOs and
-H-Bridges require an E-STOP signal to operate.
+Inside each fork panel, blue M8 Tees allow motor controllers to receive the E-STOP signal. The tees
+are simply junctions that allow for the creation of a closed loop system across all the peripherals
+attached to the E-Stop circuit. Additional components such as the H-bride and PTO must be tied to
+the E-stop circuit for safety purposes. This is done by adding t junctions and cables to bring in
+these peripherals into the loop.
 
-The STOP button physically opens the circuit, cutting power to the motors. It includes a second
+The STOP button physically opens the circuit. It includes a second
 connector for adding more buttons; if not in use, this connector should have a termination loop.
 **Without the termination loop the circuit remains open, leaving the robot in
 [E-STOP status](../dashboard/control-states#state-descriptions)**.

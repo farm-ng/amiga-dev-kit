@@ -16,9 +16,10 @@ achieve maximum performance of your Amiga, there are a few design rules you shou
 
 :::warning Amiga's geometry
 Operating with larger ratios will lead to premature overheating of your motors and eventually
-permanent damage. To reduce this risk, our motors will stop for cooling once they reach 80°C
-(176°F). This is highly dependent on how your load is configured and the service (turn radius,
-frequency, type, etc.)
+permanent damage. A fail safe mechanism to protect the motors from overheating is hard coded into
+the Dashboard's firmware. To reduce the risk of damage due to overheating, our motors will stop for
+cooling once they reach 80°C (176°F). This is highly dependent on physical parameters like the robot
+center of gravity, duty cycle, how many turns you are using, etc.
 :::
 
 * Note there is a tradeoff here: larger bases are more stable but cause extra effort on the outside
@@ -59,7 +60,7 @@ If you have an Intelligence Kit, remember to change the `wheelbase` parameter on
 will likely experience offsets when following tracks.**
 :::
 
-## Pendant and Intelligence Kit Pole
+## Pendant and Intelligence Kit Mast
 
 * You can move the pendant using the existing U-clamps anywhere on your Amiga. If the cables are
 not long enough, you can change their connections to any of the forks or order extensions from
