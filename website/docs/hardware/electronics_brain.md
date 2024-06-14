@@ -14,8 +14,10 @@ and a Power over Ethernet (PoE) Switch:
 
 ![schematics of intelligence Kit](./assets/intel.png)
 
-Note that both the Brain and the PoE switch drawn power from the main power circuit (48 VDC), with
-the switch using 2 power bucks to convert 48 VDC to 24 VDC and maintain redundancy.
+Note that the Brain draws power from the CAN bus connector, while the cameras use PoE. Hence, the
+Brain use one of the upper PoE Switch ports (1 and 2) and the cameras use the lower ports (3
+through 6, identified with an orange circle). The lower port is for power input and needs a
+regulated 48 VDC input.
 
 :::danger Caution
 When changing connections on the PoE and/or Brain, make sure you do not connect the M12 power cable

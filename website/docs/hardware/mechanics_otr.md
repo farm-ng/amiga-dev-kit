@@ -10,7 +10,7 @@ for example. To operate in these conditions, you can replace your Cross Bars wit
 ![image of an Over The Roll Suspension Kit in Amiga](./assets/otr.jpeg)
 
 You can use the 1.5-inch square tube modular system to configure it to go over produce rows, as
-shown above, or on beds, keeping the normal Amiga height. Either way, all Base Amiga mechanical
+shown above, or on beds, keeping the standard Amiga height. Either way, all Base Amiga mechanical
 principles apply, with extra options for alignment.
 
 Use the support bars marked in the picture to align your suspension kit vertically and

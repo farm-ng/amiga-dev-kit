@@ -5,8 +5,8 @@ title: Base Amiga
 
 # Amiga's circuits
 
-Your base Amiga is designed for simplicity in assembly and maintenance. It contains three main
-circuits essential for operation.
+Your base Amiga is designed for simple assembly and maintenance. It contains three main
+circuits essential for operation:
 
 ## Power Circuit
 
@@ -16,8 +16,8 @@ harnesses via Anderson connectors.
 
 ![schematics of power circuit](./assets/circuit48.png)
 
-To help communication, we use the motor names to identify the harnesses, the A-D harness is secured
-to the truck bars as it is also the case for the B-C harness on the other side. The cross harness \
+We use the motor names to identify the harnesses, the A-D harness is secured
+to the truck bars as it is also the case for the B-C harness on the other side. The cross harness
 that links the two sides is secured using fir tree fasteners and zip ties.
 
 Each fork also includes an additional Anderson connector for charging or connecting other 48V
@@ -39,9 +39,9 @@ are not reflected from the cable ends. For best results, the CAN bus termination
 nominal impedance of the cables, which for ISO 11898-2 (high speed CAN) is specified at 120 Ohm.
 
 :::tip pro tip
-When you can't detect power on your CAN bus, there is a high chance you have
-a blown fuse. Inspect your fuse integrity visually and/or using a multimeter before proceeding with
-troubleshooting.
+When you can't detect power on your CAN bus (e.g. Dashboard and Brain won't boot), there is a high
+chance you have a blown fuse. Inspect your fuse integrity visually and/or using a multimeter before
+proceeding with troubleshooting.
 :::
 
 ## ESTOP Circuit

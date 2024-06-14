@@ -37,7 +37,7 @@ easily.
 
 * When tightening them back, make sure the fork tops are parallel to the ground by tightening the
 bolts evenly. If the inner clamps that keep the Truck Bars locked are uneven, the wheels will not be
-perpendicular to the ground.
+perpendicular to the ground, experiencing higher-than-necessary effort and possibly overheating.
 
 :::warning Amiga's geometry
 When you change your Amiga's size, remember to change the `wheel_track` parameter on your
@@ -49,7 +49,7 @@ likely experience overheating and erratic motor speeds when turning.**
 
 ## Width (`track_width`)
 
-* To change the Track Width (or how wide the Amiga is), raise your robot and loosen the Allen bolts
+* To change the Track Width (or how wide the robot is), raise your robot and loosen the Allen bolts
 on the side of the clamps on top of the forks. The forks on that side will slide easily.
 * Make sure you tighten all bolts. Loose bolts will cause your crossbars to wear out and make your
 Amiga less rigid.

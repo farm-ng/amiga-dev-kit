@@ -11,18 +11,17 @@ for more energy demanding applications. The specifications for each battery are:
 |Parameters| Values|
 |---|---|
 |Rated capacity | 15 AH |
-|Nominal Voltage| 48 V |
-|End of Charge Voltage | 54.6 V|
-|Over-charge voltage protection | 55.25 V|
-|Over-discharge voltage protection|36.4 V|
-|Maximum charge current | 5 A |
-|Charging maximum rate | 0.03C |
-|Discharging maximum rate | 2C |
-|Over-current discharge protection| 90 A +/- 10 A|
+|Nominal Voltage| 44 V |
+|Maximum Charger Voltage | 50.4 V|
+|Over-charge voltage protection | 51 V|
+|Over-discharge voltage protection|33.6 V|
+|Maximum charge current | 30 A |
+|Maximum discharge current | 30 A |
 |Weight| 5.2 Kg (11.5 Lb)|
 |Dimensions|360 x 150 x 68 mm|
 |Operation temperature (charging)| 0 ~ 45 C (32 ~ 113 F)|
-|Maximum operating temperature| -10 ~ 60 C (14 ~ 140) |
+|Operation temperature (discharging)| -20 ~ 60 C (-4 ~ 140 F) |
+
 <br/>
 To protect all circuits in your Amiga, all batteries are equipped with a fuse located on its side
 close to the power output connector. The fuse must be 30 Amp, Slow blow, and we recommend using
@@ -33,7 +32,7 @@ Remove it using a phillips screwdriver.
 
 :::tip pro tip
 When you battery is not supplying any voltage to the robot, it is likely due to a blown fuse.
-Verify its integrity before you proceed with your troubleshooting process.
+Verify its integrity using a multimeter before you proceed with your troubleshooting process.
 :::
 
 ## Charging you Amiga
