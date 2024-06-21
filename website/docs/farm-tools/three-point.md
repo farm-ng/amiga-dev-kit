@@ -12,15 +12,24 @@ If you are missing any necessary pieces, please contact [farm-ng](https://amiga.
 immediately.
 :::
 
-## Included Hardware
+## Required Hardware
 
-1. **24** Carriage bolts 3/8" by 1 1/4"
-2. **24** Flat Washers 3/8"
-3. **24** Nylon Insert Locknut 3/8"
-4. **4** Hex Cap Screw 5/8"  x 3"
-5. **12** Flat Washers 5/8"
-6. **2** Hex Cap Screw 5/8 x 2 1/4"
-7. **6** Hex Nut 5/8"
+1. **4**       5/8-11 Nylon lock nut
+2. **2**       1/2-13 Nylon nut
+3. **2**       3/4-10 Nylon lock nut
+4. **32**      3/8 Nylon lock nut
+5. **32**      3/8 Washer
+6. **4**       1/2 Washer  
+7. **8**       5/8 Washer
+8. **4**       3/8 Eye bolts
+9. **2**       Eye bolt spacers
+10. **28**     3/8-16x1.25 carriage bolts
+11. **4**      Bridge Bushings
+12. **4**      Turn buckle ends
+13. **4**      5/8-11 bolt
+14. **4**      1/2-13 bolt
+15. **4**      3/4-10 bolt
+
 
 ## Tools needed
 
