@@ -23,6 +23,28 @@ that links the two sides is secured using fir tree fasteners and zip ties.
 Each fork also includes an additional Anderson connector for charging or connecting other 48V
 accessories.
 
+### Motors
+
+Each wheel in your Amiga contain an electric motor and gear reduction controlled by a controller
+placed inside the side panel. Each motor have the following specs:
+
+|Parameters| Values|
+|---|---|
+|Rated power|250 W|
+|Operational Voltage|36 ~ 43 VDC|
+|Reduction ratio| 1:11|
+|Torque|42 N.m (21 Lb.ft)|
+
+Each motor requires its own motor controller and, despite sharing the same hardware, they have
+the tires mounted differently. Make sure your motor is adequate to each side of your Amiga when
+assembling it.
+
+:::caution
+When not powered (including when your physical STOP button is pushed), the motors run freely. Make
+sure your are in level ground or have a physical barrier (like a wheel chock) when operating in
+slopes.
+:::
+
 ## CAN Bus
 
 Your Amiga uses a CAN network to send control messages between the dashboard, pendant, motors, and
@@ -69,3 +91,24 @@ The STOP button physically opens the circuit. It includes a second
 connector for adding more buttons; if not in use, this connector should have a termination loop.
 **Without the termination loop the circuit remains open, leaving the robot in
 [E-STOP status](../dashboard/control-states#state-descriptions)**.
+
+## Motor Controller
+
+Each motor use a controller that requires all three circuits to operate. The connections for each
+circuit are inside the side panels on a custom harness. Removing any of the connections will result
+on a CAN and/or E-STOP circuit errors. Refer to [Debugging Error Codes](../dashboard/debugging.md)
+section to learn more about errors and solutions.
+
+:::tip Pro tip
+When any of the motors have an error, your Amiga will be inoperative until all errors are cleared.
+If you are in and unsafe space for debugging, you can disable the faulty motor/controller going to
+[Dashboard Settings > Settings > `mXX_on`](../dashboard/dashboard-user-guide#configuration-settings)
+and setting to `False`. Note that:
+
+- `m10` = motor A
+- `m11` = motor B
+- `m12` = motor C
+- `m13` = motor D
+
+Revert the motor back to `True` to resume debugging.
+:::
