@@ -94,15 +94,20 @@ const sidebars = {
         "brain/brain-install",
         "brain/next-steps",
       ],
-    },
-    {
       "Fundamental Concepts": [
 
         "concepts/system_overview/amiga-dev",
         "concepts/transforms_and_poses/transforms-and-poses",
         "concepts/tracks_and_waypoints/tracks-and-waypoints",
       ],
-
+      "Service Overviews": [
+        "concepts/canbus_service/canbus-overview",
+        "concepts/oak_service/oak-overview",
+        "concepts/gps_service/gps-overview",
+        "concepts/recorder_service/recorder-overview",
+        "concepts/filter_service/filter-overview",
+        "concepts/track_follower_service/track-follower-overview",
+      ],
       "Custom Applications": [
         "brain/brain-apps",
         "brain/brain-apps-kivy",
@@ -114,16 +119,6 @@ const sidebars = {
     "brain/sdk-barley-migration",
     "brain/ros-bridge",
     "examples/vnc_viewer/vnc-viewer",
-    {
-      "Service Overviews": [
-        "concepts/canbus_service/canbus-overview",
-        "concepts/oak_service/oak-overview",
-        "concepts/gps_service/gps-overview",
-        "concepts/recorder_service/recorder-overview",
-        "concepts/filter_service/filter-overview",
-        "concepts/track_follower_service/track-follower-overview",
-      ],
-    },
     "mcu_kit/microcontroller-kit",
     {
       "items": [
