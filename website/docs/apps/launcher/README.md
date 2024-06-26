@@ -101,7 +101,7 @@ The **GPS** value is taken from the center of the antenna, while the **IMU** val
 
 To determine the **wheelbase** and **track width** of your Amiga, see the illustration below.
 
-![Group 4 (7)](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/28fa7805-75e2-4b99-9b8e-7c9961b392a8)
+![Amiga frame and dimensions](./amiga_frame.png)
 
 ### Robot Localization
 
