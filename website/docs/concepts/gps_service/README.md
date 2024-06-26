@@ -79,6 +79,13 @@ The required credentials include:
   - **NOTE**: The robot needs to be connected to Wi-Fi for `relposned` messages.
  However, an internet connection is not required for `pvt` messages.
 
+:::caution Virtual Reference Station (vrs) not supported
+Currently, our services that use GPS rely on a static base station. If your service provider issues
+RTK corrections with respect to a VRS (Virtual Reference Station), your `relposned` coordinates
+will experience a significant offset after every reboot, and so the Autoplot app. <br/><br/>
+Consult your service provider and/or support@farm-ng.com for more info.
+:::
+
 :::info NTRIP (Network Transport of RTCM via Internet Protocol)
 NTRIP is a protocol for streaming differential GPS (DGPS) data over the internet, enabling RTK
 corrections in areas with cellular coverage.

@@ -101,7 +101,7 @@ The **GPS** value is taken from the center of the antenna, while the **IMU** val
 
 To determine the **wheelbase** and **track width** of your Amiga, see the illustration below.
 
-![Group 4 (7)](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/28fa7805-75e2-4b99-9b8e-7c9961b392a8)
+![Amiga frame and dimensions](./amiga_frame.png)
 
 ### Robot Localization
 
@@ -211,6 +211,12 @@ Unless you need to open the brain and modify its port (strongly not recommended)
 untouched.
 
 ![gps ntrip](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/794f06ab-9df2-4a96-91d1-1cfa6aa2e172)
+
+:::caution Virtual Reference Station (vrs) not supported
+Current AmigaOS GPS service assumes a static base station. If you are using a service that provide
+RTK corrections referent to a VRS (Virtual Reference Station), your GPS service will recognize it,
+but coordinates will experience significant offset after every reboot.
+:::
 
 :::tip
 For California users, [**CRTN**](http://sopac-csrc.ucsd.edu/index.php/crtn/) offers free
