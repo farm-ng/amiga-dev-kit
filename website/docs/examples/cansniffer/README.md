@@ -15,6 +15,13 @@ You should read through the
 [**Hello Main Loop**](/examples/hello_main_loop/README.md)
 example first, as some required concepts are explained there.
 
+:::info
+Please note that USB serial connections can sometimes be unstable.
+This example is intended to demonstrate the concept of reading CAN messages from the Amiga
+with the microcontroller kit and should not be considered a robust alternative to
+using a productized CAN transceiver and `SocketCAN` based utilities (e.g., `can-utils`).
+:::
+
 ## Parts required
 
 - [**farm-ng microcontroller kit**](https://farm-ng.com/products/microcontroller-kit) (w/ USB-C cable)

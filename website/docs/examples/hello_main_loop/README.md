@@ -15,6 +15,12 @@ This example enables driving the Amiga by entering simple fwd /
 rev / left / right keyboard commands the serial port, which the
 app sends over the CAN bus.
 
+:::info
+Please note that USB serial connections can sometimes be unstable.
+This example is intended to demonstrate the concept of controlling your Amiga
+with the microcontroller kit and should not be considered a robust solution for critical applications.
+:::
+
 ## Parts required
 
 - [**farm-ng microcontroller kit**](https://farm-ng.com/products/microcontroller-kit) (w/ USB-C cable)
