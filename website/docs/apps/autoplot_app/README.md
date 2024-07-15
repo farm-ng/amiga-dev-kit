@@ -110,14 +110,15 @@ The control panel is accessed by clicking on the gear icon located in the upper
 right corner.
 ![gearing](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/f09d117f-1026-4036-b2f0-20a557f83c9a)
 
-Our current Firmware release
-[**amiga-dash-v0.5.0**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.5.0) supports
-up to four H-Bridge devices that can be latched or momentarily controlled.
-They can also be coupled for synchronous operation.
+Starting with dashboard firmware release
+[**amiga-dash-v0.5.0**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.5.0),
+there is support for up to four H-Bridge devices.
+These devices can be either latched or momentarily controlled,
+and can optionally be coupled for synchronous operation.
 
 ![Screenshot from 2024-05-02 18-05-04](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/ffb45918-ed86-497d-a72b-5892d75053ab)
 
-Up to four PTO Devices are supported and can be remotely selected for operation.
+Up to two PTO Devices are also supported and can be remotely selected for operation.
 The control panel gives you directional controls for both H-Bridge and PTO connected devices.
 As an added safety measure you may remotely stop all actively engaged tools.
 
@@ -131,9 +132,15 @@ or [dashboard](/docs/dashboard/dashboard-user-guide)
 while physically present with the robot,
 ideal for teaching the robot new tracks.
 
-Here are instructions for using the pendant
-and the kartech as of dashboard firmware
-release [**amiga-dash-v0.5.0**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.5.0)
+Here are instructions for using the pendant and the kartech at the dashboard firmware release
+[**amiga-dash-v0.5.0**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.5.0)
+
+:::info
+The supported Kartech remote changed in dashboard firmware release
+[**amiga-dash-v0.6.0**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.6.0).
+
+Documentation of the controls for this remote are coming soon.
+:::
 
 ![pendant](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/4a8fbe60-7780-4f32-b92f-6ce895a706e0)
 ![kartech](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/99aee18e-e7d2-41c5-888b-6d38365c699e)
