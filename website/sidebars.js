@@ -118,6 +118,7 @@ const sidebars = {
         "concepts/tracks_and_waypoints/tracks-and-waypoints",
       ],
       "Service Overviews": [
+        "concepts/amiga_service/amiga-service-overview",
         "concepts/canbus_service/canbus-overview",
         "concepts/oak_service/oak-overview",
         "concepts/gps_service/gps-overview",
