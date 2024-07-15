@@ -5,7 +5,7 @@ title: Dashboard User Guide
 :::caution
 This guide is subject to change with each new update to the Dashboard.
 
-The latest version is Dashboard Firmware release `v0.5.0`.
+The latest version is Dashboard Firmware release `v0.6.0`.
 :::
 
 ![IMG6570-2-16x9-aspect-rediced](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/6d3b25ee-cd16-4878-adbc-0e23ffd8d84b)
@@ -82,9 +82,9 @@ You can also use micro-controllers to command your Amiga.
 For an example of how to do so, please follow the instructions in this [FPV example](/docs/examples/FPV/)
 
 :::info Tool Control when AUTO CONTROL is ON
-Starting on Dashboard Firmware `v0.5.0` and AmigaOS `v2.3.0` the Brain have tool control
+Starting on Dashboard Firmware `v0.5.0` and AmigaOS `v2.3.0` the Brain has tool control
 capabilities.<br/><br/>
-TTherefore, when Auto Control is ENABLED, a blue outline will appear around the Dashboard and the
+Therefore, when Auto Control is ENABLED, a blue outline will appear around the Dashboard and the
 pendant commands will be bypassed. Tool control is thus carried out in the Autoplot app, a browser
 window, or your custom application.<br/><br/>
 If manual control is needed, disable Auto Control on E-STOP your Amiga using the physical button.
