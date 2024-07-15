@@ -9,6 +9,9 @@ The Recorder App/Service is the backbone of the Amiga's data logging and playbac
 It is designed to capture and store raw data from various robot services, facilitating later
 analysis, debugging, and model training.
 
+Beginning with [**AmigaOS 2.3 Elderberry**](/docs/release-notes/release-023/),
+the Recorder service is a sub-service included as part of the [**Amiga Service**](/docs/concepts/amiga_service).
+
 ## Purpose
 
 The primary objective of the Recorder sub-service is to provide a robust mechanism for recording
@@ -55,8 +58,6 @@ Some of which may inherit from the protobuf messages found at:<br/>
 
   - `system_monitor/health`: Delivers health metrics for the system_monitor service,
 including publishing frequency.
-  - `system_monitor/auto_mode`: Streams auto mode state (either true or false).
-  - `system_monitor/batteries_state`: Streams the percent of battery left.
   - `system_monitor/cpu_usage`: Streams the percent of CPU currently being consumed on the brain.
   - `system_monitor/filter_state`: Streams the filter service state.
   - `system_monitor/wifi_state`: Streams auto mode state (either true or false).
