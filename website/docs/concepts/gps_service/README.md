@@ -19,10 +19,13 @@ In short, the GPS service continuously decodes and transmits location data, allo
 and systems to tap into accurate geospatial information without dealing with the
 complexities of GPS data interpretation.
 
-## Standalone Operation
+Beginning with [**AmigaOS 2.3 Elderberry**](/docs/release-notes/release-023/),
+the GPS service is a sub-service included as part of the [**Amiga Service**](/docs/concepts/amiga_service).
 
-Unlike other services, the GPS service operates independently and is not a client of any other services.
-Its sole responsibility is to interpret and publish the data received from the GPS module.
+## Stream-only Operation
+
+The GPS sub-service is not a client of any other services.
+It is, however, used by other services like the Filter service!
 
 ## Message Types
 
