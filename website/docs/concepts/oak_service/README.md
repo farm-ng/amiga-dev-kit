@@ -12,21 +12,18 @@ This service doesn't serve a singular purpose; instead, it offers a range of dat
 instrumental for various user-defined applications, from navigation and mapping to object detection
 and data collection.
 
-The OAK service is autonomous, not relying on other services to function.
-However, its data, especially the IMU information, plays a significant role in the Amiga's autonomous
-navigation capabilities, as it's fused with GPS and wheel odometry data in the Filter service
+The OAK service data, especially coming from the IMU, plays a significant role in the Amiga's autonomous
+navigation capabilities, as it is fused with GPS and wheel odometry data in the Filter service
 (using an Unscented Kalman Filter).
 
-## Multiple Instances
+Beginning with [**AmigaOS 2.3 Elderberry**](/docs/release-notes/release-023/),
+the Oak service is a sub-service included as part of the [**Amiga Service**](/docs/concepts/amiga_service).
+This sub-service now handles all oak devices connected to your Amiga in a single service.
 
-Depending on the number of OAK devices connected to the Amiga, there might be multiple instances
-of the OAK service running concurrently.
-For example, with two OAK cameras, there will be an oak0 service and an oak1 service.
-Each instance is responsible for managing the data streams from its respective OAK-D device.
+## Stream-only Operation
 
-## Standalone Operation
-
-Unlike other services, each Oak service operates independently and is not a client of any other services.
+The Oak sub-service is not a client of any other services.
+It is, however, used by other services like the Filter service!
 
 ## Message Types
 
