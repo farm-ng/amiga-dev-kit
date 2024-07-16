@@ -233,7 +233,7 @@ class AmigaTpdo1(Packet):
 
     New in fw v0.1.9 / farm-ng-amiga v0.0.7: Add pto & hbridge control. Message data is now 8 bytes (was 5).
 
-    New in fw v0.5.0 / farm-ng-amiga v2.4.0: Add SOC (state of charge) to the message.
+    New in fw v0.6.0 / farm-ng-amiga v2.4.0: Add SOC (state of charge) to the message.
     """
 
     def __init__(
