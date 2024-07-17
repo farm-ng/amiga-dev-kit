@@ -105,9 +105,14 @@ automatically become the current profile.
 The black badge in the top left indicates the current profile, if one exists. Click this badge to see and manage
 all existing profiles. To set a profile as active, simply click on it.
 
+Click the "X" inside the list item to delete a profile.
+
 ![recorder profile manager](https://github.com/user-attachments/assets/288eb22f-f70e-454d-b8b0-96180d33608c)
 
 ![recorder profile 2](https://github.com/user-attachments/assets/047bc188-896e-4f95-a0e2-59e315edf3e6)
+
+Recording will use the topics of the currently active profile. Clicking the record button without a profile,
+or without any topics selected will record all topics.
 
 ### Robot Geometry
 
