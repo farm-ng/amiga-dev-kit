@@ -107,6 +107,8 @@ all existing profiles. To set a profile as active, simply click on it.
 
 ![recorder profile manager](https://github.com/user-attachments/assets/288eb22f-f70e-454d-b8b0-96180d33608c)
 
+![recorder profile 2](https://github.com/user-attachments/assets/047bc188-896e-4f95-a0e2-59e315edf3e6)
+
 ### Robot Geometry
 
 Fine-tuning your Amiga's geometry is key to seamless autonomous operation.
