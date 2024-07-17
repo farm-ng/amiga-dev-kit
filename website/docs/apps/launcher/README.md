@@ -105,6 +105,8 @@ automatically become the current profile.
 The black badge in the top left indicates the current profile, if one exists. Click this badge to see and manage
 all existing profiles. To set a profile as active, simply click on it.
 
+![recorder profile manager](https://github.com/user-attachments/assets/288eb22f-f70e-454d-b8b0-96180d33608c)
+
 ### Robot Geometry
 
 Fine-tuning your Amiga's geometry is key to seamless autonomous operation.
