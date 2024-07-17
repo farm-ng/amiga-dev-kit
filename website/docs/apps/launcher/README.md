@@ -80,7 +80,7 @@ It is designed to capture and store raw data from various robot
 [**topics**](/docs/concepts/recorder_service/#available-topics-for-recording),
 facilitating later analysis, debugging, and model training.
 
-![recorder](https://github.com/user-attachments/assets/fd002820-29a3-491d-a725-bf8336dfb6d2)
+![recorder](https://github.com/user-attachments/assets/68cabb56-1b16-4c45-a047-202910879873)
 
 With OS 2.3.1 comes Recorder Profiles.
 
