@@ -82,6 +82,23 @@ facilitating later analysis, debugging, and model training.
 
 ![recorder](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/42edc61f-b7ef-4a7c-9831-90523a1d83ee)
 
+With OS 2.3.1 comes Recorder Profiles.
+
+Users can now create multiple profiles to record from, allowing the flexibility to swap which topics get recorded,
+without having to overwrite previously saved configurations.
+
+To get started, click **"New Profile"**, enter a name, and click **"Save Profile"**. This is now the currently selected profile. <br/>
+*(As of this release you must create a profile in order to save topics. Attempting to save topics without a current profile
+will prompt the profile creation flow)*
+
+To edit a profile, simply make changes to it while it is the current profile, and click **"Save Topics"**.
+
+Create subsequent profiles with the same flow, beginning with clicking **"New Profile"**. Newly created profiles
+automatically become the current profile.
+
+The black badge in the top left indicates the current profile, if one exists. Click this badge to see and manage
+all exisiting profiles. To set a profile as active, simply click on it.
+
 ### Robot Geometry
 
 Fine-tuning your Amiga's geometry is key to seamless autonomous operation.
