@@ -80,7 +80,7 @@ It is designed to capture and store raw data from various robot
 [**topics**](/docs/concepts/recorder_service/#available-topics-for-recording),
 facilitating later analysis, debugging, and model training.
 
-![recorder](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/42edc61f-b7ef-4a7c-9831-90523a1d83ee)
+![recorder](https://github.com/user-attachments/assets/fd002820-29a3-491d-a725-bf8336dfb6d2)
 
 With OS 2.3.1 comes Recorder Profiles.
 
@@ -89,6 +89,7 @@ without having to overwrite previously saved configurations.
 
 To get started, click **"New Profile"**, enter a name, and click **"Save Profile"**. This is now the currently
 selected profile. <br/>
+
 *(As of this release you must create a profile in order to save topics. Attempting to save topics without a
 current profile will prompt the profile creation flow)*
 
