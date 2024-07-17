@@ -90,7 +90,7 @@ without having to overwrite previously saved configurations.
 To get started, click **"New Profile"**, enter a name, and click **"Save Profile"**. This is now the currently
 selected profile. <br/>
 
-![recorder new profile](https://github.com/user-attachments/assets/59130522-9624-4571-8f2b-23a8cb93bfbf)
+![recorder new profile](https://github.com/user-attachments/assets/bc24d92d-bc85-4072-9e96-fe5667ad7792)
 
 *(As of this release you must create a profile in order to save topics. Attempting to save topics without a
 current profile will prompt the profile creation flow)*
