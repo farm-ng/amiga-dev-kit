@@ -97,6 +97,8 @@ current profile will prompt the profile creation flow)*
 
 To edit a profile, simply make changes to it while it is the current profile, and click **"Save Topics"**.
 
+![recorder edit profile](https://github.com/user-attachments/assets/ceb12464-ebbb-4684-81d3-721a2ad490b4)
+
 Create subsequent profiles with the same flow, beginning with clicking **"New Profile"**. Newly created profiles
 automatically become the current profile.
 
