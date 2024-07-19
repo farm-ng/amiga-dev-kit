@@ -95,7 +95,7 @@ selected profile. <br/>
 *(As of release 2.3.1 you must create a profile in order to save topics. Attempting to save topics without a
 current profile will prompt the profile creation flow)*
 
-To edit a profile, simply make changes to it while it is the current profile, and click **"Save Topics"**.
+To edit a profile, simply make changes to it while it is active, and click **"Save Topics"**.
 
 ![recorder edit profile](https://github.com/user-attachments/assets/ceb12464-ebbb-4684-81d3-721a2ad490b4)
 
