@@ -102,7 +102,7 @@ To edit a profile, simply make changes to it while it is active, and click **"Sa
 Create subsequent profiles with the same flow, beginning with clicking **"New Profile"**. Newly created profiles
 automatically become the active profile.
 
-The black badge in the top left indicates the current profile, if one exists. Click this badge to see and manage
+The black badge in the top left indicates the active profile, if one exists. Click this badge to see and manage
 all existing profiles. To set a profile as active, simply click on it.
 
 Click the "X" inside the list item to delete a profile.
