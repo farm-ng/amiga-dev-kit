@@ -100,7 +100,7 @@ To edit a profile, simply make changes to it while it is active, and click **"Sa
 ![recorder edit profile](https://github.com/user-attachments/assets/ceb12464-ebbb-4684-81d3-721a2ad490b4)
 
 Create subsequent profiles with the same flow, beginning with clicking **"New Profile"**. Newly created profiles
-automatically become the current profile.
+automatically become the active profile.
 
 The black badge in the top left indicates the current profile, if one exists. Click this badge to see and manage
 all existing profiles. To set a profile as active, simply click on it.
