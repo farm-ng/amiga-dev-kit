@@ -82,7 +82,7 @@ facilitating later analysis, debugging, and model training.
 
 ![recorder](https://github.com/user-attachments/assets/68cabb56-1b16-4c45-a047-202910879873)
 
-With OS 2.3.1 comes Recorder Profiles.
+**With OS 2.3.1 comes Recorder Profiles.**
 
 Users can now create multiple profiles to record from, allowing the flexibility to swap which topics get recorded,
 without having to overwrite previously saved configurations.
