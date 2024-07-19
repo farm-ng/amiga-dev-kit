@@ -84,26 +84,27 @@ facilitating later analysis, debugging, and model training.
 
 **With OS 2.3.1 comes Recorder Profiles.**
 
-Users can now create multiple profiles to record from, allowing the flexibility to swap which topics get recorded,
-without having to overwrite previously saved configurations.
+Users can now create multiple profiles to record from, allowing the flexibility to swap which
+topics get recorded, without having to overwrite previously saved configurations.
 
-To get started, click **"New Profile"**, enter a name, and click **"Save Profile"**. This is now the currently
-selected profile. <br/>
+To get started, click **"New Profile"**, enter a name, and click **"Save Profile"**.
+This is now the currently selected profile. <br/>
 
 ![recorder new profile](https://github.com/user-attachments/assets/bc24d92d-bc85-4072-9e96-fe5667ad7792)
 
-*(As of release 2.3.1 you must create a profile in order to save topics. Attempting to save topics without a
-current profile will prompt the profile creation flow)*
+*(As of release 2.3.1 you must create a profile in order to save topics.
+Attempting to save topics without a current profile will prompt the profile creation flow)*
 
 To edit a profile, simply make changes to it while it is active, and click **"Save Topics"**.
 
 ![recorder edit profile](https://github.com/user-attachments/assets/ceb12464-ebbb-4684-81d3-721a2ad490b4)
 
-Create subsequent profiles with the same flow, beginning with clicking **"New Profile"**. Newly created profiles
-automatically become the active profile.
+Create subsequent profiles with the same flow, beginning with clicking **"New Profile"**.
+Newly created profiles automatically become the active profile.
 
-The black badge in the top left indicates the active profile, if one exists. Click this badge to see and manage
-all existing profiles. To set a profile as active, simply click on it.
+The black badge in the top left indicates the active profile, if one exists.
+Click this badge to see and manage all existing profiles.
+To set a profile as active, simply click on it.
 
 Click the "X" inside the list item to delete a profile.
 
@@ -111,8 +112,8 @@ Click the "X" inside the list item to delete a profile.
 
 ![recorder profile 2](https://github.com/user-attachments/assets/047bc188-896e-4f95-a0e2-59e315edf3e6)
 
-Recording will use the topics of the currently active profile. Clicking the record button without a profile,
-or without any topics selected will record all topics.
+Recording will use the topics of the currently active profile.
+Clicking the record button without a profile, or without any topics selected will record all topics.
 
 ### Robot Geometry
 
