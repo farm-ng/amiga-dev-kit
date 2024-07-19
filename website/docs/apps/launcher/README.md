@@ -92,7 +92,7 @@ selected profile. <br/>
 
 ![recorder new profile](https://github.com/user-attachments/assets/bc24d92d-bc85-4072-9e96-fe5667ad7792)
 
-*(As of this release you must create a profile in order to save topics. Attempting to save topics without a
+*(As of release 2.3.1 you must create a profile in order to save topics. Attempting to save topics without a
 current profile will prompt the profile creation flow)*
 
 To edit a profile, simply make changes to it while it is the current profile, and click **"Save Topics"**.
