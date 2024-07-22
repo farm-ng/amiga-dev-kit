@@ -232,6 +232,8 @@ class AmigaTpdo1(Packet):
     """State, speed, and angular rate of the Amiga vehicle control unit (VCU).
 
     New in fw v0.1.9 / farm-ng-amiga v0.0.7: Add pto & hbridge control. Message data is now 8 bytes (was 5).
+
+    New in fw v0.6.0 / farm-ng-amiga v2.4.0: Add SOC (state of charge) to the message.
     """
 
     def __init__(
@@ -241,8 +243,9 @@ class AmigaTpdo1(Packet):
         meas_ang_rate: float = 0.0,
         pto_bits: int = 0x0,
         hbridge_bits: int = 0x0,
+        soc: int = 0x0,
     ):
-        self.format = "<BhhBBx"
+        self.format = "<BhhBBB"
         self.legacy_format = "<Bhh"
 
         self.state = state
@@ -250,6 +253,7 @@ class AmigaTpdo1(Packet):
         self.meas_ang_rate = meas_ang_rate
         self.pto_bits = pto_bits
         self.hbridge_bits = hbridge_bits
+        self.soc = soc
 
         self.stamp()
 
@@ -262,6 +266,7 @@ class AmigaTpdo1(Packet):
             int(self.meas_ang_rate * 1000.0),
             self.pto_bits,
             self.hbridge_bits,
+            self.soc,
         )
 
     def decode(self, data):
@@ -273,14 +278,16 @@ class AmigaTpdo1(Packet):
             self.meas_speed = meas_speed / 1000.0
             self.meas_ang_rate = meas_ang_rate / 1000.0
         else:
-            (self.state, meas_speed, meas_ang_rate, self.pto_bits, self.hbridge_bits) = unpack(self.format, data)
+            (self.state, meas_speed, meas_ang_rate, self.pto_bits, self.hbridge_bits, self.soc) = unpack(
+                self.format, data
+            )
             self.meas_speed = meas_speed / 1000.0
             self.meas_ang_rate = meas_ang_rate / 1000.0
 
     def __str__(self):
-        return "AMIGA TPDO1 Amiga state {} Measured speed {:0.3f} Measured angular rate {:0.3f}".format(
-            self.state, self.meas_speed, self.meas_ang_rate
-        ) + " PTO bits 0x{:x} h-bridge bits 0x{:x}".format(self.pto_bits, self.hbridge_bits)
+        return "AMIGA TPDO1 Amiga state {} Measured speed {:0.3f} Measured angular rate {:0.3f} @ time {}".format(
+            self.state, self.meas_speed, self.meas_ang_rate, self.stamp.stamp
+        ) + " PTO bits 0x{:x} h-bridge bits 0x{:x} charge level: {}%".format(self.pto_bits, self.hbridge_bits, self.soc)
 
 
 class AmigaPdo2(Packet):
