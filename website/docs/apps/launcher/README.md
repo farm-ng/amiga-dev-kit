@@ -12,7 +12,7 @@ From here you can open various Apps and dive deeper into Settings.
 
 The status bar provides critical information for robot operation.
 
-![icon bar](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/d69c2611-a3ad-4bb5-9db2-23a77c6a73ec)
+![icon bar](https://github.com/user-attachments/assets/06161702-9f28-4ea0-9026-102cc00db88c)
 
 - **Record**: Button used to Start and Stop recording. Recordings are saved in the [**File Manager App**](/docs/apps/file_manager_app/)
 - **CPU**: Percentage processing power being used across all cores.
@@ -21,6 +21,7 @@ The status bar provides critical information for robot operation.
 once a track has been loaded.
 - **Auto**: This icon confirms the robot is in [**Auto Control**](/docs/dashboard/dashboard-user-guide#auto-control),
 a prerequisite for autonomous tasks.
+- **CAN**: This indicates the CAN status and displays any error states.
 - **Filter**: This indicates the status of the [**UKF filter**](/docs/concepts/filter_service/).
 Autonomy will not engage if the filter has not converged.
 - **GPS**: A visual indicator showing if the [**GPS Service**](/docs/concepts/gps_service/)
@@ -80,7 +81,40 @@ It is designed to capture and store raw data from various robot
 [**topics**](/docs/concepts/recorder_service/#available-topics-for-recording),
 facilitating later analysis, debugging, and model training.
 
-![recorder](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/42edc61f-b7ef-4a7c-9831-90523a1d83ee)
+![recorder](https://github.com/user-attachments/assets/68cabb56-1b16-4c45-a047-202910879873)
+
+**With OS 2.3.1 comes Recorder Profiles.**
+
+Users can now create multiple profiles to record from, allowing the flexibility to swap which
+topics get recorded, without having to overwrite previously saved configurations.
+
+To get started, click **"New Profile"**, enter a name, and click **"Save Profile"**.
+This is now the currently selected profile. <br/>
+
+![recorder new profile](https://github.com/user-attachments/assets/bc24d92d-bc85-4072-9e96-fe5667ad7792)
+
+*(As of release 2.3.1 you must create a profile in order to save topics.
+Attempting to save topics without a current profile will prompt the profile creation flow)*
+
+To edit a profile, simply make changes to it while it is active, and click **"Save Topics"**.
+
+![recorder edit profile](https://github.com/user-attachments/assets/ceb12464-ebbb-4684-81d3-721a2ad490b4)
+
+Create subsequent profiles with the same flow, beginning with clicking **"New Profile"**.
+Newly created profiles automatically become the active profile.
+
+The black badge in the top left indicates the active profile, if one exists.
+Click this badge to see and manage all existing profiles.
+To set a profile as active, simply click on it.
+
+Click the "X" inside the list item to delete a profile.
+
+![recorder profile manager](https://github.com/user-attachments/assets/288eb22f-f70e-454d-b8b0-96180d33608c)
+
+![recorder profile 2](https://github.com/user-attachments/assets/047bc188-896e-4f95-a0e2-59e315edf3e6)
+
+Recording will use the topics of the currently active profile.
+Clicking the record button without a profile, or without any topics selected will record all topics.
 
 ### Robot Geometry
 
