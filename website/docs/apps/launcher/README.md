@@ -21,6 +21,7 @@ The status bar provides critical information for robot operation.
 once a track has been loaded.
 - **Auto**: This icon confirms the robot is in [**Auto Control**](/docs/dashboard/dashboard-user-guide#auto-control),
 a prerequisite for autonomous tasks.
+- **CAN**: This indicates the CAN status and displays any error states.
 - **Filter**: This indicates the status of the [**UKF filter**](/docs/concepts/filter_service/).
 Autonomy will not engage if the filter has not converged.
 - **GPS**: A visual indicator showing if the [**GPS Service**](/docs/concepts/gps_service/)
