@@ -182,7 +182,7 @@ responsive network connection.
 
 If you encounter issues with autonomy or control:
 
-![icon bar](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/d69c2611-a3ad-4bb5-9db2-23a77c6a73ec)
+![icon bar](https://github.com/user-attachments/assets/06161702-9f28-4ea0-9026-102cc00db88c)
 
 - Verify all status indicators in the Autoplot app's top bar are active and showing the expected states.
 - Confirm that [**IMU Calibration**](/docs/apps/launcher/#imu-calibration) and

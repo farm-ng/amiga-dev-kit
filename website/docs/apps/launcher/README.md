@@ -12,7 +12,7 @@ From here you can open various Apps and dive deeper into Settings.
 
 The status bar provides critical information for robot operation.
 
-![icon bar](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/d69c2611-a3ad-4bb5-9db2-23a77c6a73ec)
+![icon bar](https://github.com/user-attachments/assets/06161702-9f28-4ea0-9026-102cc00db88c)
 
 - **Record**: Button used to Start and Stop recording. Recordings are saved in the [**File Manager App**](/docs/apps/file_manager_app/)
 - **CPU**: Percentage processing power being used across all cores.
