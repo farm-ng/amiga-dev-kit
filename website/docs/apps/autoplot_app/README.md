@@ -182,13 +182,18 @@ responsive network connection.
 
 If you encounter issues with autonomy or control:
 
-![icon bar](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/d69c2611-a3ad-4bb5-9db2-23a77c6a73ec)
+![icon bar](https://github.com/user-attachments/assets/06161702-9f28-4ea0-9026-102cc00db88c)
 
 - Verify all status indicators in the Autoplot app's top bar are active and showing the expected states.
 - Confirm that [**IMU Calibration**](/docs/apps/launcher/#imu-calibration) and
 [**GPS NTRIP**](/docs/apps/launcher/#gps-ntrip) settings are set correctly and up-to-date.
 - If the robot does not respond to WASD keyboard commands, ensure that no other tasks are running and
 the robot's Dashboard is set to [**Auto Control**](/docs/dashboard/dashboard-user-guide#auto-control).
+
+![can error](https://github.com/user-attachments/assets/7595058f-9b7d-495c-a4b5-e73acca36cb9)
+
+- If the CAN has an unhealthy state, the icon on the navigation bar will be crossed out.
+Click on the icon to visualize the CAN status and any possible errors.
 
 ![filter error](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/9e6ab78d-dd52-4d86-9688-53b7ee9bff66)
 
