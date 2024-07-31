@@ -124,5 +124,5 @@ immediately.
 
 13. Your result should represent the image below.
      <img src="https://github.com/farm-ng/amiga-dev-kit/assets/64480560/b483ace5-9836-43b0-9b5e-8597bf8e8fc6"
-     width="500"
-     height="200" />
+     width="300"
+     height="400" />

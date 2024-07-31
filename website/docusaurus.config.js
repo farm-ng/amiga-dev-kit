@@ -63,6 +63,17 @@ async function createConfig() {
 			],
 		],
 
+		plugins: [
+			[
+			  "posthog-docusaurus",
+			  {
+				apiKey: "phc_tOUxR37cMslYGTJcn699eycJmeuhkHp0lNmLV9kyHkm",
+				appUrl: "https://us.i.posthog.com", // optional, defaults to "https://us.i.posthog.com"
+				enableInDevelopment: true, // optional
+			  },
+			],
+		  ],
+
 		themeConfig:
 			/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 			({
