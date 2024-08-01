@@ -38,6 +38,7 @@ While operating the Amiga:
 - Do not stand in front of the Amiga
 - Have Amiga on flat surface
 - Have both batteries inserted and powered
+
 :::
 
 ## Starting the Amiga
@@ -73,6 +74,7 @@ and anytime you replace the pendant.
 :::caution
 
 - Before testing pendant, you should press physical ESTOP so the Amiga does not drive while testing.
+
 :::
 
 ![ezgif com-gif-maker 2 (1)](https://user-images.githubusercontent.com/64480560/206317768-42edeab6-8fea-4c7d-95ae-a3ff3d9e62f1.gif)

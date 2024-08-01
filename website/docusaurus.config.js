@@ -36,13 +36,16 @@ async function createConfig() {
 				/** @type {import('@docusaurus/preset-classic').Options} */
 				({
 					docs: {
-						remarkPlugins: [mdxMermaid.default],
+						remarkPlugins: [
+							mdxMermaid.default,
+						],
 						sidebarPath: require.resolve('./sidebars.js'),
 						// Please change this to your repo.
 						// Remove this to remove the "edit this page" links.
 						editUrl:
 							//'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
 							'https://github.com/farm-ng/amiga-dev-kit/tree/main/website/',
+
 					},
 					blog: {
 						showReadingTime: true,
