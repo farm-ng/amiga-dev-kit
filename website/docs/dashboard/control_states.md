@@ -5,7 +5,6 @@ title: Amiga Control States
 
 ## Amiga control states
 
-
 ### State transition flowchart
 
 ```mermaid
@@ -33,8 +32,8 @@ title: Amiga Control States
 
 ```
 
-
 ### State descriptions
+
 - **Boot**
   - Amiga is starting up
 - **Manual Ready**
@@ -58,7 +57,6 @@ title: Amiga Control States
     - Motor temperature or current spike
     - Etc.
   - E-stop condition must be cleared before transition to Manual Ready state
-
 
 ### Transition descriptions
 
