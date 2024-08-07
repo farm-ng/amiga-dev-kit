@@ -17,9 +17,8 @@ async function createConfig() {
 		favicon: 'img/farm-ng_favicon.png',
 
 		// GitHub pages deployment config.
-		// If you aren't using GitHub pages, you don't need these.
-		organizationName: 'farm-ng', // Usually your GitHub org/user name.
-		projectName: 'amiga-dev-kit', // Usually your repo name.
+		organizationName: 'farm-ng',
+		projectName: 'amiga-dev-kit',
 
 		// Even if you don't use internalization, you can use this field to set useful
 		// metadata like html lang. For example, if your site is Chinese, you may want
@@ -42,18 +41,12 @@ async function createConfig() {
 				({
 					docs: {
 						sidebarPath: require.resolve('./sidebars.js'),
-						// Please change this to your repo.
-						// Remove this to remove the "edit this page" links.
 						editUrl:
-							//'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
 							'https://github.com/farm-ng/amiga-dev-kit/tree/main/website/',
 					},
 					blog: {
 						showReadingTime: true,
-						// Please change this to your repo.
-						// Remove this to remove the "edit this page" links.
 						editUrl:
-							//'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
 							'https://github.com/farm-ng/amiga-dev-kit/tree/main/website/',
 					},
 					theme: {
@@ -109,18 +102,6 @@ async function createConfig() {
 							docId: 'examples/examples-index',
 							position: 'left',
 						},
-
-						//   {
-						//     label: 'Contribute',
-						//     type: 'doc',
-						//     docId: 'contribute/contribute-website',
-						//     position: 'left',
-						//   },
-						//   {
-						//     to: '/blog',
-						//     label: 'Blog',
-						//     position: 'left'
-						//   },
 						{
 							to: 'https://discourse.farm-ng.com/',
 							label: 'Discourse',
@@ -176,14 +157,6 @@ async function createConfig() {
 									label: 'Discourse',
 									position: 'left',
 								},
-								//{
-								//  label: 'Stack Overflow',
-								//  href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-								//},
-								// {
-								//   label: 'Twitter',
-								//   href: 'https://twitter.com/docusaurus',
-								// },
 							],
 						}, {
 							title: 'Farm-ng',
@@ -201,14 +174,6 @@ async function createConfig() {
 									label: 'farm-ng-amiga-ros-bridge',
 									href: 'https://github.com/farm-ng/amiga-ros-bridge-v1',
 								},
-								//{
-								//  label: 'Stack Overflow',
-								//  href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-								//},
-								// {
-								//   label: 'Twitter',
-								//   href: 'https://twitter.com/docusaurus',
-								// },
 							],
 						},
 						{
