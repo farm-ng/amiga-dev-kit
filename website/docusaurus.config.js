@@ -6,7 +6,6 @@ const lightTheme = themes.github;
 const darkTheme = themes.dracula;
 
 async function createConfig() {
-	const mdxMermaid = await import('mdx-mermaid')
 	/** @type {import('@docusaurus/types').Config} */
 	return {
 		title: 'Farm-ng Developers',
@@ -30,13 +29,18 @@ async function createConfig() {
 			locales: ['en'],
 		},
 
+    // Enable mermaid
+    markdown: {
+      mermaid: true,
+    },
+    themes: ['@docusaurus/theme-mermaid'],
+
 		presets: [
 			[
 				'classic',
 				/** @type {import('@docusaurus/preset-classic').Options} */
 				({
 					docs: {
-						remarkPlugins: [mdxMermaid.default],
 						sidebarPath: require.resolve('./sidebars.js'),
 						// Please change this to your repo.
 						// Remove this to remove the "edit this page" links.
