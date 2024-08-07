@@ -87,8 +87,10 @@ title: Amiga Control States
   - Press the `[AUTO CONTROL]` button
   - The `AUTO READY` state will illuminate, if state transition is permitted
 - **AmigaRpdo1**
-  - Transition between Auto ready and auto active state (both directions) is requested over CAN with an AmigaRpdo1 message
-  - The `AUTO READY` or `AUTO ACTIVE` state will illuminate, corresponding to the state the Amiga is in
+  - Transition between Auto ready and auto active state (both directions) is requested over CAN
+    with an AmigaRpdo1 message
+  - The `AUTO READY` or `AUTO ACTIVE` state will illuminate,
+    corresponding to the state the Amiga is in
   - Transitions
     - `Auto Ready <--> Auto Active`
 - **E-stop condition**
