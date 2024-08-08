@@ -72,7 +72,7 @@ async function createConfig() {
 			  {
 				apiKey: "phc_tOUxR37cMslYGTJcn699eycJmeuhkHp0lNmLV9kyHkm",
 				appUrl: "https://us.i.posthog.com", // optional, defaults to "https://us.i.posthog.com"
-				enableInDevelopment: true, // optional
+				enableInDevelopment: false, // optional
 			  },
 			],
 		  ],
