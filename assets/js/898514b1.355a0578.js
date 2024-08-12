@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkamiga_developers_website=self.webpackChunkamiga_developers_website||[]).push([[9067],{9187:e=>{e.exports=JSON.parse('{"tags":[{"label":"announcement","permalink":"/docs/tags/announcement","count":6},{"label":"release","permalink":"/docs/tags/release","count":6}]}')}}]);

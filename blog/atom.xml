@@ -22,7 +22,7 @@ development kit for the Farm-ng Amiga platform.</p>
 <a href="https://farmbot.ai/" target="_blank" rel="noopener noreferrer">Farm Robotics Challenge 2023</a> to help the
 student to bootstrap their ideas.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-amiga">The Amiga<a href="https://amiga.farm-ng.com/blog/2023/02/17/version-100#the-amiga" class="hash-link" aria-label="Direct link to The Amiga" title="Direct link to The Amiga">​</a></h2>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/53625197/187559379-b7b8fcf3-5fe7-4e14-aa47-fa0022f3801b.JPG" alt="image" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://user-images.githubusercontent.com/53625197/187559379-b7b8fcf3-5fe7-4e14-aa47-fa0022f3801b.JPG" alt="image" class="img_ev3q"></p>
 <p>The <a href="https://farm-ng.com/products/la-maquina-amiga" target="_blank" rel="noopener noreferrer"><strong>Amiga</strong></a> is
 a platform of robotic hardware and software built by farm-ng to
 enable farmers, hackers, engineers, roboticists, or anyone with a
@@ -31,7 +31,7 @@ applications.</p>
 <p>The Amiga includes two main pieces, the Dashboard and the
 artificial intelligence (AI) Brain.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="the-dashboard">The Dashboard<a href="https://amiga.farm-ng.com/blog/2023/02/17/version-100#the-dashboard" class="hash-link" aria-label="Direct link to The Dashboard" title="Direct link to The Dashboard">​</a></h3>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/11846963/186734463-aa149b3a-7510-4d5a-99ea-f9a8a96775d2.jpg" alt="image" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://user-images.githubusercontent.com/11846963/186734463-aa149b3a-7510-4d5a-99ea-f9a8a96775d2.jpg" alt="image" class="img_ev3q"></p>
 <p>The Amiga robotics platform can operate under manual control
 through the Dashboard which is the master control of the CAN Bus
 commands and electricity flow to the motors. The Dashboard
@@ -56,7 +56,7 @@ tools already available such as 3 Point Lifts, seats, plows,
 seeders, weeders, dibblers etc,
 see <a href="https://farm-ng.com/collections/amiga-attachments" target="_blank" rel="noopener noreferrer">https://farm-ng.com/collections/amiga-attachments</a></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="the-brain">The Brain<a href="https://amiga.farm-ng.com/blog/2023/02/17/version-100#the-brain" class="hash-link" aria-label="Direct link to The Brain" title="Direct link to The Brain">​</a></h3>
-<p><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0634/0241/0211/products/Brain-front.png?v=1674003215" alt="image" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://cdn.shopify.com/s/files/1/0634/0241/0211/products/Brain-front.png?v=1674003215" alt="image" class="img_ev3q"></p>
 <p>The Amiga Brain allows the platform to run complex artificial
 intelligence applications with a powerful computer encased in a
 weatherized, rugged aluminum case sporting a daylight readable 10.
@@ -81,7 +81,7 @@ with the native or user provided.</p>
 <p>Below you can see a couple of screenshots of the main layouts to
 navigate through the different apps, settings pages, or access to
 the developers tools.</p>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/5157099/219821743-fc500b20-591b-4f93-8d26-fa5a536fd0c3.png" alt="launcher_main" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://user-images.githubusercontent.com/5157099/219821743-fc500b20-591b-4f93-8d26-fa5a536fd0c3.png" alt="launcher_main" class="img_ev3q"></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="microservices-architecture">Microservices Architecture<a href="https://amiga.farm-ng.com/blog/2023/02/17/version-100#microservices-architecture" class="hash-link" aria-label="Direct link to Microservices Architecture" title="Direct link to Microservices Architecture">​</a></h3>
 <p>The <strong>AmigaOS</strong> and therefore the SDK are designed following a
 microservices architecture leveraging gRPC as a lightweight
@@ -93,7 +93,7 @@ architecture, starting from the Amiga platform which is the
 hardware layer, until the final user layer which are the GUI
 apps. The connection in between happens thanks to the
 <a href="https://grpc.io/" target="_blank" rel="noopener noreferrer">gRPC</a> message passing framework.</p>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/5157099/219821793-fa1eec88-35c6-43fd-bcc2-dafe2a961366.png" alt="image" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://user-images.githubusercontent.com/5157099/219821793-fa1eec88-35c6-43fd-bcc2-dafe2a961366.png" alt="image" class="img_ev3q"></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="grpc-services">gRPC Services<a href="https://amiga.farm-ng.com/blog/2023/02/17/version-100#grpc-services" class="hash-link" aria-label="Direct link to gRPC Services" title="Direct link to gRPC Services">​</a></h3>
 <p>The Amiga includes different core <a href="https://grpc.io/" target="_blank" rel="noopener noreferrer">gRPC</a>
 services that expose the basic sensors and intercommunication
@@ -106,7 +106,7 @@ examples about how to use this either as a standalone Python
 script, or as a <a href="https://kivy.org/" target="_blank" rel="noopener noreferrer">Kivy</a> application.</p>
 <p>Below is a snippet of the Python API to interact with the Oak
 cameras:</p>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/5157099/219821830-ebe221b7-c550-4f6c-8fab-2bbb7706806e.png" alt="amiga-sdk-1 0 0" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://user-images.githubusercontent.com/5157099/219821830-ebe221b7-c550-4f6c-8fab-2bbb7706806e.png" alt="amiga-sdk-1 0 0" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-native-apps">The native Apps<a href="https://amiga.farm-ng.com/blog/2023/02/17/version-100#the-native-apps" class="hash-link" aria-label="Direct link to The native Apps" title="Direct link to The native Apps">​</a></h2>
 <p>The AmigaOS provides some native apps to fulfill different needs
 and requirements from a GUI perspective.</p>
@@ -123,7 +123,7 @@ right grayscale images.</p>
 (in Python and C++)
 to decode the events file generated by the recorder. See:
 <a href="https://github.com/farm-ng/farm-ng-core" target="_blank" rel="noopener noreferrer">https://github.com/farm-ng/farm-ng-core</a></p>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/5157099/219821846-386dd217-cf1f-43ee-becd-85ee5c3e2f9a.png" alt="recorder_app" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://user-images.githubusercontent.com/5157099/219821846-386dd217-cf1f-43ee-becd-85ee5c3e2f9a.png" alt="recorder_app" class="img_ev3q"></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="gallery--playback">Gallery / Playback<a href="https://amiga.farm-ng.com/blog/2023/02/17/version-100#gallery--playback" class="hash-link" aria-label="Direct link to Gallery / Playback" title="Direct link to Gallery / Playback">​</a></h3>
 <p>With this app you can explore the different files collected with
 the Recorder app and visualize in situ the collected data. In the
@@ -131,12 +131,12 @@ future we’ll provide more functionality to perform data
 annotation e.g to train AI models. In addition, we also provide a
 playback tool to visualize the video sequences at different speed
 and seek frames.</p>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/5157099/219821855-b47b9465-f648-4ed5-b44d-deaca2517f0e.png" alt="gallery_app" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://user-images.githubusercontent.com/5157099/219821855-b47b9465-f648-4ed5-b44d-deaca2517f0e.png" alt="gallery_app" class="img_ev3q"></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="file-mover">File mover<a href="https://amiga.farm-ng.com/blog/2023/02/17/version-100#file-mover" class="hash-link" aria-label="Direct link to File mover" title="Direct link to File mover">​</a></h3>
 <p>We provide a simple application so that you can copy in your
 external drive all the data stored in the robot to perform later
 any type of data analysis.</p>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/5157099/219821868-d7f88168-0ffe-4eff-b4dd-1dfcd0cc71ba.png" alt="file_mover" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://user-images.githubusercontent.com/5157099/219821868-d7f88168-0ffe-4eff-b4dd-1dfcd0cc71ba.png" alt="file_mover" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="create-custom-apps">Create custom apps<a href="https://amiga.farm-ng.com/blog/2023/02/17/version-100#create-custom-apps" class="hash-link" aria-label="Direct link to Create custom apps" title="Direct link to Create custom apps">​</a></h2>
 <p>With the Amiga SDK we want to encourage anyone to create their
 own applications and improve the development experience. For this
@@ -150,7 +150,7 @@ directly in the robot (enjoying also the co-pilot).</p>
 <p>For a full developed tutorial, see the Virtual Joystick example,
 copy, paste, modify and have fun !
 <a href="https://amiga.farm-ng.com/docs/tutorials/introduction/tutorial-introduction%3E" target="_blank" rel="noopener noreferrer">https://amiga.farm-ng.com/docs/tutorials/introduction/tutorial-introduction</a></p>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/5157099/219821890-4c4478ed-374e-4213-819f-d67b78d1a4ea.png" alt="virtual_joystick" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://user-images.githubusercontent.com/5157099/219821890-4c4478ed-374e-4213-819f-d67b78d1a4ea.png" alt="virtual_joystick" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="ecosystem">Ecosystem<a href="https://amiga.farm-ng.com/blog/2023/02/17/version-100#ecosystem" class="hash-link" aria-label="Direct link to Ecosystem" title="Direct link to Ecosystem">​</a></h2>
 <ul>
 <li>Developer documentation<!-- -->
