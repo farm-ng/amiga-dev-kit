@@ -32,8 +32,7 @@ placed inside the side panel. Each motor have the following specs:
 |---|---|
 |Rated power|250 W|
 |Operational Voltage|36 ~ 43 VDC|
-|Reduction ratio| 1:11|
-|Torque|42 N.m (21 Lb.ft)|
+|Reduction ratio| 1:30|
 
 Each motor requires its own motor controller and, despite sharing the same hardware, they have
 the tires mounted differently. Make sure your motor is adequate to each side of your Amiga when

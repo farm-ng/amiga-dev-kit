@@ -3,6 +3,127 @@ id: faq
 title: Frequently Asked Questions
 ---
 
+## General
+
+<details>
+  <summary>How do I access and develop on the brain?</summary>
+  <div>
+     We have a dedicated webpage to help you connect your Amiga.
+     Check out this <a href="/docs/ssh/">
+      tutorial</a>
+    </div>
+</details>
+
+<details>
+  <summary>How do I update the Dashboard Firmware?</summary>
+  <div>
+     All latest updates are available online with detailed
+     instructions that will take you step by step to a successful
+     update.
+    <br/><br/>
+    - You can find more details at: <a href="/docs/dashboard/dashboard-fw">
+      Dashboard Firmware Updates</a>.
+    </div>
+</details>
+
+<details>
+  <summary>Who do I get in touch with for errors with the Amiga?</summary>
+  <div>
+    To ensure we are continuous improving our software and hardware products, we have several
+    channels to contact our support team:
+      <br/>
+      - The fastest way for general problems is, signing-in, search, and ask questions on our
+    [Discourse Community](https://discourse.farm-ng.com/).
+      - For particular cases, send us an email at support@farm-ng.com.
+      - For software issues related to our open-sourced libraries, <a href="https://github.com/farm-ng/farm-ng-amiga/issues/new/choose">
+      create a Bug Report on GitHub</a>.
+      <br/>
+      All support cases are subject to our
+      <a href="https://github.com/farm-ng/farm-ng-amiga/issues/new/choose">Amiga Support Agreement</a>
+    </div>
+</details>
+
+<details>
+ <summary>What is the voltage level of the amiga pendant and brain?</summary>
+ <div>
+24v power is the voltage for the Brain and the Pendant. The batteries supply 44v (nominal) to the
+main power circuit, and the PoE Switch uses a stabilized 48v source powered by 2 DC Converts (step
+down and step up schema). For details, see [Base Amiga Electronics](../hardware/electronics.md).
+   </div>
+</details>
+
+<details>
+  <summary>How do I access the MAC address on Brain?</summary>
+  <div>
+    On your Brain main screen, navigate to Seetings > About >  Debug Terminal. Click `Show
+    Keyboard` and type `ifconfig`. Scroll down the results of the command until you find the
+    `wlan0` section. Your MAC address will be int he line that starts with `ether` and will be
+    of the form `28:d0:aa:b5:12:ef`. Provide it for your network admin for whitelisting on your
+    wi-fi network.
+    </div>
+</details>
+
+## CAN bus
+
+<details>
+  <summary>
+    What is the baud rate of the CAN bus the Amiga runs on?
+  </summary>
+  <div>
+     The Amiga CAN bus runs at 250 kbps (250,000 bits per second).
+    <br/><br/>
+  </div>
+</details>
+
+## Brain App Development
+
+<details>
+  <summary>How can I create a new app for the brain?</summary>
+  <div>
+     Custom applications can be created on the brain from
+     anywhere. We have a detailed tutorial on creating your first
+     custom app on your Amiga.
+    <br/><br/>
+    - You can find more details at: <a href="/docs/brain/brain-apps">
+      Developing Custom Applications</a>.
+    </div>
+</details>
+
+<details>
+  <summary>
+    Why are other apps launching over the app I'm currently using?
+  </summary>
+  <div>
+    **deprecation warning**<br/>
+    This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
+    This video only applies to brains running Amiga OS `v1.x` versions.<br/>
+    **end warning**<br/>
+    <br/><br/>
+    If you launch an app with the command line using an <code>entry.sh</code> script,
+    it is currently possible to have touch interactions with the launcher behind.
+    This will cause other installed apps to unexpectedly launch over the app you are trying to use.
+    <br/><br/>
+    If this is causing you issues,
+    a simple workaround is to launch a basic, empty app that will block touches from the launcher.
+    The <a href="https://github.com/farm-ng/amiga-app-template"><code>amiga-app-template</code>
+    </a> is well suited for this.
+    <br/><br/>
+    In your terminal <code>ssh</code>'d in as the <code>amiga</code> user:
+    <br/><br/>
+    <code>
+    cd ~/apps/
+    </code>
+    <br/>
+    <code>
+    git clone https://github.com/farm-ng/amiga-app-template.git
+    </code>
+    <br/><br/>
+    Then launch the app template by clicking the <code>Amiga App Template</code> AppButton on the launcher
+    before running your custom app with the <code>entry.sh</code> script.
+    <br/><br/>
+    Apps launched by clicking the AppButton should not experience this issue.
+    </div>
+</details>
 
 ## Using the REPL
 
@@ -125,132 +246,4 @@ title: Frequently Asked Questions
     Keep in mind that the ports will increment as you connect
     multiple devices.
   </div>
-</details>
-
-## General
-
-<details>
-  <summary>How do I access and develop on the brain?</summary>
-  <div>
-     We have a dedicated webpage to help you connect your Amiga.
-     Check out this <a href="/docs/ssh/">
-      tutorial</a>
-    </div>
-</details>
-
-<details>
-  <summary>How do I update the Dashboard Firmware?</summary>
-  <div>
-     All latest updates are available online with detailed
-     instructions that will take you step by step to a successful
-     update.
-    <br/><br/>
-    - You can find more details at: <a href="/docs/dashboard/dashboard-fw">
-      Dashboard Firmware Updates</a>.
-    </div>
-</details>
-
-<details>
-  <summary>Who do I get in touch with for errors with the Amiga?</summary>
-  <div>
-  To ensure we are continuous improving the Amiga, we have made
-  it easy for you to submit any bug reports you may be having via
-  the farm-ng-amiga Github.
-    <br/><br/>
-    - You can find more details at: <a href="https://github.com/farm-ng/farm-ng-amiga/issues/new/choose">
-      Create a Bug Report</a>.
-    </div>
-</details>
-
-<details>
- <summary>What is the voltage level of the amiga pendant and brain?</summary>
- <div>
-24v power is the voltage for the brain and pendant. While the PoE Switch is 48v.
-<br/><br/>
-   </div>
-</details>
-
-<details>
- <summary>How do I connect the Amiga to Cell Phone Hotspot?</summary>
-   <div>
-    Depending on your cellular device, instructions can be found in the link below.
-    <br/><br/>
-    You can find more details at: <a
-    href="https://discourse.farm-ng.com/t/connecting-to-the-amiga-cell-phone-hotspot/131">
-    Connecting to the Amiga - Cell Phone Hotspot</a>.
-   </div>
-</details>
-
-<details>
-  <summary>How do i access the MAC address on Brain?</summary>
-  <div>
-    To learn how to access the MAC address of the Brain's WiFi adapter please visit the link below.
-    There, the following describes how to retrieve the MAC Address of the Brain WiFi adapter.
-    <br/><br/>
-    You can find more details at: <a
-    href="https://discourse.farm-ng.com/t/wifi-access-the-mac-address/139">
-    How to access MAC address on Brain</a>.
-    </div>
-</details>
-
-## CAN bus
-
-<details>
-  <summary>
-    What is the baud rate of the CAN bus the Amiga runs on?
-  </summary>
-  <div>
-     The Amiga CAN bus runs at 250 kbps (250,000 bits per second).
-    <br/><br/>
-  </div>
-</details>
-
-## Brain App Development
-
-<details>
-  <summary>How can I create a new app for the brain?</summary>
-  <div>
-     Custom applications can be created on the brain from
-     anywhere. We have a detailed tutorial on creating your first
-     custom app on your Amiga.
-    <br/><br/>
-    - You can find more details at: <a href="/docs/brain/brain-apps">
-      Developing Custom Applications</a>.
-    </div>
-</details>
-
-<details>
-  <summary>
-    Why are other apps launching over the app I'm currently using?
-  </summary>
-  <div>
-    **deprecation warning**<br/>
-    This is out-of-date for brains running `v2.x` Amiga OS software.<br/>
-    This video only applies to brains running Amiga OS `v1.x` versions.<br/>
-    **end warning**<br/>
-    <br/><br/>
-    If you launch an app with the command line using an <code>entry.sh</code> script,
-    it is currently possible to have touch interactions with the launcher behind.
-    This will cause other installed apps to unexpectedly launch over the app you are trying to use.
-    <br/><br/>
-    If this is causing you issues,
-    a simple workaround is to launch a basic, empty app that will block touches from the launcher.
-    The <a href="https://github.com/farm-ng/amiga-app-template"><code>amiga-app-template</code>
-    </a> is well suited for this.
-    <br/><br/>
-    In your terminal <code>ssh</code>'d in as the <code>amiga</code> user:
-    <br/><br/>
-    <code>
-    cd ~/apps/
-    </code>
-    <br/>
-    <code>
-    git clone https://github.com/farm-ng/amiga-app-template.git
-    </code>
-    <br/><br/>
-    Then launch the app template by clicking the <code>Amiga App Template</code> AppButton on the launcher
-    before running your custom app with the <code>entry.sh</code> script.
-    <br/><br/>
-    Apps launched by clicking the AppButton should not experience this issue.
-    </div>
 </details>

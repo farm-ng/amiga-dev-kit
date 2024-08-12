@@ -43,6 +43,7 @@ async function createConfig() {
 						sidebarPath: require.resolve('./sidebars.js'),
 						editUrl:
 							'https://github.com/farm-ng/amiga-dev-kit/tree/main/website/',
+
 					},
 					blog: {
 						showReadingTime: true,
@@ -59,6 +60,17 @@ async function createConfig() {
 				}),
 			],
 		],
+
+		plugins: [
+			[
+			  "posthog-docusaurus",
+			  {
+				apiKey: "phc_tOUxR37cMslYGTJcn699eycJmeuhkHp0lNmLV9kyHkm",
+				appUrl: "https://us.i.posthog.com", // optional, defaults to "https://us.i.posthog.com"
+				enableInDevelopment: false, // optional
+			  },
+			],
+		  ],
 
 		themeConfig:
 			/** @type {import('@docusaurus/preset-classic').ThemeConfig} */

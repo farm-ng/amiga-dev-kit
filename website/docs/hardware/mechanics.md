@@ -24,7 +24,7 @@ center of gravity, duty cycle, how many turns you are using, etc.
 
 * Note there is a tradeoff here: larger bases are more stable but cause extra effort on the outside
 wheels when turning.
-* Unless otherwise stated, we recommend 23 lb.ft (310 N.m) of torque on all bolts and nuts in your
+* Unless otherwise stated, we recommend 23 lb.ft (31 N.m) of torque on all bolts and nuts in your
 Amiga.
 
 ## Length (`wheel_track`)
