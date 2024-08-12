@@ -16,9 +16,9 @@
   "dependencies": {
     "@docusaurus/core": "^3.4.0",
     "@docusaurus/preset-classic": "^3.4.0",
-    "@mdx-js/react": "3.0.0",
+    "@docusaurus/theme-mermaid": "^3.4.0",
+    "@mdx-js/react": "^3.0.1",
     "clsx": "^1.2.1",
-    "mdx-mermaid": "^2.0.0",
     "mermaid": "^9.1.7",
     "posthog-docusaurus": "^2.0.1",
     "posthog-js": "^1.154.0",
