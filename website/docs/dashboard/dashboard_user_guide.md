@@ -199,9 +199,9 @@ The arrows (up/down/left/right) in the center of the pendant are used to select 
 H-Bridge(s).
 :::
 
-<img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/0f880f2a-3958-4066-989d-d68b68547665"/>
+<!-- <img src="https://github.com/farm-ng/amiga-dev-kit/assets/133177230/0f880f2a-3958-4066-989d-d68b68547665"/>
 
-These are the button configurations for those of you who purchased a Kar-Tech controller.
+These are the button configurations for those of you who purchased a Kar-Tech controller. -->
 
 ### H-bridge settings
 

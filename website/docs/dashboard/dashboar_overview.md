@@ -47,10 +47,7 @@ The farm-ng Dash display is a Beta early release product, specification and rati
 | Microcontroller      | Microchip SAM ATSAME51 32-Bit Arm Cortex M4 running at 120MHz                                                         |
 | Ecosystem            | Circuitpython based development, compatible with Adafruit Feather M4 CAN                                              |
 | Environmental rating | IP65 (Validation pending)                                                                                             |
-| Temp rating          | -20c to -70c ambient                                                                                                  |
-| Vibration and Shock  | TBD                                                                                                                   |
-| Basic dimensions     | xxx (Not including shroud)                                                                                            |
-| Weight               | TBD                                                                                                                   |
+| Temp rating          | -20 C to 70 C ambient                                                                                                  |
 
 ## Mechanical
 

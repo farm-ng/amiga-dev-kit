@@ -26,8 +26,9 @@ Your purchase of an Amiga robot will include the following items:
 Be sure to insert both battery packs in their respective locations on the Amiga.
 
 :::tip
-It is good practice to have both batteries plugged in and on at the same time
-when powering the Amiga even though the Amiga can operate with only one battery
+Your Amiga can operate with one battery, but if you have two batteries inserted in their respective
+slots, both must be ON. For further details on proper and safe battery operations see
+[Batteries and Charging](../hardware/charging.md)
 :::
 
 ![battery](https://user-images.githubusercontent.com/64480560/206290736-59ef9164-9ade-401c-80dc-569e77f088e5.gif)
