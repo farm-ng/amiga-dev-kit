@@ -5,8 +5,9 @@ title: Batteries and Charging
 
 ## Batteries
 
-Your Amiga use two batteries inside forks A and B, but two more can be added on forks C and D
-for more energy demanding applications. The specifications for each battery are:
+Your Amiga use two batteries, typically inside forks A and B, but it can be changed.
+Verify on your Amiga where the battery mount plates are.
+The specifications for each battery are:
 
 |Parameters| Values|
 |---|---|
@@ -15,16 +16,74 @@ for more energy demanding applications. The specifications for each battery are:
 |Maximum Charger Voltage | 50.4 V|
 |Over-charge voltage protection | 51 V|
 |Over-discharge voltage protection|33.6 V|
-|Maximum charge current | 30 A |
+|Maximum continuous charge current | 5 A |
+|Standard continuous charge current | 2 A |
 |Maximum discharge current | 30 A |
 |Weight| 5.2 Kg (11.5 Lb)|
 |Dimensions|360 x 150 x 68 mm|
 |Operation temperature (charging)| 0 ~ 45 C (32 ~ 113 F)|
 |Operation temperature (discharging)| -20 ~ 60 C (-4 ~ 140 F) |
 
+Note that operating your batteries consistently close to any maximums and minimum thresholds can
+reduce the lifespan of your batteries and ultimately damage the batteries.
+
+### Operation
+
+Each battery contain a key switch on its side. The switch serves dual purpose, locking the battery
+on its respective fork and enabling power for the robot. When batteries are connected together in
+your Amiga, they either need to have ALL keys in the "ON" position or ALL keys in the "OFF”
+position. When in doubt, follow the standard procedures:
+
+#### Powering the Amiga ON
+
+1. Slide the battery in using the mounting platform and the grooves located under the battery.
+2. Insert the key and turn it to the OFF position.
+3. Connect the IEC C14 power connector on the back of the battery.
+4. Repeat the first three steps for the other battery
+5. Turn both batteries ON, powering the Amiga.
+
+#### Powering the Amiga OFF
+
+1. Turn both batteries’ keys to OFF position, all systems will power off.
+2. Disconnect the IEC C14 power connector from the back of the battery.
+3. Turn the key switch to the UNLOCK position and remove the keys.
+4. Pull the battery of the robot using the handle and carefully place it on the ground.
+5. Repeat the last three steps to DL remove the other batteries.
+6. Move the batteries to a safe location, away from flammable materials and other structures.
+7. Charge each battery with your Farm-ng provided 2A charger.
+
+![Battery in unlock position](./assets/batt_unlock.jpeg) ![Battery in OFF position](./assets/batt_off.jpeg)
+![Battery in ON position](./assets/batt_on.jpeg)
+
+When connecting batteries in parallel, as in our standard Amiga setup, it is required that both
+batteries have their voltages matched to avoid one discharging itself into the other one at a
+higher current rate than it is rated for. The most effective way to achieve
+this is by ensuring both batteries are fully charged before connecting them to your Amiga and
+keeping them both **ON** during all operational time.
+
+:::danger Caution
+Operating your Amiga with Batteries at different charge levels/voltages lead to high currents moving
+from one battery to the other, which can cause permanent damage to the internal cells. With repeated
+charge/discharge cycles in these conditions, these damages can build up and increase the risk of a
+battery failure.
 <br/>
+Battery failures are potentially dangerous events that can cause fires that spread fast through
+other components of your Amiga and nearby structure. To minimize this risk, **DO NOT** charge or discharge
+(operate) batteries with different charge levels/voltages connected together.
+:::
+
+Connecting more than 2 batteries at any time increases the likelihood of voltage mismatch. Do not
+connect more than two batteries together at any time in your Amiga.
+
+:::tip pro tip
+If you are not certain, or cannot enforce the correct usage of your batteries, we recommend using
+only one battery at a time.
+:::
+
+### Fuses
+
 To protect all circuits in your Amiga, all batteries are equipped with a fuse located on its side
-close to the power output connector. The fuse must be 30 Amp, Slow blow, and we recommend using
+close to the power output connector. The fuse must be 30 Amp, slow blow, and we recommend using
 ceramic fuses.
 Remove it using a phillips screwdriver.
 
@@ -37,8 +96,7 @@ Verify its integrity using a multimeter before you proceed with your troubleshoo
 
 ## Charging you Amiga
 
-Each Amiga typically comes with 2 batteries and 2 chargers. Additional batteries and ways to
-connect extra batteries on the same robot are available at our online shop.
+Each Amiga typically comes with 2 batteries and 2 chargers.
 
 To charge your batteries, remove them from the robot, lift the handle and connect the
 charger. You will notice the LED in your charging brick will turn RED while the battery is
@@ -46,27 +104,19 @@ charging and GREEN when done.
 
 ![Amiga's battery charging port](../hardware/assets/dock.jpg) ![Amiga's charging on a bench](../hardware/assets/charging.jpeg)
 
-:::info
-Your standard charger can output power at 2 A (max), which will charge a battery for an Amiga with
-standard configurations in about 5 hours.
+Your standard charger can output power at 2 A (max), which will charge a battery for an Amiga in
+about 5 hours.
+
+:::caution Battery chargers
+**Only use Farm-ng provided chargers.** The use of different chargers can damage the internal
+components of your batteries, which can lead to dangerous failures.
 :::
 
-Alternatively, you can charge your batteries directly in your Amiga connecting it to one of the
-spare Anderson connectors located inside the forks.
+Battery charging involves high electric currents and, as any equipment operating at this capacity,
+has an electrical risk associated with. When charging your batteries make sure the chargers,
+cables, and batteries are in good condition. For additional safety, charge in an open area, away from
+flammable materials, structures, and ideally on a concrete floor. This setup minimizes the risk of fire
+spreading in the unlikely event of an incident.
 
-![Amiga's in vehicle charging](../hardware/assets/charger.jpg)
-
-Any 50+ VDC 2+ A charger can be modified to be used as an in-vehicle charging. At Farm-ng we use a
-50.4VDC 5A unit that can be purchased at our store. The important is to know that the batteries
-will charge at max peak voltage of 50.4 VDC, not to be confused with the nominal battery voltage
-(48 V).
-
-:::info
-A 5A charger connected to the power circuit will charge both batteries in an standard Amiga in
-about 4 hours.
-:::
-
-:::tip
-In order for in-vehicle charging to work, you need to keep your batteries ON (keys parallel to
-ground).
-:::
+If you have any questions or concerns about battery proper charging and handling, please contact our
+support team at support@farm-ng.com.

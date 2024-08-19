@@ -10,9 +10,9 @@ circuits essential for operation:
 
 ## Power Circuit
 
-This circuit provides power to all other circuits and the motors, operating at 48 VDC. Power is
-drawn from the batteries via C14 connectors and distributed using the cross bar and truck bar
-harnesses via Anderson connectors.
+This circuit provides power to all other circuits and the motors, operating at 44 VDC (nominal).
+Power is drawn from the batteries via IEC C14 connectors and distributed using the cross bar and
+truck bar harnesses via Anderson connectors.
 
 ![schematics of power circuit](./assets/circuit48.png)
 
@@ -20,7 +20,7 @@ We use the motor names to identify the harnesses, the A-D harness is secured
 to the truck bars as it is also the case for the B-C harness on the other side. The cross harness
 that links the two sides is secured using fir tree fasteners and zip ties.
 
-Each fork also includes an additional Anderson connector for charging or connecting other 48V
+Each fork also includes an additional Anderson connector for connecting other 44V
 accessories.
 
 ### Motors
@@ -74,8 +74,8 @@ and distributes via M8 connectors to the motor controllers, tools, and the physi
 
 :::warning ESTOP button at inclined terrain
 Engaging the E-stop button cuts power to the motor controllers but it does not provide a braking
-system. Be prepare for the Amiga to roll over if the button is engaged while the robot sits at an
-incline.
+system. Be prepared for the Amiga to roll freely if the button is engaged while the robot sits at
+an `incline.
 :::
 
 ![schematics of E-STOP circuit](./assets/estop.png)
