@@ -15,7 +15,8 @@ your Amiga where the battery mount plates are. The specifications for each batte
 |Maximum Charger Voltage | 50.4 V|
 |Over-charge voltage protection | 51 V|
 |Over-discharge voltage protection|33.6 V|
-|Maximum charge current | 30 A |
+|Maximum continuous charge current | 5 A |
+|Standard continuous charge current | 2 A |
 |Maximum discharge current | 30 A |
 |Weight| 5.2 Kg (11.5 Lb)|
 |Dimensions|360 x 150 x 68 mm|
@@ -28,21 +29,36 @@ reduce the lifespan of your batteries and ultimately damage the batteries.
 ### Operation
 
 Each battery contain a key switch on its side. The switch serves dual purpose, locking the battery
-on its respective fork and enabling power for the robot. To safely operate your Amiga, you should:
+on its respective fork and enabling power for the robot. When batteries are connected together in
+your Amiga, they either need to have ALL keys in the "ON" position or ALL keys in the "OFF”
+position. When in doubt, follow the standard procedures:
+
+#### Powering the Amiga ON
 
 * Slide the battery in using the mounting platform and the grooves located under the battery.
 * Insert the key and turn it to the OFF position.
-* Connect the C14 power connector on the back of the battery.
+* Connect the IEC C14 power connector on the back of the battery.
 * Repeat the first three steps for the other battery
 * Turn both batteries ON, powering the Amiga.
+
+#### Powering the Amiga OFF
+
+* Turn both batteries’ keys to OFF position, all systems will power off.
+* Disconnect the IEC C14 power connector from the back of the battery.
+* Turn the key switch to the UNLOCK position and remove the keys.
+* Pull the battery of the robot using the handle and carefully place it on the ground.
+* Repeat the last three steps to DL remove the other batteries.
+* Move the batteries to a safe location, away from flammable materials and other structures.
+* Charge each battery with your Farm-ng provided 2A charger.
 
 ![Battery in unlock position](./assets/batt_unlock.jpeg) ![Battery in OFF position](./assets/batt_off.jpeg)
 ![Battery in ON position](./assets/batt_on.jpeg)
 
-When connecting batteries in parallel, as in your Amiga configuration, it is required that both
-batteries have very similar, if not exactly the same, voltages. The most effective way to achieve
+When connecting batteries in parallel, as in our standard Amiga setup, it is required that both
+batteries have their voltages matched to avoid one discharging itself into the other one at a
+higher current rate than it is rated for. The most effective way to achieve
 this is by ensuring both batteries are fully charged before connecting them to your Amiga and
-keeping them both ON during all operational time.
+keeping them both **ON** during all operational time.
 
 :::danger Caution
 Operating your Amiga with Batteries at different charge levels/voltages lead to high currents moving
