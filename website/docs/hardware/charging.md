@@ -5,8 +5,9 @@ title: Batteries and Charging
 
 ## Batteries
 
-Your Amiga use two batteries, typically inside forks A and B, but it can be changed. Verify at
-your Amiga where the battery mount plates are. The specifications for each battery are:
+Your Amiga use two batteries, typically inside forks A and B, but it can be changed.
+Verify on your Amiga where the battery mount plates are.
+The specifications for each battery are:
 
 |Parameters| Values|
 |---|---|
