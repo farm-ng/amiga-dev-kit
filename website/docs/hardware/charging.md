@@ -36,21 +36,21 @@ position. When in doubt, follow the standard procedures:
 
 #### Powering the Amiga ON
 
-* Slide the battery in using the mounting platform and the grooves located under the battery.
-* Insert the key and turn it to the OFF position.
-* Connect the IEC C14 power connector on the back of the battery.
-* Repeat the first three steps for the other battery
-* Turn both batteries ON, powering the Amiga.
+1. Slide the battery in using the mounting platform and the grooves located under the battery.
+2. Insert the key and turn it to the OFF position.
+3. Connect the IEC C14 power connector on the back of the battery.
+4. Repeat the first three steps for the other battery
+5. Turn both batteries ON, powering the Amiga.
 
 #### Powering the Amiga OFF
 
-* Turn both batteries’ keys to OFF position, all systems will power off.
-* Disconnect the IEC C14 power connector from the back of the battery.
-* Turn the key switch to the UNLOCK position and remove the keys.
-* Pull the battery of the robot using the handle and carefully place it on the ground.
-* Repeat the last three steps to DL remove the other batteries.
-* Move the batteries to a safe location, away from flammable materials and other structures.
-* Charge each battery with your Farm-ng provided 2A charger.
+1. Turn both batteries’ keys to OFF position, all systems will power off.
+2. Disconnect the IEC C14 power connector from the back of the battery.
+3. Turn the key switch to the UNLOCK position and remove the keys.
+4. Pull the battery of the robot using the handle and carefully place it on the ground.
+5. Repeat the last three steps to DL remove the other batteries.
+6. Move the batteries to a safe location, away from flammable materials and other structures.
+7. Charge each battery with your Farm-ng provided 2A charger.
 
 ![Battery in unlock position](./assets/batt_unlock.jpeg) ![Battery in OFF position](./assets/batt_off.jpeg)
 ![Battery in ON position](./assets/batt_on.jpeg)
