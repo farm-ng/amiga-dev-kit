@@ -45,7 +45,7 @@ repos:
           - --ignore-words-list
           - "ans,hist"
           - --skip
-          - "*.bib,*.ipynb,*.lock"
+          - "*.bib,*.ipynb,*.lock, *.json"
 
   - repo: https://github.com/myint/docformatter
     rev: v1.5.0
