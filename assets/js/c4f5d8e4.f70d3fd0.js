@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkamiga_developers_website=self.webpackChunkamiga_developers_website||[]).push([[2634],{6467:(e,s,t)=>{t.r(s),t.d(s,{default:()=>d});t(6540),t(8774),t(4586),t(5302);var a=t(4848);var r=t(6347);function d(){return(0,a.jsx)(r.rd,{to:"/docs/getting-started"})}}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkamiga_developers_website=self.webpackChunkamiga_developers_website||[]).push([[8158],{48158:(e,a,s)=>{s.r(a),s.d(a,{DocSearchModal:()=>r.a1});var r=s(55600)}}]);
