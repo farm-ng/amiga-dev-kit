@@ -9,7 +9,6 @@ Your Amiga use two batteries, typically inside forks A and B, but it can be chan
 Verify on your Amiga where the battery mount plates are.
 The specifications for each battery are:
 
-
 |Parameters| Values|
 |---|---|
 |Rated capacity | 15 AH |
@@ -52,7 +51,6 @@ position. When in doubt, follow the standard procedures:
 5. Repeat the last three steps to DL remove the other batteries.
 6. Move the batteries to a safe location, away from flammable materials and other structures.
 7. Charge each battery with your Farm-ng provided 2A charger.
-
 
 ![Battery in unlock position](./assets/batt_unlock.jpeg) ![Battery in OFF position](./assets/batt_off.jpeg)
 ![Battery in ON position](./assets/batt_on.jpeg)
