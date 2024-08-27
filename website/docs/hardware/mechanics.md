@@ -60,6 +60,21 @@ If you have an Intelligence Kit, remember to change the `wheelbase` parameter on
 will likely experience offsets when following tracks.**
 :::
 
+<br/>
+<br/>
+
+:::tip Make sure ou amiga is square!
+When you change `wheel_track` or `track_width` (or both) you need to make sure your wheels are
+parallel. The best way to achieve this is:
+
+* Front and rear `wheel_track` are within 1/4" (6 mm) of each other.
+* Left and right `track_width` are within 1/4" (6 mm) of each other.
+* The diagonals from fork A to fork C, and fork B to fork D are within 1/4" (6 mm) of each other.
+You can use two arbitrary points on each fork, as long as they are equivalent on each one.
+
+**Using an Amiga that is not square can lead to lower performance and motor overheating issues.**
+:::
+
 ## Pendant and Intelligence Kit Mast
 
 * You can move the pendant using the existing U-clamps anywhere on your Amiga. If the cables are
