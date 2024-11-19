@@ -286,7 +286,7 @@ class AmigaTpdo1(Packet):
 
     def __str__(self):
         return "AMIGA TPDO1 Amiga state {} Measured speed {:0.3f} Measured angular rate {:0.3f} @ time {}".format(
-            self.state, self.meas_speed, self.meas_ang_rate, self.stamp.stamp
+            self.state, self.meas_speed, self.meas_ang_rate, self.stamp
         ) + " PTO bits 0x{:x} h-bridge bits 0x{:x} charge level: {}%".format(self.pto_bits, self.hbridge_bits, self.soc)
 
 
