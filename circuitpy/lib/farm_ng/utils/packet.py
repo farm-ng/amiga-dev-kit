@@ -343,7 +343,7 @@ class AmigaPdo2(Packet):
 
 
 class FarmngHeartbeat(Packet):
-    """Custom Heartbeat message = status sent regularly by farm-ng components"""
+    """Custom Heartbeat message = status sent regularly by farm-ng components."""
 
     format = "<BI3s"
     cob_id = 0x700
