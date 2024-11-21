@@ -16,9 +16,8 @@
 class CanOpenObject:
     """CANopen function codes.
 
-    This class provides constants representing the function codes in the CANopen protocol.
-    The function codes are used to construct the CAN identifier (CAN ID) by adding them to the node ID
-    for most functions.
+    This class provides constants representing the function codes in the CANopen protocol. The function codes are used
+    to construct the CAN identifier (CAN ID) by adding them to the node ID for most functions.
 
     For more information about the CANopen protocol, see:
     https://www.csselectronics.com/pages/canopen-tutorial-simple-intro
