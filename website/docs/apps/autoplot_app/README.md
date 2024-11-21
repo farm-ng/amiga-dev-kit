@@ -137,7 +137,7 @@ Here are instructions for using the pendant and the kartech at the dashboard fir
 
 :::info
 The supported Kartech remote changed in dashboard firmware release
-[**amiga-dash-v0.6.0**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.6.0).
+[**amiga-dash-v0.7.0**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.7.0).
 
 Documentation of the controls for this remote are coming soon.
 :::
