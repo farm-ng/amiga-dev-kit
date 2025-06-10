@@ -22,8 +22,6 @@ Documentation coming soon...
 
 ## Usage
 
-![Visualize recorder path and zones](https://github.com/user-attachments/assets/3b8d64a4-f327-42d5-b06d-705b2d579ae7)
-
 
 ## Configuration
 
