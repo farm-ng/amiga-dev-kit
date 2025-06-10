@@ -76,12 +76,31 @@ const sidebars = {
       "type": "category"
     },
     {
-      "App Overviews": [
-        "apps/launcher/launcher",
-        "apps/autoplot_app/autoplot-app",
-        "apps/camera_app/camera-app",
-        "apps/file_manager_app/file-manager-app",
+      "items": [
+        {
+          "items": [
+            "apps/launcher/launcher",
+            "apps/autoplot_app/autoplot-app",
+            "apps/camera_app/camera-app",
+            "apps/file_manager_app/file-manager-app",
+          ],
+          "label": "Amiga 2.0",
+          "type": "category"
+        },
+        {
+          "items": [
+            "apps/launcher_v3/launcher-v3",
+            "apps/map_recorder/map-recorder",
+            "apps/job_manager/job-manager",
+            "apps/teleop/teleop",
+            "apps/data_logger/data-logger",
+          ],
+          "label": "Amiga 3.0",
+          "type": "category"
+        }
       ],
+      "label": "App Overviews",
+      "type": "category"
     },
     {
       "Farm Tools": [
