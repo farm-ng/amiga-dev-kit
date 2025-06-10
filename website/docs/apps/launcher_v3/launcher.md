@@ -9,6 +9,8 @@ title: Launcher v3.0
 
 The Launcher v3.0 is the next generation application launcher for the Amiga platform, providing enhanced functionality and improved user experience.
 
+![icon bar](https://drive.google.com/file/d/1ygu1qwQvju6uC6_B9WFpd2vqpgKZTVcd/view?usp=drive_link)
+
 ## Features
 
 - Modern interface design
