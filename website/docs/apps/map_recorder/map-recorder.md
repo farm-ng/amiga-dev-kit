@@ -22,7 +22,8 @@ Documentation coming soon...
 
 ## Usage
 
-Instructions for using the Map Recorder will be provided here.
+![Visualize recorder path and zones](https://github.com/user-attachments/assets/3b8d64a4-f327-42d5-b06d-705b2d579ae7)
+
 
 ## Configuration
 
