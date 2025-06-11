@@ -7,25 +7,29 @@ title: Launcher v3.0
 
 ## Overview
 
-The Launcher v3.0 is the next generation application launcher for the Amiga platform, providing enhanced functionality and improved user experience.
+The Launcher is the first page you will see after your Amiga Brain has completed its booting process. From here you can open various Apps and dive deeper into Settings.
 
 ![icon bar](https://github.com/user-attachments/assets/1b7fa35e-bdfa-4931-b337-462d1d7471dd)
 
-
 ## Features
 
-- Modern interface design
-- Enhanced performance
-- New application management capabilities
-- Improved navigation
+- Gps
+- wifi
+- Battery
+- Temperature
+- Uptime
+- CPU and Memory
+
+- The Settings menu allows you to make in depth adjustments to the various systems of your Amiga.
+- The File Manager is where you will find the recorded log files you have captured withyour Amiga.
+- The Data Logger is the backbone of the Amiga's data logging functionalities. It is designed to capture and store data from various robot services and topics, facilitating later analysis, debugging, and model training.
+- Map Recorder
+- Job Manager
+- TeleOp
 
 ## Getting Started
 
-Documentation coming soon...
-
 ## Usage
-
-Instructions for using the Launcher v3.0 will be provided here.
 
 ## Troubleshooting
 
