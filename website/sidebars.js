@@ -94,6 +94,7 @@ const sidebars = {
             "apps/job_manager/job-manager",
             "apps/teleop/teleop",
             "apps/data_logger/data-logger",
+            "apps/settings/settings",
           ],
           "label": "Amiga 3.0",
           "type": "category"

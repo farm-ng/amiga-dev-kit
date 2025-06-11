@@ -7,7 +7,7 @@ title: Map Recorder
 
 ## Overview
 
-The Map Recorder application enables users to record and manage field maps for agricultural operations.
+The Map Recorder application enables users to record and manage field maps for the Amiga.
 
 ## Features
 
@@ -26,11 +26,11 @@ The robot will also come to an E-stop when you loose GPS. A pop up message will 
 
 ## Getting Started
 
-Documentation coming soon...
+
 
 ## Usage
 
 
 ## Configuration
 
-Settings and configuration options will be documented in this section.
+

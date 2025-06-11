@@ -13,24 +13,27 @@ The Launcher is the first page you will see after your Amiga Brain has completed
 
 ## Features
 
-- Gps
-- wifi
+### System Status Indicators
+- GPS
+- WiFi
 - Battery
 - Temperature
 - Uptime
 - CPU and Memory
 
-- The Settings menu allows you to make in depth adjustments to the various systems of your Amiga.
-- The File Manager is where you will find the recorded log files you have captured withyour Amiga.
-- The Data Logger is the backbone of the Amiga's data logging functionalities. It is designed to capture and store data from various robot services and topics, facilitating later analysis, debugging, and model training.
-- Map Recorder
-- Job Manager
-- TeleOp
+### Available Applications
+- **Settings**: Make in-depth adjustments to the various systems of your Amiga
+- **File Manager**: Access recorded log files captured with your Amiga
+- **Data Logger**: The backbone of the Amiga's data logging functionalities, designed to capture and store data from various robot services and topics
+- **Map Recorder**: Record and manage navigation maps
+- **Job Manager**: Schedule and manage automated tasks
+- **TeleOp**: Remote control and monitoring interface
 
 ## Getting Started
 
-## Usage
 
+
+## Usage
 ## Troubleshooting
 
-Common issues and solutions will be documented in this section.
+
