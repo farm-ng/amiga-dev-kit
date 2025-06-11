@@ -8,19 +8,50 @@ title: settings
 
 ## Overview
 
-
+The Settings app is the central configuration interface for the Amiga. It provides comprehensive control over robot's configurations
 
 ## Features
 
+### 1. About
+- Display robot information (name, software version, installed apps)
+- Access debug terminal for troubleshooting
 
+### 2. WiFi
+- Configure and manage network connections
+- Select WiFi networks and enter credentials
+- Enable/disable WiFi for testing
+- Monitor connection status
+
+### 3. Services
+- View and control all Amiga services
+- Toggle services on/off for troubleshooting
+- Monitor service health and status
+
+### 4. Robot Configuration
+
+### 5. IMU Calibration
+- Calibrate Inertial Measurement Unit
+- Status indicator showing calibration state
+- Essential for precise navigation
+- Required after geometry changes
+
+### 6. GPS NTRIP
+- Configure RTK base station connection:
+  - Server name/address
+  - Mount point and port
+  - Authentication credentials
+
+### 7. PoE Switch Manager
+- Network diagnostics and remote ping
+- Per-port control for PoE devices
+- Enable/disable individual ports
+- Reset PoE switch functionality
+
+### 8. Exit To Launcher
 
 ## Getting Started
 
+### Accessing Settings
 
-
-## Usage
-
-
-
-## Data Formats
+From the Launcher app on your device Tap the "Settings" icon to access the configuration interface
 
