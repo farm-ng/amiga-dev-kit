@@ -1,6 +1,6 @@
 ---
 id: settings
-title: settings
+title: Settings
 ---
 
 

@@ -90,11 +90,13 @@ const sidebars = {
         {
           "items": [
             "apps/launcher_v3/launcher-v3",
+            "apps/settings/settings",
+            "apps/teleop/teleop",
             "apps/map_recorder/map-recorder",
             "apps/job_manager/job-manager",
-            "apps/teleop/teleop",
+            "apps/file_manager_v3/file-manager",
             "apps/data_logger/data-logger",
-            "apps/settings/settings",
+
           ],
           "label": "Amiga 3.0",
           "type": "category"
