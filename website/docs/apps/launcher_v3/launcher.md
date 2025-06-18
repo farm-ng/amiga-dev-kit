@@ -3,40 +3,15 @@ id: launcher-v3
 title: Launcher
 ---
 
-# Launcher v3.0 Guide
-
-## Overview
-
 The Launcher is the first page you will see after your Amiga Brain has completed its booting process. From here you can open various Apps and dive deeper into Settings.
 
 ![icon bar](https://github.com/user-attachments/assets/1b7fa35e-bdfa-4931-b337-462d1d7471dd)
 
-## Features
-
 ### System Status Indicators
-- GPS
-- WiFi
-- Battery
-- Temperature
-- Uptime
-- CPU and Memory
+  **GPS Status** Click the GPS button to view detailed information on RTK status, positioning accuracy metrics, and connection diagnostics. **WiFi** Click this button to open the WiFi management page. **Battery** Visual display of battery level. **Temperature** This is the average temperature of your robot's sensor suite.**Uptime** System uptime since last power up. **CPU and Memory** - Click this button to view your system's resource usage
 
-### Available Applications
-- [**Settings**](/docs/apps/settings): Make in-depth adjustments to the various systems of your Amiga
-- [**TeleOp**](/docs/apps/teleop/teleop.md): Remote control and monitoring interface
-- [**Map Recorder**](/docs/apps/map_recorder/map-recorder.md): Record and manage navigation maps
-- [**Job Manager**](/docs/apps/job_manager/job-manager.md): Schedule and manage automated tasks
-- [**File Manager**](/docs/apps/file_manager_v3/file-manager.md): Access recorded log files captured with your Amiga
-- [**Data Logger**](/docs/apps/data_logger/data-logger.md): The backbone of the Amiga's data logging functionalities, designed to capture and store data from various robot services and topics
+### Applications
+Click on an icon to launch the application
 
-
-
-
-## Getting Started
-
-
-
-## Usage
-## Troubleshooting
-
+[**Settings**](/docs/apps/settings): Configuration access and adjustments. [**TeleOp**](/docs/apps/teleop/teleop.md): Remote operation and control. [**Map Recorder**](/docs/apps/map_recorder/map-recorder.md): Navigation and mapping interface. [**Job Manager**](/docs/apps/job_manager/job-manager.md): Task scheduling and execution. [**File Manager**](/docs/apps/file_manager_v3/file-manager.md): File system browsing and management. [**Data Logger**](/docs/apps/data_logger/data-logger.md): Data recording and logging. Use the **Left** and **Right** slide buttons to navigate thru the various carousel pages to the left
 
