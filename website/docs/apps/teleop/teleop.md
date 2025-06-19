@@ -13,9 +13,7 @@ The TeleOp (Teleoperation) application is a remote control interface with real-t
 
 ### Tool Controls
 ![Screenshot from 2025-06-19 14-10-44](https://github.com/user-attachments/assets/27b4e104-a78f-44ee-98a9-8c5d388c1b3a)
-The **Tool Controls** panel is used to control attachments. With a PTO attached you will be provided with circular arrow buttons for **Clockwise** and **Counterclockwise** directional control. The **RPM** slider adjusts rotational speed for PTO tools (1-200 RPM) and provides you with a numeric value display.
-
-In the case of and H-bride, this panel will give you the option to configure it as an **On/Off** switch, or a **Linear Motion** tool for linear/polar control. Selecting the **On/Off** option takes you to a screen where you set the polarity of the switch. If you select **Linear Motion** to configure your H-bridge, a **Time to Active** slider allow you to set a timeout duration for your linear motion tool (1-16 seconds) and provides you with a with numeric value display.
+The **Tool Controls** panel is used to control attachments. In the case of and H-bride, this panel will give you the option to configure it as an **On/Off** switch, or a **Linear Motion** tool for linear/polar control. Selecting the **On/Off** option takes you to a screen where you set the polarity of the switch. If you select **Linear Motion** to configure your H-bridge, a **Time to Active** slider allow you to set a timeout duration for your linear motion tool (1-16 seconds) and provides you with a with numeric value display. With a PTO attached you will be provided with circular arrow buttons for **Clockwise** and **Counterclockwise** directional control. The **RPM** slider adjusts rotational speed for PTO tools (1-200 RPM) and provides you with a numeric value display.
 
 In both instances the **Play** button starts/tests the selected tool with your current settings. When engaged the play circle turns Green. The **Stop** button stops the currently active tool and when engaged the play circle turns Red. The **Undo** button resets your tool configuration to previously configured state.
 
