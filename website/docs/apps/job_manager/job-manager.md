@@ -3,21 +3,19 @@ id: job-manager
 title: Job Manager
 ---
 
-# Job Manager Guide
-
-The Job Manager provides you with comprehensive job management and execution capabilities for the Amiga. It is the central hub for job creation and execution.
-
+# Job Manager
+The Job Manager provides gives you comprehensive job management and execution capabilities for the Amiga. It is the central hub for job creation and execution.
 ![Screenshot from 2025-06-10 16-49-14](https://github.com/user-attachments/assets/dff035f8-5a6e-4d66-802f-587fb805b0a6)
 
 
 ### Job Creation
-Start by pressing **Create New JOb** Select your desired **Path** and press **Continue**. Every job requires an implement and you may **Choose Implement** from the defaults we provide **Seeder**, **Weeder**, **Sprayer**. Alternatively, you can create an implement of your own. Begin by pressing the plus icon **+** next to the **Choose Implement** header. **Select Tools** on the lower right corner, press **Continue** and **Edit Tool Parameters**.
+Start by pressing **Create New JOb** Select your desired **Path** and press **Continue**. Every job requires an implement and you may **Choose Implement** from the defaults we provide: **Seeder**, **Weeder**, **Sprayer**. Alternatively, you can create an implement of your own. To do so, pressing the plus icon **+** next to the **Choose Implement** header. **Select Tools** on the lower right corner, press **Continue** and **Edit Tool Parameters**.
 
 Tools can be configured in three different ways. **On/Off** sets the tool in binary operation mode. **Linear Motion** is an analog control mode that requires you to define a **Time to Activate**, which determines the time that it will take for your tool to be fully extended. The **Direction** buttons (clockwise and counter-clockwise arrows) determine the rotational direction of the pto. These buttons are also used to specify the direction of travel on the H-bridge and the "polarity of the On/Off state. Use the **Play** button to tests your tool's operation and the **Stop** button to stop them.
 
 **The dashboard must be set to AUTOMODE in order for you to test and fine tune your tool  parameters**
 
-Once you have selected the tools and parameters needed for your Job,**Create Imp** (checkmark) - Creates implement with selected tools
+Once you have selected the tools and parameters needed for your Job, the **Create Imp** checkmark creates your implement with your selected tools.
 
 
 
@@ -31,14 +29,14 @@ Once you have selected the tools and parameters needed for your Job,**Create Imp
 
 ### Tool & Implement Management
 
-   Add Implement, open the implement 
+   Add Implement, open the implement
   ## Tool Type Selection:
      **H-BRIDGES** - Selects motor control tools
      **PTOs** - Selects power take-off tools
 
   ## Tool Management:
      **Undo** (undo icon) - Removes tool from configuration
-     
+
 
 ### Job Loading & Execution
 

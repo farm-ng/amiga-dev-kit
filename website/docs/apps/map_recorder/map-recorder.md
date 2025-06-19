@@ -3,93 +3,61 @@ id: map-recorder
 title: Map Recorder
 ---
 
-# Map Recorder Guide
-
+# Map Recorder
 The Map Recorder application enables users to record and manage field maps for the Amiga.
 
-## Features
-
-- Real-time map recording
-
+Real-time map
 ![Visualize recorder path and zones](https://github.com/user-attachments/assets/3b8d64a4-f327-42d5-b06d-705b2d579ae7)
 
+## Visualize
+Opens panel showing saved routes/zones. Toggle between Zones and Routes view. Hide button to close panel
 
-  ### Recorder
+**Record**: Starts new GPS path recording
 
-   ## Visualize
-     Opens panel showing saved routes/zones
-     Toggle between Zones and Routes view
-     Hide button to close panel
+**Resume**: Continues paused recording
 
-     **Record**: Starts new GPS path recording
+**Pause**: Temporarily stops recording
 
-     **Resume**: Continues paused recording
+## Mark Location
+Adds waypoint at current GPS position. Used to mark important field locations
 
-     **Pause**: Temporarily stops recording
+**Undo Zone** Removes last recorded zone segment
 
-   ## Mark Location
-     Adds waypoint at current GPS position
-     Used to mark important field locations
+**Undo Last** Removes last track point
 
-   **Undo Zone** Removes last recorded zone segment
+**Abort** Cancels entire recording session (Only active during recording)
 
-   **Undo Last** Removes last track point
+**Save** Brings up a pop up to save recorded path/zone. Allows custom naming
 
-   ## Abort
-     Cancels entire recording session
-     Only active during recording
+## Studio
 
-   **Save**
-     Brings up a pop up to save recorded path/zone
-     Allows custom naming
+**Path/Zones/Safety** Switches between viewing paths, farming zones, or safety zones. Each item has delete button (trash icon)
 
-   **Exit to Launcher**
+**Modify** (Edit icon) Enables editing of existing paths/zones. Shows "Cancel" when active
 
-  ## Studio
+**Create** (Plus square icon) Enables drawing new zones on map. Shows "Cancel" when active
 
-   **Path/Zones/Safety**
-     Switches between viewing paths, farming zones, or safety zones
-     Each item has delete button (trash icon)
+**Save** Brings up a pop up to save recorded path/zone. Allows custom naming
 
-   **Modify** (Edit icon)
-     Enables editing of existing paths/zones
-     Shows "Cancel" when active
+### Navigation Controls
 
-   **Create** (Plus square icon)
-     Enables drawing new zones on map
-     Shows "Cancel" when active
+**Studio/Recorder Toggle** Switches between recording and editing modes
 
-   **Save**
-     Brings up a pop up to save recorded path/zone
-     Allows custom naming
+**Exit to Launcher** Returns to launcher application
 
-   **Exit to Launcher**
+**Center Map** (Crosshair icon) Centers map on robot position. Only visible in Studio mode
 
+### Zone Types
 
-  ### Navigation Controls
+**Transition** (Orange)
 
-   **Studio/Recorder Toggle**
-     Switches between recording and editing modes
+**Farming** (Light Green)
 
-   **Exit to Launcher**
-     Returns to launcher application
+**Safety Zones** (Purple)
 
-   **Center Map** (Crosshair icon)
-     Centers map on robot position
-     Only visible in Studio mode
+### Real-time Features
 
-  ### Zone Types
-    **Engaged** (Light Blue)
-
-    **Transition** (Orange)
-
-    **Field** (Light Green)
-
-    **Safety Zones** (Purple)
-
-  ### Real-time Features
-
-   GPS position tracking
-   Robot heading indicator
-   WebSocket updates for state changes
-   Error notifications with E-Stop trigger
+GPS position tracking
+Robot heading indicator
+WebSocket updates for state changes
+Error notifications with E-Stop trigger
