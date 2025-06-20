@@ -2,9 +2,9 @@
 id: file-manager
 title: File Manager
 ---
-  ## File Manager Guide
+## File Manager Guide
 
- ## File List View Functions
+## File List View Functions
 
    **USB Device**
     USB dropdown selector for file operations

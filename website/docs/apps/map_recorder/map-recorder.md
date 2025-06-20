@@ -4,12 +4,14 @@ title: Map Recorder
 ---
 
 # Map Recorder
+
 The Map Recorder application enables users to record and manage field maps for the Amiga.
 
 Real-time map
 ![Visualize recorder path and zones](https://github.com/user-attachments/assets/3b8d64a4-f327-42d5-b06d-705b2d579ae7)
 
 ## Visualize
+
 Opens panel showing saved routes/zones. Toggle between Zones and Routes view. Hide button to close panel
 
 **Record**: Starts new GPS path recording
@@ -19,6 +21,7 @@ Opens panel showing saved routes/zones. Toggle between Zones and Routes view. Hi
 **Pause**: Temporarily stops recording
 
 ## Mark Location
+
 Adds waypoint at current GPS position. Used to mark important field locations
 
 **Undo Zone** Removes last recorded zone segment
@@ -31,7 +34,8 @@ Adds waypoint at current GPS position. Used to mark important field locations
 
 ## Studio
 
-**Path/Zones/Safety** Switches between viewing paths, farming zones, or safety zones. Each item has delete button (trash icon)
+**Path/Zones/Safety** Switches between viewing paths, farming zones, or safety zones.
+Each item has delete button (trash icon)
 
 **Modify** (Edit icon) Enables editing of existing paths/zones. Shows "Cancel" when active
 
