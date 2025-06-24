@@ -11,21 +11,14 @@ It is the central hub for job creation and execution.
 
 ## Job Creation
 
-Start by pressing **Create New JOb** Select your desired **Path** and press **Continue**.
-Every job requires an implement and you may **Choose Implement** from the defaults we provide:
-**Seeder**, **Weeder**, **Sprayer**.
-Alternatively, you can create an implement of your own.
-To do so, pressing the plus icon **+** next to the **Choose Implement** header.
-**Select Tools** on the lower right corner, press **Continue** and **Edit Tool Parameters**.
+### Job Creation
+Start by pressing **Create New Job** Select your desired **Path** and press **Continue**.
 
-Tools can be configured in three different ways. **On/Off** sets the tool in binary operation mode.
-**Linear Motion** is an analog control mode that requires you to define a
-**Time to Activate**, which determines the time that it will take for your tool to be fully extended.
-The **Direction** buttons (clockwise and counter-clockwise arrows) determine the
-rotational direction of the pto.
-These buttons are also used to specify the direction of travel on the H-bridge
-and the "polarity of the On/Off state.
-Use the **Play** button to tests your tool's operation and the **Stop** button to stop them.
+Every job requires an implement and you may **Choose Implement** from the defaults we provide: **Seeder**, **Weeder**, **Sprayer**. Alternatively, you can create an implement of your own. To do so, press the plus icon **+** next to the **Choose Implement** header. A pop up on the lower right corner will come up, and this is where you **Select Tools** for your job. After you have made your selection, press **Continue** and continue to **Edit Tool Parameters**.
+
+Tools are configured in three different ways.
+
+For tools that rely on an **H-Bridge**, the  **On/Off** switch sets the tool in binary operation mode. **Linear Motion** is an analog control mode that requires you to define a **Time to Activate**. This parameter determines the time that it will take for your tool to be fully extended. The directional **arrow buttons** (clockwise and counter-clockwise) determine the direction of travel on the H-bridge and the "polarity of the On/Off state. These buttons also used to set the the rotational direction of your the PTO. Use the **Play** button to preview your tool's configuration and the **Stop** button to stop them.
 
 **The dashboard must be set to AUTOMODE in order for you to test and fine
 tune your tool parameters**
@@ -43,34 +36,12 @@ Save (forward arrow) - Finalizes job creation
 
 ## Tool & Implement Management
 
-Add Implement, open the implement
+### Job Loading & Execution
+When you first open the Job Manager app, you will be presented with a list of **Available Jobs**. These are jobs you would have previously created and saved. Click on a job name to load it up a preview. If you need to test your tools or make any changes, press the **Tool Edit** button to bring up the tool editor. The **Confirm** button saves any changes you might have made to tool configuration. Once you are ready, press the **Run** button to execute your selected job. Alternatively, press **Cancel** exit the preview screen.
 
-### Tool Type Selection
+### Route Loading & Execution
+Next to the available jobs pane, you will see the **Repeat a Route** button, where you will see a list of all your saved routes. To select a route, press the route name and continue to execution. Press the **Run** button to execute your selected route or hit the **Cancel** button to exit the preview screen.
 
-     **H-BRIDGES** - Selects motor control tools
-     **PTOs** - Selects power take-off tools
-
-### Tool Management
-
-     **Undo** (undo icon) - Removes tool from configuration
-
-## Job Loading & Execution
-
-Job/Route Toggle Tabs:
-**Available Jobs** - Shows created jobs list
-**Repeat a Route** - Shows saved routes list
-Job Selection Buttons (job names) - Loads job for preview/execution
-Route Selection Buttons (route names) - Loads route for execution
-**Data Logging** Controls:
-Recording checkbox - Enables/disables data logging
-Profile dropdown - Selects logging configuration
-Job Preview & Control:
-**Run** (play icon) - Starts job/route execution
-**Cancel** (X icon) - Cancels job preview
-**Tool Edit** (edit icon) - Opens tool editor for job
-**Confirm** (checkmark) - Saves tool configuration changes
-
-### Real-Time Job Control
 
 Execution Control:
 **PAUSE/RESUME** (dynamic text) - Pauses or resumes active job
@@ -79,6 +50,39 @@ Tool Status Indicators (tools icon) - Opens real-time tool editor
 Tool Editor Controls:
 **Update Tools** - Applies changes to running job
 **Cancel** - Discards tool changes
+
+
+
+
+**Data Logging** Controls:
+Recording checkbox - Enables/disables data logging
+Profile dropdown - Selects logging configuration
+
+
+**Path** Selection loads route data for job
+**Zone** Selection defines operational boundaries
+**Implement** Selection assigns tools to job
+
+
+Navigation Controls:
+Back (back arrow) - Returns to previous step
+Continue (forward arrow) - Advances to next step
+Save (forward arrow) - Finalizes job creation
+
+### Tool & Implement Management
+
+Add Implement, open the implement
+
+
+## Tool Type Selection:
+**H-BRIDGES** - Selects motor control tools
+**PTOs** - Selects power take-off tools
+## Tool Management:
+**Undo** (undo icon) - Removes tool from configuration
+
+
+### Real-Time Job Control
+
 
 ## Data Management
 
@@ -115,6 +119,5 @@ The application manages these primary states through the UI buttons:
 
 ## Navigation & Application Control
 
-Exit to Launcher Button (Exit to Launcher + logout icon) - Returns to the main launcher
-application
+Exit to Launcher Button (Exit to Launcher + logout icon) - Returns to the main launcher application
 Job Creation Toggle (Create New Job + plus icon) - Switches to job builder mode
