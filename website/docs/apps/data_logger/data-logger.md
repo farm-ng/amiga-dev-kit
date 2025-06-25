@@ -11,7 +11,7 @@ and a button where you can change **Camera Settings**. There is an option to  **
 ![entry_page](https://github.com/user-attachments/assets/fb905d92-e874-4781-a384-4d3be050630c)
 
 ### Profile Management
-![rec_profile](https://github.com/user-attachments/assets/2f6acc54-b11d-475f-a2ba-562a54c6bcfa)
+![topic_selection](https://github.com/user-attachments/assets/af69213b-c4c0-4fb3-9bc1-a71e2fc56ea0)
 Pressing the **Select Topics** button on the lower right of the main screen will
 take you to the topic selection panel. where you can create a new
 profile by pressing the **+ Add Profile** button.
@@ -46,6 +46,7 @@ and press the green checkmark to confirm your new metadata entry.
 you may cancel by pressing the **x** button.
 
 ### Data Logging
+![rec button](https://github.com/user-attachments/assets/4f086c11-c8a0-4764-bb4f-2ee72dffe71c)
 In order start logging your selected topics, press the red **Record**
 button on the upper left corner. Pressing this button again
 will terminate your recording. Your recordings will now be
