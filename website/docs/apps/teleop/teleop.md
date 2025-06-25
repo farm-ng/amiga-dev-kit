@@ -2,9 +2,6 @@
 id: teleop
 title: TeleOp
 ---
-
-# TeleOp
-
 The TeleOp (Teleoperation) application is a remote control interface with real-time video streaming!
 All panels are draggable and can be minimized to save screen space.
 Use WASD keyboard commands for robot controls and visualize movement in real-time.

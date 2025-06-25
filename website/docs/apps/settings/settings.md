@@ -2,7 +2,6 @@
 id: settings
 title: Settings
 ---
-
 The Settings page is the central configuration interface for the Amiga.
 It provides comprehensive controls over the robot's configuration.
 
