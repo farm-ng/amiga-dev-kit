@@ -5,6 +5,8 @@ title: File Manager
 ## File Manager Guide
 
 ## File List View Functions
+![Screenshot from 2025-06-25 13-27-06](https://github.com/user-attachments/assets/799fcd53-c5d9-467f-b14a-fcbd03acc192)
+![Screenshot from 2025-06-25 13-29-10](https://github.com/user-attachments/assets/6b510580-62fe-4c55-9abc-433d48feae5a)
 
    **USB Device**
     USB dropdown selector for file operations
