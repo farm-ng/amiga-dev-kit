@@ -4,19 +4,19 @@ title: Job Manager
 ---
 The Job Manager provides gives you comprehensive job management and execution capabilities for the Amiga.
 It is the central hub for job creation and execution.
-![Screenshot from 2025-06-10 16-49-14](https://github.com/user-attachments/assets/dff035f8-5a6e-4d66-802f-587fb805b0a6)
+![Run](https://github.com/user-attachments/assets/512d2f97-c3f0-4ed5-b42b-0b48350886af)
 
 ### Job Creation
 
 Start by pressing **Create New Job** Select your desired **Path** and press **Continue**.
-
+![choose_implement](https://github.com/user-attachments/assets/62f3e243-d829-4669-b875-25181ee3cd65)
 Every job requires an implement and you may **Choose Implement** from the defaults we provide: **Seeder**,
 **Weeder**, **Sprayer**. Alternatively, you can create an implement of your own.
 To do so, press the plus icon **+** next to the **Choose Implement** header.
 A pop up on the lower right corner will come up, and this is where you
 **Select Tools** for your job. After you have made your selection,
 press **Continue** and continue to **Edit Tool Parameters**.
-
+![edit_tools](https://github.com/user-attachments/assets/103033ce-aeb4-49e5-aaae-ec2686612650)
 Tools are configured in three different ways.
 
 For tools that rely on an **H-Bridge**, the  **On/Off** switch sets the tool in binary operation mode.
@@ -29,6 +29,7 @@ Use the **Play** button to preview your tool's configuration and the **Stop** bu
 
 **The dashboard must be set to AUTOMODE in order for you to test and fine
 tune your tool parameters**
+![review_name](https://github.com/user-attachments/assets/3bbb679b-a729-4415-89f5-28f097c68702)
 
 Once you have selected the tools and parameters needed for your Job, the **Create Imp**
 checkmark creates your implement with your selected tools.
@@ -42,6 +43,8 @@ Continue (forward arrow) - Advances to next step
 Save (forward arrow) - Finalizes job creation
 
 ## Tool & Implement Management
+![choose_implement](https://github.com/user-attachments/assets/c5b1b55b-5110-4acc-a83b-7c4885077eb6)
+
 
 ### Job Loading & Execution
 
@@ -62,6 +65,8 @@ button to execute your selected route or hit the **Cancel**
 button to exit the preview screen.
 
 Execution Control:
+![Screenshot from 2025-06-19 15-45-48](https://github.com/user-attachments/assets/f81d9d00-4720-4319-a5f4-b849d2798828)
+
 **PAUSE/RESUME** (dynamic text) - Pauses or resumes active job
 **STOP** (red button) - Completely stops job execution
 Tool Status Indicators (tools icon) - Opens real-time tool editor
@@ -72,6 +77,7 @@ Tool Editor Controls:
 **Data Logging** Controls:
 Recording checkbox - Enables/disables data logging
 Profile dropdown - Selects logging configuration
+![rec_enabled](https://github.com/user-attachments/assets/bc2d8c79-2a71-43b3-90ef-0f54082413a0)
 
 **Path** Selection loads route data for job
 **Zone** Selection defines operational boundaries
