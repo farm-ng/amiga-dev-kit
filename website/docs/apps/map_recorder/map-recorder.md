@@ -61,6 +61,10 @@ The **Create** button enables you to drawing new zones.
 ### Error Notification
 
 Error notifications with E-Stop trigger
+![Screenshot from 2025-06-25 16-08-13](https://github.com/user-attachments/assets/f702a066-04c7-4db6-833b-98891fa473d3)
+
+
+
 
 ![Screenshot from 2025-06-19 15-38-22](https://github.com/user-attachments/assets/d5f26704-3aa3-4061-9902-20bfd139b881)
 
