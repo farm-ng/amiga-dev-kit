@@ -2,7 +2,6 @@
 id: launcher-v3
 title: Launcher
 ---
-
 The Launcher is the first page you will see after your Amiga Brain has completed its booting process.
 From here you can open various Apps and dive deeper into Settings.
 

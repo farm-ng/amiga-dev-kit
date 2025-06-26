@@ -47,7 +47,8 @@ Save (forward arrow) - Finalizes job creation
 
 When you first open the Job Manager app, you will be presented with a list of **Available Jobs**.
 These are jobs you would have previously created and saved. Click on a job name to load it up a preview.
-If you need to test your tools or make any changes, press the **Tool Edit** button to bring up the tool editor.
+If you need to test your tools or make any changes, press the
+**Tool Edit** button to bring up the tool editor.
 The **Confirm** button saves any changes you might have made to tool configuration.
 Once you are ready, press the **Run** button to execute your selected job.
 Alternatively, press **Cancel** exit the preview screen.
@@ -80,8 +81,6 @@ Navigation Controls:
 Back (back arrow) - Returns to previous step
 Continue (forward arrow) - Advances to next step
 Save (forward arrow) - Finalizes job creation
-
-### Tool & Implement Management
 
 Add Implement, open the implement
 

@@ -2,15 +2,16 @@
 id: data-logger
 title: Data Logger
 ---
-
-# Data Logger
 This is our comprehensive interface for data collection and logging.
 The first thing you will see is a live camera feed
-and a button where you can change **Camera Settings**. There is an option to  **Annotate**, a dropdown menu for **Profile** selection, and an input field for **Metadata**.
+and a button where you can change **Camera Settings**.
+There is an option to  **Annotate**, a dropdown menu for
+**Profile** selection, and an input field for **Metadata**.
 
 ![entry_page](https://github.com/user-attachments/assets/fb905d92-e874-4781-a384-4d3be050630c)
 
 ### Profile Management
+
 ![topic_selection](https://github.com/user-attachments/assets/af69213b-c4c0-4fb3-9bc1-a71e2fc56ea0)
 Pressing the **Select Topics** button on the lower right of the main screen will
 take you to the topic selection panel. where you can create a new
@@ -25,6 +26,7 @@ You may now select your newly created profile from the dropdown menu below the
 **Profile** and **Metadata** panes.
 
 ### Camera Controls
+
 ![camera](https://github.com/user-attachments/assets/36f0434f-9bb9-4e25-96aa-0424a02c37cf)
 The **Camera Settings** icon opens a configuration panel for **Camera Selection**,
 **Stream Type**, and camera settings such as **Exposure** and **Focus**.
@@ -33,12 +35,14 @@ ISO, and lens position. Be sure to **Apply Settings** to confirm your parameter 
 or hit **Cancel** to discards camera setting changes.
 
 ### Data Annotation
+
 ![annotations](https://github.com/user-attachments/assets/b60d0d28-4a97-4376-b33c-ff61d7b85a6e)
 The **Annotate** button adds a timestamped note to your data log but you must press the
 **Submit Annotation** button to save your annotation's text or hit **Close**
 to cancel.
 
 ### Metadata
+
 ![metadata](https://github.com/user-attachments/assets/35f00f01-2518-48b0-bcfa-5b9ec7e8abf6)
 Click on the **Metadata** button to expand into the full metadata editor.
 Press the **New** button to add your custom fields. Give your field a name
@@ -46,9 +50,10 @@ and press the green checkmark to confirm your new metadata entry.
 you may cancel by pressing the **x** button.
 
 ### Data Logging
+
 ![rec button](https://github.com/user-attachments/assets/4f086c11-c8a0-4764-bb4f-2ee72dffe71c)
 In order start logging your selected topics, press the red **Record**
 button on the upper left corner. Pressing this button again
 will terminate your recording. Your recordings will now be
-available in the [**File Manager**](/docs/apps/file_manager_v3/file-manager.md)
+available in the [**File Manager**](/docs/apps/file_manager_v3/file-manager.md).
 **Exit to Launcher** takes you back to the main dashboard.
