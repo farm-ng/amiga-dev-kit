@@ -40,6 +40,7 @@ will be fully engaged. Finally the **Safety Zone** (highlighted
 in purple) is the area where your Amiga will operate during Job execution.
 If for some reason your Amiga leaves this zone while executing a job, it
 will be automatically stopped.
+![Screenshot from 2025-06-26 10-54-35](https://github.com/user-attachments/assets/992fbc13-ee41-4945-a320-a331a227f915)
 
 ### Visualize
 
