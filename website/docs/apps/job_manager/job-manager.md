@@ -34,13 +34,10 @@ direction of the PTO. Use the **Play** button to preview your tool's
 configuration and the **Stop** button to stop them.
 Once you have selected the tools and parameters needed for your Job,
 press the **Create Imp** button to create your implement with your selected tools.
-
 :::tip
 The dashboard must be set to **AUTOMODE** in order for you to test and fine
 tune your tool parameters
 :::
-
-
 ### Job Loading & Execution
 Click on the job name you wish to execute
 to load it up into a preview. If you need to test your tools or make
@@ -61,14 +58,12 @@ Press **Cancel** to discard any tool changes.
 
 
 ### Route Loading & Execution
+![route](https://github.com/user-attachments/assets/2345af1a-e679-40f8-840b-93fc74170560)
 Next to the available jobs pane, you will see the **Repeat a Route** button,
 where you will see a list of all your saved routes. To select a route,
 press the route name and continue to execution. Press the **Run**
 button to execute your selected route or hit the **Cancel**
 button to exit the preview screen.
-
-
-### Data Logging
 
 ## Error Handling & Safety
 ![error](https://github.com/user-attachments/assets/a26f6b72-ed92-4955-9a50-d04828b7a0de)
