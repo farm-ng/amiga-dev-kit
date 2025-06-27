@@ -11,6 +11,7 @@ Click on the job name you wish to execute to load it up into a preview.
 ![Run](https://github.com/user-attachments/assets/512d2f97-c3f0-4ed5-b42b-0b48350886af)
 
 ### Job Creation
+
 ![edit_tools](https://github.com/user-attachments/assets/103033ce-aeb4-49e5-aaae-ec2686612650)
 Start by selecting your desired **Path** and press **Continue**. Press **Create New Job**
 and **Choose Implement** from the defaults we provide:
@@ -38,7 +39,9 @@ press the **Create Imp** button to create your implement with your selected tool
 The dashboard must be set to **AUTOMODE** in order for you to test and fine
 tune your tool parameters
 :::
+
 ### Job Loading & Execution
+
 Click on the job name you wish to execute
 to load it up into a preview. If you need to test your tools or make
 any changes, press the **Tool Edit** button to bring up the tool editor.
@@ -56,8 +59,8 @@ allowing you to **Update Tools** and apply your changes to the running job.
 Press **Cancel** to discard any tool changes.
 ![Screenshot from 2025-06-19 15-45-48](https://github.com/user-attachments/assets/f81d9d00-4720-4319-a5f4-b849d2798828)
 
-
 ### Route Loading & Execution
+
 ![route](https://github.com/user-attachments/assets/2345af1a-e679-40f8-840b-93fc74170560)
 Next to the available jobs pane, you will see the **Repeat a Route** button,
 where you will see a list of all your saved routes. To select a route,
@@ -66,10 +69,9 @@ button to execute your selected route or hit the **Cancel**
 button to exit the preview screen.
 
 ## Error Handling & Safety
+
 If you loose GPS or your Amiga is not in AutoMode you will be prompted
 with an error message to address the situation. There is also an Emergency
 e-stop with 60-second cooldown integrated into job control.
 ![error](https://github.com/user-attachments/assets/a26f6b72-ed92-4955-9a50-d04828b7a0de)
 **Exit to Launcher** takes you back to the main dashboard.
-
-
