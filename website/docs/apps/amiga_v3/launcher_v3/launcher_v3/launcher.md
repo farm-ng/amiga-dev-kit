@@ -8,7 +8,8 @@ From here you can open various Apps and dive deeper into Settings.
 ![icon bar](https://github.com/user-attachments/assets/1b7fa35e-bdfa-4931-b337-462d1d7471dd)
 On the upper left corner you will see system status indicators where you can quickly
 monitor connections to your Amiga.
-Click on the [**GPS**](/docs/apps/amiga_v3/settings#gps-ntrip) button to view detailed information on RTK status,
+Click on the [**GPS**](/docs/apps/amiga_v3/settings#gps-ntrip) button
+to view detailed information on RTK status,
 positioning accuracy metrics, and connection diagnostics.
 The [**WiFi**](/docs/apps/amiga_v3/settings/#wifi) button opens the WiFi management page.
 The **Battery** icon gives you a visual display of battery level, and the **Temperature** icon
