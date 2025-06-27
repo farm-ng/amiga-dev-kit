@@ -20,10 +20,17 @@ Lastly, click the **CPU and Memory** button to view your system's current resour
 
 ![Screenshot from 2025-06-18 13-03-19](https://github.com/user-attachments/assets/aa90f7c6-610f-4b8a-92d7-8cb848fb83e0)
 Click on the icon for the App you wish to launch.
+
 [**Settings**](/docs/apps/settings) Configuration access and adjustments.
+
 [**TeleOp**](/docs/apps/teleop/teleop.md) Remote operation and control.
+
 [**Map Recorder**](/docs/apps/map_recorder/map-recorder.md) Navigation and mapping interface.
+
 [**Job Manager**](/docs/apps/job_manager/job-manager.md) Task scheduling and execution.
+
 [**File Manager**](/docs/apps/file_manager_v3/file-manager.md) File system browsing and management.
+
 [**Data Logger**](/docs/apps/data_logger/data-logger.md) Data recording and logging.
+
 Use the **Left** and **Right** slide buttons to navigate thru the various carousel pages to the left
