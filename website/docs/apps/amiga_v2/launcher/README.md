@@ -36,8 +36,10 @@ Always monitor this, especially before starting long tasks.
 
 ![Apps](https://github.com/farm-ng/amiga-dev-kit/assets/133177230/7cc6cd85-0f9f-47d7-bea8-2d68a3bb9649)
 
-Please visit the following links for an in-depth exploration of the [**Autoplot**](/docs/apps/amiga_v2/autoplot_app),
-[**Camera**](/docs/apps/amiga_v2/camera_app), and [**File Manager**](/docs/apps/amiga_v2/file_manager_app) Apps.
+Please visit the following links for an in-depth exploration
+of the [**Autoplot**](/docs/apps/amiga_v2/autoplot_app),
+[**Camera**](/docs/apps/amiga_v2/camera_app),
+and [**File Manager**](/docs/apps/amiga_v2/file_manager_app) Apps.
 
 ## Settings
 
