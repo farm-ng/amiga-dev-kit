@@ -71,7 +71,7 @@ button to exit the preview screen.
 ### Data Logging
 
 ## Error Handling & Safety
-
+![error](https://github.com/user-attachments/assets/a26f6b72-ed92-4955-9a50-d04828b7a0de)
 If you loose GPS or your Amiga is not in AutoMode you will be prompted
 with an error message to address the situation. There is also an Emergency
 e-stop with 60-second cooldown integrated into job control
