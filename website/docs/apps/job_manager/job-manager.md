@@ -66,11 +66,10 @@ button to execute your selected route or hit the **Cancel**
 button to exit the preview screen.
 
 ## Error Handling & Safety
-![error](https://github.com/user-attachments/assets/a26f6b72-ed92-4955-9a50-d04828b7a0de)
 If you loose GPS or your Amiga is not in AutoMode you will be prompted
 with an error message to address the situation. There is also an Emergency
-e-stop with 60-second cooldown integrated into job control
-**Exit to Launcher** returns to the main launcher application.
-
+e-stop with 60-second cooldown integrated into job control.
+![error](https://github.com/user-attachments/assets/a26f6b72-ed92-4955-9a50-d04828b7a0de)
+**Exit to Launcher** takes you back to the main dashboard.
 
 
