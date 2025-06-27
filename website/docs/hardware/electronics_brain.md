@@ -30,5 +30,5 @@ Finally, the GPS antenna uses an SMA to TNC cable to provide RTK corrections to 
 :::info Changing Intelligence kit mount
 Each time you move the the GPS antenna and/or the IMU (oak 0) you must change your robot's geometry
 to conform with the new locations of these components. Doing so will ensure accurate navigation.
-Geometry parameters of your Amiga can be changed following the guide at [Robot Geometry](../apps/launcher/#robot-geometry).
+Geometry parameters of your Amiga can be changed following the guide at [Robot Geometry](../apps/amiga_v2/launcher/#robot-geometry).
 :::

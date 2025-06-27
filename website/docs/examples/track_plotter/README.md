@@ -13,7 +13,7 @@ including plotting / visualization with the [`matplotlib`](https://matplotlib.or
 will plot in this example and cover the required knowledge
 for that example to understand `Tracks`, `Waypoints`, & `Poses`.
 3. **Transfer Data**: Know how to transfer data from your robot to your local PC by following the
-data transfer section of the [**Recorder App Guide**](/docs/apps/recorder_app/).
+data transfer section of the [**Recorder App Guide**](/docs/apps/amiga_v2/recorder_app/).
 :::
 
 The [**Track Plotter Example**](https://github.com/farm-ng/farm-ng-amiga/blob/main/py/examples/track_plotter/main.py)

@@ -79,23 +79,23 @@ const sidebars = {
       "items": [
         {
           "items": [
-            "apps/launcher/launcher",
-            "apps/autoplot_app/autoplot-app",
-            "apps/camera_app/camera-app",
-            "apps/file_manager_app/file-manager-app",
+            "apps/amiga_v2/launcher/launcher",
+            "apps/amiga_v2/autoplot_app/autoplot-app",
+            "apps/amiga_v2/camera_app/camera-app",
+            "apps/amiga_v2/file_manager_app/file-manager-app",
           ],
           "label": "Amiga 2.0",
           "type": "category"
         },
         {
           "items": [
-            "apps/launcher_v3/launcher-v3",
-            "apps/settings/settings",
-            "apps/teleop/teleop",
-            "apps/map_recorder/map-recorder",
-            "apps/job_manager/job-manager",
-            "apps/file_manager_v3/file-manager",
-            "apps/data_logger/data-logger",
+            "apps/amiga_v3/launcher_v3/launcher-v3",
+            "apps/amiga_v3/settings/settings",
+            "apps/amiga_v3/teleop/teleop",
+            "apps/amiga_v3/map_recorder/map-recorder",
+            "apps/amiga_v3/job_manager/job-manager",
+            "apps/amiga_v3/file_manager_v3/file-manager",
+            "apps/amiga_v3/data_logger/data-logger",
 
           ],
           "label": "Amiga 3.0",
@@ -185,8 +185,8 @@ const sidebars = {
     {
       "items": [
         "brain/brain",
-        "apps/filter_app/filter-app",
-        "apps/recorder_app/recorder-app",
+        "apps/amiga_v2/filter_app/filter-app",
+        "apps/amiga_v2/recorder_app/recorder-app",
       ],
       "label": "Deprecated",
       "type": "category"

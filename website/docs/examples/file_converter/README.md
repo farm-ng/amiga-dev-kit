@@ -31,7 +31,7 @@ You should typically expect 4 view streams per Oak Device ("rgb", "disparity", "
 
 ### Record your own
 
-See the **[Recorder App Guide](/docs/apps/recorder_app/)** for instructions.
+See the **[Recorder App Guide](/docs/apps/amiga_v2/recorder_app/)** for instructions.
 
 ### Download the log file
 

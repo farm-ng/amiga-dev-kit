@@ -26,7 +26,7 @@ work if executed directly from a brain (because of the popup window).
 
 ### Record your own
 
-See the **[Recorder App Guide](/docs/apps/recorder_app/)** for instructions.
+See the **[Recorder App Guide](/docs/apps/amiga_v2/recorder_app/)** for instructions.
 
 ### Download the log file
 

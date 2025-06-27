@@ -27,7 +27,7 @@ or use your local PC.
 
 ### Record your own
 
-See the **[Recorder App Guide](/docs/apps/recorder_app/)** for instructions.
+See the **[Recorder App Guide](/docs/apps/amiga_v2/recorder_app/)** for instructions.
 
 <!--
 Commented because the old log won't have headers!

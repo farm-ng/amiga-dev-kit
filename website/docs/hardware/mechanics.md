@@ -42,7 +42,7 @@ perpendicular to the ground, experiencing higher-than-necessary effort and possi
 :::warning Amiga's geometry
 When you change your Amiga's size, remember to change the `wheel_track` parameter on your
 [dashboard](../dashboard/dashboard-user-guide#configuration-settings) and your
-[Brain Settings](../apps/launcher/#robot-geometry) (if applicable).<br/><br/>
+[Brain Settings](../apps/amiga_v2/launcher/#robot-geometry) (if applicable).<br/><br/>
 **If there is a mismatch between your physical setup and your dashboard configuration, you will
 likely experience overheating and erratic motor speeds when turning.**
 :::
@@ -55,7 +55,7 @@ on the side of the clamps on top of the forks. The forks on that side will slide
 Amiga less rigid.
 :::info Amiga's Geometry when using Intelligence Kit
 If you have an Intelligence Kit, remember to change the `wheelbase` parameter on your
-[Brain Settings](../apps/launcher/#robot-geometry).<br/><br/>
+[Brain Settings](../apps/amiga_v2/launcher/#robot-geometry).<br/><br/>
 **If there is a mismatch between your physical setup and your geometry settings in your Brain, you
 will likely experience offsets when following tracks.**
 :::
@@ -85,7 +85,7 @@ parameter on your [dashboard](../dashboard/dashboard-user-guide#configuration-se
 
 :::info Amiga's Geometry when using Intelligence Kit
 If you change your Intelligence Kit mount location, remember to change the GPS and IMU offset
-parameter on your [Brain Settings](../apps/launcher/#robot-geometry).<br/><br/>
+parameter on your [Brain Settings](../apps/amiga_v2/launcher/#robot-geometry).<br/><br/>
 **If there is a mismatch between your physical setup and your geometry settings in your Brain, you
 will likely experience offsets when following tracks.**
 :::

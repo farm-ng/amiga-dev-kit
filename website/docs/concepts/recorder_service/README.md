@@ -61,7 +61,7 @@ including publishing frequency.
   - `system_monitor/cpu_usage`: Streams the percent of CPU currently being consumed on the brain.
   - `system_monitor/filter_state`: Streams the filter service state.
   - `system_monitor/wifi_state`: Streams auto mode state (either true or false).
-  - `system_monitor/virtual_memory_usage`: Streams athe percent of virtual memory being consumed
+  - `system_monitor/virtual_memory_usage`: Streams a the percent of virtual memory being consumed
 by the brain.
 
 - [Track Follower Topics](/docs/concepts/track_follower_service/#data-streams)
@@ -153,10 +153,10 @@ Data can be recorded through the AppBar, the Camera App, or using the `EventsCli
 as in the **Events Recorder example**.
 
 - To record data through the UI on the Brain display, see the
-[Launcher Guide - Status Bar](/docs/apps/launcher/#status-bar).
+[Launcher Guide - Status Bar](/docs/apps/amiga_v2/launcher/#status-bar).
 
 - To record data through the Camera App on the Brain display, see the
-[Camera App Guider](/docs/apps/camera_app/).
+[Camera App Guider](/docs/apps/amiga_v2/camera_app/).
 
 - To record data using the Recorder Service API from your own application, see the
 [Events Recorder example](/docs/examples/events_recorder/).
