@@ -70,26 +70,6 @@ button to exit the preview screen.
 If you loose GPS or your Amiga is not in AutoMode you will be prompted
 with an error message to address the situation. There is also an Emergency
 e-stop with 60-second cooldown integrated into job control
-
-## Map & Visualization
-The MapView component provides real-time visualization and uses mouse/touch
-interactions for: zoom controls and pan navigation.
-
-## Additional Elements
-
-Virtual Keyboard Support - Multi-input keyboard for touch interfaces
-Theme Toggle - Light/dark mode switching
-Notification System - SnackBar alerts for user feedback
-
-## Core Application States
-The application manages these primary states through the UI buttons:
-**IDLE** - Ready for job selection
-**LOADED** - Job selected and ready to run
-**EXECUTING** - Job actively running
-**PAUSED** - Job temporarily stopped
-**ERROR** - Critical failure requiring attention
-
-
 **Exit to Launcher** returns to the main launcher application.
 
 
