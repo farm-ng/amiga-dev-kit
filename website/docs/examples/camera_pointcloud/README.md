@@ -51,7 +51,7 @@ source venv/bin/activate
 
 ```bash
 # assuming you're already in the amiga-dev-kit/ directory
-cd farm-ng-amiga/py/examples/pointcloud
+cd farm-ng-amiga/py/examples/camera_pointcloud
 ```
 
 ### 3. Install the example's dependencies
