@@ -36,7 +36,7 @@ to locate a specific service from the list.
 
 ### GPS NTRIP
 
-![Screenshot from 2025-06-17 15-19-36](https://github.com/user-attachments/assets/bedc34a1-6458-403a-afb6-77796a0a6b99)
+![Screenshot from 2025-06-17 15-19-36](https://github.com/user-attachments/assets/17ad62e3-03f7-4307-8405-f31af22c8df9)
 On this this page you will configure and authenticate your base station's connection for
 the purpose of RTK based navigation.
 To **Setup NTRIP** credentials, enter your base-station's address (IP address or URL)
