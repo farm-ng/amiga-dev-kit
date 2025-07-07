@@ -5,6 +5,10 @@ title: TeleOp
 The TeleOp (Teleoperation) application is a remote control interface with real-time video streaming!
 All panels are draggable and can be minimized to save screen space.
 Use WASD keyboard commands for robot controls and visualize movement in real-time.
+:::tip
+The dashboard must be set to **AUTOMODE** in order for you to TeleOp
+:::
+
 ![Screenshot from 2025-06-19 14-09-29](https://github.com/user-attachments/assets/cd00d090-f6d9-4163-8295-df3259808760)
 
 ## Teleop (WASD) Controls
