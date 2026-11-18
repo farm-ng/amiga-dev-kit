@@ -103,6 +103,17 @@ Additionally, users can press the `○` button on the pendant to disengage `auto
 which will automatically cancel the autonomous operation.
 :::
 
+:::into
+As of January 2026 we have two flavors of our track-following and Autoplot features: local and
+global coordinates. The main difference is how we record our paths:
+
+- **Local** use X,Y coordinates with <0,0> being your physical RTK base station;
+- **Global** uses latitude and longitude, and a "virtual" base station is created next to the
+robot when the filter first converges. You will be able to differentiate then due to red lines
+on the grid when the base is set.
+
+:::
+
 ### Tool Control
 
 This feature allows you to control your connected hardware devices through a browser window.
@@ -132,18 +143,12 @@ or [dashboard](/docs/dashboard/dashboard-user-guide)
 while physically present with the robot,
 ideal for teaching the robot new tracks.
 
-Here are instructions for using the pendant and the kartech at the dashboard firmware release
+Here are instructions for using the pendant and the radio remote controller at the dashboard firmware release
 [**amiga-dash-v0.5.0**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.5.0)
 
-:::info
-The supported Kartech remote changed in dashboard firmware release
-[**amiga-dash-v0.7.0**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.7.0).
 
-Documentation of the controls for this remote are coming soon.
-:::
 
 ![pendant](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/4a8fbe60-7780-4f32-b92f-6ce895a706e0)
-![kartech](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/99aee18e-e7d2-41c5-888b-6d38365c699e)
 
 **Remote Control**: From your web browser,
 you can remotely operate the robot without needing
@@ -214,13 +219,16 @@ local topography. In some cases, this problem is reduced within 5 to 30 minutes 
 Moving the robot on your operational area can reduce this time.
 
 - If you see tracks with an expressive offset (larger than 0.5 m or 2 feet), verify that your
-RTK-correction service provider is NOT using a VRS (Virtual Reference Station).These stations
-change their reference system after every reboot and are not currently supported. We recommend
+RTK-correction service provider is NOT using a VRS (Virtual Reference Station), or is pointing is
+pointing your device to a different base station then the one the path was recorded. We recommend
 switching to a service provider that uses a static base station or that you record new paths after
 every reboot.
+
+- If your application requires the use of VRS or you need to switch the base station, contact our
+our [support](mailto:support@bsonsairobotics.ai) and we will update your Amiga Braint to handle those.
 
 Occasionally, track following might fail.
 An error message will appear and the **Start Path** button will switch to **Error-Check status**.
 If you encounter this error message, make sure you Robot meets all the [**Autonomy Requirements**](/docs/apps/autoplot_app/#autonomy-requirements).
 
-For further assistance, reach out to the [support team](mailto:support@farm-ng.com).
+For further assistance, reach out to the [support team](mailto:support@bonsairobotics.ai).

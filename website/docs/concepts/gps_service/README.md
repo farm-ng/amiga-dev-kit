@@ -46,7 +46,7 @@ between two receivers, often as a part of Real Time Kinematics (RTK) solutions.
 It shows the difference in position between a "moving" receiver and a "fixed" reference receiver.
 
 **ECEF** (Earth-Centered, Earth-Fixed) messages provide coordinates that represent positions
-relative to the earth's center, but fixed to the earth as it rotates.
+relative to the earth's center and rotating together with the Earth.
 ECEF coordinates are expressed in meters in a 3D Cartesian coordinate system.
 These messages are particularly useful for applications
 that require a global reference frame, such as satellite operations and global mapping projects.
@@ -82,11 +82,13 @@ The required credentials include:
   - **NOTE**: The robot needs to be connected to Wi-Fi for `relposned` messages.
  However, an internet connection is not required for `pvt` messages.
 
-:::caution Virtual Reference Station (vrs) not supported
-Currently, our services that use GPS rely on a static base station. If your service provider issues
+:::caution Virtual Reference Station (vrs) and our GPS service
+Currently, the default Amiga GPS rely on a static base station. If your service provider issues
 RTK corrections with respect to a VRS (Virtual Reference Station), your `relposned` coordinates
 will experience a significant offset after every reboot, and so the Autoplot app. <br/><br/>
-Consult your service provider and/or support@farm-ng.com for more info.
+If you need to use VRS or a service that uses AUTO base station assignment, contact us at
+[support@bonsairobotics.ai](mailto:support@bonsairobotics.ai) aand we will update your Amiga to
+support that type of service.
 :::
 
 :::info NTRIP (Network Transport of RTCM via Internet Protocol)
@@ -94,6 +96,9 @@ NTRIP is a protocol for streaming differential GPS (DGPS) data over the internet
 corrections in areas with cellular coverage.
 Connecting to an NTRIP service enhances the GPS accuracy, crucial for tasks requiring precision navigation.
 :::
+
+Mulitple state and national governments provide free or low cost RTK services. We recommend searching for
+those on their official web pages.
 
 :::tip Pro Tip for California Users
 If you're operating in California, consider [**signing up**](https://www.surveymonkey.com/survey-taken?sm=8oRYqrBI74rDSaBAdtcV5GY0_2FRs585_2FD4c_2BTVJDw_2Be9msUlD1XrZDpZ1Rvu0DLWBo8bsPAjLG8jj8DbutXMqryiezNdZiuVvgEb0osp55QY_3D)

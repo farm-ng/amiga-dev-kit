@@ -51,7 +51,7 @@ First ensure the ESTOP is fully pressed down before operating anything on the Am
 Once both batteries are installed with their respective keys,
 plug the IEC power cables into both batteries, then turn the key to a horizon position to start Amiga.
 
-You should see the farm-ng logo appear then the START/VAMOS screen.
+You should see the Bonsai (or farm-ng) logo appear then the START/VAMOS screen.
 
 ![ezgif com-gif-maker 4 (1)](https://user-images.githubusercontent.com/64480560/206318630-931b5086-9cd8-4f8a-9406-afdc34bef28d.gif)
 
