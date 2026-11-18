@@ -15,6 +15,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
       - uses: actions/setup-node@v4
         with:
           node-version: 18
@@ -23,7 +26,7 @@ jobs:
       - run: ls farm-ng-amiga
       - name: Install adk dependencies
         working-directory: website
-        run: pip3 install -r requirements.txt
+        run: python -m pip install -r requirements.txt
       - name: Create Markdown
         working-directory: website
         run: ./run_pydoc-markdown.sh
