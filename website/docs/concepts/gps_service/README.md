@@ -94,11 +94,12 @@ support that type of service.
 :::info NTRIP (Network Transport of RTCM via Internet Protocol)
 NTRIP is a protocol for streaming differential GPS (DGPS) data over the internet, enabling RTK
 corrections in areas with cellular coverage.
-Connecting to an NTRIP service enhances the GPS accuracy, crucial for tasks requiring precision navigation.
+Connecting to an NTRIP service enhances the GPS accuracy,
+crucial for tasks requiring precision navigation.
 :::
 
-Mulitple state and national governments provide free or low cost RTK services. We recommend searching for
-those on their official web pages.
+Mulitple state and national governments provide free or low cost RTK services.
+We recommend searching for those on their official web pages.
 
 :::tip Pro Tip for California Users
 If you're operating in California, consider [**signing up**](https://www.surveymonkey.com/survey-taken?sm=8oRYqrBI74rDSaBAdtcV5GY0_2FRs585_2FD4c_2BTVJDw_2Be9msUlD1XrZDpZ1Rvu0DLWBo8bsPAjLG8jj8DbutXMqryiezNdZiuVvgEb0osp55QY_3D)

@@ -143,10 +143,9 @@ or [dashboard](/docs/dashboard/dashboard-user-guide)
 while physically present with the robot,
 ideal for teaching the robot new tracks.
 
-Here are instructions for using the pendant and the radio remote controller at the dashboard firmware release
+Here are instructions for using the pendant and the radio remote controller
+at the dashboard firmware release
 [**amiga-dash-v0.5.0**](https://github.com/farm-ng/amiga-dev-kit/releases/tag/amiga-dash-v0.5.0)
-
-
 
 ![pendant](https://github.com/farm-ng/amiga-dev-kit/assets/39603677/4a8fbe60-7780-4f32-b92f-6ce895a706e0)
 
