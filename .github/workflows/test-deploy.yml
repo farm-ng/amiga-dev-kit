@@ -26,7 +26,9 @@ jobs:
       - run: ls farm-ng-amiga
       - name: Install adk dependencies
         working-directory: website
-        run: python -m pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade 'pip>=25.3'
+          python -m pip install --build-constraint build-constraints.txt -r requirements.txt
       - name: Create Markdown
         working-directory: website
         run: ./run_pydoc-markdown.sh

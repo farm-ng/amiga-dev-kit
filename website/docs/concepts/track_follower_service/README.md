@@ -131,7 +131,7 @@ tracks in GPS coordinates, instead of poses (or local coordinates). This is nece
 use RTK services that may switch base stations based on service quality, or when virtual reference
 stations (VRS) are used. <br>
 While the global version of the service support Local Tracks, it will only record in global.
-Changing versions require a iamge update that takes about 20 min and need to be trigerred by us.
+Changing versions require an image update that takes about 20 min and need to be triggered by us.
 <br><br>
 Contact [support@bonsairobotics.ai](mailto:support@bonsairobotics.ai) to switch between service.
 :::
@@ -207,8 +207,6 @@ main one:
 ```
 
 Note that altitude is recroded for completeness, but it is ignored by our services at this point.
-
-
 
 ### Examples
 

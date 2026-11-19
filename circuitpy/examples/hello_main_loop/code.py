@@ -11,6 +11,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+from struct import pack
+
 from canio import Message
 from farm_ng.utils.cobid import CanOpenObject
 from farm_ng.utils.main_loop import MainLoop
@@ -20,7 +22,6 @@ from farm_ng.utils.packet import AmigaTpdo1
 from farm_ng.utils.packet import DASHBOARD_NODE_ID
 from farm_ng.utils.ticks import TickRepeater
 from usb_cdc import console
-from struct import pack
 
 
 class HelloMainLoopApp:
@@ -44,6 +45,7 @@ class HelloMainLoopApp:
     def request_auto_mode(self, enable: bool) -> None:
         try:
             from farm_ng.utils.farmng_sdo import FarmngReqRep, ReqRepOpIds, ReqRepValIds, ReqRepValFmts
+
             op_write = getattr(ReqRepOpIds, "WRITE", 2)
             val_id = getattr(ReqRepValIds, "REQUEST_AUTO_MODE", 1001)
             payload = pack(ReqRepValFmts.BOOL, 1 if enable else 0)
@@ -52,6 +54,7 @@ class HelloMainLoopApp:
         except Exception:
             try:
                 from farm_ng.utils.farmng_sdo import FarmngRepReq, ReqRepValFmts
+
                 op_write = 2
                 val_id = 1001
                 payload = pack(ReqRepValFmts.BOOL, 1 if enable else 0)

@@ -23,4 +23,3 @@ This is for running directly on the
 [**farm-ng Brain**](/docs/intelligence-kit/brain/brain-v2/)
 or for interacting with the gRPC services running on the brain
 from another computer.
-

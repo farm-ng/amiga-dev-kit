@@ -98,7 +98,7 @@ Connecting to an NTRIP service enhances the GPS accuracy,
 crucial for tasks requiring precision navigation.
 :::
 
-Mulitple state and national governments provide free or low cost RTK services.
+Multiple state and national governments provide free or low cost RTK services.
 We recommend searching for those on their official web pages.
 
 :::tip Pro Tip for California Users
