@@ -11,5 +11,6 @@
         "Autoplot",
         "CRTN",
         "NMEA"
-    ]
+    ],
+    "cmake.sourceDirectory": "/Users/marcelo-farm-ng/Documents/code/amiga-v6/amiga-dev-kit/farm-ng-amiga"
 }

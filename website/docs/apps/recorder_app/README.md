@@ -38,8 +38,8 @@ Be sure to use integers in the `everyN` field.
 
 ### File naming convention
 
-The data will be recorded with a file naming convention that captures the precise timestamp (to the microsecond)
-at the time recording starts, the name of the robot on which the files were recorded,
+The data will be recorded with a file naming convention that captures the precise timestamp (to the
+microsecond) at the time recording starts, the name of the robot on which the files were recorded,
 and the file number in the video sequence:
 
 ```bash

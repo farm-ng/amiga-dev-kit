@@ -11,6 +11,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+from struct import pack
+
 from canio import Message
 from farm_ng.utils.cobid import CanOpenObject
 from farm_ng.utils.main_loop import MainLoop
@@ -40,6 +42,28 @@ class HelloMainLoopApp:
     def _register_message_handlers(self):
         self.main_loop.command_handlers[CanOpenObject.TPDO1 | DASHBOARD_NODE_ID] = self._handle_amiga_tpdo1
 
+    def request_auto_mode(self, enable: bool) -> None:
+        try:
+            from farm_ng.utils.farmng_sdo import FarmngReqRep, ReqRepOpIds, ReqRepValIds, ReqRepValFmts
+
+            op_write = getattr(ReqRepOpIds, "WRITE", 2)
+            val_id = getattr(ReqRepValIds, "REQUEST_AUTO_MODE", 1001)
+            payload = pack(ReqRepValFmts.BOOL, 1 if enable else 0)
+            cob_id_req = getattr(FarmngReqRep, "cob_id_req", 0x600)
+            data = FarmngReqRep(op_id=op_write, val_id=val_id, payload=payload).encode()
+        except Exception:
+            try:
+                from farm_ng.utils.farmng_sdo import FarmngRepReq, ReqRepValFmts
+
+                op_write = 2
+                val_id = 1001
+                payload = pack(ReqRepValFmts.BOOL, 1 if enable else 0)
+                cob_id_req = getattr(FarmngRepReq, "cob_id_req", 0x600)
+                data = FarmngRepReq(op_id=op_write, val_id=val_id, payload=payload).encode()
+            except Exception:
+                return
+        self.can.send(Message(id=(cob_id_req | DASHBOARD_NODE_ID), data=data))
+
     def _handle_amiga_tpdo1(self, message):
         self.amiga_tpdo1 = AmigaTpdo1.from_can_data(message.data)
         if self.amiga_tpdo1.state != AmigaControlState.STATE_AUTO_ACTIVE:
@@ -54,6 +78,8 @@ class HelloMainLoopApp:
                 self.request_state = AmigaControlState.STATE_AUTO_ACTIVE
             else:
                 self.request_state = AmigaControlState.STATE_AUTO_READY
+                # Ask dashboard to enter AUTO_READY from MANUAL via FarmngReqRep
+                self.request_auto_mode(True)
         elif char == "w":
             self.cmd_speed += self.inc
         elif char == "s":

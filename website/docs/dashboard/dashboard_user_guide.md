@@ -152,7 +152,7 @@ Default value is 40 VDC.
 - `m13_on`: boolean to turn motor D on
 - `auto_hold_mode`: when ON, increase motor torque on stops, increasing precision when stopped on
 slopes. **This setting increase power consumption considerably and should be used only in very
-specific cases. Contact support@farm-ng.com to explore other options.**
+specific cases. Contact support@bonsairobotics.ai to explore other options.**
 - `lang`: 0 for English, 1 for Spanish, 2 for French. Can be changed in Setup page directly.
 - `units_dst`: speed units on your main gauge. Press your digital speedometer for verbose options.
 - `units_temp`: temperature units on your dashboard. Press the thermometer on you main display for

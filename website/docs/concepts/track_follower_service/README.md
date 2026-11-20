@@ -125,7 +125,18 @@ through various intermediary points, to its destination.
 Each waypoint in this track provides specific spatial information about where the robot should
 be and how it should be oriented at that point.
 
-### Define a Track
+:::warning Local vs Global Tracks
+In January 2026 we introduced an alternative version of the Track Follower service that record
+tracks in GPS coordinates, instead of poses (or local coordinates). This is necessary when you
+use RTK services that may switch base stations based on service quality, or when virtual reference
+stations (VRS) are used. <br /><br />
+While the global version of the service support Local Tracks, it will only record in global.
+Changing versions require an image update that takes about 20 min and need to be triggered by us.
+<br /><br />
+Contact [support@bonsairobotics.ai](mailto:support@bonsairobotics.ai) to switch between service.
+:::
+
+### Define a Track - Local Coordinates (Poses)
 
 A track is represented as a JSON file, where each waypoint is defined by a pose.
 A pose captures the robot's position and orientation in the world.
@@ -162,6 +173,40 @@ Here's an example of what a single pose looks like:
   "heading": -2.909058930621276
 },
 ```
+
+### Define a track - Global Coordinates
+
+Tracks are still JSON files, but on this version, waypoints contain only 3 components nested on a
+main one:
+
+```json
+{
+  "gpsWaypoints": [
+    {
+      "latitude": 31.8759468106609,
+      "longitude": -91.1360947944348,
+      "altitude": 78.936
+    },
+    {
+      "latitude": 31.875947055642918,
+      "longitude": -91.13609366120552,
+      "altitude": 78.936
+    },
+    {
+      "latitude": 31.875947326840343,
+      "longitude": -91.13609250369538,
+      "altitude": 78.936
+    },
+    {
+      "latitude": 31.875947609609188,
+      "longitude": -91.13609116924339,
+      "altitude": 78.936
+    },
+  ]
+}
+```
+
+Note that altitude is recroded for completeness, but it is ignored by our services at this point.
 
 ### Examples
 

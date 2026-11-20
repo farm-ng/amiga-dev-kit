@@ -62,8 +62,8 @@ streams such as RGB, left, right, and disparity views, all without requiring ext
 
 :::tip
 By default, all the topic streams in the [**Recorder**](/docs/apps/launcher/#recorder)
-are captured when you press the **RECORD** button on the navigation bar, or the **Start Recording** button
-on the camera app. You may select individual topics to record from the
+are captured when you press the **RECORD** button on the navigation bar, or the **Start Recording**
+button on the camera app. You may select individual topics to record from the
 [**Recorder**](/docs/apps/launcher/#recorder) tab.
 :::
 
