@@ -129,10 +129,10 @@ be and how it should be oriented at that point.
 In January 2026 we introduced an alternative version of the Track Follower service that record
 tracks in GPS coordinates, instead of poses (or local coordinates). This is necessary when you
 use RTK services that may switch base stations based on service quality, or when virtual reference
-stations (VRS) are used. <br>
+stations (VRS) are used. <br /><br />
 While the global version of the service support Local Tracks, it will only record in global.
 Changing versions require an image update that takes about 20 min and need to be triggered by us.
-<br><br>
+<br /><br />
 Contact [support@bonsairobotics.ai](mailto:support@bonsairobotics.ai) to switch between service.
 :::
 

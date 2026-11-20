@@ -107,7 +107,7 @@ which will automatically cancel the autonomous operation.
 As of January 2026 we have two flavors of our track-following and Autoplot features: local and
 global coordinates. The main difference is how we record our paths:
 
-- **Local** use X,Y coordinates with <0,0> being your physical RTK base station;
+- **Local** use X,Y coordinates with `<0,0>` being your physical RTK base station;
 - **Global** uses latitude and longitude, and a "virtual" base station is created next to the
 robot when the filter first converges. You will be able to differentiate then due to red lines
 on the grid when the base is set.
