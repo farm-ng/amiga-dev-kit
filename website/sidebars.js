@@ -137,7 +137,6 @@ const sidebars = {
     "brain/sdk-barley-migration",
     "brain/ros-bridge",
     "examples/vnc_viewer/vnc-viewer",
-    "mcu_kit/microcontroller-kit",
     {
       "items": [
         "api/api-index",
